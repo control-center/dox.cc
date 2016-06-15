@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Preparing to upgrade</title>
+  <refbody>
+    <section>
+      <p>Beginning with version 5.0.0, distributions of <ph keyref="nm-platform"/> include an
+        additional component, <ph keyref="nm-cc"/>. Each component is developed and
+        maintained separately, and each has its own version number. This chapter identifies the
+        combinations of component versions that <ph conkeyref="names/company"/> supports, and the
+        supported upgrade paths between the combinations. </p>
+      
+    </section>
+  </refbody>
+</reference>

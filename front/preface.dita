@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="concept_zbv_qgy_nl0">
+ <title>About this guide</title>
+ <refbody>
+   <section>
+   <p>The Control Center Upgrade Guide provides detailed instructions for
+      upgrading <ph keyref="nm-cc"/> from any 1.1.x version to a more recent
+      version.</p>
+     <p>The instructions are written for micro version upgrades only.
+      Upgrades to major (1.x to 2.x) or minor (1.1.x to 1.2.x) releases may
+      require additional steps that are not included in this document.</p>
+   </section>
+ </refbody>
+</reference>
