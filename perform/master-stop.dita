@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping applications </title>
+  <taskbody>
+    <context>This procedure stops all <ph keyref="nm-cc"/> applications.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master  
+          host <ph conkeyref="login-as/root"/>.</cmd>
+      </step>
+      
+      <step product="rm">
+        <cmd>Identify the applications to stop.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the applications that 
+              <ph keyref="nm-cc"/> is managing.</cmd>
+            <stepxmp>
+              <codeblock>serviced service list | awk '/Zenoss\./ { print $1 }'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Identify the applications that are running.</cmd>
+            <info>Replace <varname>Application</varname> with the name 
+              of each application returned from the preceding commands:</info>
+            <stepxmp>
+              <codeblock>serviced service status <varname>Application</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step >
+        <cmd>Stop <ph keyref="nm-platform"/>, and then verify it is stopped.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Stop <ph keyref="nm-platform"/>.</cmd>
+            <stepxmp product="rm">
+              <codeblock>serviced service stop Zenoss.resmgr</codeblock>
+            </stepxmp>
+            <stepxmp product="open">
+              <codeblock>serviced service stop Zenoss.core</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Verify the application is stopped.</cmd>
+            <info>Repeat the following command until the 
+              <codeph>STATUS</codeph> column reads <codeph>Stopped</codeph>:</info>
+            <stepxmp product="rm">
+              <codeblock>serviced service status Zenoss.resmgr</codeblock>
+            </stepxmp>
+            <stepxmp product="open">
+              <codeblock>serviced service status Zenoss.core</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

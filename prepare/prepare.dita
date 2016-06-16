@@ -4,12 +4,19 @@
   <title>Preparing to upgrade</title>
   <refbody>
     <section>
-      <p>Beginning with version 5.0.0, distributions of <ph keyref="nm-platform"/> include an
-        additional component, <ph keyref="nm-cc"/>. Each component is developed and
-        maintained separately, and each has its own version number. This chapter identifies the
-        combinations of component versions that <ph conkeyref="names/company"/> supports, and the
-        supported upgrade paths between the combinations. </p>
-      
+      <ul>
+        <li>Download and stage files for offline upgrades, if necessary.</li>
+        <li>Get set up to run a CLI session on each CC cluster host at the same time.</li>
+        <li>Verify that the CC config files on each type of CC host
+          are identical, except known diffs on ZK nodes:
+        <ul>
+          <li>master</li>
+          <li>worker-rm-zk</li>
+          <li>worker-rm</li>
+          <li>worker-collector</li>
+        </ul>
+        </li>
+      </ul>
     </section>
   </refbody>
 </reference>

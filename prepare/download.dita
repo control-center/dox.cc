@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading the RPM package</title>
+  <taskbody>
+    <context>This procedure describes how to download the 
+      <cmdname>serviced</cmdname> RPM package to your workstation.</context>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>A portable storage medium, such as a USB flash drive, with at least 20MB of free space.</li>
+        <li>Permission to download the required files from the <xref keyref="url-leapfile">Zenoss Enterprise
+            Software Downloads</xref> site. You may request permission by filing a ticket at <ph
+            conkeyref="names/support-site"/>.</li>
+      </ul></prereq>
+    <steps>
+      <step>
+        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile">Zenoss Enterprise
+          Software Downloads</xref> site.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Click <uicontrol>File Portal - Zenoss Enterprise Software Downloads</uicontrol>. </cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in with the account provided by <ph conkeyref="names/support"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Download the <cmdname>serviced</cmdname> RPM package.</cmd>
+        <info></info>
+        <stepxmp>
+          <p>Replace <varname>Version</varname> with the most recent version 
+            number available on the download page:</p>
+          <codeblock>serviced-<varname>Version</varname>.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+
+      <step>
+        <cmd>Copy the file to your portable storage medium.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

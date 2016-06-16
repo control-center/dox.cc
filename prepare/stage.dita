@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Staging the RPM package</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need the portable storage medium
+      that contains the <cmdname>serviced</cmdname> RPM package file.</prereq>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master
+          host <ph conkeyref="login-as/root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Copy <filepath>serviced-*.x86_64.rpm</filepath> from your 
+          portable storage medium to <filepath>/tmp</filepath>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Change the access permissions of the package file.</cmd>
+        <stepxmp>
+          <codeblock>chmod 777 /tmp/serviced-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

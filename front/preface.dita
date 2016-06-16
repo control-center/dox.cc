@@ -6,10 +6,10 @@
    <section>
    <p>The Control Center Upgrade Guide provides detailed instructions for
       upgrading <ph keyref="nm-cc"/> from any 1.1.x version to a more recent
-      version.</p>
-     <p>The instructions are written for micro version upgrades only.
-      Upgrades to major (1.x to 2.x) or minor (1.1.x to 1.2.x) releases may
-      require additional steps that are not included in this document.</p>
+      1.1.x version.</p>
+     <p>The instructions in this guide are written for micro version upgrades only.
+      Upgrades to major (1.x to 2.x) and minor (1.1.x to 1.2.x) releases may
+      require additional steps.</p>
    </section>
  </refbody>
 </reference>
