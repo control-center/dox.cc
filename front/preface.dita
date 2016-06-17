@@ -4,12 +4,14 @@
  <title>About this guide</title>
  <refbody>
    <section>
-   <p>The Control Center Upgrade Guide provides detailed instructions for
+   <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for
       upgrading <ph keyref="nm-cc"/> from any 1.1.x version to a more recent
       1.1.x version.</p>
-     <p>The instructions in this guide are written for micro version upgrades only.
-      Upgrades to major (1.x to 2.x) and minor (1.1.x to 1.2.x) releases may
-      require additional steps.</p>
+     <p>The instructions in this guide are written for micro version upgrades only. Upgrades to the
+        next major (1.x to 2.x) or minor (1.1.x to 1.2.x) versions may require additional steps.</p>
    </section>
+   
+   <section product="cc" conkeyref="related-pubs/cc"/>
+   
  </refbody>
 </reference>

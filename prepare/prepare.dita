@@ -4,19 +4,34 @@
   <title>Preparing to upgrade</title>
   <refbody>
     <section>
-      <ul>
+      <p>This chapter provides information and procedures to prepare your 
+        <ph keyref="nm-cc"/> deployment for an upgrade. To facilitate
+        a trouble-free upgrade, please read through this chapter carefully
+        and perform all of the procedures in it.</p>
+      
+      <note>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for the new release and
+        review it before proceeding to the next section. A new release could include a new
+        requirement, such as a specific kernel version, and that information is not included in this
+        publication.</note>
+      
+      <p>The following list outlines the preparations:</p>
+      
+      <ol>
         <li>Download and stage files for offline upgrades, if necessary.</li>
         <li>Get set up to run a CLI session on each CC cluster host at the same time.</li>
+        <li>Start CLI sessions on all CC cluster hosts.</li>
         <li>Verify that the CC config files on each type of CC host
           are identical, except known diffs on ZK nodes:
-        <ul>
-          <li>master</li>
-          <li>worker-rm-zk</li>
-          <li>worker-rm</li>
-          <li>worker-collector</li>
-        </ul>
+          <ul>
+            <li>master</li>
+            <li>worker-rm-zk</li>
+            <li>worker-rm</li>
+            <li>worker-collector</li>
+          </ul>
         </li>
-      </ul>
+        <li>Perform tasks for new requirements, if any.</li>
+      </ol>
+      
     </section>
   </refbody>
 </reference>

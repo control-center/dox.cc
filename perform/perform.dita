@@ -6,7 +6,6 @@
     <section>
       <p/>
       <ol>
-        <li>Start CLI sessions on all CC cluster hosts.</li>
         <li>Stop RM.</li>
         <li>Stop HA, if necessary.</li>
         <li>Stop CC on hosts in the following order:

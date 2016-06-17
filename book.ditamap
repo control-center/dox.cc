@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle>Control Center Upgrade Guide</mainbooktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-upgrade"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -15,14 +15,15 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.153</bookpartno>
+      <bookpartno>1300.16.169</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
         <year>2016</year>
       </copyrfirst>
       <bookowner>
-        <organization>Zenoss, Inc., 11305 Four Points Drive, Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>        
+        <organization>Zenoss, Inc., 11305 Four Points Drive, 
+          Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>        
       </bookowner>
     </bookrights>
     <data conkeyref="data/zentm"/>
@@ -33,20 +34,17 @@
       <mapref href="../dox.tools/vars/keywords-product.ditamap" format="ditamap"/>
       <mapref href="../dox.tools/subjectScheme.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keydefs-glossary.ditamap" format="ditamap"/>
-      <mapref href="../dox.shared/keydefs-topics.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keydefs-urls.ditamap" format="ditamap"/>
       <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="../dox.shared/keydefs-frontmatter-cc.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="keydefs-topics.ditamap" format="ditamap" />
       <mapref href="keydefs-local.ditamap" format="ditamap" />
     </topicgroup>
-    <booklists>
-      <toc/>
-    </booklists>
-	  <topicref href="front/preface.dita">
-	    <topicref href="front/releases.dita"/>
-	  </topicref>
+	  <topicref href="front/preface.dita"/>
   </frontmatter>
   
   <chapter href="prepare/prepare.ditamap" format="ditamap"/>

@@ -3,6 +3,8 @@
 <bookmap >
  <title>Perform</title>
  <chapter href="perform.dita">
-   <!--   <topicref href="scope.dita"/>  -->
+    <topicref href="serviced.dita"/>
+   <topicref href="serviced-pool.dita"/>
+   <topicref href="stop.dita"/>
  </chapter>
 </bookmap>
