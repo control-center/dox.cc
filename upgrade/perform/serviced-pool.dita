@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Upgrading the master host</title>
+  <title>Upgrading resource pool hosts</title>
   <taskbody>
-    <context>This procedure upgrades the <ph keyref="nm-cc"/> 
-      master host to version <ph keyref="lo-cc-version"/>.</context>
-    
+    <context>This procedure upgrades <ph keyref="nm-cc"/> 
+      resource pool hosts to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Perform this procedure on each resource pool host in your deployment.</context>
     <steps>
       <step>
-        <cmd>Log in to the master host <ph conkeyref="login-as/root"/>.</cmd>
+        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -37,16 +37,35 @@
       </step>
       
       <step>
-        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
+        <cmd>Stop <ph keyref="nm-cc"/> and Docker.</cmd>
         <stepxmp>
-          <codeblock>systemctl stop serviced</codeblock>
+          <codeblock>systemctl stop serviced &#38;&#38; systemctl stop docker</codeblock>
         </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Unmount the distributed file system (DFS).</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the file system specification to unmount.</cmd>
+            <stepxmp>
+              <codeblock>mount | awk '/serviced/ { print $1 }'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Unmount the DFS.</cmd>
+            <stepxmp>Replace <varname>DFS-Mount</varname> with the file system specification
+              returned in the previous substep:
+              <codeblock>umount <varname>DFS-Mount</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
-          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-cc-version"/></codeblock>
+          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
         <stepresult>The installation preserves the existing version 
           of the <cmdname>serviced</cmdname> configuration
@@ -69,12 +88,5 @@
         </stepxmp>
       </step>
     </steps>
-    <postreq>
-      <ul>
-        <li><b>Single-host deployments:</b> You may log in to the <ph keyref="nm-cc"/> browser interface,
-          and then restart <ph keyref="nm-platform"/>, if desired.</li>
-        <li><b>Multi-host deployments:</b> Update all resource pool hosts (the next procedure).</li>
-      </ul>
-    </postreq>
   </taskbody>
 </task>

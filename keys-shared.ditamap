@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+        <title>Shared topics</title>
+        <!-- Removing an entry from this file requires a note from your mother -->
+        <topicgroup>
+                <!--
+                <keydef keys="offline-download"
+                        href="shared/offline-download.dita"
+                        format="dita"
+                />
+                <keydef keys="offline-stage"
+                        href="shared/offline-stage.dita"
+                        format="dita"
+                />
+                <keydef keys="pool-stage"
+                        href="shared/pool-stage.dita"
+                        format="dita"
+                />
+                -->
+                <keydef keys="storage-isvcs"
+                        href="shared/storage-isvcs.dita"
+                        format="dita"
+                />
+                <keydef keys="tasklib-install"
+                        href="shared/tasklib-install.dita"
+                        format="dita"
+                />
+                <keydef keys="tasklib-upgrade"
+                        href="shared/tasklib-upgrade.dita"
+                        format="dita"
+                />
+        </topicgroup>
+</map>

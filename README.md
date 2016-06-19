@@ -1,2 +1,2 @@
 # dox.cc.upgrade
-DITA XML source files for the Control Center Upgrade Guide
+DITA XML source files for Control Center Install and Upgrade Guides

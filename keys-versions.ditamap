@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
-  <title>Local keywords</title>
+  <title>Version keywords</title>
   <topicgroup>
     <!--  -->
-    <keydef keys="lo-cc-version">
+    <keydef keys="lo-version-cc">
       <topicmeta>
         <keywords>
           <keyword>1.1.2</keyword>
         </keywords>
       </topicmeta>
     </keydef>
-    <keydef keys="lo-docker-version">
+    <keydef keys="lo-version-docker">
       <topicmeta>
         <keywords>
           <keyword>1.9.0</keyword>
-        </keywords>
-      </topicmeta>
-    </keydef>
-    <keydef keys="lo-platform-image">
-      <topicmeta>
-        <keywords>
-          <keyword>5.1.1_1</keyword>
         </keywords>
       </topicmeta>
     </keydef>

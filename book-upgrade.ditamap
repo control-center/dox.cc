@@ -29,25 +29,27 @@
     <data conkeyref="data/zentm"/>
   </bookmeta>
   <frontmatter>
-    <topicgroup>
-      <mapref href="../dox.tools/vars/keydefs-vars.ditamap" format="ditamap"/>
+    <topicgroup id="NATIONAL">
+      <mapref href="../dox.tools/vars/keydefs-vars-2.ditamap" format="ditamap"/>
       <mapref href="../dox.tools/vars/keywords-product.ditamap" format="ditamap"/>
       <mapref href="../dox.tools/subjectScheme.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keydefs-glossary.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keydefs-urls.ditamap" format="ditamap"/>
       <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup>
-      <mapref href="../dox.shared/keydefs-frontmatter-cc.ditamap" format="ditamap"/>
+    <topicgroup id="REGIONAL">
+      <mapref href="../dox.shared/keys-cc.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup>
-      <mapref href="keydefs-topics.ditamap" format="ditamap" />
-      <mapref href="keydefs-local.ditamap" format="ditamap" />
+
+    <topicgroup id="LOCAL">
+      <mapref href="keys-shared.ditamap" format="ditamap" />
+      <mapref href="keys-upgrades.ditamap" format="ditamap" />
+      <mapref href="keys-versions.ditamap" format="ditamap" />
     </topicgroup>
 	  <topicref href="front/preface.dita"/>
   </frontmatter>
   
-  <chapter href="prepare/prepare.ditamap" format="ditamap"/>
-  <chapter href="perform/perform.ditamap" format="ditamap"/>
+  <chapter href="upgrade/prepare/prepare.ditamap" format="ditamap"/>
+  <chapter href="upgrade/perform/perform.ditamap" format="ditamap"/>
   
 </bookmap>

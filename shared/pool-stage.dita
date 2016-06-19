@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Staging files for offline installation</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need the portable storage medium
+      that contains the archive files used in installing the master host.</prereq>
+    <context>This procedure adds files for offline 
+      installation to a resource pool host. The files
+      are required in subsequent procedures.</context>
+    <context>Perform this procedure on each resource pool host in your deployment.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Copy <filepath>yum-mirror-*.x86_64.rpm</filepath> from your portable storage medium to
+            <filepath>/tmp</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Install the <ph keyref="nm-platform"/> repository mirror.</cmd>
+        <stepxmp>
+          <codeblock>yum install -y /tmp/yum-mirror-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Delete the package file, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm /tmp/yum-mirror-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

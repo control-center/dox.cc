@@ -7,7 +7,7 @@
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> master  
-          host <ph conkeyref="login-as/root"/>.</cmd>
+          host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step product="rm">
