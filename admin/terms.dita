@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Terms you should know</title>
+  <refbody>
+    <section>
+      <p>
+        <dl>
+          <dlentry>
+            <dt>container</dt>
+            <dd>A lightweight object that contains a complete operating environment, along with the
+              instructions for launching and running an application or service within the container
+              itself. </dd>
+          </dlentry>
+          <dlentry>
+            <dt>endpoint</dt>
+            <dd>The ports exposed by a container to communicate with other containers.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>service</dt>
+            <dd/>
+          </dlentry>
+          <dlentry>
+            <dt>service instance</dt>
+            <dd/>
+          </dlentry>
+          <dlentry>
+            <dt>application tempalte</dt>
+            <dd/>
+          </dlentry>
+          <dlentry>
+            <dt>resource pool</dt>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </refbody>
+</reference>

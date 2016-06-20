@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Administration reference</title>
+   <chapter href="admin.dita">
+      <topicref href="multiple.dita"/>
+      <topicref href="change-host.dita"/>
+      <topicref href="cron.dita"/>
+   </chapter>
+</bookmap>

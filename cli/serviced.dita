@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="referenceid">
+  <title><cmdname>serviced</cmdname></title>
+  <refbody>
+    
+    <section>
+      <title>NAME</title>
+      <p><cmdname>serviced</cmdname> - a container-based management system</p>    
+    </section>   
+    
+    <section>
+      <title>SYNTAX</title>
+      <p><synph><kwd>serviced</kwd> <delim>[</delim>global options<delim>]</delim> command <delim>[</delim>command options<delim>]</delim> <delim>[</delim>arguments...<delim>]</delim></synph></p>
+    </section>
+    
+    <section>
+      <title>DESCRIPTION</title>
+      <p><cmdname>serviced</cmdname> is an open-source, application 
+        service orchestrator based on <xref keyref="url-docker">Docker</xref>.</p>
+    </section>
+    
+    <section>
+      <title>GLOBAL OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt><synph>--docker-registry
+            <var>Master-Hostname</var><delim>:</delim>5000</synph></dt>
+          <dd>The local Docker registry to use. The value of <varname>Master-Hostname</varname> is the
+            hostname of the master host, not its IP address.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--static-ip <var>IP-Address</var>
+              <delim>[</delim>--static-ip <var>IP-Address</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>One or more static IP addresses for a <cmdname>serviced</cmdname> instance to
+            advertise. Static IP addresses are declared in service definition templates, but must be
+            passed to an instance with this option.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--endpoint
+            <var>Host</var><delim>:</delim><var>Port</var></synph></dt>
+          <dd>The <cmdname>serviced</cmdname> RPC endpoint. The 
+            value of <varname>Host</varname> 
+            is the hostname or IP address of the master host. The default value
+            of <varname>Port</varname> is 4979. NOTE: For release 1.0, only port 4979 is supported.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--outbound <var>IP-Address</var></synph></dt>
+          <dd>The outbound IP address.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--uiport <delim>:</delim><var>Port</var></synph></dt>
+          <dd>The port on which this <cmdname>serviced</cmdname> instance listens for HTTPS
+            requests. The default value is 443, unless <varname>SERVICED_UI_PORT</varname> is set in
+            the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--listen <delim>:</delim><var>Port</var></synph></dt>
+          <dd>The <cmdname>serviced</cmdname> RPC endpoint on the local host. 
+            The default value of <varname>Port</varname> is 4979. NOTE: For release 1.0, only port 4979 is supported.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--docker-dns <var>Option</var>
+            <delim>[</delim>--docker-dns <var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>One or more DNS configuration flags for Docker to use when starting containers.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--master</synph></dt>
+          <dd>Run the application services scheduler and other internal services.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--agent</synph></dt>
+          <dd>Run application services scheduled by the master.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mux <var>Port</var></synph></dt>
+          <dd>The multiplexer port. The default value is 22250, unless
+              <varname>SERVICED_MUX_PORT</varname> is set in the configuration file. </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--var <var>Path</var></synph></dt>
+          <dd>The location in which <cmdname>serviced</cmdname> stores application data. The default
+            value is <filepath><varname>$SERVICED_HOME</varname>/var</filepath>, unless
+              <varname>SERVICED_VARPATH</varname> is set in the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--keyfile <var>Path</var></synph></dt>
+          <dd>The path of a TLS key file. The default value is
+              <filepath><varname>$TMPDIR</varname>/zenoss_key.[0-9]+</filepath>, unless
+              <varname>SERVICED_KEY_FILE</varname> is set in the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--certfile <var>Path</var></synph></dt>
+          <dd>The path of a TLS certificate file. The default value is
+                <filepath><varname>$TMPDIR</varname>/zenoss_cert.[0-9]+</filepath>, unless
+              <varname>SERVICED_CERT_FILE</varname> is set in the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--zk <var>Host</var><delim>:</delim><var>Port</var>
+              <delim>[</delim>--zk
+              <var>Host</var><delim>:</delim><var>Port</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>One or more ZooKeeper endpoints. The value of <varname>Host</varname> is the hostname
+            or IP address of the ZooKeeper host. The default value of <varname>Port</varname> is
+            2181. If multiple endpoints are specified, <cmdname>serviced</cmdname> will try each in
+            turn until it connects to a working server. </dd> 
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mount <var>Option</var> 
+            <delim>[</delim>--mount <var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>One or more bind mounts for a container. The syntax for <varname>Option</varname> is
+            DOCKER_IMAGE,HOST_PATH[,CONTAINER_PATH]. <!-- Fix the syntax -->
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--fstype <var>Driver</var></synph></dt>
+          <dd>The driver for the underlying file system where application data is stored
+            (by default, <filepath>/opt/serviced/var</filepath>). The supported drivers are
+              <codeph>rsync</codeph> and <codeph>btrfs</codeph>. The default value is
+              <codeph>rsync</codeph>, unless <varname>SERVICED_FS_TYPE</varname> is set in the
+            configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--alias <var>Alias</var>
+            <delim>[</delim>--alias <var>Alias</var><delim>]</delim>&#8230;</synph>
+          </dt>
+          <dd>One or more DNS aliases to associate with a container. </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--es-startup-timeout <var>Duration</var></synph></dt>
+          <dd>The number of seconds to wait for Elasticsearch to complete its startup. The default
+            value is 600 seconds (10 minutes).</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--max-container-age <var>Duration</var></synph></dt>
+          <dd>The number of seconds to wait before removing a stopped container. The default value
+            is 86400 seconds (24 hours), unless <varname>SERVICED_MAX_CONTAINER_AGE</varname> is set
+            in the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--max-dfs-timeout <var>Duration</var></synph></dt>
+          <dd>The number of seconds to wait for a snapshot to complete. The default value is 300
+            seconds (5 minutes).</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--virtual-address-subnet <var>Subnet</var></synph></dt>
+          <dd>The 16-bit private subnet to use for virtual IPv4 addresses. The default value is
+            10.3, unless <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the
+            configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--master-pool-id <var>Pool-ID</var></synph></dt>
+          <dd>The name of the resource pool to which the <cmdname>serviced</cmdname> instance
+            configured as master belongs. The default value of <varname>Pool-ID</varname> 
+            is <codeph>default</codeph>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--admin-group <var>Group</var></synph></dt>
+          <dd>The name of the Linux group on the <cmdname>serviced</cmdname> master host 
+            whose members are authorized to use the <cmdname>serviced</cmdname> web interface.
+            On Ubuntu systems, the default value of <varname>Group</varname> is <codeph>sudo</codeph>;
+            on RHEL/CentOS systems, the default is <codeph>wheel</codeph>. If 
+            <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the configuration file,
+            its value is used instead of the default.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--report-stats</synph></dt>
+          <dd>Enable reporting statistics in a container.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--host-stats <var>Host</var><delim>:</delim><var>Port</var></synph></dt>
+          <dd>The endpoint of the OpenTSDB reader daemon, for <cmdname>serviced</cmdname> statistics.
+            The default value of <varname>Host</varname> is the IP address of the master host,
+            and the default value of <varname>Port</varname> is 8443. If 
+            <varname>SERVICED_STATS_PORT</varname> is set in the configuration file,
+            its value is used instead of the default endpoint.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--stats-period <var>Duration</var></synph></dt>
+          <dd>The number of seconds to wait between polls (health checks) of hosts in resource pools. 
+            The default value of <varname>Duration</varname> is 10, unless
+            <varname>SERVICED_STATS_PERIOD</varname> is set in the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mc-username <var>User</var></synph></dt>
+          <dd>The username of the OpenTSDB account that MetricConsumer uses gain access to
+            data stored by <cmdname>serviced</cmdname>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mc-password <var>Password</var></synph></dt>
+          <dd>The password of the OpenTSDB account that MetricConsumer uses gain access to
+            data stored by <cmdname>serviced</cmdname>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--cpuprofile</synph></dt>
+          <dd>Instructs a container to write its CPU profile to a file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--isvcs-env <var>Option</var>
+            <delim>[</delim>--isvcs-env <var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>Arguments to pass to internal services. The default value is no arguments, unless
+            <varname>SERVICED_ISVCS_ENV_[0-9]+</varname> is set in the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--debug-port <var>Port</var></synph></dt>
+          <dd>The port on which <cmdname>serviced</cmdname> listens for HTTP requests 
+            for the <xref keyref="url-go-profiler">Go profiler</xref>. The default value of <varname>Port</varname>
+            is 6006, unless <varname>SERVICED_DEBUG_PORT</varname> is set in the configuration file. To stop listening
+            for requests, set the value to <codeph>-1</codeph>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--max-rpc-clients <var>Count</var></synph></dt>
+          <dd>The maximum number of clients the <cmdname>serviced</cmdname> RPC endpoint supports.
+            The default value is 3, unless <varname>SERVICED_MAX_RPC_CLIENTS</varname> is set in 
+            the configuration file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--rpc-dial-timeout <var>Duration</var></synph></dt>
+          <dd>The number of seconds <cmdname>serviced</cmdname> waits before giving up on
+          attempts to connect to the RPC endpoint on the master host. </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--logtostderr</synph></dt>
+          <dd>Write log messages to STDERR instead of the system log.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--alsologtostderr</synph></dt>
+          <dd>Write log messages to STDERR as well as the system log.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--logstashurl
+            <var>Host</var><delim>:</delim><var>Port</var></synph></dt>
+          <dd>The <xref keyref="url-logstash">logstash</xref> endpoint to which log data are sent. 
+            The default value of <varname>Host</varname> is the IP address of the master host, 
+            and the default value of <varname>Port</varname> is 5042. If 
+            <varname>SERVICED_LOG_ADDRESS</varname> is set in the configuration file,
+            its value is used instead of the default endpoint.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--logstash-es
+            <var>Host</var><delim>:</delim><var>Port</var></synph></dt>
+          <dd>The administrative endpoint of the <xref keyref="url-logstash">logstash</xref> service.
+            The default value of <varname>Host</varname> is the IP address of the master host, 
+            and the default value of <varname>Port</varname> is 9100. If 
+            <varname>SERVICED_LOGSTASH_ES</varname> is set in the configuration file,
+            its value is used instead of the default endpoint.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--logstash-max-days <var>Duration</var></synph></dt>
+          <dd>The maximum number of days to keep data in the logstash server before purging it.
+            The default value of <varname>Duration</varname> is 1, 
+            unless <varname>SERVICED_LOGSTASH_MAX_DAYS</varname> is set in the configuration file.
+            When this argument and <codeph>--logstash-max-size</codeph> are used at the same time, 
+            both conditions are evaluated and enforced.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--logstash-max-size <var>Quantity</var></synph></dt>
+          <dd>The maximum amount of logstash data to keep, in gigabytes.
+            The default value of <varname>Quantity</varname> is 10, 
+            unless <varname>SERVICED_LOGSTASH_MAX_SIZE</varname> is set in the configuration file.
+            When this argument and <codeph>--logstash-max-days</codeph> are used at the same time, 
+            both conditions are evaluated and enforced.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--v <var>Level</var></synph></dt>
+          <dd>The relative amount of INFO messages <cmdname>serviced</cmdname> writes to the system
+            log. The value of <varname>Level</varname> may be 0 (minimum) to 5 (maximum). The
+            default value is 0, unless <varname>SERVICED_LOG_LEVEL</varname> is set in the
+            configuration file. </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--stderrthreshold <var>Level</var></synph></dt>
+          <dd>Write log messages at or above <varname>Level</varname> to STDERR, 
+            in addition to the system log. The value of <varname>Level</varname> may be 
+            0 (INFO), 1 (WARNING), 2 (ERROR), or 3 (FATAL). The default value is 2.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--vmodule</synph></dt>
+          <dd>Module-specific logging. For more information, refer to 
+            the <xref keyref="url-google-logging">Google Logging</xref> documentation.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--log_backtrace_at <var>File</var><delim>:</delim><var>Line</var></synph></dt>
+          <dd>Emit a stack trace when logging hits the specified line and file.</dd>
+        </dlentry>
+        <!-- 
+        <dlentry>
+          <dt><synph>- -generate-bash-completion</synph></dt>
+          <dd></dd>
+        </dlentry>
+        -->
+        <dlentry>
+          <dt><synph>--version</synph></dt>
+          <dd>Display minimal version information about the <cmdname>serviced</cmdname> binary. To
+            display additional information, use the <cmdname>serviced version</cmdname>
+            command.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><delim>&#91;</delim>--help<delim>|</delim>--h<delim>&#93;</delim></synph></dt>
+          <dd>Display help information.</dd>
+        </dlentry>
+      </dl>    
+    </section>
+   
+    <section>
+      <title>COMMANDS</title>
+      <dl>
+        <dlentry>
+          <dt><synph><kwd>backup</kwd></synph></dt>
+          <dd>Copy all templates and services into a <cmdname>tar</cmdname> archive file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>docker</kwd></synph></dt>
+          <dd>Administer Docker.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><delim>[</delim><kwd>help</kwd><delim>|</delim><kwd>h</kwd><delim>]</delim></synph></dt>
+          <dd>Display a global or command-specific help message.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>host</kwd></synph></dt>
+          <dd>Administer hosts.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>log</kwd></synph></dt>
+          <dd>Administer logs.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>metric</kwd></synph></dt>
+          <dd>Administer metrics.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>pool</kwd></synph></dt>
+          <dd>Administer resource pools.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>restore</kwd></synph></dt>
+          <dd>Reconstruct templates and services from a a <cmdname>tar</cmdname> archive file
+            created with <cmdname>backup</cmdname>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>script</kwd></synph></dt>
+          <dd>Administer services.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>service</kwd></synph></dt>
+          <dd>Administer services.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>snapshot</kwd></synph></dt>
+          <dd>Administer snapshots.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>template</kwd></synph></dt>
+          <dd>Administer templates.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>version</kwd></synph></dt>
+          <dd>Display <cmdname>serviced</cmdname> version information.</dd>
+        </dlentry>
+      </dl>    
+    </section>
+    
+    <section>
+      <title>INVOCATION</title>
+      <p>Service (daemon) control commands include start, stop and reload. The reload
+      command sends <codeph>SIGHUP</codeph> to the daemon, which restarts all internal
+        services except ZooKeeper.</p>
+      <ul>
+        <li>RHEL/CentOS: <codeph>sudo systemctl [start|stop|reload] serviced</codeph></li>
+        <li>Ubuntu: <codeph>sudo [start|stop|reload] serviced</codeph></li>
+      </ul>
+    </section>
+    
+    <section>
+      <title>MISCELLANEOUS</title>
+      <p>Sending <codeph>SIGUSR1</codeph> to the <cmdname>serviced</cmdname>
+        process toggles the log level between 0 and 2.</p>
+      <p>To attach to a container running on a remote host, log in to the
+        container from the <cmdname>serviced</cmdname> master host.
+        If you are running a Linux shell on an agent host, specify the 
+        <codeph>--endpoint</codeph> option in the <cmdname>serviced</cmdname> 
+        invocation.</p>
+      <p><cmdname>serviced</cmdname> relies on Docker, and some administration
+        procedures include <cmdname>docker</cmdname> commands. However, commands
+        that manipulate containers directly, such as <codeph>docker pause</codeph>,
+        should not be used when <cmdname>serviced</cmdname> is running. </p>
+    </section>
+    
+    <section>
+      <title>ENVIRONMENT</title>
+      <dl>
+        <dlentry>
+          <dt><varname>SERVICED_HOME</varname></dt>
+          <dd>The install path of <cmdname>serviced</cmdname>. 
+            The default value is <filepath>/opt/serviced</filepath>.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    
+    <section>
+      <title>FILES</title>
+      <p><filepath>/etc/default/serviced</filepath></p>
+    </section>
+    
+  </refbody>
+</reference>

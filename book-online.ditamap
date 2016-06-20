@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-upgrade"/></mainbooktitle>
+    <mainbooktitle>Control Center Online Help</mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,19 +11,19 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="1" modification="x"/>        
+        <vrm version="1" release="1" modification="x"/>
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.169</bookpartno>
+      <bookpartno>1080.16.167</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
         <year>2016</year>
       </copyrfirst>
       <bookowner>
-        <organization>Zenoss, Inc., 11305 Four Points Drive, 
-          Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>        
+        <organization>Zenoss, Inc., 11305 Four Points Drive,
+          Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>
       </bookowner>
     </bookrights>
     <data conkeyref="data/zentm"/>
@@ -40,16 +40,30 @@
     <topicgroup id="NATIONAL">
       <mapref href="../dox.shared/keys-cc.ditamap" format="ditamap"/>
     </topicgroup>
-
     <topicgroup id="LOCAL">
-      <mapref href="keys-shared.ditamap" format="ditamap" />
-      <mapref href="keys-upgrades.ditamap" format="ditamap" />
+      <mapref href="keys-urls.ditamap" format="ditamap" />
+      <mapref href="keys-online.ditamap" format="ditamap" />
       <mapref href="keys-versions.ditamap" format="ditamap" />
     </topicgroup>
-	  <topicref href="front/preface-upgrade.dita"/>
+    <!-- <topicref href="front/preface-online.dita"/> -->
+    <booklists>
+      <toc/>
+    </booklists>
   </frontmatter>
+  <chapter href="admin/admin.ditamap" format="ditamap"/>
+  <chapter href="gui/gui.ditamap" format="ditamap"/>
+  <!-- 
+  <chapter href="svcdef/svcdef.ditamap" format="ditamap"/> 
+  -->
+  <chapter href="cli/cli.ditamap" format="ditamap"/>
   
-  <chapter href="upgrade/prepare/prepare.ditamap" format="ditamap"/>
-  <chapter href="upgrade/perform/perform.ditamap" format="ditamap"/>
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref keyref="gl-service-definition"/>
+        <topicref keyref="gl-service-template"/>
+      </glossarylist>
+    </booklists>
+  </backmatter>
   
 </bookmap>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>User interface reference</title>
+   <chapter href="gui.dita">
+    <topicref href="nav-menubar.dita"/>
+     <topicref href="initial.dita"/>
+     
+     <topicref href="app.dita">
+       <topicref href="app-detail.dita">
+         <topicref href="app-detail-control.dita"/>
+       
+       <topicref href="app-detail-vhosts.dita">
+         <topicref href="add-vhost.dita"/>
+       </topicref>
+       
+       <topicref href="app-detail-ip-assign.dita">
+         <topicref href="assign-ip.dita"/>
+       </topicref>
+
+       <topicref href="app-detail-config.dita">
+         <topicref href="app-edit-config.dita"/>
+       </topicref>
+       
+       <topicref href="app-detail-services.dita"/>
+       
+       <topicref href="app-detail-schedule.dita"/>
+     </topicref>
+       <topicref href="internal-svcs.dita"/>
+       <!-- <topicref href="svc-details.dita"/> -->
+     </topicref>
+     
+     <topicref href="pools.dita">
+       <topicref href="add-pool.dita"/>
+     </topicref>
+     <topicref href="hosts.dita">
+       <topicref href="hosts-details.dita"/>
+       <topicref href="add-host.dita"/>
+     </topicref>
+     <topicref href="logs.dita"/>
+   </chapter>
+   
+</bookmap>

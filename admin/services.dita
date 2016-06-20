@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>REPLACEME! ZENOSS PLATFORM services</title>
+  <refbody>
+    <section>
+      <p></p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Service</entry>
+              <entry>Type</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry>statefulless</entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>CLI reference</title>
+   <chapter href="cli.dita">
+      <topicref href="invoking-serviced.dita"/>
+      <topicref href="serviced.dita"/>
+      <topicref href="serviced-service.dita"/>
+      <!-- <topicref href="service-clone.dita"/> -->
+      <topicref keyref="serviced-vars"/>
+      <topicref href="script.dita"/>
+   </chapter>
+</bookmap>

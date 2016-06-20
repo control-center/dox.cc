@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Deploying multiple instances of a service</title>
+  <taskbody>
+    <context><ph keyref="nm-cc"/> can not deploy more than one instance of an application
+      that includes virtual host names, unless the virtual host names are unique. Follow this
+      procedure to modify an application service template and deploy multiple instances of an
+      application.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host as a user with
+          read and write privileges in <filepath>/opt/serviced/templates</filepath>.</cmd>
+        <choices>
+          <choice>For Ubuntu hosts, log in as a user with <codeph>sudo</codeph> privileges.</choice>
+          <choice>For RHEL or CentOS hosts, log in as <codeph>root</codeph>.</choice>
+        </choices>
+      </step>
+      <step>
+        <cmd>Change directory to the <ph keyref="nm-cc"/> templates directory,
+          and copy the template file to modify.</cmd>
+        <stepxmp><codeblock>cd /opt/serviced/templates
+sudo cp <varname>App-Template</varname>.json <varname>App-Template-Copy</varname>.json</codeblock></stepxmp>
+      </step>
+      <step>
+        <cmd>Use a text editor to make the following changes to the new service template file:</cmd>
+        <substeps>
+          <substep importance="optional">
+            <cmd>Change the value of the <codeph>Name</codeph> field on line 3.</cmd>
+            <info>This change differentiates application service templates.</info>
+          </substep>
+          <substep>
+            <cmd>Change the values of the defined <codeph>VHosts</codeph> fields in all
+              subservice <codeph>Endpoints</codeph> objects.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Use <cmdname>serviced</cmdname> to add the modified template.</cmd>
+        <stepxmp><codeblock>sudo serviced template add <varname>App-Template-Copy</varname>.json</codeblock></stepxmp>
+      </step>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> web interface, and deploy the new
+          application.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

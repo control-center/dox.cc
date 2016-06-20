@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Reducing high load averages on AWS hosts</title>
+  <taskbody>
+    <context>
+      <p>When Docker is using the <codeph>devicemapper</codeph> storage driver, a <ph keyref="nm-cc"/> instance on an Amazon Web Services host may experience persistent,
+        high averages for CPU load.</p>
+      <p>To diagnose and remedy this condition, perform this procedure.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host or a resource pool host as a user with
+          <cmdname>sudo</cmdname> and <cmdname>docker</cmdname> privileges.</cmd>
+      </step>
+      <step>
+        <cmd>Display information about Docker.</cmd>
+        <stepxmp><codeblock>sudo docker info | grep -A 2 'Storage Driver:'</codeblock></stepxmp>
+        <info>Sample
+          output:<codeblock>Storage Driver: devicemapper
+ Root Dir: /var/lib/docker/devicemapper
+ Dirs: 21</codeblock>
+        </info>
+        <choices>
+          <choice>If the storage driver is <codeph>devicemapper</codeph>, continue this procedure.</choice>
+          <choice>If the storage driver is not <codeph>devicemapper</codeph>, stop this procedure
+            The cause of high load averages lies elsewhere.</choice>
+        </choices>
+      </step>
+      <step>
+        <cmd>Stop the <cmdname>serviced</cmdname> and <cmdname>docker</cmdname> daemons.</cmd>
+        <stepxmp><codeblock>sudo stop serviced &#38;&#38; sudo stop docker</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create a variable for the Docker defaults file on your platform.</cmd>
+        <choices>
+          <choice>RHEL/CentOS hosts: <userinput>DEFAULTS=/etc/sysconfig/docker</userinput></choice>
+          <choice>Ubuntu hosts: <userinput>DEFAULTS=/etc/default/docker</userinput></choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Edit the Docker defaults file.</cmd>
+        <info>The DOCKER_OPTS variable specifies startup options for the <cmdname>docker</cmdname>
+          daemon.</info>
+        <stepxmp><codeblock>grep '^[^#]*DOCKER_OPTS' $DEFAULTS</codeblock></stepxmp>
+        <choices>
+          <choice>
+            <p>If the preceding command returns a result, add the required option to the existing
+              options.</p>
+            <codeblock>reqopt='--storage-opt dm.blkdiscard=false' 
+opt=$(grep '^[^#]*DOCKER_OPTS' $DEFAULTS)
+opt=${opt#*=}; optqc=${opt:0:1}; optlen=${#opt}
+opt=${opt:1:($optlen-2)}
+MYOPT="${optqc}${opt} ${reqopt}${optqc}"
+sudo sed -i -e \
+  's|^[^#]*DOCKER_OPTS=.*$|DOCKER_OPTS='"${MYOPT}"'|' $DEFAULTS</codeblock>
+          </choice>
+          <choice>
+            <p>If the preceding command does not return a result, define the DOCKER_OPTS variable
+              with the required option.</p>
+            <codeblock>REQOPT='\nDOCKER_OPTS="--storage-opt dm.blkdiscard=false"'
+sudo sed -i -e '/^#DOCKER_OPTS=/ s|$|'"${REQOPT}"'|' $DEFAULTS</codeblock>
+          </choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Start the <cmdname>docker</cmdname> and <cmdname>serviced</cmdname> daemons.</cmd>
+        <stepxmp><codeblock>sudo start docker &#38;&#38;  sudo start serviced</codeblock></stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

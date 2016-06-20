@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Navigation</title>
+  <conbody>
+    <p>Use the menu bar at the top of the <ph keyref="nm-cc"/> web-based user interface to
+      access different functional areas of the application.</p>
+    <p>
+      <fig id="fig_z1t_gss_zr">
+        <image id="image_otz_5xs_zr" keyref="png-menubar" scale="50"/>
+      </fig>
+    </p>
+  </conbody>
+</concept>

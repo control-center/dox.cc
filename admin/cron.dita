@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Maintenance scripts</title>
+  <refbody>
+    <section>
+      <p>During installation, <ph keyref="nm-cc"/> adds 
+        the <filepath>serviced</filepath> script to the  
+        <cmdname>cron</cmdname> daily directory, 
+        <filepath>/etc/cron.daily</filepath>. The
+      script includes just one entry, which specifies how <cmdname>serviced</cmdname> 
+      logs are managed.</p>
+      <p>An additional entry may be made to the <filepath>/etc/cron.daily/serviced</filepath>
+        script, to manage Btrfs file systems. The additional entry is the absolute path of the
+        management script, <filepath>/opt/serviced/bin/serviced-container-cleanup</filepath>.</p>
+    </section>
+  </refbody>
+</reference>
