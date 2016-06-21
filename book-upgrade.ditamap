@@ -42,9 +42,9 @@
     </topicgroup>
 
     <topicgroup id="LOCAL">
-      <mapref href="keys-shared.ditamap" format="ditamap" />
-      <mapref href="keys-upgrades.ditamap" format="ditamap" />
-      <mapref href="keys-versions.ditamap" format="ditamap" />
+      <mapref href="maps/keys-shared.ditamap" format="ditamap" />
+      <mapref href="maps/keys-upgrades.ditamap" format="ditamap" />
+      <mapref href="maps/keys-versions.ditamap" format="ditamap" />
     </topicgroup>
 	  <topicref href="front/preface-upgrade.dita"/>
   </frontmatter>

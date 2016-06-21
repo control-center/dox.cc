@@ -3,18 +3,11 @@
 <concept id="conceptid">
   <title><ph keyref="nm-cc"/></title>
   <conbody>
-    <p><ph keyref="nm-cc"/> is an open source application, written by <ph
-        conkeyref="names/company"/>, that uses <xref keyref="url-docker">Docker</xref> to greatly
-      improve the speed and flexibility of deploying <ph conkeyref="names/company"/> applications
-      and services. It provides application management and system orchestration for the <ph
-        conkeyref="names/company"/> platform and is highly extensible.<draft-comment
-        author="smillion">Explain what we mean by it is highly extensible. Give an
-        example.</draft-comment></p>
-    <p>The <ph keyref="nm-cc"/> provides a browser-based graphical user interface and a
-      command line interface, named <cmdname>serviced</cmdname>. You can perform most operations
-      from either interface.</p>
-    <draft-comment author="smillion">Sentence below is from the 1.0 Release. Question: Why did we
-      refer to CC as a PaaS? <p><ph keyref="nm-cc"/> is a Platform-as-a-Service (PaaS)
-        management system for services. </p></draft-comment>    
+    <p><ph keyref="nm-cc"/> is a Platform-as-a-Service (PaaS) management system built on <xref
+        keyref="url-docker">Docker</xref> that quickly and flexibly deploys applications and
+      services. </p>
+    <p><ph keyref="nm-cc"/> provides a browser-based graphical user interface and a command line
+      interface, named <cmdname>serviced</cmdname>. You can perform most operations from either
+      interface.</p>    
   </conbody>
 </concept>

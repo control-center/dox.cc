@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Local topics</title>
+  <topicgroup>
+          <keydef keys="ref-svcdef-object "
+                  href="../svcdef/svcdef-object.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-configFile "
+                  href="../svcdef/svcdef-configFile.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-datapoint "
+                  href="../svcdef/svcdef-datapoint.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-endpoint "
+                  href="../svcdef/svcdef-endpoint.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template-bytesToMB "
+                  href="../svcdef/svcdef-go-template-bytesToMB.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template-child "
+                  href="../svcdef/svcdef-go-template-child.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template-each "
+                  href="../svcdef/svcdef-go-template-each.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template-parent "
+                  href="../svcdef/svcdef-go-template-parent.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template-percentScale "
+                  href="../svcdef/svcdef-go-template-percentScale.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template-plus "
+                  href="../svcdef/svcdef-go-template-plus.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-go-template "
+                  href="../svcdef/svcdef-go-template.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-graphConfig "
+                  href="../svcdef/svcdef-graphConfig.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-health "
+                  href="../svcdef/svcdef-health.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-logconfig "
+                  href="../svcdef/svcdef-logconfig.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-metric "
+                  href="../svcdef/svcdef-metric.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-metricConfig "
+                  href="../svcdef/svcdef-metricConfig.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-object "
+                  href="../svcdef/svcdef-object.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-task "
+                  href="../svcdef/svcdef-task.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-template "
+                  href="../svcdef/svcdef-template.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-thresholdConfig "
+                  href="../svcdef/svcdef-thresholdConfig.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-svcdef-volume "
+                  href="../svcdef/svcdef-volume.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-add-host "
+                  href="../gui/add-host.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-add-pool "
+                  href="../gui/add-pool.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-add-vhost "
+                  href="../gui/add-vhost.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-app-detail-services "
+                  href="../gui/app-detail-services.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-app-edit-config "
+                  href="../gui/app-edit-config.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-assign-ip "
+                  href="../gui/assign-ip.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-hosts-details "
+                  href="../gui/hosts-details.dita"
+                  format="dita"
+          />
+          <keydef keys="ref-xface-svc-details "
+                  href="../gui/svc-details.dita"
+                  format="dita"
+          />
+  </topicgroup>
+</map>

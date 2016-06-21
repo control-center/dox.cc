@@ -29,21 +29,21 @@
     <data conkeyref="data/zentm"/>
   </bookmeta>
   <frontmatter>
-    <topicgroup id="GLOBAL">
-      <mapref href="../dox.tools/vars/keydefs-vars-2.ditamap" format="ditamap"/>
-      <mapref href="../dox.tools/vars/keywords-product.ditamap" format="ditamap"/>
-      <mapref href="../dox.tools/subjectScheme.ditamap" format="ditamap"/>
-      <mapref href="../dox.shared/keydefs-glossary.ditamap" format="ditamap"/>
+    <topicgroup>
+      <mapref href="../dox.tools/vars/keys-vars-cc.ditamap" format="ditamap"/>
+      <mapref href="../dox.tools/subjectScheme-cc.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keydefs-urls.ditamap" format="ditamap"/>
       <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup id="NATIONAL">
+    <topicgroup>
+      <mapref href="../dox.shared/keys-glossary-cc.ditamap" format="ditamap"/>
+      <mapref href="../dox.tools/vars/keywords-cc.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keys-cc.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup id="LOCAL">
-      <mapref href="keys-urls.ditamap" format="ditamap" />
-      <mapref href="keys-online.ditamap" format="ditamap" />
-      <mapref href="keys-versions.ditamap" format="ditamap" />
+    <topicgroup>
+      <mapref href="maps/keys-urls.ditamap" format="ditamap" />
+      <mapref href="maps/keys-online.ditamap" format="ditamap" />
+      <mapref href="maps/keys-versions.ditamap" format="ditamap" />
     </topicgroup>
     <!-- <topicref href="front/preface-online.dita"/> -->
     <booklists>
