@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <title>Names by @product</title>
+  <topicgroup>
+    <keydef keys="nm-cc">
+      <topicmeta>
+        <keywords>
+          <keyword>Control Center</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef> 
+  </topicgroup>
+</map>
+

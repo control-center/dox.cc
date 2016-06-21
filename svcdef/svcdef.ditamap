@@ -2,30 +2,30 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Defining a service</title>
-   <chapter href="topics/svcdef.dita">
-     <topicref href="topics/svcdef-template.dita"/>
-     <topicref href="topics/svcdef-object.dita"> 
-       <topicref href="topics/svcdef-configFile.dita"/>
-       <topicref href="topics/svcdef-endpoint.dita"/>
-       <topicref href="topics/svcdef-task.dita"/>
-       <topicref href="topics/svcdef-volume.dita"/>
-       <topicref href="topics/svcdef-logconfig.dita"/>
-       <topicref href="topics/svcdef-health.dita"/>
-       <topicref href="topics/svcdef-metricConfig.dita">
-         <topicref href="topics/svcdef-metric.dita"/>
+   <chapter href="svcdef.dita">
+     <topicref href="template.dita"/>
+     <topicref href="object.dita"> 
+       <topicref href="configFile.dita"/>
+       <topicref href="endpoint.dita"/>
+       <topicref href="task.dita"/>
+       <topicref href="volume.dita"/>
+       <topicref href="logconfig.dita"/>
+       <topicref href="health.dita"/>
+       <topicref href="metricConfig.dita">
+         <topicref href="metric.dita"/>
        </topicref>
-       <topicref href="topics/svcdef-graphConfig.dita">
-         <topicref href="topics/svcdef-datapoint.dita"/>
+       <topicref href="graphConfig.dita">
+         <topicref href="datapoint.dita"/>
        </topicref>
-       <topicref href="topics/svcdef-thresholdConfig.dita"/>
+       <topicref href="thresholdConfig.dita"/>
      </topicref>
-     <topicref href="topics/svcdef-go-template.dita">
-       <topicref href="topics/svcdef-go-template-bytesToMB.dita"/>
-       <topicref href="topics/svcdef-go-template-child.dita"/>
-       <topicref href="topics/svcdef-go-template-each.dita"/>
-       <topicref href="topics/svcdef-go-template-parent.dita"/>
-       <topicref href="topics/svcdef-go-template-percentScale.dita"/>
-       <topicref href="topics/svcdef-go-template-plus.dita"/>
+     <topicref href="go-template.dita">
+       <topicref href="go-template-bytesToMB.dita"/>
+       <topicref href="go-template-child.dita"/>
+       <topicref href="go-template-each.dita"/>
+       <topicref href="go-template-parent.dita"/>
+       <topicref href="go-template-percentScale.dita"/>
+       <topicref href="go-template-plus.dita"/>
      </topicref>
    </chapter>
 </bookmap>

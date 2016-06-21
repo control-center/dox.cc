@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
+<topic id="source">
+  <title>EDITING THIS DOCUMENT IS FUTILE</title>
+   <body>
+  <section id="zenoss-cc">
+      <title>Zenoss Control Center overrides</title>
+
+      <p><cite id="cite-install">Control Center Installation Guide</cite></p>
+      <p><ph id="ph-install">Control Center Installation Guide</ph></p>
+
+      <p><cite id="cite-notes">Control Center Release Notes</cite></p>
+      <p><ph id="ph-notes">Control Center Release Notes</ph></p>
+
+      <p><cite id="cite-upgrade">Control Center Upgrade Guide</cite></p>
+      <p><ph id="ph-upgrade">Control Center Upgrade Guide</ph></p>
+
+    </section>
+  </body>
+</topic>

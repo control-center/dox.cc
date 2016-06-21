@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <title>Glossary</title>
+  <!-- Removing an entry from this file requires a note from your mother -->
+  <topicgroup>
+    <keydef keys="gl-service-definition"
+            href="glossary/service-definition.dita"
+            format="dita"
+    />
+    <keydef keys="gl-service-template"
+            href="glossary/service-template.dita"
+            format="dita"
+    />
+  </topicgroup>
+</map>

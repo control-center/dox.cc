@@ -20,7 +20,7 @@
       </step>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> master 
-          host <ph conkeyref="strings/login-root-sudo"/>.</cmd>
+          host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       <step importance="optional">
         <cmd>Update variables in <filepath>/etc/default/serviced</filepath>, if necessary.</cmd>
@@ -57,7 +57,7 @@
         <info>Perform the following substeps on each resource pool host:</info>
         <substeps>
           <substep>
-            <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root-sudo"/>.</cmd>
+            <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
           </substep>
           <substep>
             <cmd>Open <filepath>/etc/default/serviced</filepath> with a text editor, and then change

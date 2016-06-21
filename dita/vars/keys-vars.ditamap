@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <title>Publication titles and other strings</title>
+  <topicgroup>
+    
+    <keydef keys="pubs" 
+            product="cc" 
+            href="pubs-cc.dita"
+    />
+    <keydef keys="data" 
+            product="cc" 
+            href="tm-cc.dita"
+    />
+    <keydef keys="strings" 
+            href="strings.dita"
+    />
+
+  </topicgroup>
+</map>

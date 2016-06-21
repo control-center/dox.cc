@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <title>Shared URLs</title>
+  <!-- Removing an entry from this file requires a note from your mother -->
+  <topicgroup>
+    <keydef keys="url-zookeeper "
+      href="http://zookeeper.apache.org/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-logstash "
+      href="http://logstash.net/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-go-profiler "
+      href="http://golang.org/pkg/net/http/pprof/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zenoss-github "
+      href="http://github.com/zenoss"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zenpack-catalog "
+      href="http://wiki.zenoss.org/ZenPack_Catalog"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zenpack-forum "
+      href="http://community.zenoss.org/community/forums/zenoss-zenpacks"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zenpack-dev-forum "
+      href="http://community.zenoss.org/community/zenpack_development"
+      format="html" scope="external"
+    />
+    <keydef keys="url-community-forum"
+      href="http://www.zenoss.org/forum"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zenpacklib "
+      href="http://zenpacklib.zenoss.com/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker "
+      href="http://docs.docker.com/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-leapfile "
+      href="http://zenoss.leapfile.net/fts/drop/custom/portal/Login.jsp"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zenoss-docs "
+      href="http://docs.zenoss.com"
+      format="html" scope="external"
+    />
+    <keydef keys="url-putty "
+      href="http://www.chiark.greenend.org.uk/~sgtatham/putty/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-curl "
+      href="http://curl.haxx.se/dlwiz/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-golang-templates "
+      href="http://golang.org/pkg/text/template/"
+      format="html" scope="external"
+    />
+  </topicgroup>
+  
+  <!-- From install guide -->
+  <topicgroup>
+    <keydef keys="url-rfc-1918 "
+      href="http://tools.ietf.org/html/rfc1918"
+      format="html" scope="external"
+    />
+    <keydef keys="url-selinux "
+      href="http://selinuxproject.org/page/Main_Page"
+      format="html" scope="external"
+    />
+    <keydef keys="url-redhat-cluster "
+      href="http://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Cluster_Suite_Overview/s1-rhcs-intro-CSO.html"
+      format="html" scope="external"
+    />
+    <keydef keys="url-rabbitmq "
+      href="http://www.rabbitmq.com/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-net-config "
+      href="http://docs.docker.com/engine/userguide/networking/default_network/build-bridges/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-firewalld "
+      href="http://fedoraproject.org/wiki/FirewallD?rd=FirewallD/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-xfs "
+      href="http://en.wikipedia.org/wiki/XFS"
+      format="html" scope="external"
+    />
+    <keydef keys="url-percona-toolkit "
+      href="http://www.percona.com/software/percona-toolkit"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-images "
+      href="http://docs.docker.com/userguide/dockerimages/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-quilt "
+      href="http://savannah.nongnu.org/projects/quilt"
+      format="html" scope="external"
+    />
+    <keydef keys="url-quilt-download "
+      href="http://download.savannah.gnu.org/releases/quilt/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-account "
+      href="http://hub.docker.com/account/signup/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-ufw "
+      href="http://help.ubuntu.com/community/UFW"
+      format="html" scope="external"
+    />
+    <keydef keys="url-rpcbin-bug "
+      href="http://bugzilla.redhat.com/show_bug.cgi?id=1171603"
+      format="html" scope="external"
+    />
+    <keydef keys="url-centos-install "
+      href="http://www.howtoforge.com/tutorial/centos-7.1-server/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-lvm "
+      href="http://www.debian-administration.org/article/410/A_simple_introduction_to_working_with_LVM"
+      format="html" scope="external"
+    />
+    <keydef keys="url-device-mapper "
+      href="http://en.wikipedia.org/wiki/Device_mapper"
+      format="html" scope="external"
+    />
+    <keydef keys="url-device-mapper-thin "
+      href="http://wiki.gentoo.org/wiki/Device-mapper#Thin"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-hub "
+      href="http://hub.docker.com/account/signup/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-snapshot "
+      href="http://en.wikipedia.org/wiki/Snapshot_%28computer_storage%29"
+      format="html" scope="external"
+    />
+    <keydef keys="url-thin-provisioning "
+      href="http://en.wikipedia.org/wiki/Thin_provisioning"
+      format="html" scope="external"
+    />
+    <keydef keys="url-pacemaker-clusters "
+      href="http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/ch04.html"
+      format="html" scope="external"
+    />
+    <keydef keys="url-drbd-ug "
+      href="http://www.drbd.org/users-guide/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-drbd-split-brain "
+      href="http://www.drbd.org/users-guide/s-resolve-split-brain.html"
+      format="html" scope="external"
+    />
+    <keydef keys="url-hastexo-split-brain "
+      href="http://www.hastexo.com/resources/hints-and-kinks/solve-drbd-split-brain-4-steps/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-elrepo "
+      href="http://elrepo.org/tiki/tiki-index.php"
+      format="html" scope="external"
+    />
+    <keydef keys="url-nano "
+      href="http://nano-editor.org/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-ucs-pm-page "
+      href="http://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-performance-manager/tsd-products-support-series-home.html"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zlib1 " 
+      href="http://communities.vmware.com/message/1858173"
+      format="html" scope="external"
+    />
+    <keydef keys="url-ntp " 
+      href="http://en.wikipedia.org/wiki/Network_Time_Protocol"
+      format="html" scope="external"
+    />
+    <keydef keys="url-nmtui " 
+      href="http://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Networking_Config_Using_nmtui.html"
+      format="html" scope="external"
+    />
+    <keydef keys="url-networkmanager " 
+      href="http://en.wikipedia.org/wiki/NetworkManager"
+      format="html" scope="external"
+    />
+    <keydef keys="url-root-cert " 
+      href="http://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-nmap-ncat " 
+      href="http://nmap.org/ncat/"
+      format="html" scope="external"
+    />
+  </topicgroup>
+  <topicgroup>
+    <!-- From Planning Guide -->
+    <keydef keys="url-cgroups "
+      href="http://en.wikipedia.org/wiki/Cgroups"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-arch "
+      href="http://docs.docker.com/engine/understanding-docker/"
+      format="html" scope="external"
+    />
+  </topicgroup>
+  
+  <!-- From upgrade guide -->
+  <topicgroup>
+    <keydef keys="url-btrfs-faq "
+      href="http://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-17653 "
+      href="http://github.com/docker/docker/issues/17653"
+      format="html" scope="external"
+    />
+    <keydef keys="url-toolbox-releases "
+      href="http://github.com/zenoss/zenoss.toolbox/releases"
+      format="html" scope="external"
+    />
+    <keydef keys="url-winscp "
+      href="http://winscp.net"
+      format="html" scope="external"
+    />
+    <keydef keys="url-toolbox-kb "
+      href="http://support.zenoss.com/hc/en-us/articles/203117595-How-To-Install-And-Use-the-zenoss-toolbox"
+      format="html" scope="external"
+    />
+    <keydef keys="url-toolbox-zodbscan "
+      href="http://support.zenoss.com/hc/en-us/articles/203118175"
+      format="html" scope="external"
+    />
+    <keydef keys="url-toolbox-findposkeyerror "
+      href="http://support.zenoss.com/hc/en-us/articles/203117795"
+      format="html" scope="external"
+    />
+    <keydef keys="url-toolbox-zenrelationscan "
+      href="http://support.zenoss.com/hc/en-us/articles/203121165"
+      format="html" scope="external"
+    />
+    <keydef keys="url-toolbox-zencatalogscan "
+      href="http://support.zenoss.com/hc/en-us/articles/203118075"
+      format="html" scope="external"
+    />
+    <keydef keys="url-docker-devicemapper "
+      href="http://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zk-commands "
+      href="http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_zkCommands"
+      format="html" scope="external"
+    />
+  </topicgroup>
+  
+  <!-- From docs.common -->
+  <topicgroup>
+    <keydef keys="oracle_jre_6u31 " 
+      href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jre-6u31-oth-JPR"
+      format="html"	scope="external"
+    />
+    <keydef keys="oracle_jre_7u51 " 
+      href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html"
+      format="html"	scope="external"
+    />
+    <keydef keys="oracle-jre7 " 
+      href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html"
+      format="html"	scope="external"
+    />
+    <keydef keys="service-now " 
+      href="http://www.servicenow.com/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-doc-zenoss-com " 
+      href="http://docs.zenoss.com/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-redis-centos-6 " 
+      href="http://serverfault.com/questions/667857/redis-installation-on-centos-6-5"
+      format="html" scope="external"
+    />
+  </topicgroup>
+  
+  <!-- From docs.platform.admin -->
+  <topicgroup>
+    <keydef keys="url-holt-winters-wiki " 
+      href="http://en.wikipedia.org/wiki/Holt-Winters"
+      format="html" scope="external"
+    />
+    <keydef keys="url-holt-winters-rrdcreate " 
+      href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html#IAberrant_Behavior_Detection_with_Holt_Winters_Forecasting"
+      format="html" scope="external"
+    />
+    <keydef keys="url-zope " 
+      href="http://en.wikipedia.org/wiki/Zope"
+      format="html" scope="external"
+    />
+    <keydef keys="url-nginx " 
+      href="http://en.wikipedia.org/wiki/Nginx"
+      format="html" scope="external" 
+    />
+    <keydef keys="url-zentrapkb " 
+      href="http://support.zenoss.com/hc/en-us/articles/207989223"
+      format="html" scope="external"
+    />
+    <keydef keys="url-rancid " 
+      href="http://www.shrubbery.net/rancid/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-viewvc " 
+      href="http://www.viewvc.org/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-kb-custom-props " 
+      href="http://support.zenoss.com/hc/en-us/articles/203074995-How-To-Add-Custom-Properties"
+      format="html" scope="external"
+    />
+  </topicgroup>
+    
+    <topicgroup>
+      <!-- Impact -->
+      <keydef keys="url-neo4j " 
+        href="http://neo4j.com/"
+        format="html" scope="external"
+      />
+    </topicgroup>
+  <topicgroup>
+    <!-- CC -->
+    <topicref keys="url-golang-text-template " 
+      href="http://golang.org/pkg/text/template/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    <topicref keys="url-docker " 
+      href="http://www.docker.com/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    <topicref keys="url-zookeeper " 
+      href="http://zookeeper.apache.org/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    <topicref keys="url-logstash " 
+      href="http://logstash.net/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    <topicref keys="url-kibana " 
+      href="http://www.elasticsearch.org/overview/kibana/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    <topicref keys="url-golang-fmt " 
+      href="http://golang.org/pkg/fmt/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    
+    <topicref keys="url-google-logging " 
+      href="http://google-glog.googlecode.com/svn/trunk/doc/glog.html"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+    <topicref keys="url-dockerfile " 
+      href="http://docs.docker.com/reference/builder/"
+      format="html"
+      scope="external"
+      processing-role="resource-only"
+    />
+  </topicgroup>
+</map>

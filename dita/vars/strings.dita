@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
+<topic id="strings">
+  <title>...as (root|zenoss|...)</title>
+  <body>
+    <p><ph id="login-root">as <codeph>root</codeph>, or as a user with superuser privileges</ph></p>
+    <p><ph id="login-serviced">as a user with <cmdname>serviced</cmdname> CLI privileges</ph></p>
+    <p><ph id="fmi-ext">For more information, refer to the</ph></p>
+    <p><ph id="fmi-int">For more information, see</ph></p>
+  </body>
+</topic>

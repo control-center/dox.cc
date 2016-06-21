@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
+<topic id="data">
+	<title>Data elements for trademarks</title>
+	<body>
+		<data id="zentm" name="trademarks">
+			<data name="trademark">Zenoss and the Zenoss logo are trademarks or registered trademarks
+				of Zenoss, Inc., in the United States and other countries. All other
+				trademarks, logos, and service marks are the property of Zenoss or other
+				third parties. Use of these marks is prohibited without the express
+				written consent of Zenoss, Inc., or the third-party owner.</data>
+			<data name="trademark">Linux is a registered trademark of Linus Torvalds.</data>
+			<data name="trademark">All other companies and products mentioned are 
+				trademarks and property of their respective owners.</data>
+		</data>
+	</body>
+</topic>

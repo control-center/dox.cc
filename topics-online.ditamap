@@ -4,119 +4,119 @@
  <title>Local topics</title>
   <topicgroup>
           <keydef keys="ref-svcdef-object "
-                  href="../svcdef/svcdef-object.dita"
+                  href="svcdef/object.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-configFile "
-                  href="../svcdef/svcdef-configFile.dita"
+                  href="svcdef/configFile.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-datapoint "
-                  href="../svcdef/svcdef-datapoint.dita"
+                  href="svcdef/datapoint.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-endpoint "
-                  href="../svcdef/svcdef-endpoint.dita"
+                  href="svcdef/endpoint.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template-bytesToMB "
-                  href="../svcdef/svcdef-go-template-bytesToMB.dita"
+                  href="svcdef/go-template-bytesToMB.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template-child "
-                  href="../svcdef/svcdef-go-template-child.dita"
+                  href="svcdef/go-template-child.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template-each "
-                  href="../svcdef/svcdef-go-template-each.dita"
+                  href="svcdef/go-template-each.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template-parent "
-                  href="../svcdef/svcdef-go-template-parent.dita"
+                  href="svcdef/go-template-parent.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template-percentScale "
-                  href="../svcdef/svcdef-go-template-percentScale.dita"
+                  href="svcdef/go-template-percentScale.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template-plus "
-                  href="../svcdef/svcdef-go-template-plus.dita"
+                  href="svcdef/go-template-plus.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-go-template "
-                  href="../svcdef/svcdef-go-template.dita"
+                  href="svcdef/go-template.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-graphConfig "
-                  href="../svcdef/svcdef-graphConfig.dita"
+                  href="svcdef/graphConfig.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-health "
-                  href="../svcdef/svcdef-health.dita"
+                  href="svcdef/health.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-logconfig "
-                  href="../svcdef/svcdef-logconfig.dita"
+                  href="svcdef/logconfig.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-metric "
-                  href="../svcdef/svcdef-metric.dita"
+                  href="svcdef/metric.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-metricConfig "
-                  href="../svcdef/svcdef-metricConfig.dita"
+                  href="svcdef/metricConfig.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-object "
-                  href="../svcdef/svcdef-object.dita"
+                  href="svcdef/object.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-task "
-                  href="../svcdef/svcdef-task.dita"
+                  href="svcdef/task.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-template "
-                  href="../svcdef/svcdef-template.dita"
+                  href="svcdef/template.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-thresholdConfig "
-                  href="../svcdef/svcdef-thresholdConfig.dita"
+                  href="svcdef/thresholdConfig.dita"
                   format="dita"
           />
           <keydef keys="ref-svcdef-volume "
-                  href="../svcdef/svcdef-volume.dita"
+                  href="svcdef/volume.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-add-host "
-                  href="../gui/add-host.dita"
+                  href="gui/add-host.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-add-pool "
-                  href="../gui/add-pool.dita"
+                  href="gui/add-pool.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-add-vhost "
-                  href="../gui/add-vhost.dita"
+                  href="gui/add-vhost.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-app-detail-services "
-                  href="../gui/app-detail-services.dita"
+                  href="gui/app-detail-services.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-app-edit-config "
-                  href="../gui/app-edit-config.dita"
+                  href="gui/app-edit-config.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-assign-ip "
-                  href="../gui/assign-ip.dita"
+                  href="gui/assign-ip.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-hosts-details "
-                  href="../gui/hosts-details.dita"
+                  href="gui/hosts-details.dita"
                   format="dita"
           />
           <keydef keys="ref-xface-svc-details "
-                  href="../gui/svc-details.dita"
+                  href="gui/svc-details.dita"
                   format="dita"
           />
   </topicgroup>

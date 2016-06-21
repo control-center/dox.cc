@@ -30,20 +30,18 @@
   </bookmeta>
   <frontmatter>
     <topicgroup>
-      <mapref href="../dox.tools/vars/keys-vars-cc.ditamap" format="ditamap"/>
-      <mapref href="../dox.tools/subjectScheme-cc.ditamap" format="ditamap"/>
-      <mapref href="../dox.shared/keydefs-urls.ditamap" format="ditamap"/>
+      <mapref href="dita/vars/keys-vars.ditamap" format="ditamap"/>
+      <mapref href="dita/vars/keywords.ditamap" format="ditamap"/>
+      <mapref href="dita/subjectScheme.ditamap" format="ditamap"/>
       <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="../dox.shared/keys-glossary-cc.ditamap" format="ditamap"/>
-      <mapref href="../dox.tools/vars/keywords-cc.ditamap" format="ditamap"/>
+      <mapref href="shared/keys-glossary.ditamap" format="ditamap"/>
+      <mapref href="shared/keys-urls.ditamap" format="ditamap"/>
       <mapref href="../dox.shared/keys-cc.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="maps/keys-urls.ditamap" format="ditamap" />
-      <mapref href="maps/keys-online.ditamap" format="ditamap" />
-      <mapref href="maps/keys-versions.ditamap" format="ditamap" />
+      <mapref href="topics-online.ditamap" format="ditamap" />
     </topicgroup>
     <!-- <topicref href="front/preface-online.dita"/> -->
     <booklists>
@@ -52,9 +50,7 @@
   </frontmatter>
   <chapter href="admin/admin.ditamap" format="ditamap"/>
   <chapter href="gui/gui.ditamap" format="ditamap"/>
-  <!-- 
   <chapter href="svcdef/svcdef.ditamap" format="ditamap"/> 
-  -->
   <chapter href="cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>

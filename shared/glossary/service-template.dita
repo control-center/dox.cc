@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>service template</glossterm>
+  <glossdef>A service template contains one or more service definitions, 
+    in JavaScript Object Notation (JSON) format.</glossdef>  
+</glossentry>

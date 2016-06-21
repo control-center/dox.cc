@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>service definition</glossterm>
+<glossdef>A service definition contains the information that 
+    <ph keyref="nm-cc"/> needs to start and manage a service,
+    in JavaScript Object Notation (JSON) format.</glossdef>  
+</glossentry>
