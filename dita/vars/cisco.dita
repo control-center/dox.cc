@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
+<topic id="source">
+	<title>Cisco definitions</title>
+	<body>
+		<section>
+			<p><ph id="support-site">the <xref format="html" scope="external"
+				href="http://www.cisco.com/cisco/web/support/index.html">Cisco Support</xref> site</ph></p>
+			
+			<p><ph id="company-address">170 West Tasman Dr., San Jose, CA 95134, U.S.A.</ph></p>
+			
+			<p><ph id="company">Cisco</ph></p>
+			<p><ph id="company-long">Cisco Systems, Inc.</ph></p>
+			<p><ph id="support">Cisco Support</ph></p>
+		</section>
+	</body>
+</topic>
+

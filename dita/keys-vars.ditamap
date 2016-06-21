@@ -4,16 +4,22 @@
   <title>Publication titles and other strings</title>
   <topicgroup>
     
+    <!-- 
+    <keydef keys="names" 
+            href="vars/cisco.dita"
+    />  -->
+
+    <keydef keys="names" 
+            href="vars/zenoss.dita"
+    />
     <keydef keys="pubs" 
-            product="cc" 
-            href="pubs-cc.dita"
+            href="vars/pubs.dita"
     />
     <keydef keys="data" 
-            product="cc" 
-            href="tm-cc.dita"
+            href="vars/tm.dita"
     />
     <keydef keys="strings" 
-            href="strings.dita"
+            href="vars/strings.dita"
     />
 
   </topicgroup>

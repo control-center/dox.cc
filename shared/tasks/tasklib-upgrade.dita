@@ -4,7 +4,7 @@
   <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
   <taskbody>
     <steps>
-
+      
       <step id="os-upgrade-online">
         <cmd>Upgrade the operating system, if necessary.</cmd>
         <substeps>
@@ -117,7 +117,7 @@ EOF</codeblock>
           </substep>
         </substeps>
       </step>
-
+      
       <step id="install-serviced">
         <cmd>Install <ph keyref="nm-cc"/>.</cmd>
         <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating a
@@ -192,8 +192,7 @@ EOF</codeblock>
             <cmd>Save the file and close the text editor.</cmd>
           </substep>
         </substeps>
-      </step>
-      
+      </step>      
     </steps>
   </taskbody>
 </task>

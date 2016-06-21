@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="shared">
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <taskbody>
+    
+    <section>
+      <!-- Using this in dox.cc -->
+      <ul id="master-ip-vars">
+        <li><varname>SERVICED_ZK</varname></li>
+        <li><varname>SERVICED_DOCKER_REGISTRY</varname></li>
+        <li><varname>SERVICED_ENDPOINT</varname></li>
+        <li><varname>SERVICED_LOG_ADDRESS</varname></li>
+        <li><varname>SERVICED_LOGSTASH_ES</varname></li>
+        <li><varname>SERVICED_STATS_PORT</varname></li>
+      </ul>
+    </section>
+    
+    
+  </taskbody>
+</task>

@@ -92,7 +92,7 @@
       </step>
       
       <step id="thinpool-rm">
-        <cmd>Create a thin pool for <ph keyref="nm-platform"/> data.</cmd>
+        <cmd>Create a thin pool for application data.</cmd>
         <substeps>
           <substep>
             <cmd>Identify the primary partition for the thin pool to create,
@@ -131,7 +131,7 @@
       
       <step id="app-set">
         <cmd>Configure <ph keyref="nm-cc"/> with the name of the thin pool for
-          <ph keyref="nm-platform"/> data.</cmd>
+          application data.</cmd>
         <info>
           <p>The <ph keyref="nm-cc"/> configuration file is <filepath>/etc/default/serviced</filepath>. 
             (For more information about
@@ -731,6 +731,25 @@ myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
         </substeps>
       </step>
       
+      <step id="zenoss-repo">  
+        <cmd>Install the <ph conkeyref="names/company"/> repository package.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Install the package.</cmd>
+            <stepxmp>
+              <codeblock>rpm -ivh http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Clean out the <cmdname>yum</cmdname> cache directory.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      
       <step id="fix-nfs">
         <cmd>Configure and restart the NFS server.</cmd>
         <info>Currently, <xref keyref="url-rpcbin-bug">an unresolved issue</xref> prevents the
@@ -777,37 +796,6 @@ yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/><
 yum --enablerepo=zenoss-mirror install -y serviced</codeblock>
         </stepxmp>
       </step>
-
-      <step id="zk-set-vars">
-        <cmd>Create a variable for each <ph keyref="nm-cc"/> host to include
-          in the ZooKeeper ensemble.</cmd>
-        <info>The variables are used in subsequent steps.</info>
-        <info>
-          <note>Define the variables identically
-            on the master host and on each resource pool host.</note>
-        </info>
-        <stepxmp>
-          <p>Replace <varname>CCMasterHostIP</varname> with the IP address of 
-            the <ph keyref="nm-cc"/> master host, and replace <varname>CCPoolHostIP-A</varname>
-            and <varname>CCPoolHostIP-B</varname> with the IP addresses of
-            the <ph keyref="nm-cc"/> resource pool hosts to include in
-            the ensemble:</p>
-          <codeblock>node1=<varname>CCMasterHostIP</varname>
-node2=<varname>CCPoolHostIP-A</varname>
-node3=<varname>CCPoolHostIP-B</varname></codeblock>
-        </stepxmp>
-        <info>
-          <note>ZooKeeper requires IP addresses for ensemble configuration.</note>
-        </info>
-      </step>
-      
-      <step id="zk-set-nodes">
-        <cmd>Specify the nodes in the ZooKeeper ensemble.</cmd>
-        <stepxmp>You may copy the following text and paste it in your console:
-          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
-  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
-      </step>
-      
     </steps>
   </taskbody>
 </task>

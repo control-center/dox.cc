@@ -3,6 +3,10 @@
 <map>
  <title>Local topics</title>
   <topicgroup>
+          <keydef keys="serviced-vars"
+                  href="config/vars.dita"
+                  format="dita"
+          />
           <keydef keys="ref-svcdef-object "
                   href="svcdef/object.dita"
                   format="dita"
