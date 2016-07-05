@@ -30,19 +30,19 @@
   </bookmeta>
   <frontmatter>
     <topicgroup>
-      <mapref href="dita/keys-vars.ditamap" format="ditamap"/>
-      <mapref href="dita/keywords.ditamap" format="ditamap"/>
-      <mapref href="dita/subjectScheme.ditamap" format="ditamap"/>
+      <mapref href="z-dita/keys-vars.ditamap" format="ditamap"/>
+      <mapref href="z-dita/keywords.ditamap" format="ditamap"/>
+      <mapref href="z-dita/subjectScheme.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="shared/keys-glossary.ditamap" format="ditamap"/>
-      <mapref href="shared/keys-shared.ditamap" format="ditamap"/>
-      <mapref href="shared/keys-urls.ditamap" format="ditamap"/>
+      <mapref href="z-shared/keys-glossary.ditamap" format="ditamap"/>
+      <mapref href="z-shared/keys-shared.ditamap" format="ditamap"/>
+      <mapref href="z-shared/keys-urls.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="online-topics.ditamap" format="ditamap" />
       <mapref href="online-versions.ditamap" format="ditamap" />
-      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+      <mapref href="z-images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
     <!-- <topicref href="front/preface-online.dita"/> -->
     <booklists>
