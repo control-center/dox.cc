@@ -99,7 +99,7 @@
           <row>
             <entry><codeph>DataPoints</codeph></entry>
             <entry>Array of objects</entry>
-            <entry>The data to graph, as an array of <xref keyref="ref-svcdef-datapoint">DataPoint</xref> objects.</entry>
+            <entry>The data to graph, as an array of <xref keyref="service-definition-datapoint">DataPoint</xref> objects.</entry>
           </row>
         </tbody>
       </tgroup>

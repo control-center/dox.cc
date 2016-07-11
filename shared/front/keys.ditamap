@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+        <title>Shared topics</title>
+        <topicgroup>
+                <keydef keys="browsers-500"
+                        href="browsers-500.dita"
+                        format="dita"
+                />
+                <keydef keys="related-pubs"
+                        href="related-pubs.dita"
+                        format="dita"
+                />
+        </topicgroup>
+</map>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in svcdef (2016-07-11 12:06:24)</title>
+  <topicgroup>
+    <keydef keys="svcdef-topics-configFile"
+            href="topics/configFile.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-datapoint"
+            href="topics/datapoint.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-endpoint"
+            href="topics/endpoint.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template-bytesToMB"
+            href="topics/go-template-bytesToMB.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template-child"
+            href="topics/go-template-child.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template-each"
+            href="topics/go-template-each.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template-parent"
+            href="topics/go-template-parent.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template-percentScale"
+            href="topics/go-template-percentScale.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template-plus"
+            href="topics/go-template-plus.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-go-template"
+            href="topics/go-template.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-graphConfig"
+            href="topics/graphConfig.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-health"
+            href="topics/health.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-logconfig"
+            href="topics/logconfig.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-metric"
+            href="topics/metric.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-metricConfig"
+            href="topics/metricConfig.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-object"
+            href="topics/object.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-svcdef"
+            href="topics/svcdef.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-task"
+            href="topics/task.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-template"
+            href="topics/template.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-thresholdConfig"
+            href="topics/thresholdConfig.dita"
+            format="dita"
+    />
+    <keydef keys="svcdef-topics-volume"
+            href="topics/volume.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

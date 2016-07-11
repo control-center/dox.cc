@@ -30,29 +30,31 @@
   </bookmeta>
   <frontmatter>
     <topicgroup>
-      <mapref href="z-dita/keys-vars.ditamap" format="ditamap"/>
-      <mapref href="z-dita/keywords.ditamap" format="ditamap"/>
-      <mapref href="z-dita/subjectScheme.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
+      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="z-shared/keys-glossary.ditamap" format="ditamap"/>
-      <mapref href="z-shared/keys-shared.ditamap" format="ditamap"/>
-      <mapref href="z-shared/keys-urls.ditamap" format="ditamap"/>
+      <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/urls/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
     <topicgroup>
-      <mapref href="online-topics.ditamap" format="ditamap" />
-      <mapref href="online-versions.ditamap" format="ditamap" />
-      <mapref href="z-images/keydefs-images.ditamap" format="ditamap"/>
+      <mapref href="admin/keys.ditamap" format="ditamap" />
+      <!-- <mapref href="gui/keys.ditamap" format="ditamap" /> -->
+      <mapref href="svcdef/keys.ditamap" format="ditamap" />
+      <mapref href="cli/keys.ditamap" format="ditamap" />
     </topicgroup>
     <!-- <topicref href="front/preface-online.dita"/> -->
     <booklists>
       <toc/>
     </booklists>
   </frontmatter>
-  <chapter href="admin/admin.ditamap" format="ditamap"/>
-  <chapter href="gui/gui.ditamap" format="ditamap"/>
-  <chapter href="svcdef/svcdef.ditamap" format="ditamap"/> 
-  <chapter href="cli/cli.ditamap" format="ditamap"/>
+  <chapter href="admin/topics/admin.ditamap" format="ditamap"/>
+  <!-- <chapter href="gui/topics/gui.ditamap" format="ditamap"/> -->
+  <chapter href="svcdef/topics/svcdef.ditamap" format="ditamap"/> 
+  <chapter href="cli/topics/cli.ditamap" format="ditamap"/>
   
   <backmatter>
     <booklists>

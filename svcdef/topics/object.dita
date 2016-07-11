@@ -7,7 +7,7 @@
   <refbody>
     <section>
       <note>Most values may contain Go templates, with <ph keyref="nm-cc"/> functions. For
-        more information, see <xref keyref="ref-svcdef-go-template"/>.</note>
+        more information, see <xref keyref="service-definition-go-template"/>.</note>
     <table>
       <tgroup cols="3">
         <colspec colname="c1" colwidth="5*"/>
@@ -125,7 +125,7 @@
             <entry>Objects</entry>
             <entry>The configuration file templates to install in containers (in which instances of
                 the service run). <p>Each member of this object is a string containing the absolute
-                  path of a configuration file template and a <xref keyref="ref-svcdef-configFile"
+                  path of a configuration file template and a <xref keyref="service-definition-configFile"
                     >ConfigFile</xref> object.</p>
               </entry>
           </row>
@@ -140,12 +140,12 @@
             <entry><codeph>Endpoints</codeph></entry>
             <entry>Array of objects</entry>
             <entry>The network endpoints that the service uses, as 
-              <xref keyref="ref-svcdef-endpoint">Endpoint</xref> objects.</entry>
+              <xref keyref="service-definition-endpoint">Endpoint</xref> objects.</entry>
           </row>
           <row>
             <entry><codeph>Services</codeph></entry>
             <entry>Array of objects</entry>
-            <entry>The subservices that are part of the service, as <xref keyref="ref-svcdef-object"
+            <entry>The subservices that are part of the service, as <xref keyref="service-definition-object"
                 >ServiceDefinition</xref> objects.</entry>
           </row>
           <row>
@@ -167,14 +167,14 @@
             <entry><codeph>Volumes</codeph></entry>
             <entry>Array of objects</entry>
             <entry>The list of file system directories to bind mount in containers (in which
-                instances of the service run). Each item is a <xref keyref="ref-svcdef-volume"
+              instances of the service run). Each item is a <xref keyref="service-definition-volume"
                   >Volume</xref> object.</entry>
           </row>
           <row>
             <entry><codeph>LogConfigs</codeph></entry>
             <entry>Array of objects</entry>
             <entry>A list of <cmdname>logstash</cmdname> configurations for the log files of the
-              service, as <xref keyref="ref-svcdef-logconfig">LogConfig</xref> objects.</entry>
+              service, as <xref keyref="service-definition-logconfig">LogConfig</xref> objects.</entry>
           </row>
           <row>
             <entry><codeph>Snapshot</codeph></entry>
@@ -229,7 +229,7 @@
             <entry>Object</entry>
             <entry>The commands to invoke (at regular intervals) to gather data about health of the
                 service. Each member of this object is a health check name paired with a <xref
-                  keyref="ref-svcdef-health">HealthCheck</xref> object.</entry>
+                  keyref="service-definition-health">HealthCheck</xref> object.</entry>
           </row>
           <row>
             <entry><codeph>Prereqs</codeph></entry>
@@ -256,17 +256,17 @@
                 following pairs, in order: <dl>
                   <dlentry>
                     <dt><codeph>MetricConfigs</codeph></dt>
-                    <dd>An array of <xref keyref="ref-svcdef-metricConfig">MetricConfig</xref>
+                    <dd>An array of <xref keyref="service-definition-metricConfig">MetricConfig</xref>
                       objects.</dd>
                   </dlentry>
                   <dlentry>
                     <dt><codeph>GraphConfigs</codeph></dt>
-                    <dd>An array of <xref keyref="ref-svcdef-graphConfig">GraphConfig</xref>
+                    <dd>An array of <xref keyref="service-definition-graphConfig">GraphConfig</xref>
                       objects.</dd>
                   </dlentry>
                   <dlentry>
                     <dt><codeph>ThresholdConfigs</codeph></dt>
-                    <dd>An array of <xref keyref="ref-svcdef-thresholdConfig">ThresholdConfig</xref>
+                    <dd>An array of <xref keyref="service-definition-thresholdConfig">ThresholdConfig</xref>
                       objects.</dd>
                   </dlentry>
                 </dl>

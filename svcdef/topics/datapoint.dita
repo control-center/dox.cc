@@ -51,13 +51,13 @@
             <entry><codeph>Metric</codeph></entry>
             <entry>String</entry>
             <entry>The value of the <codeph>ID</codeph> attribute in the associated
-                <xref keyref="ref-svcdef-metric">Metric</xref> object.</entry>
+                <xref keyref="service-definition-metric">Metric</xref> object.</entry>
           </row>
           <row>
             <entry><codeph>MetricSource</codeph></entry>
             <entry>String</entry>
             <entry>The value of the <codeph>ID</codeph> attribute in the associated
-              <xref keyref="ref-svcdef-metricConfig">MetricConfig</xref> object</entry>
+              <xref keyref="service-definition-metricConfig">MetricConfig</xref> object</entry>
           </row>
           <row>
             <entry><codeph>ID</codeph></entry>

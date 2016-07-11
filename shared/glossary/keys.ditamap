@@ -5,11 +5,11 @@
   <!-- Removing an entry from this file requires a note from your mother -->
   <topicgroup>
     <keydef keys="gl-service-definition"
-            href="glossary/service-definition.dita"
+            href="service-definition.dita"
             format="dita"
     />
     <keydef keys="gl-service-template"
-            href="glossary/service-template.dita"
+            href="service-template.dita"
             format="dita"
     />
   </topicgroup>

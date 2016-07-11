@@ -36,14 +36,14 @@
           <row>
             <entry><codeph>Services</codeph></entry>
             <entry>Array of objects</entry>
-            <entry>One or more <xref keyref="ref-svcdef-object">ServiceDefinition</xref>
+            <entry>One or more <xref keyref="service-definition-object">ServiceDefinition</xref>
               objects.</entry>
           </row>
           <row>
             <entry><codeph>ConfigFile</codeph></entry>
             <entry>Object </entry>
             <entry>The configuration file for this service template (a <xref
-                keyref="ref-svcdef-configFile">ConfigFile</xref> object).</entry>
+              keyref="service-definition-configFile">ConfigFile</xref> object).</entry>
           </row>
         </tbody>
       </tgroup>

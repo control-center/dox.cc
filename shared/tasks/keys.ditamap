@@ -3,28 +3,20 @@
 <map>
         <title>Shared topics</title>
         <topicgroup>
-                <keydef keys="browsers-500"
-                        href="front/browsers-500.dita"
-                        format="dita"
-                />
-                <keydef keys="related-pubs"
-                        href="front/related-pubs.dita"
-                        format="dita"
-                />
                 <keydef keys="serviced-tasks"
-                        href="tasks/tasks-general.dita"
+                        href="tasks-general.dita"
                         format="dita"
                 />
                 <keydef keys="storage-isvcs"
-                        href="tasks/storage-isvcs.dita"
+                        href="storage-isvcs.dita"
                         format="dita"
                 />
                 <keydef keys="tasklib-install"
-                        href="tasks/tasklib-install.dita"
+                        href="tasklib-install.dita"
                         format="dita"
                 />
                 <keydef keys="tasklib-upgrade"
-                        href="tasks/tasklib-upgrade.dita"
+                        href="tasklib-upgrade.dita"
                         format="dita"
                 />
         </topicgroup>

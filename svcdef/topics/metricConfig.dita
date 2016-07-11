@@ -59,7 +59,7 @@
           <row>
             <entry><codeph>Metrics</codeph></entry>
             <entry>Array of objects</entry>
-            <entry>One or more <xref keyref="ref-svcdef-metric">Metric</xref> objects.</entry>
+            <entry>One or more <xref keyref="service-definition-metric">Metric</xref> objects.</entry>
           </row>
         </tbody>
       </tgroup>
