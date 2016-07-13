@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating new resource pools</title>
+  <taskbody>
+
+    <context>This procedure creates a new resource pool for the <ph keyref="nm-cc"/> master nodes,
+      and one or more resource pools for other hosts.</context>
+    
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname (<varname>HA-Virtual-Name</varname>) or
+          virtual IP address (<varname>HA-Virtual-IP</varname>) of the 
+          high-availability cluster to start a Bash shell on the <ph keyref="nm-cc"/> 
+          master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create a new resource pool named <codeph>master</codeph>.</cmd>
+        <stepxmp>
+          <codeblock>serviced pool add master</codeblock>
+        </stepxmp>
+      </step>
+
+      <step importance="optional">
+        <cmd>Create additional resource pools, if desired.</cmd>
+        <info>No additional resource pools are required. However, many
+          users find it useful to have pool names such as 
+          <codeph>infrastructure</codeph> and 
+          <codeph>collector-<varname>n</varname></codeph>
+          for groups of resource pool hosts.</info>
+        <stepxmp>
+          <p>Replace <varname>Pool-Name</varname> with the name of the pool to create:</p>
+          <codeblock>serviced pool add <varname>Pool-Name</varname></codeblock>
+          <p>Repeat the preceding command as desired.</p>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

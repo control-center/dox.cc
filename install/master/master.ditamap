@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Install master host</title>
+  <chapter keyref="install-master-master">
+    <topicref keyref="install-master-verify-resources"/>
+    <topicref keyref="install-master-storage">
+      <topicref keyref="install-master-storage-isvcs"/>
+      <topicref keyref="install-master-storage-backups"/>
+    </topicref>
+    <topicref keyref="install-master-prep"/>
+    <topicref keyref="install-master-docker"/>
+    <topicref keyref="install-master-cc"/>
+    <topicref keyref="install-access-users">
+      <topicref keyref="install-access-wheel"/>
+      <topicref keyref="install-access-serviced"/>
+      <topicref keyref="install-access-cli"/>
+    </topicref>
+    <topicref keyref="install-master-start"/>
+    <topicref keyref="install-master-isolate"/>
+   </chapter>
+</bookmap>

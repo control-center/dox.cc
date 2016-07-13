@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Verifying the <ph keyref="nm-cc"/> configuration</title>
+  <taskbody>
+    <context>This procedure verifies that the <ph keyref="nm-cc"/>
+      configuration is identical on both nodes.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, log in to the secondary 
+          node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, compute the checksum of the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <stepxmp>
+          <codeblock>cksum /etc/default/serviced</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result is identical on both nodes,
+          the configurations are identical. Do not perform the next step.</choice>
+          <choice>If the result is not identical on both nodes, there
+            may be a difference in their configurations; proceed to the next step.</choice>
+        </choices>
+      </step>
+      
+      <step importance="optional">
+        <cmd>On both nodes, display the customized variables, if necessary.</cmd>
+        <stepxmp>
+          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced | sort</codeblock>
+        </stepxmp>
+        <stepresult>Example result: <codeblock>SERVICED_AGENT=1
+SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool
+SERVICED_DOCKER_REGISTRY=<varname>HA-Virtual-IP</varname>:5000
+SERVICED_ENDPOINT=<varname>HA-Virtual-IP</varname>:4979
+SERVICED_FS_TYPE=devicemapper
+SERVICED_LOG_ADDRESS=<varname>HA-Virtual-IP</varname>:5042
+SERVICED_LOGSTASH_ES=<varname>HA-Virtual-IP</varname>:9100
+SERVICED_MASTER=1
+SERVICED_OUTBOUND_IP=<varname>HA-Virtual-IP</varname>
+SERVICED_STATS_PORT=<varname>HA-Virtual-IP</varname>:8443
+SERVICED_ZK=<varname>HA-Virtual-IP</varname>:2181</codeblock>
+          <note>There may only be insignificant differences between the files, such as an extra
+            space at the beginning of a variable definition.</note></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

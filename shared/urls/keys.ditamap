@@ -338,54 +338,37 @@
     </topicgroup>
   <topicgroup>
     <!-- CC -->
-    <topicref keys="url-golang-text-template " 
+    <keydef keys="url-golang-text-template " 
       href="http://golang.org/pkg/text/template/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    <topicref keys="url-docker " 
+    <keydef keys="url-docker " 
       href="http://www.docker.com/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    <topicref keys="url-zookeeper " 
+    <keydef keys="url-zookeeper " 
       href="http://zookeeper.apache.org/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    <topicref keys="url-logstash " 
+    <keydef keys="url-logstash " 
       href="http://logstash.net/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    <topicref keys="url-kibana " 
+    <keydef keys="url-kibana " 
       href="http://www.elasticsearch.org/overview/kibana/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    <topicref keys="url-golang-fmt " 
+    <keydef keys="url-golang-fmt " 
       href="http://golang.org/pkg/fmt/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    
-    <topicref keys="url-google-logging " 
+    <keydef keys="url-google-logging " 
       href="http://google-glog.googlecode.com/svn/trunk/doc/glog.html"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
-    <topicref keys="url-dockerfile " 
+    <keydef keys="url-dockerfile " 
       href="http://docs.docker.com/reference/builder/"
-      format="html"
-      scope="external"
-      processing-role="resource-only"
+      format="html" scope="external"
     />
   </topicgroup>
 </map>

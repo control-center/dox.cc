@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Installing on hosts with internet access</title>
+  <refbody>
+    <section>
+      <p>The procedures in this chapter install <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/>
+        on one or more Red Hat Enterprise Linux (RHEL) 7.1 or 7.2 hosts, or one or more CentOS 7.1
+        or 7.2 hosts. To use the procedures in this chapter, all <ph keyref="nm-cc"/> cluster hosts must have
+        internet access.</p>
+        
+        <p>You may create a single-host or a multi-host deployment. For production use, <ph
+          conkeyref="names/company"/> strongly recommends creating a multi-host deployment that
+        includes a minimum of three real or virtual machines. For more information about deploying
+          <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/>,
+        refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+        
+      <note>For optimal results, review this chapter thoroughly before starting the installation process.</note>
+
+    </section>
+  </refbody>
+</reference>

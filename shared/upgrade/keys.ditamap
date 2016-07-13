@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+        <title>Upgrade shared steps</title>
+        <topicgroup>
+                <keydef keys="shared-upgrade-tasklib"
+                        href="tasklib.dita"
+                        format="dita"
+                />
+        </topicgroup>
+</map>

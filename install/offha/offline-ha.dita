@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Creating a high-availability deployment without internet access</title>
+  <refbody>
+    <section>
+      
+      <p>The procedures in this chapter create a high-availability deployment of <ph keyref="nm-cc"
+      /> and <ph keyref="nm-platform"/> on Red Hat Enterprise Linux (RHEL) 7.1 or 7.2 hosts, or
+        on CentOS 7.1 or 7.2 hosts. To use the procedures in this chapter, you must have a minimum of 
+        four hosts. None of the hosts require internet access.</p>
+        
+      <p> For more information about deploying <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/>, 
+        refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <note>For optimal results, review this chapter thoroughly before starting the installation process.</note>
+      
+    </section>
+  </refbody>
+</reference>

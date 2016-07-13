@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-upgrade"/></mainbooktitle>
+    <mainbooktitle>Control Center Installation Guide</mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="1" modification="x"/>        
+        <vrm version="1" release="1" modification="7"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.169</bookpartno>
+      <bookpartno>XXXX</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -38,13 +38,19 @@
     <topicgroup>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
       <mapref href="shared/urls/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/front/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/versions.ditamap" format="ditamap" />
+      <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
-	  <topicref href="front/preface-upgrade.dita"/>
+    <topicgroup>
+      <mapref href="shared/serviced/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/install/keys.ditamap" format="ditamap"/>
+      <mapref href="install/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <booklists>
+      <toc/>
+    </booklists>
+      <!-- <topicref href="front/preface.dita"/> -->
   </frontmatter>
-  
-  <chapter href="deploy/upgrade/prepare/prepare.ditamap" format="ditamap"/>
-  <chapter href="deploy/upgrade/perform/perform.ditamap" format="ditamap"/>
+
+  <chapter href="install/master/master.ditamap" format="ditamap"/>
   
 </bookmap>

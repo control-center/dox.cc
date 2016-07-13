@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding users to the default administrative group</title>
+  <taskbody>
+    <context>This procedure adds users to the default administrative group
+      of <ph keyref="nm-cc"/>, <codeph>wheel</codeph>. Performing this procedure
+      enables users with superuser privileges to gain access to the 
+      <ph keyref="nm-cc"/> browser interface.</context>
+    <context><note>Perform this procedure or the next procedure, but not both.</note></context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Add users to the system group, <codeph>wheel</codeph>.</cmd>
+        <stepxmp>
+          <p>Replace <varname>User</varname> with the name of a login account on the master
+            host.</p>
+          <codeblock>usermod -aG wheel <varname>User</varname></codeblock>
+        </stepxmp>
+        <info>Repeat the preceding command for each user to add.</info>
+        <info>
+          <note>For information about using Pluggable Authentication Modules (PAM),
+          refer to your operating system documentation.</note>
+        </info>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

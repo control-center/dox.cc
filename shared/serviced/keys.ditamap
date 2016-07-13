@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <title>serviced variables</title>
+  <topicgroup>
+    <keydef keys="shared-serviced-vars"
+            href="vars.dita"
+            format="dita"
+    />
+  </topicgroup>
+</map>

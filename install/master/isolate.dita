@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Isolating the master host in a separate resource pool</title>
+  <taskbody>
+    <context>
+      <note>If you are configuring a single-host deployment, skip this procedure.</note>
+      
+      <p><ph keyref="nm-cc"/> enables or just performs rapid recovery from application service
+      failures. When <ph keyref="nm-cc"/> internal services and application services share a host,
+      application failures can limit recovery options. <ph conkeyref="names/company"/> strongly
+      recommends isolating the <ph keyref="nm-cc"/> master host in a separate resource pool.</p>
+    
+      <p>This procedure creates a new resource pool for the <ph keyref="nm-cc"/> master host,
+      and then adds the master host to the pool.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create a new resource pool named <codeph>master</codeph>.</cmd>
+        <stepxmp>
+          <codeblock>serviced pool add master</codeblock>
+        </stepxmp>
+      </step>
+
+      <step>
+        <cmd>Add the master host to the <codeph>master</codeph> resource pool.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the <ph
+              keyref="nm-cc"/> master host:</p>
+          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 master</codeblock>
+          <p>If you enter a hostname, all hosts in your <ph keyref="nm-cc"/> cluster must be able to
+            resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
+            a nameserver on your network.</p>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

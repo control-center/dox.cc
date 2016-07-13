@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring Logical Volume Manager</title>
+  <taskbody>
+    <context><ph keyref="nm-cc"/> application data is managed by a device mapper thin pool
+        created with Logical Volume Manager (LVM). This procedure adjusts the LVM 
+        configuration for mirroring by DRBD.</context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Edit the LVM configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/lvm/lvm.conf</filepath> with a text editor.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Exclude the partition for <ph keyref="nm-cc"/> application data.</cmd>
+            <info>The line to edit is in the <codeph>devices</codeph> section.</info>
+            <stepxmp>
+              <p>Replace <varname>App-Data-Partition</varname> with the path of the
+                primary partition designated for <ph keyref="nm-cc"/> application data.</p>
+              <codeblock>filter = ["r|<varname>App-Data-Partition</varname>|"]</codeblock>
+            </stepxmp>
+          </substep>
+          
+          <substep>
+            <cmd>Disable caching and the metadata daemon.</cmd>
+            <info>Set the value of the <codeph>write_cache_state</codeph> 
+              and <codeph>use_lvmetad</codeph> keys to 0.</info>
+            <stepxmp>
+              <codeblock>write_cache_state = 0
+use_lvmetad = 0</codeblock>
+            </stepxmp>
+          </substep>
+          
+          <substep>
+            <cmd>Save the file and close the editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Delete any stale cache entries.</cmd>
+        <stepxmp>
+          <codeblock>rm -f /etc/lvm/cache/.cache</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Restart the host.</cmd>
+        <stepxmp>
+          <codeblock>reboot</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

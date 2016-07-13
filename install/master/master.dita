@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Configuring a master host</title>
+  <refbody>
+    <section>
+      <p>The procedures in this chapter configure a <ph keyref="nm-cc"/> master host
+        on a Red Hat Enterprise Linux (RHEL) or CentOS 7.2 host.</p>
+
+      <p>For more information about deploying <ph keyref="nm-cc"/>, see 
+         <!-- <xref keyref="cc-planning"/>.--> </p>
+      
+    </section>
+  </refbody>
+</reference>

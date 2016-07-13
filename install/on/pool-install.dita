@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Installing resource pool hosts</title>
+  <conbody>
+    <note>If you are installing a single-host deployment, skip this section.</note>
+    
+    <p><ph keyref="nm-cc"/> resource pool hosts run the application services
+      scheduled for the resource pool to which they belong, and for which they
+      have sufficent RAM and CPU resources.</p>
+    
+    <p><ph keyref="nm-platform"/> has two broad categories of application
+      services: Infrastructure and collection. The services associated with
+      each category can run in the same resource pool, or can run in separate
+      resource pools.</p>
+    
+    <p>For improved reliability, two resource pool hosts are configured as
+      nodes in an <xref keyref="url-zookeeper">Apache ZooKeeper</xref> ensemble.
+      The storage required for ensemble hosts is slightly different than the
+      storage required for all other resource pool hosts: Each ensemble host
+      requires a separate primary partition for <ph keyref="nm-cc"/> internal
+      services data, in addition to the primary partition for Docker data.
+      Unless the ZooKeeper service on the <ph keyref="nm-cc"/> master host fails, 
+      their roles in the ZooKeeper ensemble do not affect their
+      roles as <ph keyref="nm-cc"/> resource pool hosts. </p>
+    
+    <note>The hosts for the ZooKeeper ensemble require static IP addresses,
+      because ZooKeeper does not support hostnames in its configurations.</note>
+    
+    <p>Repeat the procedures in the following sections for each host
+      you wish to add to your <ph keyref="nm-cc"/> deployment.</p>
+  </conbody>
+</concept>
