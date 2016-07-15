@@ -37,20 +37,23 @@
     </topicgroup>
     <topicgroup>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/serviced/keys.ditamap" format="ditamap"/>
       <mapref href="shared/urls/keys.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="shared/serviced/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/install/keys.ditamap" format="ditamap"/>
-      <mapref href="install/keys.ditamap" format="ditamap"/>
+      
+      <mapref href="book/install/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
       <toc/>
     </booklists>
-      <!-- <topicref href="front/preface.dita"/> -->
+      <!-- <topicref href="book/install/front/about.dita"/> -->
   </frontmatter>
-
-  <chapter href="install/master/master.ditamap" format="ditamap"/>
+  
+  <chapter href="feature/master/install.ditamap" format="ditamap"/>
+  <chapter href="feature/worker/install.ditamap" format="ditamap"/>
+  <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>
   
 </bookmap>

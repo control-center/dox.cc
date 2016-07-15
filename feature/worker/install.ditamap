@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Install worker</title>
+  <chapter keyref="feature-worker-install">
+    <topicref keyref="feature-worker-verify"/>
+    <topicref keyref="feature-worker-isvcs"/>
+    <topicref keyref="feature-worker-prep"/>
+    <topicref keyref="feature-worker-docker"/>
+    <topicref keyref="feature-worker-cc"/>
+   </chapter>
+</bookmap>

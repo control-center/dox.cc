@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Defining a service</title>
+   <chapter keyref="feature-svcdef-svcdef">
+     <topicref keyref="feature-svcdef-template"/>
+     <topicref keys="service-definition-object" keyref="feature-svcdef-object"> 
+       <topicref keys="service-definition-configFile" keyref="feature-svcdef-configFile"/>
+       <topicref keys="service-definition-endpoint" keyref="feature-svcdef-endpoint"/>
+       <topicref keyref="feature-svcdef-task"/>
+       <topicref keys="service-definition-volume" keyref="feature-svcdef-volume"/>
+       <topicref keys="service-definition-logconfig" keyref="feature-svcdef-logconfig"/>
+       <topicref keys="service-definition-health" keyref="feature-svcdef-health"/>
+       <topicref keys="service-definition-metricConfig" keyref="feature-svcdef-metricConfig">
+         <topicref keys="service-definition-metric" keyref="feature-svcdef-metric"/>
+       </topicref>
+       <topicref keys="service-definition-graphConfig" keyref="feature-svcdef-graphConfig">
+         <topicref keys="service-definition-datapoint" keyref="feature-svcdef-datapoint"/>
+       </topicref>
+       <topicref keys="service-definition-thresholdConfig" keyref="feature-svcdef-thresholdConfig"/>
+     </topicref>
+     <topicref keys="service-definition-go-template" keyref="feature-svcdef-go-template">
+       <topicref keyref="feature-svcdef-go-template-bytesToMB"/>
+       <topicref keyref="feature-svcdef-go-template-child"/>
+       <topicref keyref="feature-svcdef-go-template-each"/>
+       <topicref keyref="feature-svcdef-go-template-parent"/>
+       <topicref keyref="feature-svcdef-go-template-percentScale"/>
+       <topicref keyref="feature-svcdef-go-template-plus"/>
+     </topicref>
+   </chapter>
+</bookmap>
+
+

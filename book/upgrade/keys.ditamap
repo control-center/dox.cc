@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade (2016-07-15 09:56:26)</title>
+  <topicgroup>
+    <keydef keys="upgrade-front-about"
+            href="front/about.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="upgrade-perform-perform"
+            href="perform/perform.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-perform-serviced-pool"
+            href="perform/serviced-pool.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-perform-serviced"
+            href="perform/serviced.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-perform-stop"
+            href="perform/stop.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="upgrade-prepare-download"
+            href="prepare/download.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-prepare-prepare"
+            href="prepare/prepare.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-prepare-stage"
+            href="prepare/stage.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="upgrade-shared-tasklib"
+            href="shared/tasklib.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -17,6 +17,10 @@
           </thead>
           <tbody>
             <row>
+              <entry><cite conkeyref="pubs/cite-help"/></entry>
+              <entry>Describes the features of the <ph keyref="nm-cc"/> browser interface.</entry>
+            </row>
+            <row>
               <entry><cite conkeyref="pubs/cite-install"/></entry>
               <entry>Provides detailed information and procedures for
                 installing <ph keyref="nm-cc"/>.</entry>
@@ -25,6 +29,11 @@
               <entry><cite conkeyref="pubs/cite-notes"/></entry>
               <entry>Describes known issues, fixed issues, and late-breaking
                 information not included in other publications.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-plan"/></entry>
+              <entry>Provides both general and specific information about
+                preparing to deploy <ph keyref="nm-cc"/>.</entry>
             </row>
             <row>
               <entry><cite conkeyref="pubs/cite-upgrade"/></entry>

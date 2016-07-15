@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Verifying candidate host resources</title>
+  <taskbody>
+    <context>This procedure determines whether a host's hardware resources and operating system are
+      sufficient to serve as a <ph keyref="nm-cc"/> master host.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the candidate host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/verify-64">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-name-resolution">
+        <cmd></cmd>
+      </step>
+
+      <step conkeyref="install-shared-tasklib/check-hostid">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-storage-master">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-memory-master">
+        <cmd/>
+      </step>
+
+      <step conkeyref="install-shared-tasklib/update-os">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/update-kernel">
+        <cmd></cmd>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

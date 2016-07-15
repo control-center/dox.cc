@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring NTP for public time servers</title>
+  <taskbody>
+    <context>
+      <p>This procedure uses the default configuration of NTP to synchronize system clocks with
+        public time servers. If all of the hosts in your <ph keyref="nm-cc"/> cluster can access the
+        internet, repeat this procedure on each host in the cluster, starting with the <ph keyref="nm-cc"/>
+        master host.</p>
+      <note>Do not perform this procedure on VMware vSphere guests.</note>
+    </context>
+    
+    <steps>
+      <step product="ucs" conkeyref="tasks-ucs/console-access">
+        <cmd/>
+      </step>
+      <step product="ucs" conkeyref="tasks-ucs/root-shell">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><codeblock>systemctl stop serviced</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Synchronize the system clock and enable the NTP daemon.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Set the system time.</cmd>
+            <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable ntpd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
+            <info>Currently, an unresolved issue associated with NTP
+              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot, 
+              and the following commands provide a workaround to ensure that it does. </info>
+            <stepxmp>
+              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start <cmdname>ntpd</cmdname>.</cmd>
+            <stepxmp><codeblock>systemctl start ntpd</codeblock></stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><codeblock>systemctl start serviced</codeblock></stepxmp>
+      </step>
+     
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

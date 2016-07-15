@@ -11,5 +11,9 @@
                         href="related-pubs.dita"
                         format="dita"
                 />
+                <keydef keys="more-info"
+                        href="more-info.dita"
+                        format="dita"
+                />
         </topicgroup>
 </map>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Deploying <ph keyref="nm-platform"/></title>
+  <taskbody>
+    <context>This procedure adds the <ph keyref="nm-platform"/> application
+      to the list of applications that <ph keyref="nm-cc"/> manages.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="login-as/root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Add the <codeph>Zenoss.resmgr</codeph> application
+          to <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>myPath=/opt/serviced/templates
+serviced template add $myPath/zenoss-resmgr-*.json</codeblock>
+        </stepxmp>
+        <stepresult>On success, the <cmdname>serviced</cmdname> 
+          command returns the template ID.</stepresult>
+      </step>
+
+      <step>
+        <cmd>Deploy the application.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Template-ID</varname> with the 
+            template identifier returned in the
+          previous step, and replace <varname>Deployment-ID</varname> 
+            with a name for this deployment (for example, 
+            <codeph>Dev</codeph> or <codeph>Test</codeph>):</p>
+          <codeblock>serviced template deploy <varname>Template-ID</varname> default <varname>Deployment-ID</varname></codeblock>
+        </stepxmp>
+        <stepresult>
+          <p><ph keyref="nm-cc"/> tags the <ph keyref="nm-platform"/> images in the local registry.
+            To monitor progress, enter the following command:</p>
+          <codeblock>journalctl -flu serviced -o cat</codeblock>
+        </stepresult>
+      </step>
+    </steps>
+    <postreq><ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> are now installed,
+      and <ph keyref="nm-platform"/> is ready to be configured for your environment.
+      For more information, refer to the <cite conkeyref="pubs/cite-config"/>.</postreq>
+  </taskbody>
+</task>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Installing worker hosts</title>
+  <conbody>
+    <note>If you are installing a single-host deployment, skip this chapter.</note>
+    
+    <p><ph keyref="nm-cc"/> worker hosts run the application services
+      scheduled for the resource pool to which they belong, and for which they
+      have sufficient RAM and CPU resources.</p>
+
+    <p>Repeat the procedures in the following sections on each host
+      to add to your <ph keyref="nm-cc"/> deployment.</p>
+  </conbody>
+</concept>

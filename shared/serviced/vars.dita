@@ -196,7 +196,7 @@
           <dd>The 16-bit private subnet to use for <cmdname>serviced</cmdname>&#39;s virtual IPv4
             addresses. RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
             address spaces. However, <cmdname>serviced</cmdname> accepts any valid, 16-bit, IPv4
-            address space for its private network. </dd>
+            address space for its private network, in CIDR notation. </dd>
         </dlentry>
         <dlentry id="SERVICED_LOG_LEVEL">
           <dt><codeph>SERVICED_LOG_LEVEL</codeph></dt>

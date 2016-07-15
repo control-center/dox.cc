@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature (2016-07-15 13:59:04)</title>
+  
+   
+   <topicgroup>
+    <keydef keys="feature-master-cc"
+            href="master/cc.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-create"
+            href="master/create.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-docker"
+            href="master/docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-install"
+            href="master/install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-isolate"
+            href="master/isolate.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-prep"
+            href="master/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-start"
+            href="master/start.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-storage-about"
+            href="master/storage-about.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-storage-backups"
+            href="master/storage-backups.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-storage-isvcs"
+            href="master/storage-isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-storage"
+            href="master/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-users-cli"
+            href="master/users-cli.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-users-serviced"
+            href="master/users-serviced.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-users-wheel"
+            href="master/users-wheel.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-users"
+            href="master/users.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-verify"
+            href="master/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+   
+   <topicgroup>
+    <keydef keys="feature-worker-cc"
+            href="worker/cc.dita"
+            format="dita"
+    />
+    <keydef keys="feature-worker-docker"
+            href="worker/docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-worker-install"
+            href="worker/install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-worker-isvcs"
+            href="worker/isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="feature-worker-prep"
+            href="worker/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-worker-start"
+            href="worker/start.dita"
+            format="dita"
+    />
+    <keydef keys="feature-worker-verify"
+            href="worker/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Preparing a resource pool host</title>
+  <taskbody>
+    
+    <context>Perform this procedure to prepare a RHEL/CentOS 7.1 or 7.2
+      host as a <ph keyref="nm-cc"/> resource pool host.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the candidate resource pool host 
+          <ph conkeyref="login-as/root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="tasklib-install/localhost-entry">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="tasklib-install/firewall">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="tasklib-install/journal">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="tasklib-install/kill-selinux">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="tasklib-install/dnsmasq">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="tasklib-install/ntp">
+        <cmd></cmd>
+      </step>
+      
+      <step>
+        <cmd>Reboot the host.</cmd>
+        <stepxmp>
+          <codeblock>reboot</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Verifying candidate host resources</title>
+  <taskbody>
+    <context>This procedure determines whether a 
+      hosts's hardware resources and operating system are 
+      sufficient to serve as a <ph keyref="nm-cc"/> master host.</context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the candidate host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/verify-64">
+        <cmd></cmd>
+      </step>
+
+      <step conkeyref="install-shared-tasklib/check-hostid">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-storage-master">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-memory-master">
+        <cmd></cmd>
+      </step>
+
+      <step>
+        <cmd>Verify the operating system release.</cmd>
+        <stepxmp>
+          <codeblock>cat /etc/redhat-release</codeblock>
+        </stepxmp>
+        <stepresult>If the result includes <codeph>7.0</codeph>, select another host or upgrade the
+          operating system.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Determine whether required packages are installed.</cmd>
+        <stepxmp>
+          <codeblock>for pkg in drbd84-utils kmod-drbd84 corosync pacemaker pcs
+do
+  echo "Result for $pkg:"
+  rpm -qa | grep $pkg
+done</codeblock>
+        </stepxmp>
+        <stepresult>Install missing packages before continuing.</stepresult>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

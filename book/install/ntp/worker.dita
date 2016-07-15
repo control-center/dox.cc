@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring NTP clients</title>
+  <taskbody>
+    <context>
+      <p>This procedure configures agent hosts to synchronize their clocks with the NTP server on
+        the <ph keyref="nm-cc"/> master host. Perform this procedure only if the hosts do not have internet access, and
+        repeat this procedure on each agent host in your <ph keyref="nm-cc"/> cluster.</p>
+      <note>Do not perform this procedure on VMware vSphere guests.</note>
+    </context>
+    
+    <steps>
+      <step product="ucs" conkeyref="tasks-ucs/console-access">
+        <cmd/>
+      </step>
+      <step product="ucs" conkeyref="tasks-ucs/root-shell">
+        <cmd/>
+      </step>
+      
+      
+      <step>
+        <cmd>Create a backup of the NTP configuration file.</cmd>
+        <stepxmp><codeblock>cp -p /etc/ntp.conf /etc/ntp.conf.orig</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <!-- Source: http://www.borngeek.com/2008/04/03/using-ntp-on-a-private-network/ -->
+        <cmd>Edit the NTP configuration file./</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/ntp.conf</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Replace all of the lines in the file with the following lines:</cmd>
+            <stepxmp>
+              <codeblock># Point to the master time server
+server MASTER_ADDRESS
+
+restrict default ignore
+restrict 127.0.0.1
+restrict MASTER_ADDRESS mask 255.255.255.255 nomodify notrap noquery
+
+driftfile /var/lib/ntp/drift</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Replace both instances of <codeph>MASTER_ADDRESS</codeph> with the IPv4 address
+              of the host where the NTP server is running (the <ph keyref="nm-cc"/> master host).</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file and exit the editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><codeblock>systemctl stop serviced</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Synchronize the clock with the master server.</cmd>
+        <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Enable and start the NTP daemon.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable ntpd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
+            <info>Currently, an unresolved issue associated with NTP
+              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot, 
+              and the following commands provide a workaround to ensure that it does. </info>
+            <stepxmp>
+              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start <cmdname>ntpd</cmdname>.</cmd>
+            <stepxmp><codeblock>systemctl start ntpd</codeblock></stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><codeblock>systemctl start serviced</codeblock></stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

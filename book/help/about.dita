@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="refid">
+ <title>About this online help</title>
+ <refbody>
+   
+   <section>
+     <p><cite conkeyref="pubs/cite-help"/> provides...</p>
+   </section>
+
+   <section conkeyref="related-pubs/cc"/>
+   <section conkeyref="more-info/cc"/>
+
+ </refbody>
+</reference>

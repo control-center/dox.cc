@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
+<topic id="topicid">
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <body>
+    
+    <section id="cc">
+      <title>Documentation feedback</title>
+      <p>To provide technical feedback on this document, or to report an error or omission, 
+        please use the Zenoss community forum. We appreciate your feedback.</p>
+    </section>
+    
+  </body>
+</topic>
