@@ -7,7 +7,7 @@
       <p>The resources in a resource group are started in the order they appear in the group, and
         stopped in the reverse order they appear in the group. The start order is:</p>
       <ol>
-          <li>Mount the file systems (<codeph>serviced-isvcs</codeph>
+          <li>Mount the filesystems (<codeph>serviced-isvcs</codeph>
             and <codeph>serviced-volumes</codeph>)</li>
           <li>Start the <codeph>serviced</codeph> logical volume.</li>
         <li>Manage <cmdname>serviced</cmdname> storage.</li>

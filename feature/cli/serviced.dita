@@ -113,7 +113,7 @@
         </dlentry>
         <dlentry>
           <dt><synph>--fstype <var>Driver</var></synph></dt>
-          <dd>The driver for the underlying file system where application data is stored
+          <dd>The driver for the underlying filesystem where application data is stored
             (by default, <filepath>/opt/serviced/var</filepath>). The supported drivers are
               <codeph>rsync</codeph> and <codeph>btrfs</codeph>. The default value is
               <codeph>rsync</codeph>, unless <varname>SERVICED_FS_TYPE</varname> is set in the

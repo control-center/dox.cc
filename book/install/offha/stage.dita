@@ -6,7 +6,7 @@
     
     <prereq>Before performing this procedure, complete all of the steps in <xref
         keyref="off-ha-download"/>. In addition, verify that approximately 4GB of temporary space
-      is available on the file system where <filepath>/root</filepath> is located.</prereq>
+      is available on the filesystem where <filepath>/root</filepath> is located.</prereq>
     
     <context>This procedure adds files for offline installation to the master node.
       The staged files are required in subsequent procedures.</context>

@@ -78,7 +78,7 @@ echo "<varname>Secondary-Public-IP</varname> <varname>Secondary-Public-Name</var
       </step>
       
       <step>
-        <cmd>Remove any file system signature from the
+        <cmd>Remove any filesystem signature from the
           required primary partitions.</cmd>
         <stepxmp>
           <p>Replace each variable name with the path of the primary partition designated for each
@@ -91,7 +91,7 @@ wipefs -a <varname>App-Data-Partition</varname></codeblock>
       </step>
       
       <step>
-        <cmd>Add mount points for XFS file systems, which are created in subsequent steps.</cmd>
+        <cmd>Add mount points for XFS filesystems, which are created in subsequent steps.</cmd>
         <stepxmp>
           <codeblock>mkdir -p /opt/serviced/var/isvcs /opt/serviced/var/volumes</codeblock>
         </stepxmp>

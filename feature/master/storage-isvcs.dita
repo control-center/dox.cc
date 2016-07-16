@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Creating a file system for internal services</title>
+  <title>Creating a filesystem for <ph keyref="nm-cc"/> internal services</title>
   <taskbody>
+    <prereq>This procedure requires a host with one unused primary partition.</prereq>
     <context>
-      <p>This procedure creates an XFS file system on a primary partition. For more information
-        about primary partitions, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      <p>Use this procedure to create an XFS filesystem on an unused primary partition.</p>
       
       <note><ph keyref="nm-cc"/> internal services include ZooKeeper, which requires
-        consistently fast storage. <ph conkeyref="names/company"/> recommends using
+        consistently fast storage. For best results, use
         a separate, high-performance storage resource for <ph keyref="nm-cc"/>
-        internal services. For example, a drive that is configured with only
+        internal services. For example, a local device that is configured with only
         one primary partition, which eliminates contention by other services.</note>
     </context>
     
@@ -20,18 +20,14 @@
       </step>
       
       <step>
-        <cmd>Identify the target primary partition for the file system to create.</cmd>
+        <cmd>Identify the target primary partition for the filesystem to create.</cmd>
         <stepxmp>
           <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
         </stepxmp>
-        <stepresult>For more information about the output of 
-              the <cmdname>lsblk</cmdname> command, 
-              and about creating primary partitions, 
-              refer to the <cite conkeyref="pubs/cite-plan"/>.</stepresult>
       </step>
       
       <step>
-        <cmd>Create an XFS file system.</cmd>
+        <cmd>Create an XFS filesystem.</cmd>
         <stepxmp>Replace <varname>Partition</varname> with the path of the target primary partition:
           <codeblock>mkfs -t xfs <varname>Partition</varname></codeblock>
         </stepxmp>
@@ -54,7 +50,7 @@
       </step>
       
       <step>
-        <cmd>Mount the file system, and then verify it mounted correctly.</cmd>
+        <cmd>Mount the filesystem, and then verify it mounted correctly.</cmd>
         <stepxmp>
           <codeblock>mount -a &#38;&#38; mount | grep isvcs</codeblock>
         </stepxmp>

@@ -4,7 +4,7 @@
   <title>Volume object</title>
   <refbody>
     <section>
-      <p>A <codeph>Volume</codeph> object defines a file system 
+      <p>A <codeph>Volume</codeph> object defines a filesystem 
         directory that is exported by containers.</p>
     <table>
       <tgroup cols="3">

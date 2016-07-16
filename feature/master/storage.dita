@@ -1,42 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
-<topic id="topicid">
-  <title>Preparing storage for the master host</title>
-  <body>
-    <p>In addition to the storage required for its operating system,
-      a <ph keyref="nm-cc"/> master host requires the following storage areas:</p>
-    <ul>
-      <li>A local partition for Docker data, configured as a device mapper thin pool.</li>
-      <li>A local partition for <ph keyref="nm-cc"/> internal services data, formatted with the XFS
-        file system. 
-        
-        <note><ph keyref="nm-cc"/> internal services include ZooKeeper, which requires
-          consistently fast storage. <ph conkeyref="names/company"/> recommends using
-          a separate, high-performance storage resource for <ph keyref="nm-cc"/>
-          internal services. For example, a drive that is configured with only
-          one primary partition, which eliminates contention by other services.</note>
-      </li>
-      <li>A local or remote primary partition for <ph keyref="nm-platform"/> data, configured as a
-        device mapper thin pool.</li>
-      <li>A local primary partition, a remote primary partition, or a remote file server, for
-        backups of <ph keyref="nm-platform"/> data. The local or remote primary partition is
-        formatted with the XFS file system. A remote file server must provide a file system that is
-        compatible with XFS.
-      <note>If you are using a primary partition on a local device for backups, ensure that 
-        the primary partition for <ph keyref="nm-cc"/> internal services data is not on the
-        same device.</note>
-      </li>
-    </ul>
-    <p>For storage sizing information, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="topicid">
+  <title>Master host storage requirements</title>
+  <refbody>
+    <section>
+      <p>This topic is a quick reference of the minimum block storage
+        requirements of a <ph keyref="nm-cc"/> master host. These requirements
+        are in addition to the storage required for the hosts operating system. For more
+        information, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <p>Enter the following command to display information about the
+         used and available block storage on a candidate master host:</p>
+        <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+      <p>Compare the output with the information in the following table.</p>
+      
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="3*"/>
+          <colspec colname="c2" colwidth="2*"/>
+          <colspec colname="c3" colwidth="6*"/>
+          <thead>
+            <row>
+              <entry>Purpose</entry>
+              <entry>Min. Size</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Docker data</entry>
+              <entry>50GB</entry>
+              <entry>A local, high-performance primary partition, unformatted.</entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> internal services data</entry>
+              <entry>50GB</entry>
+              <entry>A local, high-performance primary partition formatted as an XFS filesystem. In particular,
+                ZooKeeper requires consistently fast (low-contention) storage.</entry>
+            </row>
+            <row>
+              <entry>Application data</entry>
+              <entry>Unknown</entry>
+              <entry>A local or remote high-performance primary partition, unformatted. </entry>
+            </row>
+            <row>
+              <entry>Application data backups</entry>
+              <entry>Unknown</entry>
+              <entry>A remote file server compatible with XFS, or a local or remote primary 
+                partition formatted as an XFS filesystem. If the storage is local, ensure
+                that it does not cause contention with the partition for <ph keyref="nm-cc"/>
+                internal services.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <p>The unformatted partitions for Docker data and application data are configured as
+      device mapper thin pools in subsequent procedures.</p>
     
-    <p>For device mapper thin pools, no formatting is required&#8212;simply create primary
-      partitions, which are configured in subsequent procedures. For more information, 
-      refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
-    
-    <p>To create the required storage, perform the following procedures.</p>   
-    
-    <note>Data present on the primary partitions you select are destroyed in these procedure. Please
-      ensure that data is backed up elsewhere, or no longer needed, before proceeding.</note>
-    
-  </body>
-</topic>
+      <p>The following sections provide procedures for formatting and mounting local
+        XFS filesystems for <ph keyref="nm-cc"/> internal services data and application
+        data backups.</p>   
+
+    </section>
+  </refbody>
+</reference>

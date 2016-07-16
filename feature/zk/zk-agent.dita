@@ -4,7 +4,7 @@
   <title>Configuring a resource pool host as a ZooKeeper node</title>
   <taskbody>
     <prereq>To perform this procedure, you need a resource pool host with an
-      XFS file system on a separate partition.</prereq>
+      XFS filesystem on a separate partition.</prereq>
     <context>This procedure configures a ZooKeeper ensemble on a resource pool host. Repeat this
       procedure on each <ph keyref="nm-cc"/> resource pool host to add to the ZooKeeper
       ensemble.</context>

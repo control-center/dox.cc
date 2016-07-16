@@ -6,8 +6,8 @@
     
     <context>
       <p>The <ph keyref="nm-cc"/> master host requires local or remote storage space for backups of
-          <ph keyref="nm-cc"/> data. This procedure includes steps to create an XFS file system on a
-        primary partition, if necessary, and steps to mount a file system for backups. For more
+          <ph keyref="nm-cc"/> data. This procedure includes steps to create an XFS filesystem on a
+        primary partition, if necessary, and steps to mount a filesystem for backups. For more
         information about backups, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
       
       <note>If you are using a primary partition on a local device for backups, ensure that 
@@ -24,7 +24,7 @@
       </step>
       
       <step importance="optional">
-        <cmd>Remove any file system signature from 
+        <cmd>Remove any filesystem signature from 
           the primary partition for <ph keyref="nm-cc"/> backups, if necessary.</cmd>
         <info>If you are using a remote file server for backups, skip this step.</info>
         <stepxmp>
@@ -35,7 +35,7 @@
       </step>
       
       <step importance="optional">
-        <cmd>Create an XFS file system, if necessary.</cmd>
+        <cmd>Create an XFS filesystem, if necessary.</cmd>
         <info>Skip this step if you are using a remote file server.</info>
         <stepxmp>Replace <varname>Backups-Partition</varname> with the path
           of the primary partition designated for <ph keyref="nm-cc"/> backups:
@@ -64,7 +64,7 @@
       </step>
       
       <step>
-        <cmd>Mount the file system, and then verify it mounted correctly.</cmd>
+        <cmd>Mount the filesystem, and then verify it mounted correctly.</cmd>
         <stepxmp>
           <codeblock>mount -a &#38;&#38; mount | grep backups</codeblock>
         </stepxmp>

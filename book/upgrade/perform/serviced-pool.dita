@@ -44,17 +44,17 @@
       </step>
       
       <step>
-        <cmd>Unmount the distributed file system (DFS).</cmd>
+        <cmd>Unmount the distributed filesystem (DFS).</cmd>
         <substeps>
           <substep>
-            <cmd>Identify the file system specification to unmount.</cmd>
+            <cmd>Identify the filesystem specification to unmount.</cmd>
             <stepxmp>
               <codeblock>mount | awk '/serviced/ { print $1 }'</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Unmount the DFS.</cmd>
-            <stepxmp>Replace <varname>DFS-Mount</varname> with the file system specification
+            <stepxmp>Replace <varname>DFS-Mount</varname> with the filesystem specification
               returned in the previous substep:
               <codeblock>umount <varname>DFS-Mount</varname></codeblock>
             </stepxmp>

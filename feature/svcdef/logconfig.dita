@@ -19,7 +19,7 @@
           <row>
             <entry><codeph>Path</codeph></entry>
             <entry>String</entry>
-            <entry>The absolute path of a log file on a container&#39;s file system. The path
+            <entry>The absolute path of a log file on a container&#39;s filesystem. The path
               can be a directory or a file, and <cmdname>bash</cmdname> pathname expansion
               (globbing) is supported.</entry>
           </row>

@@ -3,8 +3,8 @@
 <task id="taskid">
   <title>Configuring <ph keyref="nm-cc"/></title>
   <taskbody>
-    <context>This procedure creates a thin pool for application data and
-      customizes key configuration variables of <ph keyref="nm-cc"/>.</context>
+    <context>Use this procedure to create a thin pool for application data and to customize key
+      configuration variables of <ph keyref="nm-cc"/>.</context>
     <steps>
       
       <step>
@@ -16,7 +16,7 @@
       </step>
       
       <step conkeyref="install-shared-tasklib/thinpool-rm">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
       <step conkeyref="install-shared-tasklib/app-set">

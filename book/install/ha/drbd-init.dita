@@ -55,8 +55,8 @@
           <codeblock>mkfs.xfs /dev/drbd0
 mkfs.xfs /dev/drbd1</codeblock>
         </stepxmp>
-        <stepresult>The commands create XFS file systems on the primary node, and DRBD mirrors the
-          file systems to the secondary node.</stepresult>
+        <stepresult>The commands create XFS filesystems on the primary node, and DRBD mirrors the
+          filesystems to the secondary node.</stepresult>
       </step>
       
       <step>

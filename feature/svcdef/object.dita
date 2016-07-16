@@ -166,7 +166,7 @@
           <row>
             <entry><codeph>Volumes</codeph></entry>
             <entry>Array of objects</entry>
-            <entry>The list of file system directories to bind mount in containers (in which
+            <entry>The list of filesystem directories to bind mount in containers (in which
               instances of the service run). Each item is a <xref keyref="service-definition-volume"
                   >Volume</xref> object.</entry>
           </row>
@@ -180,12 +180,12 @@
             <entry><codeph>Snapshot</codeph></entry>
             <entry>Object</entry>
             <entry>The <cmdname>bash</cmdname> commands to pause and resume the service. Between
-                commands, <ph keyref="nm-cc"/> copies the file system of the service&#39;s
+                commands, <ph keyref="nm-cc"/> copies the filesystem of the service&#39;s
                 container. <p>This object has two members:</p>
                 <dl>
                   <dlentry>
                     <dt><codeph>Pause</codeph></dt>
-                    <dd>The <cmdname>bash</cmdname> command to stop file system writes, or stop the
+                    <dd>The <cmdname>bash</cmdname> command to stop filesystem writes, or stop the
                       service.</dd>
                   </dlentry>
                   <dlentry>

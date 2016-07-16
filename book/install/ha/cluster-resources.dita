@@ -7,7 +7,7 @@
       <p>This procedure defines the following logical resources required for the cluster:</p>
       <ul>
           <li>DRBD Master/Secondary DFS set</li>
-          <li>Two mirrored file systems running on top of DRBD:
+          <li>Two mirrored filesystems running on top of DRBD:
             <ul>
               <li><filepath>/opt/serviced/var/isvcs</filepath></li>
               <li><filepath>/opt/serviced/var/volumes</filepath></li>
@@ -60,7 +60,7 @@
       </step>
       
       <step>
-        <cmd>Define the file systems that are mounted on the DRBD devices.</cmd>
+        <cmd>Define the filesystems that are mounted on the DRBD devices.</cmd>
         <substeps>
           <substep>
             <cmd>On the primary node, define a resource  

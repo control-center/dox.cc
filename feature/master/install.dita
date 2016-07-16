@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p>The procedures in this chapter configure a <ph keyref="nm-cc"/> master host
-        on a Red Hat Enterprise Linux (RHEL) or CentOS 7.2 host.</p>
+        on a Red Hat Enterprise Linux (RHEL) or CentOS 7.1 or 7.2 host.</p>
 
       <p>For more information about deploying <ph keyref="nm-cc"/>, see 
          <!-- <xref keyref="cc-planning"/>.--> </p>

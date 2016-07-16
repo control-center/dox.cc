@@ -4,14 +4,10 @@
   <title><filepath>/etc/default/serviced</filepath></title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> (<cmdname>serviced</cmdname>) is a single binary that behaves
-        differently based on the environment variables defined in its startup script. </p>
-        <ul>
-          <li>On Ubuntu systems, the startup script is 
-            <filepath>/etc/init/serviced.conf</filepath>.</li>
-          <li>On RHEL/CentOS systems the startup script is
-            <filepath>/etc/systemd/system/multi-user.target.wants/serviced.service</filepath>.</li>
-        </ul>
+      <p><ph keyref="nm-cc"/> (<cmdname>serviced</cmdname>) behaves
+        differently based on the environment variables defined in its startup script,
+        <filepath>/etc/systemd/system/multi-user.target.wants/serviced.service</filepath>. </p>
+        
       <p>The startup script reads the <cmdname>serviced</cmdname> defaults file,
           <filepath>/etc/default/serviced</filepath>. The startup script includes a few environment
         variables, but the values defined in the defaults file take precedence over the values
@@ -169,7 +165,7 @@
         <dlentry id="SERVICED_FS_TYPE">
           <dt><codeph>SERVICED_FS_TYPE</codeph></dt>
           <dd>Default: <codeph>rsync</codeph></dd> 
-          <dd>The driver for the distributed file system where application data is stored 
+          <dd>The driver for the distributed filesystem where application data is stored 
             on the master host (by
             default, <filepath>/opt/serviced/var/volumes</filepath>). The supported types are
               <codeph>rsync</codeph>, <codeph>btrfs</codeph>, and <codeph>devicemapper</codeph>.

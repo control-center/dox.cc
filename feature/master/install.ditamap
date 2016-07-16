@@ -10,13 +10,10 @@
     </topicref>
     <topicref keyref="feature-master-prep"/>
     <topicref keyref="feature-master-docker"/>
-    <topicref keyref="feature-master-cc"/>
     <topicref keyref="feature-master-users">
       <topicref keyref="feature-master-users-wheel"/>
       <topicref keyref="feature-master-users-serviced"/>
       <topicref keyref="feature-master-users-cli"/>
     </topicref>
-    <topicref keyref="feature-master-start"/>
-    <topicref keyref="feature-master-isolate"/>
    </chapter>
 </bookmap>

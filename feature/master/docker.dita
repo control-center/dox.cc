@@ -3,8 +3,8 @@
 <task id="taskid">
   <title>Installing Docker and <ph keyref="nm-cc"/></title>
   <taskbody>
-    <context>This procedure installs and configures Docker, 
-      and installs <ph keyref="nm-cc"/>.</context>
+    <context>Use this procedure to install and configure Docker, and to install <ph keyref="nm-cc"
+      />.</context>
     <steps>
       
       <step>

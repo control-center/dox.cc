@@ -15,20 +15,20 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/check-name-resolution">
+      <step conkeyref="install-shared-tasklib/check-cpu-count">
         <cmd></cmd>
-      </step>
-
-      <step conkeyref="install-shared-tasklib/check-hostid">
-        <cmd></cmd>
-      </step>
-      
-      <step conkeyref="install-shared-tasklib/check-storage-master">
-        <cmd/>
       </step>
       
       <step conkeyref="install-shared-tasklib/check-memory-master">
         <cmd/>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-hostid">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-shared-tasklib/check-name-resolution">
+        <cmd></cmd>
       </step>
 
       <step conkeyref="install-shared-tasklib/update-os">

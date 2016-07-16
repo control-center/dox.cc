@@ -98,11 +98,8 @@
             <cmd>Identify the primary partition for the thin pool to create,
               and the amount of space available on the primary partition.</cmd>
             <stepxmp>
-              <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
             </stepxmp>
-            <stepresult>For more information about the output of 
-              the <cmdname>lsblk</cmdname> command and primary partitions, 
-              refer to the <cite conkeyref="pubs/cite-plan"/>.</stepresult>
           </substep>
           <substep>
             <cmd>Create a variable for 50% of the space available on the
@@ -305,7 +302,7 @@
           <substep>
             <cmd>Identify the primary partition for the thin pool to create.</cmd>
             <stepxmp>
-              <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -333,17 +330,17 @@
         </stepxmp>
       </step>
       
-      <step id="check-storage-master">
-        <cmd>Determine whether the available, unused storage is sufficient.</cmd>
+      <step id="check-cpu-count">
+        <cmd>Determine whether the CPU resources are sufficient.</cmd>
         <substeps>
           <substep>
-            <cmd>Display the available storage devices.</cmd>
+            <cmd>Display the total number of CPU cores.</cmd>
             <stepxmp>
-              <codeblock>lsblk --output=NAME,SIZE</codeblock>
+              <codeblock>cat /proc/cpuinfo | grep 'core id' | wc -l</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Compare the available storage with the 
+            <cmd>Compare the available resources with the 
               requirements for a <ph keyref="nm-cc"/> master host.</cmd>
             <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
           </substep>
@@ -356,7 +353,7 @@
           <substep>
             <cmd>Display the available storage devices.</cmd>
             <stepxmp>
-              <codeblock>lsblk --output=NAME,SIZE</codeblock>
+              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -765,10 +762,12 @@ myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
       </step>
       
       <step id="zenoss-repo">  
-        <cmd>Install the <ph conkeyref="names/company"/> repository package.</cmd>
+        <cmd>Add the <ph conkeyref="names/company"/> repositories to the host's repository list.</cmd>
         <substeps>
           <substep>
-            <cmd>Install the package.</cmd>
+            <cmd>Install the repository package.</cmd>
+            <info>The package installs the <ph conkeyref="names/company"/> stable, 
+              unstable, and testing repositories.</info>
             <stepxmp>
               <codeblock>rpm -ivh http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm</codeblock>
             </stepxmp>

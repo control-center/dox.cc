@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature (2016-07-15 13:59:04)</title>
+ <title>Keys in feature (2016-07-16 12:19:15)</title>
   
    
    <topicgroup>
     <keydef keys="feature-master-cc"
             href="master/cc.dita"
+            format="dita"
+    />
+    <keydef keys="feature-master-configure"
+            href="master/configure.dita"
             format="dita"
     />
     <keydef keys="feature-master-create"
@@ -98,6 +102,32 @@
     />
     <keydef keys="feature-worker-verify"
             href="worker/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="feature-zk-zk-agent"
+            href="zk/zk-agent.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-zk-enable"
+            href="zk/zk-enable.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-zk-master"
+            href="zk/zk-master.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-zk-pool"
+            href="zk/zk-pool.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-zk-vars"
+            href="zk/zk-vars.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-zk"
+            href="zk/zk.dita"
             format="dita"
     />
    </topicgroup>
