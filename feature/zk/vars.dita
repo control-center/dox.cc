@@ -29,7 +29,7 @@
                 <sli>The ZooKeeper node ID, IP address, peer communications port, 
                   and leader communications port of each host in an ensemble. Each 
                   quorum definition must be unique, so the IP address of the 
-                  "current" host is 0.0.0.0.</sli>
+                  "current" host must be 0.0.0.0.</sli>
                 <sli>Value: <codeph><varname>ZooKeeper-ID</varname>@<varname>IP-Address</varname>:2888:3888,...</codeph></sli>
               </sl>
             </entry>

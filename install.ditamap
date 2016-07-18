@@ -52,9 +52,10 @@
       <!-- <topicref href="book/install/front/about.dita"/> -->
   </frontmatter>
   
-  <chapter href="feature/master/install.ditamap" format="ditamap"/>
-  <chapter href="feature/master/configure.ditamap" format="ditamap"/>
-  <chapter href="feature/worker/install.ditamap" format="ditamap"/>
+  <chapter href="feature/cluster/master/install.ditamap" format="ditamap"/>
+  <chapter href="feature/cluster/master/configure.ditamap" format="ditamap"/>
+  <chapter href="feature/cluster/worker/install.ditamap" format="ditamap"/>
+  <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>
   
 </bookmap>

@@ -767,7 +767,7 @@ myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
           <substep>
             <cmd>Install the repository package.</cmd>
             <info>The package installs the <ph conkeyref="names/company"/> stable, 
-              unstable, and testing repositories.</info>
+              unstable, and testing repositories. All 3 repositories are disabled.</info>
             <stepxmp>
               <codeblock>rpm -ivh http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm</codeblock>
             </stepxmp>

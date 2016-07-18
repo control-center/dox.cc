@@ -1,129 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature (2016-07-16 12:19:15)</title>
-  
-   
-   <topicgroup>
-    <keydef keys="feature-master-cc"
-            href="master/cc.dita"
+ <title>Keys in feature (2016-07-18 15:46:15)</title>
+  <topicgroup>
+    <keydef keys="feature-cluster-access-users-cli"
+            href="cluster/access/users-cli.dita"
             format="dita"
     />
-    <keydef keys="feature-master-configure"
-            href="master/configure.dita"
+    <keydef keys="feature-cluster-access-users-serviced"
+            href="cluster/access/users-serviced.dita"
             format="dita"
     />
-    <keydef keys="feature-master-create"
-            href="master/create.dita"
+    <keydef keys="feature-cluster-access-users-wheel"
+            href="cluster/access/users-wheel.dita"
             format="dita"
     />
-    <keydef keys="feature-master-docker"
-            href="master/docker.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-install"
-            href="master/install.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-isolate"
-            href="master/isolate.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-prep"
-            href="master/prep.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-start"
-            href="master/start.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-storage-about"
-            href="master/storage-about.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-storage-backups"
-            href="master/storage-backups.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-storage-isvcs"
-            href="master/storage-isvcs.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-storage"
-            href="master/storage.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-users-cli"
-            href="master/users-cli.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-users-serviced"
-            href="master/users-serviced.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-users-wheel"
-            href="master/users-wheel.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-users"
-            href="master/users.dita"
-            format="dita"
-    />
-    <keydef keys="feature-master-verify"
-            href="master/verify.dita"
-            format="dita"
-    />
-   </topicgroup>
-   
-   <topicgroup>
-    <keydef keys="feature-worker-cc"
-            href="worker/cc.dita"
-            format="dita"
-    />
-    <keydef keys="feature-worker-docker"
-            href="worker/docker.dita"
-            format="dita"
-    />
-    <keydef keys="feature-worker-install"
-            href="worker/install.dita"
-            format="dita"
-    />
-    <keydef keys="feature-worker-isvcs"
-            href="worker/isvcs.dita"
-            format="dita"
-    />
-    <keydef keys="feature-worker-prep"
-            href="worker/prep.dita"
-            format="dita"
-    />
-    <keydef keys="feature-worker-start"
-            href="worker/start.dita"
-            format="dita"
-    />
-    <keydef keys="feature-worker-verify"
-            href="worker/verify.dita"
+    <keydef keys="feature-cluster-access-users"
+            href="cluster/access/users.dita"
             format="dita"
     />
    </topicgroup>
    <topicgroup>
-    <keydef keys="feature-zk-zk-agent"
-            href="zk/zk-agent.dita"
+    <keydef keys="feature-cluster-master-cc"
+            href="cluster/master/cc.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-zk-enable"
-            href="zk/zk-enable.dita"
+    <keydef keys="feature-cluster-master-configure"
+            href="cluster/master/configure.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-zk-master"
-            href="zk/zk-master.dita"
+    <keydef keys="feature-cluster-master-create"
+            href="cluster/master/create.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-zk-pool"
-            href="zk/zk-pool.dita"
+    <keydef keys="feature-cluster-master-docker"
+            href="cluster/master/docker.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-zk-vars"
-            href="zk/zk-vars.dita"
+    <keydef keys="feature-cluster-master-install"
+            href="cluster/master/install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-isolate"
+            href="cluster/master/isolate.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-prep"
+            href="cluster/master/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-start"
+            href="cluster/master/start.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-storage-about"
+            href="cluster/master/storage-about.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-storage-backups"
+            href="cluster/master/storage-backups.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-storage-isvcs"
+            href="cluster/master/storage-isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-storage"
+            href="cluster/master/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-verify"
+            href="cluster/master/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="feature-cluster-worker-cc"
+            href="cluster/worker/cc.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-worker-docker"
+            href="cluster/worker/docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-worker-install"
+            href="cluster/worker/install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-worker-isvcs"
+            href="cluster/worker/isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-worker-prep"
+            href="cluster/worker/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-worker-start"
+            href="cluster/worker/start.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-worker-verify"
+            href="cluster/worker/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="feature-svcdef-configFile"
+            href="svcdef/configFile.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-datapoint"
+            href="svcdef/datapoint.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-endpoint"
+            href="svcdef/endpoint.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template-bytesToMB"
+            href="svcdef/go-template-bytesToMB.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template-child"
+            href="svcdef/go-template-child.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template-each"
+            href="svcdef/go-template-each.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template-parent"
+            href="svcdef/go-template-parent.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template-percentScale"
+            href="svcdef/go-template-percentScale.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template-plus"
+            href="svcdef/go-template-plus.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-go-template"
+            href="svcdef/go-template.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-graphConfig"
+            href="svcdef/graphConfig.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-health"
+            href="svcdef/health.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-logconfig"
+            href="svcdef/logconfig.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-metric"
+            href="svcdef/metric.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-metricConfig"
+            href="svcdef/metricConfig.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-object"
+            href="svcdef/object.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-svcdef"
+            href="svcdef/svcdef.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-task"
+            href="svcdef/task.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-template"
+            href="svcdef/template.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-thresholdConfig"
+            href="svcdef/thresholdConfig.dita"
+            format="dita"
+    />
+    <keydef keys="feature-svcdef-volume"
+            href="svcdef/volume.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="feature-zk-enable"
+            href="zk/enable.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-master"
+            href="zk/master.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-pool"
+            href="zk/pool.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-vars"
+            href="zk/vars.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-worker"
+            href="zk/worker.dita"
             format="dita"
     />
     <keydef keys="feature-zk-zk"

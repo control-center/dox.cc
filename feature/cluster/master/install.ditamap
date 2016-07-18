@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Install master</title>
+  <chapter keyref="feature-cluster-master-install">
+    <topicref keyref="feature-cluster-master-verify"/>
+    <topicref keyref="feature-cluster-master-storage">
+      <topicref keyref="feature-cluster-master-storage-isvcs"/>
+      <topicref keyref="feature-cluster-master-storage-backups"/>
+    </topicref>
+    <topicref keyref="feature-cluster-master-prep"/>
+    <topicref keyref="feature-cluster-master-docker"/>
+    <topicref keyref="feature-cluster-access-users">
+      <topicref keyref="feature-cluster-access-users-wheel"/>
+      <topicref keyref="feature-cluster-access-users-serviced"/>
+      <topicref keyref="feature-cluster-access-users-cli"/>
+    </topicref>
+   </chapter>
+</bookmap>

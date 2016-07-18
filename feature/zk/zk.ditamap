@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>ZK config</title>
+  <chapter keyref="feature-zk-zk">
+    <topicref keyref="feature-zk-vars"/>
+    <topicref keyref="feature-zk-master"/>
+    <topicref keyref="feature-zk-worker"/>
+    <topicref keyref="feature-zk-enable"/>
+    <topicref keyref="feature-zk-pool"/>
+   </chapter>
+</bookmap>
