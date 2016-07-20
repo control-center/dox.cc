@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in notes (2016-07-20 16:48:39)</title>
+ <title>Keys in notes (2016-07-20 17:36:46)</title>
   <topicgroup>
+    <keydef keys="notes-111-features"
+            href="111/features.dita"
+            format="dita"
+    />
     <keydef keys="notes-111-fixed"
             href="111/fixed.dita"
             format="dita"

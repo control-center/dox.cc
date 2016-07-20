@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>New features in this release</title>
+  <title>New features</title>
   <refbody>
     <section>
-      <p/>
-    </section>  
+      <p>
+        <ul>
+          <li>
+            <p><codeph>serviced volume status</codeph> command</p>
+            <p>This release introduces a new <codeph>serviced volume status</codeph> command that
+              provides detailed information on the volume located at
+              <codeph>/opt/serviced/var/volumes</codeph>. You can get metrics on the thin pool as
+              well as application data on the filesystem usage, virtual device size, unallocated
+              space, and pool space allocated to virtual devices and snapshots.</p>
+          </li>
+          <li>
+            <p>Public endpoints</p>
+            <p>Another feature available is the ability to create public endpoints for access to the
+               <ph keyref="nm-cc"/> web servers.</p>
+          </li>
+        </ul>
+      </p>
+    </section>
+    
   </refbody>
 </reference>

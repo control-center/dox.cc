@@ -3,6 +3,7 @@
 <bookmap>
  <title>111</title>
  <chapter keyref="notes-111-self">
+   <topicref keyref="notes-111-features"/> 
    <topicref keyref="notes-111-fixed"/> 
    <topicref keyref="notes-111-known"/>
  </chapter>

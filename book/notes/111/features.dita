@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>New features</title>
+  <refbody>
+    <section>
+      <title><ph keyref="nm-cc"/> storage</title>
+      <ul>
+        <li>The storage underlying <ph keyref="nm-cc"/> has changed from btrfs to DeviceMapper.
+          Migration to DeviceMapper is required as part of the upgrade process, and migration tools
+          are provided. Follow the instructions in the <cite conkeyref="pubs/cite-upgrade"/> when
+          migrating from <ph keyref="nm-cc"/> 1.0.x to <ph keyref="nm-cc"/> 1.1.1.</li>
+      </ul>
+    </section>
+    
+    <section>
+      <title><ph keyref="nm-cc"/> backup enhancements</title>
+      <ul>
+        <li><ph keyref="nm-cc"/> will now briefly pause services to snapshot them, then return the
+          system to a fully functional state while performing the backup in the background. This
+          means that services can be deleted or altered while the backup continues.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Single-Host to Multi-Host migration enhancements</title>
+      <ul>
+        <li>Migrating from a single-host to multi-host install now requires only that the new
+          host(s) be configured and added to the Resource Pool in the <ph keyref="nm-cc"/> master
+          UI. Configuration changes and other steps formerly required in earlier <ph keyref="nm-cc"
+          /> releases are no longer necessary.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Serviced storage tool</title>
+      <ul>
+        <li>A new tool (<codeph>serviced storage</codeph>) is provided to greatly streamline working
+          with <ph keyref="nm-cc"/> storage, including support for tasks such as creating volumes,
+          creating and resizing thin pools, initializing DeviceMapper and converting from btrfs to
+          DeviceMapper. Installation and Upgrade instructions make use of the <codeph>serviced
+            storage</codeph> tool, please consult the <cite conkeyref="pubs/cite-install"/> 
+          and <cite conkeyref="pubs/cite-upgrade"/> for details.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Snapshot tagging</title>
+      <ul>
+        <li>Serviced snapshots can now be tagged with a name. Important to note is that the Time To
+          Live (TTL) does not apply to tagged snapshots, meaning they will not be deleted according
+          to the TTL schedule.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Clustered Zookeeper</title>
+      <ul>
+        <li>Multi-host systems can utilize a Zookeeper cluster for improved performance and
+          reliability.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Public endpoints by port number</title>
+      <ul>
+        <li>Public Endpoints can be vhosts, accessible by host name, or ports, accessible by
+            <codeph>ip:port</codeph> or <codeph>hostname:port</codeph>. Specifying by port number
+          removes the need to update DNS entries or <codeph>/etc/hosts</codeph> files.</li>
+      </ul>
+    </section>
+    
+    <section>
+      <title>Removal of Ubuntu support</title>
+      <ul>
+        <li>Ubuntu is no longer a supported platform for <ph keyref="nm-cc"/> 1.1.1 or
+          later.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>
