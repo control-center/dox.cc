@@ -49,7 +49,7 @@
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="install-shared-tasklib/open-file">
+          <substep conkeyref="shared-install-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -58,10 +58,10 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_ADMIN_GROUP=wheel</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="install-shared-tasklib/uncomment">
+          <substep conkeyref="shared-install-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="install-shared-tasklib/save">
+          <substep conkeyref="shared-install-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -78,7 +78,7 @@
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="install-shared-tasklib/open-file">
+          <substep conkeyref="shared-install-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -87,10 +87,10 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_ALLOW_ROOT_LOGIN=1</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="install-shared-tasklib/uncomment">
+          <substep conkeyref="shared-install-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="install-shared-tasklib/save">
+          <substep conkeyref="shared-install-tasks/save">
             <cmd/>
           </substep>
         </substeps>

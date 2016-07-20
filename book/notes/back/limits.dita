@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Limitations</title>
+  <refbody>
+    <section>
+      <p>(ZEN-23802) A new install of the ISO appliance does not have the same kernel version as the
+        OVA appliance. For a new install of the ISO appliance, you need to perform the following
+        command as a <codeph>root</codeph> user to get the latest kernel version: <codeph>yum -y
+          update</codeph> or <codeph>yum -y update kernel</codeph></p>
+      <p>(ZEN-15907) The size of the CentralQuery maximum memory allocation pool is set by the
+          <varname>RAMCommitment</varname> variable in the CentralQuery service definition. The
+        default value is 1024MB. Do not change the value to anything less than 1024MB.</p>
+    </section>
+  </refbody>
+</reference>

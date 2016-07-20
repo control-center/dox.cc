@@ -40,10 +40,4 @@
             format="dita"
     />
    </topicgroup>
-   <topicgroup>
-    <keydef keys="upgrade-shared-tasklib"
-            href="shared/tasklib.dita"
-            format="dita"
-    />
-   </topicgroup>
 </map>

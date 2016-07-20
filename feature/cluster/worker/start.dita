@@ -3,8 +3,8 @@
 <task id="taskid">
   <title>Starting <ph keyref="nm-cc"/></title>
   <taskbody>
-    <prereq>Before performing this procedure, complete all of the steps in <xref
-        keyref="centos-pool-docker"/>.</prereq>
+    <!-- <prereq>Before performing this procedure, complete all of the steps in <xref
+        keyref="centos-pool-docker"/>.</prereq> -->
     <steps>
       <step>
         <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>

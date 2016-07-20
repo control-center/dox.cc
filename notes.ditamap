@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="ph-install"/></mainbooktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-notes"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="1" modification="7"/>        
+        <vrm version="1" release="1" modification="7"/> 
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>XXXX</bookpartno>  
+      <bookpartno>xxxx</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -28,6 +28,7 @@
     </bookrights>
     <data conkeyref="data/zentm"/>
   </bookmeta>
+
   <frontmatter>
     <topicgroup>
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
@@ -43,20 +44,13 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="book/install/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/keys.ditamap" format="ditamap"/>
     </topicgroup>
-    <booklists>
-      <toc/>
-    </booklists>
-      <!-- <topicref href="book/install/front/about.dita"/> -->
+    <preface>
+      <topicref href="book/notes/front/about.dita"/>
+    </preface>
   </frontmatter>
   
-  <chapter href="feature/cluster/master/install.ditamap" format="ditamap"/>
-  <chapter href="feature/cluster/master/configure.ditamap" format="ditamap"/>
-  <chapter href="feature/cluster/worker/install.ditamap" format="ditamap"/>
-  <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
-  <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>
-  <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
-  
+  <chapter  href="book/notes/117/self.ditamap" format="ditamap"/>
+  <appendix href="book/notes/back/back.ditamap" format="ditamap"/>
 </bookmap>

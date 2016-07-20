@@ -10,31 +10,31 @@
         <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/docker-install">
+      <step conkeyref="shared-install-tasks/docker-install">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/docker-tmp">
+      <step conkeyref="shared-install-tasks/docker-tmp">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/docker-svc-def">
+      <step conkeyref="shared-install-tasks/docker-svc-def">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/install-serviced">
+      <step conkeyref="shared-install-tasks/install-serviced">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/create-thin-docker">
+      <step conkeyref="shared-install-tasks/create-thin-docker">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/docker-config">
+      <step conkeyref="shared-install-tasks/docker-config">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/docker-dns-flag">
+      <step conkeyref="shared-install-tasks/docker-dns-flag">
         <cmd/>
       </step>
       

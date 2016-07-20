@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
-<concept id="conceptid">
-  <title>Installing a master host</title>
-  <conbody>
-    <p>Perform the procedures in this section to install <ph keyref="nm-cc"/> 
-      and <ph keyref="nm-platform"/> on a master host. </p>
-  </conbody>
-</concept>

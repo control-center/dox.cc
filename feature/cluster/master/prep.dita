@@ -13,31 +13,35 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/localhost-entry">
+      <step conkeyref="shared-install-tasks/localhost-entry">
         <cmd></cmd>
       </step>
 
-      <step conkeyref="install-shared-tasklib/firewall">
+      <step conkeyref="shared-install-tasks/firewall">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/journal">
+      <step conkeyref="shared-install-tasks/journal">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/kill-selinux">
+      <step conkeyref="shared-install-tasks/kill-selinux">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/dnsmasq">
+      <step conkeyref="shared-install-tasks/dnsmasq">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/ntp">
+      <step conkeyref="shared-install-tasks/install-anacron">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/ntp">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/zenoss-repo">
+      <step conkeyref="shared-install-tasks/zenoss-repo">
         <cmd></cmd>
       </step>
       

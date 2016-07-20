@@ -3,7 +3,6 @@
 <bookmap>
   <title>Configure master</title>
   <chapter keyref="feature-cluster-master-configure">
-    <topicref keyref="shared-serviced-vars"/>
     <topicref keyref="feature-cluster-master-cc"/>
     <topicref keyref="feature-cluster-master-start"/>
     <topicref keyref="feature-cluster-master-isolate"/>

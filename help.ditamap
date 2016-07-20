@@ -38,10 +38,11 @@
     <topicgroup>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/urls/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/versions.ditamap" format="ditamap" />
+      <mapref href="shared/urls.ditamap" format="ditamap"/>
+      <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="shared/lib/keys.ditamap" format="ditamap"/>
       <mapref href="book/admin/keys.ditamap" format="ditamap" />
       <mapref href="feature/keys.ditamap" format="ditamap" />
     </topicgroup>

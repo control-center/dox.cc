@@ -11,31 +11,31 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/verify-64">
+      <step conkeyref="shared-install-tasks/verify-64">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/check-cpu-count">
+      <step conkeyref="shared-install-tasks/check-cpu-count">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/check-memory-master">
+      <step conkeyref="shared-install-tasks/check-memory-master">
         <cmd/>
       </step>
       
-      <step conkeyref="install-shared-tasklib/check-hostid">
+      <step conkeyref="shared-install-tasks/check-hostid">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/check-name-resolution">
+      <step conkeyref="shared-install-tasks/check-name-resolution">
         <cmd></cmd>
       </step>
 
-      <step conkeyref="install-shared-tasklib/update-os">
+      <step conkeyref="shared-install-tasks/update-os">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/update-kernel">
+      <step conkeyref="shared-install-tasks/update-kernel">
         <cmd></cmd>
       </step>
       

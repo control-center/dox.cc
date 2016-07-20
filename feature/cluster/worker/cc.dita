@@ -11,11 +11,11 @@
         <cmd>Log in to the worker host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/agent">
+      <step conkeyref="shared-install-tasks/agent">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-shared-tasklib/cfg-subnet">
+      <step conkeyref="shared-install-tasks/cfg-subnet">
         <cmd></cmd>
       </step>
       

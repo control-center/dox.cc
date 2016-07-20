@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Limitations, errata, and documentation</title>
+  <conbody>
+    <p>This section includes the following information:</p>
+    <ul>
+      <li>The list of supported browser clients.</li>
+      <li>The known limitations of <ph keyref="nm-cc"/>, if any.</li>
+      <li>Release-specific documentation errata, if any.</li>
+      <li>Descriptions of additional documentation.</li>
+    </ul>
+  </conbody>
+</concept>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="taskid">
+  <title>Enabling NTP on Microsoft Hyper-V guests</title>
+  <conbody>
+    <p>Like most distributed applications, <ph keyref="nm-cc"/> requires a common time source. The
+      procedures in this section enable <xref keyref="url-ntp">NTP</xref> to synchronize the system
+      clocks of all hosts in your <ph keyref="nm-cc"/> cluster.</p>
+      
+      <p>You may configure NTP to rely on public time servers or on a private master server.
+      <ul>
+        <li>If all of the hosts in your <ph keyref="nm-cc"/> cluster
+          can access the internet, configure NTP to rely on public time servers.</li>
+        <li>If none of the hosts in your <ph keyref="nm-cc"/> cluster
+          can access the internet, configure NTP to rely on a private master server. </li>
+      </ul>
+      </p>
+
+    <note>The procedures in this section are required only for multi-host deployments running as
+      Microsoft Hyper-V guests. VMware vSphere guests use an hourly <cmdname>cron</cmdname> job to
+      synchronize their system clocks with the host.</note>
+  </conbody>
+</concept>
+
+

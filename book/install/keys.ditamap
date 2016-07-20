@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in install (2016-07-15 13:14:20)</title>
-  
-   <topicgroup>
+ <title>Keys in install (2016-07-20 14:12:13)</title>
+  <topicgroup>
     <keydef keys="install-ntp-master-ntp"
             href="ntp/master-ntp.dita"
             format="dita"
@@ -30,157 +29,8 @@
     />
    </topicgroup>
    <topicgroup>
-    <keydef keys="install-off-deploy"
-            href="off/deploy.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-cc"
-            href="off/master-cc.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-docker"
-            href="off/master-docker.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-install"
-            href="off/master-install.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-ntp"
-            href="off/master-ntp.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-prep"
-            href="off/master-prep.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-rm"
-            href="off/master-rm.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-start"
-            href="off/master-start.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-master-verify-resources"
-            href="off/master-verify-resources.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-offline"
-            href="off/offline.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-pool-cc"
-            href="off/pool-cc.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-pool-docker"
-            href="off/pool-docker.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-pool-install"
-            href="off/pool-install.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-pool-ntp"
-            href="off/pool-ntp.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-pool-prep"
-            href="off/pool-prep.dita"
-            format="dita"
-    />
-    <keydef keys="install-off-pool-verify-resources"
-            href="off/pool-verify-resources.dita"
-            format="dita"
-    />
-   </topicgroup>
-   
-   <topicgroup>
-    <keydef keys="install-on-add-hosts"
-            href="on/add-hosts.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-deploy"
-            href="on/deploy.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-online"
-            href="on/online.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-cc"
-            href="on/pool-cc.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-docker"
-            href="on/pool-docker.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-install"
-            href="on/pool-install.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-isvcs"
-            href="on/pool-isvcs.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-prep"
-            href="on/pool-prep.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-start"
-            href="on/pool-start.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-pool-verify-resources"
-            href="on/pool-verify-resources.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-users-cli"
-            href="on/users-cli.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-users-serviced"
-            href="on/users-serviced.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-users-wheel"
-            href="on/users-wheel.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-users"
-            href="on/users.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-zk-agent"
-            href="on/zk-agent.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-zk-enable"
-            href="on/zk-enable.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-zk-master"
-            href="on/zk-master.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-zk-pool"
-            href="on/zk-pool.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-zk-vars"
-            href="on/zk-vars.dita"
-            format="dita"
-    />
-    <keydef keys="install-on-zk"
-            href="on/zk.dita"
-            format="dita"
-    />
-   </topicgroup>
-   <topicgroup>
-    <keydef keys="install-shared-tasklib"
-            href="shared/tasklib.dita"
+    <keydef keys="install-vars-vars"
+            href="vars/vars.dita"
             format="dita"
     />
    </topicgroup>

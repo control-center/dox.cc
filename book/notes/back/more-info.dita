@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Additional information</title>
+  <refbody>
+    <section conkeyref="related-pubs/cc"/>
+    <section conkeyref="more-info/cc"/>    
+  </refbody>
+</reference>

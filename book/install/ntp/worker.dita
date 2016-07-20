@@ -4,20 +4,17 @@
   <title>Configuring NTP clients</title>
   <taskbody>
     <context>
-      <p>This procedure configures agent hosts to synchronize their clocks with the NTP server on
+      <p>This procedure configures worker hosts to synchronize their clocks with the NTP server on
         the <ph keyref="nm-cc"/> master host. Perform this procedure only if the hosts do not have internet access, and
-        repeat this procedure on each agent host in your <ph keyref="nm-cc"/> cluster.</p>
+        repeat this procedure on each worker host in your <ph keyref="nm-cc"/> cluster.</p>
       <note>Do not perform this procedure on VMware vSphere guests.</note>
     </context>
     
     <steps>
-      <step product="ucs" conkeyref="tasks-ucs/console-access">
-        <cmd/>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> worker 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      <step product="ucs" conkeyref="tasks-ucs/root-shell">
-        <cmd/>
-      </step>
-      
       
       <step>
         <cmd>Create a backup of the NTP configuration file.</cmd>
