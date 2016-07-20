@@ -1,12 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in notes (2016-07-20 15:23:43)</title>
+ <title>Keys in notes (2016-07-20 16:48:39)</title>
   <topicgroup>
-    <keydef keys="notes-117-docs"
-            href="117/docs.dita"
+    <keydef keys="notes-111-fixed"
+            href="111/fixed.dita"
             format="dita"
     />
+    <keydef keys="notes-111-known"
+            href="111/known.dita"
+            format="dita"
+    />
+    <keydef keys="notes-111-self"
+            href="111/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-112-fixed"
+            href="112/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-112-self"
+            href="112/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-113-fixed"
+            href="113/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-113-notes"
+            href="113/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-113-self"
+            href="113/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-114-fixed"
+            href="114/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-114-self"
+            href="114/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-115-fixed"
+            href="115/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-115-self"
+            href="115/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-116-fixed"
+            href="116/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-116-notes"
+            href="116/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-116-self"
+            href="116/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
     <keydef keys="notes-117-features"
             href="117/features.dita"
             format="dita"

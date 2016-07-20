@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Fixed issues</title>
+  <refbody>
+    <table>
+      <title>Release 1.1.1</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="5*"/>
+        <thead>
+          <row>
+            <entry>ID</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>CC-1471</entry>
+            <entry>The <ph keyref="nm-cc"/> command line interface does not show RAM statistics in a
+              multi-host deployment</entry>
+          </row>
+          <row>
+            <entry>CC-1791</entry>
+            <entry><ph keyref="nm-cc"/> uses the deprecated SHA-1 certificate type</entry>
+          </row>
+          <row>
+            <entry>CC-1813</entry>
+            <entry>When performing backups in <ph keyref="nm-cc"/>, "invalid argument" errors
+              appearing in log files</entry>
+          </row>
+          <row>
+            <entry>CC-1889</entry>
+            <entry><ph keyref="nm-cc"/> users have no way to modify a host's RAM allocation</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

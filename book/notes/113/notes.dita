@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Notes and workarounds</title>
+  <refbody>
+    <section>
+      <title>Turn off logical volume monitoring for the serviced pool (CC-2158)</title>
+      <p>Sometimes LVM decides to resize itself and if it doesn't have enough space it will unmount
+        the device. To avoid this situation you should turn off the LVM self monitoring for the
+        serviced-pool using the following command:
+        <codeblock>lvchange --monitor n serviced/serviced-pool</codeblock></p>
+    </section>
+  </refbody>
+</reference>
