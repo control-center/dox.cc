@@ -76,7 +76,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
       <step>
         <cmd>On both nodes, clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="shared-install-tasks/open-file">
+          <substep conkeyref="install-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -123,7 +123,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
               from the end of the file in the location of the just-deleted declaration.</cmd>
           </substep>
-          <substep conkeyref="shared-install-tasks/save">
+          <substep conkeyref="install-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>

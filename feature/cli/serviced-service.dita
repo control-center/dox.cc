@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><cmdname>serviced service</cmdname></title>
+  <shortdesc>The <cmdname>serviced service</cmdname> command lets you manage an application's
+    individual services.</shortdesc>
+  <refbody>
+    <section>
+      <title>USAGE</title>
+      <p>Use this command to perform administrative actions on specific service.</p>
+    </section>
+    <section>
+      <title>SYNTAX</title>
+      <codeblock>serviced service [global options] command [command options] [arguments...]</codeblock>
+    </section>
+    <section><title>COMMANDS</title>The following commands are available for <cmdname>serviced
+        service</cmdname>:<dl>
+        <dlentry>
+          <dt>list</dt>
+          <dd>List all services.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>status</dt>
+          <dd>Display the status of deployed services.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>add</dt>
+          <dd>Add a new service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>clone</dt>
+          <dd>Clone an existing service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>migrate, mig</dt>
+          <dd>Migrate an existing service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>remove, rm</dt>
+          <dd>Remove an existing service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>edit</dt>
+          <dd>Edit an existing service in a text editor.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>assign-ip</dt>
+          <dd>Assign an IP address to service endpoints that require an explicit IP address.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>start</dt>
+          <dd>Start a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>restart</dt>
+          <dd>Restart a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>stop</dt>
+          <dd>Stop a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>proxy</dt>
+          <dd>Start a server proxy for a container.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>shell</dt>
+          <dd>Start a service instance.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>run</dt>
+          <dd>Run a service command in a service instance.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>attach</dt>
+          <dd>Run an arbitrary command in a running service container.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>action</dt>
+          <dd>Run a predefined action in a running service container.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>logs</dt>
+          <dd>Display the log contents for a running service container by calling <codeph>docker
+              logs</codeph>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>list-snapshots</dt>
+          <dd>List all snapshots of a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>snapshot</dt>
+          <dd>Take a snapshot of a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>help, h</dt>
+          <dd>Show a list of commands or the help for a single command.</dd>
+        </dlentry>
+      </dl></section>
+    <section>
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt>--generate-bash-completion</dt>
+          <dd/>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Shows the help for an option.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

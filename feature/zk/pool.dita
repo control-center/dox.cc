@@ -17,7 +17,7 @@
       <step>
         <cmd>Update the variable.</cmd>
         <substeps>
-          <substep conkeyref="shared-install-tasks/open-file">
+          <substep conkeyref="install-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -25,7 +25,7 @@
               and then replace its value with the same value used in the 
               ZooKeeper ensemble nodes.</cmd>
           </substep>
-          <substep conkeyref="shared-install-tasks/save">
+          <substep conkeyref="install-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>

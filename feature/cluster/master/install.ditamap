@@ -10,10 +10,10 @@
     </topicref>
     <topicref keyref="feature-cluster-master-prep"/>
     <topicref keyref="feature-cluster-master-docker"/>
-    <topicref keyref="feature-cluster-access-users">
-      <topicref keyref="feature-cluster-access-users-wheel"/>
-      <topicref keyref="feature-cluster-access-users-serviced"/>
-      <topicref keyref="feature-cluster-access-users-cli"/>
+    <topicref keyref="feature-cluster-access-access">
+      <topicref keyref="feature-cluster-access-wheel"/>
+      <topicref keyref="feature-cluster-access-serviced"/>
+      <topicref keyref="feature-cluster-access-cli"/>
     </topicref>
    </chapter>
 </bookmap>

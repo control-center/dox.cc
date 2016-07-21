@@ -136,13 +136,13 @@
             online help.) </p>
         </info>
         <substeps>
-          <substep conkeyref="shared-install-tasks/open-file">
+          <substep conkeyref="install-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
             <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> declaration.</cmd>
           </substep>
-          <substep conkeyref="shared-install-tasks/uncomment">
+          <substep conkeyref="install-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
@@ -154,7 +154,7 @@
               <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep conkeyref="shared-install-tasks/save">
+          <substep conkeyref="install-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -167,14 +167,14 @@
           <p>The default private subnet may already be in use in your environment. 
             The following variable configures <cmdname>serviced</cmdname> to use an alternate subnet:</p>
           <dl>
-            <dlentry conkeyref="shared-serviced-vars/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+            <dlentry conkeyref="feature-cli-config-vars/SERVICED_VIRTUAL_ADDRESS_SUBNET">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="shared-install-tasks/open-file">
+          <substep conkeyref="install-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -185,10 +185,10 @@
             </stepxmp>
             <info>For example, change the value to <codeph>203.0.113.0/20</codeph>.</info>
           </substep>
-          <substep conkeyref="shared-install-tasks/uncomment">
+          <substep conkeyref="install-lib-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="shared-install-tasks/save">
+          <substep conkeyref="install-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -201,18 +201,18 @@
         <info>
           <p>The following variables configure <cmdname>serviced</cmdname> to serve as both master and worker:</p>
           <dl>
-            <dlentry conkeyref="shared-serviced-vars/SERVICED_AGENT">
+            <dlentry conkeyref="feature-cli-config-vars/SERVICED_AGENT">
               <dt/>
               <dd/>
             </dlentry>
-            <dlentry conkeyref="shared-serviced-vars/SERVICED_MASTER">
+            <dlentry conkeyref="feature-cli-config-vars/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="shared-install-tasks/open-file">
+          <substep conkeyref="install-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -221,7 +221,7 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_AGENT=0</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="shared-install-tasks/uncomment">
+          <substep conkeyref="install-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
@@ -230,10 +230,10 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_MASTER=0</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="shared-install-tasks/uncomment">
+          <substep conkeyref="install-lib-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="shared-install-tasks/save">
+          <substep conkeyref="install-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -244,11 +244,11 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as agent:</p>
           <dl>
-            <dlentry conkeyref="shared-serviced-vars/SERVICED_AGENT">
+            <dlentry conkeyref="feature-cli-config-vars/SERVICED_AGENT">
               <dt/>
               <dd/>
             </dlentry>
-            <dlentry conkeyref="shared-serviced-vars/SERVICED_MASTER">
+            <dlentry conkeyref="feature-cli-config-vars/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
@@ -266,7 +266,7 @@
           </sl>
         </info>
         <substeps>
-          <substep conkeyref="shared-install-tasks/open-file">
+          <substep conkeyref="install-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -275,7 +275,7 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_AGENT=0</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="shared-install-tasks/uncomment">
+          <substep conkeyref="install-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
@@ -290,7 +290,7 @@
                 declaration that includes the master IP address.</note>
             </info>
           </substep>
-          <substep conkeyref="shared-install-tasks/save">
+          <substep conkeyref="install-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>

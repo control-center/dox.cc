@@ -12,30 +12,30 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="shared-install-tasks/verify-64">
+      <step conkeyref="install-lib-tasks/verify-64">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="shared-install-tasks/check-name-resolution">
+      <step conkeyref="install-lib-tasks/check-name-resolution">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="shared-install-tasks/check-hostid">
+      <step conkeyref="install-lib-tasks/check-hostid">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="shared-install-tasks/check-storage-pool">
+      <step conkeyref="install-lib-tasks/check-storage-pool">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="shared-install-tasks/check-memory-pool">
+      <step conkeyref="install-lib-tasks/check-memory-pool">
         <cmd></cmd>
       </step>
 
-      <step conkeyref="shared-install-tasks/update-os">
+      <step conkeyref="install-lib-tasks/update-os">
         <cmd></cmd>
       </step>
-      <step conkeyref="shared-install-tasks/update-kernel">
+      <step conkeyref="install-lib-tasks/update-kernel">
         <cmd></cmd>
       </step>
     </steps>

@@ -42,16 +42,15 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="shared/lib/keys.ditamap" format="ditamap"/>
-      <mapref href="book/admin/keys.ditamap" format="ditamap" />
+      <mapref href="book/help/keys.ditamap" format="ditamap" />
       <mapref href="feature/keys.ditamap" format="ditamap" />
     </topicgroup>
-    <topicref href="book/help/about.dita"/> 
+    <topicref href="book/help/front/about.dita"/> 
     <booklists>
       <toc/>
     </booklists>
   </frontmatter>
-  <chapter href="book/admin/topics/admin.ditamap" format="ditamap"/>
+  <chapter href="book/help/admin/admin.ditamap" format="ditamap"/>
   <!-- <chapter href="feature/gui/gui.ditamap" format="ditamap"/> -->
   <chapter href="feature/svcdef/svcdef.ditamap" format="ditamap"/> 
   <chapter href="feature/cli/cli.ditamap" format="ditamap"/>

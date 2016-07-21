@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="ph-install"/></mainbooktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-install"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -38,7 +38,6 @@
     <topicgroup>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/lib/keys.ditamap" format="ditamap"/>
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>

@@ -3,12 +3,6 @@
 <map>
   <title>Publication titles and other strings</title>
   <topicgroup>
-    
-    <!-- 
-    <keydef keys="names" 
-            href="vars/cisco.dita"
-    />  -->
-
     <keydef keys="names" 
             href="vars/zenoss.dita"
     />
@@ -21,6 +15,5 @@
     <keydef keys="strings" 
             href="vars/strings.dita"
     />
-
   </topicgroup>
 </map>

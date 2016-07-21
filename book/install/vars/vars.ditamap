@@ -3,6 +3,6 @@
 <bookmap>
    <title>serviced vars</title>
     <appendix keys="serviced-configuration-variables" keyref="install-vars-vars">
-       <topicref keyref="shared-serviced-vars"/>
+       <topicref keyref="feature-cli-config-vars"/>
    </appendix>
 </bookmap>

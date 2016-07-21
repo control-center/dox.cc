@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in upgrade (2016-07-15 09:56:26)</title>
+ <title>Keys in upgrade (2016-07-21 11:23:39)</title>
   <topicgroup>
     <keydef keys="upgrade-front-about"
             href="front/about.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="upgrade-lib-tasks"
+            href="lib/tasks.dita"
             format="dita"
     />
    </topicgroup>

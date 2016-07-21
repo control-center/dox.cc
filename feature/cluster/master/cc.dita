@@ -11,19 +11,19 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="shared-install-tasks/master">
+      <step conkeyref="install-lib-tasks/master">
         <cmd/>
       </step>
       
-      <step conkeyref="shared-install-tasks/thinpool-rm">
+      <step conkeyref="install-lib-tasks/thinpool-rm">
         <cmd/>
       </step>
       
-      <step conkeyref="shared-install-tasks/app-set">
+      <step conkeyref="install-lib-tasks/app-set">
         <cmd/>
       </step>
       
-      <step conkeyref="shared-install-tasks/cfg-subnet">
+      <step conkeyref="install-lib-tasks/cfg-subnet">
         <cmd/>
       </step>
       

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><cmdname>serviced service clone</cmdname></title>
+  <shortdesc>Creates a clone of an existing service. <draft-comment author="smillion">Per Summer,
+      endpoints are ports that are exposed by the service amd used for communications to and from
+      other services. Do we define endpoints anywhere in this doc or
+    elsewhere?</draft-comment></shortdesc>
+  <refbody>
+    <section>
+      <title>USAGE</title>
+      <p>Use this command to quickly create a clone of an existing service. The command returns the
+        cloned service's new ID. </p>
+      <p>Use <cmdname>serviced service list</cmdname> to view the cloned service. </p>
+      <p>The cloned service is not automatically started. To start the service use <cmdname>serviced
+          service start</cmdname>. </p>
+    </section>
+    <section>
+      <title>SYNTAX</title>
+      <draft-comment author="smillion">This is the what the command help says for Description. Which
+        one should go here? </draft-comment>
+      <p><codeph>serviced service clone <varname>--suffix</varname> { SERVICEID | SERVICENAME |
+          [POOL/]...PARENTNAME.../SERVICENAME }</codeph></p>
+    </section>
+    <section>
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt><synph>--suffix</synph></dt>
+          <dd>A name that is appended to the service, volumes, and endpoints of the newly cloned
+            service. </dd>
+          <dd>If a suffix is not specified, a dash and the first 12 characters of the
+              <codeph>SERVICEID</codeph> is appended to the name, for example:
+              <codeph>-b27482e7a1b6</codeph>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>SERVICEID</synph></dt>
+          <dd>A unique string of characters that identify the service. (How many chars long?)</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><synph>SERVICENAME</synph></dt>
+          <dd>The name of the service.</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><synph>POOL/...PARENTNAME.../SERVICENAME</synph></dt>
+          <dd>The path to the service, starting with the Resource Pool name, parent name, and
+            finally the service name. </dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>EXAMPLE</title>
+      <p>The following example command creates a clone of the <cmdname>mariadb-model</cmdname>
+        service and appends it with the suffix "-AusHub":</p>
+      <p><cmdname>root@zenoss:~# serviced service clone --suffix=-AusHub mariadb-model</cmdname></p>
+      <p><systemoutput> anm4tpiqxj1gih6puzl7apn6i </systemoutput></p>
+      <p>The following example command lists all instances of the <cmdname>mariadb-model</cmdname>
+        service: </p>
+      <p><cmdname>root@zenoss:~# serviced service list | grep mariadb-model</cmdname></p>
+      <p><systemoutput> mariadb-model 7h7uefodmvwrx81p31sp46ss7 1 .../b034bfj.../resmgr_5.0 default
+          1 auto waterloo mariadb-model-AusHub anm4tpiqxj1gih6puzl7apn6i 1 .../b034bfj.../resmgr_5.0
+          default 0 auto waterloo ip-10-111-23-218 Y</systemoutput></p>
+      <p>The following example command starts the cloned service:</p>
+      <p><cmdname>root@zenoss:~# serviced service start mariadb-model-AusHub</cmdname></p>
+      <p><systemoutput>Scheduled 1 service(s) to start</systemoutput></p>
+    </section>
+  </refbody>
+</reference>

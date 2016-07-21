@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in help (2016-07-21 11:13:11)</title>
+  <topicgroup>
+    <keydef keys="help-admin-admin"
+            href="admin/admin.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-multiple"
+            href="admin/multiple.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="help-front-about"
+            href="front/about.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
