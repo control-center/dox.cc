@@ -26,7 +26,7 @@
           </row>
           <row>
             <entry>CC-1577</entry>
-            <entry>ZenModeler service details graphs may not populate for time periods less than
+            <entry>Application service details graphs may not populate for time periods less than
               last 12 hours</entry>
             <entry>Open</entry>
           </row>

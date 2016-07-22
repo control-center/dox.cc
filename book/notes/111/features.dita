@@ -7,9 +7,7 @@
       <title><ph keyref="nm-cc"/> storage</title>
       <ul>
         <li>The storage underlying <ph keyref="nm-cc"/> has changed from btrfs to DeviceMapper.
-          Migration to DeviceMapper is required as part of the upgrade process, and migration tools
-          are provided. Follow the instructions in the <cite conkeyref="pubs/cite-upgrade"/> when
-          migrating from <ph keyref="nm-cc"/> 1.0.x to <ph keyref="nm-cc"/> 1.1.1.</li>
+          Migration to DeviceMapper is required as part of the upgrade process.</li>
       </ul>
     </section>
     
@@ -36,9 +34,7 @@
         <li>A new tool (<codeph>serviced storage</codeph>) is provided to greatly streamline working
           with <ph keyref="nm-cc"/> storage, including support for tasks such as creating volumes,
           creating and resizing thin pools, initializing DeviceMapper and converting from btrfs to
-          DeviceMapper. Installation and Upgrade instructions make use of the <codeph>serviced
-            storage</codeph> tool, please consult the <cite conkeyref="pubs/cite-install"/> 
-          and <cite conkeyref="pubs/cite-upgrade"/> for details.</li>
+          DeviceMapper.</li>
       </ul>
     </section>
     <section>

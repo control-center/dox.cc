@@ -65,8 +65,6 @@
       format="html" scope="external"
     />
   </topicgroup>
-  
-  <!-- From install guide -->
   <topicgroup>
     <keydef keys="url-rfc-1918 "
       href="http://tools.ietf.org/html/rfc1918"
@@ -206,7 +204,6 @@
     />
   </topicgroup>
   <topicgroup>
-    <!-- From Planning Guide -->
     <keydef keys="url-cgroups "
       href="http://en.wikipedia.org/wiki/Cgroups"
       format="html" scope="external"
@@ -216,8 +213,6 @@
       format="html" scope="external"
     />
   </topicgroup>
-  
-  <!-- From upgrade guide -->
   <topicgroup>
     <keydef keys="url-btrfs-faq "
       href="http://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F"
@@ -235,26 +230,6 @@
       href="http://winscp.net"
       format="html" scope="external"
     />
-    <keydef keys="url-toolbox-kb "
-      href="http://support.zenoss.com/hc/en-us/articles/203117595-How-To-Install-And-Use-the-zenoss-toolbox"
-      format="html" scope="external"
-    />
-    <keydef keys="url-toolbox-zodbscan "
-      href="http://support.zenoss.com/hc/en-us/articles/203118175"
-      format="html" scope="external"
-    />
-    <keydef keys="url-toolbox-findposkeyerror "
-      href="http://support.zenoss.com/hc/en-us/articles/203117795"
-      format="html" scope="external"
-    />
-    <keydef keys="url-toolbox-zenrelationscan "
-      href="http://support.zenoss.com/hc/en-us/articles/203121165"
-      format="html" scope="external"
-    />
-    <keydef keys="url-toolbox-zencatalogscan "
-      href="http://support.zenoss.com/hc/en-us/articles/203118075"
-      format="html" scope="external"
-    />
     <keydef keys="url-docker-devicemapper "
       href="http://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/"
       format="html" scope="external"
@@ -264,80 +239,7 @@
       format="html" scope="external"
     />
   </topicgroup>
-  
-  <!-- From docs.common -->
   <topicgroup>
-    <keydef keys="oracle_jre_6u31 " 
-      href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jre-6u31-oth-JPR"
-      format="html"	scope="external"
-    />
-    <keydef keys="oracle_jre_7u51 " 
-      href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html"
-      format="html"	scope="external"
-    />
-    <keydef keys="oracle-jre7 " 
-      href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html"
-      format="html"	scope="external"
-    />
-    <keydef keys="service-now " 
-      href="http://www.servicenow.com/"
-      format="html" scope="external"
-    />
-    <keydef keys="url-doc-zenoss-com " 
-      href="http://docs.zenoss.com/"
-      format="html" scope="external"
-    />
-    <keydef keys="url-redis-centos-6 " 
-      href="http://serverfault.com/questions/667857/redis-installation-on-centos-6-5"
-      format="html" scope="external"
-    />
-  </topicgroup>
-  
-  <!-- From docs.platform.admin -->
-  <topicgroup>
-    <keydef keys="url-holt-winters-wiki " 
-      href="http://en.wikipedia.org/wiki/Holt-Winters"
-      format="html" scope="external"
-    />
-    <keydef keys="url-holt-winters-rrdcreate " 
-      href="http://oss.oetiker.ch/rrdtool/doc/rrdcreate.en.html#IAberrant_Behavior_Detection_with_Holt_Winters_Forecasting"
-      format="html" scope="external"
-    />
-    <keydef keys="url-zope " 
-      href="http://en.wikipedia.org/wiki/Zope"
-      format="html" scope="external"
-    />
-    <keydef keys="url-nginx " 
-      href="http://en.wikipedia.org/wiki/Nginx"
-      format="html" scope="external" 
-    />
-    <keydef keys="url-zentrapkb " 
-      href="http://support.zenoss.com/hc/en-us/articles/207989223"
-      format="html" scope="external"
-    />
-    <keydef keys="url-rancid " 
-      href="http://www.shrubbery.net/rancid/"
-      format="html" scope="external"
-    />
-    <keydef keys="url-viewvc " 
-      href="http://www.viewvc.org/"
-      format="html" scope="external"
-    />
-    <keydef keys="url-kb-custom-props " 
-      href="http://support.zenoss.com/hc/en-us/articles/203074995-How-To-Add-Custom-Properties"
-      format="html" scope="external"
-    />
-  </topicgroup>
-    
-    <topicgroup>
-      <!-- Impact -->
-      <keydef keys="url-neo4j " 
-        href="http://neo4j.com/"
-        format="html" scope="external"
-      />
-    </topicgroup>
-  <topicgroup>
-    <!-- CC -->
     <keydef keys="url-golang-text-template " 
       href="http://golang.org/pkg/text/template/"
       format="html" scope="external"
@@ -368,6 +270,10 @@
     />
     <keydef keys="url-dockerfile " 
       href="http://docs.docker.com/reference/builder/"
+      format="html" scope="external"
+    />
+    <keydef keys="url-centos-kernel " 
+      href="http://bugzilla.redhat.com/show_bug.cgi?id=1286500"
       format="html" scope="external"
     />
   </topicgroup>

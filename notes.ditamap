@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>xxxx</bookpartno>
+      <bookpartno>1310.16.204</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -50,6 +50,7 @@
     </preface>
   </frontmatter>
   
+  <chapter  href="book/notes/118/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/117/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/116/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/115/self.ditamap" format="ditamap"/>
