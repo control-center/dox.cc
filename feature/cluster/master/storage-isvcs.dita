@@ -3,15 +3,14 @@
 <task id="taskid">
   <title>Creating a filesystem for <ph keyref="nm-cc"/> internal services</title>
   <taskbody>
-    <prereq>This procedure requires a host with one unused primary partition.</prereq>
+    <prereq>This procedure requires one unused and unformatted device or partition.</prereq>
     <context>
-      <p>Use this procedure to create an XFS filesystem on an unused primary partition.</p>
+      <p>Use this procedure to create an XFS filesystem on an unused device or partition.</p>
       
       <note><ph keyref="nm-cc"/> internal services include ZooKeeper, which requires
         consistently fast storage. For best results, use
         a separate, high-performance storage resource for <ph keyref="nm-cc"/>
-        internal services. For example, a local device that is configured with only
-        one primary partition, which eliminates contention by other services.</note>
+        internal services. For example, a dedicated local device.</note>
     </context>
     
     <steps>
@@ -20,7 +19,7 @@
       </step>
       
       <step>
-        <cmd>Identify the target primary partition for the filesystem to create.</cmd>
+        <cmd>Identify the target device or partition for the filesystem to create.</cmd>
         <stepxmp>
           <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
         </stepxmp>
@@ -28,17 +27,16 @@
       
       <step>
         <cmd>Create an XFS filesystem.</cmd>
-        <stepxmp>Replace <varname>Partition</varname> with the path of the target primary partition:
-          <codeblock>mkfs -t xfs <varname>Partition</varname></codeblock>
+        <stepxmp>Replace <varname>Storage</varname> with the path of the target device or partition:
+          <codeblock>mkfs -t xfs <varname>Storage</varname></codeblock>
         </stepxmp>
       </step>
 
       <step>
         <cmd>Add an entry to the <filepath>/etc/fstab</filepath> file.</cmd>
-        <stepxmp>Replace <varname>Partition</varname> with the path of the primary
+        <stepxmp>Replace <varname>Storage</varname> with the path of the device or
           partition used in the previous step:
-          <codeblock>echo "<varname>Partition</varname> \
-  /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>
+          <codeblock>echo "<varname>Storage</varname> /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>
         </stepxmp>
       </step>
       

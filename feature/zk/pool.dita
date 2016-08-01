@@ -5,8 +5,8 @@
   <taskbody>
     <context>The default configuration of resource pool hosts sets the value of the
     <varname>SERVICED_ZK</varname> variable to the master host only. This procedure
-    updates the setting to include the full ZooKeeper ensemble.</context>
-    <context>Perform this procedure on each resource pool host in your <ph keyref="nm-cc"/> cluster.</context>
+    updates the setting to include the full ZooKeeper ensemble.
+    Perform this procedure on each resource pool host in your <ph keyref="nm-cc"/> cluster.</context>
     
     <steps>
       <step>

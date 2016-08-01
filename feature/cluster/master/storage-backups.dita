@@ -3,15 +3,15 @@
 <task id="taskid">
   <title>Creating a filesystem for application data backups</title>
   <taskbody>
-    <prereq>This procedure requires a host with one unused primary partition or
+    <prereq>This procedure requires one unused device or partition, or
       a remote file server that is compatible with XFS.</prereq>
     
     <context>
       <p>Use this procedure create an XFS filesystem
-        on a primary partition, or to mount a remote filesystem, for application data backups.</p>
+        on a device or partition, or to mount a remote filesystem, for application data backups.</p>
       
-      <note>If you are using a primary partition on a local device for backups, ensure that 
-        the primary partition for <ph keyref="nm-cc"/> internal services data is not on the
+      <note>If you are using a partition on a local device for backups, ensure that 
+        the storage for <ph keyref="nm-cc"/> internal services data is not on the
         same device.</note>
     </context>
     
@@ -21,7 +21,7 @@
       </step>
       
       <step importance="optional">
-        <cmd>Identify the target primary partition for the filesystem to create,
+        <cmd>Identify the target device or partition for the filesystem to create,
           if necessary.</cmd>
         <info>Skip this step if you are using a remote file server.</info>
         <stepxmp>
@@ -32,8 +32,8 @@
       <step importance="optional">
         <cmd>Create an XFS filesystem, if necessary.</cmd>
         <info>Skip this step if you are using a remote file server.</info>
-        <stepxmp>Replace <varname>Partition</varname> with the path of the target primary partition:
-          <codeblock>mkfs -t xfs <varname>Partition</varname></codeblock>
+        <stepxmp>Replace <varname>Storage</varname> with the path of the target device or partition:
+          <codeblock>mkfs -t xfs <varname>Storage</varname></codeblock>
         </stepxmp>
       </step>
       
@@ -42,7 +42,7 @@
         <stepxmp>
           <p>Replace <varname>File-System-Specification</varname> with one of the following values:</p>
             <ul>
-              <li>the path of the primary partition used in the previous step</li>
+              <li>the path of the device or partition used in the previous step</li>
               <li>the remote server specification</li>
             </ul>
           <codeblock>echo "<varname>File-System-Specification</varname> \

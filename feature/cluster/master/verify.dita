@@ -23,7 +23,7 @@
         <cmd/>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-hostid">
+      <step conkeyref="install-lib-tasks/check-hostid-master">
         <cmd></cmd>
       </step>
       

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature (2016-07-21 11:43:35)</title>
+ <title>Keys in feature (2016-07-23 12:53:36)</title>
   <topicgroup>
     <keydef keys="feature-cli-cli"
             href="cli/cli.dita"
@@ -75,6 +75,10 @@
             href="cluster/master/isolate.dita"
             format="dita"
     />
+    <keydef keys="feature-cluster-master-options"
+            href="cluster/master/options.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-master-prep"
             href="cluster/master/prep.dita"
             format="dita"
@@ -134,182 +138,8 @@
             format="dita"
     />
    </topicgroup>
-   <topicgroup>
-    <keydef keys="feature-gui-add-host"
-            href="gui/add-host.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-add-pool"
-            href="gui/add-pool.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-add-vhost"
-            href="gui/add-vhost.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail-config"
-            href="gui/app-detail-config.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail-control"
-            href="gui/app-detail-control.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail-ip-assign"
-            href="gui/app-detail-ip-assign.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail-schedule"
-            href="gui/app-detail-schedule.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail-services"
-            href="gui/app-detail-services.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail-vhosts"
-            href="gui/app-detail-vhosts.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-detail"
-            href="gui/app-detail.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app-edit-config"
-            href="gui/app-edit-config.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-app"
-            href="gui/app.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-assign-ip"
-            href="gui/assign-ip.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-gui"
-            href="gui/gui.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-hosts-details"
-            href="gui/hosts-details.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-hosts"
-            href="gui/hosts.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-initial"
-            href="gui/initial.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-internal-svcs"
-            href="gui/internal-svcs.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-logs"
-            href="gui/logs.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-nav-menubar"
-            href="gui/nav-menubar.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-pools"
-            href="gui/pools.dita"
-            format="dita"
-    />
-    <keydef keys="feature-gui-svc-details"
-            href="gui/svc-details.dita"
-            format="dita"
-    />
-   </topicgroup>
-   <topicgroup>
-    <keydef keys="feature-svcdef-configFile"
-            href="svcdef/configFile.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-datapoint"
-            href="svcdef/datapoint.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-endpoint"
-            href="svcdef/endpoint.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template-bytesToMB"
-            href="svcdef/go-template-bytesToMB.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template-child"
-            href="svcdef/go-template-child.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template-each"
-            href="svcdef/go-template-each.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template-parent"
-            href="svcdef/go-template-parent.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template-percentScale"
-            href="svcdef/go-template-percentScale.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template-plus"
-            href="svcdef/go-template-plus.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-go-template"
-            href="svcdef/go-template.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-graphConfig"
-            href="svcdef/graphConfig.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-health"
-            href="svcdef/health.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-logconfig"
-            href="svcdef/logconfig.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-metric"
-            href="svcdef/metric.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-metricConfig"
-            href="svcdef/metricConfig.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-object"
-            href="svcdef/object.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-svcdef"
-            href="svcdef/svcdef.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-task"
-            href="svcdef/task.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-template"
-            href="svcdef/template.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-thresholdConfig"
-            href="svcdef/thresholdConfig.dita"
-            format="dita"
-    />
-    <keydef keys="feature-svcdef-volume"
-            href="svcdef/volume.dita"
-            format="dita"
-    />
-   </topicgroup>
+   
+   
    <topicgroup>
     <keydef keys="feature-zk-enable"
             href="zk/enable.dita"

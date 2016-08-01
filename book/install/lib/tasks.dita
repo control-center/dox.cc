@@ -374,12 +374,23 @@
         for the host to the network nameserver, or to <filepath>/etc/hosts</filepath>.</stepresult>
       </step>
       
-      <step id="check-hostid">
-        <cmd>Verify that the host's numeric identifier is unique.</cmd>
-        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host identifier.</info>
+      <step id="check-hostid-master" importance="optional">
+        <cmd>Display the host's ID, if necessary.</cmd>
+        <info>Skip this step if you are installing a single-host deployment.
+          Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID.</info>
         <stepxmp>
           <codeblock>hostid</codeblock>
         </stepxmp>
+        <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
+      </step>
+      
+      <step id="check-hostid">
+        <cmd>Display the host's ID.</cmd>
+        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID.</info>
+        <stepxmp>
+          <codeblock>hostid</codeblock>
+        </stepxmp>
+        <stepresult>Compare the ID with all the other hosts in the cluster.</stepresult>
       </step>
 
       
@@ -419,7 +430,8 @@
       
       <step id="firewall">
         <cmd>Disable the firewall, if necessary.</cmd>
-        <info>This step is required for installation but not for deployment.</info>
+        <info>This step is required for installation but not for deployment. For more information,
+        refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
         <substeps>
           <substep>
             <cmd>Determine whether the <cmdname>firewalld</cmdname> service is enabled.</cmd>
@@ -470,17 +482,11 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the operating system.</cmd>
+            <cmd>Update the operating system and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Restart the host.</cmd>
-            <stepxmp>
-              <codeblock>reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -498,20 +504,14 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               perform the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the kernel or the operating system.</cmd>
+            <cmd>Update the kernel or the operating system and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
-            <stepxmp>Update only the kernel:
-              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel</codeblock>
+            <stepxmp><b>Update only the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
-            <stepxmp>Update the operating system, including the kernel:
-              <codeblock>yum makecache fast &#38;&#38; yum update -y</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Restart the host.</cmd>
-            <stepxmp>
-              <codeblock>reboot</codeblock>
+            <stepxmp><b>Update the operating system, including the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -540,7 +540,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <cmd>Install and configure the NTP package.</cmd>
         <info>
           <note>This procedure assumes the host has internet access. 
-            To install and configure a host without internet access,
+            To install and configure a host that does not have internet access,
             see <xref keyref="ntp-offline-installation"/>.</note>
         </info>
         <substeps>
@@ -771,12 +771,13 @@ myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
       </step>
       
       <step id="zenoss-repo">  
-        <cmd>Add the <ph conkeyref="names/company"/> repositories to the host's repository list.</cmd>
+        <cmd>Add the Zenoss repositories to the host's repository list.</cmd>
         <substeps>
           <substep>
             <cmd>Install the repository package.</cmd>
-            <info>The package installs the <ph conkeyref="names/company"/> stable, 
-              unstable, and testing repositories. All 3 repositories are disabled.</info>
+            <info>The package adds the Zenoss stable, 
+              unstable, and testing repositories to <filepath>/etc/yum.repos.d</filepath>. 
+              All three repositories are disabled.</info>
             <stepxmp>
               <codeblock>rpm -ivh http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm</codeblock>
             </stepxmp>

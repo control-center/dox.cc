@@ -7,7 +7,7 @@
       the master nodes. If you have an NTP time server inside
       your firewall, you may configure the master nodes to use it; however,
       this procedure does not include that option.</context>
-    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    
     <steps>
       
       <step>

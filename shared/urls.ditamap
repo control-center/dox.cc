@@ -244,18 +244,6 @@
       href="http://golang.org/pkg/text/template/"
       format="html" scope="external"
     />
-    <keydef keys="url-docker " 
-      href="http://www.docker.com/"
-      format="html" scope="external"
-    />
-    <keydef keys="url-zookeeper " 
-      href="http://zookeeper.apache.org/"
-      format="html" scope="external"
-    />
-    <keydef keys="url-logstash " 
-      href="http://logstash.net/"
-      format="html" scope="external"
-    />
     <keydef keys="url-kibana " 
       href="http://www.elasticsearch.org/overview/kibana/"
       format="html" scope="external"

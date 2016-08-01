@@ -88,7 +88,7 @@
               previous substep, and replace <varname>Total-Space</varname> with the total amount of
               application data storage space. Be sure to include the units ("G" for gigabytes):
               <codeblock>serviced-storage resize -d /opt/serviced/var/volumes \
-  -o dm.thinpooldev=/dev/mapper/serviced-serviced--storage \
+  -o dm.thinpooldev=/dev/mapper/serviced-serviced--pool \
   <varname>Tenant-ID</varname> <varname>Total-Space</varname>G</codeblock>
             </stepxmp>
           </substep>

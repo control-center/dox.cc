@@ -3,8 +3,7 @@
 <task id="taskid">
   <title>Starting a ZooKeeper ensemble</title>
   <taskbody>
-    <context>This procedure starts a ZooKeeper ensemble.</context>
-    <context>The window of time for starting a ZooKeeper ensemble is 
+    <context>This procedure starts a ZooKeeper ensemble. The window of time for starting a ZooKeeper ensemble is 
       relatively short. The goal of this procedure is to restart
       <ph keyref="nm-cc"/> on each ensemble node at about the 
       same time, so that each node can participate in electing

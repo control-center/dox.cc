@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><ph keyref="nm-cc"/> configuration file</title>
   <refbody>
@@ -10,6 +10,7 @@
         reads <filepath>/etc/default/serviced</filepath> to load the parameters and initial settings
         of the service. The startup script defines a few environment variables, but the values defined 
         in <filepath>/etc/default/serviced</filepath> take precedence over the values defined in the script.</p>
+
       <p>The following list describes the parameters in <filepath>/etc/default/serviced</filepath>.</p>
       <dl>
         <dlentry id="HOME">
@@ -338,25 +339,25 @@
           <dt><varname>SERVICED_LOGSTASH_MAX_DAYS</varname></dt>
           <dd>Default: <codeph>1</codeph></dd> 
           <dd>Role: Master host</dd>
-          <dd>The maximum number of days to keep data in the logstash server before purging it. When both this 
-            variable and <varname>SERVICED_LOGSTASH_MAX_SIZE</varname> are set, both conditions are evaluated
-            and enforced.</dd>
+          <dd>The maximum number of days to keep data in the <xref keyref="url-logstash">logstash</xref> 
+            server before purging it. When both this variable and <varname>SERVICED_LOGSTASH_MAX_SIZE</varname> 
+            are set, both conditions are evaluated and enforced.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_LOGSTASH_MAX_SIZE">
           <dt><varname>SERVICED_LOGSTASH_MAX_SIZE</varname></dt>
           <dd>Default: <codeph>10</codeph></dd> 
           <dd>Role: Master host</dd>
-          <dd>The maximum amount of logstash data to keep, in gigabytes. When both this variable and
-            <varname>SERVICED_LOGSTASH_MAX_DAYS</varname> are set, both conditions are evaluated
-            and enforced.</dd>
+          <dd>The maximum amount of <xref keyref="url-logstash">logstash</xref> data to keep,
+            in gigabytes. When both this variable and <varname>SERVICED_LOGSTASH_MAX_DAYS</varname> 
+            are set, both conditions are evaluated and enforced.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_LOGSTASH_CYCLE_TIME">
           <dt><varname>SERVICED_LOGSTASH_CYCLE_TIME</varname></dt>
           <dd>Default: <codeph>6</codeph></dd> 
           <dd>Role: Master host</dd>
-          <dd>The amount of time between logstash purge cycles, in hours.</dd>
+          <dd>The amount of time between <xref keyref="url-logstash">logstash</xref> purge cycles, in hours.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_STATS_PORT">
@@ -395,7 +396,7 @@
         <dlentry id="SERVICED_ISVCS_ENV">
           <dt><varname>SERVICED_ISVCS_ENV_[0-9]+</varname></dt>
           <dd>Default: (empty)</dd> 
-          <dd>Role: Master host</dd>
+          <dd>Role: Master host, some worker hosts</dd>
           <dd>
             <p>Arguments to pass to internal services. You may define multiple arguments, each for a
               different internal service. The variables themselves, and their arguments, use the
@@ -578,18 +579,19 @@
           <dt><varname>SERVICED_DOCKER_LOG_CONFIG</varname></dt>
           <dd>Default: <codeph>max-file=5,max-size=10m</codeph></dd> 
           <dd>Role: Master and worker hosts</dd>
-          <dd>A comma-separated list of Docker <option>--log-opt</option> options 
-            as <codeph><varname>key</varname>=<varname>value</varname></codeph> pairs.
-            To specify the default values for a log driver, or for drivers that
-            need no additional options, such as <codeph>journald</codeph>, use a 
-            single comma character (<codeph>&#44;</codeph>) for the value of this variable.</dd>
+          <dd>A comma-separated list of Docker <option>--log-opt</option> options as
+                <codeph><varname>key</varname>=<varname>value</varname></codeph> pairs. To specify
+            the default values for a log driver, or for drivers that need no additional options,
+            such as <codeph>journald</codeph>, use a single comma character (<codeph>&#44;</codeph>)
+            as the value of this variable.</dd>
         </dlentry>
 
 
         <dlentry id="SERVICED_OPTS">
           <dt><varname>SERVICED_OPTS</varname></dt>
           <dd>Default: (empty)</dd> 
-          <dd>Arbitrary options for the <cmdname>serviced</cmdname> startup command.</dd>
+          <dd>Role: Master and worker hosts</dd>
+          <dd>Special options for the <cmdname>serviced</cmdname> startup command.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK_SESSION_TIMEOUT">

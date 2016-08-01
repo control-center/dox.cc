@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><uicontrol>Scheduled Tasks</uicontrol> table</title>
+  <title>Master host configuration options</title>
   <refbody>
     <section>
-      <image scale="50" keyref="png-xf-app-detail-schedule"/>
+      <p>This topic provides general information about the <cmdname>serviced</cmdname> configuration
+        options that apply to the <ph keyref="nm-cc"/> master host.</p>
     </section>
   </refbody>
 </reference>
-
