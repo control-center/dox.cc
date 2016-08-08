@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map 
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature (2016-08-06 14:32:59)</title>
+  <topicgroup>
+    <keydef keys="feature-cli-cli"
+            href="cli/cli.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-config-vars"
+            href="cli/config-vars.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-invoking-serviced"
+            href="cli/invoking-serviced.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-script"
+            href="cli/script.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-service-clone"
+            href="cli/service-clone.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-service"
+            href="cli/serviced-service.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced"
+            href="cli/serviced.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

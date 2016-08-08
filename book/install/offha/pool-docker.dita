@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing Docker and <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>This procedure installs and configures Docker, 
+      and installs <ph keyref="nm-cc"/>.</context>
+    <context>Perform this procedure on each resource pool host in your deployment.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/docker-install-offline">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/docker-tmp">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/docker-svc-def">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/install-serviced-offline">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/create-thin-docker">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/docker-config">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/docker-dns-flag">
+        <cmd/>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

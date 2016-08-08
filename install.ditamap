@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>XXXX</bookpartno>  
+      <bookpartno>1032.16.218</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -57,5 +57,4 @@
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>
   <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
-  
 </bookmap>

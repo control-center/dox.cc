@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring a storage area for backups</title>
+  <taskbody>
+    
+    <context>
+      <p>The <ph keyref="nm-cc"/> master host requires local or remote storage space for backups of
+          <ph keyref="nm-cc"/> data. This procedure includes steps to create an XFS filesystem on a
+        primary partition, if necessary, and steps to mount a filesystem for backups. For more
+        information about backups, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <note>If you are using a primary partition on a local device for backups, ensure that 
+        the primary partition for <ph keyref="nm-cc"/> internal services data is not on the
+        same device.</note>
+    </context>
+    
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the primary node
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Remove any filesystem signature from 
+          the primary partition for <ph keyref="nm-cc"/> backups, if necessary.</cmd>
+        <info>If you are using a remote file server for backups, skip this step.</info>
+        <stepxmp>
+          <p>Replace <varname>Backups-Partition</varname> with the path of 
+            the primary partition designated for <ph keyref="nm-cc"/> backups:</p>
+          <codeblock>wipefs -a <varname>Backups-Partition</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Create an XFS filesystem, if necessary.</cmd>
+        <info>Skip this step if you are using a remote file server.</info>
+        <stepxmp>Replace <varname>Backups-Partition</varname> with the path
+          of the primary partition designated for <ph keyref="nm-cc"/> backups:
+          <codeblock>mkfs.xfs <varname>Backups-Partition</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create an entry in the <filepath>/etc/fstab</filepath> file.</cmd>
+        <stepxmp>
+          <p>Replace <varname>File-System-Specification</varname> with one of the following values:</p>
+            <ul>
+              <li>the path of <varname>Backups-Partition</varname>, used in the previous step</li>
+              <li>the remote server specification</li>
+            </ul>
+          <codeblock>echo "<varname>File-System-Specification</varname> \
+  /opt/serviced/var/backups xfs defaults 0 0" >> /etc/fstab</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create the mount point for backup data.</cmd>
+        <stepxmp>
+          <codeblock>mkdir -p /opt/serviced/var/backups</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Mount the filesystem, and then verify it mounted correctly.</cmd>
+        <stepxmp>
+          <codeblock>mount -a &#38;&#38; mount | grep backups</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>/dev/sdb3 on /opt/serviced/var/backups type xfs (rw,relatime,seclabel,attr2,inode64,noquota)</codeblock>
+        </stepresult>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

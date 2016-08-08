@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map 
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature (2016-08-06 14:32:59)</title>
+  <topicgroup>
+    <keydef keys="feature-cluster-access-access"
+            href="cluster/access/access.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-access-cli"
+            href="cluster/access/cli.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-access-serviced"
+            href="cluster/access/serviced.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-access-wheel"
+            href="cluster/access/wheel.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in notes (2016-08-06 14:37:33)</title>
+  <topicgroup>
+    <keydef keys="notes-117-features"
+            href="117/features.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-fixed"
+            href="117/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-known"
+            href="117/known.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-notes"
+            href="117/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-self"
+            href="117/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

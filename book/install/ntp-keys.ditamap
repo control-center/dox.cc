@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in install (2016-07-21 11:23:45)</title>
+ <title>Keys in install (2016-08-06 14:37:11)</title>
   <topicgroup>
-    <keydef keys="install-lib-tasks"
-            href="lib/tasks.dita"
-            format="dita"
-    />
-   </topicgroup>
-   <topicgroup>
     <keydef keys="install-ntp-master-ntp"
             href="ntp/master-ntp.dita"
             format="dita"
@@ -31,12 +25,6 @@
     />
     <keydef keys="install-ntp-worker"
             href="ntp/worker.dita"
-            format="dita"
-    />
-   </topicgroup>
-   <topicgroup>
-    <keydef keys="install-vars-vars"
-            href="vars/vars.dita"
             format="dita"
     />
    </topicgroup>

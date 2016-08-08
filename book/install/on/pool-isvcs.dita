@@ -4,11 +4,11 @@
   <title>Creating a filesystem for <ph keyref="nm-cc"/> internal services</title>
   <taskbody>
     <context>
-      <p>Use this procedure to create an XFS filesystem on a device or partition.</p>
+      <p>This procedure creates an XFS filesystem on a primary partition.</p>
       
-      <note importance="high"><b>Perform this procedure only on the two worker hosts that are
-          designated for use in the ZooKeeper ensemble</b>. No other worker hosts run <ph
-          keyref="nm-cc"/> internal services, so no other worker hosts need a partition for internal
+      <note importance="high"><b>Perform this procedure only on the two resource pool hosts that are
+          designated for use in the ZooKeeper ensemble</b>. No other resource pool hosts run <ph
+          keyref="nm-cc"/> internal services, so no other pool hosts need a partition for internal
         services data.</note>
     </context>
     
@@ -18,7 +18,7 @@
       </step>
       
       <step>
-        <cmd>Identify the target device or partition for the filesystem to create.</cmd>
+        <cmd>Identify the target primary partition for the filesystem to create.</cmd>
         <stepxmp>
           <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
         </stepxmp>
@@ -26,8 +26,8 @@
       
       <step>
         <cmd>Create an XFS filesystem.</cmd>
-        <stepxmp>Replace <varname>Storage</varname> with the path of the target device or partition:
-          <codeblock>mkfs.xfs <varname>Storage</varname></codeblock>
+        <stepxmp>Replace <varname>Isvcs-Partition</varname> with the path of the target primary partition:
+          <codeblock>mkfs -t xfs <varname>Isvcs-Partition</varname></codeblock>
         </stepxmp>
       </step>
       
@@ -40,9 +40,10 @@
 
       <step>
         <cmd>Add an entry to the <filepath>/etc/fstab</filepath> file.</cmd>
-        <stepxmp>Replace <varname>Storage</varname> with the path of the device or partition used in
-          the previous step:
-          <codeblock>echo "<varname>Storage</varname> /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>
+        <stepxmp>Replace <varname>Isvcs-Partition</varname> with the path of the primary
+          partition used in the previous step:
+          <codeblock>echo "<varname>Isvcs-Partition</varname> \
+  /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>
         </stepxmp>
       </step>
 

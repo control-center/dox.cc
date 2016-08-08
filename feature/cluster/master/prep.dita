@@ -29,6 +29,10 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="install-lib-tasks/consistent-names">
+        <cmd></cmd>
+      </step>
+      
       <step conkeyref="install-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>

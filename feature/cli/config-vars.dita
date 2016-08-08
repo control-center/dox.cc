@@ -25,9 +25,9 @@
         <dlentry id="TMP">
           <dt><varname>TMP</varname></dt>
           <dd>Default: <filepath>/tmp</filepath></dd> 
-          <dd>Role: Master host</dd>
+          <dd>Role: Master and worker hosts</dd>
           <dd>The path <cmdname>serviced</cmdname> uses to spool snapshots
-            and images during backups. <!-- suggested minimum space? --></dd>
+            and images during backups.</dd>
         </dlentry>
         
         <dlentry id="GOMAXPROCS">
@@ -74,11 +74,10 @@
         <dlentry id="SERVICED_DOCKER_REGISTRY">
           <dt><varname>SERVICED_DOCKER_REGISTRY</varname></dt>
           <dd>Default: <codeph>{{SERVICED_MASTER_IP}}:5000</codeph></dd> 
-          <dd>Role: Master host</dd>
-          <dd>The IP address and port number of the <cmdname>serviced</cmdname> registry host.
-            To use a host other than the <cmdname>serviced</cmdname> master host,
-            replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address of
-            the alternate host.</dd>
+          <dd>Role: Worker hosts</dd>
+          <dd>The IP address and port number of the <cmdname>serviced</cmdname> Docker registry
+            host. Replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address of the
+              <cmdname>serviced</cmdname> master host.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_OUTBOUND_IP">
@@ -172,7 +171,7 @@
         <dlentry id="SERVICED_MUX_PORT">
           <dt><varname>SERVICED_MUX_PORT</varname></dt>
           <dd>Default: <codeph>22250</codeph></dd> 
-          <dd>Role: Master host</dd>
+          <dd>Role: Master and worker host</dd>
           <dd>The port <cmdname>serviced</cmdname> uses for multiplexing 
             on its private subnet.</dd>
         </dlentry>
@@ -217,10 +216,10 @@
           <dt><varname>SERVICED_CERT_FILE</varname></dt>
           <dd>Default: <filepath>$TMPDIR/zenoss_cert.[0-9]+</filepath></dd>
           <dd>Role: Master host</dd>
-          <dd>The path of a TLS certificate file. The default, insecure certificate file is created when the
-            <cmdname>serviced</cmdname> web server first starts, from a public certificate that is 
-            compiled into <cmdname>serviced</cmdname>. <!-- CC-1161 -->Currently,
-            certificates with passphrases are not supported.</dd>
+          <dd>The path of a TLS certificate file. The default, insecure certificate file is created
+            when the <cmdname>serviced</cmdname> web server first starts, from a public certificate
+            that is compiled into <cmdname>serviced</cmdname>. <!-- CC-1161 -->Certificates with
+            passphrases are not supported.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_TLS_MIN_VERSION">
@@ -464,8 +463,9 @@
           <dt><varname>SERVICED_SNAPSHOT_TTL</varname></dt>
           <dd>Default: <codeph>12</codeph></dd> 
           <dd>Role: Master host</dd>
-          <dd>The number of hours a snapshot is retained before removal.
-            To disable snapshot removal, set the value to 0.</dd>
+          <dd>The number of hours an application data snapshot is retained before removal. To
+            disable snapshot removal, set the value to zero. The application data storage can fill
+            up rapidly when this value is zero or too high.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL">

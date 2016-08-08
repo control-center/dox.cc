@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade (2016-08-06 14:37:50)</title>
+  <topicgroup>
+    <keydef keys="upgrade-lib-tasks"
+            href="lib/tasks.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

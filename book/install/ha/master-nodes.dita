@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><ph keyref="nm-cc"/> on the master nodes</title>
+  <refbody>
+    <section>
+      <p>A high-availability deployment features two <ph keyref="nm-cc"/> master nodes that are
+        configured for failover. One host is the primary node, and the other host is the secondary
+        node. Their configurations differ somewhat, but are mostly the same. </p>
+      <p>Perform all of the procedures in this section on the primary node and on the secondary node.</p> 
+    </section>
+  </refbody>
+</reference>

@@ -56,6 +56,73 @@
         </substeps>
       </step>
       
+      <step id="consistent-names">
+        <cmd>Disable consistent network device naming.</cmd>
+        <info>The consistent network device naming feature can create device names that
+        are too long to be bound to virtual IPs. This step turns off the feature
+        so that all network device names are <codeph>eth</codeph> followed by an integer.</info>
+        <substeps>
+          <substep>
+            <cmd>Create a backup copy of the Grub 2 general settings file.</cmd>
+            <stepxmp>
+              <codeblock>cp /etc/default/grub /etc/default/grub.bak</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/default/grub</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add kernel boot arguments to the value of the 
+              <varname>GRUB_CMDLINE_LINUX</varname> variable.</cmd>
+            <info>The arguments to add are <codeph>biosdevname=0</codeph> 
+              and <codeph>net.ifnames=0</codeph>. Make sure the arguments
+            are between the delimiter characters (<codeph>"</codeph>).</info>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Determine whether the host is configured for
+            UEFI or legacy boot mode.</cmd>
+            <stepxmp>
+              <codeblock>find /boot -maxdepth 1 -type d</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the output includes <filepath>/boot/efi</filepath>, 
+                  the host is configured for UEFI boot mode.</li>
+                <li>If the output does not include <filepath>/boot/efi</filepath>, 
+                  the host is configured for legacy boot mode.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Recreate the Grub 2 boot configuration file.</cmd>
+            <stepxmp>For UEFI boot mode:
+              <codeblock>grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg</codeblock>
+            </stepxmp>
+            <stepxmp>For legacy boot mode:
+              <codeblock>grub2-mkconfig -o /boot/grub2/grub.cfg</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create an override for the default rules policy 
+              of the dynamic device management daemon.</cmd>
+            <stepxmp>
+              <codeblock>ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Rename and edit the network device configuration file
+              in <filepath>/etc/sysconfig/network-scripts</filepath>.</cmd>
+            <info>For example, if you have a device configuration file named
+              <filepath>ifcfg-enp0s25</filepath>, rename it to <filepath>ifcfg-eth0</filepath>, 
+              and then change the values of the <varname>NAME</varname> and <varname>DEVICE</varname>
+              variables inside the file to <codeph>eth0</codeph>.</info>
+          </substep>
+        </substeps>
+      </step>
+      
       <step id="kill-selinux">
         <cmd>Disable Security-Enhanced Linux (SELinux), if installed.</cmd>
         <substeps>
@@ -375,20 +442,20 @@
       </step>
       
       <step id="check-hostid-master" importance="optional">
-        <cmd>Display the host's ID, if necessary.</cmd>
+        <cmd>Display and set the host's numeric ID, if necessary.</cmd>
         <info>Skip this step if you are installing a single-host deployment.
           Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID.</info>
         <stepxmp>
-          <codeblock>hostid</codeblock>
+          <codeblock>cat /etc/hostid 2>/dev/null || hostid | tee /etc/hostid</codeblock>
         </stepxmp>
         <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
       </step>
       
       <step id="check-hostid">
-        <cmd>Display the host's ID.</cmd>
+        <cmd>Display and set the host's numeric ID.</cmd>
         <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID.</info>
         <stepxmp>
-          <codeblock>hostid</codeblock>
+          <codeblock>cat /etc/hostid 2>/dev/null || hostid | tee /etc/hostid</codeblock>
         </stepxmp>
         <stepresult>Compare the ID with all the other hosts in the cluster.</stepresult>
       </step>

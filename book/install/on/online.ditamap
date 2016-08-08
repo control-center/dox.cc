@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>OS online</title>
+   <chapter href="online.dita">
+     
+     <topicref href="master-install.dita">
+       
+       <topicref href="master-verify-resources.dita"/>
+       
+       <topicref href="storage.dita">
+         <topicref keyref="storage-isvcs"/>
+         <topicref href="storage-backups.dita"/>
+       </topicref>
+       
+       <topicref href="master-prep.dita"/>
+       <topicref href="master-docker.dita"/>
+       <topicref href="master-rm.dita"/>
+       <topicref href="master-cc.dita"/>
+       
+       <topicref href="users.dita">
+         <topicref href="users-wheel.dita"/>
+         <topicref href="users-serviced.dita"/>
+         <topicref href="users-cli.dita"/>
+       </topicref>
+       
+       <topicref href="master-start.dita"/>
+       <topicref href="isolate.dita"/>
+       
+     </topicref>
+     
+     <topicref href="pool-install.dita">
+       <topicref href="pool-verify-resources.dita"/>
+       <topicref href="pool-prep.dita"/>
+       <topicref href="pool-isvcs.dita"/>
+       <topicref href="pool-docker.dita"/>
+       <topicref href="pool-cc.dita"/>
+     </topicref>
+     
+     <topicref href="zk.dita">
+       <topicref href="zk-vars.dita"/>
+       <topicref href="zk-master.dita"/>
+       <topicref href="zk-agent.dita"/>
+       <topicref href="zk-enable.dita"/>
+       <topicref href="zk-pool.dita"/>
+     </topicref>
+     
+     <topicref href="add-hosts.dita"/>
+     <topicref href="deploy.dita"/>
+     
+   </chapter>
+</bookmap>
+

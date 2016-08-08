@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Verifying the DRBD configuration</title>
+  <taskbody>
+    <context>This procedure reviews the DRBD configuration.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, 
+          log in to the secondary node 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, display the full DRBD configuration.</cmd>
+        <stepxmp>
+          <codeblock>drbdadm dump</codeblock>
+        </stepxmp>
+        <stepresult>The result should be consistent with the configuration
+          created previously. For more information, 
+          see <xref keyref="on-ha-drbd-config"/>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, display the synchronization status of mirrored storage areas.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until the synchronization is complete. The process is complete when
+            the status of the devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, stop DRBD.</cmd>
+        <stepxmp>
+          <codeblock>drbdadm down all</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
