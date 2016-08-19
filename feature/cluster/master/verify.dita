@@ -30,6 +30,10 @@
       <step conkeyref="install-lib-tasks/check-name-resolution">
         <cmd></cmd>
       </step>
+      
+      <step conkeyref="install-lib-tasks/localhost-entry">
+        <cmd></cmd>
+      </step>
 
       <step conkeyref="install-lib-tasks/update-os">
         <cmd></cmd>

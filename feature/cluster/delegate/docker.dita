@@ -7,7 +7,7 @@
       and installs <ph keyref="nm-cc"/>.</context>
     <steps>
       <step>
-        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step conkeyref="install-lib-tasks/docker-install">

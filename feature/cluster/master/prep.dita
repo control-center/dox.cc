@@ -12,10 +12,6 @@
         <cmd>Log in to the candidate master host 
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
-      <step conkeyref="install-lib-tasks/localhost-entry">
-        <cmd></cmd>
-      </step>
 
       <step conkeyref="install-lib-tasks/firewall">
         <cmd/>
@@ -26,10 +22,6 @@
       </step>
       
       <step conkeyref="install-lib-tasks/kill-selinux">
-        <cmd></cmd>
-      </step>
-      
-      <step conkeyref="install-lib-tasks/consistent-names">
         <cmd></cmd>
       </step>
       

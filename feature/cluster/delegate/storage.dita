@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="topicid">
+  <title>Delegate host storage requirements</title>
+  <refbody>
+    <section>
+      <p>This section provides a quick reference to the block storage requirements of 
+        <ph keyref="nm-cc"/> delegate hosts. These requirements are in addition to the
+        storage required for the operating system. For more information, refer to the
+        <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <p>Each delegate host in a <ph keyref="nm-cc"/> cluster requires one local, unformatted,
+        high-performance device or partition with 50GB of storage. A step in this chapter configures
+        the space as a device mapper thin pool for Docker data.</p>
+      
+      <p>Two of the delegate hosts in a <ph keyref="nm-cc"/> cluster require an additional local,
+        unused, high-performance device or partition with 50GB of storage. These two hosts are
+        configured to serve as nodes in a ZooKeeper ensemble, and must be located on the same subnet
+        as the <ph keyref="nm-cc"/> master host. A procedure in this chapter formats the storage as
+        an XFS file system, which is mounted for use by <ph keyref="nm-cc"/> internal services.</p>
+      
+      <p>Enter the following command to display information about the
+         used and available block storage on a Linux host:</p>
+        <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+      
+    </section>
+  </refbody>
+</reference>

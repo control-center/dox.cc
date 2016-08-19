@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Preparing a resource pool host</title>
+  <title>Preparing a delegate host</title>
   <taskbody>
 
-    <context>This procedure prepares a RHEL/CentOS 7.1 or 7.2
-      host as a <ph keyref="nm-cc"/> resource pool host.</context>
+    <context>Use this procedure to prepare a RHEL/CentOS 7.1 or 7.2
+      host as a <ph keyref="nm-cc"/> delegate host.</context>
     <steps>
       <step>
-        <cmd>Log in to the candidate resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-      
-      <step conkeyref="install-lib-tasks/localhost-entry">
-        <cmd></cmd>
+        <cmd>Log in to the candidate delegate host
+          <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step conkeyref="install-lib-tasks/firewall">
@@ -27,9 +24,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/consistent-names">
-        <cmd></cmd>
-      </step>
+      
       
       <step conkeyref="install-lib-tasks/dnsmasq">
         <cmd></cmd>

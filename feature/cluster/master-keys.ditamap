@@ -1,63 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map 
-  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature (2016-08-06 14:32:59)</title>
+ <title>Keys in feature (2016-08-19 13:31:03)</title>
   <topicgroup>
     <keydef keys="feature-cluster-master-cc"
-            href="cluster/master/cc.dita"
+            href="master/cc.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-configure"
-            href="cluster/master/configure.dita"
+            href="master/configure.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-create"
-            href="cluster/master/create.dita"
+            href="master/create.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-device-naming"
+            href="master/device-naming.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-docker"
-            href="cluster/master/docker.dita"
+            href="master/docker.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-install"
-            href="cluster/master/install.dita"
+            href="master/install.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-isolate"
-            href="cluster/master/isolate.dita"
+            href="master/isolate.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-options"
-            href="cluster/master/options.dita"
+            href="master/options.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-prep"
-            href="cluster/master/prep.dita"
+            href="master/prep.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-start"
-            href="cluster/master/start.dita"
+            href="master/start.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-storage-about"
-            href="cluster/master/storage-about.dita"
+            href="master/storage-about.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-storage-backups"
-            href="cluster/master/storage-backups.dita"
+            href="master/storage-backups.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-storage-isvcs"
-            href="cluster/master/storage-isvcs.dita"
+            href="master/storage-isvcs.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-storage"
-            href="cluster/master/storage.dita"
+            href="master/storage.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-verify"
-            href="cluster/master/verify.dita"
+            href="master/verify.dita"
             format="dita"
     />
    </topicgroup>

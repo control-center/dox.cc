@@ -4,6 +4,7 @@
   <title>Install master</title>
   <chapter keyref="feature-cluster-master-install">
     <topicref keyref="feature-cluster-master-verify"/>
+    <topicref keyref="feature-cluster-master-device-naming"/>
     <topicref keyref="feature-cluster-master-storage">
       <topicref keyref="feature-cluster-master-storage-isvcs"/>
       <topicref keyref="feature-cluster-master-storage-backups"/>

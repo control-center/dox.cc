@@ -55,74 +55,7 @@
           </substep>
         </substeps>
       </step>
-      
-      <step id="consistent-names">
-        <cmd>Disable consistent network device naming.</cmd>
-        <info>The consistent network device naming feature can create device names that
-        are too long to be bound to virtual IPs. This step turns off the feature
-        so that all network device names are <codeph>eth</codeph> followed by an integer.</info>
-        <substeps>
-          <substep>
-            <cmd>Create a backup copy of the Grub 2 general settings file.</cmd>
-            <stepxmp>
-              <codeblock>cp /etc/default/grub /etc/default/grub.bak</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Open <filepath>/etc/default/grub</filepath> with a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Add kernel boot arguments to the value of the 
-              <varname>GRUB_CMDLINE_LINUX</varname> variable.</cmd>
-            <info>The arguments to add are <codeph>biosdevname=0</codeph> 
-              and <codeph>net.ifnames=0</codeph>. Make sure the arguments
-            are between the delimiter characters (<codeph>"</codeph>).</info>
-          </substep>
-          <substep>
-            <cmd>Save the file, and then close the editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Determine whether the host is configured for
-            UEFI or legacy boot mode.</cmd>
-            <stepxmp>
-              <codeblock>find /boot -maxdepth 1 -type d</codeblock>
-            </stepxmp>
-            <stepresult>
-              <ul>
-                <li>If the output includes <filepath>/boot/efi</filepath>, 
-                  the host is configured for UEFI boot mode.</li>
-                <li>If the output does not include <filepath>/boot/efi</filepath>, 
-                  the host is configured for legacy boot mode.</li>
-              </ul>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Recreate the Grub 2 boot configuration file.</cmd>
-            <stepxmp>For UEFI boot mode:
-              <codeblock>grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg</codeblock>
-            </stepxmp>
-            <stepxmp>For legacy boot mode:
-              <codeblock>grub2-mkconfig -o /boot/grub2/grub.cfg</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Create an override for the default rules policy 
-              of the dynamic device management daemon.</cmd>
-            <stepxmp>
-              <codeblock>ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Rename and edit the network device configuration file
-              in <filepath>/etc/sysconfig/network-scripts</filepath>.</cmd>
-            <info>For example, if you have a device configuration file named
-              <filepath>ifcfg-enp0s25</filepath>, rename it to <filepath>ifcfg-eth0</filepath>, 
-              and then change the values of the <varname>NAME</varname> and <varname>DEVICE</varname>
-              variables inside the file to <codeph>eth0</codeph>.</info>
-          </substep>
-        </substeps>
-      </step>
-      
+
       <step id="kill-selinux">
         <cmd>Disable Security-Enhanced Linux (SELinux), if installed.</cmd>
         <substeps>
@@ -601,6 +534,43 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <stepxmp>
           <codeblock>systemctl enable dnsmasq &#38;&#38; systemctl start dnsmasq</codeblock>
         </stepxmp>
+        <info>If name resolution in your environment relies solely on entries 
+          in <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> 
+          to enable containers to use the file:</info>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/dnsmasq.conf</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd><!-- One more edit needed; waiting on ZEN-18437.  --></cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart dnsmasq</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        <stepresult></stepresult>
+        
       </step>
       
       <step id="ntp">
@@ -668,7 +638,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
               <codeblock>cat > /etc/yum.repos.d/docker.repo &lt;&lt;-EOF
 [dockerrepo]
 name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/7
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
 enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
@@ -746,7 +716,8 @@ yum install --enablerepo=zenoss-mirror -y docker-engine</codeblock>
 TimeoutSec=300
 EnvironmentFile=-/etc/sysconfig/docker
 ExecStart=
-ExecStart=/usr/bin/docker daemon \$OPTIONS -H fd:// 
+ExecStart=/usr/bin/docker \$OPTIONS daemon -H fd:// 
+TasksMax=infinity
 EOF</codeblock>
             </stepxmp>
           </substep>
@@ -758,12 +729,26 @@ EOF</codeblock>
           </substep>
         </substeps>
       </step>
-      
-      
-      
+
       <step id="docker-config">
         <cmd>Configure and start the Docker service.</cmd>
         <substeps>
+          <substep>
+            <cmd>Create a variable for the name of the Docker thin pool.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Thin-Pool-Device</varname> with the name of the
+                thin pool device created in the previous step:</p>
+              <codeblock>myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a variable for the IPv4 address of the master host.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Master-IP-Address</varname> with the 
+                name of the IPv4 address of the master host:</p>
+              <codeblock>myIP="<varname>Master-IP-Address</varname>"</codeblock>
+            </stepxmp>
+          </substep>
           <substep>
             <cmd>Create variables for adding arguments to the Docker configuration file.</cmd>
             <info>The <codeph>--exec-opt</codeph> argument is a workaround for <xref
@@ -773,14 +758,14 @@ EOF</codeblock>
                 created in the previous step:</p>
               <codeblock>myDriver="-s devicemapper"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
-myFlag="--storage-opt dm.thinpooldev"
-myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
+myFlag="--storage-opt dm.thinpooldev=$myPool"
+myReg="--insecure-registry=$myIP:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Add the arguments to the Docker configuration file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myDriver $myFix $myFlag'='$myPool'"' \
+              <codeblock>echo 'OPTIONS="'$myDriver $myFix $myFlag $myReg'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>
@@ -790,7 +775,7 @@ myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
               <codeblock>systemctl restart docker</codeblock>
             </stepxmp>
             <stepresult>The initial startup takes up to a minute, and may fail. If the startup
-              fails, repeat the previous command.</stepresult>
+              fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
           </substep>
         </substeps>
       </step>

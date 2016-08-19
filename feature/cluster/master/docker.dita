@@ -22,7 +22,7 @@
       <step conkeyref="install-lib-tasks/docker-svc-def">
         <cmd/>
       </step>
-      
+
       <step conkeyref="install-lib-tasks/install-serviced">
         <cmd></cmd>
       </step>

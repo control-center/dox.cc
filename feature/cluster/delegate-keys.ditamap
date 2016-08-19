@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature (2016-08-19 13:31:03)</title>
+  <topicgroup>
+    <keydef keys="feature-cluster-delegate-cc"
+            href="delegate/cc.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-docker"
+            href="delegate/docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-install"
+            href="delegate/install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-isvcs"
+            href="delegate/isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-prep"
+            href="delegate/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-start"
+            href="delegate/start.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-storage"
+            href="delegate/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-verify"
+            href="delegate/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

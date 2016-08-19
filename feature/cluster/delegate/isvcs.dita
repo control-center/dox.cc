@@ -6,10 +6,10 @@
     <context>
       <p>Use this procedure to create an XFS filesystem on a device or partition.</p>
       
-      <note importance="high"><b>Perform this procedure only on the two worker hosts that are
-          designated for use in the ZooKeeper ensemble</b>. No other worker hosts run <ph
-          keyref="nm-cc"/> internal services, so no other worker hosts need a partition for internal
-        services data.</note>
+      <note importance="high"><b>Perform this procedure only on the two delegate hosts 
+        that are designated for use in a ZooKeeper ensemble</b>. No other delegate hosts
+        run <ph keyref="nm-cc"/> internal services, so no other delegate hosts need 
+        storage for internal services data.</note>
     </context>
     
     <steps>
@@ -20,7 +20,7 @@
       <step>
         <cmd>Identify the target device or partition for the filesystem to create.</cmd>
         <stepxmp>
-          <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
         </stepxmp>
       </step>
       
@@ -39,7 +39,8 @@
       </step>
 
       <step>
-        <cmd>Add an entry to the <filepath>/etc/fstab</filepath> file.</cmd>
+        <cmd>Enter the following command to add an entry to the <filepath>/etc/fstab</filepath>
+          file.</cmd>
         <stepxmp>Replace <varname>Storage</varname> with the path of the device or partition used in
           the previous step:
           <codeblock>echo "<varname>Storage</varname> /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>

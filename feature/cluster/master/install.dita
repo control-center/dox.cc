@@ -9,8 +9,8 @@
         CPU, RAM, and storage resources required to serve as the master host in a 
         <ph keyref="nm-cc"/> cluster.</p>
 
-      <p>For more information about deploying <ph keyref="nm-cc"/>, refer to the 
-         <cite conkeyref="pubs/cite-plan"/>. </p>
+      <p>For more information about master host requirements <ph keyref="nm-cc"/>, refer to the
+          <cite conkeyref="pubs/cite-plan"/>. </p>
       
     </section>
   </refbody>

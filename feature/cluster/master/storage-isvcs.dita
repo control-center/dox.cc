@@ -28,12 +28,13 @@
       <step>
         <cmd>Create an XFS filesystem.</cmd>
         <stepxmp>Replace <varname>Storage</varname> with the path of the target device or partition:
-          <codeblock>mkfs -t xfs <varname>Storage</varname></codeblock>
+          <codeblock>mkfs.xfs <varname>Storage</varname></codeblock>
         </stepxmp>
       </step>
 
       <step>
-        <cmd>Add an entry to the <filepath>/etc/fstab</filepath> file.</cmd>
+        <cmd>Enter the following command to add an entry to the <filepath>/etc/fstab</filepath>
+          file.</cmd>
         <stepxmp>Replace <varname>Storage</varname> with the path of the device or
           partition used in the previous step:
           <codeblock>echo "<varname>Storage</varname> /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>

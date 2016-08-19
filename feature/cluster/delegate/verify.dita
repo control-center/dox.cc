@@ -4,8 +4,8 @@
   <title>Verifying candidate host resources</title>
   <taskbody>
     <context>Use this procedure to determine whether a host's hardware resources and operating
-      system are sufficient to serve as a <ph keyref="nm-cc"/> worker host.
-      Perform this procedure on each candidate worker host in your deployment.</context>
+      system are sufficient to serve as a <ph keyref="nm-cc"/> delegate host.
+      Perform this procedure on each candidate delegate host in your deployment.</context>
     <steps>
       <step>
         <cmd>Log in to the candidate host 
@@ -16,7 +16,11 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-name-resolution">
+      <step conkeyref="install-lib-tasks/check-cpu-count">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="install-lib-tasks/check-memory-pool">
         <cmd></cmd>
       </step>
       
@@ -24,14 +28,14 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-storage-pool">
+      <step conkeyref="install-lib-tasks/check-name-resolution">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-memory-pool">
+      <step conkeyref="install-lib-tasks/localhost-entry">
         <cmd></cmd>
       </step>
-
+      
       <step conkeyref="install-lib-tasks/update-os">
         <cmd></cmd>
       </step>
