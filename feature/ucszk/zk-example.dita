@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Example multi-host ZooKeeper configuration</title>
+  <refbody>
+    <section>
+      <p>This example shows the ZooKeeper environment variables in the
+        <filepath>/etc/defaults/serviced</filepath> configuration file of
+        each host in a 4-node <ph keyref="nm-cc"/> cluster. The settings
+        in this example are also provided in the subsequent procedures.</p>
+      
+      <note>The value of the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
+        variable is formatted to fit the available space. In the configuration  
+        file, the variable and value are on the same line.</note>
+
+      <p>Master host and ZooKeeper cluster node, 198.51.100.135:</p>
+      <codeblock>SERVICED_ISVCS_ZOOKEEPER_ID=1
+SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181
+SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@0.0.0.0:2888:3888,\
+  2@198.51.100.136:2888:3888,3@198.51.100.137:2888:3888</codeblock>
+    
+
+      <p>Agent host and ZooKeeper cluster node, 198.51.100.136:</p>
+      <codeblock>SERVICED_ISVCS_START=zookeeper
+SERVICED_ISVCS_ZOOKEEPER_ID=2
+SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181
+SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@198.51.100.135:2888:3888,\
+  2@0.0.0.0:2888:3888,3@198.51.100.137:2888:3888</codeblock>
+    
+
+      <p>Agent host and ZooKeeper cluster node, 198.51.100.137:</p>
+      <codeblock>SERVICED_ISVCS_START=zookeeper
+SERVICED_ISVCS_ZOOKEEPER_ID=3
+SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181
+SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@198.51.100.135:2888:3888,\
+  2@198.51.100.136:2888:3888,3@0.0.0.0:2888:3888</codeblock>
+    
+    
+      <p>Agent host, 198.51.100.138:</p>
+      <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181</codeblock>
+    </section>
+  </refbody>
+</reference>

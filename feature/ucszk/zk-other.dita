@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating the agent host that is not in the ZooKeeper cluster</title>
+  <taskbody>
+    <context>The <ph keyref="nm-cc"/> configuration file of the host that is not a member of the
+      ZooKeeper cluster must be updated, even though it is not in the cluster. Use this
+      procedure to update the configuration file.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Define the IP address variables for each node in the ZooKeeper cluster.</cmd>
+        <stepxmp>Replace <varname>Master-Host-IP</varname> with the IP address 
+          of the <ph keyref="nm-cc"/> master host, 
+          and replace <varname>Agent-Host-A-IP</varname> and
+          <varname>Agent-Host-B-IP</varname> with the IP addresses 
+          of the agent hosts to include in the cluster:
+          <codeblock>node1=<varname>Master-Host-IP</varname>
+node2=<varname>Agent-Host-A-IP</varname>
+node3=<varname>Agent-Host-B-IP</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Remove the default setting for the ZooKeeper cluster.</cmd>
+        <stepxmp>
+          <codeblock>sed -i.bak '/SERVICED_ZK=/ d' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Specify the hosts in the ZooKeeper cluster.</cmd>
+        <stepxmp>You may copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
+  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Verify the setting.</cmd>
+        <stepxmp>
+          <codeblock>egrep '^[^#]*SERVICED_ZK' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The following example shows the environment variable for an agent host that is
+          not a node in the ZooKeeper cluster:
+          <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Restart the <ph keyref="nm-cc"/> daemon.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop serviced &#38;&#38; systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

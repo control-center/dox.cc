@@ -58,9 +58,11 @@
   </frontmatter>
   
   <chapter href="feature/cluster/master/install.ditamap" format="ditamap"/>
-  <!-- <chapter href="feature/cluster/master/configure.ditamap" format="ditamap"/> -->
+  <chapter href="feature/cluster/master/configure.ditamap" format="ditamap"/>
   <chapter href="feature/cluster/delegate/install.ditamap" format="ditamap"/>
+  <chapter href="feature/onzk/zk.ditamap" format="ditamap"/>
+  <chapter href="feature/ucszk/zk.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
-  <!--  <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/> -->
+  <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>
   <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
 </bookmap>

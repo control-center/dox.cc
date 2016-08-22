@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>ZK (rm)</title>
+   <chapter href="zk.dita">
+     <topicref href="zk-vars.dita"/>
+     <topicref href="zk-master.dita"/>
+     <topicref href="zk-agent.dita"/>
+     <topicref href="zk-enable.dita"/>
+     <topicref href="zk-pool.dita"/>
+   </chapter>
+</bookmap>
+

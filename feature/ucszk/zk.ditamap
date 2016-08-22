@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>ZK (ucs)</title>
+  <chapter href="zk.dita">
+    <topicref href="zk-example.dita"/>
+    <topicref href="zk-master.dita"/>
+    <topicref href="zk-agent1.dita"/>
+    <topicref href="zk-agent2.dita"/>
+    <topicref href="zk-start.dita"/>
+    <topicref href="zk-other.dita"/>
+   </chapter>
+</bookmap>
