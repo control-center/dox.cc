@@ -38,6 +38,10 @@
       <step conkeyref="install-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
+      
+      <step conkeyref="install-lib-tasks/fix-nfs">
+        <cmd/>
+      </step>
     </steps>
   </taskbody>
 </task>

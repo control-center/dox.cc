@@ -72,14 +72,33 @@
       </step>
       
       <step>
-        <cmd>Rename and edit the network device configuration files in
-            <filepath>/etc/sysconfig/network-scripts</filepath>.</cmd>
-        <info>For example, if you have a device configuration file named
-            <filepath>ifcfg-eno16777736</filepath>, rename it to <filepath>ifcfg-eth0</filepath>,
-          and then change the values of the <varname>NAME</varname> and <varname>DEVICE</varname>
-          variables inside the file to <codeph>eth0</codeph>.</info>
+        <cmd>Change network device configurations.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Change directory to <filepath>/etc/sysconfig/network-scripts</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cd /etc/sysconfig/network-scripts</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>List the network device configuration files.</cmd>
+            <stepxmp>
+              <codeblock>ls ifcfg-* | grep -v ifcfg-lo</codeblock>
+            </stepxmp>
+            <info>The <filepath>ifcfg-lo</filepath> file is excluded because it does not need to be
+              changed.</info>
+          </substep>
+          <substep>
+            <cmd>Rename and edit device files.</cmd>
+            <info>For example, if you have a device file named
+              <filepath>ifcfg-eno16777736</filepath>, use the <cmdname>mv</cmdname> command
+              rename it to <filepath>ifcfg-eth0</filepath>,
+              and then change the values of the <varname>NAME</varname> and <varname>DEVICE</varname>
+              variables inside the file to <codeph>eth0</codeph>.</info>
+          </substep>
+        </substeps>
       </step>
-      
+
       <step>
         <cmd>Reboot the host.</cmd>
       </step>

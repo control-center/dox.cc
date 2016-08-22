@@ -3,9 +3,8 @@
 <task id="taskid">
   <title>Enabling use of the command-line interface</title>
   <taskbody>
-    <context>This procedure enables users to perform administrative tasks with the <ph
-        keyref="nm-cc"/> command-line interface by adding individual users to the
-        <cmdname>docker</cmdname> group.</context>
+    <context>Use this procedure to enable a user to perform administrative tasks with the <ph
+        keyref="nm-cc"/> command-line interface.</context>
     
     <steps>
       <step>
@@ -13,7 +12,7 @@
       </step>
       
       <step>
-        <cmd>Add users to the Docker group, <codeph>docker</codeph>.</cmd>
+        <cmd>Add a user to the Docker group.</cmd>
         <stepxmp>
           <p>Replace <varname>User</varname> with the name of a login account on the host.</p>
           <codeblock>usermod -aG docker <varname>User</varname></codeblock>

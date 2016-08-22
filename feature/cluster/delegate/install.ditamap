@@ -10,6 +10,5 @@
     <topicref keyref="feature-cluster-delegate-prep"/>
     <topicref keyref="feature-cluster-delegate-docker"/>
     <topicref keyref="feature-cluster-access-cli"/>
-    <topicref keyref="feature-cluster-delegate-cc"/>
    </chapter>
 </bookmap>

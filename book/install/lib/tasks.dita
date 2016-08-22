@@ -638,7 +638,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
               <codeblock>cat > /etc/yum.repos.d/docker.repo &lt;&lt;-EOF
 [dockerrepo]
 name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+baseurl=https://yum.dockerproject.org/repo/main/centos/\$releasever/
 enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
@@ -774,7 +774,7 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
             <stepxmp>
               <codeblock>systemctl restart docker</codeblock>
             </stepxmp>
-            <stepresult>The initial startup takes up to a minute, and may fail. If the startup
+            <stepresult>The initial startup may take up to a minute, and may fail. If startup
               fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
           </substep>
         </substeps>
@@ -846,9 +846,9 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
       
       <step id="fix-nfs">
         <cmd>Configure and restart the NFS server.</cmd>
-        <info>Currently, <xref keyref="url-rpcbin-bug">an unresolved issue</xref> prevents the
-          NFS server from starting correctly. The following commands provide a workaround to ensure
-          that it does. </info>
+        <info>This step corrects <xref keyref="url-rpcbin-bug">an unresolved issue</xref> 
+          in NFS, which is a <ph keyref="nm-cc"/> dependency. The following commands provide
+          a workaround to ensure that the NFS server starts correctly. </info>
         <substeps>
           <substep>
             <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
