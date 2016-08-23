@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="taskid">
-  <title>ZooKeeper ensemble configuration</title>
+  <title>Configuring a ZooKeeper cluster</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> relies on <xref keyref="url-zookeeper">Apache ZooKeeper</xref> to
-        coordinate its services. The configuration steps in this section create a ZooKeeper ensemble
-        of 3 nodes.</p>
-      <p>A ZooKeeper ensemble requires a minimum of 3 nodes, and 3 nodes is sufficient for most
-        deployments. A 5-node configuration improves failover protection during maintenance windows.
-        Ensembles larger than 5 nodes are not necessary. An odd number of nodes is recommended, and
-        an even number of nodes is strongly discouraged.</p>
+      <note>If you are installing a single-host deployment, or if your deployment includes fewer
+        than two delegate hosts, skip this section.</note>
+      
+      <p>A ZooKeeper ensemble requires a minimum of three nodes, which is sufficient for most
+        environments. An odd number of nodes is recommended and an even number of nodes is
+        strongly discouraged. A five-node ensemble improves failover protection during
+        maintenance windows but larger ensembles yield no benefits. ZooKeeper requires
+        IP addresses to configure an ensemble; hostnames are not supported.</p>
+      
+      <p>The <ph keyref="nm-cc"/> master host is always an ensemble node. The delegate hosts
+        to include in a ZooKeeper ensemble must be configured with additional storage, for
+        <ph keyref="nm-cc"/> internal services data, before performing the procedures in
+        this chapter. In addition, all ensemble hosts should be on the same subnet. For
+        more information, see the preceding chapter.</p>
+
     </section>
   </refbody>
 </reference>

@@ -240,9 +240,9 @@
       </step>
       
       <step id="agent">
-        <cmd>Configure <ph keyref="nm-cc"/> as an agent of the master host.</cmd>
+        <cmd>Configure <ph keyref="nm-cc"/> as a delegate of the master host.</cmd>
         <info>
-          <p>The following variable configures <cmdname>serviced</cmdname> to serve as agent:</p>
+          <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
           <dl>
             <dlentry conkeyref="feature-cli-config-vars/SERVICED_AGENT">
               <dt/>
@@ -891,27 +891,16 @@ yum --enablerepo=zenoss-mirror install -y serviced</codeblock>
         </stepxmp>
       </step>
 
-      <step id="zk-set-vars">
-        <cmd>Create a variable for each <ph keyref="nm-cc"/> host to include
-          in the ZooKeeper ensemble.</cmd>
-        <info>The variables are used in subsequent steps.</info>
-        <info>
-          <note>Define the variables identically
-            on the master host and on each resource pool host.</note>
-        </info>
-        <stepxmp>
-          <p>Replace <varname>CCMasterHostIP</varname> with the IP address of 
-            the <ph keyref="nm-cc"/> master host, and replace <varname>CCPoolHostIP-A</varname>
-            and <varname>CCPoolHostIP-B</varname> with the IP addresses of
-            the <ph keyref="nm-cc"/> resource pool hosts to include in
-            the ensemble:</p>
-          <codeblock>node1=<varname>CCMasterHostIP</varname>
-node2=<varname>CCPoolHostIP-A</varname>
-node3=<varname>CCPoolHostIP-B</varname></codeblock>
+      <step id="zk-define-ips">
+        <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
+        <stepxmp>Replace <varname>Master-IP</varname> with the IP address 
+          of the <ph keyref="nm-cc"/> master host, and replace 
+          <varname>Delegate-A-IP</varname> and <varname>Delegate-B-IP</varname>
+          with the IP addresses of the delegate hosts to include in the ensemble:
+          <codeblock>node1=<varname>Master-IP</varname>
+node2=<varname>Delegate-A-IP</varname>
+node3=<varname>Delegate-B-IP</varname></codeblock>
         </stepxmp>
-        <info>
-          <note>ZooKeeper requires IP addresses for ensemble configuration.</note>
-        </info>
       </step>
       
       <step id="zk-set-nodes">

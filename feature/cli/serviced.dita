@@ -377,7 +377,7 @@
         process toggles the log level between 0 and 2.</p>
       <p>To attach to a container running on a remote host, log in to the
         container from the <cmdname>serviced</cmdname> master host.
-        If you are running a Linux shell on an agent host, specify the 
+        If you are running a Linux shell on a delegate host, specify the 
         <codeph>--endpoint</codeph> option in the <cmdname>serviced</cmdname> 
         invocation.</p>
       <p><cmdname>serviced</cmdname> relies on Docker, and some administration

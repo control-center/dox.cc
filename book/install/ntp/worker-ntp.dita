@@ -3,14 +3,14 @@
 <task id="taskid">
   <title>Configuring an NTP client</title>
   <taskbody>
-    <context>This procedure configures a resource pool host to synchronize its clock with the NTP server on
+    <context>This procedure configures a delegate host to synchronize its clock with the NTP server on
         the <ph keyref="nm-cc"/> master host.  If you have an NTP time server inside
         your firewall, you may configure the host to use it; however,
         this procedure does not include that option.</context>
     
     <steps>
       <step>
-        <cmd>Log in the <ph keyref="nm-cc"/> resource pool 
+        <cmd>Log in the <ph keyref="nm-cc"/> delegate 
           host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       

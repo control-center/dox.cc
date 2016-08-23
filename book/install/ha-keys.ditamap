@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install (2016-08-23 14:01:14)</title>
+  <topicgroup>
+    <keydef keys="install-ha-cluster-defaults-set"
+            href="ha/cluster-defaults-set.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-cluster-defaults"
+            href="ha/cluster-defaults.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-cluster-install"
+            href="ha/cluster-install.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-cluster-resources-cc"
+            href="ha/cluster-resources-cc.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-cluster-resources"
+            href="ha/cluster-resources.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-cluster-standby"
+            href="ha/cluster-standby.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-cluster"
+            href="ha/cluster.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-deploy"
+            href="ha/deploy.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-drbd-config-do"
+            href="ha/drbd-config-do.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-drbd-config"
+            href="ha/drbd-config.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-drbd-init"
+            href="ha/drbd-init.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-drbd-install"
+            href="ha/drbd-install.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-ha"
+            href="ha/ha.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-lvm-configure"
+            href="ha/lvm-configure.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-backups"
+            href="ha/master-backups.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-cc"
+            href="ha/master-cc.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-docker"
+            href="ha/master-docker.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-nodes"
+            href="ha/master-nodes.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-prep"
+            href="ha/master-prep.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-rm"
+            href="ha/master-rm.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-master-verify-resources"
+            href="ha/master-verify-resources.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-newpool-make"
+            href="ha/newpool-make.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-newpool-master"
+            href="ha/newpool-master.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-pool-cc"
+            href="ha/pool-cc.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-pool-docker"
+            href="ha/pool-docker.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-pool-install"
+            href="ha/pool-install.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-pool-prep"
+            href="ha/pool-prep.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-storage"
+            href="ha/storage.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-variables"
+            href="ha/variables.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-verify-cc"
+            href="ha/verify-cc.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-verify-cluster"
+            href="ha/verify-cluster.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-verify-drbd"
+            href="ha/verify-drbd.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-verify-failover"
+            href="ha/verify-failover.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-verify-pacemaker"
+            href="ha/verify-pacemaker.dita"
+            format="dita"
+    />
+    <keydef keys="install-ha-verify"
+            href="ha/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

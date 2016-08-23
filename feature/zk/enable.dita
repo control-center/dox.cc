@@ -3,57 +3,30 @@
 <task id="taskid">
   <title>Starting a ZooKeeper ensemble</title>
   <taskbody>
-    <context>This procedure starts a ZooKeeper ensemble. The window of time for starting a ZooKeeper ensemble is 
-      relatively short. The goal of this procedure is to restart
+    <context>Use this procedure to start a ZooKeeper ensemble.</context>
+    <context>The window of time for starting a ZooKeeper ensemble is 
+    relatively short. The goal of this procedure is to restart
       <ph keyref="nm-cc"/> on each ensemble node at about the 
       same time, so that each node can participate in electing
       the leader.</context>
     <steps>
       <step>
-        <cmd>Use the virtual hostname (<varname>HA-Virtual-Name</varname>) or
-          virtual IP address (<varname>HA-Virtual-IP</varname>) of the 
-          high-availability cluster to start a Bash shell on the <ph keyref="nm-cc"/> 
+        <cmd>Log in to the <ph keyref="nm-cc"/> 
           master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>Display the public hostname of the current node.</cmd>
-        <stepxmp>
-          <codeblock>uname -n</codeblock>
-        </stepxmp>
-        <stepresult>The result is either <varname>Primary-Public-Name</varname>
-          or <varname>Secondary-Public-Name</varname>.
-        </stepresult>
+        <cmd>In a separate window, log in to the second node of the ZooKeeper ensemble
+          (<varname>Delegate-A-IP</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>Place the other node in standby mode.</cmd>
-        <info>This avoids potential conflicts and errors in the event of 
-          an unexpected <cmdname>serviced</cmdname> shutdown during the ZooKeeper startup.</info>
-        <stepxmp>
-          <p>Replace <varname>Other-Node-Hostname</varname> with the public hostname
-            of the other node:</p>
-          <codeblock>pcs cluster standby <varname>Other-Node-Hostname</varname></codeblock>
-        </stepxmp>
+        <cmd>In a different window, log in to the third node of the ZooKeeper ensemble
+          (<varname>Delegate-B-IP</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>In a separate window, 
-          log in to the second node of 
-          the ZooKeeper ensemble
-          (<varname>Pool-Host-A-IP</varname>).</cmd>
-      </step>
-      
-      <step>
-        <cmd>In another separate window, 
-          log in to the third node of 
-          the ZooKeeper ensemble
-          (<varname>Pool-Host-B-IP</varname>).</cmd>
-      </step>
-      
-      <step>
-        <cmd>On all ensemble hosts,
-        stop and start <cmdname>serviced</cmdname>.</cmd>
+        <cmd>On all ensemble hosts, stop and start <cmdname>serviced</cmdname>.</cmd>
         <stepxmp>
           <codeblock>systemctl stop serviced &#38;&#38; systemctl start serviced</codeblock>
         </stepxmp>
@@ -69,15 +42,6 @@
         <info>If <cmdname>nc</cmdname> is not available, you
           can use <cmdname>telnet</cmdname> with 
           <xref keyref="url-zk-commands">interactive ZooKeeper commands</xref>.</info>
-      </step>
-      
-      <step>
-        <cmd>Restore the cluster.</cmd>
-        <stepxmp>
-          <p>Replace <varname>Other-Node-Hostname</varname> with the public hostname
-            of the primary node:</p>
-          <codeblock>pcs cluster unstandby <varname>Other-Node-Hostname</varname></codeblock>
-        </stepxmp>
       </step>
       
     </steps>

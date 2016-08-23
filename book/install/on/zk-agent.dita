@@ -153,7 +153,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
         <cmd>Verify the ZooKeeper environment variables.</cmd>
         <stepxmp>
           <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced \
-  | egrep '(_ZOO|_ZK|_STA)'</codeblock>
+  | egrep '(_ZOO|_ZK|_STAR)'</codeblock>
         </stepxmp>
       </step>
       

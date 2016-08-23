@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature (2016-08-19 13:31:03)</title>
+ <title>Keys in feature (2016-08-23 13:55:52)</title>
   <topicgroup>
+    <keydef keys="feature-zk-about"
+            href="zk/about.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-delegate1"
+            href="zk/delegate1.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-delegate2"
+            href="zk/delegate2.dita"
+            format="dita"
+    />
     <keydef keys="feature-zk-enable"
             href="zk/enable.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-example"
+            href="zk/example.dita"
             format="dita"
     />
     <keydef keys="feature-zk-master"
             href="zk/master.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-pool"
-            href="zk/pool.dita"
+    <keydef keys="feature-zk-nodes"
+            href="zk/nodes.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-vars"
-            href="zk/vars.dita"
-            format="dita"
-    />
-    <keydef keys="feature-zk-worker"
-            href="zk/worker.dita"
+    <keydef keys="feature-zk-other"
+            href="zk/other.dita"
             format="dita"
     />
     <keydef keys="feature-zk-zk"

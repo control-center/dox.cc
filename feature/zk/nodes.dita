@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Understanding the configuration process</title>
+  <refbody>
+    <section>
+      <p>The procedures in this chapter instruct you to create temporary variables that are used as
+        building blocks for accurately constructing <ph keyref="nm-cc"/> configuration variables.
+        You append the <ph keyref="nm-cc"/> variables to <filepath>/etc/default/serviced</filepath>,
+        and then edit the file to move the variables to more appropriate locations.</p>
+
+      <p>The most important temporary variables specify the IPv4 address of each host in the
+        ZooKeeper ensemble. The following table identifies these important variables, the names and
+        values of which must be identical on every <ph keyref="nm-cc"/> cluster host.</p>
+      
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Variable name</entry>
+              <entry>Placeholder value</entry>
+              <entry>Actual value</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><codeph>node1</codeph></entry>
+              <entry><varname>Master-IP</varname></entry>
+              <entry>IPv4 address of the <ph keyref="nm-cc"/> master host</entry>
+            </row>
+            <row>
+              <entry><codeph>node2</codeph></entry>
+              <entry><varname>Delegate-A-IP</varname></entry>
+              <entry>IPv4 address of <ph keyref="nm-cc"/> delegate host A</entry>
+            </row>
+            <row>
+              <entry><codeph>node1</codeph></entry>
+              <entry><varname>Delegate-B-IP</varname></entry>
+              <entry>IPv4 address of <ph keyref="nm-cc"/> delegate host B</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <note>All ensemble hosts should be on the same subnet.</note>
+    </section>
+  </refbody>
+</reference>

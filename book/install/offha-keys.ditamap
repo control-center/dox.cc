@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install (2016-08-23 14:01:14)</title>
+  <topicgroup>
+    <keydef keys="install-offha-cluster-install"
+            href="offha/cluster-install.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-download"
+            href="offha/download.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-master-docker"
+            href="offha/master-docker.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-master-nodes"
+            href="offha/master-nodes.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-master-ntp"
+            href="offha/master-ntp.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-master-prep"
+            href="offha/master-prep.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-master-rm"
+            href="offha/master-rm.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-master-verify-resources"
+            href="offha/master-verify-resources.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-offline-ha"
+            href="offha/offline-ha.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-pool-docker"
+            href="offha/pool-docker.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-pool-ntp"
+            href="offha/pool-ntp.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-pool-prep"
+            href="offha/pool-prep.dita"
+            format="dita"
+    />
+    <keydef keys="install-offha-stage"
+            href="offha/stage.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating delegate hosts</title>
+  <taskbody>
+    <context>The default configuration of delegate hosts sets the value of the
+        <varname>SERVICED_ZK</varname> variable to the master host only. Use this 
+      procedure to update the setting to include all of the hosts in the ZooKeeper
+      ensemble. Perform this procedure on each delegate host in your
+      <ph keyref="nm-cc"/> cluster.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the delegate 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="install-lib-tasks/zk-define-ips">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="install-lib-tasks/zk-set-nodes">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Update the variable.</cmd>
+        <substeps>
+          <substep conkeyref="install-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
+            <info>The value of this declaration specifies three endpoints.</info>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_ZK</varname> variable
+              near the beginning of the file, and then delete the line it is on.</cmd>
+            <info>The value of this declaration is just the master host.</info>
+          </substep>
+          <substep>
+            <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
+              from the end of the file in the location of the just-deleted declaration.</cmd>
+          </substep>
+          <substep conkeyref="install-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Verify the setting.</cmd>
+        <stepxmp>
+          <codeblock>egrep '^[^#]*SERVICED_ZK' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The following example shows the environment variable for a delegate
+          host that is not a node in the ZooKeeper cluster:
+          <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Restart <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl restart serviced</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
