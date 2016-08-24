@@ -12,11 +12,11 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/agent">
+      <step conkeyref="feature-lib-tasks/agent">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/cfg-subnet">
+      <step conkeyref="feature-lib-tasks/cfg-subnet">
         <cmd></cmd>
       </step>
     </steps>

@@ -12,33 +12,33 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/firewall">
+      <step conkeyref="feature-lib-tasks/firewall">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/journal">
+      <step conkeyref="feature-lib-tasks/journal">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/kill-selinux">
+      <step conkeyref="feature-lib-tasks/kill-selinux">
         <cmd></cmd>
       </step>
       
       
       
-      <step conkeyref="install-lib-tasks/dnsmasq">
+      <step conkeyref="feature-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/install-anacron">
+      <step conkeyref="feature-lib-tasks/install-anacron">
         <cmd/>
       </step>
       
-      <step conkeyref="install-lib-tasks/ntp">
+      <step conkeyref="feature-lib-tasks/ntp">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/zenoss-repo">
+      <step conkeyref="feature-lib-tasks/zenoss-repo">
         <cmd></cmd>
       </step>
       

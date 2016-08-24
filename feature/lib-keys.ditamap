@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in install (2016-08-23 14:01:14)</title>
+ <title>Keys in feature (2016-08-24 13:06:39)</title>
   <topicgroup>
-    <keydef keys="install-lib-tasks"
+    <keydef keys="feature-lib-tasks"
             href="lib/tasks.dita"
             format="dita"
     />

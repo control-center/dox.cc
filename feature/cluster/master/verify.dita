@@ -11,35 +11,35 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/verify-64">
+      <step conkeyref="feature-lib-tasks/verify-64">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-cpu-count">
+      <step conkeyref="feature-lib-tasks/check-cpu-count">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-memory-master">
+      <step conkeyref="feature-lib-tasks/check-memory-master">
         <cmd/>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-hostid-master">
+      <step conkeyref="feature-lib-tasks/check-hostid-master">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/check-name-resolution">
+      <step conkeyref="feature-lib-tasks/check-name-resolution">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/localhost-entry">
+      <step conkeyref="feature-lib-tasks/localhost-entry">
         <cmd></cmd>
       </step>
 
-      <step conkeyref="install-lib-tasks/update-os">
+      <step conkeyref="feature-lib-tasks/update-os">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/update-kernel">
+      <step conkeyref="feature-lib-tasks/update-kernel">
         <cmd></cmd>
       </step>
       

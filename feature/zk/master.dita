@@ -12,7 +12,7 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/zk-define-ips">
+      <step conkeyref="feature-lib-tasks/zk-define-ips">
         <cmd/>
       </step>
       
@@ -23,7 +23,7 @@
         </stepxmp>
       </step>
       
-      <step conkeyref="install-lib-tasks/zk-set-nodes">
+      <step conkeyref="feature-lib-tasks/zk-set-nodes">
         <cmd/>
       </step>
       
@@ -43,7 +43,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
       <step>
         <cmd>Clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="install-lib-tasks/open-file">
+          <substep conkeyref="feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -90,7 +90,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
               from the end of the file in the location of the just-deleted declaration.</cmd>
           </substep>
-          <substep conkeyref="install-lib-tasks/save">
+          <substep conkeyref="feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>

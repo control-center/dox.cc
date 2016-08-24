@@ -11,35 +11,35 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
 
-      <step conkeyref="install-lib-tasks/docker-install">
+      <step conkeyref="feature-lib-tasks/docker-install">
         <cmd/>
       </step>
       
-      <step conkeyref="install-lib-tasks/docker-tmp">
+      <step conkeyref="feature-lib-tasks/docker-tmp">
         <cmd/>
       </step>
       
-      <step conkeyref="install-lib-tasks/docker-svc-def">
+      <step conkeyref="feature-lib-tasks/docker-svc-def">
         <cmd/>
       </step>
 
-      <step conkeyref="install-lib-tasks/install-serviced">
+      <step conkeyref="feature-lib-tasks/install-serviced">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="install-lib-tasks/create-thin-docker">
+      <step conkeyref="feature-lib-tasks/create-thin-docker">
         <cmd/>
       </step>
 
-      <step conkeyref="install-lib-tasks/docker-config">
+      <step conkeyref="feature-lib-tasks/docker-config">
         <cmd/>
       </step>
 
-      <step conkeyref="install-lib-tasks/docker-dns-flag">
+      <step conkeyref="feature-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
       
-      <step conkeyref="install-lib-tasks/fix-nfs">
+      <step conkeyref="feature-lib-tasks/fix-nfs">
         <cmd/>
       </step>
     </steps>
