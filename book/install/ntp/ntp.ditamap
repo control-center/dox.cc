@@ -3,10 +3,7 @@
 <bookmap>
    <title>NTP offline</title>
     <appendix keys="ntp-offline-installation" keyref="install-ntp-ntp">
-       <topicref keyref="install-ntp-public"/>
        <topicref keyref="install-ntp-master"/>
-       <topicref keyref="install-ntp-worker"/>
-       <topicref keyref="install-ntp-master-ntp"/>
-       <topicref keyref="install-ntp-worker-ntp"/>
+       <topicref keyref="install-ntp-delegate"/>
    </appendix>
 </bookmap>

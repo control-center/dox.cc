@@ -3,10 +3,6 @@
 <map>
  <title>Keys in install (2016-08-23 14:01:14)</title>
   <topicgroup>
-    <keydef keys="install-ntp-master-ntp"
-            href="ntp/master-ntp.dita"
-            format="dita"
-    />
     <keydef keys="install-ntp-master"
             href="ntp/master.dita"
             format="dita"
@@ -15,16 +11,8 @@
             href="ntp/ntp.dita"
             format="dita"
     />
-    <keydef keys="install-ntp-public"
-            href="ntp/public.dita"
-            format="dita"
-    />
-    <keydef keys="install-ntp-worker-ntp"
-            href="ntp/worker-ntp.dita"
-            format="dita"
-    />
-    <keydef keys="install-ntp-worker"
-            href="ntp/worker.dita"
+    <keydef keys="install-ntp-delegate"
+            href="ntp/delegate.dita"
             format="dita"
     />
    </topicgroup>

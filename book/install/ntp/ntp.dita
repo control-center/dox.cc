@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="taskid">
-  <title>Enabling NTP on Microsoft Hyper-V guests</title>
+  <title>Configuring a private master NTP server</title>
   <conbody>
-    <p>Like most distributed applications, <ph keyref="nm-cc"/> requires a common time source. The
-      procedures in this section enable <xref keyref="url-ntp">NTP</xref> to synchronize the system
-      clocks of all hosts in your <ph keyref="nm-cc"/> cluster.</p>
+    <p><ph keyref="nm-cc"/> requires a common time source. The procedures in this appendix 
+      configure a private master <xref keyref="url-ntp">NTP</xref> server to synchronize
+      the system clocks of all hosts in a <ph keyref="nm-cc"/> cluster.</p>
       
-      <p>You may configure NTP to rely on public time servers or on a private master server.
-      <ul>
-        <li>If all of the hosts in your <ph keyref="nm-cc"/> cluster
-          can access the internet, configure NTP to rely on public time servers.</li>
-        <li>If none of the hosts in your <ph keyref="nm-cc"/> cluster
-          can access the internet, configure NTP to rely on a private master server. </li>
-      </ul>
-      </p>
-
-    <note>The procedures in this section are required only for multi-host deployments running as
-      Microsoft Hyper-V guests. VMware vSphere guests use an hourly <cmdname>cron</cmdname> job to
-      synchronize their system clocks with the host.</note>
+    <p>A private master server is only required when a multi-host deployment does not 
+      have internet access and no time synchronization servers are available behind the
+      firewall. Single-host deployments do not require time synchronization, and 
+      deployments with internet access can rely on the default public time servers
+      that are configured in <filepath>/etc/ntp.conf</filepath>.</p>
+    
+    <note>VMware vSphere guest systems can synchronize their system clocks with the
+    host system. If that feature is enabled, it must be disabled to configure a private
+    master NTP server or to use a time synchronization server that is available behind
+    the firewall. For more information, refer to the VMware documentation for your 
+    version of vSphere.</note>
+    
   </conbody>
 </concept>
-
 

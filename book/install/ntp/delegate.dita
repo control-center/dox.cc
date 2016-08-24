@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring an NTP client</title>
+  <title>Configuring NTP clients</title>
+  <prolog>
+    <source href="http://www.borngeek.com/2008/04/03/using-ntp-on-a-private-network/"
+      scope="external" format="html" />
+  </prolog>
   <taskbody>
-    <context>This procedure configures a delegate host to synchronize its clock with the NTP server on
-        the <ph keyref="nm-cc"/> master host.  If you have an NTP time server inside
-        your firewall, you may configure the host to use it; however,
-        this procedure does not include that option.</context>
+    <context>
+      <p>Use this procedure to configure a delegate hosts to synchronize its clocks with the NTP server on
+        the <ph keyref="nm-cc"/> master host. Perform this procedure only if the hosts do not have
+        internet access. Repeat this procedure on each delegate host in your <ph keyref="nm-cc"/> 
+        cluster.</p>
+      <note>On VMware vSphere guests, disable time synchronization between guest 
+        and host operating systems before performing this procedure.</note>
+    </context>
     
     <steps>
       <step>
-        <cmd>Log in the <ph keyref="nm-cc"/> delegate 
+        <cmd>Log in to the <ph keyref="nm-cc"/> delegate 
           host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
@@ -20,7 +28,6 @@
       </step>
       
       <step>
-        <!-- Source: http://www.borngeek.com/2008/04/03/using-ntp-on-a-private-network/ -->
         <cmd>Edit the NTP configuration file./</cmd>
         <substeps>
           <substep>
@@ -30,23 +37,28 @@
             <cmd>Replace all of the lines in the file with the following lines:</cmd>
             <stepxmp>
               <codeblock># Point to the master time server
-server <varname>HA-Virtual-IP</varname>
+server MASTER_ADDRESS
 
 restrict default ignore
 restrict 127.0.0.1
-restrict <varname>HA-Virtual-IP</varname> mask 255.255.255.255 nomodify notrap noquery
+restrict MASTER_ADDRESS mask 255.255.255.255 nomodify notrap noquery
 
 driftfile /var/lib/ntp/drift</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Replace both instances of <varname>HA-Virtual-IP</varname> with 
-              the virtual IP address of the high-availability cluster.</cmd>
+            <cmd>Replace both instances of <codeph>MASTER_ADDRESS</codeph> with the IPv4 address
+              of the host where the NTP server is running (the <ph keyref="nm-cc"/> master host).</cmd>
           </substep>
           <substep>
             <cmd>Save the file and exit the editor.</cmd>
           </substep>
         </substeps>
+      </step>
+      
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><codeblock>systemctl stop serviced</codeblock></stepxmp>
       </step>
       
       <step>
@@ -78,6 +90,11 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             <stepxmp><codeblock>systemctl start ntpd</codeblock></stepxmp>
           </substep>
         </substeps>
+      </step>
+      
+      <step>
+        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><codeblock>systemctl start serviced</codeblock></stepxmp>
       </step>
     </steps>
   </taskbody>
