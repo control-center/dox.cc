@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-   <title>ZK config</title>
+   <title>Configure ZK</title>
   <chapter keyref="feature-zk-zk">
     <topicref keyref="feature-zk-about"/>
     <topicref keyref="feature-zk-nodes">

@@ -25,7 +25,7 @@
         <dlentry id="TMP">
           <dt><varname>TMP</varname></dt>
           <dd>Default: <filepath>/tmp</filepath></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The path <cmdname>serviced</cmdname> uses to spool snapshots
             and images during backups.</dd>
         </dlentry>
@@ -33,36 +33,36 @@
         <dlentry id="GOMAXPROCS">
           <dt><varname>GOMAXPROCS</varname></dt>
           <dd>Default: <codeph>2</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The maximum number of CPU cores <cmdname>serviced</cmdname> uses.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_AGENT">
           <dt><varname>SERVICED_AGENT</varname></dt>
           <dd>Default: <codeph>0</codeph> (false)</dd> 
-          <dd>Role: Master and worker hosts</dd>
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs worker tasks. Workers
+          <dd>Role: Master and delegate hosts</dd>
+          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs delegate tasks. Workers
             run application services scheduled for the resource pool to which they belong. The
               <cmdname>serviced</cmdname> instance configured as the master runs the scheduler. A
-              <cmdname>serviced</cmdname> instance may be configured as worker and master or just worker.</dd>
+              <cmdname>serviced</cmdname> instance may be configured as delegate and master or just delegate.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_MASTER">
           <dt><varname>SERVICED_MASTER</varname></dt>
           <dd>Default: <codeph>0</codeph> (false)</dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>Determines whether a <cmdname>serviced</cmdname> instance performs master tasks. The
             master runs the application services scheduler and other internal services, including
             the server for the <ph keyref="nm-cc"/> browser interface. A
-              <cmdname>serviced</cmdname> instance may be configured as worker and master or just
-            worker. Only one <cmdname>serviced</cmdname> instance in a 
+              <cmdname>serviced</cmdname> instance may be configured as delegate and master or just
+            delegate. Only one <cmdname>serviced</cmdname> instance in a 
             <ph keyref="nm-cc"/> cluster may be the master.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK">
           <dt><varname>SERVICED_ZK</varname></dt>
           <dd>Default: <codeph>{{SERVICED_MASTER_IP}}:2181</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
             separated by the comma character (<codeph>&#44;</codeph>). Each endpoint includes 
             the IP address and port of an ensemble node. </dd>
@@ -131,7 +131,7 @@
           <dd>The port on which a <cmdname>serviced</cmdname> instance configured as master listens for  
             RPC requests. The value of this variable must mach the port 
             number of the <varname>SERVICED_ENDPOINT</varname> variable
-            on <cmdname>serviced</cmdname> worker hosts.</dd>
+            on <cmdname>serviced</cmdname> delegate hosts.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_RPC_CERT_VERIFY">
@@ -171,7 +171,7 @@
         <dlentry id="SERVICED_MUX_PORT">
           <dt><varname>SERVICED_MUX_PORT</varname></dt>
           <dd>Default: <codeph>22250</codeph></dd> 
-          <dd>Role: Master and worker host</dd>
+          <dd>Role: Master and delegate host</dd>
           <dd>The port <cmdname>serviced</cmdname> uses for multiplexing 
             on its private subnet.</dd>
         </dlentry>
@@ -179,7 +179,7 @@
         <dlentry id="SERVICED_ISVCS_PATH">
           <dt><varname>SERVICED_ISVCS_PATH</varname></dt>
           <dd>Default: <filepath>/opt/serviced/var/isvcs</filepath></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The location of <cmdname>serviced</cmdname> internal services data. 
             When <varname>SERVICED_ISVCS_PATH</varname> is not set,
             <filepath><varname>SERVICED_HOME</varname>/var/isvcs</filepath> is used.</dd>
@@ -291,7 +291,7 @@
         <dlentry id="SERVICED_MAX_CONTAINER_AGE">
           <dt><varname>SERVICED_MAX_CONTAINER_AGE</varname></dt>
           <dd>Default: <codeph>86400</codeph> (24 hours)</dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The number of seconds <cmdname>serviced</cmdname>
             waits before removing a stopped container.</dd>
         </dlentry>
@@ -299,7 +299,7 @@
         <dlentry id="SERVICED_VIRTUAL_ADDRESS_SUBNET">
           <dt><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></dt>
           <dd>Default: <codeph>10.3</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The 16-bit private subnet to use for <cmdname>serviced</cmdname>&#39;s virtual IPv4
             addresses. RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
             address spaces. However, <cmdname>serviced</cmdname> accepts any valid, 16-bit, IPv4
@@ -309,7 +309,7 @@
         <dlentry id="SERVICED_LOG_LEVEL">
           <dt><varname>SERVICED_LOG_LEVEL</varname></dt>
           <dd>Default: <codeph>0</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The relative amount of INFO messages <cmdname>serviced</cmdname> writes to the system
             log. Valid values are 0 (minimum) to 5 (maximum). If persistent log storage is enabled, 
             the log file is <filepath>/var/log/journal/serviced.log</filepath>. Otherwise, log data 
@@ -386,7 +386,7 @@
         <dlentry id="SERVICED_DEBUG_PORT">
           <dt><varname>SERVICED_DEBUG_PORT</varname></dt>
           <dd>Default: <codeph>6006</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The port on which <cmdname>serviced</cmdname> listens for HTTP requests 
             for the <xref keyref="url-go-profiler">Go profiler</xref>. To stop listening
             for requests, set the value to <codeph>-1</codeph>.</dd>
@@ -395,7 +395,7 @@
         <dlentry id="SERVICED_ISVCS_ENV">
           <dt><varname>SERVICED_ISVCS_ENV_[0-9]+</varname></dt>
           <dd>Default: (empty)</dd> 
-          <dd>Role: Master host, some worker hosts</dd>
+          <dd>Role: Master host, some delegate hosts</dd>
           <dd>
             <p>Arguments to pass to internal services. You may define multiple arguments, each for a
               different internal service. The variables themselves, and their arguments, use the
@@ -453,7 +453,7 @@
           <dd>Default: <codeph>655360</codeph></dd> 
           <dd>Role: Worker hosts</dd>
           <dd>The default value of this variable ensures that a <cmdname>serviced</cmdname>
-            worker host does not run out of connections if the <cmdname>serviced</cmdname> 
+            delegate host does not run out of connections if the <cmdname>serviced</cmdname> 
             master host goes down. In testing this scenario, the connection count on remote hosts that are running a nominal
             number of collectors does not exceed 10,000 closed connections. The connections are
             automatically cleaned up by the kernel soon after the master host is back up.</dd>
@@ -472,7 +472,7 @@
           <dt><varname>SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL</varname></dt>
           <dd>Default: <codeph>60</codeph> (1 minute)</dd> 
           <dd>Role: Worker hosts</dd>
-          <dd>The number of seconds a <cmdname>serviced</cmdname> worker host waits to update
+          <dd>The number of seconds a <cmdname>serviced</cmdname> delegate host waits to update
             its <filepath>/opt/serviced/var/monitor/<varname>IP-Address</varname></filepath> file.</dd>
         </dlentry>
         
@@ -491,7 +491,7 @@
           <dd>The interval, in seconds, at which a <cmdname>serviced</cmdname> instance configured as master
             checks the modification times of the
                 <filepath>/opt/serviced/var/monitor/<varname>IP-Address</varname></filepath> files
-            of active <cmdname>serviced</cmdname> instances configured as workers. The value of this
+            of active <cmdname>serviced</cmdname> instances configured as delegates. The value of this
             variable must be a minimum of twice the value of the
               <varname>SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL</varname> variable.</dd>
         </dlentry>
@@ -501,14 +501,14 @@
           <dd>Default: <codeph>1</codeph> (true)</dd> 
           <dd>Role: Master host</dd>
           <dd>Determines whether the <cmdname>serviced</cmdname> master restarts NFS when it detects 
-            active workers that are out of synchronization.</dd>
+            active delegates that are out of synchronization.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_NFS_CLIENT">
           <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
           <dd>Default: <codeph>1</codeph></dd> 
           <dd>Role: Worker hosts</dd>
-          <dd>Determines whether a worker host mounts the DFS. To disable mounting,
+          <dd>Determines whether a delegate host mounts the DFS. To disable mounting,
           set the value to <codeph>0</codeph>.</dd>
         </dlentry>
         
@@ -523,7 +523,7 @@
           <dt><varname>SERVICED_ISVCS_START</varname></dt>
           <dd>Default: (none) </dd> 
           <dd>Role: Worker hosts</dd>
-          <dd>Enables one or more <ph keyref="nm-cc"/> internal services to run on a worker host.
+          <dd>Enables one or more <ph keyref="nm-cc"/> internal services to run on a delegate host.
           The list of services:
           <ul>
             <li><codeph>celery</codeph></li>
@@ -539,14 +539,14 @@
         <dlentry id="SERVICED_ISVCS_ZOOKEEPER_ID">
           <dt><varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname></dt>
           <dd>Default: (none)</dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The unique identifier (an integer) of a ZooKeeper ensemble node.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_ZOOKEEPER_QUORUM">
           <dt><varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname></dt>
           <dd>Default: (none)</dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The comma-separated list of nodes in a ZooKeeper ensemble.
             Each entry in the list specifies the ZooKeeper ID, IP address, 
             peer communications port, and leader communications port of a node
@@ -561,7 +561,7 @@
         <dlentry id="SERVICED_DOCKER_LOG_DRIVER">
           <dt><varname>SERVICED_DOCKER_LOG_DRIVER</varname></dt>
           <dd>Default: <codeph>json-file</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The log driver for all Docker container logs, including containers
             for <ph keyref="nm-cc"/> internal services. Valid values:
           <ul>
@@ -578,7 +578,7 @@
         <dlentry id="SERVICED_DOCKER_LOG_CONFIG">
           <dt><varname>SERVICED_DOCKER_LOG_CONFIG</varname></dt>
           <dd>Default: <codeph>max-file=5,max-size=10m</codeph></dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>A comma-separated list of Docker <option>--log-opt</option> options as
                 <codeph><varname>key</varname>=<varname>value</varname></codeph> pairs. To specify
             the default values for a log driver, or for drivers that need no additional options,
@@ -590,14 +590,14 @@
         <dlentry id="SERVICED_OPTS">
           <dt><varname>SERVICED_OPTS</varname></dt>
           <dd>Default: (empty)</dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>Special options for the <cmdname>serviced</cmdname> startup command.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK_SESSION_TIMEOUT">
           <dt><varname>SERVICED_ZK_SESSION_TIMEOUT</varname></dt>
           <dd>Default: (none)</dd> 
-          <dd>Role: Master and worker hosts</dd>
+          <dd>Role: Master and delegate hosts</dd>
           <dd>The number of seconds before a ZooKeeper ensemble
             node times out a connection attempt.</dd>
         </dlentry>

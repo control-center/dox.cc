@@ -197,9 +197,9 @@
       
       
       <step id="master">
-        <cmd>Configure <ph keyref="nm-cc"/> to serve as the master and as a worker.</cmd>
+        <cmd>Configure <ph keyref="nm-cc"/> to serve as the master and as a delegate.</cmd>
         <info>
-          <p>The following variables configure <cmdname>serviced</cmdname> to serve as both master and worker:</p>
+          <p>The following variables configure <cmdname>serviced</cmdname> to serve as both master and delegate:</p>
           <dl>
             <dlentry conkeyref="feature-cli-config-vars/SERVICED_AGENT">
               <dt/>
@@ -319,9 +319,9 @@
       </step>
       
       <step id="agent-default-pool">
-        <cmd>Add a worker host.</cmd>
+        <cmd>Add a delegate host.</cmd>
         <stepxmp>
-          <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the worker
+          <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the delegate
             host to add:</p>
           <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
           <p>If you enter a hostname, all hosts in your <ph keyref="nm-cc"/> cluster must be able to
@@ -358,7 +358,7 @@
           </substep>
           <substep>
             <cmd>Compare the available storage with the 
-              amount required for a worker host 
+              amount required for a delegate host 
               in your deployment.</cmd>
             <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
           </substep>
@@ -421,7 +421,7 @@
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Compare the available memory with the amount required for a worker host in your
+            <cmd>Compare the available memory with the amount required for a delegate host in your
               deployment.</cmd>
             <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
           </substep>
@@ -622,7 +622,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
       <step id="nc-online-pool">
         <cmd>Install the <xref keyref="url-nmap-ncat">Nmap Ncat</xref> utility.</cmd>
         <info>The utility is used to verify ZooKeeper ensemble configurations. <b>Perform this step
-            only on the two worker hosts that are designated for use in the ZooKeeper
+            only on the two delegate hosts that are designated for use in the ZooKeeper
           ensemble</b>.</info>
         <stepxmp>
           <codeblock>yum install -y nmap-ncat</codeblock>
