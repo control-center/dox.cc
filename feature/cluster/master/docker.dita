@@ -10,6 +10,10 @@
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
+      
+      <step product="rm" conkeyref="feature-lib-tasks/docker-install-offline">
+        <cmd/>
+      </step>
 
       <step conkeyref="feature-lib-tasks/docker-install">
         <cmd/>
@@ -22,8 +26,12 @@
       <step conkeyref="feature-lib-tasks/docker-svc-def">
         <cmd/>
       </step>
+      
+      <step conkeyref="feature-lib-tasks/install-serviced-offline">
+        <cmd/>
+      </step>
 
-      <step conkeyref="feature-lib-tasks/install-serviced">
+      <step product="rm" conkeyref="feature-lib-tasks/install-serviced">
         <cmd></cmd>
       </step>
       

@@ -11,8 +11,8 @@
          <topicref keyref="storage-isvcs"/>
          <topicref keyref="storage-backups"/>
        </topicref>
-       <topicref keyref="offline-download"/>
-       <topicref keyref="offline-stage"/>
+       <topicref keyref="install-off-download"/>
+       <topicref keyref="install-off-stage"/>
        <topicref href="master-prep.dita"/>
        <topicref href="master-ntp.dita"/>
        <topicref href="master-docker.dita"/>

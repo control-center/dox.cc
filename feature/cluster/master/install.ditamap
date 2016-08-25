@@ -9,6 +9,8 @@
       <topicref keyref="feature-cluster-master-storage-isvcs"/>
       <topicref keyref="feature-cluster-master-storage-backups"/>
     </topicref>
+    <topicref product="rm" keyref="install-off-download"/>
+    <topicref product="rm" keyref="install-off-stage"/>
     <topicref keyref="feature-cluster-master-prep"/>
     <topicref keyref="feature-cluster-master-docker"/>
     <topicref keyref="feature-cluster-access-access">

@@ -13,6 +13,16 @@
                 </topicmeta>
             </subjectdef>
         </subjectdef>
+        <subjectdef keys="closed">
+            <topicmeta>
+                <navtitle>Closed Source Software</navtitle>
+            </topicmeta>
+            <subjectdef keys="rm">
+                <topicmeta>
+                    <navtitle>Resource Manager</navtitle>
+                </topicmeta>
+            </subjectdef>
+        </subjectdef>
     </hasInstance>
     
     
@@ -27,6 +37,7 @@
     <enumerationdef>
         <attributedef name="product"/>
         <subjectdef keyref="oss"/>
+        <subjectdef keyref="closed"/>
     </enumerationdef>
     <enumerationdef>
         <attributedef name="props"/>

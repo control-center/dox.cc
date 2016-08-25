@@ -13,27 +13,27 @@
         <cmd>Log in to the master host <ph conkeyref="login-as/root"/>.</cmd>
       </step>
       
-      <step conkeyref="tasklib-install/docker-install-offline">
+      <step conkeyref="feature-lib-tasks/docker-install-offline">
         <cmd/>
       </step>
       
-      <step conkeyref="tasklib-install/docker-svc-def">
+      <step conkeyref="feature-lib-tasks/docker-svc-def">
         <cmd/>
       </step>
       
-      <step conkeyref="tasklib-install/install-serviced-offline">
+      <step conkeyref="feature-lib-tasks/install-serviced-offline">
         <cmd/>
       </step>
       
-      <step conkeyref="tasklib-install/create-thin-docker">
+      <step conkeyref="feature-lib-tasks/create-thin-docker">
         <cmd/>
       </step>
       
-      <step conkeyref="tasklib-install/docker-config">
+      <step conkeyref="feature-lib-tasks/docker-config">
         <cmd/>
       </step>
       
-      <step conkeyref="tasklib-install/docker-dns-flag">
+      <step conkeyref="feature-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
       
