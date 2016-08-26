@@ -197,14 +197,10 @@
       
       
       <step id="master">
-        <cmd>Configure <ph keyref="nm-cc"/> to serve as the master and as a delegate.</cmd>
+        <cmd>Configure <ph keyref="nm-cc"/> to serve as the master.</cmd>
         <info>
-          <p>The following variables configure <cmdname>serviced</cmdname> to serve as both master and delegate:</p>
+          <p>The following variable configures <cmdname>serviced</cmdname> to serve as master:</p>
           <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_AGENT">
-              <dt/>
-              <dd/>
-            </dlentry>
             <dlentry conkeyref="feature-cli-config-vars/SERVICED_MASTER">
               <dt/>
               <dd/>
@@ -213,15 +209,6 @@
         </info>
         <substeps>
           <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Find the <varname>SERVICED_AGENT</varname> declaration, and then change the value
-              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
-            <stepxmp>The following example shows the line to change:
-              <codeblock># SERVICED_AGENT=0</codeblock></stepxmp>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
@@ -244,18 +231,14 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
           <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_AGENT">
-              <dt/>
-              <dd/>
-            </dlentry>
             <dlentry conkeyref="feature-cli-config-vars/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
           <p>In addition, the following lines need to be edited, to replace
-              <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with the IP address of the
-            master host:</p>
+              <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with 
+            the IP address or hostname of the master host:</p>
           <sl>
             <sli><codeph># SERVICED_ZK={{SERVICED_MASTER_IP}}:2181</codeph></sli>
             <sli><codeph># SERVICED_DOCKER_REGISTRY={{SERVICED_MASTER_IP}}:5000</codeph></sli>
@@ -267,15 +250,6 @@
         </info>
         <substeps>
           <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Find the <varname>SERVICED_AGENT</varname> declaration, and then change the value
-              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
-            <stepxmp>The following example shows the line to change:
-              <codeblock># SERVICED_AGENT=0</codeblock></stepxmp>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
