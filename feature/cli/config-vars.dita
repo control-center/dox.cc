@@ -19,16 +19,14 @@
             Docker Hub credentials are stored in the file.</dd>
         </dlentry>
         
-        <!-- to become TMPDIR
-        <dlentry id="TMP">
-          <dt><varname>TMP</varname></dt>
-          <dd><b>Default</b>: <filepath>/tmp</filepath></dd> 
-          <dd><b>Role</b>: Master</dd>
+        <!-- Make sure this is in the file before Hoth ships -->
+        <dlentry id="TMPDIR">
+          <dt><varname>TMPDIR</varname></dt>
+          <dd><b>Default</b>: (the value of shell variable TMPDIR)</dd> 
+          <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: storage, reliability</dd>
-          <dd>The path <cmdname>serviced</cmdname> uses to spool snapshots
-            and images during backups.</dd>
+          <dd>The path <cmdname>serviced</cmdname> uses for temporary files.</dd>
         </dlentry>
-         -->
         
         <dlentry id="GOMAXPROCS">
           <dt><varname>GOMAXPROCS</varname></dt>
@@ -56,8 +54,8 @@
           <dd><b>Default</b>: <codeph>0</codeph> (false)</dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: role</dd>
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs master tasks. The
-            <cmdname>serviced</cmdname> master runs the application services scheduler and other 
+          <dd>Determines whether a <cmdname>serviced</cmdname> instance 
+            runs the application services scheduler and other 
             internal services. Only one <cmdname>serviced</cmdname> instance in a
             <ph keyref="nm-cc"/> cluster can be configured as the master.</dd>
         </dlentry>
@@ -70,7 +68,7 @@
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
             separated by the comma character (<codeph>&#44;</codeph>). Each endpoint includes 
             the IP address and port of an ensemble node. For more information about 
-            configuring ZooKeeper, refer to the <cite conkeyref="pubs/cite-install"/>.</dd>
+            configuring ZooKeeper, see <xref conkeyref="feature-zk-zk"/>.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
@@ -114,12 +112,11 @@
           <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:4979</codeph></dd> 
           <dd><b>Role</b>: Delegate</dd>
           <dd><b>Tags</b>: RPC</dd>
-          <dd>The endpoint of the <cmdname>serviced</cmdname> RPC endpoint.
+          <dd>The endpoint of the <cmdname>serviced</cmdname> RPC server.
             Replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or hostname of the 
+            <cmdname>serviced</cmdname> master host. The port number of this endpoint must match 
+            the value of the <varname>SERVICED_RPC_PORT</varname> variable defined on the 
             <cmdname>serviced</cmdname> master host.</dd>
-          <dd>The port number of this endpoint must match the value of 
-            the <varname>SERVICED_RPC_PORT</varname> variable on the <cmdname>serviced</cmdname>
-            master host.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_MAX_RPC_CLIENTS">
@@ -127,10 +124,14 @@
           <dd><b>Default</b>: <codeph>3</codeph></dd> 
           <dd><b>Role</b>: Delegate</dd>
           <dd><b>Tags</b>: RPC</dd>
-          <dd>The maximum number of connections the <cmdname>serviced</cmdname> RPC endpoint supports.
-            The value is used to create a pool of sockets, which are reused as needed. Increasing
-            the value increases the number of open sockets and the use of socket-related operating
-            system resources.</dd>
+          <dd>The preferred maximum number of simultaneous connections a <cmdname>serviced</cmdname>
+            delegate uses for RPC requests. The value is used to create a pool of sockets, which 
+            are reused as needed. Increasing the value increases the number of open sockets and 
+            the use of socket-related operating system resources.</dd>
+          <dd>When the demand for connections exceeds the supply of open sockets,
+              <cmdname>serviced</cmdname> opens more sockets. When demand eases,
+              <cmdname>serviced</cmdname> reduces the number of open sockets to the preferred
+            maximum.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_RPC_PORT">
@@ -138,10 +139,10 @@
           <dd><b>Default</b>: <codeph>4979</codeph></dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: RPC</dd>
-          <dd>The port on which a <cmdname>serviced</cmdname> master
-            listens for RPC connections. The value of this variable must match  
-            the port number of the <varname>SERVICED_ENDPOINT</varname> variable
-            on <cmdname>serviced</cmdname> delegates.</dd>
+          <dd>The port on which the <cmdname>serviced</cmdname> RPC server
+            listens for connections. The value of this variable must match  
+            the port number defined for the <varname>SERVICED_ENDPOINT</varname>
+            variable on all <cmdname>serviced</cmdname> delegate hosts.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_RPC_CERT_VERIFY">
@@ -149,9 +150,9 @@
           <dd><b>Default</b>: <codeph>false</codeph></dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: RPC</dd>
-          <dd>Determines whether <cmdname>serviced</cmdname> performs
-            TLS certificate verification for RPC connections. The certificate
-            is defined by the <varname>SERVICED_CERT_FILE</varname> variable.</dd>
+          <dd>Determines whether <cmdname>serviced</cmdname> performs TLS certificate verification
+            for RPC connections. The certificate is defined by the
+              <varname>SERVICED_CERT_FILE</varname> variable.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_RPC_DISABLE_TLS">
@@ -159,8 +160,7 @@
           <dd><b>Default</b>: <codeph>false</codeph></dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: RPC</dd>
-          <dd>Determines whether <cmdname>serviced</cmdname> uses
-            TLS for RPC connections.</dd>
+          <dd>Determines whether <cmdname>serviced</cmdname> encrypts RPC traffic with TLS.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_RPC_TLS_MIN_VERSION">
@@ -178,14 +178,14 @@
           <dd><b>Default</b>: (list of ciphers)</dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: RPC</dd>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports
-            for RPC connections: <ul>
+          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for RPC connections,
+            separated by the comma character (<codeph>,</codeph>): <ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>              
-          </ul>To disable support for a cipher, remove it from the list.</dd>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
+            </ul>To disable support for a cipher, remove it from the list.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_PORT">
@@ -210,7 +210,7 @@
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: browser interface</dd>
           <dd>The number of seconds between polls from <ph keyref="nm-cc"/> browser interface
-            clients. The value is included in JavaScript that is sent to the clients.</dd>
+            clients. The value is included in a JavaScript library that is sent to the clients.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_MUX_PORT">
@@ -219,7 +219,7 @@
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: mux</dd>
           <dd>The port <cmdname>serviced</cmdname> uses for  
-            communications among Docker containers.</dd>
+            traffic among Docker containers.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_MUX_DISABLE_TLS">
@@ -227,9 +227,9 @@
           <dd><b>Default</b>: <codeph>0</codeph></dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: mux</dd>
-          <dd>Determines whether TLS is used for inter-host communications 
-            among Docker containers. Intra-host communications among
-            Docker containers is not encrypted. To disable TLS, set
+          <dd>Determines whether inter-host traffic 
+            among Docker containers is encrypted with TLS. Intra-host traffic among
+            Docker containers is not encrypted. To disable encryption, set
             the value to <codeph>1</codeph>.</dd>
         </dlentry>
         
@@ -239,7 +239,7 @@
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: mux</dd>
           <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts
-            for mux communications. Valid values include the default,
+            for mux traffic. Valid values include the default,
             <codeph>VersionTLS11</codeph>, and <codeph>VersionTLS12</codeph>.</dd>
         </dlentry>
         
@@ -249,7 +249,7 @@
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: mux</dd>
           <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports
-            for mux communications:<ul>
+            for mux traffic, separated by the comma character (<codeph>,</codeph>):<ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
               <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
@@ -263,6 +263,7 @@
             </ul>To disable support for a cipher, remove it from the list.</dd>
         </dlentry>
         
+        <!-- To be removed? -->
         <dlentry id="SERVICED_VARPATH">
           <dt><varname>SERVICED_VARPATH</varname></dt>
           <dd><b>Default</b>: <filepath>/opt/serviced/var</filepath></dd> 
@@ -302,10 +303,12 @@
           <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_key.[0-9]+</filepath></dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The path of a TLS key file. The default, insecure key file is created when the
-            <cmdname>serviced</cmdname> web server first starts, from a public key that is 
-            compiled into <cmdname>serviced</cmdname>.</dd>
-          <dd>This key file is used for all TLS communications (RPC, mux, and HTTP).</dd>
+          <dd>The path of a TLS key file. Choose a location that is not modified
+            during operating system updates, such as <filepath>/etc</filepath>.</dd>
+          <dd>This key file is used for all TLS-encrypted communications (RPC, mux, and HTTP).
+            The default, insecure key file is created when the
+            <cmdname>serviced</cmdname> web server first starts, and is based on
+            a public key that is compiled into <cmdname>serviced</cmdname>. </dd>
         </dlentry>
         
         <dlentry id="SERVICED_CERT_FILE">
@@ -313,11 +316,13 @@
           <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_cert.[0-9]+</filepath></dd>
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The path of a TLS certificate file. The default, insecure certificate file is created
-            when the <cmdname>serviced</cmdname> web server first starts, from a public certificate
-            that is compiled into <cmdname>serviced</cmdname>. <!-- CC-1161 -->Certificates with
-            passphrases are not supported.</dd>
-          <dd>This certificate file is used for all TLS communications (RPC, mux, and HTTP).</dd>
+          <dd>The path of a TLS certificate file. Choose a location that is not modified
+            during operating system updates, such as <filepath>/etc</filepath>.
+            Certificates with passphrases are not supported.</dd>
+          <dd>This certificate file is used for all TLS-encrypted communications (RPC, mux, and HTTP).
+            The default, insecure certificate file is created when the 
+            <cmdname>serviced</cmdname> web server first starts, and is based 
+            on a public certificate that is compiled into <cmdname>serviced</cmdname>. </dd>
         </dlentry>
         
         <dlentry id="SERVICED_TLS_MIN_VERSION">
@@ -325,8 +330,8 @@
           <dd><b>Default</b>: <codeph>VersionTLS10</codeph></dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts. This setting extends to
-            the applications <cmdname>serviced</cmdname> manages. Valid values include the default,
+          <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts.
+            Valid values include the default,
             <codeph>VersionTLS11</codeph>, and <codeph>VersionTLS12</codeph>.</dd>
         </dlentry>
         
@@ -335,7 +340,8 @@
           <dd><b>Default</b>: (list of ciphers)</dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> that accepts: <ul>
+          <dd>The list TLS ciphers <cmdname>serviced</cmdname> that accepts
+            for HTTP traffic, separated by the comma character (<codeph>,</codeph>): <ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
               <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
@@ -483,9 +489,8 @@
           <dd><b>Default</b>: <codeph>10</codeph></dd> 
           <dd><b>Role</b>: Delegate</dd>
           <dd><b>Tags</b>: performance, reliability</dd>
-          <dd>The frequency, in seconds, at which <cmdname>serviced</cmdname> 
-            delegates gather metrics to send to the <cmdname>serviced</cmdname>
-            metrics consumer service.</dd>
+          <dd>The frequency, in seconds, at which delegates gather metrics to send to 
+            the <cmdname>serviced</cmdname> metrics consumer service on the master host.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_SVCSTATS_CACHE_TIMEOUT">
@@ -673,13 +678,12 @@
           <dd><b>Role</b>: n/a</dd>
           <dd><b>Tags</b>: zookeeper</dd>
           <dd>The comma-separated list of nodes in a ZooKeeper ensemble.
-            Each entry in the list specifies the ZooKeeper ID, IP address, 
+            Each entry in the list specifies the ZooKeeper ID, IP address or hostname, 
             peer communications port, and leader communications port of a node
             in the ensemble. Each quorum definition must be unique, so the IP 
-            address of the "current" host must be 0.0.0.0. IP addresses are 
-            required; hostnames are not supported.</dd>
+            address or hostname of the "current" host must be 0.0.0.0.</dd>
           <dd>The following example shows the syntax of a node entry:
-            <codeblock><varname>ZooKeeper-ID</varname>@<varname>IP-Address</varname>:2888:3888</codeblock>
+            <codeblock><varname>ZooKeeper-ID</varname>@<varname>Host-IP-Or-Name</varname>:2888:3888</codeblock>
           </dd>
         </dlentry>
         
@@ -737,7 +741,7 @@
           <dd><b>Default</b>: 15</dd> 
           <dd><b>Role</b>: n/a</dd>
           <dd><b>Tags</b>: zookeeper</dd>
-          <dd>The number of seconds before the ZooKeeper leader flushes
+          <dd>The number of seconds the ZooKeeper leader waits before flushing
             an inactive connection.</dd>
         </dlentry>
       </dl>
