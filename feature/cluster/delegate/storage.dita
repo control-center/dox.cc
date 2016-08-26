@@ -11,7 +11,7 @@
       
       <p>Each delegate host in a <ph keyref="nm-cc"/> cluster requires one local, unformatted,
         high-performance device or partition with 50GB of storage. A step in this chapter configures
-        the space as a device mapper thin pool for Docker data.</p>
+        the space as an LVM thin pool for Docker data.</p>
       
       <p>Two of the delegate hosts in a <ph keyref="nm-cc"/> cluster require an additional local,
         unused, high-performance device or partition with 50GB of storage. These two hosts are

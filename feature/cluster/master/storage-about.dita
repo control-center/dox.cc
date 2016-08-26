@@ -6,7 +6,7 @@
     <p>In addition to the storage required for its operating system,
       a <ph keyref="nm-cc"/> master host requires the following storage areas:</p>
     <ul>
-      <li>A local partition for Docker data, configured as a device mapper thin pool.</li>
+      <li>A local partition for Docker data, configured as an LVM thin pool.</li>
       <li>A local partition for <ph keyref="nm-cc"/> internal services data, formatted with the XFS
         filesystem. 
         
@@ -16,8 +16,8 @@
           internal services. For example, a drive that is configured with only
           one primary partition, which eliminates contention by other services.</note>
       </li>
-      <li>A local or remote primary partition for <ph keyref="nm-platform"/> data, configured as a
-        device mapper thin pool.</li>
+      <li>A local or remote primary partition for <ph keyref="nm-platform"/> data, configured as
+        an LVM thin pool.</li>
       <li>A local primary partition, a remote primary partition, or a remote file server, for
         backups of <ph keyref="nm-platform"/> data. The local or remote primary partition is
         formatted with the XFS filesystem. A remote file server must provide a filesystem that is
@@ -29,7 +29,7 @@
     </ul>
     <p>For storage sizing information, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
     
-    <p>For device mapper thin pools, no formatting is required&#8212;simply create primary
+    <p>For LVM thin pools, no formatting is required&#8212;simply create primary
       partitons, which are configured in subsequent procedures. For more information, 
       refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
     

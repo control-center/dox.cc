@@ -59,6 +59,10 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
         </stepxmp>
       </step>
       
+      <step conkeyref="feature-lib-tasks/zk-set-timeout">
+        <cmd/>
+      </step>
+      
       <step>
         <cmd>Set the <varname>SERVICED_ISVCS_START</varname> variable, and clean
           up the <ph keyref="nm-cc"/> configuration file.</cmd>
@@ -120,8 +124,23 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
               from the end of the file in the location of the just-deleted declaration.</cmd>
           </substep>
+          
           <substep>
-            <cmd>Save the file, and then close the text editor.</cmd>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable
+              near the end of the file, and then delete the line it is on.</cmd>
+            <info>This declaration is commented out.</info>
+          </substep>
+          <substep>
+            <cmd>Paste the <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable declaration
+              from the end of the file in the location of the just-deleted declaration.</cmd>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
           </substep>
         </substeps>
       </step>
@@ -141,7 +160,8 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
 SERVICED_ISVCS_START=zookeeper
 SERVICED_ISVCS_ZOOKEEPER_ID=3
 SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@198.51.100.135:2888:3888,\
-  2@198.51.100.136:2888:3888,3@0.0.0.0:2888:3888</codeblock>
+  2@198.51.100.136:2888:3888,3@0.0.0.0:2888:3888
+SERVICED_ZK_SESSION_TIMEOUT=15</codeblock>
         </stepresult> 
       </step>
       

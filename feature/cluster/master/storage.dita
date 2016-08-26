@@ -16,36 +16,36 @@
       
       <table>
         <tgroup cols="3">
-          <colspec colname="c1" colwidth="3*"/>
+          <colspec colname="c1" colwidth="2*"/>
           <colspec colname="c2" colwidth="2*"/>
-          <colspec colname="c3" colwidth="6*"/>
+          <colspec colname="c3" colwidth="3*"/>
           <thead>
             <row>
               <entry>Purpose</entry>
-              <entry>Min. Size</entry>
+              <entry>Minimum size</entry>
               <entry>Description</entry>
             </row>
           </thead>
           <tbody>
             <row>
               <entry>Docker data</entry>
-              <entry>50GB</entry>
+              <entry>50GB (required)</entry>
               <entry>A local, unformatted, high-performance device or partition.</entry>
             </row>
             <row>
               <entry><ph keyref="nm-cc"/> internal services data</entry>
-              <entry>50GB</entry>
+              <entry>50GB (required)</entry>
               <entry>A local, high-performance device or partition formatted as an XFS filesystem. In particular,
                 ZooKeeper requires consistently fast (low-contention) storage.</entry>
             </row>
             <row>
               <entry>Application data</entry>
-              <entry>Unknown</entry>
+              <entry>200GB (suggested)</entry>
               <entry>A local or remote, unformatted, high-performance device or partition.</entry>
             </row>
             <row>
               <entry>Application data backups</entry>
-              <entry>Unknown</entry>
+              <entry>150GB (suggested)</entry>
               <entry>A remote file server compatible with XFS, or a local or remote device or 
                 partition formatted as an XFS filesystem. If the storage is local, ensure
                 that it does not cause contention with the storage for <ph keyref="nm-cc"/>
@@ -56,8 +56,19 @@
       </table>
 
       <p>The unformatted devices or partitions for Docker data and application data are configured as
-      device mapper thin pools in subsequent procedures.</p>
-    
+        LVM thin pools in subsequent procedures. </p>
+      
+      <p>The suggested minimum sizes for application data and application data backups should be
+        replaced with sizes that meet your application requirements. To calculate the appropriate
+        sizes for these storage areas, use the following guidelines:</p>
+      <ul>
+        <li>Application data storage includes space for data and snapshots. The default base size
+          for data is 100GB, and the recommended space for snapshots is 100% of the base size.
+          Adding the two yields the suggested minimum size of 200GB.</li>
+        <li>For application data backups, the recommended space is 150% of the base size for
+          data.</li>
+      </ul>
+      
       <p>The following sections provide procedures for formatting and mounting local storage
         as XFS filesystems for <ph keyref="nm-cc"/> internal services data and application
         data backups.</p>   

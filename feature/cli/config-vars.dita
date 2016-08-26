@@ -54,10 +54,12 @@
           <dd><b>Default</b>: <codeph>0</codeph> (false)</dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: role</dd>
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance 
-            runs the application services scheduler and other 
-            internal services. Only one <cmdname>serviced</cmdname> instance in a
-            <ph keyref="nm-cc"/> cluster can be configured as the master.</dd>
+          <dd>Determines whether a <cmdname>serviced</cmdname> instance runs the application
+            services scheduler and other internal services. Only one <cmdname>serviced</cmdname>
+            instance in a <ph keyref="nm-cc"/> cluster is the master; all other hosts are delegates.
+            This variable must be explicitly set on all cluster hosts. To configure a
+              <cmdname>serviced</cmdname> instance as the master, set the value to
+              <codeph>1</codeph> (true).</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK">
@@ -68,7 +70,7 @@
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
             separated by the comma character (<codeph>&#44;</codeph>). Each endpoint includes 
             the IP address and port of an ensemble node. For more information about 
-            configuring ZooKeeper, see <xref conkeyref="feature-zk-zk"/>.</dd>
+            configuring ZooKeeper, see <xref keyref="feature-zk-zk"/>.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
@@ -367,7 +369,7 @@
             utility. To specify the name of the thin pool device, use the
             <varname>SERVICED_DM_THINPOOLDEV</varname> variable.</dd>
         </dlentry>
-        
+               
         <dlentry id="SERVICED_DM_THINPOOLDEV">
           <dt><varname>SERVICED_DM_THINPOOLDEV</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
@@ -375,6 +377,17 @@
           <dd><b>Tags</b>: storage</dd>
           <dd>The name of the thin pool device to use with the
             <codeph>devicemapper</codeph> storage driver.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_BASESIZE">
+          <dt><varname>SERVICED_DM_BASESIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>100</codeph></dd> 
+          <dd><b>Role</b>: Master</dd>
+          <dd><b>Tags</b>: storage</dd>
+          <dd>The base size of the data portion of the application thin pool, in gigabytes. 
+            The base size is set when <cmdname>serviced-storage</cmdname> is invoked to
+            create a thin pool, and 100GB is the default value used by
+            <cmdname>serviced-storage</cmdname>.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">

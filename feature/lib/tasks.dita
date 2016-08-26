@@ -271,7 +271,7 @@
       </step>
       
       <step id="create-thin-docker">
-        <cmd>Create a device mapper thin pool for Docker data.</cmd>
+        <cmd>Create an LVM thin pool for Docker data.</cmd>
         <substeps>
           <substep>
             <cmd>Identify the primary partition for the thin pool to create.</cmd>
@@ -436,9 +436,10 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
       </step>
       
       <step id="install-anacron">
-        <cmd>Install the <cmdname>cronie-anacron</cmdname> package, if necessary.</cmd>
-        <info>The install command requires internet access 
-          or a local mirror of operating system packages.</info>
+        <cmd>Install the <cmdname>cronie-anacron</cmdname> package.</cmd>
+        <info>The following commands determine whether <cmdname>cronie-anacron</cmdname>
+          is installed, and then install it if necessary. The install command requires
+          internet access or a local mirror of operating system packages.</info>
         <stepxmp>
           <codeblock>yum list installed cronie-anacron &#124;&#124; yum install -y cronie-anacron</codeblock>
         </stepxmp>
@@ -846,8 +847,8 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
       
       <step id="install-serviced">
         <cmd>Install <ph keyref="nm-cc"/>.</cmd>
-        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating a
-          device mapper thin pool.</info>
+        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating
+          LVM thin pools.</info>
         <stepxmp>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
 yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
@@ -857,8 +858,8 @@ yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/><
       
       <step id="install-serviced-offline">
         <cmd>Install <ph keyref="nm-cc"/>.</cmd>
-        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating a
-          device mapper thin pool.</info>
+        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating
+          LVM thin pools.</info>
         <stepxmp>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
 yum --enablerepo=zenoss-mirror install -y serviced</codeblock>
@@ -882,6 +883,12 @@ node3=<varname>Delegate-B-IP</varname></codeblock>
         <stepxmp>You may copy the following text and paste it in your console:
           <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
   &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step id="zk-set-timeout">
+        <cmd>Specify the timeout for inactive connections.</cmd>
+        <stepxmp>You may copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK_SESSION_TIMEOUT=15" &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
       </step>
     </steps>
   </taskbody>
