@@ -27,11 +27,11 @@
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/install-serviced-offline">
+      <step product="rm" conkeyref="feature-lib-tasks/install-serviced-offline">
         <cmd/>
       </step>
 
-      <step product="rm" conkeyref="feature-lib-tasks/install-serviced">
+      <step conkeyref="feature-lib-tasks/install-serviced">
         <cmd></cmd>
       </step>
       

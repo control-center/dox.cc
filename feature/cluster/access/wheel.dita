@@ -3,11 +3,10 @@
 <task id="taskid">
   <title>Adding users to the default administrative group</title>
   <taskbody>
-    <context>This procedure adds users to the default administrative group
-      of <ph keyref="nm-cc"/>, <codeph>wheel</codeph>. Performing this procedure
-      enables users with superuser privileges to gain access to the 
-      <ph keyref="nm-cc"/> browser interface.
-      <note>Perform this procedure or the next procedure, but not both.</note>
+    <context>Use this procedure to add users to the default administrative group of <ph
+        keyref="nm-cc"/>, <codeph>wheel</codeph>. Performing this procedure enables users to gain
+      access to the <ph keyref="nm-cc"/> browser interface. <note>Perform this procedure or the next
+        procedure, but not both.</note>
     </context>
     <steps>
       <step>
@@ -15,7 +14,7 @@
       </step>
       
       <step>
-        <cmd>Add users to the system group, <codeph>wheel</codeph>.</cmd>
+        <cmd>Add a user to the system group.</cmd>
         <stepxmp>
           <p>Replace <varname>User</varname> with the name of a login account on the master
             host.</p>
