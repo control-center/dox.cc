@@ -1,0 +1,55 @@
+    <table>
+      <tgroup cols="3">
+        <colspec colname="c1" colwidth="5*"/>
+        <colspec colname="c2" colwidth="4*"/>
+        <colspec colname="c3" colwidth="4*"/>
+        <thead>
+          <row>
+            <entry>Variable</entry>
+            <entry>Description</entry>
+            <entry>Purpose</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><lines><xref keyref="feature-lib-vars/SERVICED_ISVCS_PATH"><varname>SERVICED_ISVCS_PATH</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_VOLUMES_PATH"><varname>SERVICED_VOLUMES_PATH</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_BACKUPS_PATH"><varname>SERVICED_BACKUPS_PATH</varname></xref></lines></entry>
+            <entry>The data storage paths of separate functional
+              components of <ph keyref="nm-cc"/> internal services.</entry>
+            <entry>Enable separate storage areas for one or 
+              more components. The default installation process 
+              puts all three components on the same device.</entry>
+          </row>
+          
+          <row>
+            <entry><lines><xref keyref="feature-lib-vars/SERVICED_FS_TYPE"><varname>SERVICED_FS_TYPE</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_DM_THINPOOLDEV"><varname>SERVICED_DM_THINPOOLDEV</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_DM_BASESIZE"><varname>SERVICED_DM_BASESIZE</varname></xref></lines></entry>
+            <entry>The driver type, device path, and base size
+            of the application data storage resource.</entry>
+            <entry>Provide basic information about
+              the data storage resource.</entry>
+          </row>
+          
+          <row>
+            <entry><lines><xref keyref="feature-lib-vars/SERVICED_SNAPSHOT_TTL"><varname>SERVICED_SNAPSHOT_TTL</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_SNAPSHOT_USE_PERCENT"><varname>SERVICED_SNAPSHOT_USE_PERCENT</varname></xref></lines></entry>
+            <entry>The snapshot retention interval and the percentage of the data storage thin pool
+              that is unused.</entry>
+            <entry>Prevent the creation of snapshots that are too 
+              large to fit the thin pool.</entry>
+          </row>
+          
+          <row>
+            <entry><lines><xref keyref="feature-lib-vars/SERVICED_LOGSTASH_MAX_DAYS"><varname>SERVICED_LOGSTASH_MAX_DAYS</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_LOGSTASH_MAX_SIZE"><varname>SERVICED_LOGSTASH_MAX_SIZE</varname></xref>
+<xref keyref="feature-lib-vars/SERVICED_LOGSTASH_CYCLE_TIME"><varname>SERVICED_LOGSTASH_CYCLE_TIME</varname></xref></lines></entry>
+            <entry>The variables that manage the amount of space used by the
+              application log storage service.</entry>
+            <entry>Prevent application logs from filling the storage device that the
+              log storage service uses.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>

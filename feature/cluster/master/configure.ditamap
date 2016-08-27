@@ -3,7 +3,14 @@
 <bookmap>
   <title>Configure master</title>
   <chapter keyref="feature-cluster-master-configure">
-    <topicref keyref="feature-cluster-master-options"/>
+    <topicref keyref="feature-cluster-master-options">
+      <topicref keyref="feature-cluster-master-options-storage"/>
+      <topicref keyref="feature-cluster-master-options-endpoints"/>
+      <topicref keyref="feature-cluster-master-options-rpc"/>
+      <topicref keyref="feature-cluster-master-options-http"/>
+      <topicref keyref="feature-cluster-master-options-mux"/>
+      <topicref keyref="feature-cluster-master-options-networking"/>
+    </topicref>
     <topicref keyref="feature-cluster-master-cc"/>
     <topicref keyref="feature-cluster-master-start"/>
     <topicref keyref="feature-cluster-master-isolate"/>
