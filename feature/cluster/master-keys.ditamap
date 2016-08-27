@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature (2016-08-24 13:06:39)</title>
+ <title>Keys in feature/cluster/master (2016-08-27 07:15:00)</title>
   <topicgroup>
     <keydef keys="feature-cluster-master-cc"
             href="master/cc.dita"
@@ -57,6 +57,10 @@
     />
     <keydef keys="feature-cluster-master-storage"
             href="master/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-thinpool"
+            href="master/thinpool.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-verify"

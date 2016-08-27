@@ -91,75 +91,6 @@
           (root user account).</stepresult>
       </step>
       
-      <step id="thinpool-rm">
-        <cmd>Create a thin pool for application data.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Identify the primary partition for the thin pool to create,
-              and the amount of space available on the primary partition.</cmd>
-            <stepxmp>
-              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Create a variable for 50% of the space available on the
-              primary partition for the thin pool to create.</cmd>
-            <info>The thin pool stores application data and snapshots of
-            the data. You can add storage to the pool at any time.</info>
-            <stepxmp>Replace <varname>Half-Of-Available-Space</varname> with 50% of the space
-              available in the primary partition, in gigabytes. Include the symbol for gigabytes
-                (<codeph>G</codeph>) after the numeric value.
-              <codeblock>myFifty=<varname>Half-Of-Available-Space</varname>G</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Create the thin pool.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Path-To-Device</varname> with the path of the target primary
-                partition:</p>
-              <codeblock>serviced-storage create-thin-pool -o dm.basesize=$myFifty \
-  serviced <varname>Path-To-Device</varname></codeblock>
-            </stepxmp>
-            <stepresult>On success, the result includes the name of the thin pool,
-              which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
-          </substep>
-        </substeps>
-      </step>
-      
-      <step id="app-set">
-        <cmd>Configure <ph keyref="nm-cc"/> with the name of the thin pool for
-          application data.</cmd>
-        <info>
-          <p>The <ph keyref="nm-cc"/> configuration file is <filepath>/etc/default/serviced</filepath>. 
-            (For more information about
-            <cmdname>serviced</cmdname> configuration options, refer to the <ph keyref="nm-cc"/>
-            online help.) </p>
-        </info>
-        <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> declaration.</cmd>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
-                <varname>SERVICED_FS_TYPE</varname>.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Thin-Pool-Name</varname> with the name of the thin pool created
-                previously:</p>
-              <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
-            </stepxmp>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
-        </substeps>
-      </step>
-      
       <step id="cfg-subnet" importance="optional">
         <cmd>Specify an alternate private subnet for <ph keyref="nm-cc"/>, if
           necessary.</cmd>
@@ -167,7 +98,7 @@
           <p>The default private subnet may already be in use in your environment. 
             The following variable configures <cmdname>serviced</cmdname> to use an alternate subnet:</p>
           <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+            <dlentry conkeyref="feature-lib-vars/SERVICED_VIRTUAL_ADDRESS_SUBNET">
               <dt/>
               <dd/>
             </dlentry>
@@ -201,7 +132,7 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as master:</p>
           <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_MASTER">
+            <dlentry conkeyref="feature-lib-vars/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
@@ -231,7 +162,7 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
           <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_MASTER">
+            <dlentry conkeyref="feature-lib-vars/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>

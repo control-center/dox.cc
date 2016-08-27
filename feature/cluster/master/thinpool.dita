@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring application data storage</title>
+  <taskbody>
+    <context>Use this procedure to create and configure the thin pool for application data storage.
+        <note>This procedure does not include specific values for the size of the thin pool. For
+        more information about sizing this resource, refer to the documentation for your
+        application. Or, use the suggested minimum value, 200GB. You can add storage to an LVM thin
+        pool at any time.</note></context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the block device or partition for the thin pool to 
+          create, and the amount of space available on it.</cmd>
+        <info>The thin pool stores both application data and snapshots of the data. To start, plan
+          on using 50% of the total space for application data and 50% for snapshots of the data. </info>
+        <stepxmp>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </stepxmp>
+      </step>
+
+      <step>
+        <cmd>Create the thin pool.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Path-To-Device</varname> with the path of the
+            target device or partition, and replace <varname>50-Percent</varname>
+            with 50% of the space available on the target device or partition.
+            Include a symbol for the units (gigabytes, <codeph>G</codeph>) after the number:</p>
+          <codeblock>serviced-storage create-thin-pool -o dm.basesize=<varname>50-Percent</varname>G \
+            serviced <varname>Path-To-Device</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result includes the name of the thin pool,
+          which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
+      </step>
+
+      <step>
+        <cmd>Edit and add storage variables in the <ph keyref="nm-cc"/> configuration file,
+            <filepath>/etc/default/serviced</filepath>.</cmd>
+        <info>The following variables are used to configure application data thin pools: <dl>
+            <dlentry conkeyref="feature-lib-vars/SERVICED_FS_TYPE">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="feature-lib-vars/SERVICED_DM_THINPOOLDEV">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="feature-lib-vars/SERVICED_DM_BASESIZE">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </info>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> variable.</cmd>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
+                <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Thin-Pool-Name</varname> with the name of the thin pool 
+                 specified in the preceding <cmdname>serviced-storage</cmdname> command:</p>
+              <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Add <varname>SERVICED_DM_BASESIZE</varname> immediately after
+              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value.</cmd>
+            <stepxmp>
+              <p>Replace <varname>50-Percent</varname> with the 
+                number specified with the <codeph>dm.basesize</codeph> argument 
+                in the preceding <cmdname>serviced-storage</cmdname> command.
+                Do not include a symbol for the units; just the number:</p>
+              <codeblock>SERVICED_DM_BASESIZE=<varname>50-Percent</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      
+    </steps>
+  </taskbody>
+</task>

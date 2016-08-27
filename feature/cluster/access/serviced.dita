@@ -42,7 +42,7 @@
           <cmdname>serviced</cmdname> configuration file.</cmd>
         <info>The following variable specifies the administrative group:
           <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_ADMIN_GROUP">
+            <dlentry conkeyref="feature-lib-vars/SERVICED_ADMIN_GROUP">
               <dt/>
               <dd/>
             </dlentry>
@@ -71,7 +71,7 @@
         <cmd>Prevent the <codeph>root</codeph> user from gaining access to the <ph keyref="nm-cc"/>
           browser interface, if desired.</cmd>
         <info>The following variable controls the <codeph>root</codeph> login privilege: <dl>
-            <dlentry conkeyref="feature-cli-config-vars/SERVICED_ALLOW_ROOT_LOGIN">
+            <dlentry conkeyref="feature-lib-vars/SERVICED_ALLOW_ROOT_LOGIN">
               <dt/>
               <dd/>
             </dlentry>

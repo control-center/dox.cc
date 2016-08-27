@@ -46,10 +46,7 @@
       <step conkeyref="feature-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
-      
-      <step conkeyref="feature-lib-tasks/fix-nfs">
-        <cmd/>
-      </step>
+
     </steps>
   </taskbody>
 </task>

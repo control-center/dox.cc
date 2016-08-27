@@ -15,15 +15,12 @@
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/thinpool-rm">
-        <cmd/>
-      </step>
-      
-      <step conkeyref="feature-lib-tasks/app-set">
-        <cmd/>
-      </step>
-      
+       
       <step conkeyref="feature-lib-tasks/cfg-subnet">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/fix-nfs">
         <cmd/>
       </step>
       

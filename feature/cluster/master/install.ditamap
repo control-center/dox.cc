@@ -18,5 +18,6 @@
       <topicref keyref="feature-cluster-access-serviced"/>
       <topicref keyref="feature-cluster-access-cli"/>
     </topicref>
+    <topicref keyref="feature-cluster-master-thinpool"/>
    </chapter>
 </bookmap>
