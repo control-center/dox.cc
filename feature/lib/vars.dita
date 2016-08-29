@@ -195,8 +195,7 @@
           <dd><b>Default</b>: <codeph>443</codeph></dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: browser interface</dd>
-          <dd>The port on which the HTTP server on the master host listens for 
-            requests from <ph keyref="nm-cc"/> browser interface clients. The
+          <dd>The port on which the HTTP server listens for requests. The
             value may be expressed as follows:
             <ul>
               <li><varname>IP-Address</varname>:<varname>Port-Number</varname></li>
@@ -305,7 +304,7 @@
           <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_key.[0-9]+</filepath></dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The path of a TLS key file. Choose a location that is not modified
+          <dd>The path of a digital certificate key file. Choose a location that is not modified
             during operating system updates, such as <filepath>/etc</filepath>.</dd>
           <dd>This key file is used for all TLS-encrypted communications (RPC, mux, and HTTP).
             The default, insecure key file is created when the
@@ -318,7 +317,7 @@
           <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_cert.[0-9]+</filepath></dd>
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The path of a TLS certificate file. Choose a location that is not modified
+          <dd>The path of a digital certificate file. Choose a location that is not modified
             during operating system updates, such as <filepath>/etc</filepath>.
             Certificates with passphrases are not supported.</dd>
           <dd>This certificate file is used for all TLS-encrypted communications (RPC, mux, and HTTP).
@@ -332,7 +331,7 @@
           <dd><b>Default</b>: <codeph>VersionTLS10</codeph></dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts.
+          <dd>The minimum version of TLS that <cmdname>serviced</cmdname> accepts for HTTP traffic.
             Valid values include the default,
             <codeph>VersionTLS11</codeph>, and <codeph>VersionTLS12</codeph>.</dd>
         </dlentry>
@@ -342,7 +341,7 @@
           <dd><b>Default</b>: (list of ciphers)</dd> 
           <dd><b>Role</b>: Master</dd>
           <dd><b>Tags</b>: HTTP server</dd>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> that accepts
+          <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts
             for HTTP traffic, separated by the comma character (<codeph>,</codeph>): <ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
               <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</codeph></li>
@@ -425,11 +424,13 @@
           <dd><b>Default</b>: <codeph>10.3</codeph></dd> 
           <dd><b>Role</b>: Master, delegate</dd>
           <dd><b>Tags</b>: mux, serviced cluster</dd>
-          <dd>The private subnet for containers that use virtual IP addresses.
-            RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
+          <dd>The private subnet for containers that use virtual IP addresses on a host.
+            This value may be unique on each cluster host, if necessary.</dd>
+          <dd>RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
             address spaces. However, <cmdname>serviced</cmdname> accepts any valid IPv4
-            address space for this private network. Specify the value in CIDR notation.
-            A <codeph>/29</codeph> network provides sufficient address space.</dd>
+            address space.</dd>
+          <dd>Specify the value in CIDR notation. A <codeph>/29</codeph> network provides 
+            sufficient address space.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_LOG_LEVEL">
@@ -509,10 +510,8 @@
         <dlentry id="SERVICED_SVCSTATS_CACHE_TIMEOUT">
           <dt><varname>SERVICED_SVCSTATS_CACHE_TIMEOUT</varname></dt>
           <dd><b>Default</b>: <codeph>5</codeph></dd> 
-          <dd><b>Role</b>: Master</dd>
-          <dd><b>Tags</b>: performance, browser interface</dd>
-          <dd>The number of seconds to cache statistics of running services for 
-            <ph keyref="nm-cc"/> browser interface clients.</dd>
+          <dd>The number of seconds to cache statistics about services.
+            The cache is used by <ph keyref="nm-cc"/> browser interface clients.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DEBUG_PORT">
