@@ -3,14 +3,6 @@
 <bookmap>
   <title>Configure delegate</title>
   <chapter keyref="feature-cluster-delegate-configure">
-    <topicref keyref="feature-vars-endpoints"/>
-    <topicref keyref="feature-vars-rpc"/>
-    <topicref keyref="feature-vars-mux"/>
-    <topicref keyref="feature-vars-delegate"/>
-    <topicref keyref="feature-vars-all">
-      <topicref keyref="feature-vars-networking"/>
-      <topicref keyref="feature-vars-all-debug"/>
-      <topicref keyref="feature-vars-all-tune"/>
-    </topicref>
+  
    </chapter>
 </bookmap>

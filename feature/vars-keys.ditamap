@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/vars (2016-08-29 12:12:22)</title>
+ <title>Keys in feature/vars (2016-08-30 06:25:26)</title>
   <topicgroup>
     <keydef keys="feature-vars-all-debug"
             href="vars/all-debug.dita"
@@ -35,6 +35,10 @@
             href="vars/http.dita"
             format="dita"
     />
+    <keydef keys="feature-vars-master"
+            href="vars/master.dita"
+            format="dita"
+    />
     <keydef keys="feature-vars-mux"
             href="vars/mux.dita"
             format="dita"
@@ -49,10 +53,6 @@
     />
     <keydef keys="feature-vars-storage"
             href="vars/storage.dita"
-            format="dita"
-    />
-    <keydef keys="feature-vars-vars"
-            href="vars/vars.dita"
             format="dita"
     />
    </topicgroup>
