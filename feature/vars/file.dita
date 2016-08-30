@@ -57,8 +57,7 @@
           <dd><b>Default</b>: (none)</dd> 
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
             separated by the comma character (<codeph>&#44;</codeph>). Each endpoint includes 
-            the IP address and port of an ensemble node. For more information about 
-            configuring ZooKeeper, see <xref keyref="feature-zk-zk"/>.</dd>
+            the IP address and port of an ensemble node.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">

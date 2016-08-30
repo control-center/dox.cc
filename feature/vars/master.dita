@@ -9,7 +9,6 @@
       <ul>
         <li>Some variables are included in more than one table.</li>
         <li>Some variables apply to both master and delegate hosts.</li>
-        <li>ZooKeeper variables are described in <xref keyref="feature-zk-zk"/>.</li>
       </ul>
     </section>
   </refbody>
