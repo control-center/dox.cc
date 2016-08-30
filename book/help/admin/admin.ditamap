@@ -2,7 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Administration reference</title>
-   <chapter keyref="admin-topics-admin">
-      <topicref keyref="admin-topics-multiple"/>
+   <chapter keyref="help-admin-admin">
+      <topicref keyref="help-admin-multiple"/>
+      <topicref keyref="help-admin-extend"/>
    </chapter>
 </bookmap>
