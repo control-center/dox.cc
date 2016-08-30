@@ -49,6 +49,7 @@
       <mapref href="feature/cluster/master-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/delegate-keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
       <mapref href="feature/zk-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
@@ -60,6 +61,7 @@
   <chapter href="feature/cluster/master/install.ditamap" format="ditamap"/>
   <chapter href="feature/cluster/master/configure.ditamap" format="ditamap"/>
   <chapter href="feature/cluster/delegate/install.ditamap" format="ditamap"/>
+  <chapter href="feature/cluster/delegate/configure.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   <!-- <chapter href="book/install/off/offline.ditamap" format="ditamap"/> -->
   <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>

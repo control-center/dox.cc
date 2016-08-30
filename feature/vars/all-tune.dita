@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Tuning variables</title>
+  <refbody>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="1*"/>
+        <thead>
+          <row>
+            <entry>Variable</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><varname>GOMAXPROCS</varname></entry>
+            <entry>The maximum number of CPU cores that <cmdname>serviced</cmdname> uses.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_MAX_CONTAINER_AGE</varname></entry>
+            <entry>The number of seconds <cmdname>serviced</cmdname>
+              waits before removing a stopped container.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_ISVCS_ENV_[0-9]+</varname></entry>
+            <entry>Startup arguments to pass to specific internal services.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_OPTS</varname></entry>
+            <entry>Startup arguments for <cmdname>serviced</cmdname>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

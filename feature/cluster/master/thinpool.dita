@@ -42,15 +42,15 @@
         <cmd>Edit and add storage variables in the <ph keyref="nm-cc"/> configuration file,
             <filepath>/etc/default/serviced</filepath>.</cmd>
         <info>The following variables are used to configure application data thin pools: <dl>
-            <dlentry conkeyref="feature-lib-vars/SERVICED_FS_TYPE">
+            <dlentry conkeyref="feature-vars-file/SERVICED_FS_TYPE">
               <dt/>
               <dd/>
             </dlentry>
-            <dlentry conkeyref="feature-lib-vars/SERVICED_DM_THINPOOLDEV">
+            <dlentry conkeyref="feature-vars-file/SERVICED_DM_THINPOOLDEV">
               <dt/>
               <dd/>
             </dlentry>
-            <dlentry conkeyref="feature-lib-vars/SERVICED_DM_BASESIZE">
+            <dlentry conkeyref="feature-vars-file/SERVICED_DM_BASESIZE">
               <dt/>
               <dd/>
             </dlentry>

@@ -6,14 +6,14 @@
     <section>
       <p>The variables in the following table must be set identically on all 
         <ph keyref="nm-cc"/> cluster hosts, except <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname>,
-        which may be unique on each cluster host.</p>
+        which may be unique on each host in a cluster.</p>
       <p>By default, <cmdname>serviced</cmdname> uses TLS to encrypt all mux traffic. 
         The <varname>SERVICED_KEY_FILE</varname> and <varname>SERVICED_CERT_FILE</varname> 
         variables identify the digital certificate used for RPC, mux, and HTTP traffic.</p>
       <table>
         <tgroup cols="2">
-          <colspec colname="c1" colwidth="3*"/>
-          <colspec colname="c2" colwidth="2*"/>
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
           <thead>
             <row>
               <entry>Variable</entry>
@@ -22,26 +22,33 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_MUX_PORT"><varname>SERVICED_MUX_PORT</varname></xref></entry>
+              <entry><varname>SERVICED_MUX_PORT</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_MUX_DISABLE_TLS"><varname>SERVICED_MUX_DISABLE_TLS</varname></xref></entry>
+              <entry><varname>SERVICED_MUX_DISABLE_TLS</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_MUX_TLS_MIN_VERSION"><varname>SERVICED_MUX_TLS_MIN_VERSION</varname></xref></entry>
+              <entry><varname>SERVICED_MUX_TLS_MIN_VERSION</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_MUX_TLS_CIPHERS"><varname>SERVICED_MUX_TLS_CIPHERS</varname></xref></entry>
+              <entry><varname>SERVICED_MUX_TLS_CIPHERS</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_VIRTUAL_ADDRESS_SUBNET"><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></xref></entry>
+              <entry><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></entry>
               <entry>Master, delegates</entry>
             </row>
-            
+            <row>
+              <entry><varname>SERVICED_KEY_FILE</varname></entry>
+              <entry>Master</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_CERT_FILE</varname></entry>
+              <entry>Master</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>

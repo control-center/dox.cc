@@ -98,7 +98,7 @@
           <p>The default private subnet may already be in use in your environment. 
             The following variable configures <cmdname>serviced</cmdname> to use an alternate subnet:</p>
           <dl>
-            <dlentry conkeyref="feature-lib-vars/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+            <dlentry conkeyref="feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
               <dt/>
               <dd/>
             </dlentry>
@@ -132,7 +132,7 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as master:</p>
           <dl>
-            <dlentry conkeyref="feature-lib-vars/SERVICED_MASTER">
+            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
@@ -162,7 +162,7 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
           <dl>
-            <dlentry conkeyref="feature-lib-vars/SERVICED_MASTER">
+            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
@@ -799,27 +799,50 @@ yum --enablerepo=zenoss-mirror install -y serviced</codeblock>
 
       <step id="zk-define-ips">
         <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
-        <stepxmp>Replace <varname>Master-IP</varname> with the IP address 
+        <stepxmp>Replace <varname>Master</varname> with the IP address or hostname
           of the <ph keyref="nm-cc"/> master host, and replace 
-          <varname>Delegate-A-IP</varname> and <varname>Delegate-B-IP</varname>
-          with the IP addresses of the delegate hosts to include in the ensemble:
-          <codeblock>node1=<varname>Master-IP</varname>
-node2=<varname>Delegate-A-IP</varname>
-node3=<varname>Delegate-B-IP</varname></codeblock>
+          <varname>Delegate-A</varname> and <varname>Delegate-B</varname>
+          with the IP addresses or hostnames of the delegate hosts to include in the ensemble:
+          <codeblock>node1=<varname>Master</varname>
+node2=<varname>Delegate-A</varname>
+node3=<varname>Delegate-B</varname></codeblock>
         </stepxmp>
       </step>
       
       <step id="zk-set-nodes">
         <cmd>Specify the nodes in the ZooKeeper ensemble.</cmd>
-        <stepxmp>You may copy the following text and paste it in your console:
+        <stepxmp>You can copy the following text and paste it in your console:
           <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
   &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
       </step>
       
       <step id="zk-set-timeout">
         <cmd>Specify the timeout for inactive connections.</cmd>
-        <stepxmp>You may copy the following text and paste it in your console:
+        <stepxmp>You can copy the following text and paste it in your console:
           <codeblock>echo "SERVICED_ZK_SESSION_TIMEOUT=15" &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step id="zk-pull-isvcs">
+        <cmd>Pull the required <ph keyref="nm-cc"/> ZooKeeper image from the master host.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the image to pull.</cmd>
+            <stepxmp>
+              <codeblock>serviced version | grep IsvcsImages</codeblock>
+            </stepxmp>
+            <stepresult>Example result:
+              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v40 zenoss/isvcs-zookeeper:v3]</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Pull the <ph keyref="nm-cc"/> ZooKeeper image.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Isvcs-ZK-Image</varname> with the name and version
+                number of the ZooKeeper image from the previous substep:</p>
+              <codeblock>docker pull <varname>Isvcs-ZK-Image</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
     </steps>
   </taskbody>

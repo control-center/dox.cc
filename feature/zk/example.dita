@@ -4,7 +4,7 @@
   <title>Example multi-host ZooKeeper configuration</title>
   <refbody>
     <section>
-      <p>This example shows the ZooKeeper environment variables in the
+      <p>This example shows the ZooKeeper variables in the
           <filepath>/etc/defaults/serviced</filepath> configuration file of each host in a 4-node
           <ph keyref="nm-cc"/> cluster. For convenience, the relevant settings for each node or host
         are also included in subsequent procedures.</p>

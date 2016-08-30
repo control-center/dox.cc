@@ -17,12 +17,12 @@
       
       <step>
         <cmd>In a separate window, log in to the second node of the ZooKeeper ensemble
-          (<varname>Delegate-A-IP</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
+            (<varname>Delegate-A</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
         <cmd>In a different window, log in to the third node of the ZooKeeper ensemble
-          (<varname>Delegate-B-IP</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
+            (<varname>Delegate-B</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -36,8 +36,8 @@
         <cmd>On the master host, check the status of the ZooKeeper ensemble.</cmd>
         <stepxmp>
           <codeblock>{ echo stats; sleep 1; } | nc localhost 2181 | grep Mode
-{ echo stats; sleep 1; } | nc <varname>Pool-Host-A-IP</varname> 2181  | grep Mode
-{ echo stats; sleep 1; } | nc <varname>Pool-Host-B-IP</varname> 2181  | grep Mode</codeblock>
+{ echo stats; sleep 1; } | nc <varname>Delegate-A</varname> 2181  | grep Mode
+{ echo stats; sleep 1; } | nc <varname>Delegate-B</varname> 2181  | grep Mode</codeblock>
         </stepxmp>
         <info>If <cmdname>nc</cmdname> is not available, you
           can use <cmdname>telnet</cmdname> with 

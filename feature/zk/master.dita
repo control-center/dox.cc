@@ -30,9 +30,9 @@
       <step>
         <cmd>Specify the nodes in the ZooKeeper quorum.</cmd>
         <info>ZooKeeper requires a unique quorum definition for each node in its ensemble. To
-          achieve this, replace the IP address of the master host with
-          <codeph>0.0.0.0</codeph>.</info>
-        <stepxmp>You may copy the following of text and paste it in your console:
+          achieve this, replace the IP address or hostname of the master host with
+            <codeph>0.0.0.0</codeph>.</info>
+        <stepxmp>You can copy the following text and paste it in your console:
           <codeblock>q1="1@0.0.0.0:2888:3888"
 q2="2@${node2}:2888:3888"
 q3="3@${node3}:2888:3888"
@@ -58,7 +58,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
           <substep>
             <cmd>Locate the <varname>SERVICED_ZK</varname> variable
             near the beginning of the file, and then delete the line it is on.</cmd>
-            <info>The value of this declaration is just the master host.</info>
+            <info>The default value is just the master host endpoint.</info>
           </substep>
           <substep>
             <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration

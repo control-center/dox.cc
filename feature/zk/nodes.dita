@@ -5,13 +5,13 @@
   <refbody>
     <section>
       <p>The procedures in this chapter instruct you to create temporary variables that are used as
-        building blocks for accurately constructing <ph keyref="nm-cc"/> configuration variables.
-        You append the <ph keyref="nm-cc"/> variables to <filepath>/etc/default/serviced</filepath>,
-        and then edit the file to move the variables to more appropriate locations.</p>
+        building blocks, to construct <ph keyref="nm-cc"/> configuration variables accurately. You
+        append the <ph keyref="nm-cc"/> variables to <filepath>/etc/default/serviced</filepath>, and
+        then edit the file to move the variables to more appropriate locations.</p>
 
-      <p>The most important temporary variables specify the IPv4 address of each host in the
-        ZooKeeper ensemble. The following table identifies these important variables, the names and
-        values of which must be identical on every <ph keyref="nm-cc"/> cluster host.</p>
+      <p>The most important temporary variables specify the IP address or hostname of each host in
+        the ZooKeeper ensemble. The following table identifies these important variables, the names
+        and values of which must be identical on every <ph keyref="nm-cc"/> cluster host.</p>
       
       <table>
         <tgroup cols="3">
@@ -28,18 +28,18 @@
           <tbody>
             <row>
               <entry><codeph>node1</codeph></entry>
-              <entry><varname>Master-IP</varname></entry>
-              <entry>IPv4 address of the <ph keyref="nm-cc"/> master host</entry>
+              <entry><varname>Master</varname></entry>
+              <entry>IP address or hostname of the master host</entry>
             </row>
             <row>
               <entry><codeph>node2</codeph></entry>
-              <entry><varname>Delegate-A-IP</varname></entry>
-              <entry>IPv4 address of <ph keyref="nm-cc"/> delegate host A</entry>
+              <entry><varname>Delegate-A</varname></entry>
+              <entry>IP address or hostname of delegate host A</entry>
             </row>
             <row>
               <entry><codeph>node1</codeph></entry>
-              <entry><varname>Delegate-B-IP</varname></entry>
-              <entry>IPv4 address of <ph keyref="nm-cc"/> delegate host B</entry>
+              <entry><varname>Delegate-B</varname></entry>
+              <entry>IP address or hostname of delegate host B</entry>
             </row>
           </tbody>
         </tgroup>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/cluster/master (2016-08-29 08:20:36)</title>
+ <title>Keys in feature/cluster/master (2016-08-29 12:12:22)</title>
   <topicgroup>
     <keydef keys="feature-cluster-master-cc"
             href="master/cc.dita"
@@ -57,38 +57,6 @@
     />
     <keydef keys="feature-cluster-master-thinpool"
             href="master/thinpool.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-browser"
-            href="master/vars-browser.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-endpoints"
-            href="master/vars-endpoints.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-http"
-            href="master/vars-http.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-mux"
-            href="master/vars-mux.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-networking"
-            href="master/vars-networking.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-rpc"
-            href="master/vars-rpc.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars-storage"
-            href="master/vars-storage.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-vars"
-            href="master/vars.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-verify"

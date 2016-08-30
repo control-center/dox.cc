@@ -6,7 +6,7 @@
     <prereq>To perform this procedure, you need a delegate host with an
       XFS file system for <ph keyref="nm-cc"/> internal services.</prereq>
     <context>Use this procedure to configure the delegate host designated
-      as <varname>Delegate-A-IP</varname> as a ZooKeeper node.</context>
+      as <varname>Delegate-A</varname> as a ZooKeeper node.</context>
     <steps>
       <step>
         <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -48,7 +48,7 @@
       <step>
         <cmd>Specify the nodes in the ZooKeeper quorum.</cmd>
         <info>ZooKeeper requires a unique quorum definition for each node in its ensemble. To
-          achieve this, replace the IP address of delegate host A with
+          achieve this, replace the IP address or hostname of delegate host A with
           <codeph>0.0.0.0</codeph>.</info>
         <stepxmp>
           <codeblock>q1="1@${node1}:2888:3888"
@@ -88,7 +88,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
           <substep>
             <cmd>Locate the <varname>SERVICED_ZK</varname> variable
               near the beginning of the file, and then delete the line it is on.</cmd>
-            <info>The value of this declaration is just the master host.</info>
+            <info>The default value is just the master host endpoint.</info>
           </substep>
           <substep>
             <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
@@ -167,27 +167,8 @@ SERVICED_ZK_SESSION_TIMEOUT=15</codeblock>
       </step>
       
       <!-- Not performed on appliances -->
-      <step>
-        <cmd>Pull the required <ph keyref="nm-cc"/> ZooKeeper image from the master host.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Identify the image to pull.</cmd>
-            <stepxmp>
-              <codeblock>serviced version | grep IsvcsImages</codeblock>
-            </stepxmp>
-            <stepresult>Example result:
-              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v40 zenoss/isvcs-zookeeper:v3]</codeblock>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Pull the <ph keyref="nm-cc"/> ZooKeeper image.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Isvcs-ZK-Image</varname> with the name and version
-                number of the ZooKeeper image from the previous substep:</p>
-              <codeblock>docker pull <varname>Isvcs-ZK-Image</varname></codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+      <step conkeyref="feature-lib-tasks/zk-pull-isvcs">
+        <cmd/>
       </step>
       
     </steps>

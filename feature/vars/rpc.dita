@@ -17,8 +17,8 @@
         variables identify the digital certificate used for RPC, mux, and HTTP traffic.</p>
       <table>
         <tgroup cols="2">
-          <colspec colname="c1" colwidth="3*"/>
-          <colspec colname="c2" colwidth="2*"/>
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
           <thead>
             <row>
               <entry>Variable</entry>
@@ -27,32 +27,40 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_ENDPOINT"><varname>SERVICED_ENDPOINT</varname></xref></entry>
+              <entry><varname>SERVICED_ENDPOINT</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_MAX_RPC_CLIENTS"><varname>SERVICED_MAX_RPC_CLIENTS</varname></xref></entry>
+              <entry><varname>SERVICED_MAX_RPC_CLIENTS</varname></entry>
               <entry>Delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_RPC_PORT"><varname>SERVICED_RPC_PORT</varname></xref></entry>
+              <entry><varname>SERVICED_RPC_PORT</varname></entry>
               <entry>Master</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_RPC_CERT_VERIFY"><varname>SERVICED_RPC_CERT_VERIFY</varname></xref></entry>
+              <entry><varname>SERVICED_RPC_CERT_VERIFY</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_RPC_DISABLE_TLS"><varname>SERVICED_RPC_DISABLE_TLS</varname></xref></entry>
+              <entry><varname>SERVICED_RPC_DISABLE_TLS</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_RPC_TLS_MIN_VERSION"><varname>SERVICED_RPC_TLS_MIN_VERSION</varname></xref></entry>
+              <entry><varname>SERVICED_RPC_TLS_MIN_VERSION</varname></entry>
               <entry>Master, delegates</entry>
             </row>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_RPC_TLS_CIPHERS"><varname>SERVICED_RPC_TLS_CIPHERS</varname></xref></entry>
+              <entry><varname>SERVICED_RPC_TLS_CIPHERS</varname></entry>
               <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_KEY_FILE</varname></entry>
+              <entry>Master</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_CERT_FILE</varname></entry>
+              <entry>Master</entry>
             </row>
           </tbody>
         </tgroup>

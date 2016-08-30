@@ -20,33 +20,33 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_DOCKER_REGISTRY"><varname>SERVICED_DOCKER_REGISTRY</varname></xref></entry>
+              <entry><varname>SERVICED_DOCKER_REGISTRY</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:9100</codeph></entry>
               <entry>The local Docker registry for <ph keyref="nm-cc"/>
                 internal services images and application images.</entry>
             </row>
             
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_ENDPOINT"><varname>SERVICED_ENDPOINT</varname></xref></entry>
+              <entry><varname>SERVICED_ENDPOINT</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:4979</codeph></entry>
               <entry>The <cmdname>serviced</cmdname> RPC server. The endpoint port number must match
                 the value of <varname>SERVICED_RPC_PORT</varname>.</entry>
             </row>
             
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_LOG_ADDRESS"><varname>SERVICED_LOG_ADDRESS</varname></xref></entry>
+              <entry><varname>SERVICED_LOG_ADDRESS</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:5042</codeph></entry>
               <entry>The <xref keyref="url-logstash">logstash</xref> service.</entry>
             </row>
             
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_LOGSTASH_ES"><varname>SERVICED_LOGSTASH_ES</varname></xref></entry>
+              <entry><varname>SERVICED_LOGSTASH_ES</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:9100</codeph></entry>
               <entry>The Elasticsearch service.</entry>
             </row>
             
             <row>
-              <entry><xref keyref="feature-lib-vars/SERVICED_STATS_PORT"><varname>SERVICED_STATS_PORT</varname></xref></entry>
+              <entry><varname>SERVICED_STATS_PORT</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:8443</codeph></entry>
               <entry>The <cmdname>serviced</cmdname> metrics consumer service.</entry>
             </row>

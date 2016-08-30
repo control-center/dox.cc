@@ -10,12 +10,23 @@
       as the ensemble leader. The leader replicates the assignments to the other ensemble nodes,
       so that the other nodes can assume the role of leader if the leader node fails.</p>
     
-      <p>All of the hosts in a <ph keyref="nm-cc"/> cluster retrieve assignments and service
+    <p>All of the hosts in a <ph keyref="nm-cc"/> cluster retrieve assignments and service
       definitions from the ZooKeeper ensemble leader and then start services in Docker containers as
       required. So, the <ph keyref="nm-cc"/> configuration files of all <ph keyref="nm-cc"/> cluster
       hosts must include a definition for the <varname>SERVICED_ZK</varname> variable, which
       specifies the ZooKeeper endpoints of the ensemble nodes. Additional variables are required on
       ensemble nodes.</p>
+    
+    <p>A ZooKeeper ensemble requires a minimum of three nodes, which is sufficient for most
+      environments. An odd number of nodes is recommended and an even number of nodes is strongly
+      discouraged. A five-node ensemble improves failover protection during maintenance windows but
+      larger ensembles yield no benefits. </p>
+    
+    <p>The <ph keyref="nm-cc"/> master host is always an ensemble node. The delegate hosts to
+      include in a ZooKeeper ensemble must be configured with additional storage, for <ph
+        keyref="nm-cc"/> internal services data, before performing the procedures in this chapter.
+      In addition, all ensemble nodes should be on the same subnet. For more information, see the
+      preceding chapter.</p>
     
   </conbody>
 </concept>

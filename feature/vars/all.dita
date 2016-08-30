@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Master host configuration options</title>
+  <title>Universal configuration variables</title>
   <refbody>
     <section>
       <p>The tables in this section provide an overview of the <cmdname>serviced</cmdname>
-        configuration variables that apply to the <ph keyref="nm-cc"/> master host.</p>
+        configuration variables that apply to all hosts in a <ph keyref="nm-cc"/> cluster.</p>
       <ul>
         <li>Some variables are included in more than one table.</li>
         <li>ZooKeeper variables are described in <xref keyref="feature-zk-zk"/>.</li>
