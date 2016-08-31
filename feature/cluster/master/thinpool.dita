@@ -57,11 +57,20 @@
           </dl>
         </info>
         <substeps>
+          <substep>
+            <cmd>Make a backup copy of the configuration file, and then change the backup file to
+              read-only.</cmd>
+            <stepxmp>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig
+chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
+            </stepxmp>
+          </substep>
           <substep conkeyref="feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> variable.</cmd>
+            <cmd>Locate the line for the <varname>SERVICED_FS_TYPE</varname> variable, and 
+              then make a copy of the line, immediately below the original.</cmd>
           </substep>
           <substep conkeyref="feature-lib-tasks/uncomment">
             <cmd/>

@@ -42,9 +42,12 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="book/install/config-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/instl-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ntp-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/vars-keys.ditamap" format="ditamap"/>
-      <!-- <mapref href="book/install/off-keys.ditamap" format="ditamap"/> -->
+    </topicgroup>
+    <topicgroup>
       <mapref href="feature/cluster/access-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/master-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/delegate-keys.ditamap" format="ditamap"/>
@@ -58,12 +61,11 @@
       <!-- <topicref href="book/install/front/about.dita"/> -->
   </frontmatter>
   
-  <chapter href="feature/cluster/master/install.ditamap" format="ditamap"/>
-  <chapter href="feature/cluster/master/configure.ditamap" format="ditamap"/>
-  <chapter href="feature/cluster/delegate/install.ditamap" format="ditamap"/>
-  <chapter href="feature/cluster/delegate/configure.ditamap" format="ditamap"/>
+  <chapter href="book/install/instl/master.ditamap" format="ditamap"/>
+  <chapter href="book/install/config/master.ditamap" format="ditamap"/>
+  <chapter href="book/install/instl/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/install/config/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
-  <!-- <chapter href="book/install/off/offline.ditamap" format="ditamap"/> -->
   <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>
   <appendix href="book/install/vars/vars.ditamap" format="ditamap"/> 
 </bookmap>

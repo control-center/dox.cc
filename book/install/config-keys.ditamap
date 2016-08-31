@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/config (2016-08-31 16:17:19)</title>
+  <topicgroup>
+    <keydef keys="install-config-delegate"
+            href="config/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="install-config-master"
+            href="config/master.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
