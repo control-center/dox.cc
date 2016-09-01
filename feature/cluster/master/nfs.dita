@@ -3,21 +3,11 @@
 <task id="taskid">
   <title>Configuring <ph keyref="nm-cc"/></title>
   <taskbody>
-    <context>Use this procedure to create a thin pool for application data and to customize key
-      configuration variables of <ph keyref="nm-cc"/>.</context>
+    <context>Use this procedure to fix NFS.</context>
     <steps>
       
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-      
-      <step conkeyref="feature-lib-tasks/master">
-        <cmd/>
-      </step>
-      
-       
-      <step conkeyref="feature-lib-tasks/cfg-subnet">
-        <cmd/>
       </step>
       
       <step conkeyref="feature-lib-tasks/fix-nfs">

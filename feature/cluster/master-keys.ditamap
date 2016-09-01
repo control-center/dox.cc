@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/cluster/master (2016-08-30 06:25:26)</title>
+ <title>Keys in feature/cluster/master (2016-08-31 16:37:57)</title>
   <topicgroup>
-    <keydef keys="feature-cluster-master-cc"
-            href="master/cc.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-configure"
-            href="master/configure.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-create"
-            href="master/create.dita"
-            format="dita"
-    />
     <keydef keys="feature-cluster-master-device-naming"
             href="master/device-naming.dita"
             format="dita"
@@ -23,16 +11,20 @@
             href="master/docker.dita"
             format="dita"
     />
-    <keydef keys="feature-cluster-master-install"
-            href="master/install.dita"
-            format="dita"
-    />
     <keydef keys="feature-cluster-master-isolate"
             href="master/isolate.dita"
             format="dita"
     />
+    <keydef keys="feature-cluster-master-nfs"
+            href="master/nfs.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-master-prep"
             href="master/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-role"
+            href="master/role.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-start"

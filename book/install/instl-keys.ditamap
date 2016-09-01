@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in notes/112 (2016-08-30 09:17:04)</title>
+ <title>Keys in install/instl (2016-08-31 16:17:19)</title>
   <topicgroup>
-    <keydef keys="notes-112-fixed"
-            href="112/fixed.dita"
+    <keydef keys="install-instl-delegate"
+            href="instl/delegate.dita"
             format="dita"
     />
-    <keydef keys="notes-112-self"
-            href="112/self.dita"
+    <keydef keys="install-instl-master"
+            href="instl/master.dita"
             format="dita"
     />
    </topicgroup>

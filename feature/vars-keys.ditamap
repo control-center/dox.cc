@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/vars (2016-08-30 06:25:26)</title>
+ <title>Keys in feature/vars (2016-08-31 16:37:57)</title>
   <topicgroup>
-    <keydef keys="feature-vars-all-debug"
-            href="vars/all-debug.dita"
-            format="dita"
-    />
-    <keydef keys="feature-vars-all-tune"
-            href="vars/all-tune.dita"
-            format="dita"
-    />
-    <keydef keys="feature-vars-all"
-            href="vars/all.dita"
+    <keydef keys="feature-vars-best"
+            href="vars/best.dita"
             format="dita"
     />
     <keydef keys="feature-vars-browser"
             href="vars/browser.dita"
             format="dita"
     />
-    <keydef keys="feature-vars-delegate"
-            href="vars/delegate.dita"
+    <keydef keys="feature-vars-debug"
+            href="vars/debug.dita"
             format="dita"
     />
     <keydef keys="feature-vars-endpoints"
@@ -33,10 +25,6 @@
     />
     <keydef keys="feature-vars-http"
             href="vars/http.dita"
-            format="dita"
-    />
-    <keydef keys="feature-vars-master"
-            href="vars/master.dita"
             format="dita"
     />
     <keydef keys="feature-vars-mux"
@@ -53,6 +41,10 @@
     />
     <keydef keys="feature-vars-storage"
             href="vars/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-tune"
+            href="vars/tune.dita"
             format="dita"
     />
    </topicgroup>

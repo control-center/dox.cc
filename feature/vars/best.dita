@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Best practices for configuration files</title>
+  <refbody>
+    <section>
+      <p>The <ph keyref="nm-cc"/> configuration file, <filepath>/etc/default/serviced</filepath>,
+        contains Bash environment variables that are read by the <cmdname>serviced</cmdname> daemon
+        startup script. The following list describes recommended best practices for its use and
+        maintenance:</p>
+      <ol>
+        <li>When in doubt, make a backup. Making a backup copy of the configuration file before
+          editing it is always the safest choice. </li>
+        <li>Copy a variable, then edit the copy. If you need to revert a variable to its default
+          value, you don't have to leave the file to look it up.</li>
+        <li>Put the first character of the variable declaration in the first column of its line.
+          It's easier to <cmdname>grep</cmdname> for settings each one starts a line.</li>
+        <li>Add customizations to the top of the file. Customizations at the end of the file or
+          scattered throughout the file can be overlooked.</li>
+      </ol>
+    </section>
+  </refbody>
+</reference>

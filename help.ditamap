@@ -45,6 +45,7 @@
       <mapref href="book/help/admin-keys.ditamap" format="ditamap"/>
       <mapref href="book/help/front-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicref href="book/help/front/about.dita"/> 
     <booklists>

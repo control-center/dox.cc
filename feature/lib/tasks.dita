@@ -279,10 +279,11 @@
         for the host to the network nameserver, or to <filepath>/etc/hosts</filepath>.</stepresult>
       </step>
       
-      <step id="check-hostid-master" importance="optional">
-        <cmd>Display and set the host's numeric ID, if necessary.</cmd>
-        <info>Skip this step if you are installing a single-host deployment.
-          Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID.</info>
+      <step id="check-hostid-master">
+        <cmd>Ensure the host has a persistent numeric ID.</cmd>
+        <info>Skip this step if you are installing a single-host deployment.</info>
+        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
+          and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
           <codeblock>cat /etc/hostid 2>/dev/null || hostid | tee /etc/hostid</codeblock>
         </stepxmp>
@@ -291,7 +292,8 @@
       
       <step id="check-hostid">
         <cmd>Display and set the host's numeric ID.</cmd>
-        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID.</info>
+        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
+          and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
           <codeblock>cat /etc/hostid 2>/dev/null || hostid | tee /etc/hostid</codeblock>
         </stepxmp>
@@ -463,7 +465,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               from the beginning of the line.</cmd>
           </substep>
           <substep>
-            <cmd><!-- One more edit needed; waiting on ZEN-18437.  --></cmd>
+            <cmd>TBD<!-- One more edit needed; waiting on ZEN-18437.  --></cmd>
           </substep>
           <substep>
             <cmd>Save the file, and then close the text editor.</cmd>
@@ -484,7 +486,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <info>
           <note>This procedure assumes the host has internet access. 
             To install and configure a host that does not have internet access,
-            see <xref keyref="ntp-offline-installation"/>.</note>
+            see <xref keyref="install-ntp-ntp"/>.</note>
         </info>
         <substeps>
           <substep>
@@ -541,7 +543,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
           <substep>
             <cmd>Add the Docker repository to the host's repository list.</cmd>
             <stepxmp>
-              <codeblock>cat > /etc/yum.repos.d/docker.repo &lt;&lt;-EOF
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker.repo
 [dockerrepo]
 name=Docker Repository
 baseurl=https://yum.dockerproject.org/repo/main/centos/\$releasever/
