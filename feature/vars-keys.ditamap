@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/vars (2016-08-31 16:37:57)</title>
+ <title>Keys in feature/vars (2016-09-01 09:57:58)</title>
   <topicgroup>
     <keydef keys="feature-vars-best"
             href="vars/best.dita"
@@ -13,6 +13,10 @@
     />
     <keydef keys="feature-vars-debug"
             href="vars/debug.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-delegate"
+            href="vars/delegate.dita"
             format="dita"
     />
     <keydef keys="feature-vars-endpoints"

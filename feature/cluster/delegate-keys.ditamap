@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/cluster/delegate (2016-08-31 16:37:57)</title>
+ <title>Keys in feature/cluster/delegate (2016-09-01 09:57:58)</title>
   <topicgroup>
-    <keydef keys="feature-cluster-delegate-cc"
-            href="delegate/cc.dita"
-            format="dita"
-    />
     <keydef keys="feature-cluster-delegate-docker"
             href="delegate/docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-endpoints"
+            href="delegate/endpoints.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-delegate-isvcs"

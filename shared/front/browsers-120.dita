@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
-  <title>Supported clients and browsers</title>
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
   <refbody>
-    <section>
+    <section id="cc">
+	  <title>Supported clients and browsers</title>
       <p>The following table identifies the client operating systems and 
         web browser combinations supported in this release.</p>
       <note>Compatibility mode is not supported in Internet Explorer.</note>

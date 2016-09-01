@@ -44,20 +44,22 @@
         <dlentry id="SERVICED_MASTER">
           <dt><varname>SERVICED_MASTER</varname></dt>
           <dd><b>Default</b>: <codeph>0</codeph> (false)</dd> 
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance runs the application
-            services scheduler and other internal services. Only one <cmdname>serviced</cmdname>
-            instance in a <ph keyref="nm-cc"/> cluster is the master; all other hosts are delegates.
-            This variable must be explicitly set on all cluster hosts. To configure a
-              <cmdname>serviced</cmdname> instance as the master, set the value to
-              <codeph>1</codeph> (true).</dd>
+          <dd>Assigns the role of a <cmdname>serviced</cmdname> instance, either master or delegate.
+            The master runs the application services scheduler and other internal services.
+            Delegates run the application services assigned to the resource pool to which
+            they belong.</dd>
+          <dd>Only one <cmdname>serviced</cmdname> instance can be the master; all other instances
+            must be delegates. The default value assigns the delegate role. To assign the master
+            role, set the value to <codeph>1</codeph> (true). This variable must be explicitly set 
+            on all <ph keyref="nm-cc"/> cluster hosts. </dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK">
           <dt><varname>SERVICED_ZK</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
-            separated by the comma character (<codeph>&#44;</codeph>). Each endpoint includes 
-            the IP address and port of an ensemble node.</dd>
+            separated by the comma character (<codeph>&#44;</codeph>). Each endpoint identifies 
+            an ensemble node.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
@@ -351,7 +353,7 @@
         
         <dlentry id="SERVICED_VIRTUAL_ADDRESS_SUBNET">
           <dt><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></dt>
-          <dd><b>Default</b>: <codeph>10.3</codeph></dd> 
+          <dd><b>Default</b>: <codeph>10.3.0.0/16</codeph></dd> 
           <dd>The private subnet for containers that use virtual IP addresses on a host.
             This value may be unique on each cluster host, if necessary.</dd>
           <dd>RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16

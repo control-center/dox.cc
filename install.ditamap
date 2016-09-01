@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1032.16.240</bookpartno>  
+      <bookpartno>1032.16.245</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -58,7 +58,7 @@
     <booklists>
       <toc/>
     </booklists>
-      <!-- <topicref href="book/install/front/about.dita"/> -->
+      <topicref href="book/install/front/about.dita"/>
   </frontmatter>
   
   <chapter href="book/install/instl/master.ditamap" format="ditamap"/>

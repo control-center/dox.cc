@@ -715,8 +715,9 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
                 virtual bridge:</p>
               <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/24</codeblock>
             </stepxmp>
-            <info>For example, if the bridge subnet is 
-              172.17.0.1, the flags to add are <codeph>--dns=172.17.0.1 --bip=172.17.0.1/24</codeph>.</info>
+            <info>For example, if the bridge subnet is 172.17.0.1, add the following flags:
+              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/24</codeblock>
+            </info>
             <info>
               <note>Leave a blank space after the end of the thin pool device name,
               and make sure the double quote character (<codeph>&#34;</codeph>)

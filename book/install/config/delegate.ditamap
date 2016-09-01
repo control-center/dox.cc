@@ -3,9 +3,12 @@
 <bookmap>
   <title>Configure delegate</title>
   <chapter keyref="install-config-delegate">
+    <topicref keyref="feature-cluster-access-cli"/>
     <topicref keyref="feature-cluster-delegate-role"/>
+    <topicref keyref="feature-cluster-delegate-endpoints"/>
     <topicref keyref="install-vars-delegate">
       <topicref keyref="feature-vars-best"/>
+      <topicref keyref="feature-vars-delegate"/>
       <topicref keyref="feature-vars-endpoints"/>
       <topicref keyref="feature-vars-rpc"/>
       <topicref keyref="feature-vars-mux"/>
@@ -15,5 +18,6 @@
       <topicref keyref="feature-vars-debug"/>
       <topicref keyref="feature-vars-tune"/>
     </topicref>
+    <topicref keyref="feature-cluster-delegate-start"/>
    </chapter>
 </bookmap>

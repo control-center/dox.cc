@@ -6,36 +6,26 @@
     <context>Use this procedure to configure a host as the master host.</context>
     <steps>
       <step>
-        <cmd>Log in to the master host 
-          <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>Configure the host to assume the role of master host.</cmd>
-        <info>The following variable defines the role a host assumes: <dl>
-          <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
-            <dt/>
-            <dd/>
-          </dlentry>
-        </dl>
+        <cmd>Edit the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <info>The following variable assigns the role of a host: <dl>
+            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER"><dt/><dd/></dlentry>
+          </dl>
         </info>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
-            <cmd>Locate the line for the <varname>SERVICED_MASTER</varname> variable, 
-              and then make a copy of the line, immediately below the original.</cmd>
+            <cmd>Locate the line for the <varname>SERVICED_MASTER</varname> variable, and then make
+              a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
-            <cmd>Change the value from 0 to 1.</cmd>
+            <cmd>Change the value from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
     </steps>
