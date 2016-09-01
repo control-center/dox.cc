@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Service endpoint variables</title>
+  <title>Internal services endpoint variables</title>
   <refbody>
     <section>
       <p>The variables in the following table must be set identically on all <ph keyref="nm-cc"/>

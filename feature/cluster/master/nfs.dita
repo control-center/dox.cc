@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring <ph keyref="nm-cc"/></title>
+  <title>Updating the NFS service file</title>
   <taskbody>
-    <context>Use this procedure to fix NFS.</context>
+    <context>Use this procedure to work around <xref keyref="url-rpcbin-bug">an unresolved issue</xref> 
+        in NFS, which is a <ph keyref="nm-cc"/> dependency.</context>
     <steps>
       
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/fix-nfs">
-        <cmd/>
+      <step>
+        <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
+          with a text editor.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On the following line, change <cmdname>rpcbind.target</cmdname> 
+          to <cmdname>rpcbind.service</cmdname>:</cmd>
+        <stepxmp>
+          <codeblock>Requires= network.target proc-fs-nfsd.mount rpcbind.target</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+        <stepxmp>
+          <codeblock>systemctl daemon-reload</codeblock>
+        </stepxmp>
       </step>
       
     </steps>
+    <postreq>Proceed to the next chapter and configure the host.</postreq>
   </taskbody>
 </task>

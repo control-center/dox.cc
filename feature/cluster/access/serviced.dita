@@ -4,7 +4,14 @@
   <title>Configuring a regular group as the <ph keyref="nm-cc"/> administrative group</title>
   <taskbody>
     <context>Use this procedure to change the default administrative group of <ph keyref="nm-cc"/>
-      from <codeph>wheel</codeph> to a non-system group. <note>Perform this procedure or the
+      from <codeph>wheel</codeph> to a non-system group. 
+      <p>The following <ph keyref="nm-cc"/> variables are used in this procedure:
+        <dl>
+          <dlentry conkeyref="feature-vars-file/SERVICED_ADMIN_GROUP"><dt/><dd/></dlentry>
+          <dlentry conkeyref="feature-vars-file/SERVICED_ALLOW_ROOT_LOGIN"><dt/><dd/></dlentry>
+        </dl>
+      </p>
+      <note>Perform this procedure or the
         previous procedure, but not both.</note>
     </context>
     <steps>
@@ -40,59 +47,35 @@
       <step>
         <cmd>Specify the new administrative group in the 
           <cmdname>serviced</cmdname> configuration file.</cmd>
-        <info>The following variable specifies the administrative group:
-          <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_ADMIN_GROUP">
-              <dt/>
-              <dd/>
-            </dlentry>
-          </dl>
-        </info>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
-            <cmd>Find the <varname>SERVICED_ADMIN_GROUP</varname> declaration, and then change the
-              value from <codeph>wheel</codeph> to the name of the group you chose earlier.</cmd>
-            <stepxmp>The following example shows the line to change:
-              <codeblock># SERVICED_ADMIN_GROUP=wheel</codeblock></stepxmp>
+            <cmd>Locate the line for the <varname>SERVICED_ADMIN_GROUP</varname> variable,  
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
-            <cmd/>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value from <codeph>wheel</codeph> to the name 
+              of the group you chose earlier.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
             
       <step importance="optional">
-        <cmd>Prevent the <codeph>root</codeph> user from gaining access to the <ph keyref="nm-cc"/>
-          browser interface, if desired.</cmd>
-        <info>The following variable controls the <codeph>root</codeph> login privilege: <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_ALLOW_ROOT_LOGIN">
-              <dt/>
-              <dd/>
-            </dlentry>
-          </dl>
-        </info>
+        <cmd>Prevent the <codeph>root</codeph> user from gaining access
+          to the <ph keyref="nm-cc"/> browser interface, if desired.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
-            <cmd>Find the <varname>SERVICED_ALLOW_ROOT_LOGIN</varname> declaration, and then change
-              the value from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
-            <stepxmp>The following example shows the line to change:
-              <codeblock># SERVICED_ALLOW_ROOT_LOGIN=1</codeblock></stepxmp>
+            <cmd>Locate the line for the <varname>SERVICED_ALLOW_ROOT_LOGIN</varname> variable,  
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
-            <cmd/>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
 

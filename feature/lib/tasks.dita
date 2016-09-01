@@ -752,33 +752,6 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
         </substeps>
       </step>
       
-      
-      <step id="fix-nfs">
-        <cmd>Configure and restart the NFS server.</cmd>
-        <info>This step corrects <xref keyref="url-rpcbin-bug">an unresolved issue</xref> 
-          in NFS, which is a <ph keyref="nm-cc"/> dependency. The following commands provide
-          a workaround to ensure that the NFS server starts correctly. </info>
-        <substeps>
-          <substep>
-            <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
-              with a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Change <cmdname>rpcbind.target</cmdname> to <cmdname>rpcbind.service</cmdname> on
-              the following line:</cmd>
-            <stepxmp>
-              <codeblock>Requires= network.target proc-fs-nfsd.mount rpcbind.target</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
-            <stepxmp>
-              <codeblock>systemctl daemon-reload</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-      
       <step id="install-serviced">
         <cmd>Install <ph keyref="nm-cc"/>.</cmd>
         <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating

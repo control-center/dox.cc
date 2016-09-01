@@ -45,8 +45,10 @@
       </step>
       
       <step importance="optional">
-        <note>Perform this step <b>only if you are installing a single-host deployment</b>.</note>
         <cmd>Add the master host to the <codeph>default</codeph> resource pool.</cmd>
+        <info>
+          <note>Perform this step <b>only if you are installing a single-host deployment</b>.</note>
+        </info>
         <stepxmp>
           <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the <ph
             keyref="nm-cc"/> master host:</p>

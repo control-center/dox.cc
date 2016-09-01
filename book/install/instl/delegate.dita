@@ -3,13 +3,16 @@
 <concept id="conceptid">
   <title>Installing delegate hosts</title>
   <conbody>
-    <note>If you are installing a single-host deployment, skip this chapter.</note>
+    <p>This chapter describes how to install <ph keyref="nm-cc"/> on a Red Hat Enterprise
+      Linux (RHEL) or CentOS 7.1 or 7.2 host. The candidate host must have the
+      CPU, RAM, and storage resources required to serve as a delegate host in a 
+      <ph keyref="nm-cc"/> cluster.</p>
     
-    <p><ph keyref="nm-cc"/> delegate hosts run the application services
-      scheduled for the resource pool to which they belong, and for which they
-      have sufficient RAM and CPU resources.</p>
+    <p>For more information about delegate host requirements, 
+      refer to the <cite conkeyref="pubs/cite-plan"/>. </p>
 
-    <p>Repeat the procedures in this chapter on each host to add to a <ph keyref="nm-cc"/>
-      cluster.</p>
+    <note>If you are installing a single-host deployment, skip this chapter.</note>
+
+    <p>Repeat the procedures in this chapter on each host to add to a cluster.</p>
   </conbody>
 </concept>

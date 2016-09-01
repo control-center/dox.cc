@@ -7,7 +7,6 @@
     <topicref keyref="feature-cluster-delegate-role"/>
     <topicref keyref="feature-cluster-delegate-endpoints"/>
     <topicref keyref="install-vars-delegate">
-      <topicref keyref="feature-vars-best"/>
       <topicref keyref="feature-vars-delegate"/>
       <topicref keyref="feature-vars-endpoints"/>
       <topicref keyref="feature-vars-rpc"/>

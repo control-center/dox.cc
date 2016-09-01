@@ -7,7 +7,6 @@
 	  <title>Supported clients and browsers</title>
       <p>The following table identifies the client operating systems and 
         web browser combinations supported in this release.</p>
-      <note>Compatibility mode is not supported in Internet Explorer.</note>
       <table>
         <tgroup cols="2">
           <colspec colname="c1" colwidth="1*"/>
@@ -21,10 +20,10 @@
           <tbody>
             <row>
               <entry morerows="3">Windows 7 and 8.1</entry>
-              <entry>Internet Explorer 11 (enterprise mode is supported)</entry>
+              <entry>Internet Explorer 11 (enterprise mode is supported, but compatibility mode is not)</entry>
             </row>
             <row>
-              <entry>Internet Explorer 10</entry>
+              <entry>Internet Explorer 10 (compatibility mode not supported)</entry>
             </row>
             <row>
               <entry>Firefox 30 and above</entry>
