@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Taking a Snapshot</title>
+  <taskbody>
+    <prereq>You need to know the <filepath>SERVICEID</filepath> of the service you want to take a
+      snapshot of, typically the <ph product="rm"><filepath>Zenoss.resmgr</filepath></ph><ph
+        product="open"><filepath>Zenoss.core</filepath></ph> service.
+      <!--Add UCSPM name when available.--></prereq>
+    <context>Snapshots can only be created from the command-line interface (CLI). You do not have to
+      stop any services prior to taking the snapshot.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> host <ph conkeyref="login-as/sudo-docker"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Find the <filepath>SERVICEID</filepath> of the service you want to snapshot.</cmd>
+        <stepxmp>
+          <codeblock>serviced service list</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Take the snapshot.</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot add <varname>SERVICEID</varname></codeblock>
+        </stepxmp>
+        <stepresult>The name of the snapshot is displayed. The format of the name is a combination
+          of the SERVICEID and a date stamp. To verify its existence, you can list all the
+          snapshots. (By default, snapshots have a time-to-live (TTL) of 12
+          hours.)<codeblock>serviced snapshot list</codeblock></stepresult>
+      </step>
+      <step>
+        <cmd>(Optional) If you want to keep the snapshot for longer than the TTL value, you can tag
+          the snapshot using the following command.</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot tag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock>
+        </stepxmp>
+        <stepresult>To untag a snapshot, execute the following
+            command.<codeblock>serviced snapshot untag <varname>SERVICEID</varname> <varname>TAG-NAME</varname></codeblock><note>Once
+            you untag a snapshot, it will be subject to the TTL value.</note></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

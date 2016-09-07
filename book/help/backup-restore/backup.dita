@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Backing Up <ph keyref="nm-platform"/></title>
+  <taskbody>
+    <prereq></prereq>
+    <context>To take a backup of <ph keyref="nm-platform"/>:</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
+        <info>
+          <fig>
+            <image product="rm ucs nfvi" scale="50" keyref="png-rm-initial-5x"/>
+            <image product="open" scale="50" keyref="png-core-initial-5x"/>
+          </fig>
+        </info>
+      </step>
+      <step>
+        <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab. The Backup / Restore page
+          appears.</cmd>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>Create Backup</uicontrol>. You will be asked to confirm your selection
+          by clicking <uicontrol>Create Backup</uicontrol> again.</cmd>
+      </step>
+      <step>
+        <cmd>When the backup is complete, you will see the path of the <filepath>.tgz</filepath>
+          file displayed.</cmd>
+        <info><image width="6in" keyref="png-Backup_Complete"/></info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

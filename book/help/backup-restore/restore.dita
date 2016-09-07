@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Restoring <ph keyref="nm-platform"/> from a Backup</title>
+  <taskbody>
+    <context>You can restore your <ph keyref="nm-platform"/> instance from any given backup
+        <filepath>.tgz</filepath> file. You could also duplicate your instance on a similar cluster
+      for testing or failover purposes by restoring a backup <filepath>.tgz</filepath> file to a new
+      similarly configured cluster.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
+        <info>
+          <fig>
+            <image product="rm ucs nfvi" scale="50" keyref="png-rm-initial-5x"/>
+            <image product="open" scale="50" keyref="png-core-initial-5x"/>
+          </fig>
+        </info>
+      </step>
+      <step id="select">
+        <cmd>In the <uicontrol>Applications</uicontrol> table, identify the name of the <ph
+            keyref="nm-platform"/> instance to modify.</cmd>
+      </step>
+      <step id="stop_services">
+        <cmd>Stop the instance, and verify its subservices are stopped.</cmd>
+        <substeps>
+          <substep>
+            <cmd>In the <uicontrol>Actions</uicontrol> column of the
+                <uicontrol>Applications</uicontrol> table, click <uicontrol>Stop</uicontrol>.</cmd>
+            <info>
+              <fig>
+                <image scale="60" keyref="png-stop-services"
+                  product="rm ucs nfvi"/>
+                <image keyref="png-stop-services-core" scale="70"
+                  product="open"/>
+              </fig>
+            </info>
+          </substep>
+          <substep>
+            <cmd>In the <uicontrol>Stop Service</uicontrol> dialog, click <uicontrol
+                product="rm ucs nfvi">Stop Service and 52 Children</uicontrol><uicontrol
+                product="open">Stop Service and 40 Children</uicontrol>.</cmd>
+          </substep>
+          <substep>
+            <cmd>In the <uicontrol>Applications</uicontrol> column of the
+                <uicontrol>Applications</uicontrol> table, click the name of the stopped instance,
+              and then scroll down to the <uicontrol>Services</uicontrol> table to verify everything
+              is stopped.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab. The Backup / Restore page
+          appears listing your backup files.</cmd>
+        <info><image width="6in" keyref="png-Backup_Complete"/></info>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>Restore Backup</uicontrol> next to the backup file you want to use to
+          restore your <ph keyref="nm-platform"/> application. You will be asked to confirm
+          your selection by clicking <uicontrol>Restore</uicontrol>.</cmd>
+        <info>
+          <fig>
+            <image keyref="png-Restore_Cannot_Be_Reversed" scale="60"/>
+          </fig>
+        </info>
+      </step>
+      <step>
+        <cmd>When the restore is finished, click the <uicontrol>Applications</uicontrol> tab, then
+          click <uicontrol>Start</uicontrol> next to the <ph keyref="nm-platform"/> instance
+          you just restored.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

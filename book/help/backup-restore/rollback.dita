@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Rollback to a Snapshot</title>
+  <taskbody>
+    <prereq/>
+    <context>
+      <p>You can rollback your application to a previous state that existed when you took a
+        snapshot. You must stop the services that are used by the image when the snapshot was taken.
+        The distributed file system will also be rolled back to the state that existed when the
+        snapshot was taken.</p>
+      <p>Rollbacks can only be performed on the CLI. You must know the
+          <filepath>SNAPSHOTID</filepath> you want to rollback to.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> host <ph conkeyref="login-as/sudo-docker"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Find the <filepath>SNAPSHOTID</filepath> of the snapshot to which you want to
+          rollback.</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot list</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Rollback to the snapshot. Using the <filepath>--force-restart</filepath> flag
+          automatically stops the affected services before rollback and starts them after
+          completion.</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot rollback <varname>SNAPSHOTID</varname> --force-restart</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

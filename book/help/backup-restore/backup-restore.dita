@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Backup and Restore</title>
+  <refbody>
+    <section>
+      <p>In some situations, you might want to back up configuration information and data from a <ph
+          keyref="nm-platform"/> instance, and then later restore that instance. You might
+        back up on a regular schedule to provide a historical archive; or infrequently, such as when
+        you want to move data from one instance to another or perhaps duplicate an instance for
+        testing or failover purposes.</p>
+      
+      <!--CC1398 took out this para: Taking a backup should be scheduled during a maintenance 
+        window since all services need to be stopped prior to taking a backup and you will not
+        be able to start or deploy any new services during the backup.-->
+      
+      <p>The backup process saves the state of all services and data to a <filepath>.tgz</filepath>
+        file which can be restored on that cluster or be duplicated on a similar cluster.
+        
+        <note product="open rm">There may be occasions when a full backup is not necessary, e.g., a
+          checkpoint prior to installing a ZenPack. In these cases, you can perform a snapshot of
+          the system. In the event that you need to revert back to a snapshot, you can use the
+          rollback feature (before which you will need to stop services that are used in the
+          particular snapshot image). For more information on the snapshot and rollback feature, see
+            <xref keyref="snapshot-rollback"/>.</note>
+        
+        <note product="ucs nfvi" type="caution"
+          >You must perform your backups on the <ph keyref="nm-platform"/>
+          instance using the documented procedures below. Do not use the backup and restore
+          functionality provided by your vSphere environment as a substitute to these
+          procedures.</note>
+        
+        <note product="open rm">Any backups that you took using <ph
+            keyref="nm-cc"/> 1.0.x cannot be restored in <ph keyref="nm-cc"/>
+          1.1.x.</note>
+      </p>
+    </section>
+  </refbody>
+</reference>
