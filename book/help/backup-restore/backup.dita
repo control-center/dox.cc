@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Backing Up <ph keyref="nm-platform"/></title>
+  <title>Backing up</title>
+  <shortdesc>Using the <ph keyref="nm-cc"/> browser interface, you can take a backup of an
+    application that <ph keyref="nm-cc"/> manages, such as <ph keyref="nm-platform"/>.</shortdesc>
   <taskbody>
-    <prereq></prereq>
-    <context>To take a backup of <ph keyref="nm-platform"/>:</context>
+    <context/>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
+        <!-- are images needed in CC Help? -->
         <info>
           <fig>
             <image product="rm ucs nfvi" scale="50" keyref="png-rm-initial-5x"/>

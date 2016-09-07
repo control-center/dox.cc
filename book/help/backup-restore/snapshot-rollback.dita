@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Snapshot and Rollback</title>
+  <title>Snapshot and rollback</title>
+  <shortdesc>There are times when taking a backup of an entire application is not practical, but you
+    need a way to safeguard potential risk when changing your system. In these cases, it might be
+    more beneficial to use <ph keyref="nm-cc"/> to take a snapshot of the system, and then rollback
+    if your changes cause a failure or other degradation of the application.</shortdesc>
   <refbody>
     <section>
-      <p>There are times when taking a backup of your <ph keyref="nm-platform"/> system is not
-        practical, but you need a way to safeguard potential risk when changing your system. In
-        these cases it may be more beneficial to take a snapshot of the system and then rollback if
-        your changes cause a failure or other degradation of the appplication.</p>
       <p>The main advantage of taking a snapshot over a backup is that you do not have to stop any
         services when taking a snapshot. You can take a snapshot whenever you need a savepoint for
-        your docker image, e.g., before committing container changes or installing a ZenPack). If
-        you want to back out of your change, you can use the rollback functionality to go back to
+        your Docker image, for example, before committing container changes or installing a ZenPack.
+        If you want to back out your changes, you can use the rollback functionality to go back to
         the snapshot image.</p>
-      <p>When you take a snapshot, a tag is created for the docker image of each service and a
-        backup of the distributed file system is taken. You do not have to stop any services to
-        create the snapshot, but if you do need to rollback, you will need to stop the particular
-        services that are used by the snapshot image.</p>
+      <p>When you take a snapshot, a tag is created for the Docker image of each service and a
+        backup is taken of the distributed file system. You do not have to stop any services to
+        create the snapshot, but if you do need to rollback, you must stop the particular services
+        that are used by the snapshot image.</p>
       <p>Since snapshots are meant as a savepoint and are not meant to be used as an historical
         backup, there is a default time to live (TTL) value of 12 hours for any snapshot. However,
-        if you decide that you want to keep a snapshot beyond the TTL, you can tag the snapshot
-        which will prevent it from being deleted after the TTL has expired.</p>
+        if you decide that you want to keep a snapshot beyond the TTL, you can tag the snapshot,
+        which prevents it from being deleted after the TTL expires.</p>
     </section>
   </refbody>
 </reference>
