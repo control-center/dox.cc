@@ -15,17 +15,12 @@
             href="backup-restore/restore.dita"
             format="dita"
     />
-    <keydef keys="help-backup-restore-rollback"
-            href="backup-restore/rollback.dita"
-            format="dita"
-    />
     <keydef keys="help-backup-restore-snapshot-rollback"
-            href="backup-restore/snapshot-rollback.dita"
-            format="dita"
-    />
-    <keydef keys="help-backup-restore-snapshot"
-            href="backup-restore/snapshot.dita"
-            format="dita"
-    />
+                        href="backup-restore/snapshot-rollback.dita" format="dita">
+                        <keydef keys="help-backup-restore-snapshot"
+                                href="backup-restore/snapshot.dita" format="dita"/>
+                        <keydef keys="help-backup-restore-rollback"
+                                href="backup-restore/rollback.dita" format="dita"/>
+                </keydef>
    </topicgroup>
 </map>
