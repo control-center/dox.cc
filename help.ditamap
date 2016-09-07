@@ -52,8 +52,9 @@
       <toc/>
     </booklists>
   </frontmatter>
-  <chapter href="book/help/admin/admin.ditamap" format="ditamap"/>
-  <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
+    <chapter href="book/help/admin/admin.ditamap" format="ditamap"/>
+    <chapter href="book/help/backup-restore/backup-restore.ditamap"/>
+    <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>
     <booklists>
