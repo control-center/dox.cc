@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in help/backup-restore (2016-09-07 11:44:35)</title>
+ <title>Keys in help/backup-restore (2016-09-08 11:40:23)</title>
   <topicgroup>
     <keydef keys="help-backup-restore-backup-restore"
             href="backup-restore/backup-restore.dita"
@@ -15,12 +15,17 @@
             href="backup-restore/restore.dita"
             format="dita"
     />
+    <keydef keys="help-backup-restore-rollback"
+            href="backup-restore/rollback.dita"
+            format="dita"
+    />
     <keydef keys="help-backup-restore-snapshot-rollback"
-                        href="backup-restore/snapshot-rollback.dita" format="dita">
-                        <keydef keys="help-backup-restore-snapshot"
-                                href="backup-restore/snapshot.dita" format="dita"/>
-                        <keydef keys="help-backup-restore-rollback"
-                                href="backup-restore/rollback.dita" format="dita"/>
-                </keydef>
+            href="backup-restore/snapshot-rollback.dita"
+            format="dita"
+    />
+    <keydef keys="help-backup-restore-snapshot"
+            href="backup-restore/snapshot.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>
