@@ -6,7 +6,7 @@
     <context>The default configuration of delegate hosts sets the value of the
         <varname>SERVICED_ZK</varname> variable to the master host only. Use this procedure to
       update the setting to include all of the hosts in the ZooKeeper ensemble. Perform this
-      procedure on each delegate host in your <ph keyref="nm-cc"/> cluster that is not an ensemble
+      procedure on each delegate host in a <ph keyref="nm-cc"/> cluster that is not an ensemble
       node.</context>
     
     <steps>
@@ -54,8 +54,8 @@
         <stepxmp>
           <codeblock>egrep '^[^#]*SERVICED_ZK' /etc/default/serviced</codeblock>
         </stepxmp>
-        <stepresult>The following example shows the environment variable for a delegate
-          host that is not a node in the ZooKeeper cluster:
+        <stepresult>The following example shows the environment variable for a delegate host that is
+          not a node in the ZooKeeper ensemble:
           <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181</codeblock>
         </stepresult>
       </step>

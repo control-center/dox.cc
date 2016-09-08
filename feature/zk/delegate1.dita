@@ -3,8 +3,6 @@
 <task id="taskid">
   <title>Configuring delegate host A as a ZooKeeper node</title>
   <taskbody>
-    <prereq>To perform this procedure, you need a delegate host with an
-      XFS file system for <ph keyref="nm-cc"/> internal services.</prereq>
     <context>Use this procedure to configure the delegate host designated
       as <varname>Delegate-A</varname> as a ZooKeeper node.</context>
     <steps>
