@@ -5,10 +5,8 @@
   <shortdesc>Snapshots can only be created from the command-line interface (CLI). You do not have to
     stop any services prior to taking the snapshot.</shortdesc>
   <taskbody>
-    <context> To take a snapshot of  a service, you need to know its <filepath>SERVICEID</filepath>,
-      for example, the <ph product="rm cc"><filepath>Zenoss.resmgr</filepath></ph><ph product="open"
-          ><filepath>Zenoss.core</filepath></ph>  service.
-      <!--Add UCSPM name when available.-->.</context>
+    <context> To take a snapshot of a service, you need to know its <filepath>SERVICEID</filepath>,
+      for example, the <ph><filepath>Zenoss.resmgr</filepath></ph> service. </context>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> host as a user with <cmdname>sudo</cmdname> and

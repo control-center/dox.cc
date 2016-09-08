@@ -13,7 +13,6 @@
         file that you can restore on that cluster or duplicate on a similar cluster.
         <!-- CC-306 -->The state of the system at the time of the backup is stored; however,
         specific snapshots are not backed up. As a best practice, take periodic backups.</p>
-      <p/>
       <p><!-- CC-1474 -->
         You can resume a restore from a backup if an outage occurs during the restore. <ph
           keyref="nm-cc"/> preserves complete data on your system. For example, you ran a restore
@@ -23,26 +22,14 @@
         snapshots are loaded to disk, you are not required to stop services during a restore while
         the file is loaded. Though the restore will not complete successfully, the snapshot and
         images are available for you to manually rollback each application.</p>
-      <p>
-        <note product="open rm cc">A full backup is not always necessary; for example, when you need
-          a checkpoint prior to installing software. In these cases, you can perform a snapshot of
-          the system. If you need to revert back to a snapshot, use the rollback feature (before
-          which you will need to stop services that are used in the particular snapshot image). For
-          more information, see <xref href="snapshot-rollback.dita#referenceid"/>.</note>
-        <note product="ucs nfvi" type="caution">You must perform your backups on the <ph
-            keyref="nm-platform"/> instance using the documented procedures below. Do not use the
-          backup and restore functionality provided by your vSphere environment as a substitute to
-          these procedures.</note>
-        <note product="open rm cc">Any backups that you took using <ph keyref="nm-cc"/> 1.0.x cannot
-          be restored in <ph keyref="nm-cc"/> 1.1.x or later versions.</note>
-        <note product="ucs nfvi" type="caution">You must perform your backups on the <ph
-            keyref="nm-platform"/> instance using the documented procedures below. Do not use the
-          backup and restore functionality provided by your vSphere environment as a substitute to
-          these procedures.</note>
-        <!-- CC-282 -->
-        <note>If you manually deleted the default pool, you cannot restore from a backup. The
-          default pool is created on startup and is required.</note>
-      </p>
+      <p>A full backup is not always necessary; for example, when you need a checkpoint prior to
+        installing software. In these cases, you can perform a snapshot of the system. If you need
+        to revert back to a snapshot, use the rollback feature (before which you will need to stop
+        services that are used in the particular snapshot image). For more information, see <xref
+          href="snapshot-rollback.dita#referenceid"/>.Any backups that you took using <ph
+          keyref="nm-cc"/> 1.0.x cannot be restored in <ph keyref="nm-cc"/> 1.1.x or later
+        versions.<!-- CC-282 -->If you manually deleted the default pool, you cannot restore from a
+        backup. The default pool is created on startup and is required.</p>
     </section>
   </refbody>
 </reference>
