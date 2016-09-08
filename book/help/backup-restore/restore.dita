@@ -6,7 +6,7 @@
     application that <ph keyref="nm-cc"/> manages, such as <ph keyref="nm-platform"/>.</shortdesc>
   <taskbody>
     <context>As an example, this task uses <ph keyref="nm-platform"/>. You can restore from any
-      backup <filepath>.tgz</filepath> file for that application. You could also duplicate your
+      backup <filepath>.tgz</filepath> file for that application. You can also duplicate your
       instance on a similar cluster for testing or failover purposes by restoring a backup
         <filepath>.tgz</filepath> file to a new similarly configured cluster.</context>
     <steps>
