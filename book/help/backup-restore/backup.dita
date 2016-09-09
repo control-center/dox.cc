@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Backing up</title>
+  <title>Backing up with the browser interface</title>
   <shortdesc>Using the <ph keyref="nm-cc"/> browser interface, you can take a backup of an
     application that <ph keyref="nm-cc"/> manages.</shortdesc>
   <taskbody>
-    <context/>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
