@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>Use this procedure to install <ph keyref="nm-cc"/>,
+      and to implement a workaround for an NFS issue. NFS is a 
+      <ph keyref="nm-cc"/> dependency.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/install-serviced-offline"><cmd/></step>
+      <step conkeyref="feature-lib-tasks/install-serviced"><cmd/></step>
+      <step conkeyref="feature-lib-tasks/nfs-workaround"><cmd/></step>
+
+    </steps>
+  </taskbody>
+</task>

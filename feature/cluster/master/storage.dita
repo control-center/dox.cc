@@ -62,8 +62,8 @@
         replaced with sizes that meet your application requirements. To calculate the appropriate
         sizes for these storage areas, use the following guidelines:</p>
       <ul>
-        <li>Application data storage includes space for data and snapshots. The default base size
-          for data is 100GB, and the recommended space for snapshots is 100% of the base size.
+        <li>Application data storage includes space for both data and snapshots. The default base
+          size for data is 100GB, and the recommended space for snapshots is 100% of the base size.
           Adding the two yields the suggested minimum size of 200GB.</li>
         <li>For application data backups, the recommended space is 150% of the base size for
           data.</li>

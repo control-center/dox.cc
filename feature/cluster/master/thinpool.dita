@@ -15,6 +15,7 @@
         more information about sizing this resource, refer to the documentation for your
         application. Or, use the suggested minimum value, 200GB. You can add storage to an LVM thin
         pool at any time.</note>
+      <p>Perform these steps:</p>
     </context>
     <steps>
       <step>
@@ -88,5 +89,6 @@ chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
         </substeps>
       </step>
     </steps>
+    <postreq>Proceed to the next chapter and configure the host.</postreq>
   </taskbody>
 </task>

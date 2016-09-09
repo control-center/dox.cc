@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading repository and image files</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>Permission to download files from the <xref keyref="url-leapfile">File Portal - Download
+            Zenoss Enterprise Software</xref> site. <ph conkeyref="names/company"/> customers may
+          request permission by filing a ticket at <ph conkeyref="names/support-site"/>. </li>
+        <li>A secure network copy program.</li>
+      </ul></prereq>
+    <context>Use this procedure to
+      <ul>
+        <li>download the required files to a workstation</li>
+        <li>copy the files to the hosts that need them</li>
+      </ul>
+    <p>Perform these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile">File 
+          Portal - Download Zenoss Enterprise Software</xref> site.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in with the account provided by <ph conkeyref="names/support"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Download the self-installing Docker image files.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Version</varname> with the most recent version number available on the
+            download page:</p>
+          <ul>
+            <li><filepath>install-zenoss-isvcs-zookeeper:v<varname>Version</varname>.run</filepath></li>
+            <li><filepath>install-zenoss-serviced-isvcs:v<varname>Version</varname>.run</filepath></li>
+          </ul>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Download a RHEL/CentOS repository mirror file.</cmd>
+        <info>The repository mirror files contain <cmdname>serviced</cmdname> 
+          and the operating system packages it requires.</info>
+        <stepxmp>
+          <p>Replace <varname>Version</varname> with the most recent version number available on the
+            download page, and replace <varname>Release</varname> with the version of RHEL/CentOS
+            installed on all of the hosts in your <ph keyref="nm-cc"/> cluster:</p>
+          <codeblock>yum-mirror-centos7.<varname>Release</varname>-<varname>Version</varname>.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      
+      <step>
+        <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> cluster hosts.</cmd>
+        <info>
+          <ul>
+            <li>The master host requires all of the files.</li>
+            <li>Delegate hosts require only the repository mirror (RPM) file.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>
