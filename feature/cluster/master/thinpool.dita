@@ -55,8 +55,8 @@
             <cmd>Make a backup copy of the configuration file, and then change the backup file to
               read-only.</cmd>
             <stepxmp>
-              <codeblock>cp /etc/default/serviced /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig
-chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig
+chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
             </stepxmp>
           </substep>
           <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>

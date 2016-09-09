@@ -642,7 +642,7 @@ EOF</codeblock>
 TimeoutSec=300
 EnvironmentFile=-/etc/sysconfig/docker
 ExecStart=
-ExecStart=/usr/bin/docker \$OPTIONS daemon -H fd:// 
+ExecStart=/usr/bin/docker daemon \$OPTIONS -H fd:// 
 TasksMax=infinity
 EOF</codeblock>
             </stepxmp>
@@ -682,8 +682,8 @@ EOF</codeblock>
             <stepxmp>
               <p>Replace <varname>Thin-Pool-Device</varname> with the name of the thin pool device
                 created in the previous step:</p>
-              <codeblock>myDriver="-s devicemapper"
-myLog="-l error"
+              <codeblock>myDriver="--storage-driver devicemapper"
+myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
 myReg="--insecure-registry=$myIP:5000"</codeblock>

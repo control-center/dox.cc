@@ -6,7 +6,7 @@
     <section>
       <p>The variables in the following table are set only on the master host. The first group of
         variables is set during installation, and the defaults of the second group may need to be
-        changed before starting the master host for the first time. Typically, the last two groups
+        changed before starting the master host for the first time. Typically, the last three groups
         of variables are not changed until <ph keyref="nm-cc"/> has managed your application for a
         while and you see a need to do so.</p>
     <table>
@@ -57,6 +57,11 @@
               application log storage service.</entry>
             <entry>Prevent application logs from filling the storage device that the
               log storage service uses.</entry>
+          </row>
+          <row>
+            <entry namest="c1" nameend="c2"><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></entry>
+            <entry>The interval for collecting monitoring data about the application data thin
+                pool.</entry>
           </row>
         </tbody>
       </tgroup>
