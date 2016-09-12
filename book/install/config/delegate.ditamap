@@ -3,6 +3,7 @@
 <bookmap>
   <title>Configure delegate</title>
   <chapter keyref="install-config-delegate">
+    <topicref keyref="feature-cluster-delegate-cron"/>
     <topicref keyref="feature-cluster-access-cli"/>
     <topicref keyref="feature-cluster-delegate-role"/>
     <topicref keyref="feature-cluster-delegate-endpoints"/>

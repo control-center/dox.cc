@@ -3,6 +3,7 @@
 <bookmap>
   <title>Configure master</title>
   <chapter keyref="install-config-master">
+    <topicref keyref="feature-cluster-master-cron"/>
     <topicref keyref="feature-cluster-access-access">
       <topicref keyref="feature-cluster-access-wheel"/>
       <topicref keyref="feature-cluster-access-serviced"/>

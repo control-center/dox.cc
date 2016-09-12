@@ -390,11 +390,11 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the operating system and then restart the host.</cmd>
+            <cmd>Upgrade the operating system and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum upgrade -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -442,6 +442,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <stepxmp>
           <codeblock>systemctl enable dnsmasq &#38;&#38; systemctl start dnsmasq</codeblock>
         </stepxmp>
+        <!-- One more edit needed; waiting on ZEN-18437  
         <info>If name resolution in your environment relies solely on entries 
           in <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> 
           to enable containers to use the file:</info>
@@ -465,7 +466,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               from the beginning of the line.</cmd>
           </substep>
           <substep>
-            <cmd>TBD<!-- One more edit needed; waiting on ZEN-18437.  --></cmd>
+            <cmd>TBD</cmd>
           </substep>
           <substep>
             <cmd>Save the file, and then close the text editor.</cmd>
@@ -477,8 +478,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-        <stepresult></stepresult>
-        
+        -->
       </step>
       
       <step id="ntp">
