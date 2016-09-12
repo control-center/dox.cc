@@ -2,13 +2,13 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Rollback to a snapshot</title>
-  <shortdesc>You can rollback your application to a previous state that existed when you took a
-    snapshot. Rollbacks can only be performed on the CLI. </shortdesc>
+  <shortdesc>Rollbacks can only be performed on the CLI. You can rollback your application to a
+    previous state that existed when you took a snapshot. </shortdesc>
   <taskbody>
-    <prereq>You must stop the services that are used by the image when the snapshot was taken. The
-      distributed file system will also be rolled back to the state that existed when the snapshot
-      was taken.</prereq>
-    <context>To rollback to a snapshot, you must know the <filepath>SNAPSHOTID</filepath>.</context>
+    <prereq>Before rolling back, you must stop services that are used in the snapshot image. The
+      distributed file system is rolled back to the state that existed when the snapshot was
+      taken.</prereq>
+    <context>To rollback to a snapshot, you must know its <filepath>SNAPSHOTID</filepath>.</context>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> host as a user with <cmdname>sudo</cmdname> and

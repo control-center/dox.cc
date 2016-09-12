@@ -2,11 +2,11 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Taking a snapshot</title>
-  <shortdesc>Snapshots can only be created from the command-line interface (CLI). You do not have to
-    stop any services prior to taking the snapshot.</shortdesc>
+  <shortdesc>Snapshots can only be created on the CLI. You do not have to stop any services before
+    taking the snapshot.</shortdesc>
   <taskbody>
-    <context> To take a snapshot of a service, you need to know its <filepath>SERVICEID</filepath>,
-      for example, the <ph><filepath>Zenoss.resmgr</filepath></ph> service. </context>
+    <context> To take a snapshot of a service, you must know its <filepath>SERVICEID</filepath>; for
+      example, <ph><filepath>Zenoss.resmgr</filepath></ph>. </context>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> host as a user with <cmdname>sudo</cmdname> and
@@ -24,12 +24,12 @@
           <codeblock>serviced snapshot add <varname>SERVICEID</varname></codeblock>
         </stepxmp>
         <stepresult>The name of the snapshot is displayed. The format of the name is a combination
-          of the SERVICEID and a date stamp. To verify its existence, you can list all the
-          snapshots. <codeblock>serviced snapshot list</codeblock></stepresult>
+          of the SERVICEID and a date stamp. To verify its existence, you can list all snapshots.
+          <codeblock>serviced snapshot list</codeblock></stepresult>
       </step>
       <step>
-        <cmd>(Optional) By default, snapshots have a time-to-live (TTL of 12 hours. To keep the
-          snapshot for longer than the TTL value,  tag the snapshot using the following
+        <cmd>(Optional) By default, snapshots have a time-to-live (TTL) of 12 hours. To keep the
+          snapshot for longer than the TTL value, tag the snapshot using the following
           command.</cmd>
         <stepxmp>
           <codeblock>serviced snapshot tag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock>

@@ -7,48 +7,52 @@
     application installation.  </shortdesc>
   <refbody>
     <section><p>You can back up configuration information and data from an application and then
-        later restore that instance. Back up on a regular schedule to provide a historical archive.
-        Back up as needed when you perform less-frequent tasks such as moving data from one instance
-        to another or duplicating an instance for testing or failover purposes.</p><p>Before
-        undertaking any of the following actions, ensure that you have a recent backup that
-        successfully restores: <ul id="ul_smb_qmy_fx">
-          <li>Upgrading - Perform a daily backup and take a VM snapshot.</li>
-          <li>Testing - Weekly, perform restore testing and confirm that data is recent.</li>
+        later restore to the same instance. To provide a historical archive, back up on a regular
+        schedule. Back up as needed when you perform less-frequent tasks such as moving data from
+        one instance to another or duplicating an instance for testing or failover
+        purposes.</p><p>Before undertaking the following actions, ensure that you have a recent
+        backup that successfully restores: <ul id="ul_smb_qmy_fx">
+          <li>Upgrading</li>
+          <li>Testing</li>
           <li>Using a temporary VM or DR site.</li>
-        </ul></p><p>When a full backup is not necessary, such as when you need a checkpoint prior to
+        </ul></p><p>When a full backup is not necessary, such as when you need a checkpoint before
         installing software, you can perform a snapshot of the system. If you need to revert back to
-        a snapshot, use the rollback feature. Before rolling back, you must stop services that are
-        used in the particular snapshot image. For more information, see <xref
-          href="snapshot-rollback.dita#referenceid"/>.</p><p><b>About backups</b></p><p>Perform
-        regular backups of the production environment and potentially the system of record from the
-        initial deployment. Back up to nonactive resource targets such as separate DR systems, or a
-        DEV, STAGING, or QA environment. Store backups on a machine other than the <ph
-          keyref="nm-cc"/> master. Copy or migrate backups to an off-system location for safekeeping
-        and to help regulate storage space usage on the master.</p><p>The backup process saves the
-        state of all services and data to a <filepath>.tgz</filepath> file that you can restore on
-        that cluster or duplicate on a similar cluster. <!-- CC-306 -->The state of the system at
-        the time of the backup is stored; however, specific snapshots are not backed up. When a
-        backup is running, you can start and restart services. </p><p>You can use either the <ph
-          keyref="nm-cc"/> browser interface or the <ph keyref="nm-cc"/> command line interface to
-        back up and restore applications. However, backups that you took using <ph keyref="nm-cc"/>
-        1.0.x cannot be restored in <ph keyref="nm-cc"/> 1.1.x or later versions.</p><p><b>About
-          restores</b></p><p>You can restore a backup to the system on which it was taken or to an
-        alternate system. Restoring to the same system reverts the <ph keyref="nm-cc"/> resource
-        host, its service configuration, and the application state to the point in time when the
-        backup was taken.  The system on which you restore any backup should mirror at least one
-        device from the production system.</p><p>Frequently test restoring from a backup to ensure
-        that the backup restores successfully, and that the restored system is an accurate
-        representation of the state of the deployment when the backup was performed.
-      </p><!--CC-1531-->Because snapshots are loaded to disk, during a restore you are not required
-      to stop services while the file is loaded. Though the restore will not complete successfully,
-      the snapshot and images are available for you to manually rollback each
+        a snapshot, use the rollback feature. </p><p><b>About backups</b></p><p>Perform regular
+        backups of the production environment and potentially the system of record from the initial
+        deployment. Back up to nonactive resource targets such as separate DR systems, or a DEV,
+        STAGING, or QA environment. Store backups on a machine other than the <ph keyref="nm-cc"/>
+        master. Copy or migrate backups to an off-system location for safekeeping and to help
+        regulate storage space usage on the master.</p><p>The backup process saves the state of all
+        services and data to a <filepath>.tgz</filepath> file. <!-- CC-306 -->The state of the
+        system at the time of the backup is stored; however, specific snapshots are not backed up.
+        When a backup is running, you can start and restart services. </p><p>You can use either the
+          <ph keyref="nm-cc"/> browser interface or the <ph keyref="nm-cc"/> command-line interface
+        to back up and restore applications. However, backups that you took using <ph keyref="nm-cc"
+        /> 1.0.x cannot be restored in <ph keyref="nm-cc"/> 1.1.x or later versions.</p><p><b>About
+          snapshots</b></p><p><ph keyref="nm-cc"/> can take snapshots of the application data
+        volume. Application data and snapshots share the same base device; therefore, ensure that
+        snapshots do not fill up the base device storage. The snapshots are copy-on-write, tracking
+        changes to the file system over time. Therefore, space requirements expand incrementally as
+        application data changes. Snapshots should only serve as short-term save points. Take full
+        backups of data that you need to save long-term.</p><p><ph keyref="nm-cc"/> uses thin
+        provisioning, a virtualization method that allocates data blocks only when data is written
+        (copy-on-write). Thin provisioning enables snapshots, a time-efficient and space-efficient
+        method of copying data. </p><p><b>About restores</b></p><p>You can restore a backup to the
+        system on which it was taken or to an alternate system. Restoring to the same system reverts
+        the <ph keyref="nm-cc"/> resource host, its service configuration, and the application state
+        to the point in time when the backup was taken. The system on which you restore any backup
+        should mirror at least one device from the production system.</p><p>Frequently test
+        restoring from a backup to ensure that the backup restores successfully, and that the
+        restored system is an accurate representation of the state of the deployment when the backup
+        was performed. </p><!--CC-1531-->Because snapshots are loaded to disk, during a restore you
+      are not required to stop services while the file is loaded. Though the restore will not
+      complete successfully, the snapshot and images are available for you to manually rollback each
         application.<p><!-- CC-1474 --> If an outage occurs during a restore from a backup, you can
         resume the restore. <ph keyref="nm-cc"/> preserves complete data on your system. For
-        example, you ran a restore and two of the six backed up snapshots were restored before an
-        outage. Those two snapshots are saved on the system, and are not downloaded again from the
-        backup file when you resume the restore.</p><p><!--
- CC-282 -->If you manually deleted the
-        default pool, you cannot restore from a backup. The default pool is created on startup and
-        is required.</p></section>
+        example, if two of six backed up snapshots are restored before an outage, when you resume
+        the restore, those two snapshots are saved on the system, and are not downloaded
+        again.</p><p><!--
+ CC-282 -->If you manually deleted the default pool, you cannot restore
+        from a backup. The default pool is created on startup and is required.</p></section>
   </refbody>
 </reference>
