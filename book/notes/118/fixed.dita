@@ -39,6 +39,10 @@
             <entry>Message <codeph>"service associated with &lt;public endpoint name> is not
                 running"</codeph> is reported even though the endpoint is running.</entry>
           </row>
+          <row>
+            <entry>CC-2642</entry>
+            <entry>Administrators can now set environment variables in a service definition.</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
