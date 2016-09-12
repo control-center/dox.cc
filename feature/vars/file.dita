@@ -17,7 +17,6 @@
             Docker Hub credentials are stored in the file.</dd>
         </dlentry>
         
-        <!-- Make sure this is in the file before Hoth ships -->
         <dlentry id="TMPDIR">
           <dt><varname>TMPDIR</varname></dt>
           <dd><b>Default</b>: (the value of shell variable TMPDIR)</dd> 
@@ -169,7 +168,7 @@
         
         <dlentry id="SERVICED_UI_PORT">
           <dt><varname>SERVICED_UI_PORT</varname></dt>
-          <dd><b>Default</b>: <codeph>443</codeph></dd> 
+          <dd><b>Default</b>: <codeph>:443</codeph></dd> 
           <dd>The port on which the HTTP server listens for requests. The
             value may be expressed as follows:
             <ul>
@@ -227,15 +226,6 @@
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
             </ul>To disable support for a cipher, remove it from the list.</dd>
-        </dlentry>
-        
-        <!-- To be removed? -->
-        <dlentry id="SERVICED_VARPATH">
-          <dt><varname>SERVICED_VARPATH</varname></dt>
-          <dd><b>Default</b>: <filepath>/opt/serviced/var</filepath></dd> 
-          <dd>DEPRECATED. Use <varname>SERVICED_ISVCS_PATH</varname>,
-            <varname>SERVICED_VOLUMES_PATH</varname>, and 
-            <varname>SERVICED_BACKUPS_PATH</varname> instead.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_PATH">
@@ -376,7 +366,7 @@
         <dlentry id="SERVICED_LOGSTASH_ES">
           <dt><varname>SERVICED_LOGSTASH_ES</varname></dt>
           <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:9100</codeph></dd> 
-          <dd>The endpoint of the Elasticsearch service. On delegate 
+          <dd>The endpoint of the logstash Elasticsearch service. On delegate 
             hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP 
             address or hostname of the Elasticsearch host, which by default is the
             <cmdname>serviced</cmdname> master host.</dd>
