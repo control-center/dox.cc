@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Deploying multiple instances of an application</title>
+  <title>Deploying multiple instances of an
+    <?oxy_comment_start author="rpowell" timestamp="20160913T171223-0500" comment="Obsolete topic 9-13-16.Checked with Summer about whether this topic is valid for Hoth. She said it is not, therefore, removed from ditamap."?>application<?oxy_comment_end?></title>
   <taskbody>
     <context><ph keyref="nm-cc"/> cannot deploy more than one instance of an application that
       includes virtual host names unless the virtual host names are unique. Follow this procedure to

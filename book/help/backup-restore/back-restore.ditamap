@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Backing up and restoring applications</title>
-   <chapter href="backup-restore.dita">
+   <chapter href="../admin/backup-restore.dita">
       <topicref keyref="help-backup-restore-backup"/>
       <topicref keyref="help-backup-restore-restore"/>
       <topicref keyref="help-backup-restore-snapshot-rollback">
