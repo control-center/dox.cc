@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Backing up with the browser interface</title>
+  <title>Backing up</title>
   <shortdesc>Using the <ph keyref="nm-cc"/> browser interface, you can take a backup of an
     application that <ph keyref="nm-cc"/> manages.</shortdesc>
   <taskbody>
+    <context id="context_afg_qhz_gx">
+      <p>Review considerations and best practices before performing an application backup:<ul
+          id="ul_o3t_syz_gx">
+          <li>Perform regular backups of the production environment and potentially the system of
+            record from the initial deployment. Back up to nonactive resource targets such as a
+            separate DR system or test environment. Store backups on a machine other than the <ph
+              keyref="nm-cc"/> master. Copy or migrate backups to an off-system location for
+            safekeeping and to help regulate storage space usage on the master.</li>
+          <li><!-- CC-306 -->The backup process saves a snapshot of the current state of the system,
+            the state of all services, and data to a compressed archive file
+              (<filepath>.tgz</filepath>). When a backup is running, you can start and restart
+            services.</li>
+        </ul></p>
+    </context>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
@@ -15,12 +29,10 @@
           appears.</cmd>
       </step>
       <step>
-        <cmd>Click <uicontrol>Create Backup</uicontrol>. You will be asked to confirm your selection
-          by clicking <uicontrol>Create Backup</uicontrol> again.</cmd>
-      </step>
-      <step>
-        <cmd>When the backup is complete, you will see the path of the <filepath>.tgz</filepath>
-          file displayed.</cmd>
+        <cmd>Click <uicontrol>Create Backup</uicontrol>. You are asked to confirm your selection by
+          clicking <uicontrol>Create Backup</uicontrol> again.</cmd>
+        <stepresult>When the backup is complete, the path of the backup file is
+          displayed.</stepresult>
       </step>
     </steps>
   </taskbody>

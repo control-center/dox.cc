@@ -5,10 +5,35 @@
   <shortdesc>Using the <ph keyref="nm-cc"/> browser interface, you can restore an instance of an
     application that <ph keyref="nm-cc"/> manages.</shortdesc>
   <taskbody>
-    <context>You can restore from any backup <filepath>.tgz</filepath> file for that application.
-      You can also duplicate your instance on a similar cluster for testing or failover purposes by
-      restoring a backup <filepath>.tgz</filepath> file to a new similarly configured
-      cluster.</context>
+    <context>
+      <p>Review considerations and best practices before performing a restore from an application
+          backup:<ul id="ul_ew5_1zz_gx">
+          <li><!-- CC-282 -->If you manually deleted the default pool, you cannot restore from a
+            backup. The default pool is created on startup and is required.</li>
+          <li>Backups that were taken using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
+              keyref="nm-cc"/> 1.1.x or later versions.</li>
+          <li>You can restore from any backup <filepath>.tgz</filepath> file for that application.
+            You can also duplicate your instance on a similar cluster for testing or failover
+            purposes by restoring a backup <filepath>.tgz</filepath> file to a new similarly
+            configured cluster. </li>
+          <li>You can restore a backup to the system on which it was taken or to an alternate
+            system. Restoring to the same system reverts the <ph keyref="nm-cc"/> resource host, its
+            service configuration, and the application state to the point in time when the backup
+            was taken. The system on which you restore any backup should mirror at least one device
+            from the production system.</li>
+          <li>Frequently test restoring from a backup to ensure that the backup restores
+            successfully, and that the restored system is an accurate representation of the state of
+            the deployment when the backup was performed.</li>
+          <li><!--CC-1531-->Because snapshots are loaded to disk, during a restore you are not
+            required to stop services while the file is loaded. Though the restore will not complete
+            successfully, the snapshot and images are available for you to manually rollback each
+            application.</li>
+          <li><!-- CC-1474 --> If an outage occurs during a restore from a backup, you can resume
+            the restore. <ph keyref="nm-cc"/> preserves complete data on your system. For example,
+            if two of six backed up snapshots are restored before an outage, when you resume the
+            restore, those two snapshots are saved on the system, and are not downloaded again.</li>
+        </ul></p>
+    </context>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>

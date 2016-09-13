@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Rollback to a snapshot</title>
-  <shortdesc>Rollbacks can only be performed on the CLI. You can rollback your application to a
-    previous state that existed when you took a snapshot. </shortdesc>
+  <title>Rolling back to a snapshot</title>
+  <shortdesc>If changes to an application cause a failure or other degradation, you can roll back
+    the application and distributed file system to a previous state that existed when you took a
+    snapshot.   Before rolling back, you must stop services that are used in the snapshot image. The
+    following procedure includes this step.</shortdesc>
   <taskbody>
-    <prereq>Before rolling back, you must stop services that are used in the snapshot image. The
-      distributed file system is rolled back to the state that existed when the snapshot was
-      taken.</prereq>
-    <context>To rollback to a snapshot, you must know its <filepath>SNAPSHOTID</filepath>.</context>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> host as a user with <cmdname>sudo</cmdname> and
             <cmdname>docker</cmdname> privileges.</cmd>
       </step>
       <step>
-        <cmd>Find the <filepath>SNAPSHOTID</filepath> of the snapshot to which you want to
-          rollback.</cmd>
+        <cmd>To roll back to a snapshot, you must know the identifier of the snapshot. To find the
+          identifier, execute the following command:</cmd>
         <stepxmp>
           <codeblock>serviced snapshot list</codeblock>
         </stepxmp>
       </step>
       <step>
-        <cmd>Rollback to the snapshot. Using the <filepath>--force-restart</filepath> flag
-          automatically stops the affected services before rollback and starts them after
-          completion.</cmd>
+        <cmd>Roll back to the snapshot by executing the following command. Using the
+            <filepath>--force-restart</filepath> flag automatically stops the affected services
+          before rollback and starts them after completion.  Replace <varname>SNAPSHOTID</varname>
+          with the identifier of your snapshot.</cmd>
         <stepxmp>
           <codeblock>serviced snapshot rollback <varname>SNAPSHOTID</varname> --force-restart</codeblock>
         </stepxmp>
