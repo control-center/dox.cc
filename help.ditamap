@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1080.16.256</bookpartno>
+      <bookpartno>1080.16.257</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -54,7 +54,6 @@
     </booklists>
   </frontmatter>
     <chapter href="book/help/admin/admin.ditamap" format="ditamap"/>
-  <chapter href="book/help/backup-restore/back-restore.ditamap" format="ditamap"/>
     <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>
