@@ -4,8 +4,9 @@
   <title>Using the <ph keyref="nm-cc"/> command-line interface</title>
   <refbody>
     <section>
-      <p>The <ph keyref="nm-cc"/> command-line interface (CLI) and the <ph keyref="nm-cc"/> web interface both use the same application programming interface.
-        Any action performed in the CLI can be performed in the web interface.</p>
+      <p>The <ph keyref="nm-cc"/> command-line interface (CLI) and the <ph keyref="nm-cc"/> browser
+        interface both use the same application programming interface. Many actions performed in the
+        CLI can be performed in the browser interface.</p>
     </section>
   </refbody>
 </reference>
