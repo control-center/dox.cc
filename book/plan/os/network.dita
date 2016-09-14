@@ -16,12 +16,12 @@
         to Docker's <xref keyref="url-docker-net-config">advanced network configuration</xref>
         article.</p>
       
-      <p product="open rm">The default configurations of firewall utilities such as 
+      <p>The default configurations of firewall utilities such as 
         <xref keyref="url-firewalld">FirewallD</xref> include 
         rules that can conflict with Docker, and therefore, <ph keyref="nm-cc"/> and 
         <ph keyref="nm-platform"/>. The following interactions illustrate the conflicts:</p>
       
-      <p product="ucs">The <xref keyref="url-firewalld">FirewallD</xref> utility includes 
+      <p>The <xref keyref="url-firewalld">FirewallD</xref> utility includes 
         rules that can conflict with Docker, and therefore, <ph keyref="nm-cc"/> and 
         <ph keyref="nm-platform"/>. The following interactions illustrate the conflicts:</p>
       <ul>
@@ -32,9 +32,9 @@
           need to restart Docker.</li>
       </ul>
       
-      <p product="open rm">If you are using a firewall utlity, please ensure that it does not conflict with Docker.</p>
+      <p>If you are using a firewall utlity, please ensure that it does not conflict with Docker.</p>
       
-      <p product="ucs">By default, <cmdname>firewalld</cmdname> is disabled. If you wish to enable it,
+      <p>By default, <cmdname>firewalld</cmdname> is disabled. If you wish to enable it,
         please ensure that it does not conflict with Docker.</p>
       
       <p>If you are not using a firewall utlity, your firewall settings may still

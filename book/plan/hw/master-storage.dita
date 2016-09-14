@@ -11,8 +11,8 @@
         recommends them.</p> 
         
       <p>Storage-area network (SAN) systems are also supported. The overall response times and
-        configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/>, and
-        therefore, <ph keyref="nm-platform"/>. For example,  ZooKeeper (a key internal service of
+        configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/> and
+        the applications it manages. For example,  ZooKeeper (a key internal service of
           <ph keyref="nm-cc"/>) is sensitive to storage latency greater than 1000 milliseconds. <ph
           conkeyref="names/company"/> recommends using only high-performance SAN systems, and
         assigning separate logical unit numbers (LUNs) for each mounted path.</p>
@@ -55,20 +55,15 @@
         <dlentry>
           <dt>Application data</dt>
           <dd>Size: 300GB (minimum)</dd>
-          <dd>Type: Device mapper thin pool</dd>
+          <dd>Type: LVM thin pool</dd>
           <dd>Mount point: None</dd>
-          <dd>The storage area for <ph keyref="nm-cc"/> application data provides space for <ph
-              keyref="nm-platform"/> databases, and for snapshots of the data.</dd>
-          <dd><ph keyref="nm-platform"/> data storage requirements vary by collection rate. For
-            example, collecting 25,000 metrics per second can require 1.5TB of storage in 90 days.
-            <p>In addition, snapshots of the data are stored in this thin pool. 
+          <dd>The storage area for <ph keyref="nm-cc"/> application data provides space for databases and for snapshots of the data.</dd>
+          <dd>        <p>In addition, snapshots of the data are stored in this thin pool. 
               <ph conkeyref="names/company"/> recommends providing space for snapshots that is
             equal to the amount of space required for data storage.</p>
-            <p product="rm">For more
-              information about sizing this storage area, contact your <ph conkeyref="names/company"
-              /> respresentative.</p>
-          <p>To prepare for installation, simply create a primary partition. The thin
-            pool is created during the installation process. </p>
+            
+          <p>To prepare for installation, provide a separate block device or create a primary 
+            partition on an existing device. The thin pool is created during the installation process. </p>
           </dd>
         </dlentry>
         
@@ -80,7 +75,7 @@
           <dd>The storage area for <ph keyref="nm-cc"/> backups can be a local partition or a remote
             file server. The <ph keyref="nm-cc"/> browser interface stores backup files in this
             storage area. Backup files are very large (in the default configuration, it includes the
-            metrics database). <ph product="rm">For more information about sizing this location,
+            metrics database). <ph>For more information about sizing this location,
               contact your <ph conkeyref="names/company"/> respresentative.</ph>
           <p>This path does not require a 
             dedicated partition or logical volume, but <ph conkeyref="names/company"/>

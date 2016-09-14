@@ -13,11 +13,11 @@
         So, the default installation process requires internet access. However, all of the 
         repositories may be mirrored, so offline installations are supported as well.</p>
       
-      <note product="rm">To install <ph keyref="nm-platform"/>, you need a login account for
+      <note>To install <ph keyref="nm-platform"/>, you need a login account for
         the Docker Hub repository, and permission to pull <ph conkeyref="names/company"/> images
-        from it. For more information, see <xref keyref="docker-hub"/>.</note>
+        from it. For more information, see <xref keyref="plan-misc-docker-hub"/>.</note>
       
-      <note product="open">The Docker images for <ph keyref="nm-platform"/> are available in a
+      <note>The Docker images for <ph keyref="nm-platform"/> are available in a
         public <ph conkeyref="names/company"/> repository at Docker Hub. No special permissions are
         required to pull the images.</note>
       

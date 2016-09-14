@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Creating primary partitions</title>
   <taskbody>
-    <prereq  product="open rm">To perform this procedure, you need:
+    <prereq>To perform this procedure, you need:
       <ul>
         <li>The password of the <codeph>root</codeph> user account on a Linux host, or of a user
           account that belongs to the <codeph>wheel</codeph> group.</li>
@@ -12,12 +12,12 @@
     </prereq>
     
     <context>
-      <p product="open rm">This procedure demonstrates how to create primary partitions on a disk. Each primary
+      <p>This procedure demonstrates how to create primary partitions on a disk. Each primary
         partition may be formatted as a file system or swap space, used in a device mapper thin
         pool, or reserved for future use. Each disk must have one primary partition, and may have
         four. If you are uncertain whether a disk is partitioned, see the preceding topic.</p>
       
-      <p product="ucs">This procedure demonstrates how to create primary partitions on a disk. Each primary
+      <p>This procedure demonstrates how to create primary partitions on a disk. Each primary
         partition may be formatted as a file system or swap space, used in a device mapper thin
         pool, or reserved for future use. Each disk must have one primary partition, and may have
         four.</p>
@@ -29,8 +29,8 @@
     
     <steps>
       
-      <step product="open rm">
-        <cmd>Log in to the target host <ph conkeyref="login-as/root"/>.</cmd>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>

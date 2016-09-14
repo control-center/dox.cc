@@ -9,14 +9,14 @@
         host that implements the 64-bit version of the x86 instruction set,  
         and supports RHEL/CentOS 7.1 or 7.2.</p>
       
-      <p product="rm"><ph conkeyref="names/company"/> recommends that all production deployments
+      <p><ph conkeyref="names/company"/> recommends that all production deployments
         include a minimum of three hosts: One master host and two resource pool hosts.
         In this case, the master host is in its own, separate resource pool, 
         and runs only <ph keyref="nm-cc"/> internal services. For multi-host configurations
         in which the master host is in its own resource pool, the master host requires 
         the following resources:</p>
       
-      <ul product="rm">
+      <ul>
         <li>4 CPU cores (64-bit only; real or virtual) </li>
         <li>16GB Random-access memory (RAM)</li>
         <li>1 network interface controller (must support TCP/IP and IPv4)</li>
@@ -27,21 +27,21 @@
         runs all  <ph keyref="nm-cc"/> internal services and all <ph keyref="nm-platform"/>
         application services, and requires the following resources:</p>
       <ul>
-        <li product="rm">8 CPU cores (64-bit only; real or virtual)
+        <li>8 CPU cores (64-bit only; real or virtual)
           <ul>
             <li>8 (minimum)</li>
             <li>16+ (recommended)</li>
           </ul>
         </li>
-        <li product="open">4 CPU cores (64-bit only; real or virtual)</li>
+        <li>4 CPU cores (64-bit only; real or virtual)</li>
         
-        <li product="rm">Random-access memory (RAM)
+        <li>Random-access memory (RAM)
           <ul>
             <li>32GB (minimum)</li>
             <li>48GB+ (recommended)</li>
           </ul>
         </li>
-        <li product="open">20GB RAM </li>
+        <li>20GB RAM </li>
         <li>1 network interface controller (must support TCP/IP and IPv4)</li>
         <li>Local or remote high-performance storage (detailed separately)</li>
       </ul>

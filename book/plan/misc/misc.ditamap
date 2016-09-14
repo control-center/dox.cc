@@ -4,9 +4,9 @@
 <title>Misc</title>
   <chapter href="misc.dita">
     <topicref href="package.dita">
-      <topicref product="rm" href="docker-hub.dita"/>
+      <topicref href="docker-hub.dita"/>
     </topicref>
     <topicref href="appliances.dita"/>
-    <topicref keyref="browsers-500"/>
+    <topicref keyref="browsers-120"/>
   </chapter>
 </bookmap>

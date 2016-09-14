@@ -4,12 +4,12 @@
   <title>Security considerations</title>
   <refbody>
     <section>  
-      <p product="open rm">During installation, <ph keyref="nm-cc"/> has no knowledge of the port requirements
+      <p>During installation, <ph keyref="nm-cc"/> has no knowledge of the port requirements
         of the applications it is to manage, so the installation procedure includes disabling the
         firewall. After both <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> are
         installed, you may close unused ports.</p>
       
-      <p product="ucs">In <ph keyref="nm-platform"/> appliances, the <cmdname>firewalld</cmdname>
+      <p>In <ph keyref="nm-platform"/> appliances, the <cmdname>firewalld</cmdname>
         service is disabled. If desired, you may enable it, and then close unused ports.</p>
       
       <p><ph keyref="nm-cc"/> includes a virtual multiplexer (mux), to aggregate 
@@ -37,11 +37,11 @@
     <section>
       <title>Additional considerations</title>
       <ul>
-        <li product="open rm">To gain access to the <ph keyref="nm-cc"/> browser interface, users
+        <li>To gain access to the <ph keyref="nm-cc"/> browser interface, users
           must have login accounts on the <ph keyref="nm-cc"/> master host. (Pluggable
           Authentication Modules (PAM) is supported.) By default, the users must be members of the
             <codeph>wheel</codeph> group. </li>
-        <li product="ucs">To gain access to the <ph keyref="nm-cc"/> browser interface, users must have login
+        <li>To gain access to the <ph keyref="nm-cc"/> browser interface, users must have login
           accounts on the <ph keyref="nm-cc"/> master host. (Pluggable Authentication Modules
           (PAM) is supported.) By default, the users must be members of the <codeph>wheel</codeph> group.</li>
         
@@ -49,16 +49,16 @@
           the hard and soft open files limit to 1048576,
           but does not modify the <filepath>/etc/sysconfig/limits.conf</filepath> file.</li>
         
-        <li product="open rm"><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
+        <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
           Enhanced Linux</xref> in enforcing mode. The installation procedures include steps to
           set the mode to disabled.</li>
-        <li product="ucs"><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
+        <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
             Enhanced Linux</xref> in enforcing mode, so it is disabled in 
           <ph keyref="nm-platform"/> appliances.</li>
         
-        <li product="open rm">The <cmdname>firewalld</cmdname> service can conflict with Docker, and
+        <li>The <cmdname>firewalld</cmdname> service can conflict with Docker, and
           therefore, <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/>. For more information, see
-            <xref keyref="os-network"/>.</li>
+            <xref keyref="plan-os-network"/>.</li>
       </ul>
     </section>
   </refbody>

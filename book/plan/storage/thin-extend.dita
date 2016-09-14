@@ -6,18 +6,8 @@
     <prereq>To perform this procedure, you need at least one unused primary partition on the target host.</prereq>
     <context>Perform this procedure to add unused space to an existing device mapper thin pool.</context>
     <steps>
-      <step product="zenoss">
-        <cmd>Log in to the target host <ph conkeyref="login-as/root"/>.</cmd>
-      </step>
-      
-      <step product="ucs" conkeyref="tasks-ucs/console-hypervisor">
-        <cmd/>
-      </step>
-      <step product="ucs" conkeyref="tasks-ucs/log-in">
-        <cmd/>
-      </step>
-      <step product="ucs" conkeyref="tasks-ucs/root-shell">
-        <cmd/>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -29,7 +19,7 @@
             <stepxmp>
               <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
               <p>For more information about the output of the <cmdname>lsblk</cmdname> command,
-                see <xref keyref="storage-discover"/>.</p>
+                see <xref keyref="plan-storage-discover"/>.</p>
             </stepxmp>
           </substep>
           <substep>
@@ -47,13 +37,13 @@
           
           <substep>
             <cmd>Determine whether a physical volume is present.</cmd>
-            <stepxmp product="zenoss">Replace <varname>Device</varname> with the path of a primary partition:
+            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
               <sl>
                 <sli>Ubuntu hosts: <userinput>sudo pvs <varname>Device</varname></userinput></sli>
                 <sli>RHEL/CentOS hosts: <userinput>pvs <varname>Device</varname></userinput></sli>
               </sl>
             </stepxmp>
-            <stepxmp product="ucs">Replace <varname>Device</varname> with the path of a primary partition:
+            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
               <codeblock><userinput>pvs <varname>Device</varname></userinput></codeblock>
             </stepxmp>
             <stepresult>If the result includes <systemoutput>Failed to find physical
@@ -62,14 +52,14 @@
           
           <substep>
             <cmd>Create a physical volume.</cmd>
-            <stepxmp product="zenoss">Replace <varname>Device</varname> with the path of a primary partition:
+            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
               <sl>
                 <sli>Ubuntu hosts: <userinput>sudo pvcreate <varname>Device</varname></userinput></sli>
                 <sli>RHEL/CentOS hosts: <userinput>pvcreate <varname>Device</varname></userinput></sli>
               </sl>
               <codeblock>pvcreate <varname>Device</varname></codeblock>
             </stepxmp>
-            <stepxmp product="ucs">Replace <varname>Device</varname> with the path of a primary partition:
+            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
               <codeblock><userinput>pvcreate <varname>Device</varname></userinput></codeblock>
             </stepxmp>
             
@@ -79,7 +69,7 @@
       
       <step>
         <cmd>Extend the volume group of the target thin pool.</cmd>
-        <stepxmp product="zenoss">To extend the volume group of the Docker thin pool, 
+        <stepxmp>To extend the volume group of the Docker thin pool, 
           enter one of the following commands. Replace <varname>PhysicalVolumes</varname> 
           with the names of one or more physical volumes:
           <sl>
@@ -87,7 +77,7 @@
             <sli>RHEL/CentOS hosts: <userinput>vgextend docker <varname>PhysicalVolumes</varname></userinput></sli>
           </sl>
         </stepxmp>
-        <stepxmp product="zenoss">To extend the volume group of the <ph keyref="nm-platform"/> thin pool, 
+        <stepxmp>To extend the volume group of the <ph keyref="nm-platform"/> thin pool, 
           enter one of the following commands. Replace <varname>PhysicalVolumes</varname> 
           with the names of one or more physical volumes:
           <sl>
@@ -96,12 +86,12 @@
           </sl>
         </stepxmp>
         
-        <stepxmp product="ucs">To extend the volume group of the Docker thin pool, 
+        <stepxmp>To extend the volume group of the Docker thin pool, 
           enter the following command. Replace <varname>PhysicalVolumes</varname> 
           with the names of one or more physical volumes:
           <codeblock>vgextend docker <varname>PhysicalVolumes</varname></codeblock>
         </stepxmp>
-        <stepxmp product="ucs">To extend the volume group of the <ph keyref="nm-platform"/> thin pool, 
+        <stepxmp>To extend the volume group of the <ph keyref="nm-platform"/> thin pool, 
           enter the following command. Replace <varname>PhysicalVolumes</varname> 
           with the names of one or more physical volumes:
           <codeblock>vgextend serviced <varname>PhysicalVolumes</varname></codeblock>
@@ -110,7 +100,7 @@
       
       <step>
         <cmd>Extend the target thin pool with the updated volume group.</cmd>
-        <stepxmp product="zenoss">To extend the Docker thin pool, 
+        <stepxmp>To extend the Docker thin pool, 
           enter one of the following commands. Replace <varname>SIZE</varname> 
           with the total size (including the units) of the physical volumes that
           you added to the <codeph>docker</codeph> volume group:
@@ -119,7 +109,7 @@
             <sli>RHEL/CentOS hosts: <userinput>lvextend -L+<varname>SIZE</varname> docker/dockerpool</userinput></sli>
           </sl>
         </stepxmp>
-        <stepxmp product="zenoss">To extend the <ph keyref="nm-platform"/> thin pool, 
+        <stepxmp>To extend the <ph keyref="nm-platform"/> thin pool, 
           enter one of the following commands. Replace <varname>SIZE</varname> 
           with the total size (including the units) of the physical volumes that
           you added to the <codeph>serviced</codeph> volume group:
@@ -129,13 +119,13 @@
           </sl>
         </stepxmp>
         
-        <stepxmp product="ucs">To extend the Docker thin pool, 
+        <stepxmp>To extend the Docker thin pool, 
           enter the following command. Replace <varname>SIZE</varname> 
           with the total size (including the units) of the physical volumes that
           you added to the <codeph>docker</codeph> volume group:
           <codeblock>lvextend -L+<varname>SIZE</varname> docker/docker-pool</codeblock>
         </stepxmp>
-        <stepxmp product="ucs">To extend the <ph keyref="nm-platform"/> thin pool, 
+        <stepxmp>To extend the <ph keyref="nm-platform"/> thin pool, 
           enter the following command. Replace <varname>SIZE</varname> 
           with the total size (including the units) of the physical volumes that
           you added to the <codeph>serviced</codeph> volume group:

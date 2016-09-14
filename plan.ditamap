@@ -42,7 +42,12 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <!-- <mapref href="book/plan/XXX-keys.ditamap" format="ditamap"/> -->
+      <mapref href="book/plan/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/hw-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/misc-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/os-keys.ditamap" format="ditamap"/>
+	  <mapref href="book/plan/storage-keys.ditamap" format="ditamap"/>
+	  <mapref href="book/plan/sw-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <!-- <mapref href="feature/zk-keys.ditamap" format="ditamap"/> -->
@@ -52,5 +57,12 @@
     </booklists>
       <topicref href="book/plan/front/about.dita"/>
   </frontmatter>
+  
+  <chapter href="book/plan/sw/sw.ditamap" format="ditamap"/>
+  <chapter href="book/plan/hw/hw.ditamap" format="ditamap"/>
+  <chapter href="book/plan/os/os.ditamap" format="ditamap"/>
+  <chapter href="book/plan/misc/misc.ditamap" format="ditamap"/>
+ 
+  <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
   
 </bookmap>

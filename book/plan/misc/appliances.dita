@@ -14,21 +14,21 @@
         setup process configures an appliance's role in a <ph keyref="nm-cc"/> cluster, and a
         curses-based administration menu simplifies common maintenance procedures.</p>
       
-      <note product="rm">To install the <ph keyref="nm-platform"/> appliance, you need permission to
+      <note>To install the <ph keyref="nm-platform"/> appliance, you need permission to
         download files from <ph conkeyref="names/support-site"/>. For more information, contact <ph
           conkeyref="names/support"/>.</note>
       
-      <note product="open">The <ph keyref="nm-platform"/> is available for download by all; no
+      <note>The <ph keyref="nm-platform"/> is available for download by all; no
         special permissions are required. For more information, refer to the <cite
           conkeyref="pubs/cite-install"/>.</note>
       
-      <p product="rm">The appliance file is about 2.5GB in size, and expands to about 5GB when
+      <p>The appliance file is about 2.5GB in size, and expands to about 5GB when
         installed. The
         appliance specifies one 334GB disk with several LVM volumes. The volumes may be expanded,
         but never shrunk. The hypervisor storage for the appliance may be a thin-provisioned
         volume.</p>
       
-      <p product="open">The appliance file is about 2GB in size, and expands to about 4GB when
+      <p>The appliance file is about 2GB in size, and expands to about 4GB when
         installed. The
         appliance specifies one 334GB disk with several LVM volumes. The volumes may be expanded,
         but never shrunk. The hypervisor storage for the appliance may be a thin-provisioned

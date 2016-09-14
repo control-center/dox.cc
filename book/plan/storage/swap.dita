@@ -17,7 +17,7 @@
         documentation.</note></context>
     <steps>
       <step>
-        <cmd>Log in to the target host <ph conkeyref="login-as/root"/>.</cmd>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
