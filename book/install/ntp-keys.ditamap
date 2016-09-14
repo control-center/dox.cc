@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/install/ntp (2016-09-13 17:38:28)</title>
+ <title>Keys in install/ntp (2016-09-09 09:05:31)</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-install-ntp-delegate"
+    <keydef keys="install-ntp-delegate"
             href="ntp/delegate.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-install-ntp-master"
+    <keydef keys="install-ntp-master"
             href="ntp/master.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-install-ntp-ntp"
+    <keydef keys="install-ntp-ntp"
             href="ntp/ntp.dita"
             format="dita"
     />

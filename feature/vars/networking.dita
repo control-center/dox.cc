@@ -5,7 +5,7 @@
   <refbody>
     <table>
       <tgroup cols="2">
-        <colspec colname="c1" colwidth="2*"/>
+        <colspec colname="c1" colwidth="2.3*"/>
         <colspec colname="c2" colwidth="3*"/>
         <thead>
           <row>
@@ -20,14 +20,17 @@
           </row>
           <row>
             <entry><varname>SERVICED_OUTBOUND_IP</varname></entry>
-            <entry>The IP address of a network interface other than the
-              default. Also used to prevent <cmdname>serviced</cmdname>
-              from assuming it has internet access.</entry>
+            <entry>The IP address of the network interface for <cmdname>serviced</cmdname> to use.
+              When this variable is not set, <cmdname>serviced</cmdname> uses the IP address of the
+              default network interface and assumes it has internet access. To prevent
+                <cmdname>serviced</cmdname> from assuming it has internet access, set this
+              variable.</entry>
           </row>
           <row>
             <entry><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></entry>
-            <entry>The private subnet for containers that use virtual IP addresses. 
-              May be unique on each host. A <codeph>/29</codeph> network is sufficient.</entry>
+            <entry>The private network for containers that use virtual IP addresses. The default is
+                <codeph>10.3.0.0/16</codeph>, and the network can be unique on each host. A
+                <codeph>/29</codeph> network is sufficient.</entry>
           </row>
         </tbody>
       </tgroup>

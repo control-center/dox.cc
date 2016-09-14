@@ -3,11 +3,20 @@
 <task id="taskid">
   <title>Configuring application data storage</title>
   <taskbody>
-    <context>Use this procedure to create and configure the thin pool for application data storage.
-        <note>This procedure does not include specific values for the size of the thin pool. For
+    <context>Use this procedure to create a thin pool for application data storage,
+      and to configure the master host to use it. The following <ph keyref="nm-cc"/>
+      configuration variables are used to specify application data thin pools:
+      <dl>
+        <dlentry conkeyref="feature-vars-file/SERVICED_FS_TYPE"><dt/><dd/></dlentry>
+        <dlentry conkeyref="feature-vars-file/SERVICED_DM_THINPOOLDEV"><dt/><dd/></dlentry>
+        <dlentry conkeyref="feature-vars-file/SERVICED_DM_BASESIZE"><dt/><dd/></dlentry>
+      </dl>
+      <note>This procedure does not include a specific value for the size of the thin pool. For
         more information about sizing this resource, refer to the documentation for your
         application. Or, use the suggested minimum value, 200GB. You can add storage to an LVM thin
-        pool at any time.</note></context>
+        pool at any time.</note>
+      <p>Perform these steps:</p>
+    </context>
     <steps>
       <step>
         <cmd>Log in to the master host 
@@ -41,40 +50,21 @@
       <step>
         <cmd>Edit and add storage variables in the <ph keyref="nm-cc"/> configuration file,
             <filepath>/etc/default/serviced</filepath>.</cmd>
-        <info>The following variables are used to configure application data thin pools: <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_FS_TYPE">
-              <dt/>
-              <dd/>
-            </dlentry>
-            <dlentry conkeyref="feature-vars-file/SERVICED_DM_THINPOOLDEV">
-              <dt/>
-              <dd/>
-            </dlentry>
-            <dlentry conkeyref="feature-vars-file/SERVICED_DM_BASESIZE">
-              <dt/>
-              <dd/>
-            </dlentry>
-          </dl>
-        </info>
         <substeps>
           <substep>
             <cmd>Make a backup copy of the configuration file, and then change the backup file to
               read-only.</cmd>
             <stepxmp>
-              <codeblock>cp /etc/default/serviced /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig
-chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig
+chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
             </stepxmp>
           </substep>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Locate the line for the <varname>SERVICED_FS_TYPE</varname> variable, and 
               then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
                 <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
@@ -95,14 +85,10 @@ chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
               <codeblock>SERVICED_DM_BASESIZE=<varname>50-Percent</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
-      
-      
     </steps>
-    <postreq>Proceed to the next chapter and configure the master host.</postreq>
+    <postreq>Proceed to the next chapter and configure the host.</postreq>
   </taskbody>
 </task>

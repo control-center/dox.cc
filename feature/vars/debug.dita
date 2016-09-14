@@ -5,7 +5,7 @@
   <refbody>
     <table>
       <tgroup cols="2">
-        <colspec colname="c1" colwidth="2*"/>
+        <colspec colname="c1" colwidth="2.3*"/>
         <colspec colname="c2" colwidth="3*"/>
         <thead>
           <row>
@@ -20,8 +20,8 @@
           </row>
           <row>
             <entry><varname>SERVICED_DEBUG_PORT</varname></entry>
-            <entry>The port on which <cmdname>serviced</cmdname> listens for HTTP requests 
-              for the <xref keyref="url-go-profiler">Go profiler</xref></entry>
+            <entry>The port on which <cmdname>serviced</cmdname> listens for HTTP requests for the
+                <xref keyref="url-go-profiler">Go profiler</xref>.</entry>
           </row>
           <row>
             <entry><varname>SERVICED_DOCKER_LOG_DRIVER</varname></entry>

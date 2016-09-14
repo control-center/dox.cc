@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/install/vars (2016-09-13 17:38:28)</title>
+ <title>Keys in install/vars (2016-09-09 09:05:31)</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-install-vars-all"
+    <keydef keys="install-vars-all"
             href="vars/all.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-install-vars-delegate"
+    <keydef keys="install-vars-delegate"
             href="vars/delegate.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-install-vars-master"
+    <keydef keys="install-vars-master"
             href="vars/master.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-install-vars-vars"
+    <keydef keys="install-vars-vars"
             href="vars/vars.dita"
             format="dita"
     />

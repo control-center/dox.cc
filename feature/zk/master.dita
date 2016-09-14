@@ -47,22 +47,14 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
       <step>
         <cmd>Clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Navigate to the end of the file, and cut the line that contains the
               <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
-            <info>The value of this declaration specifies three endpoints.</info>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ZK</varname> variable
-            near the beginning of the file, and then delete the line it is on.</cmd>
-            <info>The default value is just the master host endpoint.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ZK</varname> variable declaration,  
+              and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -71,13 +63,8 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable 
+              declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -86,13 +73,8 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -101,17 +83,10 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
+            <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
       

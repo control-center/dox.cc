@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating primary partitions</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>The password of the <codeph>root</codeph> user account on a Linux host, or of a user
+          account that belongs to the <codeph>wheel</codeph> group.</li>
+        <li>A Linux host with at least one local or remote disk.</li>
+      </ul>
+    </prereq>
+    
+    <context>
+      <p>This procedure demonstrates how to create primary partitions on a disk. Each primary
+        partition may be formatted as a file system or swap space, used in a device mapper thin
+        pool, or reserved for future use. Each disk must have one primary partition, and may have
+        four. If you are uncertain whether a disk is partitioned, see the preceding topic.</p>
+      
+      <p>This procedure demonstrates how to create primary partitions on a disk. Each primary
+        partition may be formatted as a file system or swap space, used in a device mapper thin
+        pool, or reserved for future use. Each disk must have one primary partition, and may have
+        four.</p>
+      
+      <note>Data present on the disk you select is destroyed by this procedure.
+        Please ensure that data present on the disk is backed up 
+        elsewhere, or no longer needed, before proceeding.</note>
+    </context>
+    
+    <steps>
+      
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Start the partition table editor for the target disk.</cmd>
+        <stepxmp>In this example, the taget disk is <filepath>/dev/sdb</filepath>,
+          and it has no entries in its partition table.
+          <codeblock>cfdisk /dev/sdb</codeblock>
+        </stepxmp>
+        <stepresult>
+          <fig>
+            <title>Initial screen</title>
+            <image keyref="png-cfdisk1" scale="40"/>
+          </fig>
+          <p>The <cmdname>cfdisk</cmdname> command provides a text user interface (TUI) for editing
+            the partition table. The following list describes how to navigate through the
+            interface:</p>
+            <ul>
+              <li>To select an entry in the table, use the up and down arrow keys. The current entry
+              is highlighted.</li>
+              <li>To select a command from the menu at the bottom of the interface, use the 
+                left and right arrow keys, or <b>Tab</b> and <b>Shift-Tab</b>. 
+                The current command is highlighted.</li>
+              <li>To choose a command, press the <b>Enter</b> key.</li>
+              <li>To return to the previous level of the menu, press the <b>Esc</b> key.</li>
+              <li>To exit the interface, select <uicontrol>Quit</uicontrol> from the menu, 
+                and then press the <b>Enter</b> key.</li>
+            </ul>
+          <p>For more information about <cmdname>cfdisk</cmdname>, enter <userinput>man cfdisk</userinput>.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Create a new partition.</cmd>
+        <info>Repeat the following substeps for each primary partition to create. You may create
+          four primary partitions on a disk. </info>
+        <substeps>
+          <substep>
+            <cmd>Select the table entry with the value <uicontrol>Free Space</uicontrol> in the
+                <uicontrol>FS Type</uicontrol> column.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select <uicontrol>[New]</uicontrol>, and then press the <b>Enter</b> key.</cmd>
+          </substep>
+          <substep>
+            <cmd>Select <uicontrol>[Primary]</uicontrol>, and then press the <b>Enter</b> key.</cmd>
+          </substep>
+          <substep>
+            <cmd>At the <uicontrol>Size (in MB)</uicontrol> prompt, enter the size of the partition
+              to create in megabytes, and then press the <b>Enter</b> key.</cmd>
+            <info>To accept the default value, which is all of the free space on the disk, just
+              press the <b>Enter</b> key.</info>
+          </substep>
+          <substep importance="optional">
+            <note>If you created a single partition that uses all of the available disk space,
+            skip this substep.</note>
+            <cmd>Select <uicontrol>[Beginning]</uicontrol>, and then press the <b>Enter</b>
+              key.</cmd>
+            <stepresult>
+              <fig>
+                <title>One primary partition</title>
+                <image keyref="png-cfdisk2" scale="40"/>
+              </fig>
+            </stepresult>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Write the partition table to disk, and then exit the partition table editor.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Select <uicontrol>[Write]</uicontrol>, and then press the <b>Enter</b> key.</cmd>
+          </substep>
+          <substep>
+            <cmd>At the <uicontrol>Are you sure...</uicontrol> prompt, 
+              enter <userinput>yes</userinput>,
+              and then press the <b>Enter</b> key.</cmd>
+            <info>You can ignore the warning about a bootable partition.</info>
+          </substep>
+          <substep>
+            <cmd>Select <uicontrol>[Quit]</uicontrol>, and then press the <b>Enter</b> key.</cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Hardware requirements</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> requires real or virtual
+        hosts that implement the 64-bit version of the x86 instruction set, and 
+        support Red Hat Enterprise Linux (RHEL) 7.1 or 7.2, or CentOS 7.1 or 7.2.
+        Hardware resource requirements vary by role (master or resource pool
+        host) and by the services assigned to the resource pool to which a host
+        belongs.</p>
+    </section>
+  </refbody>
+</reference>

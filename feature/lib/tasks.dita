@@ -390,11 +390,11 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the operating system and then restart the host.</cmd>
+            <cmd>Upgrade the operating system and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum upgrade -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -442,6 +442,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <stepxmp>
           <codeblock>systemctl enable dnsmasq &#38;&#38; systemctl start dnsmasq</codeblock>
         </stepxmp>
+        <!-- One more edit needed; waiting on ZEN-18437  
         <info>If name resolution in your environment relies solely on entries 
           in <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> 
           to enable containers to use the file:</info>
@@ -465,7 +466,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               from the beginning of the line.</cmd>
           </substep>
           <substep>
-            <cmd>TBD<!-- One more edit needed; waiting on ZEN-18437.  --></cmd>
+            <cmd>TBD</cmd>
           </substep>
           <substep>
             <cmd>Save the file, and then close the text editor.</cmd>
@@ -477,8 +478,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-        <stepresult></stepresult>
-        
+        -->
       </step>
       
       <step id="ntp">
@@ -538,7 +538,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
       </step>
       
       <step id="docker-install">
-        <cmd>Install Docker <ph keyref="lo-version-docker"/>, and then disable accidental upgrades.</cmd>
+        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>, and then disable accidental upgrades.</cmd>
         <substeps>
           <substep>
             <cmd>Add the Docker repository to the host's repository list.</cmd>
@@ -554,10 +554,15 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install Docker <ph keyref="lo-version-docker"/>.</cmd>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
             <stepxmp>
-              <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install Docker Engine from the remote repository.</cmd>
+            <stepxmp>
+              <codeblock>yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -569,17 +574,32 @@ yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
               from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
           </substep>
           <substep>
-            <cmd>Save the file and close the text editor.</cmd>
+            <cmd>Save the file, and then close the text editor.</cmd>
           </substep>
         </substeps>
       </step>
       
-      <step id="docker-install-offline">
-        <cmd>Install Docker <ph keyref="lo-version-docker"/>.</cmd>
-        <stepxmp>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install --enablerepo=zenoss-mirror -y docker-engine</codeblock>
-        </stepxmp>
+      <step importance="optional" id="docker-install-offline">
+        <cmd><b><ph conkeyref="names/company"/> customers</b>: Install Docker 
+          <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
+        <info>
+          <note>If you are not a <ph conkeyref="names/company"/> customer
+          who is creating a deployment without internet access, skip this step.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install Docker Engine from the local repository mirror.</cmd>
+            <stepxmp>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step id="docker-tmp">
@@ -624,7 +644,7 @@ yum install --enablerepo=zenoss-mirror -y docker-engine</codeblock>
 TimeoutSec=300
 EnvironmentFile=-/etc/sysconfig/docker
 ExecStart=
-ExecStart=/usr/bin/docker \$OPTIONS daemon -H fd:// 
+ExecStart=/usr/bin/docker daemon \$OPTIONS -H fd:// 
 TasksMax=infinity
 EOF</codeblock>
             </stepxmp>
@@ -664,7 +684,8 @@ EOF</codeblock>
             <stepxmp>
               <p>Replace <varname>Thin-Pool-Device</varname> with the name of the thin pool device
                 created in the previous step:</p>
-              <codeblock>myDriver="-s devicemapper"
+              <codeblock>myDriver="--storage-driver devicemapper"
+myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
 myReg="--insecure-registry=$myIP:5000"</codeblock>
@@ -673,7 +694,7 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
           <substep>
             <cmd>Add the arguments to the Docker configuration file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myDriver $myFix $myFlag $myReg'"' \
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myFlag $myReg'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>
@@ -715,8 +736,9 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
                 virtual bridge:</p>
               <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/24</codeblock>
             </stepxmp>
-            <info>For example, if the bridge subnet is 
-              172.17.0.1, the flags to add are <codeph>--dns=172.17.0.1 --bip=172.17.0.1/24</codeph>.</info>
+            <info>For example, if the bridge subnet is 172.17.0.1, add the following flags:
+              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/24</codeblock>
+            </info>
             <info>
               <note>Leave a blank space after the end of the thin pool device name,
               and make sure the double quote character (<codeph>&#34;</codeph>)
@@ -751,54 +773,47 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
         </substeps>
       </step>
       
-      
-      <step id="fix-nfs">
-        <cmd>Configure and restart the NFS server.</cmd>
-        <info>This step corrects <xref keyref="url-rpcbin-bug">an unresolved issue</xref> 
-          in NFS, which is a <ph keyref="nm-cc"/> dependency. The following commands provide
-          a workaround to ensure that the NFS server starts correctly. </info>
+      <step id="install-serviced">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/>.</cmd>
         <substeps>
           <substep>
-            <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
-              with a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Change <cmdname>rpcbind.target</cmdname> to <cmdname>rpcbind.service</cmdname> on
-              the following line:</cmd>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
             <stepxmp>
-              <codeblock>Requires= network.target proc-fs-nfsd.mount rpcbind.target</codeblock>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <cmd>Install <ph keyref="nm-cc"/> from the remote repository.</cmd>
             <stepxmp>
-              <codeblock>systemctl daemon-reload</codeblock>
+              <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step importance="optional" id="install-serviced-offline">
+        <cmd><b><ph conkeyref="names/company"/> customers</b>: 
+          Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local mirror.</cmd>
+        <info>
+          <note>If you are not a <ph conkeyref="names/company"/> customer
+            who is creating a deployment without internet access, skip this step.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install <ph keyref="nm-cc"/> from the local repository mirror.</cmd>
+            <stepxmp>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced</codeblock>
             </stepxmp>
           </substep>
         </substeps>
       </step>
       
-      <step id="install-serviced">
-        <cmd>Install <ph keyref="nm-cc"/>.</cmd>
-        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating
-          LVM thin pools.</info>
-        <stepxmp>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
-        </stepxmp>
-      </step>
-
-      
-      <step id="install-serviced-offline">
-        <cmd>Install <ph keyref="nm-cc"/>.</cmd>
-        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating
-          LVM thin pools.</info>
-        <stepxmp>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum --enablerepo=zenoss-mirror install -y serviced</codeblock>
-        </stepxmp>
-      </step>
-
       <step id="zk-define-ips">
         <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
         <stepxmp>Replace <varname>Master</varname> with the IP address or hostname
@@ -842,6 +857,30 @@ node3=<varname>Delegate-B</varname></codeblock>
               <p>Replace <varname>Isvcs-ZK-Image</varname> with the name and version
                 number of the ZooKeeper image from the previous substep:</p>
               <codeblock>docker pull <varname>Isvcs-ZK-Image</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="nfs-workaround">
+        <cmd>Edit the NFS service configuration file.</cmd>
+        <info>This step is a workaround for an <xref keyref="url-rpcbin-bug">an unresolved issue</xref>.</info>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
+              with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>On the following line, change <cmdname>rpcbind.target</cmdname> 
+              to <cmdname>rpcbind.service</cmdname>:</cmd>
+            <stepxmp>
+              <codeblock>Requires= network.target proc-fs-nfsd.mount rpcbind.target</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <stepxmp>
+              <codeblock>systemctl daemon-reload</codeblock>
             </stepxmp>
           </substep>
         </substeps>

@@ -32,7 +32,7 @@
             </row>
             <row>
               <entry><varname>SERVICED_ZK</varname></entry>
-              <entry>Master, delegates</entry>
+              <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
             </row>
             <row>
               <entry><varname>SERVICED_ZK_SESSION_TIMEOUT</varname></entry>

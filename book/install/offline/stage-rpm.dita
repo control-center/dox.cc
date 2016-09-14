@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing the repository mirror</title>
+  <taskbody>
+    <context>Use this procedure to install a local RHEL/CentOS repository mirror 
+      on a <ph keyref="nm-cc"/> host. The mirror contains packages that are required 
+      on all <ph keyref="nm-cc"/> cluster hosts, and its size is approximately 55MB.</context>
+
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Copy or move the RPM file to <filepath>/tmp</filepath>.</cmd>
+      </step>
+            
+      <step>
+        <cmd>Install the RHEL/CentOS repository mirror.</cmd>
+        <stepxmp>
+          <codeblock>yum install -y /tmp/yum-mirror-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Delete the RPM file, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm /tmp/yum-mirror-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

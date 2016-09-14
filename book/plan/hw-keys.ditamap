@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/hw (2016-09-14 10:42:40)</title>
+  <topicgroup>
+    <keydef keys="plan-hw-hw"
+            href="hw/hw.dita"
+            format="dita"
+    />
+    <keydef keys="plan-hw-master-storage"
+            href="hw/master-storage.dita"
+            format="dita"
+    />
+    <keydef keys="plan-hw-master"
+            href="hw/master.dita"
+            format="dita"
+    />
+    <keydef keys="plan-hw-worker-storage"
+            href="hw/worker-storage.dita"
+            format="dita"
+    />
+    <keydef keys="plan-hw-worker"
+            href="hw/worker.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

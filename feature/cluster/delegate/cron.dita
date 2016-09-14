@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><ph keyref="nm-cc"/> maintenance scripts on delegate hosts</title>
+  <refbody>
+    <section>
+      <p>The scripts in the following list are installed when <ph keyref="nm-cc"/>
+        is installed, and are started either daily or weekly by <cmdname>anacron</cmdname>.</p>
+      <p>Of these scripts, only the first is required on delegate hosts. The others
+      can be removed.</p>
+      <dl>
+        <dlentry>
+          <dt><filepath>/etc/cron.daily/serviced</filepath></dt>
+          <dd>This script invokes <cmdname>logrotate</cmdname> daily,
+            to manage the <filepath>/var/log/serviced.access.log</filepath> 
+            file.</dd>
+          <dd>This script is required on the master host and on all delegate hosts.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>/etc/cron.weekly/serviced-fstrim</filepath></dt>
+          <dd>This script can be removed from delegate hosts.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><filepath>/etc/cron.weekly/serviced-zenossdbpack</filepath></dt>
+          <dd>This script can be removed from delegate hosts.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

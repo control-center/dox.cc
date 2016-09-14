@@ -3,16 +3,9 @@
 <task id="taskid">
   <title>Isolating the master host in a separate resource pool</title>
   <taskbody>
-    <context>
+    <context>Use this procedure to create a new resource pool for the master host, and
+        then add the master host to the pool.
       <note>If you are configuring a single-host deployment, skip this procedure.</note>
-      
-      <p><ph keyref="nm-cc"/> enables or just performs rapid recovery from application service
-      failures. When <ph keyref="nm-cc"/> internal services and application services share a host,
-      application failures can limit recovery options. <ph conkeyref="names/company"/> strongly
-      recommends isolating the <ph keyref="nm-cc"/> master host in a separate resource pool.</p>
-    
-      <p>This procedure creates a new resource pool for the <ph keyref="nm-cc"/> master host,
-      and then adds the master host to the pool.</p>
     </context>
     <steps>
       <step>

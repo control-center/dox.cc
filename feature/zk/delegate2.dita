@@ -3,8 +3,6 @@
 <task id="taskid">
   <title>Configuring delegate host B as a ZooKeeper node</title>
   <taskbody>
-    <prereq>To perform this procedure, you need a delegate host with an
-      XFS file system for <ph keyref="nm-cc"/> internal services.</prereq>
     <context>Use this procedure to configure the delegate host designated as
         <varname>Delegate-B</varname> as a ZooKeeper node.</context>
     <steps>
@@ -50,7 +48,7 @@
         <info>ZooKeeper requires a unique quorum definition for each node in its ensemble. To
           achieve this, replace the IP address or hostname of delegate host B with
           <codeph>0.0.0.0</codeph>.</info>
-        <stepxmp>
+        <stepxmp>You can copy the following text and paste it in your console:
           <codeblock>q1="1@${node1}:2888:3888"
 q2="2@${node2}:2888:3888"
 q3="3@0.0.0.0:2888:3888"
@@ -67,32 +65,23 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
         <cmd>Set the <varname>SERVICED_ISVCS_START</varname> variable, and clean
           up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
-            <cmd>Open <filepath>/etc/default/serviced</filepath> with a text editor.</cmd>
+            <cmd>Locate the line for the <varname>SERVICED_ISVCS_START</varname> variable, 
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_START</varname> variable,
-            and then delete all but <codeph>zookeeper</codeph> from its 
-              list of values.</cmd>
-          </substep>
-          <substep>
-            <cmd>Remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+            <cmd>Delete all but <codeph>zookeeper</codeph> from its list of values.</cmd>
           </substep>
           
           <substep>
             <cmd>Navigate to the end of the file, and cut the line that contains the
               <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
-            <info>The value of this declaration specifies 3 hosts.</info>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ZK</varname> variable
-              near the beginning of the file, and then delete the line it is on.</cmd>
-            <info>The value is just the master host endpoint.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ZK</varname> variable declaration,  
+              and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -101,13 +90,8 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable 
+              declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -116,13 +100,8 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -131,17 +110,10 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
+            <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
       

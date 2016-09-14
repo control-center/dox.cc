@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+<title>Hardware</title>
+  <chapter href="hw.dita">
+    <topicref href="master.dita">
+      <topicref href="master-storage.dita"/>
+    </topicref>
+    <topicref href="worker.dita">
+      <topicref href="worker-storage.dita"/>
+    </topicref>
+  </chapter>
+</bookmap>

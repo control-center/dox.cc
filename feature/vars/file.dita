@@ -17,7 +17,6 @@
             Docker Hub credentials are stored in the file.</dd>
         </dlentry>
         
-        <!-- Make sure this is in the file before Hoth ships -->
         <dlentry id="TMPDIR">
           <dt><varname>TMPDIR</varname></dt>
           <dd><b>Default</b>: (the value of shell variable TMPDIR)</dd> 
@@ -30,34 +29,42 @@
           <dd>The maximum number of CPU cores <cmdname>serviced</cmdname> uses.</dd>
         </dlentry>
         
-        <!-- to be removed
         <dlentry id="SERVICED_AGENT">
           <dt><varname>SERVICED_AGENT</varname></dt>
-          <dd><b>Default</b>: <codeph>0</codeph> (false)</dd> 
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs delegate tasks. Delegate
-            run application services scheduled for the resource pool to which they belong. The
-              <cmdname>serviced</cmdname> instance configured as the master runs the scheduler. A
-              <cmdname>serviced</cmdname> instance may be configured as delegate and master or just delegate.</dd>
+          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
+          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs delegate tasks. Delegates
+             run application services scheduled for the resource pool to which they belong.
+             A <cmdname>serviced</cmdname> instance may be configured as delegate and master or just delegate.</dd>
+          <dd>This variable must be explicitly set on all <ph keyref="nm-cc"/> cluster hosts. </dd>
         </dlentry>
-        -->
         
         <dlentry id="SERVICED_MASTER">
           <dt><varname>SERVICED_MASTER</varname></dt>
-          <dd><b>Default</b>: <codeph>0</codeph> (false)</dd> 
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance runs the application
-            services scheduler and other internal services. Only one <cmdname>serviced</cmdname>
-            instance in a <ph keyref="nm-cc"/> cluster is the master; all other hosts are delegates.
-            This variable must be explicitly set on all cluster hosts. To configure a
-              <cmdname>serviced</cmdname> instance as the master, set the value to
-              <codeph>1</codeph> (true).</dd>
+          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
+          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs master tasks. 
+            The master runs the application services scheduler and other internal services. A
+            <cmdname>serviced</cmdname> instance may be configured as delegate and master or 
+            just delegate.</dd>
+          <dd>This variable must be explicitly set on all <ph keyref="nm-cc"/> cluster hosts. </dd>
+          
+          <!-- save for the day SERVICED_AGENT dies
+          <dd>Assigns the role of a <cmdname>serviced</cmdname> instance, either master or delegate.
+            The master runs the application services scheduler and other internal services.
+            Delegates run the application services assigned to the resource pool to which
+            they belong.</dd>
+          <dd>Only one <cmdname>serviced</cmdname> instance can be the master; all other instances
+            must be delegates. The default value assigns the delegate role. To assign the master
+            role, set the value to <codeph>1</codeph> (true). This variable must be explicitly set 
+            on all <ph keyref="nm-cc"/> cluster hosts. </dd>
+            -->
         </dlentry>
         
         <dlentry id="SERVICED_ZK">
           <dt><varname>SERVICED_ZK</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
-            separated by the comma character (<codeph>&#44;</codeph>). Each endpoint includes 
-            the IP address and port of an ensemble node.</dd>
+            separated by the comma character (<codeph>&#44;</codeph>). Each endpoint identifies 
+            an ensemble node.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
@@ -79,10 +86,9 @@
           <dd>Use this variable to specify the IP address of a network interface
             other than the default, or to prevent <cmdname>serviced</cmdname>
             from assuming it has internet access.</dd>
-          <dd><note>Setting the Docker <varname>HTTP_PROXY</varname> or
-            <varname>HTTPS_PROXY</varname> environment variables prevents access to the
-            the IP address defined with this variable. To enable access, unset the
-            Docker variables, and then reboot the host.</note></dd>
+          <dd><note>Setting the Docker <varname>HTTP_PROXY</varname> or <varname>HTTPS_PROXY</varname> environment
+              variables prevents access to the IP address defined with this variable. To enable
+              access, unset the Docker variables, and then reboot the host.</note></dd>
         </dlentry>
         
         <dlentry id="SERVICED_STATIC_IPS">
@@ -162,7 +168,7 @@
         
         <dlentry id="SERVICED_UI_PORT">
           <dt><varname>SERVICED_UI_PORT</varname></dt>
-          <dd><b>Default</b>: <codeph>443</codeph></dd> 
+          <dd><b>Default</b>: <codeph>:443</codeph></dd> 
           <dd>The port on which the HTTP server listens for requests. The
             value may be expressed as follows:
             <ul>
@@ -222,15 +228,6 @@
             </ul>To disable support for a cipher, remove it from the list.</dd>
         </dlentry>
         
-        <!-- To be removed? -->
-        <dlentry id="SERVICED_VARPATH">
-          <dt><varname>SERVICED_VARPATH</varname></dt>
-          <dd><b>Default</b>: <filepath>/opt/serviced/var</filepath></dd> 
-          <dd>DEPRECATED. Use <varname>SERVICED_ISVCS_PATH</varname>,
-            <varname>SERVICED_VOLUMES_PATH</varname>, and 
-            <varname>SERVICED_BACKUPS_PATH</varname> instead.</dd>
-        </dlentry>
-        
         <dlentry id="SERVICED_ISVCS_PATH">
           <dt><varname>SERVICED_ISVCS_PATH</varname></dt>
           <dd><b>Default</b>: <filepath>/opt/serviced/var/isvcs</filepath></dd> 
@@ -286,14 +283,14 @@
           <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts
             for HTTP traffic, separated by the comma character (<codeph>,</codeph>): <ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
-              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</codeph></li>
-              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
-              <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
             </ul> To disable support for a cipher, remove it from the list.</dd>
         </dlentry>
@@ -332,16 +329,6 @@
             storage driver. This option is not supported for production use.</dd>
         </dlentry>
         
-        <!-- to be removed
-        <dlentry id="SERVICED_VHOST_ALIASES">
-          <dt><varname>SERVICED_VHOST_ALIASES</varname></dt>
-          <dd><b>Default</b>: <codeph>foobar.com,example.com</codeph></dd> 
-          <dd>The list of virtual host aliases to use in virtual  
-            host multiplexing, separated by the comma character
-            (<codeph>&#44;</codeph>).</dd>
-        </dlentry>
-        -->
-        
         <dlentry id="SERVICED_MAX_CONTAINER_AGE">
           <dt><varname>SERVICED_MAX_CONTAINER_AGE</varname></dt>
           <dd><b>Default</b>: <codeph>86400</codeph> (24 hours)</dd> 
@@ -351,7 +338,7 @@
         
         <dlentry id="SERVICED_VIRTUAL_ADDRESS_SUBNET">
           <dt><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></dt>
-          <dd><b>Default</b>: <codeph>10.3</codeph></dd> 
+          <dd><b>Default</b>: <codeph>10.3.0.0/16</codeph></dd> 
           <dd>The private subnet for containers that use virtual IP addresses on a host.
             This value may be unique on each cluster host, if necessary.</dd>
           <dd>RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
@@ -379,7 +366,7 @@
         <dlentry id="SERVICED_LOGSTASH_ES">
           <dt><varname>SERVICED_LOGSTASH_ES</varname></dt>
           <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:9100</codeph></dd> 
-          <dd>The endpoint of the Elasticsearch service. On delegate 
+          <dd>The endpoint of the logstash Elasticsearch service. On delegate 
             hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP 
             address or hostname of the Elasticsearch host, which by default is the
             <cmdname>serviced</cmdname> master host.</dd>
@@ -503,39 +490,12 @@
             up rapidly when this value is zero or too high.</dd>
         </dlentry>
         
-        <!-- to be removed
-        <dlentry id="SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL">
-          <dt><varname>SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL</varname></dt>
-          <dd><b>Default</b>: <codeph>60</codeph> (1 minute)</dd> 
-          <dd>The number of seconds a <cmdname>serviced</cmdname> delegate waits to update its
-                <filepath>/opt/serviced/var/monitor/<varname>IP-Address</varname></filepath>
-            file.</dd>
-        </dlentry>
-        
         <dlentry id="SERVICED_STORAGE_STATS_UPDATE_INTERVAL">
           <dt><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></dt>
           <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
-          <dd>The number of seconds between polls of device mapper kernel statistics
+          <dd>The number of seconds between polls of kernel statistics
             about the application data thin pool.</dd>
         </dlentry>
-
-        <dlentry id="SERVICED_MONITOR_DFS_MASTER_INTERVAL">
-          <dt><varname>SERVICED_MONITOR_DFS_MASTER_INTERVAL</varname></dt>
-          <dd><b>Default</b>: <codeph>180</codeph> (3 minutes)</dd> 
-          <dd>The interval, in seconds, at which the <cmdname>serviced</cmdname> master checks the
-            modification times of the
-                <filepath>/opt/serviced/var/monitor/<varname>IP-Address</varname></filepath> files
-            of active delegates. The value of this variable must be a minimum of twice the value of
-            the <varname>SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL</varname> variable.</dd>
-        </dlentry>
-        
-        <dlentry id="SERVICED_MONITOR_DFS_MASTER_RESTART">
-          <dt><varname>SERVICED_MONITOR_DFS_MASTER_RESTART</varname></dt>
-          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
-          <dd>Determines whether the <cmdname>serviced</cmdname> master restarts NFS when it detects 
-            active delegates that are out of synchronization.</dd>
-        </dlentry>
-        -->
         
         <dlentry id="SERVICED_NFS_CLIENT">
           <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
@@ -547,13 +507,11 @@
           </dd>
         </dlentry>
         
-        <!-- to be removed
         <dlentry id="SERVICED_SERVICE_MIGRATION_TAG">
           <dt><varname>SERVICED_SERVICE_MIGRATION_TAG</varname></dt>
           <dd><b>Default</b>: <codeph>1.0.2</codeph></dd> 
           <dd>Overrides the default value for the service migration image.</dd>
         </dlentry>
-        -->
         
         <dlentry id="SERVICED_ISVCS_START">
           <dt><varname>SERVICED_ISVCS_START</varname></dt>

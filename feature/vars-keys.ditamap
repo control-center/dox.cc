@@ -15,6 +15,10 @@
             href="vars/debug.dita"
             format="dita"
     />
+    <keydef keys="feature-vars-delegate"
+            href="vars/delegate.dita"
+            format="dita"
+    />
     <keydef keys="feature-vars-endpoints"
             href="vars/endpoints.dita"
             format="dita"
@@ -33,6 +37,10 @@
     />
     <keydef keys="feature-vars-networking"
             href="vars/networking.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-role"
+            href="vars/role.dita"
             format="dita"
     />
     <keydef keys="feature-vars-rpc"

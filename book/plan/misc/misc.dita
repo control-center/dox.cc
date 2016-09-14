@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Packaging and interface access</title>
+  <refbody>
+    <section>
+      <p>This chapter describes how <ph keyref="nm-cc"/> and
+        <ph keyref="nm-platform"/> are packaged and distribued,
+        and specifies the supported browsers for the 
+        <ph keyref="nm-cc"/> and
+        <ph keyref="nm-platform"/> browser interfaces.</p>
+    </section>
+  </refbody>
+</reference>

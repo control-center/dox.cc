@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/install/instl (2016-09-13 17:38:28)</title>
+ <title>Keys in install/instl (2016-09-09 09:05:31)</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-install-instl-delegate"
+    <keydef keys="install-instl-delegate"
             href="instl/delegate.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-install-instl-master"
+    <keydef keys="install-instl-master"
             href="instl/master.dita"
             format="dita"
     />
