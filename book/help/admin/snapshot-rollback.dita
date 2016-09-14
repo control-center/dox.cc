@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Snapshot and rollback</title>
+  <shortdesc>From the <ph keyref="nm-cc"/> command-line interface, you can perform snapshot and
+    rollback. </shortdesc>
+  <refbody>
+    <section>
+      <p>Backups are the most reliable and durable way to preserve your Docker images and
+        configurations. However, taking a backup of an entire application is not always practical,
+        and you need to safeguard against potential risk when changing your system. In these cases,
+        you can take a snapshot of the system.</p>
+    </section>
+    <section>
+      <p>Snapshots are a time- and space-efficient method of copying data. The main advantage of
+        taking a snapshot over a backup is that you do not have to stop any services when taking a
+        snapshot. You can take a snapshot whenever you need a save point for your Docker image, such
+        as before committing container changes.</p>
+      <p>When you take a snapshot, <ph keyref="nm-cc"/> creates a tag for the Docker image of each
+        service and takes a backup of the distributed file system. </p>
+      <p>Snapshots are intended to serve as short-term save points only, and therefore have a
+        default time-to-live (TTL) value of 12 hours. If you need to keep a snapshot beyond the TTL,
+        you can tag the snapshot to prevent it from being deleted after the TTL expires. For data
+        that you need to save long-term, (historical backup), take full backups instead of
+        snapshots. </p>
+      <p>You can use the rollback functionality to go back to a snapshot image. For example, roll
+        back if changes to an application cause a failure or other degradation. Rolling back returns
+        the application and distributed file system to the state that existed at the time of the
+        snapshot. </p>
+      <p>
+        <ph keyref="nm-cc"/> uses <i>thin provisioning</i>, which enables it to take snapshots of
+        the application data volume. Thin provisioning is a virtualization method that allocates
+        data blocks only when data is written (copy-on-write). Because snapshots track changes to
+        the file system over time, their space requirements expand incrementally as application data
+        changes. Application data and snapshots share the same base device; therefore, ensure that
+        snapshots do not fill up the base device storage. For information about extending storage,
+        see <xref keyref="help-admin-extend"/>.</p>
+    </section>
+  </refbody>
+</reference>

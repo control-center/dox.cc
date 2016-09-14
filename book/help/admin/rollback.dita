@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Rolling back to a snapshot</title>
+  <shortdesc/>
+  <taskbody>
+    <prereq id="prereq_nrm_1bh_hx">Before rolling back, you must stop services that are used in the
+      snapshot image. The following procedure includes this step.</prereq>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> host <ph conkeyref="strings/login-root"/> and
+            <cmdname>docker</cmdname> privileges.</cmd>
+      </step>
+      <step>
+        <cmd>To roll back to a snapshot, you must know the identifier of the snapshot. To find the
+          identifier, execute the following command:</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot list</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Roll back to the snapshot by executing the following command. Using the
+            <filepath>--force-restart</filepath> flag automatically stops the affected services
+          before rollback and starts them after completion.  Replace <varname>SNAPSHOTID</varname>
+          with the identifier of your snapshot.</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot rollback <varname>SNAPSHOTID</varname> --force-restart</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

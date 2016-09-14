@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Backing up and restoring applications</title>
+  <shortdesc>Having accurate and tested backups can mitigate problems caused by software or hardware
+    issues. <ph keyref="nm-cc"/> can back up and restore the entire <ph keyref="nm-cc"/> and
+    application installation. </shortdesc>
+  <refbody>
+    <section>
+      <p>You can use the <ph keyref="nm-cc"/> browser interface or command-line interface (CLI) to
+        back up and restore applications. This sections applies to using the browser interface only.
+        For more information, about using the CLI, see <xref keyref="feature-cli-cli"/>.</p>
+      <p>You can back up configuration information and data from an application and then later
+        restore to the same instance. To provide a historical archive, back up on a regular
+        schedule. Back up as needed when you perform less-frequent tasks such as moving data from
+        one instance to another or duplicating an instance for testing or failover purposes.</p>
+      <p>Before undertaking the following actions, ensure that you have a recent backup that
+        successfully restores: <ul id="ul_smb_qmy_fx">
+          <li>Upgrading</li>
+          <li>Testing</li>
+          <li>Using a temporary VM or DR site</li>
+        </ul></p>
+      <p>When a full backup is not necessary, such as when you need a checkpoint before installing
+        software, you can perform a snapshot of the system. If you need to revert back to a
+        snapshot, use the <i>rollback</i> feature. You use the CLI to perform snapshot and rollback.
+        For more information, see <xref keyref="feature-cli-cli"/>.</p>
+    </section>
+  </refbody>
+</reference>
