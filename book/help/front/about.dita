@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
- <title>About this online help</title>
+ <title>About this reference</title>
  <refbody>
    
    <section>
-     <p><cite conkeyref="pubs/cite-help"/> provides...</p>
+     <p><cite conkeyref="pubs/cite-help"/> provides information and procedures for managing the <ph
+          keyref="nm-cc"/> deployment.</p>
    </section>
 
    <section conkeyref="related-pubs/cc"/>

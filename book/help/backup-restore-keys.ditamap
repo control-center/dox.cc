@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in help/backup-restore (2016-09-13 17:51:25)</title>
+  <topicgroup>
+    <keydef keys="help-backup-restore-backup"
+            href="backup-restore/backup.dita"
+            format="dita"
+    />
+    <keydef keys="help-backup-restore-restore"
+            href="backup-restore/restore.dita"
+            format="dita"
+    />
+    <keydef keys="help-backup-restore-rollback"
+            href="backup-restore/rollback.dita"
+            format="dita"
+    />
+    <keydef keys="help-backup-restore-snapshot-rollback"
+            href="backup-restore/snapshot-rollback.dita"
+            format="dita"
+    />
+    <keydef keys="help-backup-restore-snapshot"
+            href="backup-restore/snapshot.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

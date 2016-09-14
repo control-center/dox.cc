@@ -334,8 +334,8 @@
         </dlentry>
         <dlentry>
           <dt><synph><kwd>restore</kwd></synph></dt>
-          <dd>Reconstruct templates and services from a a <cmdname>tar</cmdname> archive file
-            created with <cmdname>backup</cmdname>.</dd>
+          <dd>Reconstruct templates and services from a <cmdname>tar</cmdname> archive file created
+            with <cmdname>backup</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>script</kwd></synph></dt>

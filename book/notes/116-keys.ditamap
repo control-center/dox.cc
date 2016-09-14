@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in notes/116 (2016-08-30 09:17:04)</title>
+ <title>Keys in dox.cc/book/notes/116 (2016-09-13 17:38:28)</title>
   <topicgroup>
-    <keydef keys="notes-116-fixed"
+    <keydef keys="dox.cc-book-notes-116-fixed"
             href="116/fixed.dita"
             format="dita"
     />
-    <keydef keys="notes-116-notes"
+    <keydef keys="dox.cc-book-notes-116-notes"
             href="116/notes.dita"
             format="dita"
     />
-    <keydef keys="notes-116-self"
+    <keydef keys="dox.cc-book-notes-116-self"
             href="116/self.dita"
             format="dita"
     />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/cli (2016-09-09 15:05:10)</title>
+ <title>Keys in feature/cli (2016-09-14 10:37:15)</title>
   <topicgroup>
     <keydef keys="feature-cli-cli"
             href="cli/cli.dita"
@@ -19,8 +19,20 @@
             href="cli/service-clone.dita"
             format="dita"
     />
+    <keydef keys="feature-cli-serviced-backup"
+            href="cli/serviced-backup.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-restore"
+            href="cli/serviced-restore.dita"
+            format="dita"
+    />
     <keydef keys="feature-cli-serviced-service"
             href="cli/serviced-service.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-snapshot"
+            href="cli/serviced-snapshot.dita"
             format="dita"
     />
     <keydef keys="feature-cli-serviced"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><cmdname>serviced backup</cmdname></title>
+  <shortdesc>The <cmdname>serviced backup</cmdname> command saves a snapshot of the current state of
+    the system, the state of all services, and data to a compressed archive file
+      (<filepath>.tgz</filepath>). </shortdesc>
+  <refbody>
+    <section id="section_csb_1wg_hx">
+      <title/>
+      <p>For more information about backing up and restoring, see <xref keyref="help-admin-admin"
+        />.</p>
+    </section>
+    <section id="section_wlf_fyb_hx">
+      <title>USAGE</title>
+      <codeblock>serviced backup [command options] [arguments...]</codeblock>
+    </section>
+    <section>
+      <title>DESCRIPTION</title>
+      <p><cmdname>serviced backup DIRPATH</cmdname>
+      </p>
+    </section>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt>--exclude '--exclude option --exclude option'</dt>
+          <dd>Subdirectory of the tenant volume to exclude from backup</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Shows the help for an option.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

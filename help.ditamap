@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1080</bookpartno>
+      <bookpartno>1080.16.258</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -33,7 +33,7 @@
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
       <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
       <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
-      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+      <mapref href="../dox.images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
@@ -52,8 +52,8 @@
       <toc/>
     </booklists>
   </frontmatter>
-  <chapter href="book/help/admin/admin.ditamap" format="ditamap"/>
-  <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
+    <chapter href="book/help/admin/admin.ditamap" format="ditamap"/>
+    <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>
     <booklists>

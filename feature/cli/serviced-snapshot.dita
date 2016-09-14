@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><cmdname>serviced snapshot</cmdname></title>
+  <shortdesc>The <cmdname>serviced snapshot</cmdname> command administers environment
+    snapshots.</shortdesc>
+  <refbody>
+    <section id="section_p3x_mng_hx">
+      <title/>
+      <p>For more information about using snapshot and rollback, see <xref keyref="help-admin-admin"
+        />.</p>
+    </section>
+    <section id="section_wlf_fyb_hx">
+      <title>USAGE</title>
+      <codeblock>serviced snapshot [global options] command [command options] [arguments...]</codeblock>
+    </section>
+    <section id="section_qzq_xyb_hx"><title>COMMANDS</title>The following commands are available for
+        <cmdname>serviced snapshot</cmdname>:<dl>
+        <dlentry>
+          <dt>list</dt>
+          <dd>List all snapshots. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>add</dt>
+          <dd>Take a snapshot of an existing service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>remove, rm</dt>
+          <dd>Remove an existing snapshot.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>commit</dt>
+          <dd>Take a snapshot of and commit a given service instance.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>rollback</dt>
+          <dd>Restore the environment to the state of the given snapshot.</dd>
+        </dlentry>
+        <dlentry>
+          <dt> tag </dt>
+          <dd>Tag an existing snapshot with TAG-NAME.</dd>
+        </dlentry>
+        <dlentry>
+          <dt> untag </dt>
+          <dd>Remove a tag from an existing snapshot.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>help, h</dt>
+          <dd>Show a list of commands or the help for a single command.</dd>
+        </dlentry>
+      </dl></section>
+    <section>
+      <title>Usage</title>
+      <p><cmdname>serviced snapshot</cmdname>
+      </p>
+    </section>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt> --generate-bash-completion</dt>
+          <dd/>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Shows the help for an option.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

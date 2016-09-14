@@ -3,7 +3,14 @@
 <bookmap>
    <title>Administration reference</title>
    <chapter keyref="help-admin-admin">
-      <topicref keyref="help-admin-multiple"/>
       <topicref keyref="help-admin-extend"/>
+      <topicref keyref="help-admin-backup-restore">
+         <topicref keyref="help-admin-backup"/>
+         <topicref keyref="help-admin-restore"/>
+      </topicref>
+      <topicref keyref="help-admin-snapshot-rollback">
+         <topicref keyref="help-admin-snapshot"/>
+         <topicref keyref="help-admin-rollback"/>
+      </topicref>
    </chapter>
 </bookmap>

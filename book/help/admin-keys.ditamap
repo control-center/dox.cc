@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in help/admin (2016-08-30 09:16:52)</title>
+ <title>Keys in help/admin (2016-09-13 17:51:25)</title>
   <topicgroup>
     <keydef keys="help-admin-admin"
             href="admin/admin.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-backup-restore"
+            href="admin/backup-restore.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-backup"
+            href="admin/backup.dita"
             format="dita"
     />
     <keydef keys="help-admin-extend"
@@ -13,6 +21,22 @@
     />
     <keydef keys="help-admin-multiple"
             href="admin/multiple.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-restore"
+            href="admin/restore.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-rollback"
+            href="admin/rollback.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-snapshot-rollback"
+            href="admin/snapshot-rollback.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-snapshot"
+            href="admin/snapshot.dita"
             format="dita"
     />
    </topicgroup>
