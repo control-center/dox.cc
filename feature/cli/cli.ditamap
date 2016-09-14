@@ -8,6 +8,7 @@
       <topicref keyref="feature-cli-serviced-service"/>
       <topicref keyref="feature-cli-script"/>
       <topicref keyref="feature-cli-serviced-backup"/>
+      <topicref keyref="feature-cli-serviced-restore"/>
       <topicref keys="serviced-vars" keyref="feature-vars-file"/>
    </chapter>
 </bookmap>

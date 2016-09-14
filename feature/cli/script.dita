@@ -23,7 +23,7 @@
             <dd>Perform the commands in a script file.</dd>
           </dlentry>
         </dl>
-        <p>The correct invocaton of <cmdname>serviced script run</cmdname> depends on whether the
+        <p>The correct invocation of <cmdname>serviced script run</cmdname> depends on whether the
           <cmdname>REQUIRE_SVC</cmdname> command is present in a script file.</p>
       <ul>
         <li>If a script file does not include <cmdname>REQUIRE_SVC</cmdname>, no additional

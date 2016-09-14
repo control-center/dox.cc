@@ -5,15 +5,20 @@
   <shortdesc>The <cmdname>serviced snapshot</cmdname> command administers environment
     snapshots.</shortdesc>
   <refbody>
+    <section id="section_p3x_mng_hx">
+      <title/>
+      <p>For more information about using snapshot and rollback, see <xref keyref="help-admin-admin"
+        />.</p>
+    </section>
     <section id="section_wlf_fyb_hx">
-      <title>SYNTAX</title>
+      <title>USAGE</title>
       <codeblock>serviced snapshot [global options] command [command options] [arguments...]</codeblock>
     </section>
     <section id="section_qzq_xyb_hx"><title>COMMANDS</title>The following commands are available for
         <cmdname>serviced snapshot</cmdname>:<dl>
         <dlentry>
           <dt>list</dt>
-          <dd>List all snapshots.</dd>
+          <dd>List all snapshots. </dd>
         </dlentry>
         <dlentry>
           <dt>add</dt>
@@ -46,15 +51,15 @@
       </dl></section>
     <section>
       <title>Usage</title>
-      <p><cmdname>serviced snapshot </cmdname>
+      <p><cmdname>serviced snapshot</cmdname>
       </p>
     </section>
     <section id="section_qfy_jyb_hx">
       <title>OPTIONS</title>
       <dl>
         <dlentry>
-          <dt>--exclude '--exclude option --exclude option'</dt>
-          <dd>Subdirectory of the tenant volume to exclude from backup</dd>
+          <dt> --generate-bash-completion</dt>
+          <dd/>
         </dlentry>
       </dl>
       <dl>
