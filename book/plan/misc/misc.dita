@@ -5,10 +5,8 @@
   <refbody>
     <section>
       <p>This chapter describes how <ph keyref="nm-cc"/> and
-        <ph keyref="nm-platform"/> are packaged and distribued,
-        and specifies the supported browsers for the 
-        <ph keyref="nm-cc"/> and
-        <ph keyref="nm-platform"/> browser interfaces.</p>
+        is packaged and distributed,
+        and specifies the supported clients for its browser interface.</p>
     </section>
   </refbody>
 </reference>

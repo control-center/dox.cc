@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-install"/></mainbooktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-plan"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>XXXX.16.XXX</bookpartno>  
+      <bookpartno>1033.16.258</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -43,6 +43,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/plan/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/ha-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/hw-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/misc-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/os-keys.ditamap" format="ditamap"/>
@@ -62,6 +63,7 @@
   <chapter href="book/plan/hw/hw.ditamap" format="ditamap"/>
   <chapter href="book/plan/os/os.ditamap" format="ditamap"/>
   <chapter href="book/plan/misc/misc.ditamap" format="ditamap"/>
+  <chapter href="book/plan/ha/ha.ditamap" format="ditamap"/>
  
   <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
   

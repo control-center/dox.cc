@@ -7,8 +7,7 @@
       
       <dlentry>
         <dt>application</dt>
-        <dd>A collection of one or more software programs that have been converted into Docker containers.
-          For example, <ph keyref="nm-platform"/>.</dd>
+        <dd>A collection of one or more software programs that have been converted into Docker containers.</dd>
       </dlentry>
       
       <dlentry>

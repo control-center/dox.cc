@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Using a public network interface</title>
+  <conbody>
+    <p>If heartbeat communications pass through the public network and the link for a node goes
+      down, both nodes still try to fence each other. The difference in this case is that the node
+      with the down public network link cannot communicate with the fencing device. This means that
+      the healthy node can fence the unhealthy node, but the unhealthy node cannot fence the healthy
+      node.</p>
+  </conbody>
+</concept>

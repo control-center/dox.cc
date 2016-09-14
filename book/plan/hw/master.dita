@@ -24,7 +24,7 @@
       </ul>
       
       <p>For single-host deployments, the <ph keyref="nm-cc"/> master host 
-        runs all  <ph keyref="nm-cc"/> internal services and all <ph keyref="nm-platform"/>
+        runs all  <ph keyref="nm-cc"/> internal services and all 
         application services, and requires the following resources:</p>
       <ul>
         <li>8 CPU cores (64-bit only; real or virtual)
@@ -47,8 +47,8 @@
       </ul>
        
       <note>An under-resourced master host does not function properly. 
-        Please do not deploy <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> 
-        on a master host that does not meet the minimum requirements. </note>
+        Please do not deploy <ph keyref="nm-cc"/> and an application 
+        on a master host that does not meet the application's minimum requirements. </note>
     </section>
   </refbody>
 </reference>

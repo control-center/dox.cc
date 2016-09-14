@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/ha</title>
+  <topicgroup>
+    <keydef keys="plan-ha-fencing-private"
+            href="ha/fencing-private.dita"
+            format="dita"
+    />
+    <keydef keys="plan-ha-fencing-public"
+            href="ha/fencing-public.dita"
+            format="dita"
+    />
+    <keydef keys="plan-ha-fencing"
+            href="ha/fencing.dita"
+            format="dita"
+    />
+    <keydef keys="plan-ha-ha"
+            href="ha/ha.dita"
+            format="dita"
+    />
+    <keydef keys="plan-ha-planning"
+            href="ha/planning.dita"
+            format="dita"
+    />
+    <keydef keys="plan-ha-prereq"
+            href="ha/prereq.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

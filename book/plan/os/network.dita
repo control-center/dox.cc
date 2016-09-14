@@ -18,12 +18,8 @@
       
       <p>The default configurations of firewall utilities such as 
         <xref keyref="url-firewalld">FirewallD</xref> include 
-        rules that can conflict with Docker, and therefore, <ph keyref="nm-cc"/> and 
-        <ph keyref="nm-platform"/>. The following interactions illustrate the conflicts:</p>
-      
-      <p>The <xref keyref="url-firewalld">FirewallD</xref> utility includes 
-        rules that can conflict with Docker, and therefore, <ph keyref="nm-cc"/> and 
-        <ph keyref="nm-platform"/>. The following interactions illustrate the conflicts:</p>
+        rules that can conflict with Docker, and therefore, <ph keyref="nm-cc"/>.
+        The following interactions illustrate the conflicts:</p>
       <ul>
         <li>The <cmdname>firewalld</cmdname> daemon removes the DOCKER chain
           from <cmdname>iptables</cmdname> when it starts or restarts.</li>
@@ -32,12 +28,11 @@
           need to restart Docker.</li>
       </ul>
       
-      <p>If you are using a firewall utlity, please ensure that it does not conflict with Docker.</p>
+      <p>If you are using a firewall utility, please ensure that it does not conflict with Docker.</p>
       
-      <p>By default, <cmdname>firewalld</cmdname> is disabled. If you wish to enable it,
-        please ensure that it does not conflict with Docker.</p>
       
-      <p>If you are not using a firewall utlity, your firewall settings may still
+      
+      <p>If you are not using a firewall utility, your firewall settings may still
         prevent communications over the Docker virtual bridge. This occurs when <cmdname>iptables</cmdname>
         INPUT rules restrict most traffic. To ensure that the bridge works properly, append an 
         INPUT rule to your <cmdname>iptables</cmdname> configuration that allows traffic on

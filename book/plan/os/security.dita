@@ -6,11 +6,10 @@
     <section>  
       <p>During installation, <ph keyref="nm-cc"/> has no knowledge of the port requirements
         of the applications it is to manage, so the installation procedure includes disabling the
-        firewall. After both <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> are
+        firewall. After both <ph keyref="nm-cc"/> and an application are
         installed, you may close unused ports.</p>
       
-      <p>In <ph keyref="nm-platform"/> appliances, the <cmdname>firewalld</cmdname>
-        service is disabled. If desired, you may enable it, and then close unused ports.</p>
+      
       
       <p><ph keyref="nm-cc"/> includes a virtual multiplexer (mux), to aggregate 
         the UDP and TCP traffic among the services it manages. The aggregation is
@@ -52,12 +51,10 @@
         <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
           Enhanced Linux</xref> in enforcing mode. The installation procedures include steps to
           set the mode to disabled.</li>
-        <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
-            Enhanced Linux</xref> in enforcing mode, so it is disabled in 
-          <ph keyref="nm-platform"/> appliances.</li>
+        
         
         <li>The <cmdname>firewalld</cmdname> service can conflict with Docker, and
-          therefore, <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/>. For more information, see
+          therefore, <ph keyref="nm-cc"/> and the application it is managing. For more information, see
             <xref keyref="plan-os-network"/>.</li>
       </ul>
     </section>
