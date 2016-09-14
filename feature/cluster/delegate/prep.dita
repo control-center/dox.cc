@@ -3,6 +3,10 @@
 <task id="taskid">
   <title>Preparing a delegate host</title>
   <taskbody>
+    <prereq><b><ph conkeyref="names/company"/> customers</b>: If you 
+      are creating a deployment without internet access, 
+      perform the steps in <xref keyref="install-offline-offline"/>,
+      before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS 7.1 or 7.2
       host as a <ph keyref="nm-cc"/> delegate host.</context>

@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/cluster/master (2016-09-01 09:57:58)</title>
+ <title>Keys in feature/cluster/master (2016-09-09 15:05:10)</title>
   <topicgroup>
+    <keydef keys="feature-cluster-master-cc-install"
+            href="master/cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-cron"
+            href="master/cron.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-master-device-naming"
             href="master/device-naming.dita"
             format="dita"
     />
-    <keydef keys="feature-cluster-master-docker"
-            href="master/docker.dita"
+    <keydef keys="feature-cluster-master-docker-config"
+            href="master/docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-docker-install"
+            href="master/docker-install.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-isolate"
             href="master/isolate.dita"
             format="dita"
     />
-    <keydef keys="feature-cluster-master-nfs"
-            href="master/nfs.dita"
+    <keydef keys="feature-cluster-master-offline"
+            href="master/offline.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-prep"

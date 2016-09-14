@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing Docker</title>
+  <taskbody>
+    <context>Use this procedure to install Docker.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-install-offline">
+        <cmd/>
+      </step>
+
+      <step conkeyref="feature-lib-tasks/docker-install">
+        <cmd/>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

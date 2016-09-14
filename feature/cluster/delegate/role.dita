@@ -4,25 +4,34 @@
   <title>Setting the host role to delegate</title>
   <taskbody>
     <context>Use this procedure to configure a host as a delegate host. The 
-      following configuration variable assigns the role of a host: 
+      following configuration variables are used to assign the host role: 
       <dl>
+        <dlentry conkeyref="feature-vars-file/SERVICED_AGENT"><dt/><dd/></dlentry>
         <dlentry conkeyref="feature-vars-file/SERVICED_MASTER"><dt/><dd/></dlentry>
       </dl>
+      <p>Perform these steps:</p>
     </context>
     <steps>
       <step>
         <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
       <step>
         <cmd>Edit the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
           <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
+            <cmd>Locate the line for the <varname>SERVICED_AGENT</varname> variable, 
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
             <cmd>Locate the line for the <varname>SERVICED_MASTER</varname> variable, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
           <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
+          </substep>
           <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>

@@ -15,6 +15,7 @@
         more information about sizing this resource, refer to the documentation for your
         application. Or, use the suggested minimum value, 200GB. You can add storage to an LVM thin
         pool at any time.</note>
+      <p>Perform these steps:</p>
     </context>
     <steps>
       <step>
@@ -54,8 +55,8 @@
             <cmd>Make a backup copy of the configuration file, and then change the backup file to
               read-only.</cmd>
             <stepxmp>
-              <codeblock>cp /etc/default/serviced /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig
-chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig
+chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
             </stepxmp>
           </substep>
           <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
@@ -88,5 +89,6 @@ chmod 0440 /etc/default/serviced.<ph keyref="lo-version-cc"/>.orig</codeblock>
         </substeps>
       </step>
     </steps>
+    <postreq>Proceed to the next chapter and configure the host.</postreq>
   </taskbody>
 </task>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in install/front (2016-09-01 10:01:00)</title>
+ <title>Keys in install/front (2016-09-09 09:05:31)</title>
   <topicgroup>
-    <keydef keys="install-front-preface"
-            href="front/preface.dita"
+    <keydef keys="install-front-about"
+            href="front/about.dita"
             format="dita"
     />
    </topicgroup>

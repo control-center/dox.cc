@@ -22,11 +22,8 @@
       discouraged. A five-node ensemble improves failover protection during maintenance windows but
       larger ensembles yield no benefits. </p>
     
-    <p>The <ph keyref="nm-cc"/> master host is always an ensemble node. The delegate hosts to
-      include in a ZooKeeper ensemble must be configured with additional storage, for <ph
-        keyref="nm-cc"/> internal services data, before performing the procedures in this chapter.
-      In addition, all ensemble nodes should be on the same subnet. For more information, see the
-      preceding chapter.</p>
+    <p>The <ph keyref="nm-cc"/> master host is always an ensemble node. All ensemble nodes should be
+      on the same subnet.</p>
     
   </conbody>
 </concept>

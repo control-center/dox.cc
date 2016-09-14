@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating a Docker Hub account</title>
+  <taskbody>
+    <context>This procedure shows how to set up a Docker Hub account that is authorized to
+      pull <ph keyref="nm-platform"/> images. </context>
+    <steps>
+      <step>
+        <cmd>In a web browser, <xref keyref="url-docker-account">create a Docker Hub account</xref>.</cmd>
+        <info>You may use any account name and password. 
+          <note importance="high">The email address for this Docker Hub account must be the same 
+            address you use for <codeph>support.zenoss.com</codeph>.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Open a support ticket at <codeph>support.zenoss.com</codeph>.</cmd>
+        <substeps>
+          <substep>
+            <cmd>In the <uicontrol>Subject</uicontrol> field, enter: <userinput>Docker Account
+                Activation</userinput>.</cmd>
+          </substep>
+          <substep>
+            <cmd>In the <uicontrol>Body</uicontrol> field, 
+              enter your Docker Hub account user name.</cmd>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

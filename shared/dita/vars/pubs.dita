@@ -6,8 +6,8 @@
   <section id="zenoss-cc">
       <title>Zenoss Control Center overrides</title>
 
-      <p><cite id="cite-help">Control Center Online Help</cite></p>
-      <p><ph id="ph-help">Control Center Online Help</ph></p>
+      <p><cite id="cite-ref">Control Center Reference Guide</cite></p>
+      <p><ph id="ph-ref">Control Center Reference Guide</ph></p>
 
       <p><cite id="cite-install">Control Center Installation Guide</cite></p>
       <p><ph id="ph-install">Control Center Installation Guide</ph></p>

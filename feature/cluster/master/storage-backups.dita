@@ -33,7 +33,7 @@
         <cmd>Create an XFS filesystem, if necessary.</cmd>
         <info>Skip this step if you are using a remote file server.</info>
         <stepxmp>Replace <varname>Storage</varname> with the path of the target device or partition:
-          <codeblock>mkfs -t xfs <varname>Storage</varname></codeblock>
+          <codeblock>mkfs.xfs <varname>Storage</varname></codeblock>
         </stepxmp>
       </step>
       

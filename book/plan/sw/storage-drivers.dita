@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Docker and <ph keyref="nm-cc"/> storage drivers</title>
+  <conbody>
+        
+    <p>Starting with release 1.1.1, <ph keyref="nm-cc"/> includes the <codeph>devicemapper</codeph>
+      storage driver for application data. The <ph keyref="nm-cc"/> driver is based on 
+      <xref keyref="url-docker-devicemapper">the Docker <codeph>devicemapper</codeph> 
+        storage driver</xref>, which in turn is based on the 
+      <xref keyref="url-device-mapper">device mapper framework of the Linux kernel</xref>. </p>
+    
+    <p>The key feature of the drivers is their use of thin provisioning, a 
+      virtualization method that allocates data blocks only when data is
+      written. (The traditional method is to allocate data blocks when a file 
+      system is created, before any data is written.) Thin provisioning enables 
+      snapshots, a time-efficient and space-efficient method of copying data,
+      and enables making a device appear to have more physical data blocks
+      than are actually available (as long as some blocks are unfilled).
+      Also, thin-provisioned storage can be extended without having to move 
+      data from one physical partition to another. </p>
+    
+    <p>For Docker and for <ph keyref="nm-cc"/>, Logical Volume Manager (LVM) tools are 
+      used to create thin-provisioned storage, in thin pools. A thin pool includes an area 
+      for metadata (a small percentage of the total) and an area for the data itself. 
+      To simplify creating thin pools, <ph keyref="nm-cc"/> includes
+      <cmdname>serviced-storage</cmdname>, a utility that calls the LVM tools. The
+      utility may be used to create thin pools for use by Docker's <codeph>devicemapper</codeph> 
+      storage driver as well as for the <ph keyref="nm-cc"/> <codeph>devicemapper</codeph> storage
+      driver.</p>
+    
+    <p>For Docker data storage, the recommended storage layout is a device mapper thin pool on one
+      or more primary partitions. Docker's <codeph>devicemapper</codeph> storage driver may be
+      used in <codeph>loop-lvm</codeph> mode on loopback-mounted sparse files. However,
+      <codeph>loop-lvm</codeph> mode is not recommended for production use, and 
+      <ph conkeyref="names/company"/> strongly recommends using a device mapper thin pool 
+      for Docker storage, in all deployment scenarios. </p>
+    
+    <p>For <ph keyref="nm-cc"/> application data storage, the recommended (and default) 
+      storage driver is <codeph>devicemapper</codeph>, and the recommended layout is a
+      device mapper thin pool on one or more primary partitions.</p>
+
+  </conbody>
+</concept>

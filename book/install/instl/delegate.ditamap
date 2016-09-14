@@ -6,8 +6,10 @@
     <topicref keyref="feature-cluster-delegate-verify"/>
     <topicref keyref="feature-cluster-master-device-naming"/>
     <topicref keyref="feature-cluster-delegate-storage"/>
-    <topicref keyref="feature-cluster-delegate-isvcs"/>
     <topicref keyref="feature-cluster-delegate-prep"/>
+    <topicref keyref="feature-cluster-delegate-docker-install"/>
+    <topicref keyref="feature-cluster-delegate-cc-install"/>
+    <topicref keyref="feature-cluster-delegate-docker-config"/>
     <topicref keyref="feature-cluster-delegate-docker"/>
    </chapter>
 </bookmap>

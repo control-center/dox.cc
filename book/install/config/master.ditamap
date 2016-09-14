@@ -3,12 +3,14 @@
 <bookmap>
   <title>Configure master</title>
   <chapter keyref="install-config-master">
+    <topicref keyref="feature-cluster-master-cron"/>
     <topicref keyref="feature-cluster-access-access">
       <topicref keyref="feature-cluster-access-wheel"/>
       <topicref keyref="feature-cluster-access-serviced"/>
       <topicref keyref="feature-cluster-access-cli"/>
     </topicref>
     <topicref keyref="feature-cluster-master-role"/>
+    <topicref keyref="feature-cluster-master-offline"/>
     <topicref keyref="install-vars-master">
       <topicref keyref="feature-vars-best"/>
       <topicref keyref="feature-vars-storage"/>
@@ -18,6 +20,7 @@
       <topicref keyref="feature-vars-http"/>
     </topicref>
     <topicref keyref="install-vars-all">
+      <topicref keyref="feature-vars-role"/>
       <topicref keyref="feature-vars-networking"/>
       <topicref keyref="feature-vars-debug"/>
       <topicref keyref="feature-vars-tune"/>
