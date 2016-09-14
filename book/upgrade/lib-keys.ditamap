@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in upgrade/lib (2016-08-30 09:17:09)</title>
+ <title>Keys in dox.cc/book/upgrade/lib (2016-09-13 17:38:28)</title>
   <topicgroup>
-    <keydef keys="upgrade-lib-tasks"
+    <keydef keys="dox.cc-book-upgrade-lib-tasks"
             href="lib/tasks.dita"
             format="dita"
     />

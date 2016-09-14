@@ -2,163 +2,31 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><cmdname>serviced backup</cmdname></title>
-  <shortdesc>The <cmdname>serviced backup</cmdname> command  </shortdesc>
+  <shortdesc>The <cmdname>serviced backup</cmdname> command saves a snapshot of the current state of
+    the system, the state of all services, and data to a compressed archive file
+      (<filepath>.tgz</filepath>). </shortdesc>
   <refbody>
+    <section id="section_wlf_fyb_hx">
+      <title>SYNTAX</title>
+      <codeblock>serviced backup [command options] [arguments...]</codeblock>
+    </section>
     <section>
       <title>Usage</title>
-      <p>The <cmdname>serviced script</cmdname> command provides the following subcommands.</p>
-        <dl>
-        <dlentry>
-          <dt><codeph>help</codeph></dt>
-          <dd>Display the help message.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><codeph/></dt>
-          <dd/>
-        </dlentry>
-      </dl>
+      <p><cmdname>serviced backup DIRPATH</cmdname>
+      </p>
     </section>
-    
-    <section>
-      <title>Script file syntax</title>
-          <ul>
-            <li>Lines that contain no text and lines that start with the number sign
-              character (<codeph>#</codeph>) are ignored.</li>
-            <li>Lines are terminated with LF or CR+LF.</li>
-            <li>A command and its arguments may not span lines.</li>
-            <li>The maximum number of characters per line (command and arguments) is 300000.</li>
-            <li>Unless otherwise noted, all command arguments are treated as strings.</li>
-          </ul>
-    </section>
-    
-    <section>
-      <title>Commands</title>
-      <p>Commands are </p>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
       <dl>
         <dlentry>
-          <dt><synph><kwd>DESCRIPTION</kwd>
-              <var>argument...</var></synph></dt>
-          <dd>A statement about the script. </dd>
-          <dd>Scripts may contain one or zero <cmdname>DESCRIPTION</cmdname> commands. At least one
-            argument is required.</dd>
+          <dt>--exclude '--exclude option --exclude option'</dt>
+          <dd>Subdirectory of the tenant volume to exclude from backup</dd>
         </dlentry>
+      </dl>
+      <dl>
         <dlentry>
-          <dt><synph><kwd>VERSION</kwd> <var>argument</var></synph></dt>
-          <dd>A revision reference for the script. </dd>
-          <dd>Scripts may contain one or zero <cmdname>VERSION</cmdname> commands. Only one argument
-            is supported.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>REQUIRE_SVC</kwd></synph></dt>
-          <dd>The script needs a reference service in order to perform some or all of its tasks. The
-            service is specified with the <codeph>--service</codeph> parameter of the
-              <cmdname>serviced backup run</cmdname> command.</dd>
-          <dd>Scripts may contain one or zero <cmdname>REQUIRE_SVC</cmdname> commands.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SNAPSHOT</kwd></synph></dt>
-          <dd>Perform a snapshot. If a script command fails, <cmdname>serviced</cmdname> rolls back
-            to the most recent snapshot. </dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SNAPSHOT</cmdname> commands.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_USE</kwd> <var>Image-ID</var></synph></dt>
-          <dd>Use the specified image for script commands that occur after this
-              <cmdname>SVC_USE</cmdname> command. If your application uses multiple images, enter
-            additional <cmdname>SVC_USE</cmdname> commands to specify each image. If the specified
-            image is not present in the local Docker registry, <cmdname>serviced</cmdname> attempts
-            to pull it from Docker Hub.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_USE</cmdname> commands. Only one argument is
-            supported.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_RUN</kwd> <var>Service</var> <var>Run-Command</var> <var>arguments</var></synph></dt>
-          <dd>Invoke one of the pre-defined commands associated with a service.</dd>
-          <dd><varname>Service</varname> must be the absolute path of a service, with each service
-            in the path separated by the solidus character (<codeph>/</codeph>). For example,
-              <codeph>Zenoss.core/Zope</codeph>.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_RUN</cmdname> commands. Multiple arguments
-            are supported.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_EXEC</kwd>
-              <delim>[</delim>COMMIT<delim>|</delim>NO_COMMIT<delim>]</delim>
-              <var>Service</var>
-              <var>argument...</var></synph></dt>
-          <dd>Start a new container to run arbitrary commands. (Equivalent to a non-interactive
-            invocation of <cmdname>serviced service shell</cmdname>.) </dd>
-          <dd>When <codeph>COMMIT</codeph> is specified, changes are committed on successful completion
-            of the commands in <varname>argument</varname>. When <codeph>NO_COMMIT</codeph> is specified,
-          changes are not committed.</dd>
-          <dd><varname>Service</varname> must be the absolute path of a service, with each service
-            in the path separated by the solidus character (<codeph>/</codeph>). For example,
-              <codeph>Zenoss.core/Zope</codeph>.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_EXEC</cmdname> commands.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_START</kwd>
-              <delim>{</delim>auto<delim>|</delim>recurse<delim>}</delim>
-              <var>Service</var></synph></dt>
-          <dd>Start a new instance of <varname>Service</varname>. </dd>
-          <dd>If <codeph>auto</codeph> or <codeph>recurse</codeph> is not specified, all configured
-            instances of <varname>Service</varname> are started. If <codeph>auto</codeph> or
-              <codeph>recurse</codeph> is specified, all configured instances of
-              <varname>Service</varname> and all of their child services are started.</dd>
-          <dd><varname>Service</varname> must be the absolute path of a service, with each service
-            in the path separated by the solidus character (<codeph>/</codeph>). For example,
-              <codeph>Zenoss.core/Zope</codeph>.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_START</cmdname> commands. </dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_STOP</kwd>
-              <delim>{</delim>auto<delim>|</delim>recurse<delim>}</delim>
-              <var>Service</var></synph></dt>
-          <dd>Stop the specified service.</dd>
-          <dd>If <codeph>auto</codeph> or <codeph>recurse</codeph> is not specified, all instances
-            of <varname>Service</varname> are stopped. If <codeph>auto</codeph> or
-              <codeph>recurse</codeph> is specified, all instances of <varname>Service</varname> and
-            all of their child services are stopped.</dd>
-          <dd><varname>Service</varname> must be the absolute path of a service, with each service
-            in the path separated by the solidus character (<codeph>/</codeph>). For example,
-              <codeph>Zenoss.core/Zope</codeph>.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_STOP</cmdname> commands. </dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_RESTART</kwd>
-              <delim>{</delim>auto<delim>|</delim>recurse<delim>}</delim>
-              <var>Service</var></synph></dt>
-          <dd>Restart the specified service. </dd>
-          <dd>If <codeph>auto</codeph> or <codeph>recurse</codeph> is not specified, all instances
-            of <varname>Service</varname> are restarted. If <codeph>auto</codeph> or
-              <codeph>recurse</codeph> is specified, all instances of <varname>Service</varname> and
-            all of their child services are restarted.</dd>
-          <dd><varname>Service</varname> must be the absolute path of a service, with each service
-            in the path separated by the solidus character (<codeph>/</codeph>). For example,
-              <codeph>Zenoss.core/Zope</codeph>.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_RESTART</cmdname> commands. </dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>SVC_WAIT</kwd>
-              <var>Service...</var>
-              <delim>[</delim>started<delim>|</delim>stopped<delim>|</delim>paused<delim>]</delim>
-              <var>Duration</var></synph></dt>
-          <dd>Pause <varname>Duration</varname> seconds, or pause until the specified service or
-            services reach the <codeph>started</codeph>, <codeph>stopped</codeph>, or
-              <codeph>paused</codeph> state. If the state is not reached when
-              <varname>Duration</varname> expires, the command fails.</dd>
-          <dd><varname>Duration</varname> must be an integer.</dd>
-          <dd>Each <varname>Service</varname> must be the absolute path of a service, with each
-            service in the path separated by the solidus character (<codeph>/</codeph>). For
-            example, <codeph>Zenoss.core/Zope</codeph>.</dd>
-          <dd>The <cmdname>REQUIRE_SVC</cmdname> command must be present in the script.</dd>
-          <dd>Scripts may contain multiple <cmdname>SVC_WAIT</cmdname> commands. </dd>
+          <dt>--help, -h</dt>
+          <dd>Shows the help for an option.</dd>
         </dlentry>
       </dl>
     </section>

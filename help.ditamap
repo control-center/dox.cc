@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1080.16.257</bookpartno>
+      <bookpartno>1080.16.258</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -43,7 +43,6 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/help/admin-keys.ditamap" format="ditamap"/>
-      <mapref href="book/help/backup-restore-keys.ditamap"/>
       <mapref href="book/help/front-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
