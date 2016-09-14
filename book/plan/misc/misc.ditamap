@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+<title>Misc</title>
+  <chapter href="misc.dita">
+    <topicref href="package.dita">
+      <topicref product="rm" href="docker-hub.dita"/>
+    </topicref>
+    <topicref href="appliances.dita"/>
+    <topicref keyref="browsers-500"/>
+  </chapter>
+</bookmap>

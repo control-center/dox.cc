@@ -582,8 +582,10 @@ EOF</codeblock>
       <step importance="optional" id="docker-install-offline">
         <cmd><b><ph conkeyref="names/company"/> customers</b>: Install Docker 
           <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
-        <info>This step is for <ph conkeyref="names/company"/> customers 
-        who are creating a deployment without internet access.</info>
+        <info>
+          <note>If you are not a <ph conkeyref="names/company"/> customer
+          who is creating a deployment without internet access, skip this step.</note>
+        </info>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
@@ -792,8 +794,10 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
       <step importance="optional" id="install-serviced-offline">
         <cmd><b><ph conkeyref="names/company"/> customers</b>: 
           Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local mirror.</cmd>
-        <info>This step is for <ph conkeyref="names/company"/> customers 
-          who are creating a deployment without internet access.</info>
+        <info>
+          <note>If you are not a <ph conkeyref="names/company"/> customer
+            who is creating a deployment without internet access, skip this step.</note>
+        </info>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>

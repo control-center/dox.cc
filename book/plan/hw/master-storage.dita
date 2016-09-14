@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Master host storage requirements</title>
+  <refbody>
+    <section>
+      
+      <p>The <ph keyref="nm-cc"/> master host requires high-performance local or remote storage
+        to function properly. For most deployments, solid-state disk (SSD) devices that are directly attached 
+        to the master host provide an excellent storage solution, and <ph conkeyref="names/company"/> 
+        recommends them.</p> 
+        
+      <p>Storage-area network (SAN) systems are also supported. The overall response times and
+        configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/>, and
+        therefore, <ph keyref="nm-platform"/>. For example,  ZooKeeper (a key internal service of
+          <ph keyref="nm-cc"/>) is sensitive to storage latency greater than 1000 milliseconds. <ph
+          conkeyref="names/company"/> recommends using only high-performance SAN systems, and
+        assigning separate logical unit numbers (LUNs) for each mounted path.</p>
+      
+      <!-- This will change; waiting on CC-2118
+      <note>Docker and <ph keyref="nm-cc"/> require uninterrupted connection with the storage
+        systems that are used for their thin pools. Storage systems that disconnect and reconnect
+        during use, such as iSCSI, cause unrecoverable content corruption, and are not supported.</note>
+       -->
+
+      <p>In addition to the storage required for its operating system, a <ph keyref="nm-cc"/> master
+        host requires the following storage areas:</p>
+      <dl>
+        <dlentry>
+          <dt>Docker data</dt>
+          <dd>Size: 50GB (minimum)</dd>
+          <dd>Type: Device mapper thin pool</dd>
+          <dd>Mount point: None</dd>
+          <dd>The Docker data storage area contains the images and snapshots of the containers
+            it manages.</dd>
+          <dd>To prepare for installation, simply create a primary partition. The thin
+            pool is created during the installation process. </dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt><ph keyref="nm-cc"/> internal services data</dt>
+          <dd>Size: 50GB (minimum)</dd>
+          <dd>Type: XFS file system</dd>
+          <dd>Mount point: <filepath>/opt/serviced/var/isvcs</filepath></dd>
+          <dd>The storage area for <ph keyref="nm-cc"/> internal services contains a variety of
+            run-time data, including ZooKeeper data. ZooKeeper requires consistently fast storage.
+              <ph conkeyref="names/company"/> strongly recommends using a separate, high-performance
+            device, with only one primary partition, for <ph keyref="nm-cc"/> internal services.
+              <p>To prepare for installation, simply create a primary partition or logical volume.
+              The XFS file system for a local partition is created during the installation process.
+            </p>
+          </dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>Application data</dt>
+          <dd>Size: 300GB (minimum)</dd>
+          <dd>Type: Device mapper thin pool</dd>
+          <dd>Mount point: None</dd>
+          <dd>The storage area for <ph keyref="nm-cc"/> application data provides space for <ph
+              keyref="nm-platform"/> databases, and for snapshots of the data.</dd>
+          <dd><ph keyref="nm-platform"/> data storage requirements vary by collection rate. For
+            example, collecting 25,000 metrics per second can require 1.5TB of storage in 90 days.
+            <p>In addition, snapshots of the data are stored in this thin pool. 
+              <ph conkeyref="names/company"/> recommends providing space for snapshots that is
+            equal to the amount of space required for data storage.</p>
+            <p product="rm">For more
+              information about sizing this storage area, contact your <ph conkeyref="names/company"
+              /> respresentative.</p>
+          <p>To prepare for installation, simply create a primary partition. The thin
+            pool is created during the installation process. </p>
+          </dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>Application data backups</dt>
+          <dd>Size: 150GB (minimum; at least 50% of the application data size)</dd>
+          <dd>Type: XFS file system, or any Linux-compatible file system</dd>
+          <dd>Mount point: <filepath>/opt/serviced/var/backups</filepath></dd>
+          <dd>The storage area for <ph keyref="nm-cc"/> backups can be a local partition or a remote
+            file server. The <ph keyref="nm-cc"/> browser interface stores backup files in this
+            storage area. Backup files are very large (in the default configuration, it includes the
+            metrics database). <ph product="rm">For more information about sizing this location,
+              contact your <ph conkeyref="names/company"/> respresentative.</ph>
+          <p>This path does not require a 
+            dedicated partition or logical volume, but <ph conkeyref="names/company"/>
+            recommends providing one. Otherwise, this path is part of the root partition or
+            logical volume, and could overfill it, which would crash the master host.</p>
+          <p>To prepare for installation, simply create a primary partition or a logical
+            volume, or reserve an area on a remote file server. The XFS
+            file system for a local partition is created during the 
+            installation process. Likewise, the installation instructions
+            include steps for mounting a remote file server.</p>
+          </dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt><ph keyref="nm-cc"/> metadata (high-availability systems only)</dt>
+          <dd>Size: 1GB</dd>
+          <dd>Type: XFS file system</dd>
+          <dd>Mount point: <filepath>/opt/serviced/var/volumes</filepath></dd>
+          <dd>The storage area for <ph keyref="nm-cc"/> metadata 
+            is required to mirror the data between the master nodes
+            in high-availability deployments only.
+          <p>To prepare for installation, simply create a primary partition. The XFS
+            file system is created during the installation process. </p>
+          </dd>
+        </dlentry>        
+      </dl>
+    </section>
+  </refbody>
+</reference>

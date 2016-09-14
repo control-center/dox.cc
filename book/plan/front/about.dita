@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+ <title>About this guide</title>
+ <conbody>
+   
+   <p product="rm"><cite conkeyref="pubs/cite-install"/> provides detailed information about
+     preparing to install <ph keyref="nm-platform-long"/> (<ph keyref="nm-platform"/>).</p>
+   
+   <p product="open"><cite conkeyref="pubs/cite-install"/> provides detailed information about
+     preparing to install <ph keyref="nm-platform"/>.</p>
+   
+   <section conkeyref="related-pubs/zenoss"/>
+   
+   <section product="rm" conkeyref="more-info/rm"/>
+   <section product="open" conkeyref="more-info/open"/>
+  
+ </conbody>
+</concept>

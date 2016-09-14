@@ -54,7 +54,7 @@
           <codeblock>mount -a &#38;&#38; mount | grep isvcs</codeblock>
         </stepxmp>
         <stepresult>Example result:
-          <codeblock>/dev/xvdb1 on /opt/serviced/var/isvcs type xfs (rw,relatime,seclabel,attr2,inode64,noquota)</codeblock>
+          <codeblock>/dev/xvdb1 on /opt/serviced/var/isvcs type xfs (rw,relatime,attr2,inode64,noquota)</codeblock>
         </stepresult>
       </step>
     </steps>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Resource pool host requirements</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> requires real or virtual resource pool 
+        hosts that implement the 64-bit version of the x86 instruction set, 
+        and and support RHEL/CentOS 7.1 or 7.2.</p>
+      
+      <p product="rm">For resource pool hosts supporting the recommended multi-host configuration,
+        in which the master host is in its own, separate resource pool, the resources of resource
+        pool hosts must support all <ph keyref="nm-platform"/> application services. In this case,
+        each host must provide the following resources:</p>
+      <ul>
+        <li product="rm">8 CPU cores (64-bit only; real or virtual)</li>
+        <li product="open">4 CPU cores (64-bit only; real or virtual)</li>
+        <li product="rm">Random-access memory (RAM)
+          <ul>
+            <li>32GB (minimum)</li>
+            <li>48GB+ (recommended)</li>
+          </ul>
+        </li>
+        <li product="open">20GB RAM </li>
+        <li>1 network interface controller (must support TCP/IP and IPv4)</li>
+        <li>Local or remote high-performance storage (detailed separately)</li>
+      </ul>
+        
+ 
+      <p>In all cases, the hosts in resource pools need enough RAM, CPU, and storage resources to
+        support the services assigned to the pool. In all cases, the resources of all hosts in a
+        resource pool should be identical.</p>      
+      
+    </section>
+  </refbody>
+</reference>

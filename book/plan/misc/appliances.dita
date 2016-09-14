@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Pre-configured appliances</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> are available as a pre-configured
+        appliance, in OVA or ISO format. The majority of the installation process is complete,
+        including Docker image downloads. <ph conkeyref="names/company"/> supports installing the
+        OVA package on VMware vSphere systems, and installing the ISO package on Microsoft Hyper-V
+        systems.</p>
+      
+      <p>The appliance may be configured as a master host or as a resource pool host. An automated
+        setup process configures an appliance's role in a <ph keyref="nm-cc"/> cluster, and a
+        curses-based administration menu simplifies common maintenance procedures.</p>
+      
+      <note product="rm">To install the <ph keyref="nm-platform"/> appliance, you need permission to
+        download files from <ph conkeyref="names/support-site"/>. For more information, contact <ph
+          conkeyref="names/support"/>.</note>
+      
+      <note product="open">The <ph keyref="nm-platform"/> is available for download by all; no
+        special permissions are required. For more information, refer to the <cite
+          conkeyref="pubs/cite-install"/>.</note>
+      
+      <p product="rm">The appliance file is about 2.5GB in size, and expands to about 5GB when
+        installed. The
+        appliance specifies one 334GB disk with several LVM volumes. The volumes may be expanded,
+        but never shrunk. The hypervisor storage for the appliance may be a thin-provisioned
+        volume.</p>
+      
+      <p product="open">The appliance file is about 2GB in size, and expands to about 4GB when
+        installed. The
+        appliance specifies one 334GB disk with several LVM volumes. The volumes may be expanded,
+        but never shrunk. The hypervisor storage for the appliance may be a thin-provisioned
+        volume.</p>
+      
+    </section>
+  </refbody>
+</reference>
