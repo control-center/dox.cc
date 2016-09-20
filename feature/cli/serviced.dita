@@ -155,11 +155,10 @@
         </dlentry>
         <dlentry>
           <dt><synph>--admin-group <var>Group</var></synph></dt>
-          <dd>The name of the Linux group on the <cmdname>serviced</cmdname> master host 
-            whose members are authorized to use the <cmdname>serviced</cmdname> web interface.
-            On Ubuntu systems, the default value of <varname>Group</varname> is <codeph>sudo</codeph>;
-            on RHEL/CentOS systems, the default is <codeph>wheel</codeph>. If 
-            <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the configuration file,
+          <dd>The name of the Linux group on the <cmdname>serviced</cmdname> master host whose
+            members are authorized to use the <cmdname>serviced</cmdname> web interface. On
+            RHEL/CentOS systems, the default is <codeph>wheel</codeph>. If
+              <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the configuration file,
             its value is used instead of the default.</dd>
         </dlentry>
         <dlentry>
@@ -365,13 +364,9 @@
       <p>Service (daemon) control commands include start, stop and reload. The reload
       command sends <codeph>SIGHUP</codeph> to the daemon, which restarts all internal
         services except ZooKeeper.</p>
-      <ul>
-        <li>RHEL/CentOS: <codeph>sudo systemctl [start|stop|reload] serviced</codeph></li>
-        <li>Ubuntu: <codeph>sudo [start|stop|reload] serviced</codeph></li>
-      </ul>
-    </section>
-    
-    <section>
+             <codeblock>sudo systemctl [start|stop|reload] serviced</codeblock>
+          </section>
+       <section>
       <title>MISCELLANEOUS</title>
       <p>Sending <codeph>SIGUSR1</codeph> to the <cmdname>serviced</cmdname>
         process toggles the log level between 0 and 2.</p>
