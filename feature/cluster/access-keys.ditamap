@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
-<<<<<<< HEAD
- <title>Keys in feature/cluster/access (2016-09-14 10:37:15)</title>
-=======
- <title>Keys in feature/cluster/access (2016-09-09 15:05:10)</title>
->>>>>>> master
+ <title>Keys in feature/cluster/access</title>
   <topicgroup>
     <keydef keys="feature-cluster-access-access"
             href="access/access.dita"

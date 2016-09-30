@@ -390,11 +390,11 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Upgrade the operating system and then restart the host.</cmd>
+            <cmd>Update the operating system and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum upgrade -y &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
