@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p>This section contains several procedures for managing collections of hosts in <ph
-          keyref="nm-cc"/> resource pools, called <term>clusters</term>.</p>
+          keyref="nm-cc"/> and backing up and restoring applications and data.</p>
     </section>
   </refbody>
 </reference>

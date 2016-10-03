@@ -2,9 +2,8 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Adding storage for application data or snapshots</title>
-  <shortdesc>This procedure prepares a partition as a device mapper thin pool on a <ph
-      keyref="nm-cc"/> master host and adds it to the thin pool for applications. The storage can be
-    used for application data or for snapshots.</shortdesc>
+  <shortdesc>Follow this procedure to prepare a partition on a <ph keyref="nm-cc"/> master host and
+    add it to the thin pool for applications. </shortdesc>
   <taskbody>
     <prereq>To perform this procedure, you need an unformatted primary partition
       on the <ph keyref="nm-cc"/> master host.</prereq>
@@ -66,19 +65,19 @@
       </step>
       
       <step importance="optional">
-        <cmd>Add storage space for application data.</cmd>
+        <cmd>Add storage space for application data by expanding the tenant device.</cmd>
         <info>The preceding steps expand the amount of storage that is available for snapshots. To
-          use the additional storage for application data, perform this step.</info>
+          use the additional storage for application data, perform this step. </info>
         <substeps>
           <substep>
             <cmd>Using the values that you recorded in previous steps, add the size of the
               application data storage area to the size of the new partition.</cmd>
           </substep>
           <substep>
-            <cmd>Display the <ph keyref="nm-cc"/> tenant ID and record the identifier  for use in a
-              subsequent substep.</cmd>
+            <cmd>List services and record the identifier of the top-level service. Use this
+              identifier as the tenant identifier in a subsequent substep.</cmd>
             <stepxmp>
-              <codeblock>ls /opt/serviced/var/volumes</codeblock>
+              <codeblock>serviced service list | awk 'NR==2{print $2}'</codeblock>
             </stepxmp>
             <stepresult>Example result: <codeblock>dovygh6m2gz4zgdzxb2ud70g9</codeblock>
             </stepresult>
@@ -87,8 +86,12 @@
             <cmd>Update <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>Replace <varname>Tenant-ID</varname> with the identifier displayed in the
               previous substep. Replace <varname>Total-Space</varname> with the total amount of
-              application data storage space. Be sure to include the units ("G" for gigabytes).
-              <codeblock>serviced-storage resize -d /opt/serviced/var/volumes \
+              application data storage space. Be sure to include the units ("G" for
+                  gigabytes).<note><varname>Total-Space</varname>G represents the new size of the
+                tenant device. You can specify any value greater than the old tenant device size and
+                less than the old tenant device size plus the size of the new partition. Not using
+                the full size of the new partition leaves the remaining space behind for
+                snapshots.</note><codeblock>serviced-storage resize -d /opt/serviced/var/volumes \
   -o dm.thinpooldev=/dev/mapper/serviced-serviced--pool \
   <varname>Tenant-ID</varname> <varname>Total-Space</varname>G</codeblock>
             </stepxmp>

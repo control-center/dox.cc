@@ -12,12 +12,11 @@
         you can take a snapshot of the system.</p>
     </section>
     <section>
-      <p>Snapshots are a time- and space-efficient method of copying data. The main advantage of
-        taking a snapshot over a backup is that you do not have to stop any services when taking a
-        snapshot. You can take a snapshot whenever you need a save point for your Docker image, such
-        as before committing container changes.</p>
-      <p>When you take a snapshot, <ph keyref="nm-cc"/> creates a tag for the Docker image of each
-        service and takes a backup of the distributed file system. </p>
+      <p>Snapshots are a time- and space-efficient method of copying data. You can take a snapshot
+        whenever you need a save point for your Docker image, such as before committing container
+        changes. When you take a snapshot, <ph keyref="nm-cc"/> creates a tag for the Docker image
+        of each service with metadata about the data. <ph keyref="nm-cc"/> takes a separate snapshot
+        of the LVM thin pool, which stores both application data and snapshots of the data.</p>
       <p>Snapshots are intended to serve as short-term save points only, and therefore have a
         default time-to-live (TTL) value of 12 hours. If you need to keep a snapshot beyond the TTL,
         you can tag the snapshot to prevent it from being deleted after the TTL expires. For data

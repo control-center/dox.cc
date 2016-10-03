@@ -4,7 +4,8 @@
   <title><cmdname>serviced backup</cmdname></title>
   <shortdesc>The <cmdname>serviced backup</cmdname> command saves a snapshot of the current state of
     the system, the state of all services, and data to a compressed archive file
-      (<filepath>.tgz</filepath>). </shortdesc>
+      (<filepath>.tgz</filepath>).  You can exclude certain directories from a backup, such as a
+    directory that contains application performance data.</shortdesc>
   <refbody>
     <section id="section_csb_1wg_hx">
       <title/>
@@ -22,10 +23,17 @@
     </section>
     <section id="section_qfy_jyb_hx">
       <title>OPTIONS</title>
+      <!--CC_2442 -->
       <dl>
         <dlentry>
           <dt>--exclude '--exclude option --exclude option'</dt>
-          <dd>Subdirectory of the tenant volume to exclude from backup</dd>
+          <dd>Subdirectory of the tenant volume to exclude from a backup. <p>Example: To exclude a
+              directory under <codeph>/opt/serviced/var/volumes/TENANT</codeph>, such as
+                <codeph>hbase-master</codeph>, which contains performance data, use the following
+              command:</p><p>
+              <codeblock>serviced backup --exclude=hbase-master</codeblock>
+            </p><p>To exclude multiple directories, use multiple <codeph>--exclude</codeph>
+              options.</p></dd>
         </dlentry>
       </dl>
       <dl>
