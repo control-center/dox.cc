@@ -41,7 +41,7 @@
             with 50% of the space available on the target device or partition.
             Include a symbol for the units (gigabytes, <codeph>G</codeph>) after the number:</p>
           <codeblock>serviced-storage create-thin-pool -o dm.basesize=<varname>50-Percent</varname>G \
-            serviced <varname>Path-To-Device</varname></codeblock>
+  serviced <varname>Path-To-Device</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result includes the name of the thin pool,
           which always starts with <codeph>/dev/mapper</codeph>.</stepresult>

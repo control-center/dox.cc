@@ -11,6 +11,13 @@
       </step>
       
       <step>
+        <cmd>Verify the configuration settings.</cmd>
+        <stepxmp>
+          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
         <cmd>Start the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>).</cmd>
         <stepxmp>
           <codeblock>systemctl start serviced</codeblock>
@@ -19,6 +26,8 @@
           <codeblock>journalctl -flu serviced -o cat</codeblock>
         </info>
       </step>
+      
+      <!-- Add topic about adding host to cluster on master host (bi or cli) -->
 
     </steps>
   </taskbody>

@@ -21,7 +21,7 @@
       <step>
         <cmd>Identify the target device or partition for the filesystem to create.</cmd>
         <stepxmp>
-          <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
         </stepxmp>
       </step>
       

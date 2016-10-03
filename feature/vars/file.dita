@@ -215,16 +215,11 @@
           <dd><b>Default</b>: (list of ciphers)</dd> 
           <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports
             for mux traffic, separated by the comma character (<codeph>,</codeph>):<ul>
-              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
-              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</codeph></li>
-              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</codeph></li>
-              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
-              <li><codeph>TLS_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
             </ul>To disable support for a cipher, remove it from the list.</dd>
         </dlentry>
         
@@ -315,10 +310,10 @@
         
         <dlentry id="SERVICED_DM_BASESIZE">
           <dt><varname>SERVICED_DM_BASESIZE</varname></dt>
-          <dd><b>Default</b>: <codeph>100</codeph></dd> 
-          <dd>The base size of the data portion of the application thin pool, in gigabytes. 
+          <dd><b>Default</b>: <codeph>100G</codeph></dd> 
+          <dd>The base size of the data portion of the application thin pool. 
             The base size is set when <cmdname>serviced-storage</cmdname> is invoked to
-            create a thin pool, and 100GB is the default value used by
+            create a thin pool, and <codeph>100G</codeph> is the default value used by
             <cmdname>serviced-storage</cmdname>.</dd>
         </dlentry>
         
@@ -490,13 +485,6 @@
             up rapidly when this value is zero or too high.</dd>
         </dlentry>
         
-        <dlentry id="SERVICED_STORAGE_STATS_UPDATE_INTERVAL">
-          <dt><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></dt>
-          <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
-          <dd>The number of seconds between polls of kernel statistics
-            about the application data thin pool.</dd>
-        </dlentry>
-        
         <dlentry id="SERVICED_NFS_CLIENT">
           <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
           <dd><b>Default</b>: <codeph>1</codeph></dd> 
@@ -585,6 +573,12 @@
           <dd><b>Default</b>: 15</dd> 
           <dd>The number of seconds the ZooKeeper leader waits before flushing
             an inactive connection.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_AUTH_TOKEN_EXPIRATION">
+          <dt><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></dt>
+          <dd><b>Default</b>: 3600 (1 hour)</dd> 
+          <dd>The expiration time, in seconds, of delegate authentication tokens.</dd>
         </dlentry>
       </dl>
     </section>

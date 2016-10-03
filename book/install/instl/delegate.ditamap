@@ -10,6 +10,5 @@
     <topicref keyref="feature-cluster-delegate-docker-install"/>
     <topicref keyref="feature-cluster-delegate-cc-install"/>
     <topicref keyref="feature-cluster-delegate-docker-config"/>
-    <topicref keyref="feature-cluster-delegate-docker"/>
    </chapter>
 </bookmap>

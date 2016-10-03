@@ -390,11 +390,11 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Upgrade the operating system and then restart the host.</cmd>
+            <cmd>Update the operating system and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum upgrade -y &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -644,7 +644,7 @@ EOF</codeblock>
 TimeoutSec=300
 EnvironmentFile=-/etc/sysconfig/docker
 ExecStart=
-ExecStart=/usr/bin/docker daemon \$OPTIONS -H fd:// 
+ExecStart=/usr/bin/dockerd \$OPTIONS
 TasksMax=infinity
 EOF</codeblock>
             </stepxmp>
@@ -674,13 +674,13 @@ EOF</codeblock>
             <stepxmp>
               <p>Replace <varname>Master-IP-Address</varname> with the 
                 name of the IPv4 address of the master host:</p>
-              <codeblock>myIP="<varname>Master-IP-Address</varname>"</codeblock>
+              <codeblock>masterIP="<varname>Master-IP-Address</varname>"</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create variables for adding arguments to the Docker configuration file.</cmd>
-            <info>The <codeph>--exec-opt</codeph> argument is a workaround for <xref
-              keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</info>
+            <cmd>Create variables for adding arguments to the Docker configuration file. The
+                <codeph>--exec-opt</codeph> argument is a workaround for <xref
+                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
             <stepxmp>
               <p>Replace <varname>Thin-Pool-Device</varname> with the name of the thin pool device
                 created in the previous step:</p>
@@ -688,7 +688,7 @@ EOF</codeblock>
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=$myIP:5000"</codeblock>
+myReg="--insecure-registry=$masterIP:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -734,10 +734,10 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
               <p>Replace <varname>Bridge-Subnet</varname> with the IPv4 
                 subnet <cmdname>docker</cmdname> selected for its
                 virtual bridge:</p>
-              <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/24</codeblock>
+              <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/16</codeblock>
             </stepxmp>
             <info>For example, if the bridge subnet is 172.17.0.1, add the following flags:
-              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/24</codeblock>
+              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/16</codeblock>
             </info>
             <info>
               <note>Leave a blank space after the end of the thin pool device name,
