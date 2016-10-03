@@ -35,7 +35,6 @@
             <entry><varname>SERVICED_OPTS</varname></entry>
             <entry>Startup arguments for <cmdname>serviced</cmdname>.</entry>
           </row>
-          
         </tbody>
       </tgroup>
     </table>

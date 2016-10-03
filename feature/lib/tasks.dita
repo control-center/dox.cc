@@ -644,7 +644,7 @@ EOF</codeblock>
 TimeoutSec=300
 EnvironmentFile=-/etc/sysconfig/docker
 ExecStart=
-ExecStart=/usr/bin/docker daemon \$OPTIONS -H fd:// 
+ExecStart=/usr/bin/dockerd \$OPTIONS
 TasksMax=infinity
 EOF</codeblock>
             </stepxmp>
@@ -734,10 +734,10 @@ myReg="--insecure-registry=$myIP:5000"</codeblock>
               <p>Replace <varname>Bridge-Subnet</varname> with the IPv4 
                 subnet <cmdname>docker</cmdname> selected for its
                 virtual bridge:</p>
-              <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/24</codeblock>
+              <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/16</codeblock>
             </stepxmp>
             <info>For example, if the bridge subnet is 172.17.0.1, add the following flags:
-              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/24</codeblock>
+              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/16</codeblock>
             </info>
             <info>
               <note>Leave a blank space after the end of the thin pool device name,
