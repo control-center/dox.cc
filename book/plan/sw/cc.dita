@@ -5,7 +5,7 @@
   <conbody>
     
     <p><ph keyref="nm-cc"/> is a platform-as-a-service framework that can manage
-      <ph keyref="nm-platform"/> and any other Docker application, 
+      any Docker application, 
       from a simple web application to a multi-tiered stateful application stack.
       <ph keyref="nm-cc"/> is based on a service-oriented architecture, which enables 
       applications to run as a set of distributed services spanning hosts, datacenters,
@@ -13,7 +13,7 @@
     
     <p><ph keyref="nm-cc"/> includes the following, key features:</p>
     <ul>
-      <li>Intuitive HTML5 interface for deploying and managing <ph keyref="nm-platform"/></li>
+      <li>Intuitive HTML5 interface for deploying and managing applications</li>
       <li>Integrated backup and restore, and incremental snapshot and rollback support</li>
       <li>Centralized logging, through Logstash and ElasticSearch</li>
       <li>Support for database services and other persistent services</li>

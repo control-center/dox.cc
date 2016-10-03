@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Resource pool host storage requirements</title>
+  <title>Delegate host storage requirements</title>
   <refbody>
     <section>
       
-      <p>Like master hosts, <ph keyref="nm-cc"/> resource pool hosts require high-performance local or remote storage
+      <p>Like master hosts, <ph keyref="nm-cc"/> delegate hosts require high-performance local or remote storage
         to function properly. For most deployments, solid-state disk (SSD) devices that are directly attached 
         to the host provide an excellent storage solution, and <ph conkeyref="names/company"/> 
         recommends them.</p> 
         
       <p>Storage-area network (SAN) systems are also supported. The overall response times and
-        configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/>, and
-        therefore, <ph keyref="nm-platform"/>. <ph conkeyref="names/company"/> recommends using
+        configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/> and
+        the application it is managing. <ph conkeyref="names/company"/> recommends using
         only high-performance SAN systems, and assigning separate logical unit numbers (LUNs) 
         for each mounted path.</p>
 
       <p>In addition to the storage required for its operating system, the typical <ph keyref="nm-cc"/> 
-        resource pool host only requires storage for Docker data. The characteristics of,
+        delegate host only requires storage for Docker data. The characteristics of,
         and preparation for, this storage area are identical to those of the master host.</p>
       
-      <p>For resource pool hosts supporting the recommended multi-host configuration, in which
-        the master host is in its own, separate resource pool, two resource pool hosts require
+      <p>For delegate hosts supporting the recommended multi-host configuration, in which
+        the master host is in its own, separate resource pool, two delegate hosts require
         an additional storage area. The area is used for <ph keyref="nm-cc"/> internal services
         data, so that the hosts can participate in a ZooKeeper ensemble. The characteristics of,
         and preparation for, this storage area are identical to those of the master host.</p>

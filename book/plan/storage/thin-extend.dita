@@ -23,7 +23,7 @@
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Record the total size of the primary partion or partitions to add.</cmd>
+            <cmd>Record the total size of the primary partition or partitions to add.</cmd>
             <info>The total size is required for the last step.</info>
           </substep>
         </substeps>
@@ -38,13 +38,10 @@
           <substep>
             <cmd>Determine whether a physical volume is present.</cmd>
             <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
-              <sl>
-                <sli>Ubuntu hosts: <userinput>sudo pvs <varname>Device</varname></userinput></sli>
-                <sli>RHEL/CentOS hosts: <userinput>pvs <varname>Device</varname></userinput></sli>
-              </sl>
+              <codeblock>pvs <varname>Device</varname></codeblock>
             </stepxmp>
             <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
-              <codeblock><userinput>pvs <varname>Device</varname></userinput></codeblock>
+              <codeblock>pvs <varname>Device</varname></codeblock>
             </stepxmp>
             <stepresult>If the result includes <systemoutput>Failed to find physical
               volume</systemoutput>, perform the next substep.</stepresult>
@@ -52,15 +49,8 @@
           
           <substep>
             <cmd>Create a physical volume.</cmd>
-            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
-              <sl>
-                <sli>Ubuntu hosts: <userinput>sudo pvcreate <varname>Device</varname></userinput></sli>
-                <sli>RHEL/CentOS hosts: <userinput>pvcreate <varname>Device</varname></userinput></sli>
-              </sl>
+            <stepxmp>Replace <varname>Device</varname> with the path of a device or partition:
               <codeblock>pvcreate <varname>Device</varname></codeblock>
-            </stepxmp>
-            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
-              <codeblock><userinput>pvcreate <varname>Device</varname></userinput></codeblock>
             </stepxmp>
             
           </substep>
@@ -68,70 +58,22 @@
       </step>
       
       <step>
-        <cmd>Extend the volume group of the target thin pool.</cmd>
-        <stepxmp>To extend the volume group of the Docker thin pool, 
-          enter one of the following commands. Replace <varname>PhysicalVolumes</varname> 
-          with the names of one or more physical volumes:
-          <sl>
-            <sli>Ubuntu hosts: <userinput>sudo vgextend docker <varname>PhysicalVolumes</varname></userinput></sli>
-            <sli>RHEL/CentOS hosts: <userinput>vgextend docker <varname>PhysicalVolumes</varname></userinput></sli>
-          </sl>
-        </stepxmp>
-        <stepxmp>To extend the volume group of the <ph keyref="nm-platform"/> thin pool, 
-          enter one of the following commands. Replace <varname>PhysicalVolumes</varname> 
-          with the names of one or more physical volumes:
-          <sl>
-            <sli>Ubuntu hosts: <userinput>sudo vgextend serviced <varname>PhysicalVolumes</varname></userinput></sli>
-            <sli>RHEL/CentOS hosts: <userinput>vgextend serviced <varname>PhysicalVolumes</varname></userinput></sli>
-          </sl>
-        </stepxmp>
-        
-        <stepxmp>To extend the volume group of the Docker thin pool, 
-          enter the following command. Replace <varname>PhysicalVolumes</varname> 
-          with the names of one or more physical volumes:
-          <codeblock>vgextend docker <varname>PhysicalVolumes</varname></codeblock>
-        </stepxmp>
-        <stepxmp>To extend the volume group of the <ph keyref="nm-platform"/> thin pool, 
-          enter the following command. Replace <varname>PhysicalVolumes</varname> 
+        <cmd>Extend the volume group of the application data thin pool.</cmd>
+        <stepxmp>Replace <varname>PhysicalVolumes</varname> 
           with the names of one or more physical volumes:
           <codeblock>vgextend serviced <varname>PhysicalVolumes</varname></codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Extend the target thin pool with the updated volume group.</cmd>
-        <stepxmp>To extend the Docker thin pool, 
-          enter one of the following commands. Replace <varname>SIZE</varname> 
-          with the total size (including the units) of the physical volumes that
-          you added to the <codeph>docker</codeph> volume group:
-          <sl>
-            <sli>Ubuntu hosts: <userinput>sudo lvextend -L+<varname>SIZE</varname> docker/dockerpool</userinput></sli>
-            <sli>RHEL/CentOS hosts: <userinput>lvextend -L+<varname>SIZE</varname> docker/dockerpool</userinput></sli>
-          </sl>
-        </stepxmp>
-        <stepxmp>To extend the <ph keyref="nm-platform"/> thin pool, 
-          enter one of the following commands. Replace <varname>SIZE</varname> 
-          with the total size (including the units) of the physical volumes that
-          you added to the <codeph>serviced</codeph> volume group:
-          <sl>
-            <sli>Ubuntu hosts: <userinput>sudo lvextend -L+<varname>SIZE</varname> serviced/servicedpool</userinput></sli>
-            <sli>RHEL/CentOS hosts: <userinput>lvextend -L+<varname>SIZE</varname> serviced/servicedpool</userinput></sli>
-          </sl>
-        </stepxmp>
+        <cmd>Extend the application data thin pool with the updated volume group.</cmd>
         
-        <stepxmp>To extend the Docker thin pool, 
-          enter the following command. Replace <varname>SIZE</varname> 
-          with the total size (including the units) of the physical volumes that
-          you added to the <codeph>docker</codeph> volume group:
-          <codeblock>lvextend -L+<varname>SIZE</varname> docker/docker-pool</codeblock>
-        </stepxmp>
-        <stepxmp>To extend the <ph keyref="nm-platform"/> thin pool, 
-          enter the following command. Replace <varname>SIZE</varname> 
+        <stepxmp>Replace <varname>SIZE</varname> 
           with the total size (including the units) of the physical volumes that
           you added to the <codeph>serviced</codeph> volume group:
+          <codeblock>lvextend -L+<varname>SIZE</varname> serviced/servicedpool</codeblock>
           <codeblock>lvextend -L+<varname>SIZE</varname> serviced/serviced-pool</codeblock>
         </stepxmp>
-        
         <stepresult>The <cmdname>lvextend</cmdname> command automatically extends both 
           the data and metadata areas of the thin pool.</stepresult>
       </step>

@@ -4,7 +4,7 @@
   <title>Docker fundamentals</title>
   <conbody>
     <note>This section is a summation of <xref keyref="url-docker-arch">the architecture description
-        provided by Docker</xref>, customized for <ph keyref="nm-platform"/>. For additional
+        provided by Docker</xref>, customized for <ph keyref="nm-cc"/>. For additional
       information, refer to the Docker site.</note>
     
     <p>Docker provides convenient tools that make use of the 
@@ -21,18 +21,15 @@
       </dlentry>
       <dlentry>
         <dt>Docker registries</dt>
-        <dd>Docker registries hold images. The <ph keyref="nm-platform"/>
-        appliance includes a private Docker registry that holds the
-        images of the <ph keyref="nm-platform"/> application.</dd>
+        <dd>Docker registries hold images. <ph keyref="nm-cc"/>
+        uses a private Docker registry for its own images and
+        application images.</dd>
       </dlentry>
       <dlentry>
         <dt>Docker containers</dt>
         <dd>Docker containers have everything
         needed to run an instance of an application, and are 
-        created from images. The <ph keyref="nm-platform"/>
-        application includes
-        many different containers, and each container is used
-        to run one or more instances of a specific service.</dd>
+        created from images.</dd>
       </dlentry>
     </dl>
   </conbody>

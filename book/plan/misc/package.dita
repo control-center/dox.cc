@@ -5,24 +5,14 @@
   <refbody>
     <section>     
       
-      <p><ph keyref="nm-cc"/>, and the service definition templates for <ph keyref="nm-platform"/>,
-        are distributed as Redhat (<cmdname>yum</cmdname>/<cmdname>rpm</cmdname>) packages. The
-        packages are available at public repositories maintained by <ph conkeyref="names/company"/>.
-        The Docker images that <ph keyref="nm-platform"/> requires are available at the <ph
+      <p><ph keyref="nm-cc"/> is distributed as a Redhat (<cmdname>yum</cmdname>/<cmdname>rpm</cmdname>) package. The
+        package is available at public repositories maintained by <ph conkeyref="names/company"/>.
+        The Docker images that <ph keyref="nm-cc"/> requires are available at a public <ph
           conkeyref="names/company"/> <xref keyref="url-docker-hub">Docker Hub</xref> repository.
         So, the default installation process requires internet access. However, all of the 
         repositories may be mirrored, so offline installations are supported as well.</p>
-      
-      <note>To install <ph keyref="nm-platform"/>, you need a login account for
-        the Docker Hub repository, and permission to pull <ph conkeyref="names/company"/> images
-        from it. For more information, see <xref keyref="plan-misc-docker-hub"/>.</note>
-      
-      <note>The Docker images for <ph keyref="nm-platform"/> are available in a
-        public <ph conkeyref="names/company"/> repository at Docker Hub. No special permissions are
-        required to pull the images.</note>
-      
-      <p>The <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/>
-        packages require approximately 5GB of storage space.</p>
+
+      <p>The <ph keyref="nm-cc"/> package require approximately 50MB of storage space.</p>
       
     </section>
   </refbody>

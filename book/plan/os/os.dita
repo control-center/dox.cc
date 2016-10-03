@@ -4,8 +4,8 @@
   <title>Operating system requirements</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> require the 64-bit<xref
-          href="os.ditamap" format="ditamap"/> version of the following Linux distributions.</p>
+      <p><ph keyref="nm-cc"/> requires the 64-bit version 
+        of the following Linux distributions:</p>
         <ul>
           <li>Red Hat Enterprise Linux (RHEL) 7.1 or 7.2</li>
           <li>CentOS 7.1 or 7.2</li>
@@ -14,13 +14,9 @@
         subsequent updates, are supported. However, <ph conkeyref="names/company"/> encourages you
         to keep the kernel up-to-date.</p>
       
-      <!-- 
-      <note>All hosts in a <ph keyref="nm-cc"/> cluster must use the same release
-        of RHEL or CentOS. Likewise, all cluster hosts must use only RHEL or
-        only CentOS.</note>
-         -->
       
-      <p><ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> are tested on
+      
+      <p><ph keyref="nm-cc"/> is tested on
         operating system platforms that are installed and configured with standard options.</p>
 
       <p>The RHEL/CentOS 7.x distributions provide a variety of server configurations. Docker and
@@ -34,7 +30,7 @@
         timeserver in your environment, instead.</p>
       
       <note>Because of the reliance on the system clock, pausing a virtual machine that belongs to a
-        <ph keyref="nm-cc"/> cluster is not supported.</note>
+        <ph keyref="nm-cc"/> cluster while an application is running is not supported.</note>
     </section>
   </refbody>
 </reference>

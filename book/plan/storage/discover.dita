@@ -12,7 +12,7 @@
       </step>
       
       <step>
-        <cmd>Gain access to the console interface of the <ph keyref="nm-platform"/> virtual
+        <cmd>Gain access to the console interface of the <ph keyref="nm-cc"/> virtual
           machine through your hypervisor.</cmd>
         <info>
           <fig>

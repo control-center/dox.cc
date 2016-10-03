@@ -2,11 +2,11 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
 <title>Software</title>
-  <chapter href="sw.dita">
-    <topicref href="cc.dita">
-      <topicref href="cc-docker.dita"/>
-      <topicref href="cc-terms.dita"/>
+  <chapter keyref="plan-sw-sw">
+    <topicref keyref="plan-sw-cc">
+      <topicref keyref="plan-sw-cc-docker"/>
+      <topicref keyref="plan-sw-cc-terms"/>
     </topicref>
-    <topicref href="storage-drivers.dita"/>
+    <topicref keyref="plan-sw-storage-drivers"/>
   </chapter>
 </bookmap>

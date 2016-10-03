@@ -2,12 +2,12 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
 <title>Hardware</title>
-  <chapter href="hw.dita">
-    <topicref href="master.dita">
-      <topicref href="master-storage.dita"/>
+  <chapter keyref="plan-hw-hw">
+    <topicref keyref="plan-hw-master">
+      <topicref keyref="plan-hw-master-storage"/>
     </topicref>
-    <topicref href="worker.dita">
-      <topicref href="worker-storage.dita"/>
+    <topicref keyref="plan-hw-delegate">
+      <topicref keyref="plan-hw-delegate-storage"/>
     </topicref>
   </chapter>
 </bookmap>
