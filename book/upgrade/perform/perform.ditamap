@@ -2,9 +2,9 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Perform</title>
- <chapter href="perform.dita">
-    <topicref href="serviced.dita"/>
-   <topicref href="serviced-pool.dita"/>
-   <topicref href="stop.dita"/>
+  <chapter keyref="upgrade-perform-perform">
+    <topicref keyref="upgrade-perform-master"/>
+    <topicref keyref="upgrade-perform-delegate"/>
+    <topicref keyref="upgrade-perform-stop"/>
  </chapter>
 </bookmap>

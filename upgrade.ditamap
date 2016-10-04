@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.169</bookpartno>
+      <bookpartno>1300.16.278</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -37,11 +37,17 @@
     </topicgroup>
     <topicgroup>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/urls/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
-    <topicref href="book/upgrade/about.dita"/>
+    <topicgroup>
+      <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/lib-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/perform-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/prepare-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
   <chapter href="book/upgrade/prepare/prepare.ditamap" format="ditamap"/>

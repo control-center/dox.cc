@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Upgrading resource pool hosts</title>
+  <title>Upgrading delegate hosts</title>
   <taskbody>
     <context>This procedure upgrades <ph keyref="nm-cc"/> 
-      resource pool hosts to version <ph keyref="lo-version-cc"/>.</context>
-    <context>Perform this procedure on each resource pool host in your deployment.</context>
+      delegate hosts to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Perform this procedure on each delegate host in your deployment.</context>
     <steps>
       <step>
-        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>

@@ -30,7 +30,8 @@
           </substep>
         </substeps>
       </step>
-
+      
+      <!-- 
       <step >
         <cmd>Stop <ph keyref="nm-platform"/>, and then verify it is stopped.</cmd>
         <substeps>
@@ -50,6 +51,7 @@
           </substep>
         </substeps>
       </step>
+       -->
 
     </steps>
   </taskbody>

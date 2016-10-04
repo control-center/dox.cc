@@ -367,17 +367,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
           </substep>
         </substeps>
       </step>
-      
-      <step id="install-anacron">
-        <cmd>Install the <cmdname>cronie-anacron</cmdname> package.</cmd>
-        <info>The following commands determine whether <cmdname>cronie-anacron</cmdname>
-          is installed, and then install it if necessary. The install command requires
-          internet access or a local mirror of operating system packages.</info>
-        <stepxmp>
-          <codeblock>yum list installed cronie-anacron &#124;&#124; yum install -y cronie-anacron</codeblock>
-        </stepxmp>
-      </step>
-      
+
       <step id="update-os">
         <cmd>Update the operating system, if necessary.</cmd>
         <substeps>
