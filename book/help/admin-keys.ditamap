@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in help/admin (2016-09-13 17:51:25)</title>
+ <title>Keys in help/admin</title>
   <topicgroup>
     <keydef keys="help-admin-admin"
             href="admin/admin.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-backup-from-cli"
+            href="admin/backup-from-cli.dita"
             format="dita"
     />
     <keydef keys="help-admin-backup-restore"

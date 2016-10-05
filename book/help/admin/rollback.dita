@@ -2,7 +2,6 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Rolling back to a snapshot</title>
-  <shortdesc/>
   <taskbody>
     <prereq id="prereq_nrm_1bh_hx">Before rolling back, you must stop services that are used in the
       snapshot image. The following procedure includes this step.</prereq>
