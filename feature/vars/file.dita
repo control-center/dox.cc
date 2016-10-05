@@ -160,15 +160,17 @@
         <dlentry id="SERVICED_RPC_TLS_CIPHERS">
           <dt><varname>SERVICED_RPC_TLS_CIPHERS</varname></dt>
           <dd><b>Default</b>: (list of ciphers)</dd> 
-          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> supports for RPC connections,
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers for RPC connections,
             separated by the comma character (<codeph>,</codeph>): <ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
-            </ul>Different instances <cmdname>serviced</cmdname> are on both ends of 
-            an RPC connection, and both daemons use the first cipher in the list. To
+            </ul>Other ciphers are supported; the preceding ciphers 
+          provide strong security for relatively low processing overhead.</dd>
+          <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
+            an RPC connection, so both daemons use the first cipher in the list. To
             use a different cipher, put it first in the list, on all cluster hosts.</dd>
         </dlentry>
         
@@ -219,15 +221,17 @@
         <dlentry id="SERVICED_MUX_TLS_CIPHERS">
           <dt><varname>SERVICED_MUX_TLS_CIPHERS</varname></dt>
           <dd><b>Default</b>: (list of ciphers)</dd> 
-          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> supports
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers
             for mux traffic, separated by the comma character (<codeph>,</codeph>):<ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
-            </ul>Different instances <cmdname>serviced</cmdname> are on both ends of 
-            a mux connection, and both daemons use the first cipher in the list. To
+            </ul>Other ciphers are supported; the preceding ciphers 
+            provide strong security for relatively low processing overhead.</dd>
+          <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
+            a mux connection, so both daemons use the first cipher in the list. To
             use a different cipher, put it first in the list, on all cluster hosts.</dd>
         </dlentry>
         
