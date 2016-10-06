@@ -9,10 +9,10 @@
     cluster.</shortdesc>
   <refbody>
     <section>
-      <p>Backups includes the current state of the system, the state of all services, configuration
+      <p>Backups include the current state of the system, the state of all services, configuration
         information, and application data. <!-- CC-306 --> The backup process leverages snapshot
         functionality. Therefore, when a backup is running, you can start and restart services;
-        there is no need to shut down the application container or the docker containers. The
+        there is no need to shut down the application container or the Docker containers. The
         services are only momentarily suspended to enable reading the data.</p>
       <p>When a full backup is not necessary, such as when you need a checkpoint before installing
         software, you can perform a snapshot of the system. If you need to revert back to a
@@ -25,7 +25,7 @@
             snapshots of the data</li>
         </ul>When you take a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
         file and moves them out of the LVM thin pool. Backups do not affect TTL.</p>
-      <note product="open rm">Review considerations and best practices that apply to application
+      <note product="cc open">Review considerations and best practices that apply to application
         backup and restore:<ul id="ul_dqb_hrg_lx">
           <li>Ensure that you have enough free space to receive and store backups; running low on
             available disk space results in errors and affects system performance.</li>
@@ -59,8 +59,8 @@
             restore, those two snapshots are saved on the system, and are not downloaded again.</li>
         </ul></note>
       <p>Use the browser interface or the command-line interface (CLI) to back up and restore. Both
-        methods provide comparable results; however, the CLI command offers an option to specify
-        application data directories in to exclude from the backup.</p>
+        methods provide comparable results; however, the CLI command offers an option to exclude
+        subdirectories from the backup.</p>
     </section>
   </refbody>
 </reference>

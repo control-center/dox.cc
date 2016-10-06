@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Backing up by using the CLI</title>
+  <title>Backing up using the CLI</title>
   <shortdesc>As an alternative to performing application backup from the <ph keyref="nm-cc"/>
     browser interface, you can use the command-line interface (CLI). </shortdesc>
   <taskbody>
@@ -24,12 +24,14 @@
             that receives backups is <filepath>/opt/serviced/var/backups</filepath>. If your
             directory path is different, specify your
               path.<codeblock>serviced backup /opt/serviced/var/backups</codeblock><p>After a
-              successful backup, the system displays the new backup file name. For
-                example:</p><p><filepath>backup-2016-10-04-203717.tgz</filepath></p></choice>
+              successful backup, the system displays the new backup file name. </p><p>Example
+              result:</p><p>
+              <codeblock>backup-2016-10-04-203717.tgz</codeblock>
+            </p></choice>
         </choices>
       </step>
       <step importance="optional">
-        <cmd>Identify and exclude tenant volumes from the backup: </cmd>
+        <cmd>Identify and exclude tenant volumes from the backup.</cmd>
         <substeps>
           <substep>
             <cmd>Display the <ph keyref="nm-cc"/> tenant identifier. By default, <ph keyref="nm-cc"
@@ -49,8 +51,8 @@
             </info>
           </substep>
         </substeps>
-        <stepresult>Example result:<table frame="none" rowsep="1" colsep="1" id="table_ad4_fyx_mx">
-            <title/>
+        <stepresult>Example result:<table frame="none" rowsep="0" colsep="0" id="table_ad4_fyx_mx"
+            pgwide="1">
             <tgroup cols="4">
               <colspec colname="c1" colnum="1" colwidth="1*"/>
               <colspec colname="c2" colnum="2" colwidth="1.7*"/>
@@ -105,7 +107,7 @@
           <codeblock>serviced backup /opt/serviced/var/backups --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/mariadb-events --exclude opt/serviced/var/volumes/<varname>Tenant-ID</varname>/zeneventserver</codeblock></info>
       </step>
       <step importance="optional">
-        <cmd>Update automated backups to exclude tenant volumes. </cmd>
+        <cmd>If you use automated backups, edit them to exclude tenant volumes. </cmd>
       </step>
     </steps>
   </taskbody>

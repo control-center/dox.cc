@@ -17,9 +17,9 @@
       <step>
         <cmd>Click <uicontrol>Create Backup</uicontrol>. You are asked to confirm your selection by
           clicking <uicontrol>Create Backup</uicontrol> again.</cmd>
-        <stepresult>When the backup is complete, the <filepath>.tgz</filepath> file name is
-          displayed. The default directory that receives backups is
-            <filepath>/opt/serviced/var/backups</filepath>.</stepresult>
+        <stepresult>When the backup is complete, the compressed archive file name is displayed. The
+          default directory that receives backups is
+          <filepath>/opt/serviced/var/backups</filepath>.</stepresult>
       </step>
     </steps>
   </taskbody>
