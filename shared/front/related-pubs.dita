@@ -17,11 +17,6 @@
           </thead>
           <tbody>
             <row>
-              <entry><cite conkeyref="pubs/cite-ref"/></entry>
-              <entry>Provides an online and offline reference for various
-                features of <ph keyref="nm-cc"/>.</entry>
-            </row>
-            <row>
               <entry><cite conkeyref="pubs/cite-plan"/></entry>
               <entry>Provides both general and specific information about
                 preparing to deploy a <ph keyref="nm-cc"/> cluster.</entry>
