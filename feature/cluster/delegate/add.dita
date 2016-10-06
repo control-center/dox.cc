@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Add a delegate host to a resource pool</title>
+  <taskbody>
+    <context>Use this procedure to add a delegate host to a resource pool. <note>You can use
+        a hostname or an IP address to add a delegate host to a resource pool. If you use a
+        hostname, all of the hosts in your <ph keyref="nm-cc"/> cluster must be able to resolve the
+        name, either through an entry in <filepath>/etc/hosts</filepath>, or through a nameserver on
+        the network.</note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Add a delegate host to a resource pool.</cmd>
+        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of a delegate host:
+          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

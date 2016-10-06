@@ -3,6 +3,10 @@
 <map>
  <title>Keys in feature/cluster/delegate</title>
   <topicgroup>
+    <keydef keys="feature-cluster-delegate-add"
+            href="delegate/add.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-delegate-cc-install"
             href="delegate/cc-install.dita"
             format="dita"

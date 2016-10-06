@@ -26,9 +26,6 @@
           <codeblock>journalctl -flu serviced -o cat</codeblock>
         </info>
       </step>
-      
-      <!-- Add topic about adding host to cluster on master host (bi or cli) -->
-
     </steps>
   </taskbody>
 </task>
