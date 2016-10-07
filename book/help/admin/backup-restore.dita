@@ -25,7 +25,7 @@
             snapshots of the data</li>
         </ul>When you take a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
         file and moves them out of the LVM thin pool. Backups do not affect TTL.</p>
-      <note product="cc open">Review considerations and best practices that apply to application
+      <note>Review considerations and best practices that apply to application
         backup and restore:<ul id="ul_dqb_hrg_lx">
           <li>Ensure that you have enough free space to receive and store backups; running low on
             available disk space results in errors and affects system performance.</li>
@@ -42,18 +42,20 @@
             safekeeping and to help regulate storage space usage on the master.</li>
           <li>Backups that were taken using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
               keyref="nm-cc"/> 1.1.x or later.</li>
-          <li><!-- CC-282 -->If you manually deleted the default pool, you cannot restore from a
-            backup. The default pool is created on startup and is required.</li>
           <li>You can restore a backup to the system on which it was taken or to an alternate
-            system. The system on which you restore any backup must mirror at least one device from
-            the production system.</li>
+            system.  When restoring a backup from a one system to an alternate system, ensure that
+              <ul id="ul_bj3_css_nx">
+              <li>The alternate system mirrors at least one device from the backed-up system.</li>
+              <li><!--CC_1331-->Services that were added to the alternate system by a previous
+                restore have been manually deleted.</li>
+            </ul></li>
           <li>Frequently test restoring from a backup to ensure that the backup restores
             successfully, and that the restored system is an accurate representation of the state of
             the deployment when the backup was performed.</li>
           <li><!--CC_695-->Restoring from a backup file does not remove services that were added
             after taking the backup. That is, if you take a backup, add a service, and then restore
             from the backup, the service is not deleted as part of the restore process.</li>
-          <li><!-- CC-1474 -->If an outage occurs during a restore from a backup, you can resume the
+          <li><!--CC_1474 -->If an outage occurs during a restore from a backup, you can resume the
             restore. <ph keyref="nm-cc"/> preserves complete data on your system. For example, if
             two of six backed up snapshots are restored before an outage, when you resume the
             restore, those two snapshots are saved on the system, and are not downloaded again.</li>

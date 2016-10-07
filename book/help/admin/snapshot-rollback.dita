@@ -10,8 +10,7 @@
         configurations. However, taking a backup of an entire application is not always practical,
         and you need to safeguard against potential risk when changing your system. In these cases,
         you can take a snapshot of the system.</p>
-    </section>
-    <p>Snapshot functionality provides a time- and space-efficient method of copying data. You can
+        <p>Snapshot functionality provides a time- and space-efficient method of copying data. You can
       take a snapshot whenever you need a save point for your Docker image, such as before
       committing container changes. When you take a snapshot, <ph keyref="nm-cc"/> creates a tag for
       the Docker image of each service with metadata about the data. <ph keyref="nm-cc"/> takes a
@@ -36,5 +35,6 @@
       expand incrementally as application data changes. Application data and snapshots share the
       same base device; therefore, ensure that snapshots do not fill up the base device storage. For
       information about extending storage, see <xref keyref="help-admin-extend"/>.</p>
+    </section>
   </refbody>
 </reference>
