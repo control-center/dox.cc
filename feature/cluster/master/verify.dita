@@ -19,6 +19,10 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="feature-lib-tasks/check-cpu-aes">
+        <cmd></cmd>
+      </step>
+      
       <step conkeyref="feature-lib-tasks/check-memory-master">
         <cmd/>
       </step>

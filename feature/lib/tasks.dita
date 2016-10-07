@@ -241,7 +241,7 @@
           <substep>
             <cmd>Display the total number of CPU cores.</cmd>
             <stepxmp>
-              <codeblock>cat /proc/cpuinfo | grep 'core id' | wc -l</codeblock>
+              <codeblock>cat /proc/cpuinfo | egrep -c '^core id'</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -250,6 +250,19 @@
             <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
           </substep>
         </substeps>
+      </step>
+      
+      <step id="check-cpu-aes">
+        <cmd>Determine whether the CPU resources support the AES instruction set.</cmd>
+        <stepxmp>
+          <codeblock>cat /proc/cpuinfo | egrep -c '^flags.*aes'</codeblock>
+        </stepxmp>
+        <stepresult>For optimal performance, the result of the preceding commands
+          must match the total number of CPU resources available on the host. If the
+        result is 0, performance is severely degraded.
+        <p>If the result is 0 and the candidate host is a virtual machine, the managing 
+          hypervisor may be configured in Hyper-V compatibility mode. Check the setting
+          and disable it, if possible, or select a different host.</p></stepresult>
       </step>
       
       <step id="check-storage-pool">
