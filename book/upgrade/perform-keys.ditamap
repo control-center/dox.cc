@@ -7,6 +7,10 @@
             href="perform/delegate.dita"
             format="dita"
     />
+    <keydef keys="upgrade-perform-docker"
+            href="perform/docker.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-perform-master"
             href="perform/master.dita"
             format="dita"

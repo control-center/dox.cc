@@ -4,18 +4,15 @@
   <title>Performing an upgrade</title>
   <refbody>
     <section>
-      <p/>
+      <p>CC-2495</p>
       <ol>
         <li>Stop RM.</li>
         <li>Stop HA, if necessary.</li>
-        <li>Stop CC on hosts in the following order:
-          <ol>
-            <li>worker-collector</li>
-            <li>worker-rm</li>
-            <li>master and worker-rm-zk</li>
-          </ol>
-        </li>
+        <li>Stop CC on master, then delegates.</li>
+        <li>Hunt stray containers and kill them.</li>
         <li>Verify that NFS is mounted nowhere.</li>
+        <li>CC-528</li>
+        <li>stop and upgrade docker</li>
         <li>yum upgrade serviced on all hosts at same time.</li>
         <li>Compare serviced config files; update hygenically if necessary:
         <ul>

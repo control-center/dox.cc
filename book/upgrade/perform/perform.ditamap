@@ -3,6 +3,7 @@
 <bookmap >
  <title>Perform</title>
   <chapter keyref="upgrade-perform-perform">
+    <topicref keyref="upgrade-perform-docker"/>
     <topicref keyref="upgrade-perform-master"/>
     <topicref keyref="upgrade-perform-delegate"/>
     <topicref keyref="upgrade-perform-stop"/>
