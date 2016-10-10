@@ -6,6 +6,9 @@
     from a backup file to duplicate your instance on a new, similarly configured
     cluster.</shortdesc>
   <taskbody>
+    <prereq id="prereq_w55_hkn_4x">If your are restoring from a backup that was taken on another
+      system, copy the backup archive file to the target system. The default directory that receives
+      backups is <filepath>/opt/serviced/var/backups</filepath>.</prereq>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
@@ -29,7 +32,7 @@
             <cmd>In the <uicontrol>Applications</uicontrol> column of the
                 <uicontrol>Applications</uicontrol> table, click the name of the stopped instance,
               and then scroll down to the <uicontrol>Services</uicontrol> table to verify that all
-              are stopped.</cmd>
+              services are stopped.</cmd>
           </substep>
         </substeps>
         <info><!--CC-1531-->Because snapshots are loaded to disk, during a restore you are not
@@ -39,7 +42,7 @@
       </step>
       <step>
         <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab. The Backup / Restore page
-          appears listing your backup files.</cmd>
+          appears listing available backup files.</cmd>
       </step>
       <step>
         <cmd>Beside the backup file that you want to use to restore your application, click
