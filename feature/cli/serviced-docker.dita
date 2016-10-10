@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><cmdname>serviced docker</cmdname></title>
+  <shortdesc>The <cmdname>serviced docker</cmdname> command administers Docker images and
+    registry.</shortdesc>
+  <refbody>
+    <section id="section_p3x_mng_hx">
+      <title/>
+    </section>
+    <section id="section_wlf_fyb_hx">
+      <title>USAGE</title>
+      <codeblock>serviced docker [global options] command [command options] [arguments...]</codeblock>
+    </section>
+    <section id="section_qzq_xyb_hx"><title>COMMANDS</title>The following commands are available for
+        <cmdname>serviced docker</cmdname>:<dl>
+        <dlentry>
+          <dt>sync</dt>
+          <dd>Asynchronously push all images from the serviced Docker registry index into the Docker
+            registry.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>reset-registry </dt>
+          <dd>For upgrades only, download the latest images from the Docker registry and save them
+            into the serviced Docker registry index.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>migrate-registry </dt>
+          <dd>Migrate Docker registry data into another remote registry.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>override</dt>
+          <dd>Replace an image in the Docker registry with a new image</dd>
+        </dlentry>
+        <dlentry>
+          <dt>help, h</dt>
+          <dd>Show a list of commands or the help for a single command.</dd>
+        </dlentry>
+      </dl></section>
+    <section>
+      <title>Usage</title>
+      <p><cmdname>serviced docker</cmdname>
+      </p>
+    </section>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt> --generate-bash-completion</dt>
+          <dd/>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Shows the help for an option.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>
