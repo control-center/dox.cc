@@ -55,6 +55,12 @@
             the configuration file.</dd>
         </dlentry>
         <dlentry>
+          <dt> --nfs-client <varname>value</varname>
+          </dt>
+          <dd>Establish the agent as an nfs client sharing data.  The default value is 1 (enable).
+            Set to 0 to disable.</dd>
+        </dlentry>
+        <dlentry>
           <dt><synph>--listen <delim>:</delim><var>Port</var></synph></dt>
           <dd>The <cmdname>serviced</cmdname> RPC endpoint on the local host. 
             The default value of <varname>Port</varname> is 4979. NOTE: For release 1.0, only port 4979 is supported.</dd>
@@ -76,6 +82,21 @@
           <dt><synph>--mux <var>Port</var></synph></dt>
           <dd>The multiplexer port. The default value is 22250, unless
               <varname>SERVICED_MUX_PORT</varname> is set in the configuration file. </dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mux-<var>value</var>-tls</synph></dt>
+          <dd>Enable or disable Transport Layer Security (TLS) for multiplexer connections.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mux-tls-ciphers <synph><var>Option</var>
+                <delim>[</delim>--mux-tls-ciphers
+              <var>Option</var><delim>]</delim>&#8230;</synph></synph></dt>
+          <dd>List of supported TLS ciphers for multiplexer.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--mux-tls-min-version</synph><synph>
+              <var>Version</var></synph></dt>
+          <dd>The minimum TLS version for multiplexer.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--var <var>Path</var></synph></dt>
@@ -108,7 +129,7 @@
           <dt><synph>--mount <var>Option</var> 
             <delim>[</delim>--mount <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>One or more bind mounts for a container. The syntax for <varname>Option</varname> is
-            DOCKER_IMAGE,HOST_PATH[,CONTAINER_PATH]. <!-- Fix the syntax -->
+              <filepath>DOCKER_IMAGE,HOST_PATH[,CONTAINER_PATH]</filepath>. <!-- Fix the syntax -->
           </dd>
         </dlentry>
         <dlentry>
@@ -160,6 +181,40 @@
             RHEL/CentOS systems, the default is <codeph>wheel</codeph>. If
               <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the configuration file,
             its value is used instead of the default.</dd>
+        </dlentry>
+        <dlentry>
+          <dt> --storage-opts<synph>
+              <var>Option</var>
+              <delim>[</delim>--storage-opts <var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>Storage arguments to initialize the filesystem.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--isvcs-start<synph><var> Option</var>
+              <delim>[--isvcs-start option</delim>
+              <var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>Internal services to start on the agent.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--isvcs-zk-id <synph><var> Indentifier</var></synph>
+          </dt>
+          <dd>ZooKeeper ID when running in a cluster.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--isvcs-zk-quorum <synph><var> Option</var>
+            </synph>[--isvcs-zk-quorum <synph><var>
+                Option</var><synph><delim>]</delim>&#8230;</synph></synph></dt>
+          <dd>Internal services ZooKeeper host quorum (for example: <filepath>-isvcs-zk-quorum
+              zk1@localhost:2888:3888</filepath>). </dd>
+        </dlentry>
+        <dlentry>
+          <dt>--tls-ciphers <synph><var>Option</var>
+              <delim>[</delim>--tls-ciphers <var>Option</var><delim>]</delim>&#8230;</synph>
+          </dt>
+          <dd> List of supported TLS ciphers for HTTP.</dd>
+        </dlentry>
+        <dlentry>
+          <dt> --tls-min-version <synph><var>Version</var></synph></dt>
+          <dd>The minimum TLS version for HTTP,</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--report-stats</synph></dt>
@@ -218,6 +273,60 @@
           attempts to connect to the RPC endpoint on the master host. </dd>
         </dlentry>
         <dlentry>
+          <dt>--rpc-cert-verify <synph><var>Value</var></synph></dt>
+          <dd> Enable or disable verification of the RPC server certificate.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--rpc-disable-tls <synph><var>Value</var></synph></dt>
+          <dd>Whether to disable TLS for RPC connections.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--rpc-tls-ciphers <synph><var>Option</var>
+              <delim>[</delim>----rpc-tls-ciphers<var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>List of supported TLS ciphers for RPC.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--rpc-tls-min-version <synph><var>Version</var></synph></dt>
+          <dd>The minimum TLS version for RPC.</dd>
+        </dlentry>
+        <dlentry>
+          <dt> --snapshot-ttl <synph><var>Duration</var></synph></dt>
+          <dd>Snapshot TTL in hours. Set to 0 to disable.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--snapshot-space-percent <synph><var>Value</var></synph></dt>
+          <dd>The percentage of the tenant volume size that is assumed to be needed to create a
+            snapshot.</dd>
+        </dlentry>
+        <dlentry>
+          <dt> --controller-binary <synph><var>Path</var></synph></dt>
+          <dd>The path to the container controller binary. The default is
+              <filepath>/opt/serviced/bin/serviced-controller</filepath>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--log-driver <synph><var>json-file</var></synph></dt>
+          <dd>The log driver for docker containers.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--log-config<var>Option</var>
+              <delim>[</delim>--log-config<var>Option</var><delim>]</delim>&#8230;</synph>
+          </dt>
+          <dd>The comma-separated list of key-value settings for the Docker log driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--ui-poll-frequency <var>Duration</var></synph></dt>
+          <dd>The frequency in seconds that the browser interface polls <cmdname>serviced</cmdname>
+            for changes.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--storage-stats-update-interval <synph><var>Duration</var></synph></dt>
+          <dd>The frequency in seconds that the thin pool usage is analyzed.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--zk-session-timeout <synph><var>Duration</var></synph></dt>
+          <dd>The ZooKeeper session timeout in seconds.</dd>
+        </dlentry>
+        <dlentry>
           <dt><synph>--logtostderr</synph></dt>
           <dd>Write log messages to STDERR instead of the system log.</dd>
         </dlentry>
@@ -260,6 +369,10 @@
             both conditions are evaluated and enforced.</dd>
         </dlentry>
         <dlentry>
+          <dt><synph>--logstash-cycle-time <var>Duration</var></synph></dt>
+          <dd>The logstash purging cycle time in hours.</dd>
+        </dlentry>
+        <dlentry>
           <dt><synph>--v <var>Level</var></synph></dt>
           <dd>The relative amount of INFO messages <cmdname>serviced</cmdname> writes to the system
             log. The value of <varname>Level</varname> may be 0 (minimum) to 5 (maximum). The
@@ -280,6 +393,15 @@
         <dlentry>
           <dt><synph>--log_backtrace_at <var>File</var><delim>:</delim><var>Line</var></synph></dt>
           <dd>Emit a stack trace when logging hits the specified line and file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--config-file <var>Path</var></synph></dt>
+          <dd>The path to the configuration file. The default is
+              <filepath>/etc/default/serviced</filepath>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>--allow-loop-back <var>Value</var></synph></dt>
+          <dd>Specify whether to allow loop-back device with devicemapper.</dd>
         </dlentry>
         <!-- 
         <dlentry>
@@ -308,6 +430,10 @@
           <dd>Copy all templates and services into a <cmdname>tar</cmdname> archive file.</dd>
         </dlentry>
         <dlentry>
+          <dt><synph><kwd>config</kwd></synph></dt>
+          <dd>Reports on the <cmdname>serviced</cmdname> configuration.</dd>
+        </dlentry>
+        <dlentry>
           <dt><synph><kwd>docker</kwd></synph></dt>
           <dd>Administer Docker.</dd>
         </dlentry>
@@ -318,6 +444,10 @@
         <dlentry>
           <dt><synph><kwd>host</kwd></synph></dt>
           <dd>Administer hosts.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>healthcheck</kwd></synph></dt>
+          <dd>Reports on the health of <cmdname>serviced</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>log</kwd></synph></dt>
@@ -349,12 +479,23 @@
           <dd>Administer snapshots.</dd>
         </dlentry>
         <dlentry>
+          <dt><synph><kwd>server</kwd></synph>
+          </dt>
+          <dd>Starts <cmdname>serviced</cmdname>.</dd>
+        </dlentry>
+        <dlentry>
           <dt><synph><kwd>template</kwd></synph></dt>
           <dd>Administer templates.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>version</kwd></synph></dt>
           <dd>Display <cmdname>serviced</cmdname> version information.</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt><synph><kwd>volume</kwd></synph></dt>
+          <dd>Administers volume data.</dd>
         </dlentry>
       </dl>    
     </section>
