@@ -9,7 +9,10 @@
   <refbody>
     <section id="section_xd3_xvg_hx">
       <title/>
-      <p>For more information, see <xref keyref="help-admin-restore"/>.</p>
+      <p>If your are restoring from a backup that was taken on another system, copy the backup
+        archive file to the target system. The default directory that receives backups is
+          <filepath>/opt/serviced/var/backups</filepath>. For more information, see <xref
+          keyref="help-admin-restore"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
       <title>USAGE</title>
