@@ -37,22 +37,6 @@
               keyref="nm-cc"/> is ready for the next steps.</p>
         </stepresult>
       </step>
-      
-      <step importance="optional">
-        <cmd>Add the master host to the <codeph>default</codeph> resource pool.</cmd>
-        <info>
-          <note>Perform this step <b>only if you are installing a single-host deployment</b>.</note>
-        </info>
-        <stepxmp>
-          <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the <ph
-            keyref="nm-cc"/> master host:</p>
-          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
-          <p>If you enter a hostname, all hosts in your <ph keyref="nm-cc"/> cluster must be able to
-            resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
-            a nameserver on your network.</p>
-        </stepxmp>
-      </step>
-
     </steps>
   </taskbody>
 </task>

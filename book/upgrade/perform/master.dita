@@ -11,30 +11,7 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step>
-        <cmd>Verify that accidental upgrades of Docker are disabled.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Check the Docker repository.</cmd>
-            <stepxmp>
-              <codeblock>grep enabled /etc/yum.repos.d/docker.repo</codeblock>
-            </stepxmp>
-            <stepresult>If the result is <codeph>enabled=1</codeph>,
-              perform the following substeps.</stepresult>
-          </substep>
-          <substep>
-            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
-              a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Change the value of the <codeph>enabled</codeph> key
-              from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Save the file and close the text editor.</cmd>
-          </substep>
-        </substeps>
-      </step>
+      
       
       <step>
         <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
@@ -72,8 +49,8 @@
     <postreq>
       <ul>
         <li><b>Single-host deployments:</b> You may log in to the <ph keyref="nm-cc"/> browser interface,
-          and then restart <ph keyref="nm-platform"/>, if desired.</li>
-        <li><b>Multi-host deployments:</b> Update all resource pool hosts (the next procedure).</li>
+          and then restart applications, if desired.</li>
+        <li><b>Multi-host deployments:</b> Update all delegate hosts (the next procedure).</li>
       </ul>
     </postreq>
   </taskbody>

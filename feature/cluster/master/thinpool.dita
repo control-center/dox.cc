@@ -81,8 +81,8 @@ chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
               <p>Replace <varname>50-Percent</varname> with the 
                 number specified with the <codeph>dm.basesize</codeph> argument 
                 in the preceding <cmdname>serviced-storage</cmdname> command.
-                Do not include a symbol for the units; just the number:</p>
-              <codeblock>SERVICED_DM_BASESIZE=<varname>50-Percent</varname></codeblock>
+                Include the symbol for the units, <codeph>G</codeph>:</p>
+              <codeblock>SERVICED_DM_BASESIZE=<varname>50-Percent</varname>G</codeblock>
             </stepxmp>
           </substep>
           <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>

@@ -46,8 +46,12 @@
             <cmdname>serviced</cmdname> instance may be configured as delegate and master or 
             just delegate.</dd>
           <dd>This variable must be explicitly set on all <ph keyref="nm-cc"/> cluster hosts. </dd>
-          
-          <!-- save for the day SERVICED_AGENT dies
+        </dlentry>
+        
+        <!-- save for the day SERVICED_AGENT dies
+        <dlentry id="SERVICED_MASTER">
+          <dt><varname>SERVICED_MASTER</varname></dt>
+          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
           <dd>Assigns the role of a <cmdname>serviced</cmdname> instance, either master or delegate.
             The master runs the application services scheduler and other internal services.
             Delegates run the application services assigned to the resource pool to which
@@ -56,8 +60,8 @@
             must be delegates. The default value assigns the delegate role. To assign the master
             role, set the value to <codeph>1</codeph> (true). This variable must be explicitly set 
             on all <ph keyref="nm-cc"/> cluster hosts. </dd>
-            -->
         </dlentry>
+        -->
         
         <dlentry id="SERVICED_ZK">
           <dt><varname>SERVICED_ZK</varname></dt>
@@ -156,14 +160,18 @@
         <dlentry id="SERVICED_RPC_TLS_CIPHERS">
           <dt><varname>SERVICED_RPC_TLS_CIPHERS</varname></dt>
           <dd><b>Default</b>: (list of ciphers)</dd> 
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for RPC connections,
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers for RPC connections,
             separated by the comma character (<codeph>,</codeph>): <ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
-            </ul>To disable support for a cipher, remove it from the list.</dd>
+            </ul>Other ciphers are supported; the preceding ciphers 
+          provide strong security for relatively low processing overhead.</dd>
+          <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
+            an RPC connection, so both daemons use the first cipher in the list. To
+            use a different cipher, put it first in the list, on all cluster hosts.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_PORT">
@@ -213,14 +221,18 @@
         <dlentry id="SERVICED_MUX_TLS_CIPHERS">
           <dt><varname>SERVICED_MUX_TLS_CIPHERS</varname></dt>
           <dd><b>Default</b>: (list of ciphers)</dd> 
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers
             for mux traffic, separated by the comma character (<codeph>,</codeph>):<ul>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
-            </ul>To disable support for a cipher, remove it from the list.</dd>
+            </ul>Other ciphers are supported; the preceding ciphers 
+            provide strong security for relatively low processing overhead.</dd>
+          <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
+            a mux connection, so both daemons use the first cipher in the list. To
+            use a different cipher, put it first in the list, on all cluster hosts.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_PATH">
@@ -275,10 +287,12 @@
         <dlentry id="SERVICED_TLS_CIPHERS">
           <dt><varname>SERVICED_TLS_CIPHERS</varname></dt>
           <dd><b>Default</b>: (list of ciphers)</dd> 
-          <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts
-            for HTTP traffic, separated by the comma character (<codeph>,</codeph>): <ul>
+          <dd>The list of TLS ciphers that <cmdname>serviced</cmdname> accepts
+            for HTTP traffic, separated by the comma character (<codeph>,</codeph>): <ol>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
               <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
@@ -287,7 +301,21 @@
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
-            </ul> To disable support for a cipher, remove it from the list.</dd>
+              <li><codeph>TLS_RSA_WITH_RC4_128_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_GCM_SHA384</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_RC4_128_SHA</codeph></li>
+            </ol></dd>
+          <dd>To disable support for most ciphers, you can remove them from the list. 
+            The following rules apply to the list:<ul>
+              <li>The first cipher, <codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph>, 
+              must always be present in the list of ciphers.</li>
+            <li>The first four ciphers in the list must always precede any of the 
+            ciphers that appear after the first four. The first four ciphers are valid
+            for HTTP/2, while the remaining ciphers are not.</li>
+          </ul>
+          </dd>
         </dlentry>
 
         <dlentry id="SERVICED_FS_TYPE">
@@ -578,7 +606,8 @@
         <dlentry id="SERVICED_AUTH_TOKEN_EXPIRATION">
           <dt><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></dt>
           <dd><b>Default</b>: 3600 (1 hour)</dd> 
-          <dd>The expiration time, in seconds, of delegate authentication tokens.</dd>
+          <dd>The expiration time, in seconds, of delegate authentication tokens. This timeout affects
+            RPC, mux, and <cmdname>serviced</cmdname> internal services endpoint communications.</dd>
         </dlentry>
       </dl>
     </section>

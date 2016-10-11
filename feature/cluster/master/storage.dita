@@ -51,6 +51,12 @@
                 that it does not cause contention with the storage for <ph keyref="nm-cc"/>
                 internal services.</entry>
             </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> metadata</entry>
+              <entry>1GB (required)</entry>
+              <entry>A local, high-performance device or partition formatted as an XFS filesystem.
+                (High-availability deployments only.)</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>

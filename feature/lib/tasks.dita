@@ -241,7 +241,7 @@
           <substep>
             <cmd>Display the total number of CPU cores.</cmd>
             <stepxmp>
-              <codeblock>cat /proc/cpuinfo | grep 'core id' | wc -l</codeblock>
+              <codeblock>cat /proc/cpuinfo | egrep -c '^core id'</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -250,6 +250,19 @@
             <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
           </substep>
         </substeps>
+      </step>
+      
+      <step id="check-cpu-aes">
+        <cmd>Determine whether the CPU resources support the AES instruction set.</cmd>
+        <stepxmp>
+          <codeblock>cat /proc/cpuinfo | egrep -c '^flags.*aes'</codeblock>
+        </stepxmp>
+        <stepresult>For optimal performance, the result of the preceding commands
+          must match the total number of CPU resources available on the host. If the
+        result is 0, performance is severely degraded.
+        <p>If the result is 0 and the candidate host is a virtual machine, the managing 
+          hypervisor may be configured in Hyper-V compatibility mode. Check the setting
+          and disable it, if possible, or select a different host.</p></stepresult>
       </step>
       
       <step id="check-storage-pool">
@@ -285,19 +298,21 @@
         <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
           and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
-          <codeblock>cat /etc/hostid 2>/dev/null || hostid | tee /etc/hostid</codeblock>
+          <codeblock>test -f /etc/hostid || genhostid
+hostid</codeblock>
         </stepxmp>
         <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
       </step>
       
       <step id="check-hostid">
-        <cmd>Display and set the host's numeric ID.</cmd>
+        <cmd>Ensure the host has a persistent numeric ID.</cmd>
         <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
           and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
-          <codeblock>cat /etc/hostid 2>/dev/null || hostid | tee /etc/hostid</codeblock>
+          <codeblock>test -f /etc/hostid || genhostid
+hostid</codeblock>
         </stepxmp>
-        <stepresult>Compare the ID with all the other hosts in the cluster.</stepresult>
+        <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
       </step>
 
       
@@ -367,17 +382,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
           </substep>
         </substeps>
       </step>
-      
-      <step id="install-anacron">
-        <cmd>Install the <cmdname>cronie-anacron</cmdname> package.</cmd>
-        <info>The following commands determine whether <cmdname>cronie-anacron</cmdname>
-          is installed, and then install it if necessary. The install command requires
-          internet access or a local mirror of operating system packages.</info>
-        <stepxmp>
-          <codeblock>yum list installed cronie-anacron &#124;&#124; yum install -y cronie-anacron</codeblock>
-        </stepxmp>
-      </step>
-      
+
       <step id="update-os">
         <cmd>Update the operating system, if necessary.</cmd>
         <substeps>
@@ -546,7 +551,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
               <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker.repo
 [dockerrepo]
 name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/\$releasever/
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
 enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
@@ -628,7 +633,7 @@ EOF</codeblock>
       
       <step id="docker-svc-def">
         <cmd>Create a <cmdname>systemd</cmdname> override file 
-          for the Docker service definition.</cmd>
+          for Docker Engine.</cmd>
         <substeps>
           <substep>
             <cmd>Create the override directory.</cmd>
@@ -637,7 +642,7 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create the override file.</cmd>
+            <cmd>Create the unit drop-in file.</cmd>
             <stepxmp>
               <codeblock>cat &#60;&#60;EOF &#62; /etc/systemd/system/docker.service.d/docker.conf
 [Service]
@@ -672,9 +677,9 @@ EOF</codeblock>
           <substep>
             <cmd>Create a variable for the IPv4 address of the master host.</cmd>
             <stepxmp>
-              <p>Replace <varname>Master-IP-Address</varname> with the 
-                name of the IPv4 address of the master host:</p>
-              <codeblock>masterIP="<varname>Master-IP-Address</varname>"</codeblock>
+              <p>Replace <varname>Master-Host</varname> with the 
+                hostname or IPv4 address of the master host:</p>
+              <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -682,8 +687,6 @@ EOF</codeblock>
                 <codeph>--exec-opt</codeph> argument is a workaround for <xref
                 keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
             <stepxmp>
-              <p>Replace <varname>Thin-Pool-Device</varname> with the name of the thin pool device
-                created in the previous step:</p>
               <codeblock>myDriver="--storage-driver devicemapper"
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
@@ -703,7 +706,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             <stepxmp>
               <codeblock>systemctl restart docker</codeblock>
             </stepxmp>
-            <stepresult>The initial startup may take up to a minute, and may fail. If startup
+            <stepresult>The startup may take up to a minute, and may fail. If startup
               fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
           </substep>
         </substeps>
@@ -740,9 +743,9 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
               <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/16</codeblock>
             </info>
             <info>
-              <note>Leave a blank space after the end of the thin pool device name,
+              <note>Use a space character (<codeph>&#32;</codeph>) to separate flags,
               and make sure the double quote character (<codeph>&#34;</codeph>)
-              is at the end of the line.</note>
+              delimits the declaration of <varname>OPTIONS</varname>.</note>
             </info>
           </substep>
           <substep>

@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/upgrade/perform (2016-09-13 17:38:28)</title>
+ <title>Keys in upgrade/perform</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-upgrade-perform-perform"
+    <keydef keys="upgrade-perform-delegate"
+            href="perform/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-perform-docker"
+            href="perform/docker.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-perform-master"
+            href="perform/master.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-perform-perform"
             href="perform/perform.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-upgrade-perform-serviced-pool"
-            href="perform/serviced-pool.dita"
-            format="dita"
-    />
-    <keydef keys="dox.cc-book-upgrade-perform-serviced"
-            href="perform/serviced.dita"
-            format="dita"
-    />
-    <keydef keys="dox.cc-book-upgrade-perform-stop"
+    <keydef keys="upgrade-perform-stop"
             href="perform/stop.dita"
             format="dita"
     />

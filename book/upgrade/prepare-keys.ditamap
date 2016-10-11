@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/upgrade/prepare (2016-09-13 17:38:28)</title>
+ <title>Keys in upgrade/prepare</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-upgrade-prepare-download"
+    <keydef keys="upgrade-prepare-download"
             href="prepare/download.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-upgrade-prepare-prepare"
+    <keydef keys="upgrade-prepare-prepare"
             href="prepare/prepare.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-upgrade-prepare-stage"
+    <keydef keys="upgrade-prepare-stage"
             href="prepare/stage.dita"
             format="dita"
     />

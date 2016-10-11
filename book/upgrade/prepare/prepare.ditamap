@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Prepare</title>
- <chapter href="prepare.dita">
+  <chapter keyref="upgrade-prepare-prepare">
    <!--   <topicref href="scope.dita"/>  -->
  </chapter>
 </bookmap>

@@ -4,11 +4,11 @@
   <title>Install master</title>
   <chapter keyref="install-instl-master">
     <topicref keyref="feature-cluster-master-verify"/>
-    <topicref keyref="feature-cluster-master-device-naming"/>
     <topicref keyref="feature-cluster-master-storage">
       <topicref keyref="feature-cluster-master-storage-isvcs"/>
       <topicref keyref="feature-cluster-master-storage-backups"/>
     </topicref>
+    <topicref keyref="feature-cluster-master-device-naming"/>
     <topicref keyref="feature-cluster-master-prep"/>
     <topicref keyref="feature-cluster-master-docker-install"/>
     <topicref keyref="feature-cluster-master-cc-install"/>

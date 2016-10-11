@@ -28,14 +28,8 @@
         <cmd></cmd>
       </step>
       
-      
-      
       <step conkeyref="feature-lib-tasks/dnsmasq">
         <cmd></cmd>
-      </step>
-      
-      <step conkeyref="feature-lib-tasks/install-anacron">
-        <cmd/>
       </step>
       
       <step conkeyref="feature-lib-tasks/ntp">
