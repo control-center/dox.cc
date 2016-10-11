@@ -10,7 +10,7 @@
           />.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/update-kernel">
+      <step conkeyref="upgrade-lib-tasks/update-kernel">
         <cmd/>
       </step>
 
@@ -55,11 +55,18 @@
       </step>
 
       <step>
-        <cmd>Back up the Docker Engine override and environment files.</cmd>
+        <cmd>Back up the Docker Engine drop-in and environment files.</cmd>
         <stepxmp>
           <codeblock>mv /etc/systemd/system/docker.service.d/docker.conf \
   /etc/systemd/system/docker.service.d/docker.conf.bak
 mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Stop the Docker Engine service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
         </stepxmp>
       </step>
       
@@ -95,7 +102,7 @@ yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
       </step>
       
       <step>
-        <cmd>Create a new Docker Engine override file.</cmd>
+        <cmd>Create a new Docker Engine drop-in file.</cmd>
         <stepxmp>
           <codeblock>cat &#60;&#60;EOF > /etc/systemd/system/docker.service.d/docker.conf
 [Service]
@@ -116,10 +123,10 @@ EOF</codeblock>
       </step>
       
       <step>
-        <cmd>Configure and start the Docker service.</cmd>
+        <cmd>Configure and start the Docker Engine service.</cmd>
         <substeps>
           <substep>
-            <cmd>Create a variable for the name of the Docker thin pool.</cmd>
+            <cmd>Create a variable for the name of the Docker Engine thin pool.</cmd>
             <stepxmp>
               <p>Replace <varname>Thin-Pool-Device</varname> with the name of the
                 thin pool device identified in a previous step:</p>
@@ -127,7 +134,7 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the IPv4 address of the master host.</cmd>
+            <cmd>Create a variable for the hostname or IPv4 address of the master host.</cmd>
             <stepxmp>
               <p>Replace <varname>Master-Host</varname> with the 
                 hostname or IPv4 address of the master host:</p>
@@ -135,7 +142,7 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create variables for adding arguments to the Docker configuration file. The
+            <cmd>Create variables for adding arguments to the Docker Engine environment file. The
               <codeph>--exec-opt</codeph> argument is a workaround for <xref
                 keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
             <stepxmp>
@@ -147,7 +154,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Add the arguments to the Docker configuration file.</cmd>
+            <cmd>Add the arguments to the Docker Engine environment file.</cmd>
             <stepxmp>
               <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myFlag $myReg'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
@@ -158,14 +165,27 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             <stepxmp>
               <codeblock>systemctl restart docker</codeblock>
             </stepxmp>
-            <stepresult>The startup may take up to a minute, and may fail. If startup
-              fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
+            <stepresult>The startup may take up to a minute.</stepresult>
           </substep>
         </substeps>
       </step>
       
-      <step conkeyref="feature-lib-tasks/docker-dns-flag">
+      <step conkeyref="upgrade-lib-tasks/docker-dns-flag">
         <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Compare the previous versions of the Docker Engine drop-in and environment files
+        with the new versions, and add any customizations for your deployment to the new versions.</cmd>
+        <info>The files to compare: <ul>
+            <li>Drop-in files: <filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>
+              and <filepath>/etc/systemd/system/docker.service.d/docker.conf.bak</filepath></li>
+            <li>Environment files: <filepath>/etc/sysconfig/docker</filepath> and
+                <filepath>/etc/sysconfig/docker</filepath></li>
+          </ul>
+          <p>If you change the drop-in file, reload the <cmdname>systemd</cmdname> manager
+            configuration with <userinput>systemctl daemon-reload</userinput>.</p>
+        </info>
       </step>
     </steps>
   </taskbody>

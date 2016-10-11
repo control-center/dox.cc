@@ -743,9 +743,9 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
               <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/16</codeblock>
             </info>
             <info>
-              <note>Leave a blank space after the end of the thin pool device name,
+              <note>Use a space character (<codeph>&#32;</codeph>) to separate flags,
               and make sure the double quote character (<codeph>&#34;</codeph>)
-              is at the end of the line.</note>
+              delimits the declaration of <varname>OPTIONS</varname>.</note>
             </info>
           </substep>
           <substep>
