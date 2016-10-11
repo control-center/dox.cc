@@ -6,17 +6,17 @@
     <context>Use this procedure to update Docker Engine to version <ph keyref="lo-version-docker"/>.</context>
     <steps>
       <step>
-        <cmd>Log in to the <ph keyref="nm-cc"/> cluster
-          host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the <ph keyref="nm-cc"/> cluster host <ph conkeyref="strings/login-root"
+          />.</cmd>
       </step>
       
       <step conkeyref="feature-lib-tasks/update-kernel">
-        <cmd></cmd>
+        <cmd/>
       </step>
-      
+
       <step>
-        <cmd>Log in to the <ph keyref="nm-cc"/> cluster
-          host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the <ph keyref="nm-cc"/> cluster host <ph conkeyref="strings/login-root"
+          />.</cmd>
       </step>
       
       <step>
