@@ -23,6 +23,10 @@
             href="cli/serviced-backup.dita"
             format="dita"
     />
+    <keydef keys="feature-cli-serviced-docker"
+            href="cli/serviced-docker.dita"
+            format="dita"
+    />
     <keydef keys="feature-cli-serviced-restore"
             href="cli/serviced-restore.dita"
             format="dita"

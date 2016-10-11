@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Backing up using the CLI</title>
+  <shortdesc>As an alternative to performing application backup from the <ph keyref="nm-cc"/>
+    browser interface, you can use the command-line interface (CLI). </shortdesc>
+  <taskbody>
+    <context id="context_tbt_5px_mx">Using the CLI, you can back up your entire system or specify
+      one or more tenant volumes to exclude from the backup. For example, to save resources you
+      might exclude the tenant volume that contains performance data,
+        <filepath>hbase-master</filepath>. If you want to take a backup to restore on another
+      system, you might exclude the tenant volumes for the database and index,
+        <filepath>mariadb-events</filepath> and <filepath>zeneventserver</filepath>.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host <ph conkeyref="strings/login-root"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Choose what to back up: </cmd>
+        <choices id="choices_x15_gqx_mx">
+          <choice>To exclude one or more tenant volumes, skip to the next step.</choice>
+          <choice>To include the entire system, execute the following command. The default directory
+            that receives backups is <filepath>/opt/serviced/var/backups</filepath>. If your
+            directory path is different, specify your
+              path.<codeblock>serviced backup /opt/serviced/var/backups</codeblock><p>After a
+              successful backup, the system displays the new backup file name. </p><p>Example
+              result:</p><p>
+              <codeblock>backup-2016-10-04-203717.tgz</codeblock>
+            </p></choice>
+        </choices>
+      </step>
+      <step importance="optional">
+        <cmd>Identify and exclude tenant volumes from the backup.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the <ph keyref="nm-cc"/> tenant identifier. By default, <ph keyref="nm-cc"
+              /> stores application data in <filepath>/opt/serviced/var/volumes</filepath>. If your
+              directory path is different, specify your path.</cmd>
+            <info>
+              <codeblock>ls /opt/serviced/var/volumes</codeblock>
+            </info>
+            <stepresult>Example result:<codeblock>cvs0ul2tmvjcitolrm7p0d8bx</codeblock></stepresult>
+          </substep>
+          <substep>
+            <cmd>Display directories under the <ph keyref="nm-cc"/> tenant identifier. Replace
+                <varname>Tenant-ID</varname> with the identifier displayed in the previous
+              step.</cmd>
+            <info>
+              <codeblock>ls /opt/serviced/var/volumes/<varname>Tenant-ID</varname></codeblock>
+            </info>
+          </substep>
+        </substeps>
+        <stepresult>Example result:<table frame="none" rowsep="0" colsep="0" id="table_ad4_fyx_mx"
+            pgwide="1">
+            <tgroup cols="4">
+              <colspec colname="c1" colnum="1" colwidth="1*"/>
+              <colspec colname="c2" colnum="2" colwidth="1.7*"/>
+              <colspec colname="c3" colnum="3" colwidth="1.27*"/>
+              <colspec colname="c4" colnum="4" colwidth="1.51*"/>
+              <tbody>
+                <row>
+                  <entry><codeph>hbase-master</codeph>
+                  </entry>
+                  <entry><codeph>hbase-zookeeper-2 </codeph></entry>
+                  <entry><codeph>localhost</codeph></entry>
+                  <entry><codeph>mariadb-events</codeph></entry>
+                </row>
+                <row>
+                  <entry><codeph>rabbitmq</codeph></entry>
+                  <entry><codeph>var-zenpacks </codeph></entry>
+                  <entry><codeph>zeneventserver</codeph></entry>
+                  <entry><codeph>zenoss-custom-patches </codeph></entry>
+                </row>
+                <row>
+                  <entry><codeph>zenoss-export</codeph></entry>
+                  <entry><codeph>zenpack-backup</codeph></entry>
+                  <entry><codeph>hbase-zookeeper-1</codeph></entry>
+                  <entry><codeph>hbase-zookeeper-3 </codeph></entry>
+                </row>
+                <row>
+                  <entry><codeph>lost+found</codeph></entry>
+                  <entry><codeph>mariadb-model</codeph></entry>
+                  <entry><codeph>redis</codeph></entry>
+                  <entry><codeph>zencatalogservice</codeph></entry>
+                </row>
+                <row>
+                  <entry><codeph>zenjobs</codeph></entry>
+                  <entry><codeph>zenoss-custom-patches-pc</codeph></entry>
+                  <entry><codeph>zenoss-var-ext </codeph></entry>
+                  <entry/>
+                </row>
+              </tbody>
+            </tgroup>
+          </table></stepresult>
+      </step>
+      <step importance="optional">
+        <cmd>Exclude one tenant volume from the backup; in this example,
+            <filepath>hbase-master</filepath>. Replace <varname>Tenant-ID</varname> with your tenant
+          identifier.</cmd>
+        <info>
+          <codeblock>serviced backup /opt/serviced/var/backups --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/hbase-master</codeblock>
+        </info>
+        <info>Exclude multiple tenant volumes; in this example, <filepath>mariadb-events</filepath>
+          and <filepath>zeneventserver</filepath>. Replace <varname>Tenant-ID</varname> with your
+          tenant identifier.
+          <codeblock>serviced backup /opt/serviced/var/backups --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/mariadb-events --exclude opt/serviced/var/volumes/<varname>Tenant-ID</varname>/zeneventserver</codeblock></info>
+      </step>
+      <step importance="optional">
+        <cmd>If you use automated backups, edit them to exclude tenant volumes. </cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

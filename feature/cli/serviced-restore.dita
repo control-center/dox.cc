@@ -2,16 +2,17 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><cmdname>serviced restore</cmdname></title>
-  <shortdesc>The <cmdname>serviced restore</cmdname> command uses a backup file to reverts the <ph
-      keyref="nm-cc"/> resource host, its service configuration, and the application state to the
-    point in time when the backup was taken. You can also use the <cmdname>serviced
-      restore</cmdname> command to duplicate an instance on a similar cluster for testing or
-    failover purposes.</shortdesc>
+  <shortdesc>The <cmdname>serviced restore</cmdname> command restores an instance of an application
+    from a backup file on the same system. You can also duplicate your instance on a similar cluster
+    for testing or failover purposes by restoring a backup file to a new, similarly configured
+    cluster.</shortdesc>
   <refbody>
     <section id="section_xd3_xvg_hx">
       <title/>
-      <p>For more information about backing up and restoring, see <xref keyref="help-admin-admin"
-        />.</p>
+      <p>If your are restoring from a backup that was taken on another system, copy the backup
+        archive file to the target system. The default directory that receives backups is
+          <filepath>/opt/serviced/var/backups</filepath>. For more information, see <xref
+          keyref="help-admin-restore"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
       <title>USAGE</title>
@@ -19,7 +20,7 @@
     </section>
     <section>
       <title>DESCRIPTION</title>
-      <p><cmdname>serviced restore FILEPATH</cmdname>
+      <p><filepath>serviced restore <varname>backupFilePath</varname></filepath>
       </p>
     </section>
     <section id="section_qfy_jyb_hx">

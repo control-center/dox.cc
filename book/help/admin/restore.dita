@@ -2,68 +2,47 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Restoring from a backup</title>
-  <shortdesc>Using the <ph keyref="nm-cc"/> browser interface, you can restore an instance of an
-    application that <ph keyref="nm-cc"/> manages.</shortdesc>
+  <shortdesc>Restore an instance of an application from a backup file on the same system, or restore
+    from a backup file to duplicate your instance on a new, similarly configured
+    cluster.</shortdesc>
   <taskbody>
-    <context>
-      <p>Review considerations and best practices before performing a restore from an application
-          backup:<ul id="ul_ew5_1zz_gx">
-          <li><!-- CC-282 -->If you manually deleted the default pool, you cannot restore from a
-            backup. The default pool is created on startup and is required.</li>
-          <li>Backups that were taken using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
-              keyref="nm-cc"/> 1.1.x or later versions.</li>
-          <li>You can restore from any backup <filepath>.tgz</filepath> file for that application.
-            You can also duplicate your instance on a similar cluster for testing or failover
-            purposes by restoring a backup <filepath>.tgz</filepath> file to a new similarly
-            configured cluster. </li>
-          <li>You can restore a backup to the system on which it was taken or to an alternate
-            system. Restoring to the same system reverts the <ph keyref="nm-cc"/> resource host, its
-            service configuration, and the application state to the point in time when the backup
-            was taken. The system on which you restore any backup should mirror at least one device
-            from the production system.</li>
-          <li>Frequently test restoring from a backup to ensure that the backup restores
-            successfully, and that the restored system is an accurate representation of the state of
-            the deployment when the backup was performed.</li>
-          <li><!--CC-1531-->Because snapshots are loaded to disk, during a restore you are not
-            required to stop services while the file is loaded. Though the restore will not complete
-            successfully, the snapshot and images are available for you to manually rollback each
-            application.</li>
-          <li><!-- CC-1474 --> If an outage occurs during a restore from a backup, you can resume
-            the restore. <ph keyref="nm-cc"/> preserves complete data on your system. For example,
-            if two of six backed up snapshots are restored before an outage, when you resume the
-            restore, those two snapshots are saved on the system, and are not downloaded again.</li>
-        </ul></p>
-    </context>
+    <prereq id="prereq_w55_hkn_4x">If your are restoring from a backup that was taken on another
+      system, copy the backup archive file to the target system. The default directory that receives
+      backups is <filepath>/opt/serviced/var/backups</filepath>.</prereq>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
       </step>
       <step id="select">
         <cmd>In the <uicontrol>Applications</uicontrol> table, identify the name of the application
-          instance to modify.</cmd>
+          instance.</cmd>
       </step>
       <step id="stop_services">
-        <cmd>Stop the instance, and verify that its subservices are stopped.</cmd>
+        <cmd>Stop the instance and verify that its subservices are stopped.</cmd>
         <substeps>
           <substep>
             <cmd>In the <uicontrol>Actions</uicontrol> column of the
                 <uicontrol>Applications</uicontrol> table, click <uicontrol>Stop</uicontrol>.</cmd>
           </substep>
           <substep>
-            <cmd>In the <uicontrol>Stop Service</uicontrol> dialog, box click <uicontrol>Stop
+            <cmd>In the <uicontrol>Stop Service</uicontrol> dialog box, click <uicontrol>Stop
                 Service and Children</uicontrol>.</cmd>
           </substep>
           <substep>
             <cmd>In the <uicontrol>Applications</uicontrol> column of the
                 <uicontrol>Applications</uicontrol> table, click the name of the stopped instance,
-              and then scroll down to the <uicontrol>Services</uicontrol> table to verify that
-              everything is stopped.</cmd>
+              and then scroll down to the <uicontrol>Services</uicontrol> table to verify that all
+              services are stopped.</cmd>
           </substep>
         </substeps>
+        <info><!--CC-1531-->Because snapshots are loaded to disk, during a restore you are not
+            <i>required</i> to stop services while the file is loaded. Though the restore will not
+          succeed,  the snapshot and images are available for you to manually rollback each
+          application.</info>
       </step>
       <step>
         <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab. The Backup / Restore page
-          appears listing your backup files.</cmd>
+          appears listing available backup files.</cmd>
       </step>
       <step>
         <cmd>Beside the backup file that you want to use to restore your application, click

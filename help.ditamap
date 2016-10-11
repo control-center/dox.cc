@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle>Control Center Online Help</mainbooktitle>
+    <mainbooktitle>Control Center Reference Guide</mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="1" modification="x"/>
+        <vrm version="1" release="2" modification="0"/>
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1080.16.258</bookpartno>
+      <bookpartno>1340.16.280</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>

@@ -2,7 +2,6 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Taking a snapshot</title>
-  <shortdesc/>
   <taskbody>
     <steps>
       <step>

@@ -7,8 +7,8 @@
   <refbody>
     <section id="section_p3x_mng_hx">
       <title/>
-      <p>For more information about using snapshot and rollback, see <xref keyref="help-admin-admin"
-        />.</p>
+      <p>For more information about using snapshot and rollback, see <xref
+          keyref="book-help-admin-admin"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
       <title>USAGE</title>
