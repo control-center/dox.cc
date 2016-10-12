@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding the master host to a resource pool (multi-host deployments)</title>
+  <taskbody>
+    <context>Use this procedure to add the master host to a resource pool.
+      For multi-host deployments, the master host is added to its own, separate pool.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create a new resource pool named <codeph>master</codeph>.</cmd>
+        <stepxmp>
+          <codeblock>serviced pool add master</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Assign administrative and distributed file system 
+          (DFS) permissions to the new resource pool.</cmd>
+        <stepxmp>
+          <codeblock>serviced pool set-permission --admin --dfs master</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Add the master host to the new resource pool.</cmd>
+        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the
+          <ph keyref="nm-cc"/> master host:
+          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 master</codeblock>
+          <p>If you use a hostname, all of the hosts in your <ph keyref="nm-cc"/> cluster must be able to
+            resolve the name, either through an entry in <filepath>/etc/hosts</filepath> or through
+            a nameserver on the network.</p>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -83,6 +83,12 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Locate the original <varname>SERVICED_ZK</varname> variable declaration,  
               and then paste the cut line immediately below it.</cmd>
           </substep>
+          <substep>
+            <cmd>Comment the original <varname>SERVICED_ZK</varname> declaration, which
+              references only the master host.</cmd>
+            <info>Insert the number sign character (<codeph>&#35;</codeph>)
+              immediately in front of the original <varname>SERVICED_ZK</varname> variable.</info>
+          </substep>
           
           <substep>
             <cmd>Navigate to the end of the file, and cut the line that contains the

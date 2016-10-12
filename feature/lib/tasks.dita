@@ -632,7 +632,7 @@ EOF</codeblock>
       </step>
       
       <step id="docker-svc-def">
-        <cmd>Create a <cmdname>systemd</cmdname> override file 
+        <cmd>Create a <cmdname>systemd</cmdname> drop-in file 
           for Docker Engine.</cmd>
         <substeps>
           <substep>
@@ -851,7 +851,7 @@ node3=<varname>Delegate-B</varname></codeblock>
               <codeblock>serviced version | grep IsvcsImages</codeblock>
             </stepxmp>
             <stepresult>Example result:
-              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v40 zenoss/isvcs-zookeeper:v3]</codeblock>
+              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v48 zenoss/isvcs-zookeeper:v7]</codeblock>
             </stepresult>
           </substep>
           <substep>
@@ -866,18 +866,24 @@ node3=<varname>Delegate-B</varname></codeblock>
       </step>
       
       <step id="nfs-workaround">
-        <cmd>Edit the NFS service configuration file.</cmd>
+        <cmd>Add a drop-in file for the NFS service.</cmd>
         <info>This step is a workaround for an <xref keyref="url-rpcbin-bug">an unresolved issue</xref>.</info>
         <substeps>
           <substep>
-            <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
-              with a text editor.</cmd>
+            <cmd>Create a directory for the drop-in file.</cmd>
+              <stepxmp>
+                <codeblock>mkdir -p /etc/systemd/system/nfs-server.service.d</codeblock>
+              </stepxmp>    
           </substep>
           <substep>
-            <cmd>On the following line, change <cmdname>rpcbind.target</cmdname> 
-              to <cmdname>rpcbind.service</cmdname>:</cmd>
+            <cmd>Create the drop-in file.</cmd>
             <stepxmp>
-              <codeblock>Requires= network.target proc-fs-nfsd.mount rpcbind.target</codeblock>
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/systemd/system/nfs-server.service.d/nfs-server.conf
+[Unit]
+Requires= 
+Requires= network.target proc-fs-nfsd.mount rpcbind.service
+Requires= nfs-mountd.service
+EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>

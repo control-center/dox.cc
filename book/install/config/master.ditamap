@@ -26,6 +26,9 @@
       <topicref keyref="feature-vars-tune"/>
     </topicref>
     <topicref keyref="feature-cluster-master-start"/>
-    <topicref keyref="feature-cluster-master-add"/>
+    <topicref keyref="feature-cluster-master-add">
+      <topicref keyref="feature-cluster-master-add-single"/>
+      <topicref keyref="feature-cluster-master-add-multi"/>
+    </topicref>
    </chapter>
 </bookmap>

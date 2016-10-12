@@ -3,6 +3,14 @@
 <map>
  <title>Keys in feature/cluster/master</title>
   <topicgroup>
+    <keydef keys="feature-cluster-master-add-multi"
+            href="master/add-multi.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-add-single"
+            href="master/add-single.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-master-add"
             href="master/add.dita"
             format="dita"

@@ -45,7 +45,8 @@
             <stepxmp>Replace <varname>Master</varname> with the IP address of the master host:
               <codeblock>{ echo stats; sleep 1; } | nc <varname>Master</varname> 2181 | grep Mode</codeblock>
             </stepxmp>
-            <stepresult>The result includes <codeph>Leader</codeph> or <codeph>Follower</codeph>.</stepresult>
+            <stepresult>The result includes <codeph>leader</codeph> or
+              <codeph>follower</codeph>.</stepresult>
           </substep>
           <substep>
             <cmd>Query delegate host A and identify its role in the ensemble.</cmd>
@@ -60,8 +61,8 @@
             </stepxmp>
           </substep>
         </substeps>
-        <stepresult>If none of the hosts reports that it is a leader within a few minutes of
-        starting the hosts, stop them and then retry the startup.</stepresult>
+        <stepresult>If none of the hosts reports that it is the ensemble leader within a few minutes of
+          starting <cmdname>serviced</cmdname>, reboot the hosts.</stepresult>
       </step>
       
     </steps>
