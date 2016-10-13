@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Adding a delegate host to a resource pool</title>
+  <title>Adding a delegate host with SSH</title>
   <taskbody>
     <prereq>To perform this procedure, the <codeph>root</codeph> user on
       the <ph keyref="nm-cc"/> master host has to gain access to the 
@@ -14,7 +14,7 @@
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> master
-          host <ph conkeyref="strings/login-root"/>.</cmd>
+          host <ph conkeyref="strings/login-serviced"/>.</cmd>
       </step>
 
       <step>
