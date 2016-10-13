@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Removing unneeded Docker images</title>
+  <shortdesc>Docker images that are no longer required consume storage space. For example, images
+    for a previous version of an application are not needed for the current version. To make storage
+    space available, you can delete these Docker images.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>To get a list of Docker images, run the following command:</cmd>
+        <stepxmp>
+          <codeblock>docker images</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Identify images that are no longer required. </cmd>
+      </step>
+      <step>
+        <cmd>To remove unwanted images, run the following command:</cmd>
+        <stepxmp>
+          <codeblock>docker rmi [<varname>repository</varname>]/[<varname>image</varname>]:[<varname>tag</varname>]</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
