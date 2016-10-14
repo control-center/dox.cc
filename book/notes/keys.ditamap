@@ -123,6 +123,28 @@
     />
    </topicgroup>
    <topicgroup>
+   <keydef keys="notes-119-features"
+           href="119/features.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-fixed"
+           href="119/fixed.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-known"
+           href="119/known.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-notes"
+           href="119/notes.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-self"
+           href="119/self.dita"
+           format="dita"
+   />
+   </topicgroup>
+   <topicgroup>
     <keydef keys="notes-back-back"
             href="back/back.dita"
             format="dita"

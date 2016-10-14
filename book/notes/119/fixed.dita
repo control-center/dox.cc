@@ -4,7 +4,7 @@
   <title>Fixed issues</title>
   <refbody>
     <table id="table_uhs_n4q_453">
-      <title>Release 1.1.8</title>
+      <title>Release 1.1.9</title>
       <tgroup cols="2">
         <colspec colname="c1" colwidth="1*"/>
         <colspec colname="c2" colwidth="5*"/>
@@ -16,32 +16,23 @@
         </thead>
         <tbody>
           <row>
-            <entry>CC-2255</entry>
-            <entry><codeph>serviced</codeph> makes repeated attempts to connect to ZooKeeper without
-              a pause until a connection is established causing numerous syslog messages and load
-              spikes.</entry>
+            <entry>CC-2328</entry>
+            <entry>Add ability to customize ZooKeeper settings.</entry>
           </row>
           <row>
-            <entry>CC-2514</entry>
-            <entry><codeph>serviced</codeph> daemon can start in a state that degrades
-                <codeph>memcached</codeph> performance.</entry>
+            <entry>CC-2538</entry>
+            <entry>In an HA environment, services are not starting after failing over. In the
+                <filepath>serviced.log</filepath>, the following error is seen: <codeph>failed:
+                coord-client: node does not exist</codeph></entry>
           </row>
           <row>
-            <entry>CC-2525</entry>
-            <entry>Disabling TLS can cause failed connections.</entry>
+            <entry>CC-2553</entry>
+            <entry>Snapshot devices may be orphaned leading to an increased amount of space within
+              the thin pool.</entry>
           </row>
           <row>
-            <entry>CC-2530</entry>
-            <entry>Specific directories can be excluded from application backups.</entry>
-          </row>
-          <row>
-            <entry>CC-2573</entry>
-            <entry>Message <codeph>"service associated with &lt;public endpoint name> is not
-                running"</codeph> is reported even though the endpoint is running.</entry>
-          </row>
-          <row>
-            <entry>CC-2642</entry>
-            <entry>Administrators can now set environment variables in a service definition.</entry>
+            <entry>CC-2703</entry>
+            <entry>Attempting to run a shell with TLS disabled results in a nil pointer.</entry>
           </row>
         </tbody>
       </tgroup>
