@@ -22,9 +22,8 @@
     </topicref>
     <topicref keyref="feature-cluster-delegate-start"/>
     <topicref keyref="feature-cluster-delegate-add">
-      <topicref keyref="feature-cluster-delegate-add-pwd"/>
+      <topicref keyref="feature-cluster-delegate-add-ssh"/>
       <topicref keyref="feature-cluster-delegate-add-feet"/>
-      <topicref keyref="feature-cluster-delegate-add-keys"/>
     </topicref>
    </chapter>
 </bookmap>

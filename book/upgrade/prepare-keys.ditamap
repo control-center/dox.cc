@@ -15,5 +15,9 @@
             href="prepare/stage.dita"
             format="dita"
     />
+    <keydef keys="upgrade-prepare-vars"
+            href="prepare/vars.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>

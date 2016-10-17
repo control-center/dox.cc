@@ -7,12 +7,8 @@
             href="delegate/add-feet.dita"
             format="dita"
     />
-    <keydef keys="feature-cluster-delegate-add-keys"
-            href="delegate/add-keys.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-delegate-add-pwd"
-            href="delegate/add-pwd.dita"
+    <keydef keys="feature-cluster-delegate-add-ssh"
+            href="delegate/add-ssh.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-delegate-add"
