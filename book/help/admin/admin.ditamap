@@ -12,6 +12,7 @@
       <topicref keyref="help-admin-snapshot-rollback">
          <topicref keyref="help-admin-snapshot"/>
          <topicref keyref="help-admin-rollback"/>
+         <topicref keyref="help-admin-remove-images"/>
       </topicref>
    </chapter>
 </bookmap>

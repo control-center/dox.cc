@@ -4,8 +4,8 @@
    <title>Administration reference</title>
   <refbody>
     <section>
-      <p>This section contains several procedures for managing collections of hosts in <ph
-          keyref="nm-cc"/> and backing up and restoring applications and data.</p>
+      <p>This section contains procedures for adding application storage, backing up and restoring
+        applications and data, and removing unneeded Docker images to reclaim storage space.</p>
     </section>
   </refbody>
 </reference>

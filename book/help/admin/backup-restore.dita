@@ -2,9 +2,9 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title>Backing up and restoring</title>
-  <shortdesc>Use <ph keyref="nm-cc"/> to back up an application that <ph keyref="nm-cc"/> manages.
+  <shortdesc>Use <ph keyref="nm-cc"/> to back up applications that <ph keyref="nm-cc"/> manages.
     Having accurate and tested system backups can mitigate problems caused by software or hardware
-    issues. The <ph keyref="nm-cc"/> backup process creates a compressed archive file
+    issues. The <ph keyref="nm-cc"/> backup process creates a compressed tar archive file
       (<filepath>.tgz</filepath>) that can be restored on the same cluster or a similar
     cluster.</shortdesc>
   <refbody>
@@ -12,22 +12,23 @@
       <p>Backups include the current state of the system, the state of all services, configuration
         information, and application data. <!-- CC-306 --> The backup process leverages snapshot
         functionality. Therefore, when a backup is running, you can start and restart services;
-        there is no need to shut down the application container or the Docker containers. The
-        services are only momentarily suspended to enable reading the data.</p>
+        there is no need to shut down the application or Docker containers. The services are only
+        momentarily suspended to enable reading the data.</p>
       <p>You can back up and restore applications by using the browser interface or the command-line
-        interface (CLI). Results are comparable, however, the CLI offers an option to exclude
-        subdirectories from the backup.</p>
+        interface (CLI). Results are comparable; however, the CLI offers an option to exclude
+        subdirectories from a backup.</p>
       <p>When a full backup is not necessary, such as when you need a checkpoint before installing
         software, you can perform a snapshot of the system. If you need to revert back to a
         snapshot, use the rollback feature. You use the CLI to perform snapshot and rollback. For
         more information about using the CLI, see <xref keyref="feature-cli-cli"/>.</p>
       <p>With both backup and snapshot, <ph keyref="nm-cc"/>
         <ul id="ul_iyk_cq1_jx">
-          <li>Creates a tag for the Docker image of each service with metadata about the data.</li>
-          <li>Takes a separate snapshot of the LVM thin pool, which stores both application data and
-            snapshots of the data.</li>
-        </ul>When you take a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
-        file and moves them out of the LVM thin pool. Backups do not affect TTL.</p>
+          <li>Creates a tag for the Docker image of each service with metadata about the application
+            data.</li>
+          <li>Creates a separate snapshot of the LVM thin pool, which stores both application data
+            and snapshots of the application data.</li>
+        </ul>When you Create a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
+        file and moves them out of the LVM thin pool. Backups do not affect time to live (TTL).</p>
       <note>Review considerations and best practices that apply to application backup and
           restore.<ul id="ul_dqb_hrg_lx">
           <li>Ensure that you have enough free space to receive and store backups. Running low on
@@ -43,9 +44,9 @@
             separate DR system or test environment. Store backups on a machine other than the <ph
               keyref="nm-cc"/> master. Copy or migrate backups to an off-system location for
             safekeeping and to help regulate storage space usage on the master.</li>
-          <li>Backups that were taken using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
+          <li>Backups that were created using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
               keyref="nm-cc"/> 1.1.x or later.</li>
-          <li>You can restore a backup to the system on which it was taken or to an alternate
+          <li>You can restore a backup to the system on which it was created or to an alternate
             system. When restoring a backup from a one system to an alternate system, ensure that
               <ul id="ul_bj3_css_nx">
               <li>The alternate system mirrors at least one device from the backed-up system.</li>
@@ -56,8 +57,8 @@
             successfully, and that the restored system is an accurate representation of the state of
             the deployment when the backup was performed.</li>
           <li><!--CC_695-->Restoring from a backup file does not remove services that were added
-            after taking the backup. That is, if you take a backup, add a service, and then restore
-            from the backup, the service is not deleted as part of the restore process.</li>
+            after taking the backup. That is, if you create a backup, add a service, and then
+            restore from the backup, the service is not deleted as part of the restore process.</li>
           <li><!--CC_1474 -->If an outage occurs during a restore from a backup, you can resume the
             restore. <ph keyref="nm-cc"/> preserves complete data on your system. For example, if
             two of six backed up snapshots are restored before an outage, when you resume the
