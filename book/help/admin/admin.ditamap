@@ -5,8 +5,8 @@
    <chapter keyref="help-admin-admin">
       <topicref keyref="help-admin-extend"/>
       <topicref keyref="help-admin-backup-restore">
-         <topicref keyref="help-admin-backup"/>
          <topicref keyref="help-admin-backup-restore-best-pract"/>
+         <topicref keyref="help-admin-backup"/>
          <topicref keyref="help-admin-backup-from-cli"/>
          <topicref keyref="help-admin-restore"/>
       </topicref>
