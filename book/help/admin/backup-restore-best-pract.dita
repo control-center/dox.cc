@@ -10,6 +10,9 @@
         <ul id="ul_dqb_hrg_lx">
           <li>Ensure that you have enough free space to receive and store backups. Running low on
             available disk space results in errors and affects system performance.</li>
+          <li>To provide a historical archive, back up on a regular schedule. Back up as needed when
+            you perform less-frequent tasks such as moving data from one instance to another or
+            duplicating an instance for testing or failover purposes.</li>
           <li>Before upgrading or testing an application, ensure that you have a recent backup that
             successfully restores. </li>
           <li>Perform regular backups of the production environment and potentially the system of
