@@ -205,17 +205,33 @@
         <cmd>Create an LVM thin pool for Docker data.</cmd>
         <substeps>
           <substep>
-            <cmd>Identify the primary partition for the thin pool to create.</cmd>
+            <cmd>Display the available block storage.</cmd>
             <stepxmp>
               <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create the thin pool.</cmd>
+            <cmd>Display the available LVM volume groups.</cmd>
             <stepxmp>
-              <p>Replace <varname>Path-To-Device</varname> with the 
-                path of an unused primary partition:</p>
-              <codeblock>serviced-storage create-thin-pool docker <varname>Path-To-Device</varname></codeblock>
+              <codeblock>vgs</codeblock>
+            </stepxmp>
+            <stepresult>For more information about a specific volume group, enter the following command.
+              Replace <varname>Volume-Group</varname> with the name of a volume displayed in the
+              previous command:
+              <codeblock>vgdisplay <varname>Volume-Group</varname></codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Create the thin pool.</cmd>
+            <info>In the following examples, replace <varname>Size</varname> with an absolute value (<codeph>50G</codeph>) or a
+              percentage of the storage followed by the percent sign character (<codeph>&#37;</codeph>).
+              Replace <varname>Storage</varname> with the path of one or more block storage devices or 
+              partition, or the name of an LVM volume group.</info>
+            <stepxmp><b>Absolute value and a physical device:</b>
+              <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sda1</codeblock>
+            </stepxmp>
+            <stepxmp><b>Relative value and a volume group:</b>
+              <codeblock>serviced-storage create-thin-pool --size=20% docker my_volume_group</codeblock>
             </stepxmp>
             <stepresult>On success, the result includes the name of the thin pool,
               which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
