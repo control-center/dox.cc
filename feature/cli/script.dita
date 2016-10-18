@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><cmdname>serviced script</cmdname></title>
+  <title>serviced script</title>
   <shortdesc>The <cmdname>serviced script</cmdname> command verifies or performs the commands in a
     script file. A script file is a text file that contains commands to automate common or
     repetitive tasks, and tasks that may require specific services or conditions. </shortdesc>
