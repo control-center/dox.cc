@@ -39,6 +39,10 @@
             href="cli/serviced-snapshot.dita"
             format="dita"
     />
+    <keydef keys="feature-cli-serviced-storage"
+            href="cli/serviced-storage.dita"
+            format="dita"
+    />
     <keydef keys="feature-cli-serviced"
             href="cli/serviced.dita"
             format="dita"

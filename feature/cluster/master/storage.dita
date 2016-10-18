@@ -4,14 +4,18 @@
   <title>Master host storage requirements</title>
   <refbody>
     <section>
-      <p>This section provides a quick reference for the minimum block storage
-        requirements of a <ph keyref="nm-cc"/> master host. These requirements
-        are in addition to the storage required for the host's operating system. For more
-        information, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      <p>This section provides a quick reference for the minimum storage requirements of a <ph
+          keyref="nm-cc"/> master host. These requirements are in addition to the storage required
+        for the host's operating system. For more information, refer to the <cite
+          conkeyref="pubs/cite-plan"/>.</p>
       
-      <p>Enter the following command to display information about the
-         used and available block storage on a Linux host:</p>
-        <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+      <p>Enter the following command to display information about the used and available block
+        storage on a Linux host:</p>
+      <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+      
+      <p>Enter the following command to display information about the LVM volume groups on a Linux host:</p>
+      <codeblock>vgdisplay</codeblock>
+      
       <p>Compare the output with the information in the following table.</p>
       
       <table>
@@ -51,12 +55,14 @@
                 that it does not cause contention with the storage for <ph keyref="nm-cc"/>
                 internal services.</entry>
             </row>
+            <!-- 
             <row>
               <entry><ph keyref="nm-cc"/> metadata</entry>
               <entry>1GB (required)</entry>
               <entry>A local, high-performance device or partition formatted as an XFS filesystem.
                 (High-availability deployments only.)</entry>
             </row>
+             -->
           </tbody>
         </tgroup>
       </table>

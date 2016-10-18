@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding a delegate host through an SSH connection</title>
+  <taskbody>
+    <prereq>To succeed, the following statements about 
+      login account used to perform this procedure must be true:
+      <ul>
+        <li>The account exists on both the master host and on the delegate host.</li>
+        <li>The account has <cmdname>serviced</cmdname> CLI privileges.</li>
+        <li>The account has either public key authentication or password 
+          authentication enabled on the master host and on the delegate host.</li>
+      </ul>
+    </prereq>
+    <context>Use this procedure to add a delegate host to a resource pool through an SSH
+      connection.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master
+          host <ph conkeyref="strings/login-serviced"/>.</cmd>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Create a new resource pool, if desired.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the names of the existing resource pools.</cmd>
+            <stepxmp>
+              <codeblock>serviced pool list</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a new resource pool.</cmd>
+            <stepxmp>Replace <varname>Resource-Pool</varname> with the name of a new resource pool:
+              <codeblock>serviced pool add <varname>Resource-Pool</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Add a delegate host to a resource pool.</cmd>
+        <info>If the master and delegate host are configured for key-based access, the following
+          command does not prompt you to add the delegate to the list of known hosts or to
+          provide the password of the remote user account.</info>
+        <info>You can use a hostname or an IP address to identify a <ph keyref="nm-cc"/>
+          cluster host. If you use a hostname, all of the hosts in your cluster must be 
+          able to resolve it, either through an entry in <filepath>/etc/hosts</filepath>
+          or through a nameserver on the network.</info>
+        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname
+          or IP address of a delegate host, and replace <varname>Resource-Pool</varname>
+          with the name of a resource pool:
+          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname></codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

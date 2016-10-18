@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1321.16.285</bookpartno>  
+      <bookpartno>1321.16.291</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -49,6 +49,7 @@
       <mapref href="book/install/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/access-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/master-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/delegate-keys.ditamap" format="ditamap"/>

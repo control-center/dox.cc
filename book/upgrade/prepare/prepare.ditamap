@@ -3,6 +3,6 @@
 <bookmap >
  <title>Prepare</title>
   <chapter keyref="upgrade-prepare-prepare">
-   <!--   <topicref href="scope.dita"/>  -->
+    <topicref keyref="upgrade-prepare-vars"/> 
  </chapter>
 </bookmap>

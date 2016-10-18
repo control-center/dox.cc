@@ -513,6 +513,17 @@
             up rapidly when this value is zero or too high.</dd>
         </dlentry>
         
+        
+        <dlentry id="SERVICED_STORAGE_STATS_UPDATE_INTERVAL">
+          <dt><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></dt>
+          <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
+          <dd>The number of seconds between polls of kernel statistics
+            about the application data thin pool.</dd>
+          <dd>This setting is ignored when the operating system
+            kernel version is less than 3.10.0-366.</dd>
+        </dlentry>
+         
+        
         <dlentry id="SERVICED_NFS_CLIENT">
           <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
           <dd><b>Default</b>: <codeph>1</codeph></dd> 

@@ -6,22 +6,12 @@
     
     <section id="cc">
       <title>Documentation feedback</title>
-      <p>To provide technical feedback on this document, or to report an error or omission, 
-        please use the Zenoss community forum. Your contribution is essential to
-		the community!</p>
-    </section>
-    
-	    <section id="rm">
-      <title>Additional information and comments</title>
-      <p>If you have technical questions about this product that are not answered in
-        this guide, please visit <ph conkeyref="names/support-site"/> or contact
-        <ph conkeyref="names/support"/>.</p>
-      
-      <p><ph conkeyref="names/company"/> welcomes your comments and suggestions regarding our
-        documentation. To share your comments, please send an email to
-        <codeph>docs@zenoss.com</codeph>. In the email, include the document title and part
-        number. The part number appears at the end of the list of trademarks, at the front of this
+      <p>To provide feedback about this document, or to report an error or omission, please send an
+        email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
+        title and part number, and as much information as possible about the context of your
+        feedback. The part number appears at the end of the list of trademarks, at the front of this
         guide.</p>
-    </section>    
+    </section>
+        
   </body>
 </topic>

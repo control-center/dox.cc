@@ -1,40 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
-<task id="taskid">
-  <title>Add a delegate host to a resource pool</title>
-  <taskbody>
-    <context>Use this procedure to add a delegate host to a resource pool. <note>You can use
-        a hostname or an IP address to add a delegate host to a resource pool. If you use a
-        hostname, all of the hosts in your <ph keyref="nm-cc"/> cluster must be able to resolve the
-        name, either through an entry in <filepath>/etc/hosts</filepath>, or through a nameserver on
-        the network.</note>
-    </context>
-    <steps>
-      <step>
-        <cmd>Log in to the <ph keyref="nm-cc"/> master
-          host <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Delegate host authentication</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> uses RSA key pairs to create the authentication tokens that are
+        required for all delegate communications. When you add a host to a resource pool, the
+          <cmdname>serviced</cmdname> instance on the master host creates a private key for the
+        delegate and bundles it with its own public key. The <cmdname>serviced</cmdname> instance
+        on the delegate host uses the bundle to sign messages with its unique tokens.</p>
       
-      <step>
-        <cmd>Add a delegate host to a resource pool.</cmd>
-        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of a delegate host:
-          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
-        </stepxmp>
-      </step>
-    </steps>
-  </taskbody>
-</task>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <p>Key bundles are installed by using an SSH connection or a file.</p>
+      <ul>
+        <li>The command to add a host to a pool can initiate an SSH connection with the
+          delegate and install the key bundle. This option is the most secure, because no file
+          is created. However, it requires either public key authentication or password 
+          authentication between the master and delegate hosts.</li>
+        <li>When no SSH connection is requested, the command to add a host to a pool creates a
+          file containing the key bundle. You can move the key bundle file to the
+          delegate host with any file transfer method, and then install it on the delegate.</li>
+      </ul>
+      
+      <p>The following procedures demonstrate how to add a host to a resource pool and install its key
+        bundle.</p>
+    </section>
+  </refbody>
+</reference>
