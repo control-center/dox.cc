@@ -11,6 +11,7 @@
       <topicref keyref="feature-cli-serviced-restore"/>
       <topicref keyref="feature-cli-serviced-snapshot"/>
       <topicref keyref="feature-cli-serviced-docker"/>
+      <topicref keyref="feature-cli-serviced-storage"/>
       <topicref keys="serviced-vars" keyref="feature-vars-file"/>
    </chapter>
 </bookmap>
