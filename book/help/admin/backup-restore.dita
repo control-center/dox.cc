@@ -17,10 +17,10 @@
       <p>You can back up and restore applications by using the browser interface or the command-line
         interface (CLI). Results are comparable; however, the CLI offers an option to exclude
         subdirectories from a backup.</p>
-      <p>The default directory that receives backups is
-          <filepath>/opt/serviced/var/backups</filepath>. The directory can be changed by specifying
-        the <varname>SERVICED_BACKUPS_PATH</varname> environment variable in the <ph keyref="nm-cc"
-        /> configuration file, <filepath>/etc/default/serviced</filepath>.</p>
+      <p>The default directory for backup files is <filepath>/opt/serviced/var/backups</filepath>.
+        The directory can be changed by specifying the <varname>SERVICED_BACKUPS_PATH</varname>
+        environment variable in the <ph keyref="nm-cc"/> configuration file,
+          <filepath>/etc/default/serviced</filepath>.</p>
       <p>When a full backup is not necessary, such as when you need a checkpoint before installing
         software, you can perform a snapshot of the system. If you need to revert back to a
         snapshot, use the rollback feature. You use the CLI to perform snapshot and rollback. For
@@ -31,8 +31,10 @@
             data.</li>
           <li>Creates a separate snapshot of the LVM thin pool, which stores both application data
             and snapshots of the application data.</li>
-        </ul>When you create a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
-        file and moves them out of the LVM thin pool. Backups do not affect time to live (TTL).</p>
+        </ul>
+        </p>
+      <p>When you create a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
+        file and moves them out of the LVM thin pool. Backups do not affect time-to-live (TTL).</p>
     </section>
   </refbody>
 </reference>
