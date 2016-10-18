@@ -7,6 +7,18 @@
             href="admin/admin.dita"
             format="dita"
     />
+    <keydef keys="help-admin-backup-cli-all"
+            href="admin/backup-cli-all.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-backup-cli-exclude-mult"
+            href="admin/backup-cli-exclude-mult.dita"
+            format="dita"
+    />
+    <keydef keys="help-admin-backup-cli-exclude-one"
+            href="admin/backup-cli-exclude-one.dita"
+            format="dita"
+    />
     <keydef keys="help-admin-backup-from-cli"
             href="admin/backup-from-cli.dita"
             format="dita"
