@@ -42,6 +42,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="book/install/cli-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/config-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/instl-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ntp-keys.ditamap" format="ditamap"/>
@@ -69,6 +70,7 @@
   <chapter href="book/install/config/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
+  <appendix href="book/install/cli/cli.ditamap" format="ditamap"/>
   <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
   <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>

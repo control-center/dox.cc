@@ -41,6 +41,12 @@
         <cmd>On the master host, check the status of the ZooKeeper ensemble.</cmd>
         <substeps>
           <substep>
+            <cmd>Attach to the Docker container of the ZooKeeper service.</cmd>
+            <stepxmp>
+              <codeblock>serviced service attach serviced-isvcs_zookeeper</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
             <cmd>Query the master host and identify its role in the ensemble.</cmd>
             <stepxmp>Replace <varname>Master</varname> with the IP address of the master host:
               <codeblock>{ echo stats; sleep 1; } | nc <varname>Master</varname> 2181 | grep Mode</codeblock>
@@ -58,6 +64,12 @@
             <cmd>Query delegate host A and identify its role in the ensemble.</cmd>
             <stepxmp>Replace <varname>Delegate-A</varname> with the IP address of the delegate host A:
               <codeblock>{ echo stats; sleep 1; } | nc <varname>Delegate-A</varname> 2181 | grep Mode</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Detach from the Docker container of the ZooKeeper service.</cmd>
+            <stepxmp>
+              <codeblock>exit</codeblock>
             </stepxmp>
           </substep>
         </substeps>

@@ -5,6 +5,5 @@
     <appendix keys="serviced-configuration-variables" keyref="install-vars-vars">
        <topicref keyref="feature-vars-best"/>
        <topicref keyref="feature-vars-file"/>
-       <topicref keyref="feature-cli-serviced-storage"/>
    </appendix>
 </bookmap>

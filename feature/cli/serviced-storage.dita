@@ -11,14 +11,14 @@
     </section>
     <section>
       <title>SYNTAX</title>
-      <codeblock>serviced-storage  [-h|--help] [-o DeviceMapperOption=Value] [-v] Command [CommandOptions]</codeblock>
+      <codeblock>serviced-storage  [-h|--help] [-o <varname>DeviceMapperOption</varname>=<varname>Value</varname>] [-v] Command [<varname>CommandOptions</varname>]</codeblock>
     </section>
     <section>
       <title>GLOBAL OPTIONS</title>
       <dl>
         <dlentry>
           <dt>--help, -h</dt>
-          <dd>Shows the help for an option.</dd>
+          <dd>Shows the help information.</dd>
         </dlentry>
         <dlentry>
           <dt>-o <varname>DeviceMapperOption</varname>=<varname>Value</varname></dt>
@@ -26,7 +26,7 @@
         </dlentry>
         <dlentry>
           <dt>-v</dt>
-          <dd>Display verbose logging.</dd>
+          <dd>Displays verbose logging.</dd>
         </dlentry>
       </dl>
     </section>
@@ -91,18 +91,14 @@
       <title>serviced-storage create-thin-pool</title>
       <p>The <codeph>serviced-storage create-thin-pool</codeph> command creates an LVM thin pool
         either for Docker data or for <ph keyref="nm-cc"/> application data. When devices are
-        specified, the command  creates an LVM volume group.</p>
+        specified, the command creates an LVM volume group.</p>
       <p>Syntax:</p>
       <codeblock>serviced-storage [<varname>GlobalOptions</varname>] create-thin-pool [-s|--size]=[<varname>Value</varname>][G|%] \
         [docker|serviced] [<varname>DevicePath</varname> [<varname>DevicePath</varname>...]|<varname>VolumeGroupName</varname>]</codeblock>
       <p>Command options:</p>
       <dl>
         <dlentry>
-          <dt>--help, -h</dt>
-          <dd>Shows the help for an option.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>[-s|--size]=[Value][G|%]</dt>
+          <dt>[-s|--size]=[<varname>Value</varname>][G|%]</dt>
           <dd>The size of the thin pool to create. The size can be a fixed value (in gigabytes) or a
             relative value (a percentage) of the available storage. When this option is not used,
             the thin pool size defaults to 90% of the specified storage resource.</dd>
@@ -110,10 +106,24 @@
       </dl>
     </section>
     <section>
+      <title>serviced-storage resize</title>
+      <p>The <codeph>serviced-storage resize</codeph> command increases the size of a
+          <cmdname>serviced</cmdname> tenant device in its LVM thin pool. Like LVM thin pools, the
+        size of a <cmdname>serviced</cmdname> tenant device can never decrease.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] resize [-d|--driver]=<varname>Value</varname> <varname>TenantID</varname> <varname>NewSize</varname></codeblock>
+      <p>Command options:</p>
+      <dl>
+        <dlentry>
+          <dt>[-d|--driver]=<varname>Value</varname></dt>
+          <dd>The path of the tenant volume.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
       <title>EXAMPLES</title>
       <p>Create an LVM volume group named <codeph>zenoss</codeph> and use it for both thin pools:</p>
-      <codeblock>pvcreate /dev/sdb /dev/sdc
-vgcreate zenoss /dev/sdb /dev/sdc
+      <codeblock>vgcreate zenoss /dev/sdb /dev/sdc
 serviced-storage create-thin-pool --size=50G docker zenoss
 serviced-storage create-thin-pool --size=50% serviced zenoss</codeblock>
       <p>If you specify devices or partitions, <cmdname>serviced-storage</cmdname> creates an LVM
@@ -123,11 +133,16 @@ serviced-storage create-thin-pool --size=50% serviced zenoss</codeblock>
       <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sdb /dev/sdc
 serviced-storage create-thin-pool --size=50% serviced docker</codeblock>
       <p>Create thin pools on separate block devices:</p>
-      <codeblock>serviced-storage create-thin-pool docker /dev/sdb
-serviced-storage create-thin-pool --size=50G serviced /dev/sdc</codeblock>
+      <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sdb
+serviced-storage create-thin-pool --size=200G serviced /dev/sdc</codeblock>
       <p>Create thin pools on separate partitions:</p>
       <codeblock>serviced-storage create-thin-pool --size=50% docker /dev/sdb1
 serviced-storage create-thin-pool serviced /dev/sdc3</codeblock>
+      <p>Increase the size of the <cmdname>serviced</cmdname> LVM thin pool, and then increase the
+        size of a <cmdname>serviced</cmdname> tenant device.</p>
+      <codeblock>lvextend -L+300G zenoss/serviced-pool
+serviced-storage resize -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
+  -d /opt/serviced/var/volumes 58uuetj38draeu9alp6002b1y 200G</codeblock>
     </section>
   </refbody>
 </reference>
