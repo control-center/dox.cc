@@ -108,8 +108,7 @@
           <dt><synph>--mux-tls-ciphers <synph><var>Option</var>
                 <delim>[</delim>--mux-tls-ciphers
               <var>Option</var><delim>]</delim>&#8230;</synph></synph></dt>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for mux traffic, separated
-            by the comma character (<codeph>,</codeph>).</dd>
+          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for mux traffic.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--mux-tls-min-version</synph><synph>
@@ -120,17 +119,34 @@
         </dlentry>
         <dlentry>
           <dt><synph>--var <var>Path</var></synph></dt>
-          <dd>The location in which <cmdname>serviced</cmdname> stores application data. The default
-            value is <filepath><varname>$SERVICED_HOME</varname>/var</filepath>, unless
-              <varname>SERVICED_VARPATH</varname> is set in the configuration file. For more
+          <dd>This option has been deprecated.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>volumes-path <var>Path</var></synph></dt>
+          <dd>The location of <cmdname>serviced</cmdname> application data. The default path is
+              <filepath>/opt/serviced/var/volumes</filepath> unless the value of the
+              <varname>SERVICED_VOLUMES_PATH</varname> is set in the configuration file. For more
             information, see the section about configuration file environment variables.</dd>
         </dlentry>
-        <!--   
-   volumes-path '/opt/serviced/var/volumes'                                   path where application data is stored
-   isvcs-path '/opt/serviced/var/isvcs'                                       path where internal application data is stored
-   backups-path '/opt/serviced/var/backups'                                   default path where backups are stored
-   etc-path '/opt/serviced/etc'                                               default path for configuration files  
-        -->        
+        <dlentry>
+          <dt><synph>isvcs-path <var>Path</var></synph></dt>
+          <dd>The location of <cmdname>serviced</cmdname> internal services data. The default path
+            is <filepath>/opt/serviced/var/isvcs</filepath> unless the value of the
+              <varname>SERVICED_ISVCS_PATH</varname> is set in the configuration file. For more
+            information, see the section about configuration file environment variables.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>backups-path <var>Path</var></synph></dt>
+          <dd>The location of <cmdname>serviced</cmdname> backup files. The default path is
+              <filepath>/opt/serviced/var/backups</filepath> unless the value of the
+              <varname>SERVICED_BACKUPS_PATH</varname> is set in the configuration file. For more
+            information, see the section about configuration file environment variables.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph>etc-path <var>Path</var></synph></dt>
+          <dd>The location of <cmdname>serviced</cmdname> configuration files. The default path is
+              <filepath>/opt/serviced/etc</filepath>.</dd>
+        </dlentry>        
         <dlentry>
           <dt><synph>--keyfile <var>Path</var></synph></dt>
           <dd>The path of a digital certificate key file. Choose a location that is not modified
@@ -163,8 +179,8 @@
               <delim>[</delim>--zk
               <var>Host</var><delim>:</delim><var>Port</var><delim>]</delim>&#8230;</synph></dt>
           <dd>One or more ZooKeeper endpoints. The value of <varname>Host</varname> is the hostname
-            or IP address of the ZooKeeper host. The default value of <varname>Port</varname> is
-            2181. If multiple endpoints are specified, <cmdname>serviced</cmdname> will try each in
+            or IP address of a ZooKeeper ensemble node. The default value of <varname>Port</varname>
+            is 2181. If multiple endpoints are specified, <cmdname>serviced</cmdname> tries each in
             turn until it connects to a working server. </dd> 
         </dlentry>
         <dlentry>
@@ -175,10 +191,10 @@
         </dlentry>
         <dlentry>
           <dt><synph>--fstype <var>Driver</var></synph></dt>
-          <dd>The driver for the underlying filesystem where application data is stored (by default,
-              <filepath>/opt/serviced/var</filepath>). Only <codeph>devicemapper</codeph> is
-            supported in production deployments. The only supported storage layout for the
-              <codeph>devicemapper</codeph> driver is an LVM thin pool.</dd>
+          <dd>The driver to manage application data storage on the <cmdname>serviced</cmdname>
+            master host. The default is <filepath>devicemapper</filepath> unless
+              <varname>SERVICED_FS_TYPE</varname> is set in the configuration file. For more
+            information, see the section about configuration file environment variables. </dd>
         </dlentry>
         <dlentry>
           <dt><synph>--alias <var>Alias</var>
@@ -205,10 +221,10 @@
         </dlentry>
         <dlentry>
           <dt><synph>--virtual-address-subnet <var>Subnet</var></synph></dt>
-          <dd>The private subnet to use for virtual IPv4 addresses. The default value is 10.3,
-            unless <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the configuration
-            file. For more information, see the section about configuration file environment
-            variables.</dd>
+          <dd>The private subnet for containers that use virtual IP addresses on a host. The default
+            value is 10.3.0.0/16, unless <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set
+            in the configuration file. For more information, see the section about configuration
+            file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--master-pool-id <var>Pool-ID</var></synph></dt>
@@ -220,10 +236,9 @@
           <dt><synph>--admin-group <var>Group</var></synph></dt>
           <dd>The name of the Linux group on the <cmdname>serviced</cmdname> master host whose
             members are authorized to use the <cmdname>serviced</cmdname> browser interface. The
-            default is <codeph>wheel</codeph> unless
-              <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> is set in the configuration file.
-            For more information, see the section about configuration file environment
-            variables.</dd>
+            default is <codeph>wheel</codeph> unless <varname>SERVICED_ADMIN_GROUP</varname> is set
+            in the configuration file. For more information, see the section about configuration
+            file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt> --storage-opts<synph>
@@ -247,14 +262,13 @@
           <dt>--isvcs-zk-quorum <synph><var> Option</var>
             </synph>[--isvcs-zk-quorum <synph><var>
                 Option</var><synph><delim>]</delim>&#8230;</synph></synph></dt>
-          <dd>The comma-separated list of nodes in a ZooKeeper ensemble.</dd>
+          <dd>The list of nodes in a ZooKeeper ensemble.</dd>
         </dlentry>
         <dlentry>
           <dt>--tls-ciphers <synph><var>Option</var>
               <delim>[</delim>--tls-ciphers <var>Option</var><delim>]</delim>&#8230;</synph>
           </dt>
-          <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts for HTTP traffic,
-            separated by the comma character (<codeph>,</codeph>).</dd>
+          <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts for HTTP traffic.</dd>
         </dlentry>
         <dlentry>
           <dt> --tls-min-version <synph><var>Version</var></synph></dt>
@@ -335,18 +349,23 @@
         </dlentry>
         <dlentry>
           <dt>--rpc-cert-verify <synph><var>Value</var></synph></dt>
-          <dd>Determines whether <cmdname>serviced</cmdname> performs TLS certificate verification for RPC
-            connections. Enable or disable verification.</dd>
+          <dd>Determines whether <cmdname>serviced</cmdname> is enabled to perform TLS certificate
+            verification for RPC connections. The default value is <filepath>false</filepath>
+            (disabled) unless <varname>SERVICED_RPC_CERT_VERIFY</varname> is set in the
+            configuration file. For more information, see the section about configuration file
+            environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--rpc-disable-tls <synph><var>Value</var></synph></dt>
-          <dd>Determines whether <cmdname>serviced</cmdname> encrypts RPC traffic with TLS.</dd>
+          <dd>Determines whether <cmdname>serviced</cmdname> enabled to encrypt RPC traffic with
+            TLS. The default value is <filepath>false</filepath> (disabled) unless
+              <varname>SERVICED_RPC_DISABLE_TLS</varname> is set in the configuration file. For more
+            information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--rpc-tls-ciphers <synph><var>Option</var>
-              <delim>[</delim>----rpc-tls-ciphers<var>Option</var><delim>]</delim>&#8230;</synph></dt>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for RPC connections,
-            separated by the comma character (<codeph>,</codeph>). </dd>
+              <delim>[</delim>--rpc-tls-ciphers<var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for RPC connections. </dd>
         </dlentry>
         <dlentry>
           <dt>--rpc-tls-min-version <synph><var>Version</var></synph></dt>
@@ -356,15 +375,18 @@
         </dlentry>
         <dlentry>
           <dt>--snapshot-ttl <synph><var>Duration</var></synph></dt>
-          <dd>The number of hours an application data snapshot is retained before removal. To
-            disable snapshot removal, set the value to 0. The application data storage can fill up
-            rapidly when this value is 0 or too high.</dd>
+          <dd>The number of hours an application data snapshot is retained before removal. The
+            default value is 12 unless <varname>SERVICED_SNAPSHOT_TTL</varname> is set in the
+            configuration file. For more information, see the section about configuration file
+            environment variables. </dd>
         </dlentry>
         <dlentry>
           <dt>--snapshot-space-percent <synph><var>Value</var></synph></dt>
-          <dd>The amount of free space in the thin pool specified with
-              <varname>SERVICED_DM_THINPOOLDEV</varname>, expressed as a percentage the total size.
-            This value is used to determine whether the thin pool can hold a new snapshot.</dd>
+          <dd>The amount of free space in the thin pool, expressed as a percentage the total size.
+            This value is used to determine whether the thin pool can hold a new snapshot. The
+            default value is 20 unless <varname>SERVICED_SNAPSHOT_USE_PERCENT</varname> is set in
+            the configuration file. For more information, see the section about configuration file
+            environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt> --controller-binary <synph><var>Path</var></synph></dt>
@@ -380,7 +402,7 @@
           <dt><synph>--log-config <var>Option</var>
               <delim>[</delim>--log-config<var>Option</var><delim>]</delim>&#8230;</synph>
           </dt>
-          <dd>A comma-separated list of Docker <codeph>--log-opt</codeph> options as
+          <dd>A list of Docker <codeph>--log-opt</codeph> options as
                 <codeph><varname>key</varname>=<varname>value</varname></codeph> pairs.</dd>
         </dlentry>
         <dlentry>
@@ -393,14 +415,25 @@
         </dlentry>
         <dlentry>
           <dt>--storage-stats-update-interval <synph><var>Duration</var></synph></dt>
-          <dd>The frequency in seconds that the thin pool usage is analyzed.</dd>
+          <dd>The frequency in seconds that the thin pool usage is analyzed. The default value is
+            300 (five minutes) unless <varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname> is
+            set in the configuration file. For more information, see the section about configuration
+            file environment variables. </dd>
         </dlentry>
         <dlentry>
           <dt>--zk-session-timeout <synph><var>Duration</var></synph></dt>
           <dd>The number of seconds the ZooKeeper leader waits before flushing an inactive
-            connection.</dd>
+            connection. The default value is 15 unless
+              <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> is set in the configuration file. For
+            more information, see the section about configuration file environment variables. </dd>
         </dlentry>
-  <!--auth-token-expiry '3600'                                                   authentication token expiration in seconds -->
+        <dlentry>
+          <dt>auth-token-expiry</dt>
+          <dd>The expiration time, in seconds, of delegate authentication tokens. The default value
+            is 3600 (one hour) unless <varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname> is set in
+            the configuration file. For more information, see the section about configuration file
+            environment variables.</dd>
+        </dlentry>
         <dlentry>
           <dt><synph>--logtostderr</synph></dt>
           <dd>Write log messages to STDERR instead of the system log.</dd>
@@ -472,7 +505,7 @@
         </dlentry>
         <dlentry>
           <dt><synph>--config-file <var>Path</var></synph></dt>
-          <dd>The path to the configuration file. The default is
+          <dd>The path of the configuration file. The default is
               <filepath>/etc/default/serviced</filepath>.</dd>
         </dlentry>
         <dlentry>
@@ -504,15 +537,16 @@
       <dl>
         <dlentry>
           <dt><synph><kwd>backup</kwd></synph></dt>
-          <dd>Copy all templates and services into a <cmdname>tar</cmdname> archive file.</dd>
+          <dd>Copy all templates, services, and application data into a compressed
+              <cmdname>tar</cmdname> archive file.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>config</kwd></synph></dt>
-          <dd>Reports on the <cmdname>serviced</cmdname> configuration.</dd>
+          <dd>Report on the <cmdname>serviced</cmdname> configuration.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>docker</kwd></synph></dt>
-          <dd>Administer Docker.</dd>
+          <dd>Docker administration commands.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><delim>[</delim><kwd>help</kwd><delim>|</delim><kwd>h</kwd><delim>]</delim></synph></dt>
@@ -524,9 +558,12 @@
         </dlentry>
         <dlentry>
           <dt><synph><kwd>healthcheck</kwd></synph></dt>
-          <dd>Reports on the health of <cmdname>serviced</cmdname>.</dd>
+          <dd>Report on the health of <cmdname>serviced</cmdname>.</dd>
         </dlentry>
-        <!-- key          Displays host's public key-->      <dlentry>
+        <dlentry>
+          <dt><synph><kwd>key</kwd></synph></dt>
+          <dd>Display the host's public key.</dd>
+        </dlentry>      <dlentry>
           <dt><synph><kwd>log</kwd></synph></dt>
           <dd>Administer logs.</dd>
         </dlentry>
@@ -540,8 +577,8 @@
         </dlentry>
         <dlentry>
           <dt><synph><kwd>restore</kwd></synph></dt>
-          <dd>Reconstruct templates and services from a <cmdname>tar</cmdname> archive file created
-            with <cmdname>backup</cmdname>.</dd>
+          <dd>Reconstruct templates, services, and application data from a compressed
+              <cmdname>tar</cmdname> archive file created with <cmdname>backup</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>script</kwd></synph></dt>
@@ -558,7 +595,7 @@
         <dlentry>
           <dt><synph><kwd>server</kwd></synph>
           </dt>
-          <dd>Starts <cmdname>serviced</cmdname>.</dd>
+          <dd>Start <cmdname>serviced</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>template</kwd></synph></dt>
@@ -572,7 +609,7 @@
       <dl>
         <dlentry>
           <dt><synph><kwd>volume</kwd></synph></dt>
-          <dd>Administers volume data.</dd>
+          <dd>Administer volume data.</dd>
         </dlentry>
       </dl>    
     </section>
