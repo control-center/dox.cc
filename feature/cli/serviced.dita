@@ -616,20 +616,20 @@
     
     <section>
       <title>INVOCATION</title>
-      <p>Service (daemon) control commands include start, stop and reload. The reload
-      command sends <codeph>SIGHUP</codeph> to the daemon, which restarts all internal
-        services except ZooKeeper.</p>
+      <p>Service (daemon) control commands include <cmdname>start</cmdname>, <cmdname>stop</cmdname>
+        and <cmdname>reload</cmdname>. The <cmdname>reload</cmdname> command sends
+          <codeph>SIGHUP</codeph> to the daemon, which restarts all internal services except
+        ZooKeeper.</p>
              <codeblock>sudo systemctl [start|stop|reload] serviced</codeblock>
           </section>
        <section>
       <title>MISCELLANEOUS</title>
       <p>Sending <codeph>SIGUSR1</codeph> to the <cmdname>serviced</cmdname>
         process toggles the log level between 0 and 2.</p>
-      <p>To attach to a container running on a remote host, log in to the
-        container from the <cmdname>serviced</cmdname> master host.
-        If you are running a Linux shell on a delegate host, specify the 
-        <codeph>--endpoint</codeph> option in the <cmdname>serviced</cmdname> 
-        invocation.</p>
+      <p>To attach to a container running on a remote host, log in to the container from the
+          <cmdname>serviced</cmdname> master host. If you are running a Linux shell on a delegate
+        host, you can specify the <codeph>--endpoint</codeph> option in the
+          <cmdname>serviced</cmdname> invocation.</p>
       <p><cmdname>serviced</cmdname> relies on Docker, and some administration
         procedures include <cmdname>docker</cmdname> commands. However, commands
         that manipulate containers directly, such as <codeph>docker pause</codeph>,

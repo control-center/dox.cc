@@ -10,8 +10,8 @@
         delegate host. For example, to list the services running on the master host, enter the
         following command: </p>
       <codeblock>serviced service list</codeblock>
-      <p>To invoke <cmdname>serviced</cmdname> on a delegate host, you must specify the master host
-        and port by using the <codeph>endpoint</codeph> global option. Replace
+      <p>To invoke <cmdname>serviced</cmdname> on a delegate host, you can specify the master host
+        and port by using the <codeph>--endpoint</codeph> global option. Replace
           <varname>Master-Host</varname> with the hostname or IP address of the <ph keyref="nm-cc"/>
         master host.</p>
       <p>Example:</p>
