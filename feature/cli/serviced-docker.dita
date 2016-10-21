@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><cmdname>serviced docker</cmdname></title>
+  <title>serviced docker</title>
   <shortdesc>The <cmdname>serviced docker</cmdname> command administers Docker images and
     registry.</shortdesc>
   <refbody>

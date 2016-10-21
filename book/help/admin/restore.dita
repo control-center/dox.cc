@@ -3,12 +3,10 @@
 <task id="taskid">
   <title>Restoring from a backup</title>
   <shortdesc>Restore an instance of an application from a backup file on the same system, or restore
-    from a backup file to duplicate your instance on a new, similarly configured
-    cluster.</shortdesc>
+    from a backup file to duplicate an instance on a new, similarly configured cluster.</shortdesc>
   <taskbody>
-    <prereq id="prereq_w55_hkn_4x">If your are restoring from a backup that was taken on another
-      system, copy the backup archive file to the target system. The default directory that receives
-      backups is <filepath>/opt/serviced/var/backups</filepath>.</prereq>
+    <prereq id="prereq_w55_hkn_4x">If you are restoring from a backup that was created on another
+      system, copy the backup archive file to the target system. </prereq>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
@@ -52,6 +50,24 @@
       <step>
         <cmd>When the restore is finished, click the <uicontrol>Applications</uicontrol> tab, then
           click <uicontrol>Start</uicontrol> beside the instance you just restored.</cmd>
+      </step>
+      <step>
+        <cmd>Review and define IP assignments, if necessary. </cmd>
+        <substeps id="substeps_q2g_jmp_rx">
+          <substep>
+            <cmd>Click <uicontrol>Applications</uicontrol> and then click the application
+              instance.</cmd>
+          </substep>
+          <substep>
+            <cmd>Review the <uicontrol>IP Assignments</uicontrol> table. If all services have an IP
+              assignment, no action is required.</cmd>
+          </substep>
+          <substep>
+            <cmd>For any service that does not have an automatic IP assignment, click
+                <uicontrol>Assign</uicontrol>, choose an IP, and then click <uicontrol>Assign
+                IP</uicontrol>. </cmd>
+          </substep>
+        </substeps>
       </step>
     </steps>
   </taskbody>

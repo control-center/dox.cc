@@ -1,49 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Taking a snapshot</title>
+  <title>Creating a snapshot</title>
   <taskbody>
     <steps>
       <step>
-        <cmd>Log in to the <ph keyref="nm-cc"/> host <ph conkeyref="strings/login-root"/> and
-            <cmdname>docker</cmdname> privileges.</cmd>
+        <cmd>Log in to the <ph keyref="nm-cc"/> host <ph conkeyref="strings/login-serviced"/>.</cmd>
       </step>
       <step>
-        <cmd>To take a snapshot of a service, you must know its identifier; for example,
-              <ph><filepath>Zenoss.resmgr</filepath></ph>. To find the identifier, execute the
-          following command:</cmd>
-        <stepxmp>
+        <cmd>Find the identifier of the service; for example,
+            <ph><filepath>Zenoss.resmgr</filepath></ph>. </cmd>
+        <info>
           <codeblock>serviced service list</codeblock>
-        </stepxmp>
+        </info>
       </step>
       <step>
-        <cmd>Take the snapshot. Replace <varname>SERVICEID</varname> with the identifier of the
-          service.</cmd>
-        <stepxmp>
-          <codeblock>serviced snapshot add <varname>SERVICEID</varname></codeblock>
-        </stepxmp>
-        <stepresult>The identifier of the snapshot is displayed.</stepresult>
+        <cmd>Create the snapshot.</cmd>
+        <info> Replace <varname>SERVICEID</varname> with the identifier of the
+          service.<codeblock>serviced snapshot add <varname>SERVICEID</varname></codeblock></info>
       </step>
       <step>
-        <cmd importance="optional">Verify the existence of the snapshot:</cmd>
-        <stepresult>
+        <cmd importance="optional">Verify the existence of the snapshot.</cmd>
+        <info>
           <codeblock>serviced snapshot list</codeblock>
-        </stepresult>
+        </info>
       </step>
       <step>
         <cmd importance="optional">To keep the snapshot for longer than the default 12-hour TTL, tag
-          it by executing the following command. Replace <varname>SNAPSHOTID</varname> with the
-          identifier of your snapshot and <varname>TAG-NAME</varname> with your tag.</cmd>
-        <stepxmp>
-          <codeblock>serviced snapshot tag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock>
-        </stepxmp>
+          it.</cmd>
+        <info> Replace <varname>SNAPSHOTID</varname> with the identifier of your snapshot and
+            <varname>TAG-NAME</varname> with your
+          text.<codeblock>serviced snapshot tag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock></info>
       </step>
       <step>
-        <cmd importance="optional">To untag a snapshot, which makes it subject to the TTL value,
-          execute the following command:</cmd>
-        <stepresult>
-          <codeblock>serviced snapshot untag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock>
-        </stepresult>
+        <cmd importance="optional">Untag a snapshot to make it subject to the TTL value.</cmd>
+        <info>Replace <varname>SNAPSHOTID</varname> with the identifier of your snapshot and
+            <varname>TAG-NAME</varname> with your
+          text.<codeblock>serviced snapshot untag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock></info>
       </step>
     </steps>
   </taskbody>

@@ -2,25 +2,24 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Backing up using the browser interface</title>
-  <shortdesc>To provide a historical archive, back up on a regular schedule. Back up as needed when
-    you perform less-frequent tasks such as moving data from one instance to another or duplicating
-    an instance for testing or failover purposes.</shortdesc>
+  <shortdesc>Using the browser interface, you can create a backup of your entire system.</shortdesc>
   <taskbody>
     <steps>
       <step>
         <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
       </step>
       <step>
-        <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab. The Backup / Restore page
-          appears.</cmd>
+        <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab.</cmd>
       </step>
       <step>
-        <cmd>Click <uicontrol>Create Backup</uicontrol>. You are asked to confirm your selection by
-          clicking <uicontrol>Create Backup</uicontrol> again.</cmd>
-        <stepresult>When the backup is complete, the compressed archive file name is displayed. The
-          default directory that receives backups is
-          <filepath>/opt/serviced/var/backups</filepath>.</stepresult>
+        <cmd>Click <uicontrol>Create Backup</uicontrol>. </cmd>
+      </step>
+      <step>
+        <cmd>At the prompt, confirm your selection by clicking <uicontrol>Create
+          Backup</uicontrol>.</cmd>
       </step>
     </steps>
+    <result id="result_kql_fqt_qx">When the backup is complete, the compressed archive file name is
+      displayed.</result>
   </taskbody>
 </task>
