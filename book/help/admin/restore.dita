@@ -51,6 +51,24 @@
         <cmd>When the restore is finished, click the <uicontrol>Applications</uicontrol> tab, then
           click <uicontrol>Start</uicontrol> beside the instance you just restored.</cmd>
       </step>
+      <step>
+        <cmd>Review and define IP assignments, if necessary. </cmd>
+        <substeps id="substeps_q2g_jmp_rx">
+          <substep>
+            <cmd>Click <uicontrol>Applications</uicontrol> and then click the application
+              instance.</cmd>
+          </substep>
+          <substep>
+            <cmd>Review the <uicontrol>IP Assignments</uicontrol> table. If all services have an IP
+              assignment, no action is required.</cmd>
+          </substep>
+          <substep>
+            <cmd>For any service that does not have an automatic IP assignment, click
+                <uicontrol>Assign</uicontrol>, choose an IP, and then click <uicontrol>Assign
+                IP</uicontrol>. </cmd>
+          </substep>
+        </substeps>
+      </step>
     </steps>
   </taskbody>
 </task>
