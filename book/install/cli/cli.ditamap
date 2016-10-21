@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-   <title>Variables</title>
-    <appendix keyref="install-vars-vars">
-       <topicref keyref="feature-vars-best"/>
-       <topicref keyref="feature-vars-file"/>
+   <title>CLI</title>
+    <appendix keyref="install-cli-cli">
+       <topicref keyref="feature-cli-serviced-storage"/>
    </appendix>
 </bookmap>

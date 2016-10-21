@@ -23,6 +23,11 @@
               monitor the status of the DFS.</entry>
           </row>
           <row>
+            <entry><varname>SERVICED_NFS_CLIENT</varname></entry>
+            <entry>Delegate access to the DFS is now controlled through resource pool
+              permissions.</entry>
+          </row>
+          <row>
             <entry><varname>SERVICED_VARPATH</varname></entry>
             <entry>Replaced by <varname>SERVICED_ISVCS_PATH</varname>,
               <varname>SERVICED_VOLUMES_PATH</varname>, and 

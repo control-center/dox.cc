@@ -40,7 +40,7 @@
       <step>
         <cmd>Verify the settings.</cmd>
         <stepxmp>
-          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced</codeblock>
+          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced</codeblock>
         </stepxmp>
       </step>
     </steps>

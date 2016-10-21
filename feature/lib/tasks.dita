@@ -203,40 +203,14 @@
       
       <step id="create-thin-docker">
         <cmd>Create an LVM thin pool for Docker data.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Display the available block storage.</cmd>
-            <stepxmp>
-              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Display the available LVM volume groups.</cmd>
-            <stepxmp>
-              <codeblock>vgs</codeblock>
-            </stepxmp>
-            <stepresult>For more information about a specific volume group, enter the following command.
-              Replace <varname>Volume-Group</varname> with the name of a volume displayed in the
-              previous command:
-              <codeblock>vgdisplay <varname>Volume-Group</varname></codeblock>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Create the thin pool.</cmd>
-            <info>In the following examples, replace <varname>Size</varname> with an absolute value (<codeph>50G</codeph>) or a
-              percentage of the storage followed by the percent sign character (<codeph>&#37;</codeph>).
-              Replace <varname>Storage</varname> with the path of one or more block storage devices or 
-              partition, or the name of an LVM volume group.</info>
-            <stepxmp><b>Absolute value and a physical device:</b>
-              <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sda1</codeblock>
-            </stepxmp>
-            <stepxmp><b>Relative value and a volume group:</b>
-              <codeblock>serviced-storage create-thin-pool --size=20% docker my_volume_group</codeblock>
-            </stepxmp>
-            <stepresult>On success, the result includes the name of the thin pool,
-              which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
-          </substep>
-        </substeps>
+        <info>For more information about the <cmdname>serviced-storage</cmdname> command,
+        see <xref keyref="feature-cli-serviced-storage"/>.</info>
+        <stepxmp>Replace <varname>Storage</varname> with the paths of one or more block 
+          devices or partitions, or the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Storage</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result is the device mapper name of the thin pool,
+          which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
       </step>
       
       <step id="agent-default-pool">
@@ -257,7 +231,7 @@
           <substep>
             <cmd>Display the total number of CPU cores.</cmd>
             <stepxmp>
-              <codeblock>cat /proc/cpuinfo | egrep -c '^core id'</codeblock>
+              <codeblock>cat /proc/cpuinfo | grep -Ec '^core id'</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -271,7 +245,7 @@
       <step id="check-cpu-aes">
         <cmd>Determine whether the CPU resources support the AES instruction set.</cmd>
         <stepxmp>
-          <codeblock>cat /proc/cpuinfo | egrep -c '^flags.*aes'</codeblock>
+          <codeblock>cat /proc/cpuinfo | grep -Ec '^flags.*aes'</codeblock>
         </stepxmp>
         <stepresult>For optimal performance, the result of the preceding commands
           must match the total number of CPU resources available on the host. If the
@@ -506,8 +480,8 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <cmd>Install and configure the NTP package.</cmd>
         <info>
           <note>This procedure assumes the host has internet access. 
-            To install and configure a host that does not have internet access,
-            see <xref keyref="install-ntp-ntp"/>.</note>
+            To install and configure NTP on a host that does not have 
+            internet access, see <xref keyref="install-ntp-ntp"/>.</note>
         </info>
         <substeps>
           <substep>
@@ -600,13 +574,9 @@ EOF</codeblock>
         </substeps>
       </step>
       
-      <step importance="optional" id="docker-install-offline">
-        <cmd><b><ph conkeyref="names/company"/> customers</b>: Install Docker 
+      <step id="docker-install-offline">
+        <cmd>Install Docker Engine
           <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
-        <info>
-          <note>If you are not a <ph conkeyref="names/company"/> customer
-          who is creating a deployment without internet access, skip this step.</note>
-        </info>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
@@ -615,9 +585,9 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install Docker Engine from the local repository mirror.</cmd>
+            <cmd>Install Docker Engine.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine</codeblock>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -810,13 +780,8 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
         </substeps>
       </step>
 
-      <step importance="optional" id="install-serviced-offline">
-        <cmd><b><ph conkeyref="names/company"/> customers</b>: 
-          Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local mirror.</cmd>
-        <info>
-          <note>If you are not a <ph conkeyref="names/company"/> customer
-            who is creating a deployment without internet access, skip this step.</note>
-        </info>
+      <step id="install-serviced-offline">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
@@ -825,9 +790,9 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install <ph keyref="nm-cc"/> from the local repository mirror.</cmd>
+            <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced</codeblock>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
         </substeps>

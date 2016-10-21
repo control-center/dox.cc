@@ -13,9 +13,9 @@
         and internal services endpoint traffic.</p>
       <table>
         <tgroup cols="3">
-          <colspec colname="c1" colwidth="8*"/>
-          <colspec colname="c2" colwidth="6*"/>
-          <colspec colname="c2" colwidth="7*"/>
+          <colspec colname="c1" colwidth="8.5*"/>
+          <colspec colname="c2" colwidth="4*"/>
+          <colspec colname="c2" colwidth="8*"/>
           <thead>
             <row>
               <entry>Variable</entry>

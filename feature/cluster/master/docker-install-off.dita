@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Optional: Installing Docker Engine without internet access</title>
+  <taskbody>
+    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
+        keyref="install-offline-offline"/> before performing this procedure.</prereq>
+    <context>Use this procedure to install Docker Engine on 
+      a host that does not have internet access.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-install-offline">
+        <cmd/>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

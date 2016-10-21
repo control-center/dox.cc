@@ -24,29 +24,28 @@
       </step>
       
       <step>
-        <cmd>Identify the block device or partition for the thin pool to 
-          create, and the amount of space available on it.</cmd>
-        <info>The thin pool stores both application data and snapshots of the data. To start, plan
-          on using 50% of the total space for application data and 50% for snapshots of the data. </info>
+        <cmd>Create an LVM thin pool for application data.</cmd>
+        <info>For more information about the <cmdname>serviced-storage</cmdname> command,
+          see <xref keyref="feature-cli-serviced-storage"/>.</info>
+        <stepxmp>Replace <varname>Value</varname> with the fixed or relative amount of space to use
+          for the thin pool; and replace <varname>Storage</varname> with the paths of one or more
+          block devices or partitions, or the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool --size=<varname>Value</varname> serviced <varname>Storage</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result is the device mapper name of the thin pool, which always
+          starts with <codeph>/dev/mapper</codeph>.</stepresult>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Identify the amount of space the thin pool occupies, if necessary.</cmd>
+        <info>When you specify a percentage for the size and an LVM volume group 
+          for the storage in the previous step, the <cmdname>serviced-storage</cmdname> command
+          computes the thin pool size and creates a logical volume for you.</info>
         <stepxmp>
-          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+          <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
         </stepxmp>
       </step>
-
-      <step>
-        <cmd>Create the thin pool.</cmd>
-        <stepxmp>
-          <p>Replace <varname>Path-To-Device</varname> with the path of the
-            target device or partition, and replace <varname>50-Percent</varname>
-            with 50% of the space available on the target device or partition.
-            Include a symbol for the units (gigabytes, <codeph>G</codeph>) after the number:</p>
-          <codeblock>serviced-storage create-thin-pool --size=<varname>50-Percent</varname>G \
-  serviced <varname>Path-To-Device</varname></codeblock>
-        </stepxmp>
-        <stepresult>On success, the result includes the name of the thin pool,
-          which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
-      </step>
-
+      
       <step>
         <cmd>Edit and add storage variables in the <ph keyref="nm-cc"/> configuration file,
             <filepath>/etc/default/serviced</filepath>.</cmd>
@@ -69,20 +68,19 @@ chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
             <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
                 <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
             <stepxmp>
-              <p>Replace <varname>Thin-Pool-Name</varname> with the name of the thin pool 
-                 specified in the preceding <cmdname>serviced-storage</cmdname> command:</p>
+              <p>Replace <varname>Thin-Pool-Name</varname> with the device mapper name of the thin
+                pool specified in the preceding <cmdname>serviced-storage</cmdname> command:</p>
               <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep>
+          <substep importance="optional">
             <cmd>Add <varname>SERVICED_DM_BASESIZE</varname> immediately after
-              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value.</cmd>
+              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value, if desired.</cmd>
+            <info>The default size is the recommended size.</info>
             <stepxmp>
-              <p>Replace <varname>50-Percent</varname> with the 
-                number specified with the <codeph>dm.basesize</codeph> argument 
-                in the preceding <cmdname>serviced-storage</cmdname> command.
+              <p>Replace <varname>Size</varname> with a preferred size.
                 Include the symbol for the units, <codeph>G</codeph>:</p>
-              <codeblock>SERVICED_DM_BASESIZE=<varname>50-Percent</varname>G</codeblock>
+              <codeblock>SERVICED_DM_BASESIZE=<varname>Size</varname>G</codeblock>
             </stepxmp>
           </substep>
           <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>

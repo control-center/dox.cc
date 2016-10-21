@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping a master host (multi-host deployment)</title>
+  <taskbody>
+    <context>Use this procedure to stop the <ph keyref="nm-cc"/> 
+      service (<cmdname>serviced</cmdname>) on the master host in a multi-host deployment.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the top-level service <cmdname>serviced</cmdname> is managing.</cmd>
+        <stepxmp>
+          <codeblock>serviced service list</codeblock>
+        </stepxmp>
+        <stepresult>The top-level service is the service listed immediately 
+          below the headings line.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Stop the top-level service.</cmd>
+        <stepxmp>Replace <varname>Service</varname> with the name or
+          identifier of the top-level service:
+          <codeblock>serviced service stop <varname>Service</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Monitor the stop.</cmd>
+        <stepxmp>
+          <codeblock>serviced service status</codeblock>
+        </stepxmp>
+        <stepresult>When the status of the top-level service and all child services is
+          <codeph>stopped</codeph>, proceed to the next step.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Stop the <ph keyref="nm-cc"/> service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Ensure that no containers remain in the local repository.</cmd>
+        <substeps>
+          <substep>
+            <cmd>List all containers.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -a</codeblock>
+            </stepxmp>
+            <stepresult>Containers in <codeph>Exited</codeph> status must be removed.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Remove all remaining containers.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Determine whether any containers remain.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -a</codeblock>
+            </stepxmp>
+            <stepresult>If containers are still present, perform the
+              remaining substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reboot the host.</cmd>
+            <stepxmp>
+              <codeblock>reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

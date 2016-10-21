@@ -43,6 +43,10 @@
             href="admin/multiple.dita"
             format="dita"
     />
+    <keydef keys="help-admin-resize"
+            href="admin/resize.dita"
+            format="dita"
+    />
     <keydef keys="help-admin-remove-images"
             href="admin/remove-images.dita"
             format="dita"

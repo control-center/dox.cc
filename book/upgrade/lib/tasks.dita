@@ -230,7 +230,7 @@ EOF</codeblock>
           <substep>
             <cmd>Identify the customized variables in the pre-upgrade configuration file.</cmd>
             <stepxmp>
-              <codeblock>egrep '^[^#]*SERVICED' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
+              <codeblock>grep -E '^[^#]*SERVICED' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
           <substep>

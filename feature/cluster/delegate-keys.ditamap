@@ -15,6 +15,14 @@
             href="delegate/add.dita"
             format="dita"
     />
+    <keydef keys="feature-cluster-delegate-cc-install-off"
+            href="delegate/cc-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-cc-install-on"
+            href="delegate/cc-install-on.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-delegate-cc-install"
             href="delegate/cc-install.dita"
             format="dita"

@@ -339,10 +339,10 @@
         <dlentry id="SERVICED_DM_BASESIZE">
           <dt><varname>SERVICED_DM_BASESIZE</varname></dt>
           <dd><b>Default</b>: <codeph>100G</codeph></dd> 
-          <dd>The base size of the data portion of the application thin pool. 
-            The base size is set when <cmdname>serviced-storage</cmdname> is invoked to
-            create a thin pool, and <codeph>100G</codeph> is the default value used by
-            <cmdname>serviced-storage</cmdname>.</dd>
+          <dd>The base size of tenant devices in the application thin pool. 
+            This variable is used when <cmdname>serviced</cmdname> starts for 
+            the first time, to set the initial size of tenant devices, and when
+            a backup is restored, to set the size of the restored tenant device.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">
@@ -522,18 +522,7 @@
           <dd>This setting is ignored when the operating system
             kernel version is less than 3.10.0-366.</dd>
         </dlentry>
-         
-        
-        <dlentry id="SERVICED_NFS_CLIENT">
-          <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
-          <dd><b>Default</b>: <codeph>1</codeph></dd> 
-          <dd>Determines whether a <cmdname>serviced</cmdname> delegate mounts the DFS. To disable
-            mounting, set the value to <codeph>0</codeph>.
-          <note>Disabling the DFS can destroy application data. Before changing
-            the default, ensure that no stateful services can run on the host.</note>
-          </dd>
-        </dlentry>
-        
+
         <dlentry id="SERVICED_SERVICE_MIGRATION_TAG">
           <dt><varname>SERVICED_SERVICE_MIGRATION_TAG</varname></dt>
           <dd><b>Default</b>: <codeph>1.0.2</codeph></dd> 

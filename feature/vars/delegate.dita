@@ -27,11 +27,6 @@
                 increases when the master is unavailable and decreases when the master returns to
                 service. </entry>
             </row>
-            <row>
-              <entry><varname>SERVICED_NFS_CLIENT</varname></entry>
-              <entry>Determines whether to mount the DFS. For use only on delegates 
-                in resource pools that do not run stateful services.</entry>
-            </row>
           </tbody>
         </tgroup>
       </table>

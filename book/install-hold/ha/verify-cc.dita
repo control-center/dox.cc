@@ -32,7 +32,7 @@
       <step importance="optional">
         <cmd>On both nodes, display the customized variables, if necessary.</cmd>
         <stepxmp>
-          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced | sort</codeblock>
+          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced | sort</codeblock>
         </stepxmp>
         <stepresult>Example result: <codeblock>SERVICED_AGENT=1
 SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool
