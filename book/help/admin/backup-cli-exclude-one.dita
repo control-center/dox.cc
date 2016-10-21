@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Excluding one tenant volume from a backup</title>
+  <shortdesc/>
+  <taskbody>
+    <context id="context_tfj_ltt_qx">By default, <ph keyref="nm-cc"/> stores application data in
+        <filepath>/opt/serviced/var/volumes</filepath>. The directory can be changed by specifying
+      the <filepath>SERVICED_VOLUMES_PATH</filepath> environment variable in the <ph keyref="nm-cc"
+      /> configuration file, <filepath>/etc/default/serviced</filepath>. If necessary, replace
+        <filepath>/opt/serviced/var/volumes</filepath> with your path.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host <ph conkeyref="strings/login-root"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Display the <ph keyref="nm-cc"/> tenant identifier.</cmd>
+        <info>For example:<codeblock>ls /opt/serviced/var/volumes</codeblock></info>
+        <stepresult>Example result:<codeblock>cvs0ul2tmvjcitolrm7p0d8bx</codeblock></stepresult>
+      </step>
+      <step>
+        <cmd>Display the directories under the <ph keyref="nm-cc"/> tenant identifier. </cmd>
+        <info>Replace <varname>Tenant-ID</varname> with the identifier displayed in the previous
+          step.<codeblock>ls /opt/serviced/var/volumes/<varname>Tenant-ID</varname></codeblock></info>
+      </step>
+      <step>
+        <cmd>Exclude the tenant volume from the backup.</cmd>
+        <info>For example, exclude <filepath>hbase-master</filepath>. Replace
+            <varname>Tenant-ID</varname> with your tenant
+          identifier.<codeblock>serviced backup /opt/serviced/var/backups \
+  --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/hbase-master</codeblock></info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

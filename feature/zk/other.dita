@@ -52,7 +52,7 @@
       <step>
         <cmd>Verify the setting.</cmd>
         <stepxmp>
-          <codeblock>egrep '^[^#]*SERVICED_ZK' /etc/default/serviced</codeblock>
+          <codeblock>grep -E '^[^#]*SERVICED_ZK' /etc/default/serviced</codeblock>
         </stepxmp>
         <stepresult>The following example shows the environment variable for a delegate host that is
           not a node in the ZooKeeper ensemble:

@@ -4,8 +4,9 @@
    <title>Administration reference</title>
   <refbody>
     <section>
-      <p>This section contains several procedures for managing collections of hosts in <ph
-          keyref="nm-cc"/> and backing up and restoring applications and data.</p>
+      <p>This section contains information about and procedures for performing administrative tasks.
+        Tasks include adding application storage, copying applications and data, and reverting to a
+        backup or snapshot.</p>
     </section>
   </refbody>
 </reference>

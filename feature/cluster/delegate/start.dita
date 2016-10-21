@@ -13,7 +13,7 @@
       <step>
         <cmd>Verify the configuration settings.</cmd>
         <stepxmp>
-          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced</codeblock>
+          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced</codeblock>
         </stepxmp>
       </step>
       

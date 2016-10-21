@@ -1,59 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><cmdname>serviced script</cmdname></title>
+  <title>serviced script</title>
   <shortdesc>The <cmdname>serviced script</cmdname> command verifies or performs the commands in a
-    script file. A script file is a text file that contains commands to automate common or
-    repetitive tasks, and tasks that may require specific services or conditions. </shortdesc>
+    script file.  </shortdesc>
   <refbody>
     <section>
-      <title>Usage</title>
+      <title>USAGE</title>
+      <p>A script file is a text file that contains commands to automate common or repetitive tasks
+        and tasks that might require specific services or conditions.</p>
       <p>The <cmdname>serviced script</cmdname> command provides three subcommands.</p>
-        <dl>
-          <dlentry>
-            <dt><codeph>help</codeph></dt>
-            <dd>Display the help message.</dd>
-          </dlentry>
-          <dlentry>
-            <dt><codeph>parse</codeph></dt>
-            <dd>Verify the syntax of a script file.</dd>
-          </dlentry>
-          <dlentry>
-            <dt><codeph>run</codeph></dt>
-            <dd>Perform the commands in a script file.</dd>
-          </dlentry>
-        </dl>
-        <p>The correct invocation of <cmdname>serviced script run</cmdname> depends on whether the
-          <cmdname>REQUIRE_SVC</cmdname> command is present in a script file.</p>
-      <ul>
-        <li>If a script file does not include <cmdname>REQUIRE_SVC</cmdname>, no additional
-          parameters are required. For example:<codeblock>serviced script run task1.txt</codeblock>
-        </li>
-        <li>If a script file includes <cmdname>REQUIRE_SVC</cmdname>, the <codeph>--service</codeph>
-          parameter is required. For
-          example:<codeblock>serviced script run task2.txt --service Zenoss.core</codeblock>
-        </li>
-      </ul>
-      <p>The log file of a <cmdname>serviced script run</cmdname> invocation
-        is <filepath>/var/log/serviced/script-<varname>TIMESTAMP</varname>-<varname>$USER</varname>.log</filepath></p>
-      <note>To commit a container, a <cmdname>serviced script run</cmdname> invocation must be performed on the
-        <ph keyref="nm-cc"/> master host.</note>
+      <dl>
+        <dlentry>
+          <dt><codeph>help</codeph></dt>
+          <dd>Display the help message.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>parse</codeph></dt>
+          <dd>Verify the syntax of a script file.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>run</codeph></dt>
+          <dd>Perform the commands in a script file.</dd>
+        </dlentry>
+      </dl>
+      <p>The correct invocation of <cmdname>serviced script run</cmdname> depends on whether the
+          <cmdname>REQUIRE_SVC</cmdname> command is present in a script file.<ul id="ul_bdb_ntj_rx">
+          <li>If a script file does not include <cmdname>REQUIRE_SVC</cmdname>, no additional
+            parameters are required. For
+            example:<codeblock>serviced script run task1.txt</codeblock>
+          </li>
+          <li>If a script file includes <cmdname>REQUIRE_SVC</cmdname>, the
+              <codeph>--service</codeph> parameter is required. For
+            example:<codeblock>serviced script run task2.txt --service Zenoss.core</codeblock>
+          </li>
+        </ul></p>
+      <p>The log file of a <cmdname>serviced script run</cmdname> invocation is
+            <filepath>/var/log/serviced/script-<varname>TIMESTAMP</varname>-<varname>$USER</varname>.log</filepath></p>
+      <note>To commit a container, a <cmdname>serviced script run</cmdname> invocation must be
+        performed on the <ph keyref="nm-cc"/> master host.</note>
     </section>
     
     <section>
-      <title>Script file syntax</title>
+      <title>SYNTAX</title>
+      <p>The script file syntax rules are as follows:</p>
           <ul>
             <li>Lines that contain no text and lines that start with the number sign
               character (<codeph>#</codeph>) are ignored.</li>
             <li>Lines are terminated with LF or CR+LF.</li>
-            <li>A command and its arguments may not span lines.</li>
+            <li>A command and its arguments cannot span lines.</li>
             <li>The maximum number of characters per line (command and arguments) is 300000.</li>
             <li>Unless otherwise noted, all command arguments are treated as strings.</li>
           </ul>
     </section>
     
     <section>
-      <title>Commands</title>
+      <title>COMMANDS</title>
       <p>Commands are performed in the order in which they occur in a script. Scripts terminate on
         completion and when a command returns an exit code other than zero.</p>
       <dl>

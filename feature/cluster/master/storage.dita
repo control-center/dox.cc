@@ -4,14 +4,23 @@
   <title>Master host storage requirements</title>
   <refbody>
     <section>
-      <p>This section provides a quick reference for the minimum block storage
-        requirements of a <ph keyref="nm-cc"/> master host. These requirements
-        are in addition to the storage required for the host's operating system. For more
-        information, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      <p>This section provides a quick reference for the minimum storage requirements of a <ph
+          keyref="nm-cc"/> master host. These requirements are in addition to the storage required
+        for the host's operating system. For more information, refer to the <cite
+          conkeyref="pubs/cite-plan"/>.</p>
       
-      <p>Enter the following command to display information about the
-         used and available block storage on a Linux host:</p>
-        <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+      <p><ph keyref="nm-cc"/> cluster hosts need either unformatted block storage devices or partitions,
+      or free space in one or more LVM volume groups.</p>
+      
+      <ul>
+        <li>Enter the following command to display information about block storage:
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </li>
+        <li>Enter the following command to display information about LVM volume groups:
+          <codeblock>vgdisplay</codeblock>
+        </li>
+      </ul>
+      
       <p>Compare the output with the information in the following table.</p>
       
       <table>
@@ -30,39 +39,39 @@
             <row>
               <entry>Docker data</entry>
               <entry>50GB (required)</entry>
-              <entry>A local, unformatted, high-performance device or partition.</entry>
+              <entry>Local, high-performance storage.</entry>
             </row>
             <row>
               <entry><ph keyref="nm-cc"/> internal services data</entry>
               <entry>50GB (required)</entry>
-              <entry>A local, high-performance device or partition formatted as an XFS filesystem. In particular,
-                ZooKeeper requires consistently fast (low-contention) storage.</entry>
+              <entry>Local, high-performance storage formatted as an XFS filesystem.</entry>
             </row>
             <row>
               <entry>Application data</entry>
               <entry>200GB (suggested)</entry>
-              <entry>A local or remote, unformatted, high-performance device or partition.</entry>
+              <entry>Local, high-performance storage.</entry>
             </row>
             <row>
               <entry>Application data backups</entry>
               <entry>150GB (suggested)</entry>
-              <entry>A remote file server compatible with XFS, or a local or remote device or 
-                partition formatted as an XFS filesystem. If the storage is local, ensure
-                that it does not cause contention with the storage for <ph keyref="nm-cc"/>
-                internal services.</entry>
+              <entry>A remote file server compatible with XFS or a local storage formatted as an XFS
+                filesystem. If the storage is local, ensure that it does not cause contention with
+                the storage for <ph keyref="nm-cc"/> internal services.</entry>
             </row>
+            <!-- 
             <row>
               <entry><ph keyref="nm-cc"/> metadata</entry>
               <entry>1GB (required)</entry>
-              <entry>A local, high-performance device or partition formatted as an XFS filesystem.
+              <entry>Local, high-performance storage formatted as an XFS filesystem.
                 (High-availability deployments only.)</entry>
             </row>
+             -->
           </tbody>
         </tgroup>
       </table>
 
-      <p>The unformatted devices or partitions for Docker data and application data are configured as
-        LVM thin pools in subsequent procedures. </p>
+      <p>The storage for Docker data and application data is configured as LVM thin pools in
+        subsequent procedures. </p>
       
       <p>The suggested minimum sizes for application data and application data backups should be
         replaced with sizes that meet your application requirements. To calculate the appropriate

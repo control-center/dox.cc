@@ -1,52 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
-<task id="taskid">
-  <title>Add the master host to a resource pool</title>
-  <taskbody>
-    <context>Use this procedure to add the master host to a resource pool.
-    <note>You can use a hostname or an IP address to add the master host to a resource pool.
-      If you use a hostname, all of the hosts in your <ph keyref="nm-cc"/> cluster must be able to
-      resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
-      a nameserver on the network.</note>
-    </context>
-    <steps>
-      <step>
-        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-      
-      <step>
-        <cmd>Add the master host to a resource pool.</cmd>
-        <choices>
-          <choice>If you are creating a single-host deployment, enter the following command.
-              <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the
-                <ph keyref="nm-cc"/> master host:</p>
-            <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
-          </choice>
-          <choice>If you are creating a multi-host deployment, enter the following commands.
-              <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the
-                <ph keyref="nm-cc"/> master host:</p>
-            <codeblock>serviced pool add master &#38;&#38; serviced host add \
-  --register <varname>Hostname-Or-IP</varname>:4979 master</codeblock>
-            <p>The commands create a new pool named <codeph>master</codeph>, and
-              then add the master host  to the new pool. Delegate hosts are added
-            to the <codeph>default</codeph> pool, or other pools.</p>
-          </choice>
-        </choices>
-      </step>
-    </steps>
-  </taskbody>
-</task>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Adding the master host to a resource pool</title>
+  <refbody>
+    <section>
+      <p>Perform one of the procedures in this section.</p>
+    </section>
+  </refbody>
+</reference>

@@ -7,8 +7,14 @@
     <topicref keyref="feature-cluster-delegate-storage"/>
     <topicref keyref="feature-cluster-master-device-naming"/>
     <topicref keyref="feature-cluster-delegate-prep"/>
-    <topicref keyref="feature-cluster-delegate-docker-install"/>
-    <topicref keyref="feature-cluster-delegate-cc-install"/>
+    <topicref keyref="feature-cluster-master-docker-install">
+      <topicref keyref="feature-cluster-master-docker-install-on"/>
+      <topicref keyref="feature-cluster-master-docker-install-off"/>
+    </topicref>
+    <topicref keyref="feature-cluster-delegate-cc-install">
+      <topicref keyref="feature-cluster-delegate-cc-install-on"/>
+      <topicref keyref="feature-cluster-delegate-cc-install-off"/>
+    </topicref>
     <topicref keyref="feature-cluster-delegate-docker-config"/>
    </chapter>
 </bookmap>

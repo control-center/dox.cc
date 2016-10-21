@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Invoking <cmdname>serviced</cmdname></title>
+  <title>Invoking serviced</title>
   <refbody>
     <section>
       <p>To use <cmdname>serviced</cmdname>, you need a login account on hosts in <ph keyref="nm-cc"
-        /> pools. The account needs to be a member of the <cmdname>docker</cmdname> group.</p>
-      <p>You may invoke <cmdname>serviced</cmdname> from the <ph keyref="nm-cc"/> master host or a
+        /> pools. The account must be a member of the <cmdname>docker</cmdname> group.</p>
+      <p>You can invoke <cmdname>serviced</cmdname> from the <ph keyref="nm-cc"/> master host or a
         delegate host. For example, to list the services running on the master host, enter the
         following command: </p>
       <codeblock>serviced service list</codeblock>
-      <p>If you invoke <cmdname>serviced</cmdname> on a delegate host, you must specify the
-        master host and port manually, using the <codeph>endpoint</codeph> global option.</p>
+      <p>To invoke <cmdname>serviced</cmdname> on a delegate host, you can specify the master host
+        and port by using the <codeph>--endpoint</codeph> global option. Replace
+          <varname>Master-Host</varname> with the hostname or IP address of the <ph keyref="nm-cc"/>
+        master host.</p>
+      <p>Example:</p>
       <codeblock>serviced --endpoint <varname>Master-Host</varname>:4979 service list</codeblock>
-      <p>Replace <varname>Master-Host</varname> with the hostname or IP address of the <ph keyref="nm-cc"/> master host.</p>
-      <note>To commit a container, a <cmdname>serviced</cmdname> CLI session must be run on the <ph keyref="nm-cc"/> master host.</note>
+      <note>To commit a container, you must run a <cmdname>serviced</cmdname> CLI session on the <ph
+          keyref="nm-cc"/> master host.</note>
     </section>
   </refbody>
 </reference>

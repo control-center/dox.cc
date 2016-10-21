@@ -3,8 +3,24 @@
 <map>
  <title>Keys in feature/cluster/delegate</title>
   <topicgroup>
+    <keydef keys="feature-cluster-delegate-add-feet"
+            href="delegate/add-feet.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-add-ssh"
+            href="delegate/add-ssh.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-delegate-add"
             href="delegate/add.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-cc-install-off"
+            href="delegate/cc-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-delegate-cc-install-on"
+            href="delegate/cc-install-on.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-delegate-cc-install"

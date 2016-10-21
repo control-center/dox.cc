@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><cmdname>serviced backup</cmdname></title>
+  <title>serviced backup</title>
   <shortdesc>The <cmdname>serviced backup</cmdname> command saves a snapshot of the current state of
-    the system, the state of all services, and data to a compressed archive file
-      (<filepath>.tgz</filepath>).  You can exclude certain directories from a backup, such as a
-    directory that contains application performance data.</shortdesc>
+    the system, the state of all services, and application data to a compressed tar archive file
+      (<filepath>.tgz</filepath>). </shortdesc>
   <refbody>
     <section id="section_csb_1wg_hx">
-      <title/>
-      <p>For more information, see <xref keyref="help-admin-backup-from-cli"/>.</p>
+      <title>USAGE</title>
+      <p>You can backup the entire system, or exclude certain directories, such as a directory that
+        contains application performance data. For more information and examples, see <xref
+          keyref="help-admin-backup-from-cli"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
-      <title>USAGE</title>
+      <title>SYNTAX</title>
       <codeblock>serviced backup [command options] [arguments...]</codeblock>
-    </section>
-    <section>
-      <title>DESCRIPTION</title>
-      <p><filepath>serviced backup <varname>directoryPath</varname></filepath>
-      </p>
-      <p>The default directory that receives backups is
-          <filepath>/opt/serviced/var/backups</filepath>. If your directory path is different,
-        replace <varname>directoryPath</varname> with your path.</p>
     </section>
     <section id="section_qfy_jyb_hx">
       <title>OPTIONS</title>
@@ -29,22 +22,13 @@
       <dl>
         <dlentry>
           <dt>--exclude '--exclude option --exclude option'</dt>
-          <dd>Subdirectory of the tenant volume to exclude from a backup.
-              <p><b>Examples</b></p><p>Exclude one tenant volume from the backup; in this example,
-                <filepath>hbase-master</filepath>. Replace <varname>Tenant-ID</varname> with your
-              tenant identifier.</p><p>
-              <codeblock>serviced backup /opt/serviced/var/backups --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/hbase-master</codeblock>
-            </p><p>Exclude multiple tenant volumes; in this example,
-                <filepath>mariadb-events</filepath> and <filepath>zeneventserver</filepath>. Replace
-                <varname>Tenant-ID</varname> with your tenant identifier. </p><p>
-              <codeblock>serviced backup /opt/serviced/var/backups --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/mariadb-events --exclude opt/serviced/var/volumes/<varname>Tenant-ID</varname>/zeneventserver</codeblock>
-            </p></dd>
+          <dd>Subdirectory of the tenant volumes to exclude from a backup. </dd>
         </dlentry>
       </dl>
       <dl>
         <dlentry>
           <dt>--help, -h</dt>
-          <dd>Shows the help for an option.</dd>
+          <dd>Show the help for an option.</dd>
         </dlentry>
       </dl>
     </section>

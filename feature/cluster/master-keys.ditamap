@@ -3,8 +3,24 @@
 <map>
  <title>Keys in feature/cluster/master</title>
   <topicgroup>
+    <keydef keys="feature-cluster-master-add-multi"
+            href="master/add-multi.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-add-single"
+            href="master/add-single.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-master-add"
             href="master/add.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-cc-install-off"
+            href="master/cc-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-cc-install-on"
+            href="master/cc-install-on.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-cc-install"
@@ -21,6 +37,18 @@
     />
     <keydef keys="feature-cluster-master-docker-config"
             href="master/docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-docker-images"
+            href="master/docker-images.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-docker-install-off"
+            href="master/docker-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-docker-install-on"
+            href="master/docker-install-on.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-docker-install"

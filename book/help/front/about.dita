@@ -5,8 +5,8 @@
  <refbody>
    
    <section>
-     <p><cite conkeyref="pubs/cite-ref"/> provides information and procedures for managing the <ph
-          keyref="nm-cc"/> deployment.</p>
+     <p><cite conkeyref="pubs/cite-ref"/> provides information and procedures for managing <ph
+          keyref="nm-cc"/>.</p>
    </section>
 
    <section conkeyref="related-pubs/cc"/>

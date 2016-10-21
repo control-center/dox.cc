@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting <ph keyref="nm-cc"/> (single-host deployment)</title>
+  <taskbody>
+    <context>Use this procedure to start <ph keyref="nm-cc"/> in a single-host deployment. The
+      default configuration of the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>) is to
+      start when the host starts. This procedure is only needed after stopping
+        <cmdname>serviced</cmdname> to perform maintenance tasks.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Determine whether <codeph>serviced</codeph> is configured to start
+          when the system starts.</cmd>
+        <stepxmp>
+          <codeblock>systemctl is-enabled serviced</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result is <codeph>enabled</codeph>, proceed to the next step.</choice>
+          <choice>If the result is <codeph>disabled</codeph>, enter the following command:
+          <codeblock>systemctl enable serviced</codeblock>
+          </choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Start the <ph keyref="nm-cc"/> service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Monitor the startup, if desired.</cmd>
+        <stepxmp>
+          <codeblock>journalctl -uf serviced -o cat</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+    <postreq>Once <ph keyref="nm-cc"/> is started, it is ready to start managing applications.
+    For more information, refer to the documentation of your application.</postreq>
+  </taskbody>
+</task>
