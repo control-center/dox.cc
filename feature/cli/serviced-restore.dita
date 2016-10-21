@@ -8,27 +8,21 @@
     cluster.</shortdesc>
   <refbody>
     <section id="section_xd3_xvg_hx">
-      <title/>
-      <p>If your are restoring from a backup that was taken on another system, copy the backup
-        archive file to the target system. The default directory that receives backups is
-          <filepath>/opt/serviced/var/backups</filepath>. For more information, see <xref
+      <title>USAGE</title>
+      <p>If you are restoring from a backup that was taken on another system, copy the backup
+        archive file to the target system. For more information, see <xref
           keyref="help-admin-restore"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
-      <title>USAGE</title>
-      <codeblock>command restore [command options] [arguments...]</codeblock>
-    </section>
-    <section>
-      <title>DESCRIPTION</title>
-      <p><filepath>serviced restore <varname>backupFilePath</varname></filepath>
-      </p>
+      <title>SYNTAX</title>
+      <codeblock>serviced restore [command options] [arguments...]</codeblock>
     </section>
     <section id="section_qfy_jyb_hx">
       <title>OPTIONS</title>
       <dl>
         <dlentry>
           <dt>--help, -h</dt>
-          <dd>Shows the help for an option.</dd>
+          <dd>Show the help for an option.</dd>
         </dlentry>
       </dl>
     </section>
