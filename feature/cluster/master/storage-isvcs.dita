@@ -3,16 +3,8 @@
 <task id="taskid">
   <title>Creating a filesystem for <ph keyref="nm-cc"/> internal services</title>
   <taskbody>
-    <prereq>This procedure requires one unused and unformatted device or partition.</prereq>
-    <context>
-      <p>Use this procedure to create an XFS filesystem on an unused device or partition.</p>
-      
-      <note><ph keyref="nm-cc"/> internal services include ZooKeeper, which requires
-        consistently fast storage. For best results, use
-        a separate, high-performance storage resource for <ph keyref="nm-cc"/>
-        internal services. For example, a dedicated local device.</note>
-    </context>
-    
+    <prereq>This procedure requires one unused device or partition.</prereq>
+    <context>Use this procedure to create an XFS filesystem on an unused device or partition.</context>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>

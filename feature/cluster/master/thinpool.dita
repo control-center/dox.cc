@@ -42,7 +42,7 @@
           for the storage in the previous step, the <cmdname>serviced-storage</cmdname> command
           computes the thin pool size and creates a logical volume for you.</info>
         <stepxmp>
-          <codeblock>lvdisplay</codeblock>
+          <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
         </stepxmp>
       </step>
       

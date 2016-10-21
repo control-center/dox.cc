@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Variables</title>
-    <appendix keys="serviced-configuration-variables" keyref="install-vars-vars">
+    <appendix keyref="install-vars-vars">
        <topicref keyref="feature-vars-best"/>
        <topicref keyref="feature-vars-file"/>
    </appendix>

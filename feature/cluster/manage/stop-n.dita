@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Installing <ph keyref="nm-cc"/></title>
+  <title>Stopping <ph keyref="nm-cc"/> (multi-host deployment)</title>
   <refbody>
     <section>
-      <p>Use one of the procedures in this section to install <ph keyref="nm-cc"/>.</p>
+      <p>To stop <ph keyref="nm-cc"/> in a multi-host deployment,
+      perform the procedures in this section in order.</p>
     </section>
   </refbody>
 </reference>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring Docker</title>
+  <title>Configuring Docker Engine</title>
   <taskbody>
-    <context>Use this procedure to configure Docker.</context>
+    <context>Use this procedure to configure Docker Engine.</context>
     <steps>
       
       <step>
@@ -30,47 +30,6 @@
         <cmd/>
       </step>
       
-      <step importance="optional">
-        <cmd><b><ph conkeyref="names/company"/> customers</b>: Import 
-          the <ph keyref="nm-cc"/> images into the local <cmdname>docker</cmdname> registry.</cmd>
-        <info>This step is for <ph conkeyref="names/company"/> customers 
-          who are creating a deployment without internet access.</info>
-        <substeps>
-          <substep>
-            <cmd>Change directory to <filepath>/root</filepath>.</cmd>
-            <stepxmp>
-              <codeblock>cd /root</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Extract the images.</cmd>
-            <stepxmp>
-              <codeblock>for image in install-*.run
-do
-  echo -n "$image: "
-  eval ./$image
-done</codeblock>
-            </stepxmp>
-            <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>
-              key and then <b>Return</b> key, the current image is extracted, but the next one is
-              not.</info>
-          </substep>
-          <substep>
-            <cmd>List the images in the local registry.</cmd>
-            <stepxmp>
-              <codeblock>docker images</codeblock>
-            </stepxmp>
-            <stepresult>The result should show one image for each archive file.</stepresult>
-          </substep>
-          <substep importance="optional">
-            <cmd>Delete the archive files, if desired.</cmd>
-            <stepxmp>
-              <codeblock>rm -i ./install-*.run</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-
     </steps>
   </taskbody>
 </task>

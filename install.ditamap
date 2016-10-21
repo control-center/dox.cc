@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1321.16.291</bookpartno>  
+      <bookpartno>1321.16.295</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -52,6 +52,7 @@
     <topicgroup>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/access-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cluster/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/master-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cluster/delegate-keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
@@ -70,6 +71,7 @@
   <chapter href="book/install/config/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
+  <appendix href="feature/cluster/manage/manage.ditamap" format="ditamap"/>
   <appendix href="book/install/cli/cli.ditamap" format="ditamap"/>
   <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>

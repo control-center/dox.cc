@@ -126,14 +126,14 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
       <step>
         <cmd>Verify the ZooKeeper environment variables.</cmd>
         <stepxmp>
-          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced \
-            | egrep '(CS_ZO|_ZK|CS_ST)'</codeblock>
+          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced \
+  | grep -E '(CS_ZO|_ZK|CS_ST)'</codeblock>
         </stepxmp>
         <stepresult>The following example shows the environment
           variables for a delegate host with IP address 198.51.100.136.
           <note>The value of the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
             variable is formatted to fit the available space. The result of
-            the <cmdname>egrep</cmdname> command shows the variable and 
+            the <cmdname>grep</cmdname> command shows the variable and 
             value on the same line.</note>
           <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181
 SERVICED_ISVCS_START=zookeeper

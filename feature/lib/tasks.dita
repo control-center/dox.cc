@@ -231,7 +231,7 @@
           <substep>
             <cmd>Display the total number of CPU cores.</cmd>
             <stepxmp>
-              <codeblock>cat /proc/cpuinfo | egrep -c '^core id'</codeblock>
+              <codeblock>cat /proc/cpuinfo | grep -Ec '^core id'</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -245,7 +245,7 @@
       <step id="check-cpu-aes">
         <cmd>Determine whether the CPU resources support the AES instruction set.</cmd>
         <stepxmp>
-          <codeblock>cat /proc/cpuinfo | egrep -c '^flags.*aes'</codeblock>
+          <codeblock>cat /proc/cpuinfo | grep -Ec '^flags.*aes'</codeblock>
         </stepxmp>
         <stepresult>For optimal performance, the result of the preceding commands
           must match the total number of CPU resources available on the host. If the
@@ -480,8 +480,8 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <cmd>Install and configure the NTP package.</cmd>
         <info>
           <note>This procedure assumes the host has internet access. 
-            To install and configure a host that does not have internet access,
-            see <xref keyref="install-ntp-ntp"/>.</note>
+            To install and configure NTP on a host that does not have 
+            internet access, see <xref keyref="install-ntp-ntp"/>.</note>
         </info>
         <substeps>
           <substep>
@@ -574,13 +574,9 @@ EOF</codeblock>
         </substeps>
       </step>
       
-      <step importance="optional" id="docker-install-offline">
-        <cmd><b><ph conkeyref="names/company"/> customers</b>: Install Docker 
+      <step id="docker-install-offline">
+        <cmd>Install Docker Engine
           <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
-        <info>
-          <note>If you are not a <ph conkeyref="names/company"/> customer
-          who is creating a deployment without internet access, skip this step.</note>
-        </info>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
@@ -589,9 +585,9 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install Docker Engine from the local repository mirror.</cmd>
+            <cmd>Install Docker Engine.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine</codeblock>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -784,13 +780,8 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
         </substeps>
       </step>
 
-      <step importance="optional" id="install-serviced-offline">
-        <cmd><b><ph conkeyref="names/company"/> customers</b>: 
-          Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local mirror.</cmd>
-        <info>
-          <note>If you are not a <ph conkeyref="names/company"/> customer
-            who is creating a deployment without internet access, skip this step.</note>
-        </info>
+      <step id="install-serviced-offline">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
@@ -799,9 +790,9 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install <ph keyref="nm-cc"/> from the local repository mirror.</cmd>
+            <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced</codeblock>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
         </substeps>
