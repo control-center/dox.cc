@@ -338,11 +338,13 @@
         
         <dlentry id="SERVICED_DM_BASESIZE">
           <dt><varname>SERVICED_DM_BASESIZE</varname></dt>
-          <dd><b>Default</b>: <codeph>100G</codeph></dd> 
+          <dd><b>Default</b>: (none)</dd> 
           <dd>The base size of tenant devices in the application thin pool. 
             This variable is used when <cmdname>serviced</cmdname> starts for 
             the first time, to set the initial size of tenant devices, and when
             a backup is restored, to set the size of the restored tenant device.</dd>
+          <dd>This value must always be less than or equal to the amount of space
+          available in the thin pool for application data.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">
