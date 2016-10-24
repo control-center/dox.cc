@@ -33,7 +33,7 @@
           text.<codeblock>serviced snapshot tag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock></info>
       </step>
       <step>
-        <cmd importance="optional">Untag a snapshot to make it subject to the TTL value.</cmd>
+        <cmd importance="optional">To make a snapshot subject to the TTL value, untag it.</cmd>
         <info>Replace <varname>SNAPSHOTID</varname> with the identifier of your snapshot and
             <varname>TAG-NAME</varname> with your
           text.<codeblock>serviced snapshot untag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock></info>

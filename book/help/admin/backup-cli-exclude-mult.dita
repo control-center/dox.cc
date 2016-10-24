@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Excluding multiple tenant volumes from a backup</title>
+  <title>Exclude multiple tenant volumes from the backup</title>
   <shortdesc/>
   <taskbody>
     <context id="context_tfj_ltt_qx">By default, <ph keyref="nm-cc"/> stores application data in
@@ -16,7 +16,9 @@
       </step>
       <step>
         <cmd>Display the <ph keyref="nm-cc"/> tenant identifier.</cmd>
-        <info>For example:<codeblock>ls /opt/serviced/var/volumes</codeblock></info>
+        <info>
+          <codeblock>ls /opt/serviced/var/volumes</codeblock>
+        </info>
         <stepresult>Example result:<codeblock>cvs0ul2tmvjcitolrm7p0d8bx</codeblock></stepresult>
       </step>
       <step>
@@ -26,7 +28,7 @@
       </step>
       <step>
         <cmd>Exclude multiple tenant volumes from the backup.</cmd>
-        <info>For example, <filepath>mariadb-events</filepath> and
+        <info>For example, exclude <filepath>mariadb-events</filepath> and
             <filepath>zeneventserver</filepath>. Replace <varname>Tenant-ID</varname> with your
           tenant
           identifier.<codeblock>serviced backup /opt/serviced/var/backups \
