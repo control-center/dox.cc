@@ -38,8 +38,8 @@
       
       <step>
         <cmd>Identify the size of the thin pool for application data.</cmd>
-        <info>The size is required to set the correct value of the
-          <varname>SERVICED_DM_BASESIZE</varname> variable.</info>
+        <info>The size is required to set an accurate value for the
+            <varname>SERVICED_DM_BASESIZE</varname> variable.</info>
         <stepxmp>
           <codeblock>lvs --options=lv_name,lv_size | grep serviced-pool</codeblock>
         </stepxmp>

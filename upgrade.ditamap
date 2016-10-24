@@ -46,11 +46,21 @@
       <mapref href="book/upgrade/lib-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/perform-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/prepare-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/vars-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/cluster/manage-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
   <chapter href="book/upgrade/prepare/prepare.ditamap" format="ditamap"/>
   <chapter href="book/upgrade/perform/perform.ditamap" format="ditamap"/>
+  
+  <appendix href="feature/cluster/manage/manage.ditamap" format="ditamap"/>
+  <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
+  <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
   
 </bookmap>

@@ -338,13 +338,20 @@
         
         <dlentry id="SERVICED_DM_BASESIZE">
           <dt><varname>SERVICED_DM_BASESIZE</varname></dt>
-          <dd><b>Default</b>: (none)</dd> 
-          <dd>The base size of tenant devices in the application thin pool. 
+          <dd><b>Default</b>: <codeph>100G</codeph></dd> 
+          <dd>The base size of virtual storage devices for tenants in the application data
+            thin pool, in gigabytes. The units symbol (<codeph>G</codeph>) is required.
             This variable is used when <cmdname>serviced</cmdname> starts for 
             the first time, to set the initial size of tenant devices, and when
             a backup is restored, to set the size of the restored tenant device.</dd>
-          <dd>This value must always be less than or equal to the amount of space
-          available in the thin pool for application data.</dd>
+            <dd>The base device is a snapshot that occupies at most 1MB of space in 
+            the application data thin pool; its size has no immediate practical impact.
+            However, the application data thin pool should have enough space for twice
+            the size of each tenant device it supports, to store both the data itself and
+            snapshots of the data. Since the application data thin pool is an LVM logical 
+            volume, its size can be increased at any time. Likewise, the size of each tenant 
+            device increased as well, as long as the overall storage in the thin pool has
+            enough space for the larger size and for additional snapshots.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">
