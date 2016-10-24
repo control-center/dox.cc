@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring application data storage</title>
+  <title>Creating the application data thin pool</title>
   <taskbody>
-    <context>Use this procedure to create a thin pool for application data storage,
-      and to configure the master host to use it. The following <ph keyref="nm-cc"/>
-      configuration variables are used to specify application data thin pools:
+    <context>Use this procedure to create a thin pool for application data storage.
+      <p>The following <ph keyref="nm-cc"/> configuration variables are used to 
+        specify application data thin pools:</p>
       <dl>
         <dlentry conkeyref="feature-vars-file/SERVICED_FS_TYPE"><dt/><dd/></dlentry>
         <dlentry conkeyref="feature-vars-file/SERVICED_DM_THINPOOLDEV"><dt/><dd/></dlentry>
-        <dlentry conkeyref="feature-vars-file/SERVICED_DM_BASESIZE"><dt/><dd/></dlentry>
       </dl>
       <note>This procedure does not include a specific value for the size of the thin pool. For
         more information about sizing this resource, refer to the documentation for your
@@ -33,37 +32,10 @@
           <codeblock>serviced-storage create-thin-pool --size=<varname>Value</varname> serviced <varname>Storage</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result is the device mapper name of the thin pool, which always
-          starts with <codeph>/dev/mapper</codeph>.</stepresult>
+          starts with <codeph>/dev/mapper</codeph>. Record the name for use in the next
+          step.</stepresult>
       </step>
-      
-      <step>
-        <cmd>Identify the size of the thin pool for application data.</cmd>
-        <info>The size is required to set an accurate value for the
-            <varname>SERVICED_DM_BASESIZE</varname> variable.</info>
-        <stepxmp>
-          <codeblock>lvs --options=lv_name,lv_size | grep serviced-pool</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step>
-        <cmd>Make a backup copy of the <ph keyref="nm-cc"/> configuration file.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Make a copy of <filepath>/etc/default/serviced</filepath>.</cmd>
-            <stepxmp>
-              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Set the backup file permissions to read-only.</cmd>
-            <stepxmp>
-              <codeblock>chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-        
-      </step>
-      
+
       <step>
         <cmd>Edit storage variables in the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
@@ -75,25 +47,16 @@
           <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
-                <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
+              <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
             <stepxmp>Replace <varname>Thin-Pool-Name</varname> with the device mapper 
               name of the thin pool for application data:
               <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep>
-            <cmd>Add <varname>SERVICED_DM_BASESIZE</varname> immediately after
-              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Fifty-Percent</varname> with the value that is less than or
-                equal to 50% of the size of the thin pool for application data.
-                Include the symbol for gigabytes, <codeph>G</codeph>:</p>
-              <codeblock>SERVICED_DM_BASESIZE=<varname>Fifty-Percent</varname>G</codeblock>
-            </stepxmp>
-          </substep>
           <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
+      
     </steps>
     <postreq>Proceed to the next chapter and configure the host.</postreq>
   </taskbody>

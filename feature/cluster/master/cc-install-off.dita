@@ -17,6 +17,10 @@
         <cmd/>
       </step>
       
+      <step conkeyref="feature-lib-tasks/serviced-cfg-backup">
+        <cmd/>
+      </step>
+      
       <step conkeyref="feature-lib-tasks/nfs-workaround">
         <cmd/>
       </step>

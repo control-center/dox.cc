@@ -20,6 +20,6 @@
     </topicref>
     <topicref keyref="feature-cluster-master-docker-config"/>
     <topicref keyref="feature-cluster-master-docker-images"/>
-    <topicref keyref="feature-cluster-master-thinpool"/>
+    <topicref keyref="feature-cluster-master-storage-create"/>
    </chapter>
 </bookmap>

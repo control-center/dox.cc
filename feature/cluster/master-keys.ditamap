@@ -79,16 +79,20 @@
             href="master/storage-backups.dita"
             format="dita"
     />
+    <keydef keys="feature-cluster-master-storage-config"
+            href="master/storage-config.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cluster-master-storage-create"
+            href="master/storage-create.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-master-storage-isvcs"
             href="master/storage-isvcs.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-storage"
             href="master/storage.dita"
-            format="dita"
-    />
-    <keydef keys="feature-cluster-master-thinpool"
-            href="master/thinpool.dita"
             format="dita"
     />
     <keydef keys="feature-cluster-master-verify"

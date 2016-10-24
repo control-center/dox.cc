@@ -9,6 +9,7 @@
       <topicref keyref="feature-cluster-access-serviced"/>
       <topicref keyref="feature-cluster-access-cli"/>
     </topicref>
+    <topicref keyref="feature-cluster-master-storage-config"/>
     <topicref keyref="feature-cluster-master-role"/>
     <topicref keyref="feature-cluster-master-offline"/>
     <topicref keyref="install-vars-master">

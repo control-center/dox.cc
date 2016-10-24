@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring the base size and tenant data storage</title>
+  <taskbody>
+    <context>
+      <p>Use this procedure to configure the base size of virtual storage devices for tenants
+        in the application data thin pool. The base size is used each time a tenant device is
+        created. In particular, the first time <cmdname>serviced</cmdname> starts, it creates
+        the base size device and then creates a tenant device from the base size device.</p>
+      <p>The following <ph keyref="nm-cc"/>
+      configuration variable is used to specify the base size device:</p>
+      <dl>
+        <dlentry conkeyref="feature-vars-file/SERVICED_DM_BASESIZE"><dt/><dd/></dlentry>
+      </dl>
+      <p>Perform these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Identify the size of the thin pool for application data.</cmd>
+        <info>The size is required to set an accurate value for the
+            <varname>SERVICED_DM_BASESIZE</varname> variable.</info>
+        <stepxmp>
+          <codeblock>lvs --options=lv_name,lv_size | grep serviced-pool</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Edit storage variables in the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
+          <substep>
+            <cmd>Add <varname>SERVICED_DM_BASESIZE</varname> immediately after
+              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Fifty-Percent</varname> with the value that is less than or
+                equal to 50% of the size of the thin pool for application data.
+                Include the symbol for gigabytes, <codeph>G</codeph>:</p>
+              <codeblock>SERVICED_DM_BASESIZE=<varname>Fifty-Percent</varname>G</codeblock>
+            </stepxmp>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>
