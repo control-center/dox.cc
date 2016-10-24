@@ -15,8 +15,12 @@
             href="prepare/stage.dita"
             format="dita"
     />
-    <keydef keys="upgrade-prepare-vars"
-            href="prepare/vars.dita"
+    <keydef keys="upgrade-prepare-vars-new"
+            href="prepare/vars-new.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-prepare-vars-old"
+            href="prepare/vars-old.dita"
             format="dita"
     />
    </topicgroup>

@@ -36,28 +36,37 @@
           starts with <codeph>/dev/mapper</codeph>.</stepresult>
       </step>
       
-      <step importance="optional">
-        <cmd>Identify the amount of space the thin pool occupies, if necessary.</cmd>
-        <info>When you specify a percentage for the size and an LVM volume group 
-          for the storage in the previous step, the <cmdname>serviced-storage</cmdname> command
-          computes the thin pool size and creates a logical volume for you.</info>
+      <step>
+        <cmd>Identify the size of the thin pool for application data.</cmd>
+        <info>The size is required to set an accurate value for the
+            <varname>SERVICED_DM_BASESIZE</varname> variable.</info>
         <stepxmp>
-          <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
+          <codeblock>lvs --options=lv_name,lv_size | grep serviced-pool</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Edit and add storage variables in the <ph keyref="nm-cc"/> configuration file,
-            <filepath>/etc/default/serviced</filepath>.</cmd>
+        <cmd>Make a backup copy of the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
           <substep>
-            <cmd>Make a backup copy of the configuration file, and then change the backup file to
-              read-only.</cmd>
+            <cmd>Make a copy of <filepath>/etc/default/serviced</filepath>.</cmd>
             <stepxmp>
-              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig
-chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
             </stepxmp>
           </substep>
+          <substep>
+            <cmd>Set the backup file permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        
+      </step>
+      
+      <step>
+        <cmd>Edit storage variables in the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
           <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Locate the line for the <varname>SERVICED_FS_TYPE</varname> variable, and 
@@ -67,20 +76,19 @@ chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
           <substep>
             <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
                 <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Thin-Pool-Name</varname> with the device mapper name of the thin
-                pool specified in the preceding <cmdname>serviced-storage</cmdname> command:</p>
+            <stepxmp>Replace <varname>Thin-Pool-Name</varname> with the device mapper 
+              name of the thin pool for application data:
               <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep importance="optional">
+          <substep>
             <cmd>Add <varname>SERVICED_DM_BASESIZE</varname> immediately after
-              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value, if desired.</cmd>
-            <info>The default size is the recommended size.</info>
+              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value.</cmd>
             <stepxmp>
-              <p>Replace <varname>Size</varname> with a preferred size.
-                Include the symbol for the units, <codeph>G</codeph>:</p>
-              <codeblock>SERVICED_DM_BASESIZE=<varname>Size</varname>G</codeblock>
+              <p>Replace <varname>Fifty-Percent</varname> with the value that is less than or
+                equal to 50% of the size of the thin pool for application data.
+                Include the symbol for gigabytes, <codeph>G</codeph>:</p>
+              <codeblock>SERVICED_DM_BASESIZE=<varname>Fifty-Percent</varname>G</codeblock>
             </stepxmp>
           </substep>
           <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>

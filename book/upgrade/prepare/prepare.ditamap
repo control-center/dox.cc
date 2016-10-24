@@ -3,6 +3,7 @@
 <bookmap >
  <title>Prepare</title>
   <chapter keyref="upgrade-prepare-prepare">
-    <topicref keyref="upgrade-prepare-vars"/> 
+    <topicref keyref="upgrade-prepare-vars-old"/> 
+    <topicref keyref="upgrade-prepare-vars-new"/>
  </chapter>
 </bookmap>
