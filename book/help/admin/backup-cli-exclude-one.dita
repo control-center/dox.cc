@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Excluding one tenant volume from a backup</title>
+  <title>Exclude one tenant volume from the backup</title>
   <shortdesc/>
   <taskbody>
     <context id="context_tfj_ltt_qx">By default, <ph keyref="nm-cc"/> stores application data in
@@ -16,7 +16,9 @@
       </step>
       <step>
         <cmd>Display the <ph keyref="nm-cc"/> tenant identifier.</cmd>
-        <info>For example:<codeblock>ls /opt/serviced/var/volumes</codeblock></info>
+        <info>
+          <codeblock>ls /opt/serviced/var/volumes</codeblock>
+        </info>
         <stepresult>Example result:<codeblock>cvs0ul2tmvjcitolrm7p0d8bx</codeblock></stepresult>
       </step>
       <step>
@@ -32,5 +34,7 @@
   --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/hbase-master</codeblock></info>
       </step>
     </steps>
+    <postreq id="postreq_a4c_xkl_sx">If you use automated backups, edit the scripts to exclude
+      tenant volumes. </postreq>
   </taskbody>
 </task>

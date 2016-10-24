@@ -6,12 +6,14 @@
     browser interface, you can use the command-line interface (CLI). </shortdesc>
   <taskbody>
     <context id="context_tbt_5px_mx">Using the CLI, you can back up your entire system or specify
-      one or more tenant volumes to exclude from the backup. For example, to save resources you
+      one or more tenant volumes to exclude from the backup. For example, to save resources, you
       might exclude the tenant volume that contains performance data,
         <filepath>hbase-master</filepath>. If you want to create a backup to restore on another
-      system, you might exclude the tenant volumes for the database and index,
-        <filepath>mariadb-events</filepath> and <filepath>zeneventserver</filepath>.</context>
-    <postreq id="postreq_ixz_b25_qx">If you use automated backups, edit to exclude the tenant
-      volumes.</postreq>
+      system, you might exclude the tenant volumes for the events database and index,
+        <filepath>mariadb-events</filepath> and <filepath>zeneventserver</filepath>.<p>The default
+        directory for backup files is <filepath>/opt/serviced/var/backups</filepath>. The directory
+        can be changed by specifying the <varname>SERVICED_BACKUPS_PATH</varname> environment
+        variable in the <ph keyref="nm-cc"/> configuration file,
+          <filepath>/etc/default/serviced</filepath>.</p></context>
   </taskbody>
 </task>

@@ -58,14 +58,13 @@
             configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>--uiport <delim>:</delim><var>Port</var></synph></dt>
+          <dt><synph>--uiport<delim>:</delim><var>Port</var></synph></dt>
           <dd>The port on which the HTTP server listens for requests. The default value is 443,
             unless <varname>SERVICED_UI_PORT</varname> is set in the configuration file. For more
             information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--nfs-client <varname>value</varname>
-          </dt>
+          <dt><synph>--nfs-client <var>value</var></synph></dt>
           <dd>Determines whether a <cmdname>serviced</cmdname> delegate mounts the DFS. The default
             value is 1 (enable) unless <varname>SERVICED_NFS_CLIENT</varname> is set in the
             configuration file. For more information, see the section about configuration file
@@ -74,7 +73,7 @@
               disable mounting, set the value to <codeph>0</codeph>.</note></dd>
         </dlentry>
         <dlentry>
-          <dt><synph>--listen <delim>:</delim><var>Port</var></synph></dt>
+          <dt><synph>--listen<delim>:</delim><var>Port</var></synph></dt>
           <dd>The <cmdname>serviced</cmdname> RPC endpoint on the local host. The default value of
               <varname>Port</varname> is 4979. </dd>
         </dlentry>
@@ -108,14 +107,18 @@
           <dt><synph>--mux-tls-ciphers <synph><var>Option</var>
                 <delim>[</delim>--mux-tls-ciphers
               <var>Option</var><delim>]</delim>&#8230;</synph></synph></dt>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for mux traffic.</dd>
+          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for mux traffic. The default
+            may be set in by <varname>SERVICED_MUX_TLS_CIPHERS</varname> in the configuration file.
+            For more information, see the section about configuration file environment
+            variables.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>--mux-tls-min-version</synph><synph>
-              <var>Version</var></synph></dt>
-          <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts for mux traffic. Valid
-            values include the default, <codeph>VersionTLS11</codeph>, and
-              <codeph>VersionTLS12</codeph>.</dd>
+          <dt><synph>--mux-tls-min-version <var> </var></synph></dt>
+          <dd>The minimum version of TLS that <cmdname>serviced</cmdname> accepts for mux traffic.
+            Valid values are <codeph>VersionTLS11</codeph> and <codeph>VersionTLS12</codeph>. The
+            default value is <codeph>VersionTLS11</codeph> unless
+              <varname>SERVICED_MUX_TLS_MIN_VERSION</varname>  is set in the configuration file. For
+            more information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--var <var>Path</var></synph></dt>
@@ -178,10 +181,10 @@
           <dt><synph>--zk <var>Host</var><delim>:</delim><var>Port</var>
               <delim>[</delim>--zk
               <var>Host</var><delim>:</delim><var>Port</var><delim>]</delim>&#8230;</synph></dt>
-          <dd>One or more ZooKeeper endpoints. The value of <varname>Host</varname> is the hostname
-            or IP address of a ZooKeeper ensemble node. The default value of <varname>Port</varname>
-            is 2181. If multiple endpoints are specified, <cmdname>serviced</cmdname> tries each in
-            turn until it connects to a working server. </dd> 
+          <dd>One or more ZooKeeper endpoints. If multiple endpoints are specified,
+              <cmdname>serviced</cmdname> tries each in turn until it connects to a working server.
+            The default may be set by <varname>SERVICED_ZK</varname> in the configuration file. For
+            more information, see the section about configuration file environment variables.</dd> 
         </dlentry>
         <dlentry>
           <dt><synph>--mount <var>Option</var> 
@@ -251,30 +254,43 @@
               <delim>[--isvcs-start option</delim>
               <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>Enables one or more internal services to run on a delegate host. Currently, only
-              <codeph>zookeeper</codeph> is supported.</dd>
+              <codeph>zookeeper</codeph> is supported. If <varname>SERVICED_ISVCS_START</varname> is
+            set in the configuration file, its value is used. For more information, see the section
+            about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--isvcs-zk-id <synph><var> Indentifier</var></synph>
           </dt>
-          <dd>The unique identifier (a positive integer) of a ZooKeeper ensemble node.</dd>
+          <dd>The unique identifier (a positive integer) of a ZooKeeper ensemble node. If
+              <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> is set in the configuration file, its
+            value is used. For more information, see the section about configuration file
+            environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--isvcs-zk-quorum <synph><var> Option</var>
             </synph>[--isvcs-zk-quorum <synph><var>
                 Option</var><synph><delim>]</delim>&#8230;</synph></synph></dt>
-          <dd>The list of nodes in a ZooKeeper ensemble.</dd>
+          <dd>The list of nodes in a ZooKeeper ensemble. If
+              <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> is set in the configuration file,
+            its value is used. For more information, see the section about configuration file
+            environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--tls-ciphers <synph><var>Option</var>
               <delim>[</delim>--tls-ciphers <var>Option</var><delim>]</delim>&#8230;</synph>
           </dt>
-          <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts for HTTP traffic.</dd>
+          <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts for HTTP traffic. If
+              <varname>SERVICED_TLS_CIPHERS</varname> is set in the configuration file, its value is
+            used. For more information, see the section about configuration file environment
+            variables.</dd>
         </dlentry>
         <dlentry>
           <dt> --tls-min-version <synph><var>Version</var></synph></dt>
           <dd>The minimum version of TLS that <cmdname>serviced</cmdname> accepts for HTTP traffic.
             Valid values include the default, <codeph>VersionTLS11</codeph>, and
-              <codeph>VersionTLS12</codeph>.</dd>
+              <codeph>VersionTLS12</codeph>. If  <varname>SERVICED_TLS_MIN_VERSION</varname> is set
+            in the configuration file, its value is used. For more information, see the section
+            about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--report-stats</synph></dt>
@@ -365,13 +381,19 @@
         <dlentry>
           <dt>--rpc-tls-ciphers <synph><var>Option</var>
               <delim>[</delim>--rpc-tls-ciphers<var>Option</var><delim>]</delim>&#8230;</synph></dt>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for RPC connections. </dd>
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers for RPC connections. If
+              <varname>SERVICED_RPC_TLS_CIPHERS</varname> is set in the configuration file, its
+            value is used. For more information, see the section about configuration file
+            environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--rpc-tls-min-version <synph><var>Version</var></synph></dt>
           <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts for RPC connections.
             Valid values include the default, <filepath>VersionTLS11</filepath>, and
-              <filepath>VersionTLS12</filepath>.</dd>
+              <filepath>VersionTLS12</filepath>. The default value is <codeph>VersionTLS10</codeph>
+            unless <varname>SERVICED_RPC_TLS_MIN_VERSION</varname> is set in the configuration file.
+            For more information, see the section about configuration file environment
+            variables.</dd>
         </dlentry>
         <dlentry>
           <dt>--snapshot-ttl <synph><var>Duration</var></synph></dt>
@@ -479,7 +501,9 @@
         </dlentry>
         <dlentry>
           <dt><synph>--logstash-cycle-time <var>Duration</var></synph></dt>
-          <dd>The amount of time between logstash purges, in hours.</dd>
+          <dd>The amount of time between logstash purges, in hours. The default value is 6 unless
+              <varname>SERVICED_LOGSTASH_CYCLE_TIME</varname> is set in the configuration file. For
+            more information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--v <var>Level</var></synph></dt>

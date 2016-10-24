@@ -39,8 +39,7 @@
           application.</info>
       </step>
       <step>
-        <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab. The Backup / Restore page
-          appears listing available backup files.</cmd>
+        <cmd>Click the <uicontrol>Backup / Restore</uicontrol> tab.</cmd>
       </step>
       <step>
         <cmd>Beside the backup file that you want to use to restore your application, click
@@ -52,7 +51,7 @@
           click <uicontrol>Start</uicontrol> beside the instance you just restored.</cmd>
       </step>
       <step>
-        <cmd>Review and define IP assignments, if necessary. </cmd>
+        <cmd>Review and if necessary, define IP assignments. </cmd>
         <substeps id="substeps_q2g_jmp_rx">
           <substep>
             <cmd>Click <uicontrol>Applications</uicontrol> and then click the application

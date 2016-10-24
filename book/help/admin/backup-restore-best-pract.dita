@@ -15,8 +15,8 @@
             duplicating an instance for testing or failover purposes.</li>
           <li>Before upgrading or testing an application, ensure that you have a recent backup that
             successfully restores. </li>
-          <li>Perform regular backups of the production environment and potentially the system of
-            record from the initial deployment. </li>
+          <li>Regularly back up the production environment and potentially the system of record from
+            the initial deployment. </li>
           <li>Back up to a nonactive resource target, such as a separate disaster recovery system or
             test environment. </li>
           <li>Store backups on a machine other than the <ph keyref="nm-cc"/> master. </li>
@@ -25,8 +25,8 @@
           <li>Backups that were created using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
               keyref="nm-cc"/> 1.1.x or later.</li>
           <li>You can restore a backup to the system on which it was created or to an alternate
-            system. When restoring a backup from a one system to an alternate system, ensure that
-              <ul id="ul_bj3_css_nx">
+            system. When restoring a backup from one system to an alternate system, ensure that <ul
+              id="ul_bj3_css_nx">
               <li>The alternate system mirrors at least one device from the backed-up system.</li>
               <li><!--CC_1331-->Services that were added to the alternate system by a previous
                 restore have been manually deleted.</li>
@@ -38,8 +38,8 @@
             after taking the backup. That is, if you create a backup, add a service, and then
             restore from the backup, the service is not deleted as part of the restore process.</li>
           <li><!--CC_1474 -->If an outage occurs during a restore from a backup, you can resume the
-            restore. <ph keyref="nm-cc"/> preserves complete data on your system. For example, if
-            two of six backed up snapshots are restored before an outage, when you resume the
+            restore because <ph keyref="nm-cc"/> preserves complete data on the system. For example,
+            if two of six backed up snapshots are restored before an outage, when you resume the
             restore, those two snapshots are saved on the system, and are not downloaded again.</li>
         </ul>
       </p>
