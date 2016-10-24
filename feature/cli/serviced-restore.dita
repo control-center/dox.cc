@@ -11,7 +11,7 @@
       <title>USAGE</title>
       <p>If you are restoring from a backup that was taken on another system, copy the backup
         archive file to the target system. For more information, see <xref
-          keyref="help-admin-restore"/>.</p>
+          keyref="feature-cluster-manage-restore"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
       <title>SYNTAX</title>
