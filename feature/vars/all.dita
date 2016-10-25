@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Universal configuration variables</title>
+  <refbody>
+    <section>
+      <p>The tables in this section provide an overview of the <cmdname>serviced</cmdname>
+        configuration variables that apply to all hosts in a <ph keyref="nm-cc"/> cluster. 
+        Set these variables as required for your environment or applications.</p>
+        
+      <p>For more information about a specific variable, see <xref keyref="feature-vars-vars"/>.</p>
+    </section>
+  </refbody>
+</reference>

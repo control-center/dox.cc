@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Configure master</title>
+  <chapter keyref="feature-config-master-up">
+    <topicref keyref="feature-vars-master">
+      <topicref keyref="feature-vars-best"/>
+      <topicref keyref="feature-vars-storage"/>
+      <topicref keyref="feature-vars-endpoints"/>
+      <topicref keyref="feature-vars-rpc"/>
+      <topicref keyref="feature-vars-mux"/>
+      <topicref keyref="feature-vars-http"/>
+    </topicref>
+    <topicref keyref="feature-vars-all">
+      <topicref keyref="feature-vars-role"/>
+      <topicref keyref="feature-vars-networking"/>
+      <topicref keyref="feature-vars-debug"/>
+      <topicref keyref="feature-vars-tune"/>
+    </topicref>
+   </chapter>
+</bookmap>

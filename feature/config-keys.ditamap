@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/config</title>
+  <topicgroup>
+    <keydef keys="feature-config-delegate-in"
+            href="config/delegate-in.dita"
+            format="dita"
+    />
+    <keydef keys="feature-config-delegate-up"
+            href="config/delegate-up.dita"
+            format="dita"
+    />
+    <keydef keys="feature-config-master-in"
+            href="config/master-in.dita"
+            format="dita"
+    />
+    <keydef keys="feature-config-master-up"
+            href="config/master-up.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

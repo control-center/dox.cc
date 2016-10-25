@@ -349,9 +349,9 @@
             However, the application data thin pool should have enough space for twice
             the size of each tenant device it supports, to store both the data itself and
             snapshots of the data. Since the application data thin pool is an LVM logical 
-            volume, its size can be increased at any time. Likewise, the size of each tenant 
-            device can be increased as well, as long as the overall storage in the thin pool has
-            enough space for the larger size and additional snapshots.</dd>
+            volume, its size can be increased at any time. Likewise, the size of a tenant 
+            device can be increased, as long as the available space in the thin pool can
+            support the larger tenant device plus snapshots.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">

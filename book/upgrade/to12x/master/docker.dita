@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating Docker Engine</title>
+  <taskbody>
+    <context>Use this procedure to update Docker Engine
+      to version <ph keyref="lo-version-docker"/>.</context>
+    <steps>
+      <step>
+        <cmd>Log in to a <ph keyref="nm-cc"/> cluster 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step id="update-kernel">
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+              perform the following substep.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Update the kernel or the operating system and then restart the host.</cmd>
+            <info>The following commands require internet access 
+              or a local mirror of operating system packages.</info>
+            <stepxmp><b>Update only the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+            <stepxmp><b>Update the operating system, including the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Identify the name of the LVM thin pool for Docker Engine.</cmd>
+        <stepxmp>
+          <codeblock>docker info 2>/dev/null | grep 'Pool Name'</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock> Pool Name: docker-docker--pool</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Ensure that Docker Engine updates are enabled.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Check the Docker repository file.</cmd>
+            <stepxmp>
+              <codeblock>grep enabled /etc/yum.repos.d/docker.repo</codeblock>
+            </stepxmp>
+            <stepresult>If the result is <codeph>enabled=0</codeph>,
+              perform the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
+              a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change the value of the <codeph>enabled</codeph> key
+              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Back up the Docker Engine drop-in and environment files.</cmd>
+        <stepxmp>
+          <codeblock>mv /etc/systemd/system/docker.service.d/docker.conf \
+  /etc/systemd/system/docker.service.d/docker.conf.bak
+mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Stop the Docker Engine service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Remove Docker Engine 1.9.0, without checking dependencies.</cmd>
+        <stepxmp>
+          <codeblock>rpm -e --nodeps docker-engine-1.9.0</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Disable unintended Docker Engine updates.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change the value of the <codeph>enabled</codeph> key from <codeph>1</codeph> to
+                <codeph>0</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Create a new Docker Engine drop-in file.</cmd>
+        <stepxmp>
+          <codeblock>cat &#60;&#60;EOF > /etc/systemd/system/docker.service.d/docker.conf
+[Service]
+TimeoutSec=300
+EnvironmentFile=-/etc/sysconfig/docker
+ExecStart=
+ExecStart=/usr/bin/dockerd \$OPTIONS
+TasksMax=infinity
+EOF</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+        <stepxmp>
+          <codeblock>systemctl daemon-reload</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Configure and start the Docker Engine service.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create a variable for the name of the Docker Engine thin pool.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Thin-Pool-Device</varname> with the name of the
+                thin pool device identified in a previous step:</p>
+              <codeblock>myPool="/dev/mapper/<varname>Thin-Pool-Device</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a variable for the hostname or IPv4 address
+              of the <ph keyref="nm-cc"/> master host.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Master-Host</varname> with the 
+                hostname or IPv4 address of the master host:</p>
+              <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create variables for adding arguments to the Docker Engine environment file. The
+              <codeph>--exec-opt</codeph> argument is a workaround for <xref
+                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+            <stepxmp>
+              <codeblock>myDriver="--storage-driver devicemapper"
+myLog="--log-level=error"
+myFix="--exec-opt native.cgroupdriver=cgroupfs"
+myFlag="--storage-opt dm.thinpooldev=$myPool"
+myReg="--insecure-registry=$masterIP:5000"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Add the arguments to the Docker Engine environment file.</cmd>
+            <stepxmp>
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myFlag $myReg'"' \
+  &#62;&#62; /etc/sysconfig/docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start or restart Docker.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart docker</codeblock>
+            </stepxmp>
+            <stepresult>The startup may take up to a minute.</stepresult>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step conkeyref="upgrade-lib-tasks/docker-dns-flag">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Compare the previous versions of the Docker Engine drop-in and environment files
+        with the new versions, and add any customizations for your deployment to the new versions.</cmd>
+        <info>The files to compare: <ul>
+            <li>Drop-in files: <filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>
+              and <filepath>/etc/systemd/system/docker.service.d/docker.conf.bak</filepath></li>
+            <li>Environment files: <filepath>/etc/sysconfig/docker</filepath> and
+                <filepath>/etc/sysconfig/docker</filepath></li>
+          </ul>
+          <p>If you change the drop-in file, reload the <cmdname>systemd</cmdname> manager
+            configuration with <userinput>systemctl daemon-reload</userinput>. If you change 
+            the environment file, restart Docker Engine with <userinput>systemctl restart docker</userinput>.</p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

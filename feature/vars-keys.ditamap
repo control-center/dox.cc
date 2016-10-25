@@ -3,6 +3,10 @@
 <map>
  <title>Keys in feature/vars</title>
   <topicgroup>
+    <keydef keys="feature-vars-all"
+            href="vars/all.dita"
+            format="dita"
+    />
     <keydef keys="feature-vars-best"
             href="vars/best.dita"
             format="dita"
@@ -13,6 +17,10 @@
     />
     <keydef keys="feature-vars-debug"
             href="vars/debug.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-delegate-about"
+            href="vars/delegate-about.dita"
             format="dita"
     />
     <keydef keys="feature-vars-delegate"
@@ -29,6 +37,10 @@
     />
     <keydef keys="feature-vars-http"
             href="vars/http.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-master"
+            href="vars/master.dita"
             format="dita"
     />
     <keydef keys="feature-vars-mux"
@@ -53,6 +65,10 @@
     />
     <keydef keys="feature-vars-tune"
             href="vars/tune.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-vars"
+            href="vars/vars.dita"
             format="dita"
     />
    </topicgroup>

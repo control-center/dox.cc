@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/to12x/master</title>
+  <topicgroup>
+    <keydef keys="upgrade-to12x-master-cc"
+            href="master/cc.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-master-docker"
+            href="master/docker.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-master-master"
+            href="master/master.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

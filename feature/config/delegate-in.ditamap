@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Configure delegate</title>
+  <chapter keyref="feature-config-delegate-in">
+    <topicref keyref="feature-delegate-cron"/>
+    <topicref keyref="feature-access-cli"/>
+    <topicref keyref="feature-delegate-role"/>
+    <topicref keyref="feature-delegate-endpoints"/>
+    <topicref keyref="feature-master-offline"/>
+    <topicref keyref="feature-vars-delegate-about">
+      <topicref keyref="feature-vars-delegate"/>
+      <topicref keyref="feature-vars-endpoints"/>
+      <topicref keyref="feature-vars-rpc"/>
+      <topicref keyref="feature-vars-mux"/>
+    </topicref>
+    <topicref keyref="feature-vars-all">
+      <topicref keyref="feature-vars-role"/>
+      <topicref keyref="feature-vars-networking"/>
+      <topicref keyref="feature-vars-debug"/>
+      <topicref keyref="feature-vars-tune"/>
+    </topicref>
+    <topicref keyref="feature-delegate-start"/>
+    <topicref keyref="feature-delegate-add">
+      <topicref keyref="feature-delegate-add-ssh"/>
+      <topicref keyref="feature-delegate-add-feet"/>
+    </topicref>
+   </chapter>
+</bookmap>

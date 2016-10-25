@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating <ph keyref="nm-cc"/> on delegate hosts</title>
+  <taskbody>
+    <context>This procedure updates <ph keyref="nm-cc"/> on
+      delegate hosts to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Perform this procedure on each delegate host in your deployment.</context>
+    <steps>
+      <step>
+        <cmd>Log in to a delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/> and Docker.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop serviced &#38;&#38; systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Unmount the distributed filesystem (DFS).</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the filesystem specification to unmount.</cmd>
+            <stepxmp>
+              <codeblock>mount | awk '/serviced/ { print $1 }'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Unmount the DFS.</cmd>
+            <stepxmp>Replace <varname>DFS-Mount</varname> with the filesystem specification
+              returned in the previous substep:
+              <codeblock>umount <varname>DFS-Mount</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+        </stepxmp>
+        <stepresult>The installation preserves the existing version 
+          of the <cmdname>serviced</cmdname> configuration
+          file, and installs the new one as 
+          <filepath>/etc/default/serviced.rpmnew</filepath>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Delete the new <ph keyref="nm-cc"/> configuration file.</cmd>
+        <info>There are no configuration file changes in this release.</info>
+        <stepxmp>
+          <codeblock>rm /etc/default/serviced.rpmnew</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

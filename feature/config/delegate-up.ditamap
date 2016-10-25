@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Configure delegate</title>
+  <chapter keyref="feature-config-delegate-up">
+    <topicref keyref="feature-vars-delegate-about">
+      <topicref keyref="feature-vars-delegate"/>
+      <topicref keyref="feature-vars-endpoints"/>
+      <topicref keyref="feature-vars-rpc"/>
+      <topicref keyref="feature-vars-mux"/>
+    </topicref>
+    <topicref keyref="feature-vars-all">
+      <topicref keyref="feature-vars-role"/>
+      <topicref keyref="feature-vars-networking"/>
+      <topicref keyref="feature-vars-debug"/>
+      <topicref keyref="feature-vars-tune"/>
+    </topicref>
+   </chapter>
+</bookmap>

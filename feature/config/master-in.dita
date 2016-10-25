@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Configuring and starting the master host</title>
+  <refbody>
+    <section>
+      <p>This chapter includes the procedures for configuring <ph keyref="nm-cc"/> on
+        the master host, describes the configuration options that apply to the master 
+        host, and includes steps for starting the master host for the first time. Perform
+        the procedures in this chapter before installing <ph keyref="nm-cc"/> on delegate hosts.</p>
+        
+      <p>Many configuration choices depend on application requirements. Please review your 
+        application documentation before configuring <ph keyref="nm-cc"/> on the master host.</p>
+    </section>
+  </refbody>
+</reference>
