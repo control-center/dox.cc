@@ -3,20 +3,20 @@
 <map>
  <title>Keys in feature/config</title>
   <topicgroup>
-    <keydef keys="feature-config-delegate-in"
-            href="config/delegate-in.dita"
+    <keydef keys="feature-config-delegate-install"
+            href="config/delegate-install.dita"
             format="dita"
     />
-    <keydef keys="feature-config-delegate-up"
-            href="config/delegate-up.dita"
+    <keydef keys="feature-config-delegate-upgrade"
+            href="config/delegate-upgrade.dita"
             format="dita"
     />
-    <keydef keys="feature-config-master-in"
-            href="config/master-in.dita"
+    <keydef keys="feature-config-master-install"
+            href="config/master-install.dita"
             format="dita"
     />
-    <keydef keys="feature-config-master-up"
-            href="config/master-up.dita"
+    <keydef keys="feature-config-master-upgrade"
+            href="config/master-upgrade.dita"
             format="dita"
     />
    </topicgroup>

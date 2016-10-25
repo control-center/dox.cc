@@ -63,16 +63,14 @@
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <part>
-    <topicref/>
-    <chapter href="book/upgrade/to12x/prep/prep.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/stop/stop.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/to12x/master/master.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/to12x/delegate/delegate.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/start/start.ditamap" format="ditamap"/>
-  </part>
-  <appendix href="feature/config/master-up.ditamap" format="ditamap"/>
-  <appendix href="feature/config/delegate-up.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/prep/prep.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/stop/stop.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/master/master.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/delegate/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/start/start.ditamap" format="ditamap"/>
+
+  <appendix href="feature/config/master-upgrade.ditamap" format="ditamap"/>
+  <appendix href="feature/config/delegate-upgrade.ditamap" format="ditamap"/>
   <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
 </bookmap>

@@ -65,9 +65,9 @@
   </frontmatter>
   
   <chapter href="book/install/instl/master.ditamap" format="ditamap"/>
-  <chapter href="feature/config/master-in.ditamap" format="ditamap"/>
+  <chapter href="feature/config/master-install.ditamap" format="ditamap"/>
   <chapter href="book/install/instl/delegate.ditamap" format="ditamap"/>
-  <chapter href="feature/config/delegate-in.ditamap" format="ditamap"/>
+  <chapter href="feature/config/delegate-install.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
   <appendix href="feature/manage/manage.ditamap" format="ditamap"/>
