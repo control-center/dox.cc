@@ -35,6 +35,10 @@
             href="manage/backup.dita"
             format="dita"
     />
+    <keydef keys="feature-cluster-manage-intro-stop-start"
+            href="manage/intro-stop-start.dita"
+            format="dita"
+    />
     <keydef keys="feature-cluster-manage-manage"
             href="manage/manage.dita"
             format="dita"
