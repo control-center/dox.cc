@@ -3,21 +3,14 @@
 <task id="taskid">
   <title>Updating <ph keyref="nm-cc"/> on the master host</title>
   <taskbody>
-    <context>This procedure updates <ph keyref="nm-cc"/> on the
+    <context>Use this procedure to update <ph keyref="nm-cc"/> on the
       master host to version <ph keyref="lo-version-cc"/>.</context>
     
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
-      <step>
-        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp>
-          <codeblock>systemctl stop serviced</codeblock>
-        </stepxmp>
-      </step>
-      
+
       <step>
         <cmd>Save the current <cmdname>serviced</cmdname> configuration file as a reference.</cmd>
         <substeps>
@@ -65,7 +58,7 @@
       <step>
         <cmd>Display the settings of the reference configuration file.</cmd>
         <stepxmp>
-          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
       </step>
       
@@ -73,21 +66,14 @@
         <cmd>Open the new configuration file with a text editor, 
         and then update the file for your environment.</cmd>
         <info>For more information about configuring the master host,
-        refer to </info>
-      </step>
-      
-      <step>
-        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp>
-          <codeblock>systemctl start serviced</codeblock>
-        </stepxmp>
+        see the following resources:
+        <ul>
+          <li><xref keyref="upgrade-to12x-vars-old"/></li>
+          <li><xref keyref="upgrade-to12x-vars-new"/></li>
+          <li><xref keyref="upgrade-to12x-vars"/></li>
+        </ul>
+        </info>
       </step>
     </steps>
-    <postreq>
-      <ul>
-        <li><b>Single-host deployments:</b> The upgrade is complete.</li>
-        <li><b>Multi-host deployments:</b> Upgrade all delegate hosts (the next chapter).</li>
-      </ul>
-    </postreq>
   </taskbody>
 </task>

@@ -7,8 +7,6 @@
       <p>The tables in this section provide an overview of the <cmdname>serviced</cmdname>
         configuration variables that apply to the <ph keyref="nm-cc"/> master host. Set 
         these variables as required for your environment or applications.</p>
-        
-      <p>For more information about a specific variable, see <xref keyref="feature-vars-vars"/>.</p>
     </section>
   </refbody>
 </reference>

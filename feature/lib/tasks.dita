@@ -407,7 +407,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               perform the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the kernel or the operating system and then restart the host.</cmd>
+            <cmd>Update the kernel or the operating system, and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp><b>Update only the kernel</b>:

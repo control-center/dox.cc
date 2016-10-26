@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><ph keyref="nm-cc"/> configuration file environment variables</title>
+  <title><ph keyref="nm-cc"/> configuration file</title>
   <refbody>
     <section>
       <p>The <ph keyref="nm-cc"/> configuration file, <filepath>/etc/default/serviced</filepath>,
         contains Bash environment variables that are read by the <cmdname>serviced</cmdname> daemon
-        startup script. The following list describes the variables.</p>
+        startup script. The following list uses the same order as the file.</p>
       
       <dl>
         <dlentry id="HOME">

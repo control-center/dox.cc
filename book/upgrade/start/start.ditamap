@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
-<bookmap>
-   <title>Start</title>
-   <appendix keyref="upgrade-start-start">
-      <topicref keyref="feature-manage-start-1"/>
-      <topicref keyref="feature-manage-start-n"/>
-   </appendix>
-</bookmap>

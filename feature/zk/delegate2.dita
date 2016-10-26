@@ -126,7 +126,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
       <step>
         <cmd>Verify the ZooKeeper environment variables.</cmd>
         <stepxmp>
-          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced \
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced \
   | grep -E '(CS_ZO|_ZK|CS_ST)'</codeblock>
         </stepxmp>
         <stepresult>The following example shows the environment variables for a delegate host with

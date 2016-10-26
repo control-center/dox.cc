@@ -2,8 +2,28 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Variables</title>
-    <appendix keyref="feature-vars-vars">
+    <appendix keyref="upgrade-to12x-vars">
        <topicref keyref="feature-vars-best"/>
+       <topicref keyref="feature-vars-master">
+          <topicref keyref="feature-vars-best"/>
+          <topicref keyref="feature-vars-storage"/>
+          <topicref keyref="feature-vars-endpoints"/>
+          <topicref keyref="feature-vars-rpc"/>
+          <topicref keyref="feature-vars-mux"/>
+          <topicref keyref="feature-vars-http"/>
+       </topicref>
+       <topicref keyref="feature-vars-delegate-about">
+          <topicref keyref="feature-vars-delegate"/>
+          <topicref keyref="feature-vars-endpoints"/>
+          <topicref keyref="feature-vars-rpc"/>
+          <topicref keyref="feature-vars-mux"/>
+       </topicref>
+       <topicref keyref="feature-vars-all">
+          <topicref keyref="feature-vars-role"/>
+          <topicref keyref="feature-vars-networking"/>
+          <topicref keyref="feature-vars-debug"/>
+          <topicref keyref="feature-vars-tune"/>
+       </topicref>
        <topicref keyref="feature-vars-file"/>
    </appendix>
 </bookmap>

@@ -4,8 +4,8 @@
   <title>Stopping <ph keyref="nm-cc"/> (multi-host deployment)</title>
   <refbody>
     <section>
-      <p>To stop <ph keyref="nm-cc"/> in a multi-host deployment,
-      perform the procedures in this section in order.</p>
+      <p>To stop <ph keyref="nm-cc"/> in a multi-host deployment, perform the procedures in this
+        section, in order.</p>
     </section>
   </refbody>
 </reference>

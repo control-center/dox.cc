@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="1" modification="x"/>        
+        <vrm version="1" release="2" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -42,35 +42,29 @@
       <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
     <topicgroup>
+      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/lib-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/to12x/delegate-keys.ditamap" format="ditamap"/> 
-      <mapref href="book/upgrade/to12x/master-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/to12x/prep-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/start-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/stop-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/> 
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
-      <mapref href="feature/config-keys.ditamap" format="ditamap"/>
-      <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>
+      <!-- <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>  -->
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
-      <mapref href="feature/master-keys.ditamap" format="ditamap"/>
+     <!-- <mapref href="feature/master-keys.ditamap" format="ditamap"/> -->
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <chapter href="book/upgrade/to12x/prep/prep.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/stop/stop.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/to12x/master/master.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/to12x/delegate/delegate.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/start/start.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/prep.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/master.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
 
-  <appendix href="feature/config/master-upgrade.ditamap" format="ditamap"/>
-  <appendix href="feature/config/delegate-upgrade.ditamap" format="ditamap"/>
   <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
-  <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
+  <appendix href="book/upgrade/maps/offline.ditamap" format="ditamap"/>
 </bookmap>

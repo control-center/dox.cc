@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/to12x</title>
+  <topicgroup>
+    <keydef keys="upgrade-to12x-authentication"
+            href="to12x/authentication.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-cc-delegate"
+            href="to12x/cc-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-cc-master"
+            href="to12x/cc-master.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-delegate"
+            href="to12x/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-docker-config"
+            href="to12x/docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-docker-install"
+            href="to12x/docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-master"
+            href="to12x/master.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-prep"
+            href="to12x/prep.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-start-1"
+            href="to12x/start-1.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-start-n"
+            href="to12x/start-n.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-vars-new"
+            href="to12x/vars-new.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-vars-old"
+            href="to12x/vars-old.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-vars"
+            href="to12x/vars.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
