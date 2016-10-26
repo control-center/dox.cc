@@ -18,12 +18,14 @@
          <topicref keyref="feature-cluster-manage-snapshot"/>
          <topicref keyref="feature-cluster-manage-rollback"/>
       </topicref>
-      <topicref keyref="feature-cluster-manage-stop-1"/>
-      <topicref keyref="feature-cluster-manage-start-1"/>
-      <topicref keyref="feature-cluster-manage-stop-n">
-         <topicref keyref="feature-cluster-manage-stop-n-master"/>
-         <topicref keyref="feature-cluster-manage-stop-n-delegate"/>
+      <topicref keyref="feature-cluster-manage-intro-stop-start">
+         <topicref keyref="feature-cluster-manage-stop-1"/>
+         <topicref keyref="feature-cluster-manage-start-1"/>
+         <topicref keyref="feature-cluster-manage-stop-n">
+            <topicref keyref="feature-cluster-manage-stop-n-master"/>
+            <topicref keyref="feature-cluster-manage-stop-n-delegate"/>
+         </topicref>
+         <topicref keyref="feature-cluster-manage-start-n"/>
       </topicref>
-      <topicref keyref="feature-cluster-manage-start-n"/>
    </chapter>
 </bookmap>
