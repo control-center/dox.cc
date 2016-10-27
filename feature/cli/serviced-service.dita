@@ -7,7 +7,7 @@
   <refbody>
     <section>
       <title>USAGE</title>
-      <p>Use this command to perform administrative actions on specific service.</p>
+      <p>Use this command to perform administrative actions on a specific service.</p>
     </section>
     <section>
       <title>SYNTAX</title>
@@ -49,15 +49,27 @@
         </dlentry>
         <dlentry>
           <dt>start</dt>
-          <dd>Start a service.</dd>
+          <dd>Start a service. Command option <codeph>--sync, -s</codeph> schedules services
+            synchronously. Specify this flag if a script expects the <codeph>serviced service
+              start</codeph> command to wait to return until the service operation has been
+            scheduled. If this flag is not specified, services are scheduled asynchronously,
+            enabling faster completion of the operation. </dd>
         </dlentry>
         <dlentry>
           <dt>restart</dt>
-          <dd>Restart a service.</dd>
+          <dd>Restart a service. Command option <codeph>--sync, -s</codeph> schedules services
+            synchronously. Specify this flag if a script expects the <codeph>serviced service
+              restart</codeph> command to wait to return until the service operation has been
+            scheduled. If this flag is not specified, services are scheduled asynchronously,
+            enabling faster completion of the operation.</dd>
         </dlentry>
         <dlentry>
           <dt>stop</dt>
-          <dd>Stop a service.</dd>
+          <dd>Stop a service. Command option <codeph>--sync, -s</codeph> schedules services
+            synchronously. Specify this flag if a script expects the <codeph>serviced service
+              stop</codeph> command to wait to return until the service operation has been
+            scheduled. If this flag is not specified, services are scheduled asynchronously,
+            enabling faster completion of the operation.</dd>
         </dlentry>
         <dlentry>
           <dt>proxy</dt>
