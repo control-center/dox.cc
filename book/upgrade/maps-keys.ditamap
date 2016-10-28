@@ -15,5 +15,9 @@
             href="maps/stop.dita"
             format="dita"
     />
+    <keydef keys="upgrade-maps-vars"
+            href="maps/vars.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>

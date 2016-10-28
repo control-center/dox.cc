@@ -32,7 +32,8 @@
       <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
-          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
       </step>
       

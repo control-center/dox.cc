@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>New features that affect upgrades</title>
+  <refbody>
+    <section>
+      <p>This release includes new features and requirements that affect the 
+      upgrade procedures.</p>
+      
+      <ul>
+        <li>The minimum kernel version for all hosts in a <ph keyref="nm-cc"/> cluster
+          is <codeph>3.10.0-327.22.2.el7.x86_64</codeph>. The kernel is available 
+        for RHEL/CentOS 7.1 and 7.2. For optimal results, the 7.2 release is recommended,
+        and the instructions for checking and updating the kernel include an option
+        to update the operating system at the same time. To avoid dependency issues,
+        the kernel update is included in the Docker Engine update procedure.</li>
+        
+        <li>New and deprecated variables. See appx.</li>
+        <li>pool permissions; nfs on clients not needed</li>
+        <li>delegate authentication</li>
+        <li>docker 1.12.1 new storage layout</li>
+        
+      </ul>
+      
+    </section>
+  </refbody>
+</reference>

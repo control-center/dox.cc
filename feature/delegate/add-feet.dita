@@ -52,13 +52,13 @@
       </step>
       
       <step>
-        <cmd>Log in to the <ph keyref="nm-cc"/> delegate
+        <cmd>Log in to the <ph keyref="nm-cc"/> delegate 
           host <ph conkeyref="strings/login-serviced"/>.</cmd>
       </step>
       
       <step>
         <cmd>Install the key bundle.</cmd>
-        <stepxmp>Replace <varname>Key-Bundle</varname> with the pathname
+        <stepxmp>Replace <varname>Key-Bundle-Path</varname> with the pathname
           of the key bundle file:
           <codeblock>serviced host register <varname>Key-Bundle-Path</varname></codeblock>
         </stepxmp>
@@ -67,7 +67,7 @@
       <step>
         <cmd>Delete the key bundle file.</cmd>
         <info>The file is no longer needed on the delegate host.</info>
-        <stepxmp>Replace <varname>Key-Bundle</varname> with the pathname
+        <stepxmp>Replace <varname>Key-Bundle-Path</varname> with the pathname
           of the key bundle file:
           <codeblock>rm <varname>Key-Bundle-Path</varname></codeblock>
         </stepxmp>

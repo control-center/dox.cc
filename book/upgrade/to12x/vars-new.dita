@@ -58,6 +58,14 @@
             <entry>The number of seconds the ZooKeeper leader waits before flushing
               an inactive connection.</entry>
           </row>
+          <row>
+            <entry><varname>SERVICED_MASTER_IP</varname></entry>
+            <entry>The IP address of the master host.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_MASTER_POOLID</varname></entry>
+            <entry>The name of the resource pool to which the master host belongs.</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>

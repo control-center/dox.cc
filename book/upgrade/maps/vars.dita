@@ -3,9 +3,8 @@
 <concept id="taskid">
   <title><ph keyref="nm-cc"/> configuration variables</title>
   <conbody>
-    <p>This appendix includes recommended best practices for editing
-      the <codeph>serviced</codeph> configuration file, and descriptions
-      of the variables in the file.</p>
+    <p>This appendix includes the list of <codeph>serviced</codeph> configuration variables.
+    The list uses the order present in the file, not alphabetical order.</p>
   </conbody>
 </concept>
 

@@ -74,7 +74,8 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             <stepxmp>
               <codeblock>systemctl restart docker</codeblock>
             </stepxmp>
-            <stepresult>The startup may take up to a minute.</stepresult>
+            <stepresult>The startup may take up to a minute as Docker Engine updates the storage
+              layout.</stepresult>
           </substep>
         </substeps>
       </step>

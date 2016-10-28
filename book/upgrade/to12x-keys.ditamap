@@ -3,10 +3,6 @@
 <map>
  <title>Keys in upgrade/to12x</title>
   <topicgroup>
-    <keydef keys="upgrade-to12x-authentication"
-            href="to12x/authentication.dita"
-            format="dita"
-    />
     <keydef keys="upgrade-to12x-cc-delegate"
             href="to12x/cc-delegate.dita"
             format="dita"
@@ -31,16 +27,36 @@
             href="to12x/master.dita"
             format="dita"
     />
+    <keydef keys="upgrade-to12x-prep-features"
+            href="to12x/prep-features.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-prep-howto"
+            href="to12x/prep-howto.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-to12x-prep"
             href="to12x/prep.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-start-1"
-            href="to12x/start-1.dita"
+    <keydef keys="upgrade-to12x-start-delegate-local"
+            href="to12x/start-delegate-local.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-start-n"
-            href="to12x/start-n.dita"
+    <keydef keys="upgrade-to12x-start-delegate-ssh"
+            href="to12x/start-delegate-ssh.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-start-master"
+            href="to12x/start-master.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-start-pools"
+            href="to12x/start-pools.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-start-zk"
+            href="to12x/start-zk.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-vars-new"

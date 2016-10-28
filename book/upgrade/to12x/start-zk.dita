@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Starting <ph keyref="nm-cc"/> (multi-host deployment)</title>
+  <title>Starting the ZooKeeper ensemble</title>
   <taskbody>
-    <context>Use this procedure to start <ph keyref="nm-cc"/> in a multi-host deployment. The
+    <context>Use this procedure to start the ZooKeeper ensemble
       default configuration of  the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>) is to
       start when the host starts. This procedure is only needed after stopping
       <cmdname>serviced</cmdname> to perform maintenance tasks.</context>
@@ -37,8 +37,8 @@
       </step>
       
       <step>
-        <cmd>In separate windows, log in to each of the delegate hosts
-          that are nodes in the ZooKeeper ensemble <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>In separate windows, log in to each of the delegate hosts that are nodes in the
+          ZooKeeper ensemble <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -88,10 +88,8 @@
       </step>
       
       <step>
-        <cmd>Log in to each of the delegate
-          hosts that are not nodes in the ZooKeeper ensemble
-          <ph conkeyref="strings/login-root"/>,
-          and then start <cmdname>serviced</cmdname>.</cmd>
+        <cmd>Log in to each of the delegate hosts that are not nodes in the ZooKeeper ensemble <ph
+            conkeyref="strings/login-root"/>, and then start <cmdname>serviced</cmdname>.</cmd>
         <stepxmp>
           <codeblock>systemctl start serviced</codeblock>
         </stepxmp>

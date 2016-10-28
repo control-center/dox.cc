@@ -34,10 +34,9 @@
               <varname>SERVICED_BACKUPS_PATH</varname>.</entry>
           </row>
           <row>
-            <entry><varname>SERVICED_VHOST_ALIASES</varname></entry>
-            <entry><ph keyref="nm-cc"/> now provides a feature to support both virtual host public
-              endpoints and port public endpoints. The feature does not require configuration
-              variables.</entry>
+            <entry><varname>SERVICED_AGENT</varname></entry>
+            <entry><varname>SERVICED_MASTER</varname> is sufficient to identify
+              whether a host is the master or a delegate.</entry>
           </row>
         </tbody>
       </tgroup>

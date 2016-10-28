@@ -13,7 +13,7 @@
       <step>
         <cmd>Identify the top-level service <cmdname>serviced</cmdname> is managing.</cmd>
         <stepxmp>
-          <codeblock>serviced service list</codeblock>
+          <codeblock>serviced service status</codeblock>
         </stepxmp>
         <stepresult>The top-level service is the service listed immediately 
           below the headings line.</stepresult>
@@ -47,11 +47,16 @@
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
-            <cmd>List all containers.</cmd>
+            <cmd>Display the identifiers of all containers, running and exited.</cmd>
             <stepxmp>
-              <codeblock>docker ps -a</codeblock>
+              <codeblock>docker ps -qa</codeblock>
             </stepxmp>
-            <stepresult>Containers in <codeph>Exited</codeph> status must be removed.</stepresult>
+            <stepresult>
+            <ul>
+              <li>If the command returns no result, stop. This procedure is complete.</li>
+              <li>If the command returns a result, perform the following substeps.</li>
+            </ul>
+            </stepresult>
           </substep>
           <substep>
             <cmd>Remove all remaining containers.</cmd>
@@ -60,12 +65,16 @@
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Determine whether any containers remain.</cmd>
+            <cmd>Display the identifiers of all containers, running and exited.</cmd>
             <stepxmp>
-              <codeblock>docker ps -a</codeblock>
+              <codeblock>docker ps -qa</codeblock>
             </stepxmp>
-            <stepresult>If containers are still present, perform the
-              remaining substeps.</stepresult>
+            <stepresult>
+              <ul>
+                <li>If the command returns no result, stop. This procedure is complete.</li>
+                <li>If the command returns a result, perform the remaining substeps.</li>
+              </ul>
+            </stepresult>
           </substep>
           <substep>
             <cmd>Disable the automatic startup of <cmdname>serviced</cmdname>.</cmd>

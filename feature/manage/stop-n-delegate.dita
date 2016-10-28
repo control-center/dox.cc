@@ -22,11 +22,16 @@
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
-            <cmd>List all containers.</cmd>
+            <cmd>Display the identifiers of all containers, running and exited.</cmd>
             <stepxmp>
-              <codeblock>docker ps -a</codeblock>
+              <codeblock>docker ps -qa</codeblock>
             </stepxmp>
-            <stepresult>Containers in <codeph>Exited</codeph> status must be removed.</stepresult>
+            <stepresult>
+              <ul>
+                <li>If the command returns no result, proceed to the next step.</li>
+                <li>If the command returns a result, perform the following substeps.</li>
+              </ul>
+            </stepresult>
           </substep>
           <substep>
             <cmd>Remove all remaining containers.</cmd>
@@ -101,7 +106,7 @@
             </stepxmp>
             <stepresult>
               <ul>
-                <li>If the preceding command returns no result, this procedure is complete.</li>
+                <li>If the preceding command returns no result, stop. This procedure is complete.</li>
                 <li>If the preceding command returns a result, perform the following substeps.</li>
               </ul>
             </stepresult>
@@ -116,13 +121,13 @@ done</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Determine whether any filesystems remain mounted.</cmd>
+            <cmd>Identify filesystems mounted from the master host.</cmd>
             <stepxmp>
               <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts</codeblock>
             </stepxmp>
             <stepresult>
               <ul>
-                <li>If the preceding command returns no result, this procedure is complete.</li>
+                <li>If the preceding command returns no result, stop. This procedure is complete.</li>
                 <li>If the preceding command returns a result, perform the following substeps.</li>
               </ul>
             </stepresult>
@@ -149,7 +154,7 @@ done</codeblock>
             </stepxmp>
             <stepresult>
               <ul>
-                <li>If the preceding command returns no result, this procedure is complete.</li>
+                <li>If the preceding command returns no result, stop. This procedure is complete.</li>
                 <li>If the preceding command returns a result, perform the remaining substeps.</li>
               </ul>
             </stepresult>
