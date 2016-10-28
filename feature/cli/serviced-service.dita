@@ -49,27 +49,15 @@
         </dlentry>
         <dlentry>
           <dt>start</dt>
-          <dd>Start a service. Command option <codeph>--sync, -s</codeph> schedules services
-            synchronously. Specify this flag if a script expects the <codeph>serviced service
-              start</codeph> command to wait to return until the service operation has been
-            scheduled. If this flag is not specified, services are scheduled asynchronously,
-            enabling faster completion of the operation. </dd>
+          <dd>Start a service. </dd>
         </dlentry>
         <dlentry>
           <dt>restart</dt>
-          <dd>Restart a service. Command option <codeph>--sync, -s</codeph> schedules services
-            synchronously. Specify this flag if a script expects the <codeph>serviced service
-              restart</codeph> command to wait to return until the service operation has been
-            scheduled. If this flag is not specified, services are scheduled asynchronously,
-            enabling faster completion of the operation.</dd>
+          <dd>Restart a service. </dd>
         </dlentry>
         <dlentry>
           <dt>stop</dt>
-          <dd>Stop a service. Command option <codeph>--sync, -s</codeph> schedules services
-            synchronously. Specify this flag if a script expects the <codeph>serviced service
-              stop</codeph> command to wait to return until the service operation has been
-            scheduled. If this flag is not specified, services are scheduled asynchronously,
-            enabling faster completion of the operation.</dd>
+          <dd>Stop a service.</dd>
         </dlentry>
         <dlentry>
           <dt>proxy</dt>
@@ -110,7 +98,7 @@
         </dlentry>
       </dl></section>
     <section>
-      <title>OPTIONS</title>
+      <title>GLOBAL OPTIONS</title>
       <dl>
         <dlentry>
           <dt>--generate-bash-completion</dt>
@@ -123,6 +111,26 @@
           <dd>Shows the help for an option.</dd>
         </dlentry>
       </dl>
+    </section>
+    <!--CC_2792-->
+    <section id="section_gyp_fpp_tx">
+      <title>serviced service [start | restart | stop]</title>
+      <p>By default, <ph keyref="nm-cc"/> version 5.2.0 and later schedules services in the
+        background to start, restart, and stop. The asynchronous scheduling improves the speed of
+        these operations, especially in large-scale installations. However, if you use a script that
+        depends on synchronous scheduling that was used in earlier versions of <ph keyref="nm-cc"/>,
+        specify the command line option <cmdname>--sync</cmdname>.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced service [start | restart | stop] [-s|--sync] <varname>ServiceID</varname></codeblock>
+      <p>Command option: <dl>
+          <dlentry>
+            <dt>--sync, -s</dt>
+            <dd>Schedules services synchronously. Specify this flag if a script expects the
+                <codeph>serviced service [start | restart | stop]</codeph> command to wait to return
+              until the service operation has been scheduled. If this flag is not specified,
+              services are scheduled asynchronously, in the background. </dd>
+          </dlentry>
+        </dl></p>
     </section>
   </refbody>
 </reference>
