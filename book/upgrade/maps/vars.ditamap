@@ -6,12 +6,12 @@
        <topicref keyref="upgrade-to12x-vars-old"/> 
        <topicref keyref="upgrade-to12x-vars-new"/>
        <topicref keyref="feature-vars-master">
-          <topicref keyref="feature-vars-best"/>
           <topicref keyref="feature-vars-storage"/>
           <topicref keyref="feature-vars-endpoints"/>
           <topicref keyref="feature-vars-rpc"/>
           <topicref keyref="feature-vars-mux"/>
           <topicref keyref="feature-vars-http"/>
+          <topicref keyref="feature-vars-tune-master"/>
        </topicref>
        <topicref keyref="feature-vars-delegate-about">
           <topicref keyref="feature-vars-delegate"/>

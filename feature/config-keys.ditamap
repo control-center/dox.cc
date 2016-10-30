@@ -7,16 +7,8 @@
             href="config/delegate-install.dita"
             format="dita"
     />
-    <keydef keys="feature-config-delegate-upgrade"
-            href="config/delegate-upgrade.dita"
-            format="dita"
-    />
     <keydef keys="feature-config-master-install"
             href="config/master-install.dita"
-            format="dita"
-    />
-    <keydef keys="feature-config-master-upgrade"
-            href="config/master-upgrade.dita"
             format="dita"
     />
    </topicgroup>

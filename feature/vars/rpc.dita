@@ -65,6 +65,10 @@
               <entry>Master</entry>
             </row>
             <row>
+              <entry><varname>SERVICED_RPC_DIAL_TIMEOUT</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
               <entry><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></entry>
               <entry>Master</entry>
             </row>

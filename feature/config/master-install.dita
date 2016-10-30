@@ -11,6 +11,9 @@
         
       <p>Many configuration choices depend on application requirements. Please review your 
         application documentation before configuring <ph keyref="nm-cc"/> on the master host.</p>
+      
+      <p>This chapter includes synopses of the configuration variables that affect the
+      master host. For more information about a variable, see <xref keyref="feature-vars-vars"/>.</p>
     </section>
   </refbody>
 </reference>

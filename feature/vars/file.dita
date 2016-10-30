@@ -670,7 +670,7 @@
           <dt><varname>SERVICED_CONTROLLER_BINARY</varname></dt>
           <dd><b>Default</b>: <filepath>/opt/serviced/bin/serviced-controller</filepath></dd> 
           <dd>The path of the <cmdname>serviced-controller</cmdname> binary,
-            which runs in every container.</dd>
+            which runs in every container that <cmdname>serviced</cmdname> manages.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_HOME">
@@ -689,7 +689,7 @@
         <dlentry id="SERVICED_VHOST_ALIASES">
           <dt><varname>SERVICED_VHOST_ALIASES</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
-          <dd>A list of hostname aliases for this host; for example, 
+          <dd>A list of hostname aliases for a host; for example, 
             <codeph>localhost</codeph>. Use the
             comma character (<codeph>&#44;</codeph>) to separate multiple values.</dd>
         </dlentry>

@@ -32,6 +32,10 @@
                 <codeph>10.3.0.0/16</codeph>, and the network can be unique on each host. A
                 <codeph>/29</codeph> network is sufficient.</entry>
           </row>
+          <row>
+            <entry><varname>SERVICED_DOCKER_DNS</varname></entry>
+            <entry>The Docker Engine DNS configuration for containers.</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>

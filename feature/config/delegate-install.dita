@@ -9,6 +9,8 @@
         steps for starting a delegate for the first time. Perform the procedures in this
         chapter on each delegate host in a <ph keyref="nm-cc"/> cluster.</p>
       <note>If you are installing a single-host deployment, skip this chapter.</note>
+      <p>This chapter includes synopses of the configuration variables that affect delegate
+        hosts. For more information about a variable, see <xref keyref="feature-vars-vars"/>.</p>
     </section>
   </refbody>
 </reference>

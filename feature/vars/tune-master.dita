@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Tuning variables (master host only)</title>
+  <refbody>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="2.3*"/>
+        <colspec colname="c2" colwidth="3*"/>
+        <thead>
+          <row>
+            <entry>Variable</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><varname>SERVICED_ES_STARTUP_TIMEOUT</varname></entry>
+            <entry>The number of seconds to wait for the Elasticsearch service to start.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_MASTER_IP</varname></entry>
+            <entry>The default IP address for the <varname>SERVICED_STATS_PORT</varname>, 
+              <varname>SERVICED_LOGSTASH_ES</varname>, and <varname>SERVICED_LOG_ADDRESS</varname>
+              variables.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_MASTER_POOLID</varname></entry>
+            <entry>The name of the resource pool to which the master host belongs.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

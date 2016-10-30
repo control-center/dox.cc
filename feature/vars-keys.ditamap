@@ -63,6 +63,10 @@
             href="vars/storage.dita"
             format="dita"
     />
+    <keydef keys="feature-vars-tune-master"
+            href="vars/tune-master.dita"
+            format="dita"
+    />
     <keydef keys="feature-vars-tune"
             href="vars/tune.dita"
             format="dita"
