@@ -606,7 +606,7 @@
         </dlentry>
         <dlentry>
           <dt><synph><kwd>script</kwd></synph></dt>
-          <dd>Administer services.</dd>
+          <dd>Verify or perform the commands in a script file.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>service</kwd></synph></dt>
