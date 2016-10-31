@@ -6,7 +6,7 @@
     <section>
       <p>The variables in the following table were present 
       in version 1.1.1 and are not present in version 1.2.0.
-      The variables are presented in the order in which they appeared in 
+      The variables are shown in the order in which they appeared in 
         <filepath>/etc/default/serviced</filepath>.</p>
     <table>
       <tgroup cols="2">
@@ -39,7 +39,7 @@
 <varname>SERVICED_MONITOR_DFS_REMOTE_UPDATE_INTERVAL</varname></lines>
             </entry>
             <entry><ph keyref="nm-cc"/> now uses different mechanisms to
-              monitor the DFS status.</entry>
+              monitor DFS status.</entry>
           </row>
         </tbody>
       </tgroup>

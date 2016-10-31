@@ -19,14 +19,9 @@
             <entry>The number of seconds to wait for the Elasticsearch service to start.</entry>
           </row>
           <row>
-            <entry><varname>SERVICED_MASTER_IP</varname></entry>
-            <entry>The default IP address for the <varname>SERVICED_STATS_PORT</varname>, 
-              <varname>SERVICED_LOGSTASH_ES</varname>, and <varname>SERVICED_LOG_ADDRESS</varname>
-              variables.</entry>
-          </row>
-          <row>
             <entry><varname>SERVICED_MASTER_POOLID</varname></entry>
-            <entry>The name of the resource pool to which the master host belongs.</entry>
+            <entry>The name of the default resource pool. This variable is only used
+              the first time <cmdname>serviced</cmdname> is started.</entry>
           </row>
         </tbody>
       </tgroup>

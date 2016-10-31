@@ -34,7 +34,8 @@
           </row>
           <row>
             <entry><varname>SERVICED_DOCKER_DNS</varname></entry>
-            <entry>The Docker Engine DNS configuration for containers.</entry>
+            <entry>A list of one or more DNS servers. The list is injected into all Docker Engine
+              containers.</entry>
           </row>
         </tbody>
       </tgroup>

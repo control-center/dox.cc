@@ -7,7 +7,7 @@
   <refbody>
     <section>
       <title>USAGE</title>
-      <p>Use this command to create LVM thin pools for Docker and <ph keyref="nm-cc"/>.</p>
+      <p>Use this command to create LVM thin pools for Docker Engine and <ph keyref="nm-cc"/>.</p>
     </section>
     <section>
       <title>SYNTAX</title>
@@ -33,6 +33,10 @@
     <section>
       <title>COMMANDS</title>
       <dl>
+        <dlentry>
+          <dt>check</dt>
+          <dd>Check for orphaned devices.</dd>
+        </dlentry>
         <dlentry>
           <dt>create</dt>
           <dd>Create a volume on a driver.</dd>
@@ -84,6 +88,24 @@
         <dlentry>
           <dt>version</dt>
           <dd>Print the version and exit.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>serviced-storage check</title>
+      <p>The <codeph>serviced-storage check</codeph> command searches for orphaned snapshot devices
+        in the <cmdname>serviced</cmdname> application data thin pool and removes them, if
+        requested. This command requires the path of <cmdname>serviced</cmdname> tenant volumes,
+        which is determined by the <varname>SERVICED_VOLUMES_PATH</varname> variable in
+          <filepath>/etc/default/serviced</filepath>. The default path is
+          <filepath>/opt/serviced/var/volumes</filepath>.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] check [-c|--clean] <varname>Path</varname></codeblock>
+      <p>Command options:</p>
+      <dl>
+        <dlentry>
+          <dt>[-c|--clean]</dt>
+          <dd>Remove orphaned snapshot devices.</dd>
         </dlentry>
       </dl>
     </section>

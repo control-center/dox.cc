@@ -47,6 +47,10 @@
             href="to12x/start-delegate-ssh.dita"
             format="dita"
     />
+    <keydef keys="upgrade-to12x-start-delegate"
+            href="to12x/start-delegate.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-to12x-start-master"
             href="to12x/start-master.dita"
             format="dita"
