@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Networking requirements</title>
+  <refbody>
+    <section>
+      
+      <p>On startup, Docker creates the <codeph>docker0</codeph> virtual interface and selects an
+        unused IP address and subnet (typically, 172.17.0.1/16) to assign to the interface. The
+        virtual interface is used as a virtual Ethernet bridge, and automatically forwards packets
+        among real and virtual interfaces attached to it. The host and all of its containers
+        communicate among one another through this virtual bridge. </p>
+      
+      <p>Docker can only check directly-connected routes, so the subnet it chooses for the virtual
+        bridge may be inappropriate for your environment. To customize the virtual bridge subnet, refer
+        to Docker's <xref keyref="url-docker-net-config">advanced network configuration</xref>
+        article.</p>
+      
+      <p>The default configurations of firewall utilities such as 
+        <xref keyref="url-firewalld">FirewallD</xref> include 
+        rules that can conflict with Docker, and therefore, <ph keyref="nm-cc"/>.
+        The following interactions illustrate the conflicts:</p>
+      <ul>
+        <li>The <cmdname>firewalld</cmdname> daemon removes the DOCKER chain
+          from <cmdname>iptables</cmdname> when it starts or restarts.</li>
+        <li>Under <cmdname>systemd</cmdname>, <cmdname>firewalld</cmdname> is started before Docker.
+          However, if you start or restart <cmdname>firewalld</cmdname> while Docker is running, you
+          need to restart Docker.</li>
+      </ul>
+      
+      <p>If you are using a firewall utility, please ensure that it does not conflict with Docker.</p>
+      
+      
+      
+      <p>If you are not using a firewall utility, your firewall settings may still
+        prevent communications over the Docker virtual bridge. This occurs when <cmdname>iptables</cmdname>
+        INPUT rules restrict most traffic. To ensure that the bridge works properly, append an 
+        INPUT rule to your <cmdname>iptables</cmdname> configuration that allows traffic on
+        the bridge subnet. For example, if <codeph>docker0</codeph> is bound to 
+        172.17.42.1/16, then the following, non-specific command ensures that the bridge works.</p>
+      
+      <codeblock>iptables -A INPUT -d 172.17.0.0/16 -j ACCEPT</codeblock>
+      
+      <note>The preceding command is only an example. Please consult your networking specialist
+      before modifying your <cmdname>iptables</cmdname> configuration.</note>
+    </section>
+    
+    <section>
+      
+    </section>
+    <section>
+      <title>Additional requirements</title>
+      <p><ph keyref="nm-cc"/> requires a 16-bit, private IPv4 network for virtual 
+        IP addresses. The default network is 10.3/16. If the default network is
+        already in use in your environment, you may select any valid IPv4 16-bit address space
+        during installation.</p>
+     
+      <p>This release of <ph keyref="nm-cc"/> relies on Network File System (NFS) for its
+        distributed file system implementation. For this reason, hosts in a <ph keyref="nm-cc"/> 
+        cluster may not run a general-purpose NFS server, and all hosts
+        require NFS.</p>
+      
+      <p>All hosts in <ph keyref="nm-cc"/> resource pools must:</p>
+        <ul>
+          <li>be able to resolve the hostnames of all other resource pool hosts to IPv4 addresses
+            (for example, if the public IP address of your host is 192.0.2.1, then the
+            <cmdname>hostname -i</cmdname> command should return 192.0.2.1)</li>
+          <li>respond with an IPv4 address other than <codeph>127.x.x.x</codeph> when
+            <userinput>ping <varname>Hostname</varname></userinput> is invoked</li>
+          <li>return a unique result from the <cmdname>hostid</cmdname> command</li>
+        </ul>
+    </section>
+  </refbody>
+</reference>

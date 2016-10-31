@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Internal services endpoint variables</title>
+  <refbody>
+    <section>
+      <p>The variables in the following table must be set identically on all <ph keyref="nm-cc"/>
+        delegate hosts. On the master host, the default values of these variables do not need to be
+        changed, unless the Docker registry is hosted on a system other than the master. In that
+        case, <varname>SERVICED_DOCKER_REGISTRY</varname> must be set explicitly on the master host,
+        too. </p>
+      <p>The <varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname> variable affects RPC, mux,
+        and internal services endpoint traffic.</p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="8.5*"/>
+          <colspec colname="c2" colwidth="4*"/>
+          <colspec colname="c2" colwidth="8*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Endpoint</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>SERVICED_DOCKER_REGISTRY</varname></entry>
+              <entry><varname>Master-Host</varname><codeph>:9100</codeph></entry>
+              <entry>The local Docker registry for <ph keyref="nm-cc"/>
+                internal services images and application images.</entry>
+            </row>
+            
+            <row>
+              <entry><varname>SERVICED_ENDPOINT</varname></entry>
+              <entry><varname>Master-Host</varname><codeph>:4979</codeph></entry>
+              <entry>The <cmdname>serviced</cmdname> RPC server. The endpoint port number must match
+                the value of <varname>SERVICED_RPC_PORT</varname>.</entry>
+            </row>
+            
+            <row>
+              <entry><varname>SERVICED_LOG_ADDRESS</varname></entry>
+              <entry><varname>Master-Host</varname><codeph>:5042</codeph></entry>
+              <entry>The <xref keyref="url-logstash">logstash</xref> service.</entry>
+            </row>
+            
+            <row>
+              <entry><varname>SERVICED_LOGSTASH_ES</varname></entry>
+              <entry><varname>Master-Host</varname><codeph>:9100</codeph></entry>
+              <entry>The Elasticsearch service.</entry>
+            </row>
+            
+            <row>
+              <entry><varname>SERVICED_STATS_PORT</varname></entry>
+              <entry><varname>Master-Host</varname><codeph>:8443</codeph></entry>
+              <entry>The <cmdname>serviced</cmdname> metrics consumer service.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></entry>
+              <entry>(none)</entry>
+              <entry>The length of time a delegate authentication token is valid.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

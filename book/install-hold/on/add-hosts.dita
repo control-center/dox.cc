@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding hosts to the default resource pool</title>
+  <taskbody>
+    <context>
+      <note>If you are installing a single-host deployment, skip this section.</note>
+      
+      <p>This procedure adds one or more resource pool hosts to
+      the <codeph>default</codeph> resource pool.</p>
+    </context>
+    
+    <steps>
+      
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/agent-default-pool">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Repeat the preceding command for each resource pool host 
+          in your <ph keyref="nm-cc"/>  cluster.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

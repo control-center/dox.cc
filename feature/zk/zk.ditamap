@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-  <title>ZK config</title>
+   <title>Configure ZK</title>
   <chapter keyref="feature-zk-zk">
-    <topicref keyref="feature-zk-vars"/>
+    <topicref keyref="feature-zk-about"/>
+    <topicref keyref="feature-zk-nodes">
+      <topicref keyref="feature-zk-vars"/>
+      <topicref keyref="feature-zk-example"/>
+     </topicref>
     <topicref keyref="feature-zk-master"/>
-    <topicref keyref="feature-zk-worker"/>
+    <topicref keyref="feature-zk-delegate1"/>
+    <topicref keyref="feature-zk-delegate2"/>
     <topicref keyref="feature-zk-enable"/>
-    <topicref keyref="feature-zk-pool"/>
+    <topicref keyref="feature-zk-other"/>
    </chapter>
 </bookmap>
+

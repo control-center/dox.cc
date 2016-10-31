@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Optional: Updating resource pool permissions</title>
+  <taskbody>
+    <context>Use this procedure to change the permissions associated with one or 
+      more resource pools. During the upgrade to version <ph keyref="lo-version-cc"/>,
+      each resource pool gets both administrative and DFS permissions.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

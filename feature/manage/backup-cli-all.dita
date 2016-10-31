@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Backing up the entire system</title>
+  <shortdesc/>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host <ph conkeyref="strings/login-root"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Start the backup:</cmd>
+        <info>
+          <codeblock>serviced backup /opt/serviced/var/backups</codeblock>
+        </info>
+        <stepresult>After a successful backup, the system displays the name of the backup file.
+            <p>Example result:</p><p>
+            <codeblock>backup-2016-10-31-203717.tgz</codeblock>
+          </p></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

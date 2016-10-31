@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring a resource pool host as a ZooKeeper node</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need a resource pool host with an
+      XFS filesystem on a separate partition, created previously.</prereq>
+    <context>This procedure configures a ZooKeeper ensemble on a resource pool host. Repeat this
+      procedure on each <ph keyref="nm-cc"/> resource pool host to add to the ZooKeeper
+      ensemble.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create a variable for each <ph keyref="nm-cc"/> host to include
+          in the ZooKeeper ensemble.</cmd>
+        <info>The variables are used in subsequent steps.</info>
+        <info>
+          <note>Define the variables identically
+            on the master host and on each resource pool host.</note>
+        </info>
+        <stepxmp>
+          <p>Replace <varname>Master-Host-IP</varname> with the IP address of 
+            the <ph keyref="nm-cc"/> master host, and replace <varname>Pool-Host-A-IP</varname>
+            and <varname>Pool-Host-B-IP</varname> with the IP addresses of
+            the <ph keyref="nm-cc"/> resource pool hosts to include in
+            the ensemble:</p>
+          <codeblock>node1=<varname>Master-Host-IP</varname>
+node2=<varname>Pool-Host-A-IP</varname>
+node3=<varname>Pool-Host-B-IP</varname></codeblock>
+        </stepxmp>
+        <info>
+          <note>ZooKeeper requires IP addresses for ensemble configuration.</note>
+        </info>
+      </step>
+      
+      <step>
+        <cmd>Set the ID of this node in the ZooKeeper ensemble.</cmd>
+        <stepxmp>
+          <p><b>For <varname>Pool-Host-A-IP</varname></b> (<b><codeph>node2</codeph></b>),
+            use the following command:</p>
+          <codeblock>echo "SERVICED_ISVCS_ZOOKEEPER_ID=2" &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepxmp>
+          <p><b>For <varname>Pool-Host-B-IP</varname></b> (<b><codeph>node3</codeph></b>),
+            use the following command:</p>
+          <codeblock>echo "SERVICED_ISVCS_ZOOKEEPER_ID=3" &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Specify the nodes in the ZooKeeper ensemble.</cmd>
+        <stepxmp>You may copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
+  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+
+      <step>
+        <cmd>Specify the nodes in the ZooKeeper quorum.</cmd>
+        <info>ZooKeeper requires a unique quorum definition for each node in its ensemble. To
+          achieve this, replace the IP address of the current node with
+          <codeph>0.0.0.0</codeph>.</info>
+        <stepxmp>
+          <p><b>For <varname>Pool-Host-A-IP</varname></b> (<b><codeph>node2</codeph></b>),
+          use the following commands:</p>
+          <codeblock>q1="1@${node1}:2888:3888"
+q2="2@0.0.0.0:2888:3888"
+q3="3@${node3}:2888:3888"
+echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
+  &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepxmp>
+          <p><b>For <varname>Pool-Host-B-IP</varname></b> (<b><codeph>node3</codeph></b>),
+            use the following commands:</p>
+          <codeblock>q1="1@${node1}:2888:3888"
+q2="2@${node2}:2888:3888"
+q3="3@0.0.0.0:2888:3888"
+echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
+  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Set the <varname>SERVICED_ISVCS_START</varname> variable, and clean
+          up the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/default/serviced</filepath> with a text editor.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Locate the <varname>SERVICED_ISVCS_START</varname> variable,
+            and then delete all but <codeph>zookeeper</codeph> from its 
+              list of values.</cmd>
+          </substep>
+          <substep>
+            <cmd>Remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
+            <info>The value of this declaration specifies 3 hosts.</info>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_ZK</varname> variable
+              near the beginning of the file, and then delete the line it is on.</cmd>
+            <info>The value of this declaration is just the master host.</info>
+          </substep>
+          <substep>
+            <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
+              from the end of the file in the location of the just-deleted declaration.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable
+              near the end of the file, and then delete the line it is on.</cmd>
+            <info>This declaration is commented out.</info>
+          </substep>
+          <substep>
+            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable declaration
+              from the end of the file in the location of the just-deleted declaration.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable
+              near the end of the file, and then delete the line it is on.</cmd>
+            <info>This declaration is commented out.</info>
+          </substep>
+          <substep>
+            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
+              from the end of the file in the location of the just-deleted declaration.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Verify the ZooKeeper environment variables.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced \
+  | grep -E '(_ZOO|_ZK|_STAR)'</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Pull the required <ph keyref="nm-cc"/> ZooKeeper image from the master host.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the image to pull.</cmd>
+            <stepxmp>
+              <codeblock>serviced version | grep IsvcsImages</codeblock>
+            </stepxmp>
+            <stepresult>Example result:
+              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v40 zenoss/isvcs-zookeeper:v3]</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Pull the <ph keyref="nm-cc"/> ZooKeeper image.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Isvcs-ZK-Image</varname> with the name and version
+                number of the ZooKeeper image from the previous substep:</p>
+              <codeblock>docker pull <varname>Isvcs-ZK-Image</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+

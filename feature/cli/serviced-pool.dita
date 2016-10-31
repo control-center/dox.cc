@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>serviced pool</title>
+  <shortdesc>The <cmdname>serviced pool</cmdname> command administers <ph keyref="nm-cc"/> resource
+    pool data.</shortdesc>
+  <refbody>
+    <section id="section_tgt_1qk_5x">
+      <title>USAGE</title>
+      <p>Use this command to view and manage <ph keyref="nm-cc"/> resource pools.</p>
+    </section>
+    <section id="section_wlf_fyb_hx">
+      <title>SYNTAX</title>
+      <codeblock>serviced pool [global options] command [command options] [arguments...]</codeblock>
+    </section>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt> --generate-bash-completion</dt>
+          <dd/>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Show the help for an option.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="section_qzq_xyb_hx"><title>COMMANDS</title>The following commands are available for
+        <cmdname>serviced pool</cmdname>:<dl>
+        <dlentry>
+          <dt>list</dt>
+          <dd>List all pools.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>add</dt>
+          <dd>Add a new resource pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>remove, rm</dt>
+          <dd>Remove an existing resource pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>list-ips</dt>
+          <dd>Lists the IP addresses for a resource pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>add-virtual-ip</dt>
+          <dd>Add a virtual IP address to a resource pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>remove-virtual-ip</dt>
+          <dd>Remove a virtual IP address from a resource pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>set-conn-timeout</dt>
+          <dd>Set a connection timeout for a high-latency resource pool (for example, 5m, 2h,
+            6.6s).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>set-permission </dt>
+          <dd>Set permission flags for hosts in a resource pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>help, h</dt>
+          <dd>Show a list of commands or the help for a single command.</dd>
+        </dlentry>
+      </dl></section>
+    <section>
+      <title>serviced pool set-permission</title>
+      <p>The <cmdname>serviced pool set-permission</cmdname> command sets permission flags for hosts
+        in the resource pool, <varname>POOLID</varname>. Before removing access to administrative
+        functions (<cmdname>--admin</cmdname>), remove DFS access.</p>
+      <p><b>Syntax</b>:</p>
+      <codeblock>serviced pool set-permission [<varname>CommandOptions</varname>] <varname>POOLID</varname></codeblock>
+      <p><b>Command options:</b></p>
+      <dl>
+        <dlentry>
+          <dt>--dfs</dt>
+          <dd>Control permission to mount DFS. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>--admin</dt>
+          <dd>Control permission to use administrative functions. </dd>
+        </dlentry>
+      </dl>
+      <p><b>Examples</b></p>
+      <p>Give a resource pool distributed file system (DFS) access: </p>
+      <codeblock>serviced pool set-permission --dfs pool_01_140620</codeblock>
+      <p>Give a resource pool access to administrative functions: </p>
+      <codeblock>serviced pool set-permission --admin pool_01_140620</codeblock>
+      <p>Remove DFS access permission from a resource pool.<note>Remove DFS access before removing
+          access to administrative functions.</note></p>
+      <codeblock>serviced pool set-permission --dfs=false pool_01_140620</codeblock>
+      <p>Remove resource pool access to administrative functions.<note>Do not remove access to
+          administrative functions until you first remove DFS access.</note></p>
+      <codeblock>serviced pool set-permission --admin=false pool_01_140620</codeblock>
+    </section>
+  </refbody>
+</reference>

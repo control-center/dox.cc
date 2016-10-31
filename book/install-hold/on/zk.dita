@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="taskid">
+  <title>ZooKeeper ensemble configuration</title>
+  <refbody>
+    <section>
+      <note>If you are installing a single-host deployment, or if your deployment includes fewer
+        than two resource pool hosts, skip this section.</note>
+      
+      <p><ph keyref="nm-cc"/> relies on <xref keyref="url-zookeeper">Apache ZooKeeper</xref> to
+        coordinate its services. The procedures in this section create a ZooKeeper ensemble of 3
+        nodes. To perform these procedures, you need a <ph keyref="nm-cc"/> master host and a
+        minimum of two resource pool hosts. Each resource pool host requires a separate primary
+        partition for <ph keyref="nm-cc"/> internal services, and each should have a static
+        IP address. For more information about
+        storage requirements, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <note><ph conkeyref="names/company"/> strongly recommends configuring a ZooKeeper ensemble 
+        for all production deployments.</note>
+      
+      <p>A ZooKeeper ensemble requires a minimum of 3 nodes, and 3 nodes is sufficient for most
+        deployments. A 5-node configuration improves failover protection during maintenance windows.
+        Ensembles larger than 5 nodes are not necessary. An odd number of nodes is recommended, and
+        an even number of nodes is strongly discouraged.</p>
+      
+      <note>The <ph keyref="nm-cc"/> ZooKeeper service requires consistently fast storage.
+        Ideally, the primary partition for <ph keyref="nm-cc"/> internal services is on
+        a separate, high-performance device that has only one primary partition.</note>
+      
+    </section>
+  </refbody>
+</reference>
+
+

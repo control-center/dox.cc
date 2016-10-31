@@ -3,8 +3,8 @@
 <map>
         <title>Shared topics</title>
         <topicgroup>
-                <keydef keys="browsers-500"
-                        href="browsers-500.dita"
+                <keydef keys="browsers-120"
+                        href="browsers-120.dita"
                         format="dita"
                 />
                 <keydef keys="related-pubs"

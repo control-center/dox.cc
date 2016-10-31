@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="shared">
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <taskbody>
+    
+    <steps>
+      <step>
+        <cmd></cmd>
+        <!-- These substeps are used in serviced config file editing procedures -->
+        <substeps>
+          <substep id="open-file">
+            <cmd>Open <filepath>/etc/default/serviced</filepath> in a text editor.</cmd>
+          </substep>
+          <substep id="uncomment">
+            <cmd>Remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          <substep id="save">
+            <cmd>Save the file, and then close the editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="verify-64">
+        <cmd>Verify that the host implements the 64-bit version of the x86 instruction set.</cmd>
+        <stepxmp>
+          <codeblock>uname -m</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the output is <codeph>x86_64</codeph>, the architecture is 64-bit. Proceed to
+            the next step</choice>
+          <choice>If the output is <codeph>i386/i486/i586/i686</codeph>, the architecture is 32-bit.
+            Stop this procedure and select a different host.</choice>
+        </choices>
+      </step>
+      
+      <step id="localhost-entry">
+        <cmd>Add an entry to <filepath>/etc/hosts</filepath> 
+          for localhost, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine whether <codeph>127.0.0.1</codeph>
+              is mapped to <codeph>localhost</codeph>.</cmd>
+            <stepxmp>
+              <codeblock>grep 127.0.0.1 /etc/hosts | grep localhost</codeblock>
+            </stepxmp>
+            <stepresult>If the preceding commands return no result,
+            perform the following substep.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Add an entry to <filepath>/etc/hosts</filepath> for <codeph>localhost</codeph>.</cmd>
+            <stepxmp>
+              <codeblock>echo "127.0.0.1  localhost" &#62;&#62; /etc/hosts</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step id="kill-selinux">
+        <cmd>Disable Security-Enhanced Linux (SELinux), if installed.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine whether SELinux is installed.</cmd>
+            <stepxmp>
+              <codeblock>test -f /etc/selinux/config &#38;&#38; grep '&#94;SELINUX=' /etc/selinux/config</codeblock>
+            </stepxmp>
+            <info>If the preceding commands return a result, SELinux is installed.</info>
+          </substep>
+          <substep>
+            <cmd>Set the operating mode to <codeph>disabled</codeph>.</cmd>
+            <stepxmp>Open <filepath>/etc/selinux/config</filepath> in a text editor, and change the
+              value of the <varname>SELINUX</varname> variable to
+              <codeph>disabled</codeph>.</stepxmp>
+          </substep>
+          <substep>
+            <cmd>Confirm the new setting.</cmd>
+            <stepxmp><codeblock>grep '&#94;SELINUX=' /etc/selinux/config</codeblock></stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="docker-hub">
+        <cmd>Authenticate to the Docker Hub repository.</cmd>
+        <info>Replace <varname>USER</varname> and <varname>EMAIL</varname> with the values
+          associated with your Docker Hub account.</info>
+        <stepxmp>
+          <codeblock>docker login -u <varname>USER</varname> -e <varname>EMAIL</varname></codeblock>
+        </stepxmp>
+        <stepresult>The <cmdname>docker</cmdname> command prompts you for your Docker Hub password,
+          and saves a hash of your credentials in the <filepath>$HOME/.dockercfg</filepath> file
+          (root user account).</stepresult>
+      </step>
+      
+      <step id="cfg-subnet" importance="optional">
+        <cmd>Specify an alternate private subnet for <ph keyref="nm-cc"/>, if
+          necessary.</cmd>
+        <info>
+          <p>The default private subnet may already be in use in your environment. 
+            The following variable configures <cmdname>serviced</cmdname> to use an alternate subnet:</p>
+          <dl>
+            <dlentry conkeyref="feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </info>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> declaration, and then
+              change the value to an IPv4 network address in CIDR notation.</cmd>
+            <stepxmp>The following example shows the line to change:
+              <codeblock># SERVICED_VIRTUAL_ADDRESS_SUBNET=10.3</codeblock>
+            </stepxmp>
+            <info>For example, change the value to <codeph>203.0.113.0/20</codeph>.</info>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      
+      
+      <step id="master">
+        <cmd>Configure <ph keyref="nm-cc"/> to serve as the master.</cmd>
+        <info>
+          <p>The following variable configures <cmdname>serviced</cmdname> to serve as master:</p>
+          <dl>
+            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </info>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Find the <varname>SERVICED_MASTER</varname> declaration, and then change the value
+              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
+            <stepxmp>The following example shows the line to change:
+              <codeblock># SERVICED_MASTER=0</codeblock></stepxmp>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="agent">
+        <cmd>Configure <ph keyref="nm-cc"/> as a delegate of the master host.</cmd>
+        <info>
+          <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
+          <dl>
+            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+          <p>In addition, the following lines need to be edited, to replace
+              <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with 
+            the IP address or hostname of the master host:</p>
+          <sl>
+            <sli><codeph># SERVICED_ZK={{SERVICED_MASTER_IP}}:2181</codeph></sli>
+            <sli><codeph># SERVICED_DOCKER_REGISTRY={{SERVICED_MASTER_IP}}:5000</codeph></sli>
+            <sli><codeph># SERVICED_ENDPOINT={{SERVICED_MASTER_IP}}:4979</codeph></sli>
+            <sli><codeph># SERVICED_LOG_ADDRESS={{SERVICED_MASTER_IP}}:5042</codeph></sli>
+            <sli><codeph># SERVICED_LOGSTASH_ES={{SERVICED_MASTER_IP}}:9100</codeph></sli>
+            <sli><codeph># SERVICED_STATS_PORT={{SERVICED_MASTER_IP}}:8443</codeph></sli>
+          </sl>
+        </info>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Find the <varname>SERVICED_MASTER</varname> declaration, and then 
+              remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Globally replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
+              the IP address of the master host.</cmd>
+            <info>
+              <note>Remove the number sign character (&#35;) from the beginning of each variable
+                declaration that includes the master IP address.</note>
+            </info>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="create-thin-docker">
+        <cmd>Create an LVM thin pool for Docker data.</cmd>
+        <info>For more information about the <cmdname>serviced-storage</cmdname> command,
+        see <xref keyref="feature-cli-serviced-storage"/>.</info>
+        <stepxmp>Replace <varname>Storage</varname> with the paths of one or more block 
+          devices or partitions, or the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Storage</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result is the device mapper name of the thin pool,
+          which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
+      </step>
+      
+      <step id="agent-default-pool">
+        <cmd>Add a delegate host.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the delegate
+            host to add:</p>
+          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
+          <p>If you enter a hostname, all hosts in your <ph keyref="nm-cc"/> cluster must be able to
+            resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
+            a nameserver on your network.</p>
+        </stepxmp>
+      </step>
+      
+      <step id="check-cpu-count">
+        <cmd>Determine whether the CPU resources are sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the total number of CPU cores.</cmd>
+            <stepxmp>
+              <codeblock>cat /proc/cpuinfo | grep -Ec '^core id'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available resources with the 
+              requirements for a <ph keyref="nm-cc"/> master host.</cmd>
+            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="check-cpu-aes">
+        <cmd>Determine whether the CPU resources support the AES instruction set.</cmd>
+        <stepxmp>
+          <codeblock>cat /proc/cpuinfo | grep -Ec '^flags.*aes'</codeblock>
+        </stepxmp>
+        <stepresult>For optimal performance, the result of the preceding commands
+          must match the total number of CPU resources available on the host. If the
+        result is 0, performance is severely degraded.
+        <p>If the result is 0 and the candidate host is a virtual machine, the managing 
+          hypervisor may be configured in Hyper-V compatibility mode. Check the setting
+          and disable it, if possible, or select a different host.</p></stepresult>
+      </step>
+      
+      <step id="check-storage-pool">
+        <cmd>Determine whether the available, unused storage is sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the available storage devices.</cmd>
+            <stepxmp>
+              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available storage with the 
+              amount required for a delegate host 
+              in your deployment.</cmd>
+            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="check-name-resolution">
+        <cmd>Verify that name resolution works on this host.</cmd>
+        <stepxmp>
+          <codeblock>hostname -i</codeblock>
+        </stepxmp>
+        <stepresult>If the result is not a valid IPv4 address, add an entry
+        for the host to the network nameserver, or to <filepath>/etc/hosts</filepath>.</stepresult>
+      </step>
+      
+      <step id="check-hostid-master">
+        <cmd>Ensure the host has a persistent numeric ID.</cmd>
+        <info>Skip this step if you are installing a single-host deployment.</info>
+        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
+          and the ID must be persistent (not change when the host reboots).</info>
+        <stepxmp>
+          <codeblock>test -f /etc/hostid || genhostid
+hostid</codeblock>
+        </stepxmp>
+        <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
+      </step>
+      
+      <step id="check-hostid">
+        <cmd>Ensure the host has a persistent numeric ID.</cmd>
+        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
+          and the ID must be persistent (not change when the host reboots).</info>
+        <stepxmp>
+          <codeblock>test -f /etc/hostid || genhostid
+hostid</codeblock>
+        </stepxmp>
+        <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
+      </step>
+
+      
+      <step id="check-memory-master">
+        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the available memory.</cmd>
+            <stepxmp>
+              <codeblock>free -h</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available memory with the 
+              amount required for a master host in your deployment.</cmd>
+            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          </substep>
+        </substeps>
+      </step>
+     
+      <step id="check-memory-pool">
+        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the available memory.</cmd>
+            <stepxmp>
+              <codeblock>free -h</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available memory with the amount required for a delegate host in your
+              deployment.</cmd>
+            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="firewall">
+        <cmd>Disable the firewall, if necessary.</cmd>
+        <info>This step is required for installation but not for deployment. For more information,
+        refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+        <substeps>
+          <substep>
+            <cmd>Determine whether the <cmdname>firewalld</cmdname> service is enabled.</cmd>
+            <stepxmp>
+              <codeblock>systemctl status firewalld.service</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the result includes <codeph>Active:&#8201;inactive&#8201;(dead)</codeph>,
+                  the service is disabled. Proceed to the next step.</li>
+                <li>If the result includes <codeph>Active:&#8201;active&#8201;(running)</codeph>,
+                  the service is enabled. Perform the following substep.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable the <cmdname>firewalld</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop firewalld &#38;&#38; systemctl disable firewalld</codeblock>
+            </stepxmp>
+            <stepresult>On success, the preceding commands display messages similar to the following
+              example:
+              <codeblock>rm '/etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service'
+rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
+            </stepresult>
+          </substep>
+        </substeps>
+      </step>
+
+      <step id="update-os">
+        <cmd>Update the operating system, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which release is installed.</cmd>
+            <stepxmp>
+              <codeblock>cat /etc/redhat-release</codeblock>
+            </stepxmp>
+            <stepresult>If the result includes <codeph>7.0</codeph>, perform
+              the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Update the operating system and then restart the host.</cmd>
+            <info>The following commands require internet access 
+              or a local mirror of operating system packages.</info>
+            <stepxmp>
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="update-kernel">
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+              perform the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Update the kernel or the operating system, and then restart the host.</cmd>
+            <info>The following commands require internet access 
+              or a local mirror of operating system packages.</info>
+            <stepxmp><b>Update only the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+            <stepxmp><b>Update the operating system, including the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="journal" importance="optional">
+        <cmd>Enable persistent storage for log files, if desired.</cmd>
+        <info>By default, RHEL/CentOS systems store log data only in memory or in a ring buffer in
+          the <filepath>/run/log/journal</filepath> directory. By performing this step, log data
+          persists and can be saved indefinitely, if you implement log file rotation practices. For
+          more information, refer to your operating system documentation.</info>
+        <stepxmp>
+          <codeblock>mkdir -p /var/log/journal &#38;&#38; systemctl restart systemd-journald</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="dnsmasq">
+        <cmd>Enable and start the Dnsmasq package.</cmd>
+        <info>The package facilitates networking among Docker containers.</info>
+        <stepxmp>
+          <codeblock>systemctl enable dnsmasq &#38;&#38; systemctl start dnsmasq</codeblock>
+        </stepxmp>
+        <!-- One more edit needed; waiting on ZEN-18437  
+        <info>If name resolution in your environment relies solely on entries 
+          in <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> 
+          to enable containers to use the file:</info>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/dnsmasq.conf</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>TBD</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart dnsmasq</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        -->
+      </step>
+      
+      <step id="ntp">
+        <cmd>Install and configure the NTP package.</cmd>
+        <info>
+          <note>This procedure assumes the host has internet access. 
+            To install and configure NTP on a host that does not have 
+            internet access, see <xref keyref="install-ntp-ntp"/>.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Install the package.</cmd>
+            <stepxmp>
+              <codeblock>yum install -y ntp</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set the system time.</cmd>
+            <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable ntpd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
+            <info>Currently, an unresolved issue associated with NTP
+              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot. 
+              The following commands provide a workaround to ensure that it does. </info>
+            <stepxmp>
+              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="nc-online">
+        <cmd>Install the <xref keyref="url-nmap-ncat">Nmap Ncat</xref> utility.</cmd>
+        <info>The utility is used to verify ZooKeeper ensemble configurations.
+        <b>If you are installing a single-host deployment, skip this step</b>.</info>
+        <stepxmp>
+          <codeblock>yum install -y nmap-ncat</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="nc-online-pool">
+        <cmd>Install the <xref keyref="url-nmap-ncat">Nmap Ncat</xref> utility.</cmd>
+        <info>The utility is used to verify ZooKeeper ensemble configurations. <b>Perform this step
+            only on the two delegate hosts that are designated for use in the ZooKeeper
+          ensemble</b>.</info>
+        <stepxmp>
+          <codeblock>yum install -y nmap-ncat</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="docker-install">
+        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>, and then disable accidental upgrades.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Add the Docker repository to the host's repository list.</cmd>
+            <stepxmp>
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker.repo
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install Docker Engine from the remote repository.</cmd>
+            <stepxmp>
+              <codeblock>yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
+              a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change the value of the <codeph>enabled</codeph> key
+              from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="docker-install-offline">
+        <cmd>Install Docker Engine
+          <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install Docker Engine.</cmd>
+            <stepxmp>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="docker-tmp">
+        <cmd>Create a symbolic link for the Docker temporary directory.</cmd>
+        <info>Docker uses its temporary directory to spool images. The
+          default directory is <filepath>/var/lib/docker/tmp</filepath>.
+          The following command specifies the same directory that 
+          <ph keyref="nm-cc"/> uses, <filepath>/tmp</filepath>.
+          You can specify any directory that has a minimum of 10GB
+          of unused space.</info>
+        <substeps>
+          <substep>
+            <cmd>Create the <codeph>docker</codeph> directory in <filepath>/var/lib</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>mkdir /var/lib/docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create the link to <filepath>/tmp</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>ln -s /tmp /var/lib/docker/tmp</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="docker-svc-def">
+        <cmd>Create a <cmdname>systemd</cmdname> drop-in file 
+          for Docker Engine.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create the override directory.</cmd>
+            <stepxmp>
+              <codeblock>mkdir -p /etc/systemd/system/docker.service.d</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create the unit drop-in file.</cmd>
+            <stepxmp>
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/systemd/system/docker.service.d/docker.conf
+[Service]
+TimeoutSec=300
+EnvironmentFile=-/etc/sysconfig/docker
+ExecStart=
+ExecStart=/usr/bin/dockerd \$OPTIONS
+TasksMax=infinity
+EOF</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <stepxmp>
+              <codeblock>systemctl daemon-reload</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step id="docker-config">
+        <cmd>Configure and start the Docker service.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create a variable for the name of the Docker thin pool.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Thin-Pool-Device</varname> with the name of the
+                thin pool device created in the previous step:</p>
+              <codeblock>myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a variable for the IPv4 address of the master host.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Master-Host</varname> with the 
+                hostname or IPv4 address of the master host:</p>
+              <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create variables for adding arguments to the Docker configuration file. The
+                <codeph>--exec-opt</codeph> argument is a workaround for <xref
+                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+            <stepxmp>
+              <codeblock>myDriver="--storage-driver devicemapper"
+myLog="--log-level=error"
+myFix="--exec-opt native.cgroupdriver=cgroupfs"
+myFlag="--storage-opt dm.thinpooldev=$myPool"
+myReg="--insecure-registry=$masterIP:5000"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Add the arguments to the Docker configuration file.</cmd>
+            <stepxmp>
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myFlag $myReg'"' \
+  &#62;&#62; /etc/sysconfig/docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start or restart Docker.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart docker</codeblock>
+            </stepxmp>
+            <stepresult>The startup may take up to a minute, and may fail. If startup
+              fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
+          </substep>
+        </substeps>
+      </step>
+      
+      
+
+      <step id="docker-dns-flag">
+        <cmd>Configure name resolution in containers.</cmd>
+        <info>Each time it starts, <cmdname>docker</cmdname> selects an IPv4 
+          subnet for its virtual Ethernet bridge.
+          The selection can change; this step ensures consistency.</info>
+        <substeps>
+          <substep>
+            <cmd>Identify the IPv4 subnet and netmask <cmdname>docker</cmdname> 
+              has selected for its virtual Ethernet bridge.</cmd>
+            <stepxmp>
+              <codeblock>ip addr show docker0 | grep inet</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/sysconfig/docker</filepath> in a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add the following flags to the end of 
+              the <varname>OPTIONS</varname> declaration.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Bridge-Subnet</varname> with the IPv4 
+                subnet <cmdname>docker</cmdname> selected for its
+                virtual bridge:</p>
+              <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/16</codeblock>
+            </stepxmp>
+            <info>For example, if the bridge subnet is 172.17.0.1, add the following flags:
+              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/16</codeblock>
+            </info>
+            <info>
+              <note>Use a space character (<codeph>&#32;</codeph>) to separate flags,
+              and make sure the double quote character (<codeph>&#34;</codeph>)
+              delimits the declaration of <varname>OPTIONS</varname>.</note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Restart the Docker service.</cmd>
+            <stepxmp><codeblock>systemctl restart docker </codeblock></stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="zenoss-repo">  
+        <cmd>Add the Zenoss repositories to the host's repository list.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Install the repository package.</cmd>
+            <info>The package adds the Zenoss stable, 
+              unstable, and testing repositories to <filepath>/etc/yum.repos.d</filepath>. 
+              All three repositories are disabled.</info>
+            <stepxmp>
+              <codeblock>rpm -ivh http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Clean out the <cmdname>yum</cmdname> cache directory.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="install-serviced">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/>.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install <ph keyref="nm-cc"/> from the remote repository.</cmd>
+            <stepxmp>
+              <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="serviced-cfg-backup">
+        <cmd>Make a backup copy of the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Make a copy of <filepath>/etc/default/serviced</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set the backup file permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step id="install-serviced-offline">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install <ph keyref="nm-cc"/>.</cmd>
+            <stepxmp>
+              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="zk-define-ips">
+        <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
+        <stepxmp>Replace <varname>Master</varname> with the IP address or hostname
+          of the <ph keyref="nm-cc"/> master host, and replace 
+          <varname>Delegate-A</varname> and <varname>Delegate-B</varname>
+          with the IP addresses or hostnames of the delegate hosts to include in the ensemble:
+          <codeblock>node1=<varname>Master</varname>
+node2=<varname>Delegate-A</varname>
+node3=<varname>Delegate-B</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="zk-set-nodes">
+        <cmd>Specify the nodes in the ZooKeeper ensemble.</cmd>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
+  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step id="zk-set-timeout">
+        <cmd>Specify the timeout for inactive connections.</cmd>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK_SESSION_TIMEOUT=15" &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step id="zk-pull-isvcs">
+        <cmd>Pull the required <ph keyref="nm-cc"/> ZooKeeper image from the master host.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the image to pull.</cmd>
+            <stepxmp>
+              <codeblock>serviced version | grep IsvcsImages</codeblock>
+            </stepxmp>
+            <stepresult>Example result:
+              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v48 zenoss/isvcs-zookeeper:v7]</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Pull the <ph keyref="nm-cc"/> ZooKeeper image.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Isvcs-ZK-Image</varname> with the name and version
+                number of the ZooKeeper image from the previous substep:</p>
+              <codeblock>docker pull <varname>Isvcs-ZK-Image</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="nfs-workaround">
+        <cmd>Add a drop-in file for the NFS service.</cmd>
+        <info>This step is a workaround for an <xref keyref="url-rpcbin-bug">an unresolved issue</xref>.</info>
+        <substeps>
+          <substep>
+            <cmd>Create a directory for the drop-in file.</cmd>
+              <stepxmp>
+                <codeblock>mkdir -p /etc/systemd/system/nfs-server.service.d</codeblock>
+              </stepxmp>    
+          </substep>
+          <substep>
+            <cmd>Create the drop-in file.</cmd>
+            <stepxmp>
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/systemd/system/nfs-server.service.d/nfs-server.conf
+[Unit]
+Requires= 
+Requires= network.target proc-fs-nfsd.mount rpcbind.service
+Requires= nfs-mountd.service
+EOF</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <stepxmp>
+              <codeblock>systemctl daemon-reload</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

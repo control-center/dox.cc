@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Adding the master host to a resource pool</title>
+  <refbody>
+    <section>
+      <p>Perform one of the procedures in this section.</p>
+    </section>
+  </refbody>
+</reference>

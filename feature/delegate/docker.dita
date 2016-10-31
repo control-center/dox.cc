@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing Docker and <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>This procedure installs and configures Docker, 
+      and installs <ph keyref="nm-cc"/>.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-install">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-tmp">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-svc-def">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/install-serviced">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/create-thin-docker">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-config">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-dns-flag">
+        <cmd/>
+      </step>
+      
+    </steps>
+    <postreq>Proceed to the next chapter and configure the host.</postreq>
+  </taskbody>
+</task>

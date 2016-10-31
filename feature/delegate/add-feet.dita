@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding a delegate host using a file</title>
+  <taskbody>
+    <context>Use this procedure to add a delegate host to a resource
+      pool by using a key bundle file.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master
+          host <ph conkeyref="strings/login-serviced"/>.</cmd>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Create a new resource pool, if desired.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the names of the existing resource pools.</cmd>
+            <stepxmp>
+              <codeblock>serviced pool list</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a new resource pool.</cmd>
+            <stepxmp>Replace <varname>Resource-Pool</varname> with the name of a new resource pool:
+              <codeblock>serviced pool add <varname>Resource-Pool</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Add a delegate host to a resource pool.</cmd>
+        <info>You can use a hostname or an IP address to identify a <ph keyref="nm-cc"/>
+          cluster host. If you use a hostname, all of the hosts in your cluster must be 
+          able to resolve it, either through an entry in <filepath>/etc/hosts</filepath>
+          or through a nameserver on the network.</info>
+        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname
+          or IP address of a delegate host, and replace <varname>Resource-Pool</varname>
+          with the name of a resource pool:
+          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname></codeblock>
+        </stepxmp>
+        <stepresult>The command creates a unique key bundle file in the local
+          directory.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Use a file transfer utility such as <cmdname>scp</cmdname> to copy the key bundle file
+          to the delegate host.</cmd>
+        <info>Once copied to the delegate host, the key bundle file is not needed on the
+        master host and can be deleted.</info>
+      </step>
+      
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> delegate 
+          host <ph conkeyref="strings/login-serviced"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Install the key bundle.</cmd>
+        <stepxmp>Replace <varname>Key-Bundle-Path</varname> with the pathname
+          of the key bundle file:
+          <codeblock>serviced host register <varname>Key-Bundle-Path</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Delete the key bundle file.</cmd>
+        <info>The file is no longer needed on the delegate host.</info>
+        <stepxmp>Replace <varname>Key-Bundle-Path</varname> with the pathname
+          of the key bundle file:
+          <codeblock>rm <varname>Key-Bundle-Path</varname></codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+

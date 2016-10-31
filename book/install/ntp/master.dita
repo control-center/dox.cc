@@ -2,11 +2,16 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Configuring an NTP master server</title>
+  <prolog>
+    <source href="http://www.borngeek.com/2008/04/03/using-ntp-on-a-private-network/"
+      scope="external" format="html" />
+  </prolog>
   <taskbody>
     <context>
-      <p>This procedure configures an NTP master server on the <ph keyref="nm-cc"/> master host.
+      <p>Use this procedure to configure an NTP master server on the <ph keyref="nm-cc"/> master host.
       Perform this procedure only if the host does not have internet access.</p>
-      <note>Do not perform this procedure on VMware vSphere guests.</note>
+      <note>On VMware vSphere guests, disable time synchronization between guest 
+        and host operating systems before performing this procedure.</note>
     </context>
     <steps>
       <step>
@@ -20,7 +25,6 @@
       </step>
       
       <step>
-        <!-- Source: http://www.borngeek.com/2008/04/03/using-ntp-on-a-private-network/ -->
         <cmd>Edit the NTP configuration file./</cmd>
         <substeps>
           <substep>
@@ -61,7 +65,7 @@ restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
           <substep>
             <cmd>Replace <codeph>NETMASK</codeph> with the IPv4 network mask 
               that corresponds with the address range.</cmd>
-            <stepxmp>For example, the network mask for <codeph>203.0.113.0</codeph> is
+            <stepxmp>For example, a valid network mask for <codeph>203.0.113.0</codeph> is
                 <codeph>255.255.255.0</codeph>.</stepxmp>
           </substep>
           <substep>
@@ -108,7 +112,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
     </steps>
   </taskbody>
 </task>
-
 
 
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+<title>Misc</title>
+  <chapter keyref="plan-misc-misc">
+    <topicref keyref="plan-misc-package"/>
+    <topicref keyref="browsers-120"/>
+  </chapter>
+</bookmap>

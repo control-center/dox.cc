@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="taskid">
-  <title>ZooKeeper ensemble configuration</title>
+  <title>Configuring a ZooKeeper ensemble</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> relies on <xref keyref="url-zookeeper">Apache ZooKeeper</xref> to
-        coordinate its services. The configuration steps in this section create a ZooKeeper ensemble
-        of 3 nodes.</p>
-      <p>A ZooKeeper ensemble requires a minimum of 3 nodes, and 3 nodes is sufficient for most
-        deployments. A 5-node configuration improves failover protection during maintenance windows.
-        Ensembles larger than 5 nodes are not necessary. An odd number of nodes is recommended, and
-        an even number of nodes is strongly discouraged.</p>
+      <p>This chapter describes how to create a ZooKeeper ensemble (cluster) for a
+        multi-host <ph keyref="nm-cc"/> deployment. If you are installing a 
+        single-host deployment, or if your deployment includes fewer than two 
+        delegate hosts, skip this chapter.</p>
     </section>
   </refbody>
 </reference>

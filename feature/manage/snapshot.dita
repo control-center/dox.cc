@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating a snapshot</title>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> host <ph conkeyref="strings/login-serviced"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Find the identifier of the service; for example,
+            <ph><filepath>Zenoss.resmgr</filepath></ph>. </cmd>
+        <info>
+          <codeblock>serviced service list</codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>Create the snapshot.</cmd>
+        <info> Replace <varname>SERVICEID</varname> with the identifier of the
+          service.<codeblock>serviced snapshot add <varname>SERVICEID</varname></codeblock></info>
+      </step>
+      <step>
+        <cmd importance="optional">Verify the existence of the snapshot.</cmd>
+        <info>
+          <codeblock>serviced snapshot list</codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd importance="optional">To keep the snapshot for longer than the default 12-hour TTL, tag
+          it.</cmd>
+        <info> Replace <varname>SNAPSHOTID</varname> with the identifier of your snapshot and
+            <varname>TAG-NAME</varname> with your
+          text.<codeblock>serviced snapshot tag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock></info>
+      </step>
+      <step>
+        <cmd importance="optional">To make a snapshot subject to the TTL value, untag it.</cmd>
+        <info>Replace <varname>SNAPSHOTID</varname> with the identifier of your snapshot and
+            <varname>TAG-NAME</varname> with your
+          text.<codeblock>serviced snapshot untag <varname>SNAPSHOTID</varname> <varname>TAG-NAME</varname></codeblock></info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

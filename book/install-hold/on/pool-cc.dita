@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring and starting <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>Use this procedure to configure a <ph keyref="nm-cc"/> cluster host as a worker.
+    Repeat this procedure on each worker host in the cluster.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/agent">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="shared-install-tasks/cfg-subnet">
+        <cmd></cmd>
+      </step>
+      
+      <step>
+        <cmd>Start the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>).</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+        <info>To monitor progress, enter the following command:
+          <codeblock>journalctl -flu serviced -o cat</codeblock>
+        </info>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

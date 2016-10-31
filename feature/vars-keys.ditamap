@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/vars</title>
+  <topicgroup>
+    <keydef keys="feature-vars-all"
+            href="vars/all.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-best"
+            href="vars/best.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-browser"
+            href="vars/browser.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-debug"
+            href="vars/debug.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-delegate-about"
+            href="vars/delegate-about.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-delegate"
+            href="vars/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-endpoints"
+            href="vars/endpoints.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-file"
+            href="vars/file.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-http"
+            href="vars/http.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-master"
+            href="vars/master.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-mux"
+            href="vars/mux.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-networking"
+            href="vars/networking.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-role"
+            href="vars/role.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-rpc"
+            href="vars/rpc.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-storage"
+            href="vars/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-tune-master"
+            href="vars/tune-master.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-tune"
+            href="vars/tune.dita"
+            format="dita"
+    />
+    <keydef keys="feature-vars-vars"
+            href="vars/vars.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

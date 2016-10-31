@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title><ph keyref="nm-cc"/> terms and concepts</title>
+  <conbody>
+    <dl>
+      
+      <dlentry>
+        <dt>application</dt>
+        <dd>A collection of one or more software programs that have been converted into Docker containers.</dd>
+      </dlentry>
+      
+      <dlentry>
+        <dt>resource pool</dt>
+        <dd>A collection of one or more hosts, each with its own compute, network, and storage
+          resources. The name of the default resource pool is <codeph>default</codeph>.</dd>
+      </dlentry>
+      
+      <dlentry>
+        <dt>resource pool host</dt>
+        <dd>A host that runs the application services scheduled for the resource pool to which it
+          belongs. A system may be configured as agent and master, or just agent, or just
+          master.</dd>
+      </dlentry>
+      
+      <dlentry>
+        <dt>master host</dt>
+        <dd>The host that runs the application services scheduler, the Docker registry, the
+          distributed file system, and other internal services, including the server for the <ph
+            keyref="nm-cc"/> browser interface. A system may be configured as agent and master, or
+          just agent, or just master. Only one system in a <ph keyref="nm-cc"/> cluster may be the
+          master.</dd>
+      </dlentry>
+      
+      <dlentry>
+        <dt>cluster</dt>
+        <dd>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</dd>
+      </dlentry>
+      
+    </dl>
+  </conbody>
+</concept>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Administration reference</title>
+   <chapter keyref="feature-cluster-manage-admin">
+      <topicref keyref="feature-cluster-manage-resize"/>
+      <topicref keyref="feature-cluster-manage-backup-restore">
+         <topicref keyref="feature-cluster-manage-backup-restore-best-pract"/>
+         <topicref keyref="feature-cluster-manage-backup"/>
+         <topicref keyref="feature-cluster-manage-backup-from-cli">
+            <topicref keyref="feature-cluster-manage-backup-cli-all"/>
+            <topicref keyref="feature-cluster-manage-backup-cli-exclude-one"/>
+            <topicref keyref="feature-cluster-manage-backup-cli-exclude-mult"/>
+         </topicref>
+         <topicref keyref="feature-cluster-manage-restore"/>
+      </topicref>
+      <topicref keyref="feature-cluster-manage-snapshot-rollback">
+         <topicref keyref="feature-cluster-manage-snapshot"/>
+         <topicref keyref="feature-cluster-manage-rollback"/>
+      </topicref>
+      <topicref keyref="feature-cluster-manage-intro-stop-start">
+         <topicref keyref="feature-cluster-manage-stop-1"/>
+         <topicref keyref="feature-cluster-manage-start-1"/>
+         <topicref keyref="feature-cluster-manage-stop-n">
+            <topicref keyref="feature-cluster-manage-stop-n-master"/>
+            <topicref keyref="feature-cluster-manage-stop-n-delegate"/>
+         </topicref>
+         <topicref keyref="feature-cluster-manage-start-n"/>
+      </topicref>
+   </chapter>
+</bookmap>

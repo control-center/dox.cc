@@ -87,6 +87,72 @@
         </substeps>
       </step>
       
+      <step id="docker-dns-flag">
+        <cmd>Configure name resolution in containers.</cmd>
+        <info>Each time it starts, <cmdname>docker</cmdname> selects an IPv4 
+          subnet for its virtual Ethernet bridge.
+          The selection can change; this step ensures consistency.</info>
+        <substeps>
+          <substep>
+            <cmd>Identify the IPv4 subnet and netmask <cmdname>docker</cmdname> 
+              has selected for its virtual Ethernet bridge.</cmd>
+            <stepxmp>
+              <codeblock>ip addr show docker0 | grep inet</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/sysconfig/docker</filepath> in a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add the following flags to the end of 
+              the <varname>OPTIONS</varname> declaration.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Bridge-Subnet</varname> with the IPv4 
+                subnet <cmdname>docker</cmdname> selected for its
+                virtual bridge:</p>
+              <codeblock>--dns=<varname>Bridge-Subnet</varname> --bip=<varname>Bridge-Subnet</varname>/16</codeblock>
+            </stepxmp>
+            <info>For example, if the bridge subnet is 172.17.0.1, add the following flags:
+              <codeblock>--dns=172.17.0.1 --bip=172.17.0.1/16</codeblock>
+            </info>
+            <info>
+              <note>Use a space character (<codeph>&#32;</codeph>) to separate flags,
+                and make sure the double quote character (<codeph>&#34;</codeph>)
+                delimits the declaration of <varname>OPTIONS</varname>.</note>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Restart the Docker service.</cmd>
+            <stepxmp><codeblock>systemctl restart docker </codeblock></stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="update-kernel">
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+              perform the following substep.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Update the kernel or the operating system and then restart the host.</cmd>
+            <info>The following commands require internet access 
+              or a local mirror of operating system packages.</info>
+            <stepxmp><b>Update only the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+            <stepxmp><b>Update the operating system, including the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
       <step id="docker-svc-def">
         <cmd>Create a <cmdname>systemd</cmdname> override file 
           for the Docker service definition.</cmd>
@@ -164,7 +230,7 @@ EOF</codeblock>
           <substep>
             <cmd>Identify the customized variables in the pre-upgrade configuration file.</cmd>
             <stepxmp>
-              <codeblock>egrep '^[^#]*SERVICED' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
+              <codeblock>grep -E '^\b*SERVICED' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
           <substep>

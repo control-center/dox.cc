@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating the application data thin pool</title>
+  <taskbody>
+    <context>Use this procedure to create a thin pool for application data storage.
+      <p>The following <ph keyref="nm-cc"/> configuration variables are used to 
+        specify application data thin pools:</p>
+      <dl>
+        <dlentry conkeyref="feature-vars-file/SERVICED_FS_TYPE"><dt/><dd/></dlentry>
+        <dlentry conkeyref="feature-vars-file/SERVICED_DM_THINPOOLDEV"><dt/><dd/></dlentry>
+      </dl>
+      <note>This procedure does not include a specific value for the size of the thin pool. For
+        more information about sizing this resource, refer to the documentation for your
+        application. Or, use the suggested minimum value, 200GB. You can add storage to an LVM thin
+        pool at any time.</note>
+      <p>Perform these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create an LVM thin pool for application data.</cmd>
+        <info>For more information about the <cmdname>serviced-storage</cmdname> command,
+          see <xref keyref="feature-cli-serviced-storage"/>.</info>
+        <stepxmp>Replace <varname>Value</varname> with the fixed or relative amount of space to use
+          for the thin pool; and replace <varname>Storage</varname> with the paths of one or more
+          block devices or partitions, or the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool --size=<varname>Value</varname> serviced <varname>Storage</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result is the device mapper name of the thin pool, which always
+          starts with <codeph>/dev/mapper</codeph>. Record the name for use in the next
+          step.</stepresult>
+      </step>
+
+      <step>
+        <cmd>Edit storage variables in the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
+          <substep>
+            <cmd>Locate the line for the <varname>SERVICED_FS_TYPE</varname> variable, and 
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
+              <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
+            <stepxmp>Replace <varname>Thin-Pool-Name</varname> with the device mapper 
+              name of the thin pool for application data:
+              <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+      
+    </steps>
+    <postreq>Proceed to the next chapter and configure the host.</postreq>
+  </taskbody>
+</task>

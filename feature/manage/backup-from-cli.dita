@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Backing up using the CLI</title>
+  <shortdesc>As an alternative to performing application backup from the <ph keyref="nm-cc"/>
+    browser interface, you can use the command-line interface (CLI). </shortdesc>
+  <taskbody>
+    <context id="context_tbt_5px_mx">Using the CLI, you can back up your entire system or specify
+      one or more tenant volumes to exclude from the backup. For example, to save resources, you
+      might exclude the tenant volume that contains performance data,
+        <filepath>hbase-master</filepath>. If you want to create a backup to restore on another
+      system, you might exclude the tenant volumes for the events database and index,
+        <filepath>mariadb-events</filepath> and <filepath>zeneventserver</filepath>.<p>The default
+        directory for backup files is <filepath>/opt/serviced/var/backups</filepath>. The directory
+        can be changed by specifying the <varname>SERVICED_BACKUPS_PATH</varname> environment
+        variable in the <ph keyref="nm-cc"/> configuration file,
+          <filepath>/etc/default/serviced</filepath>.</p></context>
+  </taskbody>
+</task>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating the cluster in standby mode</title>
+  <taskbody>
+    <context>Perform this procedure to create the high-availability cluster in standby mode.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Authenticate the nodes.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster auth <varname>Primary-Public-Name</varname> <varname>Secondary-Public-Name</varname></codeblock>
+        </stepxmp>
+        <stepresult>When prompted, enter the password
+          of the <codeph>hacluster</codeph> account.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Generate and synchronize an initial (empty) cluster definition.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster setup --name serviced-ha \
+  <varname>Primary-Public-Name</varname> <varname>Secondary-Public-Name</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start the PCS management agents on both nodes in the cluster.</cmd>
+        <info>The cluster definition is empty, so starting the cluster management agents
+          has no side effects.</info>
+        <stepxmp>
+          <codeblock>pcs cluster start --all</codeblock>
+        </stepxmp>
+        <stepresult>The cluster management agents start, on both nodes.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Check the status.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster status</codeblock>
+        </stepxmp>
+        <stepresult>The expected result is <codeph>Online</codeph>, for both nodes.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Put the cluster in standby mode.</cmd>
+        <info>Pacemaker begins monitoring and managing the different resources as they are defined,
+          which can cause problems; standby mode prevents the problems.</info>
+        <stepxmp>
+          <codeblock>pcs cluster standby --all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Configure cluster services to start when the node starts.</cmd>
+        <info>For more information about cluster startup options, refer to the <xref
+            keyref="url-pacemaker-clusters">Pacemaker documentation</xref>.</info>
+        <stepxmp>
+          <codeblock>systemctl enable corosync; systemctl enable pacemaker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Replicate the configuration on the secondary node.</cmd>
+        <substeps>
+          <substep>
+            <cmd>In a separate window, log in to the 
+              secondary node <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Configure cluster services to start when the node starts.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable corosync; systemctl enable pacemaker</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>This procedure starts the <ph keyref="nm-cc"/> service, <cmdname>serviced</cmdname>.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="login-as/root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Start <codeph>serviced</codeph>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+        <info>To monitor progress, enter the following command:
+          <codeblock>journalctl -flu serviced -o cat</codeblock>
+        </info>
+        <stepresult>The <ph keyref="nm-cc"/> browser and
+          command-line interfaces are unavailable until the <ph keyref="nm-cc"/> images are tagged 
+          and the internal services are
+          started. The process takes approximately 3 minutes. When the message <codeph>Trying to 
+            discover my pool</codeph> repeats, <ph keyref="nm-cc"/> is ready for the next steps.</stepresult>
+      </step>
+      
+      <step importance="optional">
+        <note>Perform this step <b>only if you are installing a single-host deployment</b>.</note>
+        <cmd>Add the master host to the <codeph>default</codeph> resource pool.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the <ph
+            keyref="nm-cc"/> master host:</p>
+          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
+          <p>If you enter a hostname, all hosts in your <ph keyref="nm-cc"/> cluster must be able to
+            resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
+            a nameserver on your network.</p>
+        </stepxmp>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

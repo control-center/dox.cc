@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Staging files for offline installation</title>
+  <taskbody>
+    
+    <prereq>Before performing this procedure, complete all of the steps in <xref
+        keyref="off-ha-download"/>. In addition, verify that approximately 4GB of temporary space
+      is available on the filesystem where <filepath>/root</filepath> is located.</prereq>
+    
+    <context>This procedure adds files for offline installation to the master node.
+      The staged files are required in subsequent procedures.</context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Copy the archive files from your portable storage medium to
+          <filepath>/root</filepath>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Set the file permissions of the self-extracting archive files to execute.</cmd>
+        <stepxmp>
+          <codeblock>chmod +x /root/*.run</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>cd /root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Install the <ph keyref="nm-platform"/> repository mirror.</cmd>
+        <stepxmp>
+          <codeblock>yum install -y ./yum-mirror-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Delete the package file, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm ./yum-mirror-*.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

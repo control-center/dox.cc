@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/zk</title>
+  <topicgroup>
+    <keydef keys="feature-zk-about"
+            href="zk/about.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-delegate1"
+            href="zk/delegate1.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-delegate2"
+            href="zk/delegate2.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-enable"
+            href="zk/enable.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-example"
+            href="zk/example.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-master"
+            href="zk/master.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-nodes"
+            href="zk/nodes.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-other"
+            href="zk/other.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-vars"
+            href="zk/vars.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-zk"
+            href="zk/zk.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="topicid">
+  <title>Delegate host storage requirements</title>
+  <refbody>
+    <section>
+      <p>This section provides a quick reference to the block storage requirements of 
+        <ph keyref="nm-cc"/> delegate hosts. For more information, refer to the
+        <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <p><ph keyref="nm-cc"/> cluster hosts need either unformatted block storage devices or partitions,
+        or free space in one or more LVM volume groups.</p>
+      <ul>
+        <li>Enter the following command to display information about block storage:
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </li>
+        <li>Enter the following command to display information about LVM volume groups:
+          <codeblock>vgdisplay</codeblock>
+        </li>
+      </ul>
+      
+      <p>The following storage configuration is recommended for delegate hosts:</p>
+      <ul>
+        <li>One local, high-performance device or partition with a minimum of 35GB of storage,
+          formatted with XFS, for the root filesystem. </li>
+        <li>One local, unformatted, high-performance device or partition with 50GB of storage.
+          A step in this chapter configures the space as an LVM thin pool for Docker data.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing <ph keyref="nm-platform"/></title>
+  <taskbody>
+    <context>This procedure installs <ph keyref="nm-platform"/>
+      and configures the NFS server.</context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Install <ph keyref="nm-platform"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum install -y zenoss-resmgr-service</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Configure and disable the NFS service.</cmd>
+        <info>Currently, <xref keyref="url-rpcbin-bug">an unresolved issue</xref> prevents the
+          NFS server from starting correctly. The following commands provide a workaround to ensure
+          that it does. </info>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/lib/systemd/system/nfs-server.service</filepath> 
+              with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change <cmdname>rpcbind.target</cmdname> to <cmdname>rpcbind.service</cmdname> on
+              the following line:</cmd>
+            <stepxmp>
+              <codeblock>Requires= network.target proc-fs-nfsd.mount rpcbind.target</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <stepxmp>
+              <codeblock>systemctl daemon-reload</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Stop and disable the NFS service.</cmd>
+            <info>The cluster management software controls the NFS service.</info>
+            <stepxmp>
+              <codeblock>systemctl stop nfs &#38;&#38; systemctl disable nfs</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      
+    </steps>
+  </taskbody>
+</task>

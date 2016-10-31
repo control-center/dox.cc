@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating a filesystem for <ph keyref="nm-cc"/> internal services</title>
+  <taskbody>
+    <context>
+      <p>This procedure creates an XFS filesystem on a primary partition.</p>
+      
+      <note importance="high"><b>Perform this procedure only on the two resource pool hosts that are
+          designated for use in the ZooKeeper ensemble</b>. No other resource pool hosts run <ph
+          keyref="nm-cc"/> internal services, so no other pool hosts need a partition for internal
+        services data.</note>
+    </context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the target primary partition for the filesystem to create.</cmd>
+        <stepxmp>
+          <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create an XFS filesystem.</cmd>
+        <stepxmp>Replace <varname>Isvcs-Partition</varname> with the path of the target primary partition:
+          <codeblock>mkfs -t xfs <varname>Isvcs-Partition</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create the mount point for <ph keyref="nm-cc"/> internal services data.</cmd>
+        <stepxmp>
+          <codeblock>mkdir -p /opt/serviced/var/isvcs</codeblock>
+        </stepxmp>
+      </step>
+
+      <step>
+        <cmd>Add an entry to the <filepath>/etc/fstab</filepath> file.</cmd>
+        <stepxmp>Replace <varname>Isvcs-Partition</varname> with the path of the primary
+          partition used in the previous step:
+          <codeblock>echo "<varname>Isvcs-Partition</varname> \
+  /opt/serviced/var/isvcs xfs defaults 0 0" >> /etc/fstab</codeblock>
+        </stepxmp>
+      </step>
+
+      <step>
+        <cmd>Mount the filesystem, and then verify it mounted correctly.</cmd>
+        <stepxmp>
+          <codeblock>mount -a &#38;&#38; mount | grep isvcs</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>/dev/xvdb1 on /opt/serviced/var/isvcs type xfs (rw,relatime,seclabel,attr2,inode64,noquota)</codeblock>
+        </stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

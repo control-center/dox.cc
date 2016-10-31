@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>serviced-storage</title>
+  <shortdesc>The <cmdname>serviced-storage</cmdname> command manages <ph keyref="nm-cc"/>
+    storage.</shortdesc>
+  <refbody>
+    <section>
+      <title>USAGE</title>
+      <p>Use this command to create LVM thin pools for Docker Engine and <ph keyref="nm-cc"/>.</p>
+    </section>
+    <section>
+      <title>SYNTAX</title>
+      <codeblock>serviced-storage  [-h|--help] [-o <varname>DeviceMapperOption</varname>=<varname>Value</varname>] [-v] Command [<varname>CommandOptions</varname>]</codeblock>
+    </section>
+    <section>
+      <title>GLOBAL OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Shows the help information.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>-o <varname>DeviceMapperOption</varname>=<varname>Value</varname></dt>
+          <dd>A device mapper option. Applies only to device mapper drivers.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>-v</dt>
+          <dd>Displays verbose logging.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>COMMANDS</title>
+      <dl>
+        <dlentry>
+          <dt>check</dt>
+          <dd>Check for orphaned devices.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>create</dt>
+          <dd>Create a volume on a driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>create-thin-pool</dt>
+          <dd>Create an LVM thin pool.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>disable</dt>
+          <dd>Disable a driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>init</dt>
+          <dd>Initialize a driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>list</dt>
+          <dd>Print volumes on a driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>mount</dt>
+          <dd>Mount an existing volume from a driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>remove</dt>
+          <dd>Remove an existing volume from a driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>resize</dt>
+          <dd>Resize an existing volume.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>set</dt>
+          <dd>Set the default driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>status</dt>
+          <dd>Print the driver status</dd>
+        </dlentry>
+        <dlentry>
+          <dt>sync</dt>
+          <dd>Sync data from a volume to another volume.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>unset</dt>
+          <dd>Unset the default driver.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>version</dt>
+          <dd>Print the version and exit.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>serviced-storage check</title>
+      <p>The <codeph>serviced-storage check</codeph> command searches for orphaned snapshot devices
+        in the <cmdname>serviced</cmdname> application data thin pool and removes them, if
+        requested. This command requires the path of <cmdname>serviced</cmdname> tenant volumes,
+        which is determined by the <varname>SERVICED_VOLUMES_PATH</varname> variable in
+          <filepath>/etc/default/serviced</filepath>. The default path is
+          <filepath>/opt/serviced/var/volumes</filepath>.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] check [-c|--clean] <varname>Path</varname></codeblock>
+      <p>Command options:</p>
+      <dl>
+        <dlentry>
+          <dt>[-c|--clean]</dt>
+          <dd>Remove orphaned snapshot devices.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>serviced-storage create-thin-pool</title>
+      <p>The <codeph>serviced-storage create-thin-pool</codeph> command creates an LVM thin pool
+        either for Docker data or for <ph keyref="nm-cc"/> application data. When devices are
+        specified, the command creates an LVM volume group.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] create-thin-pool [-s|--size]=[<varname>Value</varname>][G|%] \
+        [docker|serviced] [<varname>DevicePath</varname> [<varname>DevicePath</varname>...]|<varname>VolumeGroupName</varname>]</codeblock>
+      <p>Command options:</p>
+      <dl>
+        <dlentry>
+          <dt>[-s|--size]=[<varname>Value</varname>][G|%]</dt>
+          <dd>The size of the thin pool to create. The size can be a fixed value (in gigabytes) or a
+            relative value (a percentage) of the available storage. When this option is not used,
+            the thin pool size defaults to 90% of the specified storage resource.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>serviced-storage resize</title>
+      <p>The <codeph>serviced-storage resize</codeph> command increases the size of a
+          <cmdname>serviced</cmdname> tenant device in its LVM thin pool. Like LVM thin pools, the
+        size of a <cmdname>serviced</cmdname> tenant device can never decrease.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] resize [-d|--driver]=<varname>Value</varname> <varname>TenantID</varname> <varname>NewSize</varname></codeblock>
+      <p>Command options:</p>
+      <dl>
+        <dlentry>
+          <dt>[-d|--driver]=<varname>Value</varname></dt>
+          <dd>The path of the tenant volume.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>EXAMPLES</title>
+      <p>Create an LVM volume group named <codeph>zenoss</codeph> and use it for both thin pools:</p>
+      <codeblock>vgcreate zenoss /dev/sdb /dev/sdc
+serviced-storage create-thin-pool --size=50G docker zenoss
+serviced-storage create-thin-pool --size=50% serviced zenoss</codeblock>
+      <p>If you specify devices or partitions, <cmdname>serviced-storage</cmdname> creates an LVM
+        volume group with the same name as the thin pool. The following example yields the same
+        result as the previous, except the name of the volume group is <codeph>docker</codeph>
+        instead of <codeph>zenoss</codeph>:</p>
+      <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sdb /dev/sdc
+serviced-storage create-thin-pool --size=50% serviced docker</codeblock>
+      <p>Create thin pools on separate block devices:</p>
+      <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sdb
+serviced-storage create-thin-pool --size=200G serviced /dev/sdc</codeblock>
+      <p>Create thin pools on separate partitions:</p>
+      <codeblock>serviced-storage create-thin-pool --size=50% docker /dev/sdb1
+serviced-storage create-thin-pool serviced /dev/sdc3</codeblock>
+      <p>Increase the size of the <cmdname>serviced</cmdname> LVM thin pool, and then increase the
+        size of a <cmdname>serviced</cmdname> tenant device.</p>
+      <codeblock>lvextend -L+300G zenoss/serviced-pool
+serviced-storage resize -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
+  -d /opt/serviced/var/volumes 58uuetj38draeu9alp6002b1y 200G</codeblock>
+    </section>
+  </refbody>
+</reference>

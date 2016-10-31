@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>ZooKeeper and <ph keyref="nm-cc"/></title>
+  <conbody>
+    <p><ph keyref="nm-cc"/> relies on <xref keyref="url-zookeeper">Apache ZooKeeper</xref> to
+      distribute and manage application services. ZooKeeper maintains the definitions of each 
+      service and the list of services assigned to each host. The scheduler, which runs on the
+      master host, determines assignments and sends them to the ZooKeeper node that is serving
+      as the ensemble leader. The leader replicates the assignments to the other ensemble nodes,
+      so that the other nodes can assume the role of leader if the leader node fails.</p>
+    
+    <p>All of the hosts in a <ph keyref="nm-cc"/> cluster retrieve assignments and service
+      definitions from the ZooKeeper ensemble leader and then start services in Docker containers as
+      required. So, the <ph keyref="nm-cc"/> configuration files of all <ph keyref="nm-cc"/> cluster
+      hosts must include a definition for the <varname>SERVICED_ZK</varname> variable, which
+      specifies the ZooKeeper endpoints of the ensemble nodes. Additional variables are required on
+      ensemble nodes.</p>
+    
+    <p>A ZooKeeper ensemble requires a minimum of three nodes, which is sufficient for most
+      environments. An odd number of nodes is recommended and an even number of nodes is strongly
+      discouraged. A five-node ensemble improves failover protection during maintenance windows but
+      larger ensembles yield no benefits. </p>
+    
+    <p>The <ph keyref="nm-cc"/> master host is always an ensemble node. All ensemble nodes should be
+      on the same subnet.</p>
+    
+  </conbody>
+</concept>

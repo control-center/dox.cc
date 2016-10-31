@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="taskid">
+  <title><ph keyref="nm-cc"/> configuration variables</title>
+  <conbody>
+    <p>This appendix includes recommended best practices for editing
+      the <codeph>serviced</codeph> configuration file, and descriptions
+      of the variables in the file.</p>
+  </conbody>
+</concept>
+
+

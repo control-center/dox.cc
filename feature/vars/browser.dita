@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Browser client variables</title>
+  <refbody>
+    <section>
+      <p>The variables in the following table are set only on the master host.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_UI_PORT"><varname>SERVICED_UI_PORT</varname></xref></entry>
+              <entry>The port on which the HTTP server listens for requests.</entry>
+            </row>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_UI_POLL_FREQUENCY"><varname>SERVICED_UI_POLL_FREQUENCY</varname></xref></entry>
+              <entry>The number of seconds between polls from browser interface clients.</entry>
+            </row>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_KEY_FILE"><varname>SERVICED_KEY_FILE</varname></xref></entry>
+              <entry>The path of a digital certificate key file.</entry>
+            </row>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_CERT_FILE"><varname>SERVICED_CERT_FILE</varname></xref></entry>
+              <entry>The path of a digital certificate file.</entry>
+            </row>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_SVCSTATS_CACHE_TIMEOUT"><varname>SERVICED_SVCSTATS_CACHE_TIMEOUT</varname></xref></entry>
+              <entry>The number of seconds to cache statistics about services.</entry>
+            </row>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_ADMIN_GROUP"><varname>SERVICED_ADMIN_GROUP</varname></xref></entry>
+              <entry>The group on the master host whose members can use the browser interface.</entry>
+            </row>
+            <row>
+              <entry><xref keyref="feature-vars-file/SERVICED_ALLOW_ROOT_LOGIN"><varname>SERVICED_ALLOW_ROOT_LOGIN</varname></xref></entry>
+              <entry>Determines whether <codeph>root</codeph> on 
+                the master host can use the browser interface.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

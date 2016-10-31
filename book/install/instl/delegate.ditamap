@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Install delegate</title>
+  <chapter keyref="install-instl-delegate">
+    <topicref keyref="feature-delegate-verify"/>
+    <topicref keyref="feature-delegate-storage"/>
+    <topicref keyref="feature-master-device-naming"/>
+    <topicref keyref="feature-delegate-prep"/>
+    <topicref keyref="feature-master-docker-install">
+      <topicref keyref="feature-master-docker-install-on"/>
+      <topicref keyref="feature-master-docker-install-off"/>
+    </topicref>
+    <topicref keyref="feature-delegate-cc-install">
+      <topicref keyref="feature-delegate-cc-install-on"/>
+      <topicref keyref="feature-delegate-cc-install-off"/>
+    </topicref>
+    <topicref keyref="feature-delegate-docker-config"/>
+   </chapter>
+</bookmap>

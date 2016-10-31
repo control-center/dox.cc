@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/misc</title>
+  <topicgroup>
+    <keydef keys="plan-misc-misc"
+            href="misc/misc.dita"
+            format="dita"
+    />
+    <keydef keys="plan-misc-package"
+            href="misc/package.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

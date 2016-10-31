@@ -1,71 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring a master node as a ZooKeeper node</title>
+  <title>Configuring the master host as a ZooKeeper node</title>
   <taskbody>
     <context>
-      <p>This procedure configures both <ph keyref="nm-cc"/> master nodes 
-      as members of the ZooKeeper ensemble.</p>
-      <note>For accuracy, this procedure constructs <ph keyref="nm-cc"/> configuration variables in
-        the shell and appends them to <filepath>/etc/default/serviced</filepath>. The last step is
-        to move the variables from the end of the file to more appropriate locations.</note>
+      <p>This procedure configures the <ph keyref="nm-cc"/> master host 
+      as a node in a ZooKeeper ensemble.</p>
     </context>
     <steps>
       <step>
-        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/zk-define-ips">
+        <cmd/>
       </step>
       
       <step>
-        <cmd>In a separate window, 
-          log in to the secondary node 
-          <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-      
-      <step>
-        <cmd>On both nodes, create a variable for each <ph keyref="nm-cc"/> host to include
-          in the ZooKeeper ensemble.</cmd>
-        <info>The variables are used in subsequent steps.</info>
-        <info>
-          <note>Define the variables identically
-            on both the primary and the secondary nodes,
-            and on each resource pool host.</note>
-        </info>
-        <stepxmp>
-          <p>Replace <varname>HA-Virtual-IP</varname> with the virtual 
-            IP address of the high-availability cluster,
-            and replace <varname>Pool-Host-A-IP</varname>
-            and <varname>Pool-Host-B-IP</varname> with the IP addresses of
-            the <ph keyref="nm-cc"/> resource pool hosts to include in
-            the ensemble:</p>
-          <codeblock>node1=<varname>HA-Virtual-IP</varname>
-node2=<varname>Pool-Host-A-IP</varname>
-node3=<varname>Pool-Host-B-IP</varname></codeblock>
-        </stepxmp>
-        <info>
-          <note>ZooKeeper requires IP addresses for ensemble configuration.</note>
-        </info>
-      </step>
-      
-      <step>
-        <cmd>On both nodes, set the ZooKeeper node ID to <codeph>1</codeph>.</cmd>
+        <cmd>Set the ZooKeeper node ID to <codeph>1</codeph>.</cmd>
         <stepxmp>
           <codeblock>echo "SERVICED_ISVCS_ZOOKEEPER_ID=1" &#62;&#62; /etc/default/serviced</codeblock>
         </stepxmp>
       </step>
       
-      <step>
-        <cmd>On both nodes, specify the nodes in the ZooKeeper ensemble.</cmd>
-        <stepxmp>You may copy the following text and paste it in your console:
-          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
-  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      <step conkeyref="feature-lib-tasks/zk-set-nodes">
+        <cmd/>
       </step>
       
       <step>
-        <cmd>On both nodes, specify the nodes in the ZooKeeper quorum.</cmd>
+        <cmd>Specify the nodes in the ZooKeeper quorum.</cmd>
         <info>ZooKeeper requires a unique quorum definition for each node in its ensemble. To
-          achieve this, replace the IP address of the current node with
-          <codeph>0.0.0.0</codeph>.</info>
-        <stepxmp>You may copy the following of text and paste it in your console:
+          achieve this, replace the IP address or hostname of the master host with
+            <codeph>0.0.0.0</codeph>.</info>
+        <stepxmp>You can copy the following text and paste it in your console:
           <codeblock>q1="1@0.0.0.0:2888:3888"
 q2="2@${node2}:2888:3888"
 q3="3@${node3}:2888:3888"
@@ -73,25 +40,21 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
   &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
       </step>
       
+      <step conkeyref="feature-lib-tasks/zk-set-timeout">
+        <cmd/>
+      </step>
+      
       <step>
-        <cmd>On both nodes, clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <cmd>Clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="install-lib-tasks/open-file">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Navigate to the end of the file, and cut the line that contains the
               <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
-            <info>The value of this declaration specifies 3 hosts.</info>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ZK</varname> variable
-            near the beginning of the file, and then delete the line it is on.</cmd>
-            <info>The value of this declaration is just the master node.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ZK</varname> variable declaration,  
+              and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -100,13 +63,8 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
-          </substep>
-          <substep>
-            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable 
+              declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
           
           <substep>
@@ -115,30 +73,44 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
               at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable
-              near the end of the file, and then delete the line it is on.</cmd>
-            <info>This declaration is commented out.</info>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable declaration
+              at that location.</cmd>
           </substep>
           <substep>
-            <cmd>Paste the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
-              from the end of the file in the location of the just-deleted declaration.</cmd>
+            <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
-          <substep conkeyref="install-lib-tasks/save">
-            <cmd/>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
       
       <step>
-        <cmd>On both hosts, verify the ZooKeeper environment variables.</cmd>
+        <cmd>Verify the ZooKeeper environment variables.</cmd>
         <stepxmp>
-          <codeblock>egrep '^[^#]*SERVICED' /etc/default/serviced | egrep '(_ZOO|_ZK)'</codeblock>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced | grep -E '_Z(OO|K)'</codeblock>
         </stepxmp>
+        <stepresult>The following example shows the environment
+          variables for a master host with IP address 198.51.100.135.
+          <note>The value of the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
+            variable is formatted to fit the available space. The result of
+            the <cmdname>grep</cmdname> command shows the variable and 
+            value on the same line.</note>
+          <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181
+SERVICED_ISVCS_ZOOKEEPER_ID=1
+SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@0.0.0.0:2888:3888,\
+  2@198.51.100.136:2888:3888,3@198.51.100.137:2888:3888
+SERVICED_ZK_SESSION_TIMEOUT=15</codeblock>
+        </stepresult>
       </step>
     </steps>
   </taskbody>
 </task>
-
 
 
 

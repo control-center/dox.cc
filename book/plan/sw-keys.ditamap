@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/sw</title>
+  <topicgroup>
+    <keydef keys="plan-sw-cc-docker"
+            href="sw/cc-docker.dita"
+            format="dita"
+    />
+    <keydef keys="plan-sw-cc-terms"
+            href="sw/cc-terms.dita"
+            format="dita"
+    />
+    <keydef keys="plan-sw-cc"
+            href="sw/cc.dita"
+            format="dita"
+    />
+    <keydef keys="plan-sw-storage-drivers"
+            href="sw/storage-drivers.dita"
+            format="dita"
+    />
+    <keydef keys="plan-sw-sw"
+            href="sw/sw.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>RPC service variables</title>
+  <refbody>
+    <section>
+      <p>The variables in the following table must be set identically on all 
+        <ph keyref="nm-cc"/> cluster hosts, except:
+        <ul>
+          <li><varname>SERVICED_RPC_PORT</varname>, set only on the master</li>
+          <li><varname>SERVICED_MAX_RPC_CLIENTS</varname>, set only on delegates</li>
+        </ul>
+        </p>
+      
+      <p>By default, <cmdname>serviced</cmdname> uses TLS to encrypt all RPC traffic. 
+        The <varname>SERVICED_KEY_FILE</varname> and <varname>SERVICED_CERT_FILE</varname> 
+        variables identify the digital certificate used for RPC, mux, and HTTP traffic.</p>
+      <p>The <varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname> variable affects RPC, mux,
+        and internal services endpoint traffic.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Where to set</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>SERVICED_ENDPOINT</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_MAX_RPC_CLIENTS</varname></entry>
+              <entry>Delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_RPC_PORT</varname></entry>
+              <entry>Master</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_RPC_CERT_VERIFY</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_RPC_DISABLE_TLS</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_RPC_TLS_MIN_VERSION</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_RPC_TLS_CIPHERS</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_KEY_FILE</varname></entry>
+              <entry>Master</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_CERT_FILE</varname></entry>
+              <entry>Master</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_RPC_DIAL_TIMEOUT</varname></entry>
+              <entry>Master, delegates</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></entry>
+              <entry>Master</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>

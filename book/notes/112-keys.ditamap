@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in dox.cc/book/notes/112 (2016-09-13 17:38:28)</title>
+  <topicgroup>
+    <keydef keys="dox.cc-book-notes-112-fixed"
+            href="112/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="dox.cc-book-notes-112-self"
+            href="112/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+   <title>Administration reference</title>
+  <refbody>
+    <section>
+      <p>This section contains information about and procedures for performing administrative tasks.
+        Tasks include adding application storage, copying applications and data, reverting to a
+        backup or snapshot, and properly stopping and starting <ph keyref="nm-cc"/> for maintenance
+        purposes.</p>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Fencing</title>
+  <conbody>
+    <p>When all components are deployed and you have verified operation of the application
+      <ph keyref="nm-cc"/> is managing and basic cluster failover in a controlled scenario, you are ready to configure and enable
+      fencing in your production environment. Fencing is an automated means of isolating a node that
+      appears to be malfunctioning to protect the integrity of the DRBD volume(s).</p>
+    <p>We recommend placing the fencing device on the public network. The reason for placing the
+      fencing device on the public network is explained by how fencing and communication work in
+      various implementations. In this case the two implementations are a public versus a private
+      network interface for fencing communications.</p>
+    <note>If you do not define a fencing method, your failover will fail with an error <codeph>no
+        method defined</codeph> when the cluster attempts to fail over to the backup node.</note>
+  </conbody>
+</concept>

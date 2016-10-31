@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><ph keyref="nm-cc"/> configuration file</title>
+  <refbody>
+    <section>
+      <p>The <ph keyref="nm-cc"/> configuration file, <filepath>/etc/default/serviced</filepath>,
+        contains Bash environment variables that are read by the <cmdname>serviced</cmdname> daemon
+        startup script. The order of the following list matches the order of the variables in the
+        file.</p>
+      
+      <dl>
+        <dlentry id="HOME">
+          <dt><varname>HOME</varname></dt>
+          <dd><b>Default</b>: (the value of shell variable <varname>HOME</varname>)</dd> 
+          <dd>The path Docker Engine clients use to locate the <filepath>.dockercfg</filepath>
+            authentication file, which contains Docker Hub credentials.</dd>
+        </dlentry>
+        
+        <dlentry id="TMPDIR">
+          <dt><varname>TMPDIR</varname></dt>
+          <dd><b>Default</b>: (the value of shell variable <varname>TMPDIR</varname>)</dd> 
+          <dd>The path <cmdname>serviced</cmdname> uses for temporary files.</dd>
+        </dlentry>
+        
+        <dlentry id="GOMAXPROCS">
+          <dt><varname>GOMAXPROCS</varname></dt>
+          <dd><b>Default</b>: <codeph>2</codeph></dd> 
+          <dd>The maximum number of CPU cores <cmdname>serviced</cmdname> uses.</dd>
+        </dlentry>
+
+        <dlentry id="SERVICED_MASTER">
+          <dt><varname>SERVICED_MASTER</varname></dt>
+          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
+          <dd>Assigns the role of a <cmdname>serviced</cmdname> instance, either master or delegate.
+            The master runs the application services scheduler and other internal services.
+            Delegates run the application services assigned to the resource pool to which
+            they belong.</dd>
+          <dd>Only one <cmdname>serviced</cmdname> instance can be the master; all other instances
+            must be delegates. The default value assigns the master role. To assign the delegate
+            role, set the value to <codeph>0</codeph> (false). This variable must be explicitly set 
+            on all <ph keyref="nm-cc"/> cluster hosts. </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MASTER_IP">
+          <dt><varname>SERVICED_MASTER_IP</varname></dt>
+          <dd><b>Default</b>: <codeph>127.0.0.1</codeph></dd> 
+          <dd>A convenience variable, for use in places where the IP address or hostname of the
+            master host is required. This variable is unused unless it is both set here and
+            referenced elsewhere. (For example, by replacing <codeph>{{SERVICED_MASTER_IP}}</codeph>
+            with <codeph>$SERVICED_MASTER_IP</codeph>.)</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MASTER_POOLID">
+          <dt><varname>SERVICED_MASTER_POOLID</varname></dt>
+          <dd><b>Default</b>: <codeph>default</codeph></dd> 
+          <dd>The name of the default resource pool. This variable is only used
+            the first time <cmdname>serviced</cmdname> is started.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ZK">
+          <dt><varname>SERVICED_ZK</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
+            separated by the comma character (<codeph>&#44;</codeph>). Each endpoint identifies 
+            an ensemble node.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DOCKER_REGISTRY">
+          <dt><varname>SERVICED_DOCKER_REGISTRY</varname></dt>
+          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:5000</codeph></dd> 
+          <dd>The endpoint of the <cmdname>serviced</cmdname> Docker registry
+            host. On delegate hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP
+            address or hostname of the registry host, which by default is the
+              <cmdname>serviced</cmdname> master host.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_OUTBOUND_IP">
+          <dt><varname>SERVICED_OUTBOUND_IP</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>The default startup routines of <cmdname>serviced</cmdname> include
+            attempting to ping <codeph>google.com</codeph>. When a value is set
+            for this variable, <cmdname>serviced</cmdname> does not attempt the
+            ping and assumes it does not have internet access.</dd>
+          <dd>Use this variable to specify the IP address of a network interface
+            other than the default, or to prevent <cmdname>serviced</cmdname>
+            from assuming it has internet access.</dd>
+          <dd><note>Setting the Docker <varname>HTTP_PROXY</varname> or <varname>HTTPS_PROXY</varname> environment
+              variables prevents access to the IP address defined with this variable. To enable
+              access, unset the Docker variables, and then reboot the host.</note></dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_STATIC_IPS">
+          <dt><varname>SERVICED_STATIC_IPS</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>A list of one or more static IP addresses that are available for
+            IP assignment. Use the comma character (<codeph>&#44;</codeph>) 
+            to separate addresses.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ENDPOINT">
+          <dt><varname>SERVICED_ENDPOINT</varname></dt>
+          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:4979</codeph></dd> 
+          <dd>The endpoint of the <cmdname>serviced</cmdname> RPC server.
+            Replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or hostname of the 
+            <cmdname>serviced</cmdname> master host. The port number of this endpoint must match 
+            the value of the <varname>SERVICED_RPC_PORT</varname> variable defined on the 
+            <cmdname>serviced</cmdname> master host.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MAX_RPC_CLIENTS">
+          <dt><varname>SERVICED_MAX_RPC_CLIENTS</varname></dt>
+          <dd><b>Default</b>: <codeph>3</codeph></dd> 
+          <dd>The preferred maximum number of simultaneous connections a <cmdname>serviced</cmdname>
+            delegate uses for RPC requests. The value is used to create a pool of sockets, which 
+            are reused as needed. Increasing the value increases the number of open sockets and 
+            the use of socket-related operating system resources.</dd>
+          <dd>When the demand for connections exceeds the supply of open sockets,
+              <cmdname>serviced</cmdname> opens more sockets. When demand eases,
+              <cmdname>serviced</cmdname> reduces the number of open sockets to the preferred
+            maximum.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_PORT">
+          <dt><varname>SERVICED_RPC_PORT</varname></dt>
+          <dd><b>Default</b>: <codeph>4979</codeph></dd> 
+          <dd>The port on which the <cmdname>serviced</cmdname> RPC server
+            listens for connections. The value of this variable must match  
+            the port number defined for the <varname>SERVICED_ENDPOINT</varname>
+            variable on all <cmdname>serviced</cmdname> delegate hosts.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_CERT_VERIFY">
+          <dt><varname>SERVICED_RPC_CERT_VERIFY</varname></dt>
+          <dd><b>Default</b>: <codeph>false</codeph></dd> 
+          <dd>Determines whether <cmdname>serviced</cmdname> performs TLS certificate verification
+            for RPC connections. The certificate is defined by the
+              <varname>SERVICED_CERT_FILE</varname> variable.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_DISABLE_TLS">
+          <dt><varname>SERVICED_RPC_DISABLE_TLS</varname></dt>
+          <dd><b>Default</b>: <codeph>false</codeph></dd> 
+          <dd>Determines whether <cmdname>serviced</cmdname> encrypts RPC traffic with TLS.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_TLS_MIN_VERSION">
+          <dt><varname>SERVICED_RPC_TLS_MIN_VERSION</varname></dt>
+          <dd><b>Default</b>: <codeph>VersionTLS10</codeph></dd> 
+          <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts
+            for RPC connections. Valid values include the default,
+            <codeph>VersionTLS11</codeph>, and <codeph>VersionTLS12</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_TLS_CIPHERS">
+          <dt><varname>SERVICED_RPC_TLS_CIPHERS</varname></dt>
+          <dd><b>Default</b>: (list of ciphers)</dd> 
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers for RPC connections,
+            separated by the comma character (<codeph>,</codeph>): <ul>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
+            </ul>Other ciphers are supported; the preceding ciphers 
+          provide strong security for relatively low processing overhead.</dd>
+          <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
+            an RPC connection, so both daemons use the first cipher in the list. To
+            use a different cipher, put it first in the list, on all cluster hosts.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_UI_PORT">
+          <dt><varname>SERVICED_UI_PORT</varname></dt>
+          <dd><b>Default</b>: <codeph>:443</codeph></dd> 
+          <dd>The port on which the HTTP server listens for requests. The
+            value may be expressed as follows:
+            <ul>
+              <li><varname>IP-Address</varname>:<varname>Port-Number</varname></li>
+              <li>:<varname>Port-Number</varname></li>
+              <li><varname>Port-Number</varname></li>
+            </ul>
+          </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_UI_POLL_FREQUENCY">
+          <dt><varname>SERVICED_UI_POLL_FREQUENCY</varname></dt>
+          <dd><b>Default</b>: <codeph>3</codeph></dd> 
+          <dd>The number of seconds between polls from <ph keyref="nm-cc"/> browser interface
+            clients. The value is included in a JavaScript library that is sent to the clients.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MUX_PORT">
+          <dt><varname>SERVICED_MUX_PORT</varname></dt>
+          <dd><b>Default</b>: <codeph>22250</codeph></dd> 
+          <dd>The port <cmdname>serviced</cmdname> uses for  
+            traffic among Docker containers.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MUX_DISABLE_TLS">
+          <dt><varname>SERVICED_MUX_DISABLE_TLS</varname></dt>
+          <dd><b>Default</b>: <codeph>0</codeph></dd> 
+          <dd>Determines whether inter-host traffic 
+            among Docker containers is encrypted with TLS. Intra-host traffic among
+            Docker containers is not encrypted. To disable encryption, set
+            the value to <codeph>1</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MUX_TLS_MIN_VERSION">
+          <dt><varname>SERVICED_MUX_TLS_MIN_VERSION</varname></dt>
+          <dd><b>Default</b>: <codeph>VersionTLS10</codeph></dd> 
+          <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts
+            for mux traffic. Valid values include the default,
+            <codeph>VersionTLS11</codeph>, and <codeph>VersionTLS12</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MUX_TLS_CIPHERS">
+          <dt><varname>SERVICED_MUX_TLS_CIPHERS</varname></dt>
+          <dd><b>Default</b>: (list of ciphers)</dd> 
+          <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers
+            for mux traffic, separated by the comma character (<codeph>,</codeph>):<ul>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
+            </ul>Other ciphers are supported; the preceding ciphers 
+            provide strong security for relatively low processing overhead.</dd>
+          <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
+            a mux connection, so both daemons use the first cipher in the list. To
+            use a different cipher, put it first in the list, on all cluster hosts.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ISVCS_PATH">
+          <dt><varname>SERVICED_ISVCS_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/var/isvcs</filepath></dd> 
+          <dd>The location of <cmdname>serviced</cmdname> internal services data.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_VOLUMES_PATH">
+          <dt><varname>SERVICED_VOLUMES_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/var/volumes</filepath></dd> 
+          <dd>The location of <cmdname>serviced</cmdname> application data.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_BACKUPS_PATH">
+          <dt><varname>SERVICED_BACKUPS_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/var/backups</filepath></dd>
+          <dd>The location of <cmdname>serviced</cmdname> backup files.</dd> 
+        </dlentry>
+        
+        <dlentry id="SERVICED_KEY_FILE">
+          <dt><varname>SERVICED_KEY_FILE</varname></dt>
+          <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_key.[0-9]+</filepath></dd> 
+          <dd>The path of a digital certificate key file. Choose a location that is not modified
+            during operating system updates, such as <filepath>/etc</filepath>.</dd>
+          <dd>This key file is used for all TLS-encrypted communications (RPC, mux, and HTTP).
+            The default, insecure key file is created when the
+            <cmdname>serviced</cmdname> web server first starts, and is based on
+            a public key that is compiled into <cmdname>serviced</cmdname>. </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_CERT_FILE">
+          <dt><varname>SERVICED_CERT_FILE</varname></dt>
+          <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_cert.[0-9]+</filepath></dd>
+          <dd>The path of a digital certificate file. Choose a location that is not modified
+            during operating system updates, such as <filepath>/etc</filepath>.
+            Certificates with passphrases are not supported.</dd>
+          <dd>This certificate file is used for all TLS-encrypted communications (RPC, mux, and HTTP).
+            The default, insecure certificate file is created when the 
+            <cmdname>serviced</cmdname> web server first starts, and is based 
+            on a public certificate that is compiled into <cmdname>serviced</cmdname>. </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_TLS_MIN_VERSION">
+          <dt><varname>SERVICED_TLS_MIN_VERSION</varname></dt>
+          <dd><b>Default</b>: <codeph>VersionTLS10</codeph></dd> 
+          <dd>The minimum version of TLS that <cmdname>serviced</cmdname> accepts for HTTP traffic.
+            Valid values include the default,
+            <codeph>VersionTLS11</codeph>, and <codeph>VersionTLS12</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_TLS_CIPHERS">
+          <dt><varname>SERVICED_TLS_CIPHERS</varname></dt>
+          <dd><b>Default</b>: (list of ciphers)</dd> 
+          <dd>The list of TLS ciphers that <cmdname>serviced</cmdname> accepts
+            for HTTP traffic, separated by the comma character (<codeph>,</codeph>): <ol>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_RC4_128_SHA</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
+              <li><codeph>TLS_RSA_WITH_AES_256_GCM_SHA384</codeph></li>
+              <li><codeph>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_RC4_128_SHA</codeph></li>
+            </ol></dd>
+          <dd>To disable support for most ciphers, you can remove them from the list. 
+            The following rules apply to the list:<ul>
+              <li>The first cipher, <codeph>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</codeph>, 
+              must always be present in the list of ciphers.</li>
+            <li>The first four ciphers in the list must always precede any of the 
+            ciphers that appear after the first four. The first four ciphers are valid
+            for HTTP/2, while the remaining ciphers are not.</li>
+          </ul>
+          </dd>
+        </dlentry>
+
+        <dlentry id="SERVICED_FS_TYPE">
+          <dt><varname>SERVICED_FS_TYPE</varname></dt>
+          <dd><b>Default</b>: <codeph>devicemapper</codeph></dd> 
+          <dd>The driver to manage application data storage on the <cmdname>serviced</cmdname> master host.
+            Only <codeph>devicemapper</codeph> is supported in production deployments.</dd>
+          <dd>The only supported storage layout for the <codeph>devicemapper</codeph> driver
+            is an LVM thin pool. To create a thin pool, use the <cmdname>serviced-storage</cmdname> 
+            utility. To specify the name of the thin pool device, use the
+            <varname>SERVICED_DM_THINPOOLDEV</varname> variable.</dd>
+        </dlentry>
+               
+        <dlentry id="SERVICED_DM_ARGS">
+          <dt><varname>SERVICED_DM_ARGS</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>Customized startup arguments for the <codeph>devicemapper</codeph> storage driver.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_BASESIZE">
+          <dt><varname>SERVICED_DM_BASESIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>100G</codeph></dd> 
+          <dd>The base size of virtual storage devices for tenants in the application data
+            thin pool, in gigabytes. The units symbol (<codeph>G</codeph>) is required.
+            This variable is used when <cmdname>serviced</cmdname> starts for 
+            the first time, to set the initial size of tenant devices, and when
+            a backup is restored, to set the size of the restored tenant device.</dd>
+            <dd>The base size device is sparse device that occupies at most 1MB of space in 
+            the application data thin pool; its size has no immediate practical impact.
+            However, the application data thin pool should have enough space for twice
+            the size of each tenant device it supports, to store both the data itself and
+            snapshots of the data. Since the application data thin pool is an LVM logical 
+            volume, its size can be increased at any time. Likewise, the size of a tenant 
+            device can be increased, as long as the available space in the thin pool can
+            support the larger tenant device plus snapshots.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_LOOPDATASIZE">
+          <dt><varname>SERVICED_DM_LOOPDATASIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>100G</codeph></dd> 
+          <dd>Specifies the size of the data portion of the loop-back file. 
+            This setting is ignored when <varname>SERVICED_ALLOW_LOOP_BACK</varname>
+            is <codeph>false</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_LOOPMETADATASIZE">
+          <dt><varname>SERVICED_DM_LOOPMETADATASIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>2G</codeph></dd> 
+          <dd>Specifies the size of the metadata portion of the loop-back file. 
+            This setting is ignored when <varname>SERVICED_ALLOW_LOOP_BACK</varname>
+            is <codeph>false</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_THINPOOLDEV">
+          <dt><varname>SERVICED_DM_THINPOOLDEV</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>The name of the thin pool device to use with the
+            <codeph>devicemapper</codeph> storage driver.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_STORAGE_STATS_UPDATE_INTERVAL">
+          <dt><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></dt>
+          <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
+          <dd>The number of seconds between polls of kernel statistics
+            about the application data thin pool.</dd>
+          <dd>This setting is ignored when the operating system
+            kernel version is less than 3.10.0-366.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ALLOW_LOOP_BACK">
+          <dt><varname>SERVICED_ALLOW_LOOP_BACK</varname></dt>
+          <dd><b>Default</b>: <codeph>false</codeph></dd> 
+          <dd>Determines whether loop-back files can be used with the <codeph>devicemapper</codeph>
+            storage driver. This option is not supported for production use.</dd>
+        </dlentry>
+
+        <dlentry id="SERVICED_MAX_CONTAINER_AGE">
+          <dt><varname>SERVICED_MAX_CONTAINER_AGE</varname></dt>
+          <dd><b>Default</b>: <codeph>86400</codeph> (24 hours)</dd> 
+          <dd>The number of seconds <cmdname>serviced</cmdname>
+            waits before removing a stopped container.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_VIRTUAL_ADDRESS_SUBNET">
+          <dt><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></dt>
+          <dd><b>Default</b>: <codeph>10.3.0.0/16</codeph></dd> 
+          <dd>The private subnet for containers that use virtual IP addresses on a host.
+            This value may be unique on each cluster host, if necessary.</dd>
+          <dd>RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
+            address spaces. However, <cmdname>serviced</cmdname> accepts any valid IPv4
+            address space.</dd>
+          <dd>Specify the value in CIDR notation. A <codeph>/29</codeph> network provides 
+            sufficient address space.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOG_LEVEL">
+          <dt><varname>SERVICED_LOG_LEVEL</varname></dt>
+          <dd><b>Default</b>: <codeph>0</codeph></dd> 
+          <dd>The log level <cmdname>serviced</cmdname> uses when writing to the system
+            log. Valid values are <codeph>0</codeph> (normal) and <codeph>2</codeph> (debug).</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOG_ADDRESS">
+          <dt><varname>SERVICED_LOG_ADDRESS</varname></dt>
+          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:5042</codeph></dd> 
+          <dd>The endpoint of the logstash service. Replace 
+            <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or 
+            hostname of the <cmdname>serviced</cmdname> master host.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOGSTASH_ES">
+          <dt><varname>SERVICED_LOGSTASH_ES</varname></dt>
+          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:9100</codeph></dd> 
+          <dd>The endpoint of the logstash Elasticsearch service. On delegate 
+            hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP 
+            address or hostname of the Elasticsearch host, which by default is the
+            <cmdname>serviced</cmdname> master host.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOGSTASH_MAX_DAYS">
+          <dt><varname>SERVICED_LOGSTASH_MAX_DAYS</varname></dt>
+          <dd><b>Default</b>: <codeph>14</codeph></dd> 
+          <dd>The maximum number of days to keep application logs in the
+           logstash database before purging them. </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOGSTASH_MAX_SIZE">
+          <dt><varname>SERVICED_LOGSTASH_MAX_SIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>10</codeph></dd> 
+          <dd>The maximum size of the logstash database, in gigabytes.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOGSTASH_CYCLE_TIME">
+          <dt><varname>SERVICED_LOGSTASH_CYCLE_TIME</varname></dt>
+          <dd><b>Default</b>: <codeph>6</codeph></dd> 
+          <dd>The amount of time between logstash  purges, in hours.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_STATS_PORT">
+          <dt><varname>SERVICED_STATS_PORT</varname></dt>
+          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:8443</codeph></dd> 
+          <dd>The endpoint of the <cmdname>serviced</cmdname> metrics consumer
+            service. Replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the 
+            IP address or hostname of the <cmdname>serviced</cmdname> master host.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_STATS_PERIOD">
+          <dt><varname>SERVICED_STATS_PERIOD</varname></dt>
+          <dd><b>Default</b>: <codeph>10</codeph></dd> 
+          <dd>The frequency, in seconds, at which delegates gather metrics to send to 
+            the <cmdname>serviced</cmdname> metrics consumer service on the master host.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_SVCSTATS_CACHE_TIMEOUT">
+          <dt><varname>SERVICED_SVCSTATS_CACHE_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>5</codeph></dd> 
+          <dd>The number of seconds to cache statistics about services.
+            The cache is used by <ph keyref="nm-cc"/> browser interface clients.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DEBUG_PORT">
+          <dt><varname>SERVICED_DEBUG_PORT</varname></dt>
+          <dd><b>Default</b>: <codeph>6006</codeph></dd> 
+          <dd>The port on which <cmdname>serviced</cmdname> listens for HTTP requests 
+            for the <xref keyref="url-go-profiler">Go profiler</xref>. To stop listening
+            for requests, set the value to <codeph>-1</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ISVCS_ENV_0">
+          <dt><varname>SERVICED_ISVCS_ENV_[0-9]+</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>
+            <p>Startup arguments to pass to internal services. You may define 
+              multiple arguments, each for a different internal service. The variables 
+              themselves, and their arguments, use the following syntax:</p>
+            <dl>
+              <dlentry>
+                <dt><codeph>SERVICED_ISVCS_ENV_<varname>%d</varname></codeph></dt>
+                <dd>Each variable name ends with a unique integer in place of
+                  <varname>%d</varname>.</dd>
+              </dlentry>
+              <dlentry>
+                <dt><codeph><varname>Service-Name</varname>:<varname>Key</varname>=<varname>Value</varname></codeph></dt>
+                <dd>
+                  <p>The value of each variable includes the following elements, in order:</p>
+                  <ol>
+                    <li><varname>Service-Name</varname>, the internal service name. The
+                      following command returns the internal service names that may be
+                      used for <varname>Service-Name</varname>:
+                      <codeblock>docker ps | awk '/serviced-isvcs:/{print $NF}'</codeblock></li>
+                    <li>The colon character (<codeph>:</codeph>).</li>
+                    <li><varname>Key</varname>, a variable to pass to the internal service.</li>
+                    <li>The equals sign character (<codeph>=</codeph>).</li>
+                    <li><varname>Value</varname>, the definition of the variable to pass to the internal service.</li>
+                  </ol>
+                </dd>
+              </dlentry>
+            </dl>
+            <p>The following example variable passes <codeph>ES_JAVA_OPTS=-Xmx4g</codeph> to the
+              Elasticsearch internal service.</p>
+            <codeblock>SERVICED_ISVCS_ENV_0=serviced-isvcs_elasticsearch-logstash:ES_JAVA_OPTS=-Xmx4g</codeblock>
+          </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ADMIN_GROUP">
+          <dt><varname>SERVICED_ADMIN_GROUP</varname></dt>
+          <dd><b>Default</b>: <codeph>wheel</codeph></dd> 
+          <dd>The name of the Linux group on the <cmdname>serviced</cmdname> master host whose
+            members are authorized to use the <cmdname>serviced</cmdname> browser interface. You may
+            replace the default group with a group that does not have superuser privileges.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ALLOW_ROOT_LOGIN">
+          <dt><varname>SERVICED_ALLOW_ROOT_LOGIN</varname></dt>
+          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
+          <dd>Determines whether the <codeph>root</codeph> user account on 
+            the <cmdname>serviced</cmdname> master host may be used to gain 
+            access to the <cmdname>serviced</cmdname> browser interface.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_IPTABLES_MAX_CONNECTIONS">
+          <dt><varname>SERVICED_IPTABLES_MAX_CONNECTIONS</varname></dt>
+          <dd><b>Default</b>: <codeph>655360</codeph></dd> 
+          <dd>The default value of this variable ensures that a <cmdname>serviced</cmdname> delegate
+            does not run out of connections if the <cmdname>serviced</cmdname> master goes down. The
+            connections are automatically cleaned up by the kernel soon after the 
+            <cmdname>serviced</cmdname> master comes back online.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_SNAPSHOT_TTL">
+          <dt><varname>SERVICED_SNAPSHOT_TTL</varname></dt>
+          <dd><b>Default</b>: <codeph>12</codeph></dd> 
+          <dd>The number of hours an application data snapshot is retained before removal. To
+            disable snapshot removal, set the value to zero. The application data storage can fill
+            up rapidly when this value is zero or too high.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_NFS_CLIENT">
+          <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
+          <dd><b>Default</b>: <codeph>1</codeph></dd> 
+          <dd>DEPRECATED: Prevent a delegate host from mounting the DFS.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_SERVICE_MIGRATION_TAG">
+          <dt><varname>SERVICED_SERVICE_MIGRATION_TAG</varname></dt>
+          <dd><b>Default</b>: <codeph>1.0.2</codeph></dd> 
+          <dd>Overrides the default value for the service migration image.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ISVCS_START">
+          <dt><varname>SERVICED_ISVCS_START</varname></dt>
+          <dd><b>Default</b>: (none) </dd> 
+          <dd>Enables one or more internal services to run on a delegate host.
+          Currently, only <codeph>zookeeper</codeph> is supported.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ISVCS_ZOOKEEPER_ID">
+          <dt><varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>The unique identifier of a ZooKeeper ensemble node.
+            The identifier must be a positive integer.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ISVCS_ZOOKEEPER_QUORUM">
+          <dt><varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>The comma-separated list of nodes in a ZooKeeper ensemble.
+            Each entry in the list specifies the ZooKeeper ID, IP address or hostname, 
+            peer communications port, and leader communications port of a node
+            in the ensemble. Each quorum definition must be unique, so the IP 
+            address or hostname of the "current" host must be 0.0.0.0.</dd>
+          <dd>The following example shows the syntax of a node entry:
+            <codeblock><varname>ZooKeeper-ID</varname>@<varname>Host-IP-Or-Name</varname>:2888:3888</codeblock>
+          </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DOCKER_LOG_DRIVER">
+          <dt><varname>SERVICED_DOCKER_LOG_DRIVER</varname></dt>
+          <dd><b>Default</b>: <codeph>json-file</codeph></dd> 
+          <dd>The log driver for all Docker container logs, including containers
+            for <ph keyref="nm-cc"/> internal services. Valid values:
+          <ul>
+            <li><codeph>json-file</codeph></li>
+            <li><codeph>syslog</codeph></li>
+            <li><codeph>journald</codeph></li>
+            <li><codeph>gelf</codeph></li>
+            <li><codeph>fluentd</codeph></li>
+            <li><codeph>none</codeph></li>
+          </ul>This is a direct port of the Docker <codeph>--log-driver</codeph> option.
+          </dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DOCKER_LOG_CONFIG">
+          <dt><varname>SERVICED_DOCKER_LOG_CONFIG</varname></dt>
+          <dd><b>Default</b>: <codeph>max-file=5,max-size=10m</codeph></dd> 
+          <dd>A comma-separated list of Docker <codeph>--log-opt</codeph> options as
+                <codeph><varname>key</varname>=<varname>value</varname></codeph> pairs. To specify
+            the default values for a log driver, or for drivers that need no additional options,
+            such as <codeph>journald</codeph>, use a single comma character (<codeph>&#44;</codeph>)
+            as the value of this variable.</dd>
+        </dlentry>
+
+        <dlentry id="SERVICED_DOCKER_DNS">
+          <dt><varname>SERVICED_DOCKER_DNS</varname></dt>
+          <dd><b>Default</b>: (empty)</dd> 
+          <dd>The IP address of one or more DNS servers. The value of this variable is
+            injected into each Docker Engine container that <cmdname>serviced</cmdname>
+            starts. Separate multiple values with the comma character (<codeph>&#44;</codeph>).</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_OPTS">
+          <dt><varname>SERVICED_OPTS</varname></dt>
+          <dd><b>Default</b>: (empty)</dd> 
+          <dd>Special options for the <cmdname>serviced</cmdname> startup command.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_SNAPSHOT_USE_PERCENT">
+          <dt><varname>SERVICED_SNAPSHOT_USE_PERCENT</varname></dt>
+          <dd><b>Default</b>: <codeph>20</codeph></dd> 
+          <dd>The amount of free space in the thin pool specified with
+            <varname>SERVICED_DM_THINPOOLDEV</varname>,
+            expressed as a percentage the total size. This value is used to determine
+            whether the thin pool can hold a new snapshot.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ZK_SESSION_TIMEOUT">
+          <dt><varname>SERVICED_ZK_SESSION_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>15</codeph></dd> 
+          <dd>The number of seconds the ZooKeeper leader waits before flushing
+            an inactive connection.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ES_STARTUP_TIMEOUT">
+          <dt><varname>SERVICED_ES_STARTUP_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>240</codeph></dd> 
+          <dd>The number of seconds to wait for the Elasticsearch service to start.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MAX_DFS_TIMEOUT">
+          <dt><varname>SERVICED_MAX_DFS_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>300</codeph></dd> 
+          <dd>The number of seconds until a DFS snapshot attempt times out.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_DIAL_TIMEOUT">
+          <dt><varname>SERVICED_RPC_DIAL_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>30</codeph></dd> 
+          <dd>The number of seconds until an RPC connection attempt times out.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_AUTH_TOKEN_EXPIRATION">
+          <dt><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></dt>
+          <dd><b>Default</b>: <codeph>3600</codeph> (1 hour)</dd> 
+          <dd>The expiration time, in seconds, of delegate authentication tokens. This timeout affects
+            RPC, mux, and <cmdname>serviced</cmdname> internal services endpoint communications.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_CONTROLLER_BINARY">
+          <dt><varname>SERVICED_CONTROLLER_BINARY</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/bin/serviced-controller</filepath></dd> 
+          <dd>The path of the <cmdname>serviced-controller</cmdname> binary,
+            which runs in every container that <cmdname>serviced</cmdname> manages.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_HOME">
+          <dt><varname>SERVICED_HOME</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced</filepath></dd> 
+          <dd>The path of the home directory for <cmdname>serviced</cmdname>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ETC_PATH">
+          <dt><varname>SERVICED_ETC_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/etc</filepath></dd> 
+          <dd>The path of the directory for <cmdname>serviced</cmdname>
+            configuration files. The default is <filepath><varname>SERVICED_HOME</varname>/etc</filepath>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_VHOST_ALIASES">
+          <dt><varname>SERVICED_VHOST_ALIASES</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>A list of hostname aliases for a host; for example, 
+            <codeph>localhost</codeph>. Separate multiple values 
+            with the comma character (<codeph>&#44;</codeph>)..</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>
+ 
+ 

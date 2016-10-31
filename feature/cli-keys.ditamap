@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/cli</title>
+  <topicgroup>
+    <keydef keys="feature-cli-cli"
+            href="cli/cli.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-invoking-serviced"
+            href="cli/invoking-serviced.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-script"
+            href="cli/script.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-service-clone"
+            href="cli/service-clone.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-backup"
+            href="cli/serviced-backup.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-docker"
+            href="cli/serviced-docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-pool"
+            href="cli/serviced-pool.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-restore"
+            href="cli/serviced-restore.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-service"
+            href="cli/serviced-service.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-snapshot"
+            href="cli/serviced-snapshot.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-storage"
+            href="cli/serviced-storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced"
+            href="cli/serviced.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

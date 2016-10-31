@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Docker fundamentals</title>
+  <conbody>
+    <note>This section is a summation of <xref keyref="url-docker-arch">the architecture description
+        provided by Docker</xref>, customized for <ph keyref="nm-cc"/>. For additional
+      information, refer to the Docker site.</note>
+    
+    <p>Docker provides convenient tools that make use of the 
+      <xref keyref="url-cgroups">cgroups feature of the Linux kernel</xref>
+    to develop, distribute, and run applications. Docker internals include
+    images, registries, and containers.</p>
+    
+    <dl>
+      <dlentry>
+        <dt>Docker images</dt>
+        <dd>Docker images are read-only templates that are used to
+        create Docker containers. Images are easy to build, and image
+        updates are change layers, not wholesale replacements. </dd>
+      </dlentry>
+      <dlentry>
+        <dt>Docker registries</dt>
+        <dd>Docker registries hold images. <ph keyref="nm-cc"/>
+        uses a private Docker registry for its own images and
+        application images.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>Docker containers</dt>
+        <dd>Docker containers have everything
+        needed to run an instance of an application, and are 
+        created from images.</dd>
+      </dlentry>
+    </dl>
+  </conbody>
+</concept>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Deploying multiple instances of an
+    <?oxy_comment_start author="rpowell" timestamp="20160913T171223-0500" comment="Obsolete topic 9-13-16.Checked with Summer about whether this topic is valid for Hoth. She said it is not, therefore, removed from ditamap."?>application<?oxy_comment_end?></title>
+  <taskbody>
+    <context><ph keyref="nm-cc"/> cannot deploy more than one instance of an application that
+      includes virtual host names unless the virtual host names are unique. Follow this procedure to
+      modify an application service template and deploy multiple instances of an
+      application.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host as <codeph>root</codeph>.</cmd>
+      </step>
+      <step>
+        <cmd>Change directory to the <ph keyref="nm-cc"/> templates directory and copy the
+          application service template file to be modified. Replace <varname>App-Template</varname>
+          and <varname>App-Template-Copy</varname> with the names of your original and new
+          files.</cmd>
+        <stepxmp>
+          <codeblock>cd /opt/serviced/templates
+cp <varname>App-Template</varname>.json <varname>App-Template-Copy</varname>.json</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Use a text editor to make the following changes to the new template file:</cmd>
+        <substeps>
+          <substep importance="optional">
+            <cmd>Change the value of <codeph>Name</codeph> on line 3.</cmd>
+            <info>This change differentiates application service templates.</info>
+          </substep>
+          <substep>
+            <cmd>Change the values of the defined <codeph>VHosts</codeph> fields in all subservice
+                <codeph>Endpoints</codeph> objects.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Use <cmdname>serviced</cmdname> to add the modified template. </cmd>
+        <stepxmp>
+          <codeblock>serviced template add <varname>App-Template-Copy</varname>.json</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> browser interface and deploy the new
+          application.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

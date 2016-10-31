@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/os</title>
+  <topicgroup>
+    <keydef keys="plan-os-network"
+            href="os/network.dita"
+            format="dita"
+    />
+    <keydef keys="plan-os-os"
+            href="os/os.dita"
+            format="dita"
+    />
+    <keydef keys="plan-os-security"
+            href="os/security.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

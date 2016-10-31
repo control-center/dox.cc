@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/delegate</title>
+  <topicgroup>
+    <keydef keys="feature-delegate-add-feet"
+            href="delegate/add-feet.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-add-ssh"
+            href="delegate/add-ssh.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-add"
+            href="delegate/add.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-cc-install-off"
+            href="delegate/cc-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-cc-install-on"
+            href="delegate/cc-install-on.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-cc-install"
+            href="delegate/cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-cron"
+            href="delegate/cron.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-docker-config"
+            href="delegate/docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-docker-install"
+            href="delegate/docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-docker"
+            href="delegate/docker.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-endpoints"
+            href="delegate/endpoints.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-isvcs"
+            href="delegate/isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-prep"
+            href="delegate/prep.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-role"
+            href="delegate/role.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-start"
+            href="delegate/start.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-storage"
+            href="delegate/storage.dita"
+            format="dita"
+    />
+    <keydef keys="feature-delegate-verify"
+            href="delegate/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

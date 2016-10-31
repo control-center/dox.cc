@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Performing an upgrade</title>
+  <refbody>
+    <section>
+      <p>CC-2495</p>
+      <ol>
+        <li>Stop RM.</li>
+        <li>Stop HA, if necessary.</li>
+        <li>Stop CC on master, then delegates.</li>
+        <li>Hunt stray containers and kill them.</li>
+        <li>Verify that NFS is mounted nowhere.</li>
+        <li>CC-528</li>
+        <li>stop and upgrade docker</li>
+        <li>yum upgrade serviced on all hosts at same time.</li>
+        <li>Compare serviced config files; update hygenically if necessary:
+        <ul>
+          <li>Copy original commented line</li>
+          <li>Place copied line immediately below original and edit</li>
+          <li>Put customizations at the top of the file</li>
+        </ul>
+        </li>
+        <li>Log in to CC UI and go to Hosts page.</li>
+        <li>Start CC on hosts in the following order;
+          monitor in CC UI:
+          <ol>
+            <li>master and worker-rm-zk</li>
+            <li>worker-rm</li>
+            <li>worker-collector</li>
+          </ol>
+        </li>
+        <li>Start HA, if necessary.</li>
+      </ol>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading files for offline installation</title>
+  <taskbody>
+    <context>This procedure describes how to download RPM packages and Docker image files to your
+      workstation.</context>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>A portable storage medium, such as a USB flash drive, with at least 5 GB of free space.</li>
+        <li>Permission to download the required files from the <xref keyref="url-leapfile">File Portal - Download Zenoss 
+          Enterprise Software</xref> site. You may request permission by filing a ticket at <ph
+            conkeyref="names/support-site"/>.</li>
+      </ul></prereq>
+    <steps>
+      <step>
+        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile">File Portal - Download Zenoss 
+          Enterprise Software</xref> site.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in with the account provided by <ph conkeyref="names/support"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Download archive files to your workstation.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Version</varname> with the most recent version number available on the
+            download page:</p>
+          <ul>
+            <li><filepath>install-zenoss-hbase:v<varname>Version</varname>.run</filepath></li>
+            <li><filepath>install-zenoss-isvcs-zookeeper:v<varname>Version</varname>.run</filepath>
+            </li>
+            <li><filepath>install-zenoss-opentsdb:v<varname>Version</varname>.run</filepath></li>
+            <li><filepath>install-zenoss-resmgr_5.1:5.1<varname>Version</varname>.run</filepath></li>
+            <li><filepath>install-zenoss-serviced-isvcs:v<varname>Version</varname>.run</filepath></li>
+            <li><filepath>serviced-resource-agents-<varname>Version</varname>.x86_64.rpm</filepath></li>
+          </ul>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Download the RHEL/CentOS mirror package for your upgrade.</cmd>
+        <info><note>If you are planning to upgrade the operating system during your <ph
+          keyref="nm-cc"/> and <ph keyref="nm-platform"/> upgrade, choose the mirror package
+          that matches the RHEL/CentOS release to which you are upgrading, not the release
+          that is installed now.</note></info>
+        <stepxmp>
+          <p>Replace <varname>Version</varname> with the most recent version number available on the
+            download page, and replace <varname>Release</varname> with the version of 
+            RHEL/CentOS appropriate for your environment:</p>
+          <codeblock>yum-mirror-centos7.<varname>Release</varname>-<varname>Version</varname>.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      
+      <step>
+        <cmd>Copy the files to your portable storage medium.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>
