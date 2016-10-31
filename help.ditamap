@@ -33,7 +33,7 @@
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
       <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
       <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
-      <mapref href="../dox.images/keydefs-images.ditamap" format="ditamap"/>
+      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
@@ -42,7 +42,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="feature/cluster/manage-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="book/help/front-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
@@ -52,7 +52,7 @@
       <toc/>
     </booklists>
   </frontmatter>
-  <chapter href="feature/cluster/manage/admin.ditamap" format="ditamap"/>
+  <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
     <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>

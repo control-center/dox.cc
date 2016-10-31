@@ -10,7 +10,7 @@
       <title>USAGE</title>
       <p>You can backup the entire system, or exclude certain directories, such as a directory that
         contains application performance data. For more information and examples, see <xref
-          keyref="feature-cluster-manage-backup-from-cli"/>.</p>
+          keyref="feature-manage-backup-from-cli"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
       <title>SYNTAX</title>

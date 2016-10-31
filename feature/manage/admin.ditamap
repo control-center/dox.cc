@@ -2,30 +2,30 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Administration reference</title>
-   <chapter keyref="feature-cluster-manage-admin">
-      <topicref keyref="feature-cluster-manage-resize"/>
-      <topicref keyref="feature-cluster-manage-backup-restore">
-         <topicref keyref="feature-cluster-manage-backup-restore-best-pract"/>
-         <topicref keyref="feature-cluster-manage-backup"/>
-         <topicref keyref="feature-cluster-manage-backup-from-cli">
-            <topicref keyref="feature-cluster-manage-backup-cli-all"/>
-            <topicref keyref="feature-cluster-manage-backup-cli-exclude-one"/>
-            <topicref keyref="feature-cluster-manage-backup-cli-exclude-mult"/>
+   <chapter keyref="feature-manage-admin">
+      <topicref keyref="feature-manage-resize"/>
+      <topicref keyref="feature-manage-backup-restore">
+         <topicref keyref="feature-manage-backup-restore-best-pract"/>
+         <topicref keyref="feature-manage-backup"/>
+         <topicref keyref="feature-manage-backup-from-cli">
+            <topicref keyref="feature-manage-backup-cli-all"/>
+            <topicref keyref="feature-manage-backup-cli-exclude-one"/>
+            <topicref keyref="feature-manage-backup-cli-exclude-mult"/>
          </topicref>
-         <topicref keyref="feature-cluster-manage-restore"/>
+         <topicref keyref="feature-manage-restore"/>
       </topicref>
-      <topicref keyref="feature-cluster-manage-snapshot-rollback">
-         <topicref keyref="feature-cluster-manage-snapshot"/>
-         <topicref keyref="feature-cluster-manage-rollback"/>
+      <topicref keyref="feature-manage-snapshot-rollback">
+         <topicref keyref="feature-manage-snapshot"/>
+         <topicref keyref="feature-manage-rollback"/>
       </topicref>
-      <topicref keyref="feature-cluster-manage-intro-stop-start">
-         <topicref keyref="feature-cluster-manage-stop-1"/>
-         <topicref keyref="feature-cluster-manage-start-1"/>
-         <topicref keyref="feature-cluster-manage-stop-n">
-            <topicref keyref="feature-cluster-manage-stop-n-master"/>
-            <topicref keyref="feature-cluster-manage-stop-n-delegate"/>
+      <topicref keyref="feature-manage-intro-stop-start">
+         <topicref keyref="feature-manage-stop-1"/>
+         <topicref keyref="feature-manage-start-1"/>
+         <topicref keyref="feature-manage-stop-n">
+            <topicref keyref="feature-manage-stop-n-master"/>
+            <topicref keyref="feature-manage-stop-n-delegate"/>
          </topicref>
-         <topicref keyref="feature-cluster-manage-start-n"/>
+         <topicref keyref="feature-manage-start-n"/>
       </topicref>
    </chapter>
 </bookmap>

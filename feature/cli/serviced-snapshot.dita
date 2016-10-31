@@ -8,7 +8,7 @@
     <section id="section_p3x_mng_hx">
       <title>USAGE</title>
       <p>Use this command to create a short-term save point of a system. For more information, see
-          <xref keyref="feature-cluster-manage-snapshot-rollback"/>.</p>
+          <xref keyref="feature-manage-snapshot-rollback"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
       <title>SYNTAX</title>
