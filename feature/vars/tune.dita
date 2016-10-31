@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Tuning variables</title>
+  <title>Tuning variables (all cluster hosts)</title>
   <refbody>
     <table>
       <tgroup cols="2">
@@ -34,6 +34,24 @@
           <row>
             <entry><varname>SERVICED_OPTS</varname></entry>
             <entry>Startup arguments for <cmdname>serviced</cmdname>.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_CONTROLLER_BINARY</varname></entry>
+            <entry>The path of the <cmdname>serviced-controller</cmdname> binary.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_HOME</varname></entry>
+            <entry>The path of the home directory for <cmdname>serviced</cmdname>.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_ETC_PATH</varname></entry>
+            <entry>The path of the directory for <cmdname>serviced</cmdname>
+              configuration files.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_VHOST_ALIASES</varname></entry>
+            <entry>A list of hostname aliases for a host; for example, 
+              <codeph>localhost</codeph>.</entry>
           </row>
         </tbody>
       </tgroup>

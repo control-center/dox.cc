@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="1" modification="x"/>        
+        <vrm version="1" release="2" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.285</bookpartno>
+      <bookpartno>1300.16.302</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -42,25 +42,30 @@
       <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
     <topicgroup>
+      <mapref href="book/install/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/lib-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/perform-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/prepare-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/vars-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/> 
     </topicgroup>
     <topicgroup>
-      <mapref href="feature/cluster/manage-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/access-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <chapter href="book/upgrade/prepare/prepare.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/perform/perform.ditamap" format="ditamap"/>
-  
-  <appendix href="feature/cluster/manage/manage.ditamap" format="ditamap"/>
-  <appendix href="book/install/vars/vars.ditamap" format="ditamap"/>
-  <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
-  
+  <chapter href="book/upgrade/to12x/prep.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/master.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/to12x/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
+
+  <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
+  <appendix href="book/install/cli/cli.ditamap" format="ditamap"/>
+  <appendix href="book/upgrade/maps/offline.ditamap" format="ditamap"/>
 </bookmap>

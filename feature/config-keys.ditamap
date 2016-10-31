@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/config</title>
+  <topicgroup>
+    <keydef keys="feature-config-delegate-install"
+            href="config/delegate-install.dita"
+            format="dita"
+    />
+    <keydef keys="feature-config-master-install"
+            href="config/master-install.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

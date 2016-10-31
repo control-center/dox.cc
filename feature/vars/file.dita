@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><ph keyref="nm-cc"/> configuration file environment variables</title>
+  <title><ph keyref="nm-cc"/> configuration file</title>
   <refbody>
     <section>
       <p>The <ph keyref="nm-cc"/> configuration file, <filepath>/etc/default/serviced</filepath>,
         contains Bash environment variables that are read by the <cmdname>serviced</cmdname> daemon
-        startup script. The following list describes the variables.</p>
+        startup script. The order of the following list matches the order of the variables in the
+        file.</p>
       
       <dl>
         <dlentry id="HOME">
           <dt><varname>HOME</varname></dt>
-          <dd><b>Default</b>: (the value of shell variable HOME)</dd> 
-          <dd>The path Docker clients use to locate 
-            the <filepath>.dockercfg</filepath> authentication file. 
-            Docker Hub credentials are stored in the file.</dd>
+          <dd><b>Default</b>: (the value of shell variable <varname>HOME</varname>)</dd> 
+          <dd>The path Docker Engine clients use to locate the <filepath>.dockercfg</filepath>
+            authentication file, which contains Docker Hub credentials.</dd>
         </dlentry>
         
         <dlentry id="TMPDIR">
           <dt><varname>TMPDIR</varname></dt>
-          <dd><b>Default</b>: (the value of shell variable TMPDIR)</dd> 
+          <dd><b>Default</b>: (the value of shell variable <varname>TMPDIR</varname>)</dd> 
           <dd>The path <cmdname>serviced</cmdname> uses for temporary files.</dd>
         </dlentry>
         
@@ -28,27 +28,7 @@
           <dd><b>Default</b>: <codeph>2</codeph></dd> 
           <dd>The maximum number of CPU cores <cmdname>serviced</cmdname> uses.</dd>
         </dlentry>
-        
-        <dlentry id="SERVICED_AGENT">
-          <dt><varname>SERVICED_AGENT</varname></dt>
-          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs delegate tasks. Delegates
-             run application services scheduled for the resource pool to which they belong.
-             A <cmdname>serviced</cmdname> instance may be configured as delegate and master or just delegate.</dd>
-          <dd>This variable must be explicitly set on all <ph keyref="nm-cc"/> cluster hosts. </dd>
-        </dlentry>
-        
-        <dlentry id="SERVICED_MASTER">
-          <dt><varname>SERVICED_MASTER</varname></dt>
-          <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
-          <dd>Determines whether a <cmdname>serviced</cmdname> instance performs master tasks. 
-            The master runs the application services scheduler and other internal services. A
-            <cmdname>serviced</cmdname> instance may be configured as delegate and master or 
-            just delegate.</dd>
-          <dd>This variable must be explicitly set on all <ph keyref="nm-cc"/> cluster hosts. </dd>
-        </dlentry>
-        
-        <!-- save for the day SERVICED_AGENT dies
+
         <dlentry id="SERVICED_MASTER">
           <dt><varname>SERVICED_MASTER</varname></dt>
           <dd><b>Default</b>: <codeph>1</codeph> (true)</dd> 
@@ -57,11 +37,26 @@
             Delegates run the application services assigned to the resource pool to which
             they belong.</dd>
           <dd>Only one <cmdname>serviced</cmdname> instance can be the master; all other instances
-            must be delegates. The default value assigns the delegate role. To assign the master
-            role, set the value to <codeph>1</codeph> (true). This variable must be explicitly set 
+            must be delegates. The default value assigns the master role. To assign the delegate
+            role, set the value to <codeph>0</codeph> (false). This variable must be explicitly set 
             on all <ph keyref="nm-cc"/> cluster hosts. </dd>
         </dlentry>
-        -->
+        
+        <dlentry id="SERVICED_MASTER_IP">
+          <dt><varname>SERVICED_MASTER_IP</varname></dt>
+          <dd><b>Default</b>: <codeph>127.0.0.1</codeph></dd> 
+          <dd>A convenience variable, for use in places where the IP address or hostname of the
+            master host is required. This variable is unused unless it is both set here and
+            referenced elsewhere. (For example, by replacing <codeph>{{SERVICED_MASTER_IP}}</codeph>
+            with <codeph>$SERVICED_MASTER_IP</codeph>.)</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MASTER_POOLID">
+          <dt><varname>SERVICED_MASTER_POOLID</varname></dt>
+          <dd><b>Default</b>: <codeph>default</codeph></dd> 
+          <dd>The name of the default resource pool. This variable is only used
+            the first time <cmdname>serviced</cmdname> is started.</dd>
+        </dlentry>
         
         <dlentry id="SERVICED_ZK">
           <dt><varname>SERVICED_ZK</varname></dt>
@@ -329,11 +324,10 @@
             <varname>SERVICED_DM_THINPOOLDEV</varname> variable.</dd>
         </dlentry>
                
-        <dlentry id="SERVICED_DM_THINPOOLDEV">
-          <dt><varname>SERVICED_DM_THINPOOLDEV</varname></dt>
+        <dlentry id="SERVICED_DM_ARGS">
+          <dt><varname>SERVICED_DM_ARGS</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
-          <dd>The name of the thin pool device to use with the
-            <codeph>devicemapper</codeph> storage driver.</dd>
+          <dd>Customized startup arguments for the <codeph>devicemapper</codeph> storage driver.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DM_BASESIZE">
@@ -344,14 +338,46 @@
             This variable is used when <cmdname>serviced</cmdname> starts for 
             the first time, to set the initial size of tenant devices, and when
             a backup is restored, to set the size of the restored tenant device.</dd>
-            <dd>The base device is a snapshot that occupies at most 1MB of space in 
+            <dd>The base size device is sparse device that occupies at most 1MB of space in 
             the application data thin pool; its size has no immediate practical impact.
             However, the application data thin pool should have enough space for twice
             the size of each tenant device it supports, to store both the data itself and
             snapshots of the data. Since the application data thin pool is an LVM logical 
-            volume, its size can be increased at any time. Likewise, the size of each tenant 
-            device increased as well, as long as the overall storage in the thin pool has
-            enough space for the larger size and for additional snapshots.</dd>
+            volume, its size can be increased at any time. Likewise, the size of a tenant 
+            device can be increased, as long as the available space in the thin pool can
+            support the larger tenant device plus snapshots.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_LOOPDATASIZE">
+          <dt><varname>SERVICED_DM_LOOPDATASIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>100G</codeph></dd> 
+          <dd>Specifies the size of the data portion of the loop-back file. 
+            This setting is ignored when <varname>SERVICED_ALLOW_LOOP_BACK</varname>
+            is <codeph>false</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_LOOPMETADATASIZE">
+          <dt><varname>SERVICED_DM_LOOPMETADATASIZE</varname></dt>
+          <dd><b>Default</b>: <codeph>2G</codeph></dd> 
+          <dd>Specifies the size of the metadata portion of the loop-back file. 
+            This setting is ignored when <varname>SERVICED_ALLOW_LOOP_BACK</varname>
+            is <codeph>false</codeph>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_DM_THINPOOLDEV">
+          <dt><varname>SERVICED_DM_THINPOOLDEV</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>The name of the thin pool device to use with the
+            <codeph>devicemapper</codeph> storage driver.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_STORAGE_STATS_UPDATE_INTERVAL">
+          <dt><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></dt>
+          <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
+          <dd>The number of seconds between polls of kernel statistics
+            about the application data thin pool.</dd>
+          <dd>This setting is ignored when the operating system
+            kernel version is less than 3.10.0-366.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">
@@ -360,7 +386,7 @@
           <dd>Determines whether loop-back files can be used with the <codeph>devicemapper</codeph>
             storage driver. This option is not supported for production use.</dd>
         </dlentry>
-        
+
         <dlentry id="SERVICED_MAX_CONTAINER_AGE">
           <dt><varname>SERVICED_MAX_CONTAINER_AGE</varname></dt>
           <dd><b>Default</b>: <codeph>86400</codeph> (24 hours)</dd> 
@@ -522,16 +548,12 @@
             up rapidly when this value is zero or too high.</dd>
         </dlentry>
         
-        
-        <dlentry id="SERVICED_STORAGE_STATS_UPDATE_INTERVAL">
-          <dt><varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname></dt>
-          <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
-          <dd>The number of seconds between polls of kernel statistics
-            about the application data thin pool.</dd>
-          <dd>This setting is ignored when the operating system
-            kernel version is less than 3.10.0-366.</dd>
+        <dlentry id="SERVICED_NFS_CLIENT">
+          <dt><varname>SERVICED_NFS_CLIENT</varname></dt>
+          <dd><b>Default</b>: <codeph>1</codeph></dd> 
+          <dd>DEPRECATED: Prevent a delegate host from mounting the DFS.</dd>
         </dlentry>
-
+        
         <dlentry id="SERVICED_SERVICE_MIGRATION_TAG">
           <dt><varname>SERVICED_SERVICE_MIGRATION_TAG</varname></dt>
           <dd><b>Default</b>: <codeph>1.0.2</codeph></dd> 
@@ -548,7 +570,8 @@
         <dlentry id="SERVICED_ISVCS_ZOOKEEPER_ID">
           <dt><varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
-          <dd>The unique identifier (a positive integer) of a ZooKeeper ensemble node.</dd>
+          <dd>The unique identifier of a ZooKeeper ensemble node.
+            The identifier must be a positive integer.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_ZOOKEEPER_QUORUM">
@@ -590,6 +613,14 @@
             as the value of this variable.</dd>
         </dlentry>
 
+        <dlentry id="SERVICED_DOCKER_DNS">
+          <dt><varname>SERVICED_DOCKER_DNS</varname></dt>
+          <dd><b>Default</b>: (empty)</dd> 
+          <dd>The IP address of one or more DNS servers. The value of this variable is
+            injected into each Docker Engine container that <cmdname>serviced</cmdname>
+            starts. Separate multiple values with the comma character (<codeph>&#44;</codeph>).</dd>
+        </dlentry>
+        
         <dlentry id="SERVICED_OPTS">
           <dt><varname>SERVICED_OPTS</varname></dt>
           <dd><b>Default</b>: (empty)</dd> 
@@ -598,7 +629,7 @@
         
         <dlentry id="SERVICED_SNAPSHOT_USE_PERCENT">
           <dt><varname>SERVICED_SNAPSHOT_USE_PERCENT</varname></dt>
-          <dd><b>Default</b>: 20</dd> 
+          <dd><b>Default</b>: <codeph>20</codeph></dd> 
           <dd>The amount of free space in the thin pool specified with
             <varname>SERVICED_DM_THINPOOLDEV</varname>,
             expressed as a percentage the total size. This value is used to determine
@@ -607,16 +638,62 @@
         
         <dlentry id="SERVICED_ZK_SESSION_TIMEOUT">
           <dt><varname>SERVICED_ZK_SESSION_TIMEOUT</varname></dt>
-          <dd><b>Default</b>: 15</dd> 
+          <dd><b>Default</b>: <codeph>15</codeph></dd> 
           <dd>The number of seconds the ZooKeeper leader waits before flushing
             an inactive connection.</dd>
         </dlentry>
         
+        <dlentry id="SERVICED_ES_STARTUP_TIMEOUT">
+          <dt><varname>SERVICED_ES_STARTUP_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>240</codeph></dd> 
+          <dd>The number of seconds to wait for the Elasticsearch service to start.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_MAX_DFS_TIMEOUT">
+          <dt><varname>SERVICED_MAX_DFS_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>300</codeph></dd> 
+          <dd>The number of seconds until a DFS snapshot attempt times out.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_RPC_DIAL_TIMEOUT">
+          <dt><varname>SERVICED_RPC_DIAL_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>30</codeph></dd> 
+          <dd>The number of seconds until an RPC connection attempt times out.</dd>
+        </dlentry>
+        
         <dlentry id="SERVICED_AUTH_TOKEN_EXPIRATION">
           <dt><varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname></dt>
-          <dd><b>Default</b>: 3600 (1 hour)</dd> 
+          <dd><b>Default</b>: <codeph>3600</codeph> (1 hour)</dd> 
           <dd>The expiration time, in seconds, of delegate authentication tokens. This timeout affects
             RPC, mux, and <cmdname>serviced</cmdname> internal services endpoint communications.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_CONTROLLER_BINARY">
+          <dt><varname>SERVICED_CONTROLLER_BINARY</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/bin/serviced-controller</filepath></dd> 
+          <dd>The path of the <cmdname>serviced-controller</cmdname> binary,
+            which runs in every container that <cmdname>serviced</cmdname> manages.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_HOME">
+          <dt><varname>SERVICED_HOME</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced</filepath></dd> 
+          <dd>The path of the home directory for <cmdname>serviced</cmdname>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_ETC_PATH">
+          <dt><varname>SERVICED_ETC_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/opt/serviced/etc</filepath></dd> 
+          <dd>The path of the directory for <cmdname>serviced</cmdname>
+            configuration files. The default is <filepath><varname>SERVICED_HOME</varname>/etc</filepath>.</dd>
+        </dlentry>
+        
+        <dlentry id="SERVICED_VHOST_ALIASES">
+          <dt><varname>SERVICED_VHOST_ALIASES</varname></dt>
+          <dd><b>Default</b>: (none)</dd> 
+          <dd>A list of hostname aliases for a host; for example, 
+            <codeph>localhost</codeph>. Separate multiple values 
+            with the comma character (<codeph>&#44;</codeph>)..</dd>
         </dlentry>
       </dl>
     </section>

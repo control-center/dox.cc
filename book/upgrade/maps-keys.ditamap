@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/maps</title>
+  <topicgroup>
+    <keydef keys="upgrade-maps-offline"
+            href="maps/offline.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-maps-start"
+            href="maps/start.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-maps-stop"
+            href="maps/stop.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-maps-vars"
+            href="maps/vars.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
