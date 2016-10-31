@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in notes</title>
+  <topicgroup>
+    <keydef keys="notes-111-features"
+            href="111/features.dita"
+            format="dita"
+    />
+    <keydef keys="notes-111-fixed"
+            href="111/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-111-known"
+            href="111/known.dita"
+            format="dita"
+    />
+    <keydef keys="notes-111-self"
+            href="111/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-112-fixed"
+            href="112/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-112-self"
+            href="112/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-113-fixed"
+            href="113/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-113-notes"
+            href="113/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-113-self"
+            href="113/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-114-fixed"
+            href="114/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-114-self"
+            href="114/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-115-fixed"
+            href="115/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-115-self"
+            href="115/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-116-fixed"
+            href="116/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-116-notes"
+            href="116/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-116-self"
+            href="116/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-117-features"
+            href="117/features.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-fixed"
+            href="117/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-known"
+            href="117/known.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-notes"
+            href="117/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-117-self"
+            href="117/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-118-features"
+            href="118/features.dita"
+            format="dita"
+    />
+    <keydef keys="notes-118-fixed"
+            href="118/fixed.dita"
+            format="dita"
+    />
+    <keydef keys="notes-118-known"
+            href="118/known.dita"
+            format="dita"
+    />
+    <keydef keys="notes-118-notes"
+            href="118/notes.dita"
+            format="dita"
+    />
+    <keydef keys="notes-118-self"
+            href="118/self.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+   <keydef keys="notes-119-features"
+           href="119/features.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-fixed"
+           href="119/fixed.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-known"
+           href="119/known.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-notes"
+           href="119/notes.dita"
+           format="dita"
+   />
+   <keydef keys="notes-119-self"
+           href="119/self.dita"
+           format="dita"
+   />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-back-back"
+            href="back/back.dita"
+            format="dita"
+    />
+    <keydef keys="notes-back-errata"
+            href="back/errata.dita"
+            format="dita"
+    />
+    <keydef keys="notes-back-limits"
+            href="back/limits.dita"
+            format="dita"
+    />
+    <keydef keys="notes-back-more-info"
+            href="back/more-info.dita"
+            format="dita"
+    />
+   </topicgroup>
+   <topicgroup>
+    <keydef keys="notes-front-about"
+            href="front/about.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
