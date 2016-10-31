@@ -4,11 +4,18 @@
   <title>Storage variables</title>
   <refbody>
     <section>
-      <p>The variables in the following table are set only on the master host. The first group of
-        variables is set during installation, and the defaults of the second group may need to be
-        changed before starting the master host for the first time. Typically, the last three groups
-        of variables are not changed until <ph keyref="nm-cc"/> has managed your application for a
-        while and you see a need to do so.</p>
+      <p>The variables in the following table are set only on the master host. </p>
+      <ul>
+        <li>Use one of the first two groups of variables but not both.</li>
+        <li>The defaults of the third group may need to be
+          changed before starting the master host for the first time.</li>
+        <li>Typically, the defaults of the last two groups
+          of variables are not changed until <ph keyref="nm-cc"/> has managed your 
+          application for a while and you see a need to do so. Likewise, the 
+          <varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname> variable,
+          which defines the interval for collecting kernel statistics about the
+          application data thin pool.</li>
+      </ul>
     <table>
       <tgroup cols="3">
         <colspec colname="c1" colwidth="5.2*"/>
@@ -24,10 +31,21 @@
         <tbody>
           <row>
             <entry><lines><varname>SERVICED_FS_TYPE</varname>
-<varname>SERVICED_DM_THINPOOLDEV</varname>
-<varname>SERVICED_DM_BASESIZE</varname></lines></entry>
-            <entry>The driver type, device path, and base size
-            of the application data storage resource.</entry>
+<varname>SERVICED_DM_ARGS</varname>
+<varname>SERVICED_DM_BASESIZE</varname>
+<varname>SERVICED_DM_THINPOOLDEV</varname></lines></entry>
+            <entry>The specifications of a <codeph>devicemapper</codeph>-based
+             application data storage resource for production use.</entry>
+            <entry>Provide basic information about
+              the data storage resource.</entry>
+          </row>
+          <row>
+            <entry><lines><varname>SERVICED_FS_TYPE</varname>
+<varname>SERVICED_DM_LOOPDATASIZE</varname>
+<varname>SERVICED_DM_LOOPMETADATASIZE</varname>
+<varname>SERVICED_ALLOW_LOOP_BACK</varname></lines></entry>
+            <entry>The specifications of a <codeph>devicemapper</codeph>-based
+              application data storage resource for development use.</entry>
             <entry>Provide basic information about
               the data storage resource.</entry>
           </row>
@@ -43,9 +61,11 @@
           </row>
           <row>
             <entry><lines><varname>SERVICED_SNAPSHOT_TTL</varname>
-<varname>SERVICED_SNAPSHOT_USE_PERCENT</varname></lines></entry>
-            <entry>The snapshot retention interval and the percentage of the data storage thin pool
-              that is unused.</entry>
+<varname>SERVICED_SNAPSHOT_USE_PERCENT</varname>
+<varname>SERVICED_MAX_DFS_TIMEOUT</varname></lines></entry>
+            <entry>The snapshot retention interval, the percentage of the 
+              data storage thin pool that is unused, and the snapshot
+              attempt timeout interval.</entry>
             <entry>Prevent the creation of snapshots that are too 
               large to fit the thin pool.</entry>
           </row>
@@ -55,8 +75,8 @@
 <varname>SERVICED_LOGSTASH_CYCLE_TIME</varname></lines></entry>
             <entry>The variables that manage the amount of space used by the
               application log storage service.</entry>
-            <entry>Prevent application logs from filling the storage device that the
-              log storage service uses.</entry>
+            <entry>Prevent application logs from filling the storage device that logstash
+                uses.</entry>
           </row>
         </tbody>
       </tgroup>

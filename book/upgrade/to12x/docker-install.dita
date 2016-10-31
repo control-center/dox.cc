@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating Docker Engine</title>
+  <taskbody>
+    <context>Use this procedure to update Docker Engine
+      to version <ph keyref="lo-version-docker"/>.</context>
+    <steps>
+      <step>
+        <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Ensure that Docker Engine updates are disabled.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Check the Docker repository file.</cmd>
+            <stepxmp>
+              <codeblock>grep enabled /etc/yum.repos.d/docker.repo</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the result is <codeph>enabled=0</codeph>,
+                  proceed to the next step.</li>
+                <li>If the result is <codeph>enabled=1</codeph>,
+                  perform the following substeps.</li>
+              </ul>
+              </stepresult>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
+              a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change the value of the <codeph>enabled</codeph> key
+              from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+              perform the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable automatic start of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Update the kernel or the operating system, and then restart the host.</cmd>
+            <info>The following commands require internet access 
+              or a local mirror of operating system packages.</info>
+            <stepxmp><b>Update only the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+            <stepxmp><b>Update the operating system, including the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable automatic start of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Enable Docker Engine updates.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
+              a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change the value of the <codeph>enabled</codeph> key
+              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Identify the name of the LVM thin pool for Docker Engine.</cmd>
+        <stepxmp>
+          <codeblock>docker info 2>/dev/null | grep 'Pool Name'</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock> Pool Name: docker-docker--pool</codeblock>
+          <p>Record the name for use in a subsequent step.</p>
+        </stepresult>
+      </step>
+
+      <step>
+        <cmd>Back up the Docker Engine drop-in and environment files.</cmd>
+        <stepxmp>
+          <codeblock>mv /etc/systemd/system/docker.service.d/docker.conf \
+  /etc/systemd/system/docker.service.d/docker.conf.bak
+mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Stop the Docker Engine service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Remove Docker Engine 1.9.0 without checking dependencies.</cmd>
+        <stepxmp>
+          <codeblock>rpm -e --nodeps docker-engine-1.9.0</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Disable unintended Docker Engine updates.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Change the value of the <codeph>enabled</codeph> key from <codeph>1</codeph> to
+                <codeph>0</codeph>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Save the file, and then close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

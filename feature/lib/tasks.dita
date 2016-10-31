@@ -407,7 +407,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               perform the following substeps.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the kernel or the operating system and then restart the host.</cmd>
+            <cmd>Update the kernel or the operating system, and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp><b>Update only the kernel</b>:
@@ -775,6 +775,24 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             <cmd>Install <ph keyref="nm-cc"/> from the remote repository.</cmd>
             <stepxmp>
               <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="serviced-cfg-backup">
+        <cmd>Make a backup copy of the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Make a copy of <filepath>/etc/default/serviced</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set the backup file permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
             </stepxmp>
           </substep>
         </substeps>

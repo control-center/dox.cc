@@ -14,7 +14,7 @@
         <li>Copy a variable, then edit the copy. If you need to revert a variable to its default
           value, you don't have to leave the file to look it up.</li>
         <li>Put the first character of the variable declaration in the first column of its line.
-          It's easier to <cmdname>grep</cmdname> for settings each one starts a line.</li>
+          It's easier to <cmdname>grep</cmdname> for settings when each one starts a line.</li>
         <li>Add customizations to the top of the file. Customizations at the end of the file or
           scattered throughout the file can be overlooked.</li>
       </ol>

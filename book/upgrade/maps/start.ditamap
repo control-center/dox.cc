@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Start</title>
+   <appendix keyref="upgrade-maps-start">
+      <topicref keyref="upgrade-to12x-start-master"/>
+      <topicref keyref="upgrade-to12x-start-delegate">
+        <topicref keyref="upgrade-to12x-start-delegate-ssh"/>
+        <topicref keyref="upgrade-to12x-start-delegate-local"/>
+      </topicref>
+      <topicref keyref="upgrade-to12x-start-zk"/>
+      <topicref keyref="upgrade-to12x-start-pools"/>
+   </appendix>
+</bookmap>
