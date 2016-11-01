@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Upgrading <ph keyref="nm-cc"/> delegate hosts</title>
+  <title>After upgrading</title>
   <refbody>
     <section>
-      <p>TBD</p>
+      <p>This chapter provides information and procedures to prepare your 
+        <ph keyref="nm-cc"/> deployment for an upgrade.</p>
     </section>
   </refbody>
 </reference>

@@ -79,12 +79,5 @@
           is always a node in the ZooKeeper ensemble.</stepresult>
       </step>
     </steps>
-    <result>
-      <ul>
-        <li><b>Single-host deployments</b>: The upgrade is complete.</li>
-        <li><b>Multi-host deployments</b>: Perform one of the next two 
-          procedures on each ZooKeeper ensemble host.</li>
-      </ul>
-    </result>
   </taskbody>
 </task>

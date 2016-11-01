@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
- <title>Prepare</title>
-  <chapter keyref="upgrade-to12x-prep">
+ <title>Before</title>
+  <chapter keyref="upgrade-maps-prep">
     <topicref keyref="upgrade-to12x-prep-features"/>
     <topicref keyref="upgrade-to12x-prep-howto"/>
+    <topicref keyref="upgrade-to12x-prep-images"/>
  </chapter>
 </bookmap>

@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Master</title>
-  <chapter keyref="upgrade-to12x-master">
+  <chapter keyref="upgrade-maps-master">
     <topicref keyref="upgrade-to12x-docker-install"/>
     <topicref keyref="upgrade-to12x-docker-config"/>
     <topicref keyref="upgrade-to12x-cc-master"/>

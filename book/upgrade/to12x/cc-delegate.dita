@@ -65,14 +65,13 @@ yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/><
       <step>
         <cmd>Open the new configuration file with a text editor, 
           and then update the file for your environment.</cmd>
+        <info>Among other changes, the <varname>SERVICED_NFS_CLIENT</varname> variable is
+          deprecated. Make note of the delegates that use the setting, and then rescind DFS access
+          permission from the resource pool to which they belong. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="upgrade-to12x-post-pools"/>.</info>
         <info>For more information about configuring a delegate host,
-          see the following resources:
-          <ul>
-            <li><xref keyref="upgrade-to12x-vars-old"/></li>
-            <li><xref keyref="upgrade-to12x-vars-new"/></li>
-            <li><xref keyref="upgrade-to12x-vars"/></li>
-          </ul>
-        </info>
+          see <xref keyref="upgrade-to12x-vars"/>.</info>
+        
       </step>
       
     </steps>

@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.302</bookpartno>
+      <bookpartno>1300.16.306</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -59,11 +59,12 @@
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <chapter href="book/upgrade/to12x/prep.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
   <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/to12x/master.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/to12x/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/delegate.ditamap" format="ditamap"/>
   <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/post.ditamap" format="ditamap"/>
 
   <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/cli/cli.ditamap" format="ditamap"/>

@@ -11,10 +11,6 @@
             href="to12x/cc-master.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-delegate"
-            href="to12x/delegate.dita"
-            format="dita"
-    />
     <keydef keys="upgrade-to12x-docker-config"
             href="to12x/docker-config.dita"
             format="dita"
@@ -23,8 +19,8 @@
             href="to12x/docker-install.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-master"
-            href="to12x/master.dita"
+    <keydef keys="upgrade-to12x-post-pools"
+            href="to12x/post-pools.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-prep-features"
@@ -35,8 +31,8 @@
             href="to12x/prep-howto.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-prep"
-            href="to12x/prep.dita"
+    <keydef keys="upgrade-to12x-prep-images"
+            href="to12x/prep-images.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-start-delegate-local"
@@ -53,10 +49,6 @@
     />
     <keydef keys="upgrade-to12x-start-master"
             href="to12x/start-master.dita"
-            format="dita"
-    />
-    <keydef keys="upgrade-to12x-start-pools"
-            href="to12x/start-pools.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-start-zk"

@@ -9,6 +9,5 @@
         <topicref keyref="upgrade-to12x-start-delegate-local"/>
       </topicref>
       <topicref keyref="upgrade-to12x-start-zk"/>
-      <topicref keyref="upgrade-to12x-start-pools"/>
    </appendix>
 </bookmap>

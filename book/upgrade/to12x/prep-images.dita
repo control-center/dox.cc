@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating an image list</title>
+  <taskbody>
+    <context>Use this procedure to create a list of Docker images that
+    will not be needed after completing the upgrade.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the images associated with the
+        installed version of <cmdname>serviced</cmdname>.</cmd>
+        <stepxmp>
+          <codeblock>serviced version | grep Images</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v40 zenoss/isvcs-zookeeper:v3]</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Display the <cmdname>serviced</cmdname> images in the local repository.</cmd>
+        <stepxmp>
+          <codeblock>docker images| grep isvcs</codeblock>
+        </stepxmp>
+        <stepresult>Example result (edited to fit):
+          <codeblock>REPOSITORY                     TAG       IMAGE ID
+zenoss/serviced-isvcs          v40       88cd6c24cc82
+zenoss/isvcs-zookeeper         v3        46fa0a2fc4bf</codeblock>
+          <p>The result of this command may include images other than the
+          ones identified in the previous step. The other images are from
+          previous versions of <cmdname>serviced</cmdname>.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Record the result of this command or the previous command.</cmd>
+        <info>The information is used after the upgrade is complete, to remove the images.</info>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>
