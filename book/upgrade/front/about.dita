@@ -4,8 +4,8 @@
  <title>About this guide</title>
  <refbody>
    <section>
-   <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for
-      upgrading <ph keyref="nm-cc"/> from any 1.1.x version to 1.2.x version.</p>
+   <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for upgrading <ph
+          keyref="nm-cc"/> from any 1.1.x version to version 1.2.x.</p>
    </section>
    
    <section conkeyref="related-pubs/cc"/>

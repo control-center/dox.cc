@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/notes/back (2016-09-13 17:38:28)</title>
+ <title>Keys in notes/back</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-notes-back-back"
+    <keydef keys="notes-back-back"
             href="back/back.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-back-errata"
+    <keydef keys="notes-back-errata"
             href="back/errata.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-back-limits"
+    <keydef keys="notes-back-limits"
             href="back/limits.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-back-more-info"
+    <keydef keys="notes-back-more-info"
             href="back/more-info.dita"
             format="dita"
     />

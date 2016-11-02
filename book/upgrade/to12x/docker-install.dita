@@ -134,9 +134,13 @@ mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
       
       <step>
         <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>.</cmd>
-        <stepxmp>
+        <stepxmp><b>With internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
 yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+        </stepxmp>
+        <stepxmp><b>Without internet access:</b>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
         </stepxmp>
       </step>
       

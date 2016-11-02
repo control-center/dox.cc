@@ -4,5 +4,7 @@
  <title>After</title>
   <chapter keyref="upgrade-maps-post">
     <topicref keyref="upgrade-to12x-post-pools"/>
+    <topicref keyref="upgrade-to12x-post-images"/>
+    <topicref keyref="feature-manage-remove-orphan-snaps"/>
  </chapter>
 </bookmap>

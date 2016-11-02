@@ -5,6 +5,7 @@
   <chapter keyref="upgrade-maps-master">
     <topicref keyref="upgrade-to12x-docker-install"/>
     <topicref keyref="upgrade-to12x-docker-config"/>
+    <topicref keyref="upgrade-to12x-docker-images"/>
     <topicref keyref="upgrade-to12x-cc-master"/>
  </chapter>
 </bookmap>

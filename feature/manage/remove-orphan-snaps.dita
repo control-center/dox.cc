@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Removing orphaned snapshot devices</title>
+  <taskbody>
+    <context>Use this procedure to identify orphaned snapshot devices
+    in the LVM thin pool for application data, and to remove them.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the location of tenant volumes.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_VOLUMES_PATH' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the command returns a result, the location of tenant
+            volumes is the value of the <varname>SERVICED_VOLUMES_PATH</varname> 
+            variable. </choice>
+          <choice>If the command does not return a result, the location of tenant
+            volumes is the default value of <varname>SERVICED_VOLUMES_PATH</varname>,
+            <filepath>/opt/serviced/var/volumes</filepath>.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Identify the device of the <cmdname>serviced</cmdname> thin pool belongs.</cmd>
+        <stepxmp>
+          <codeblock>ls /dev/mapper | grep serviced</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>serviced-serviced--pool
+serviced-serviced--pool_tdata
+serviced-serviced--pool_tmeta</codeblock>
+        <p>The first result is the thin pool device. The other results 
+          represent the data and metadata portions of the device.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Check for orphaned snapshot devices.</cmd>
+        <stepxmp>Replace <varname>Thin-Pool-Device</varname> with the name of the thin pool device
+          from the previous step, and replace <varname>Volumes-Path</varname> with the location of
+          tenant volumes:
+          <codeblock>serviced-storage -o dm.thinpooldev=/dev/mapper/<varname>Thin-Pool-Device</varname> \
+  check <varname>Volumes-Path</varname></codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result is <codeph>No orphaned devices found</codeph>,
+          stop. There are no orphaned snapshot devices to remove.</choice>
+          <choice>If the result is <codeph>Orphaned devices were found</codeph>,
+            perform the next step.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Remove orphaned snapshot devices.</cmd>
+        <stepxmp>Replace <varname>Thin-Pool-Device</varname> with the name of the thin pool device
+          from the previous step, and replace <varname>Volumes-Path</varname> with the location of
+          tenant volumes:
+          <codeblock>serviced-storage -o dm.thinpooldev=/dev/mapper/<varname>Thin-Pool-Device</varname> \
+  check -c <varname>Volumes-Path</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

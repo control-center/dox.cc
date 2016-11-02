@@ -9,7 +9,7 @@
       that are addressed during this upgrade:</p>
       
       <ul>
-        <li>The minimum kernel version for all hosts in a <ph keyref="nm-cc"/> cluster is
+        <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
             <codeph>3.10.0-327.22.2.el7.x86_64</codeph>. The kernel is available for RHEL/CentOS 7.1
           and 7.2. For optimal results, the 7.2 release is recommended, and the instructions for
           checking and updating the kernel include an option to update the operating system at the
@@ -36,9 +36,9 @@
           to the new functionality, delegate host configurations that include the
           <varname>SERVICED_NFS_CLIENT</varname> variable are still supported.</li>
         
-        <li>Docker Engine <ph keyref="lo-version-docker"/> includes changes to its storage
-          subsystem. The initial startup takes a little longer, as the old layout is replaced with
-          the new layout.</li>
+        <li>Among other changes since version 1.9.0, Docker Engine <ph keyref="lo-version-docker"/>
+          includes a new storage subsystem. The initial startup takes a little longer, as the old
+          layout is replaced with the new layout.</li>
       </ul>
       
       <p>For more information about this release, refer to the 

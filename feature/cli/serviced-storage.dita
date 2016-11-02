@@ -11,7 +11,8 @@
     </section>
     <section>
       <title>SYNTAX</title>
-      <codeblock>serviced-storage  [-h|--help] [-o <varname>DeviceMapperOption</varname>=<varname>Value</varname>] [-v] Command [<varname>CommandOptions</varname>]</codeblock>
+      <codeblock>serviced-storage  [-h|--help] [-o <varname>DeviceMapperOption</varname>=<varname>Value</varname>] \
+  [-v] Command [<varname>CommandOptions</varname>]</codeblock>
     </section>
     <section>
       <title>GLOBAL OPTIONS</title>
@@ -115,8 +116,9 @@
         either for Docker data or for <ph keyref="nm-cc"/> application data. When devices are
         specified, the command creates an LVM volume group.</p>
       <p>Syntax:</p>
-      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] create-thin-pool [-s|--size]=[<varname>Value</varname>][G|%] \
-        [docker|serviced] [<varname>DevicePath</varname> [<varname>DevicePath</varname>...]|<varname>VolumeGroupName</varname>]</codeblock>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] create-thin-pool \
+  [-s|--size]=[<varname>Value</varname>][G|%] [docker|serviced] \
+  [<varname>DevicePath</varname> [<varname>DevicePath</varname>...]|<varname>VolumeGroupName</varname>]</codeblock>
       <p>Command options:</p>
       <dl>
         <dlentry>
@@ -133,7 +135,8 @@
           <cmdname>serviced</cmdname> tenant device in its LVM thin pool. Like LVM thin pools, the
         size of a <cmdname>serviced</cmdname> tenant device can never decrease.</p>
       <p>Syntax:</p>
-      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] resize [-d|--driver]=<varname>Value</varname> <varname>TenantID</varname> <varname>NewSize</varname></codeblock>
+      <codeblock>serviced-storage [<varname>GlobalOptions</varname>] resize \
+  [-d|--driver]=<varname>Value</varname> <varname>TenantID</varname> <varname>NewSize</varname></codeblock>
       <p>Command options:</p>
       <dl>
         <dlentry>
@@ -163,8 +166,13 @@ serviced-storage create-thin-pool serviced /dev/sdc3</codeblock>
       <p>Increase the size of the <cmdname>serviced</cmdname> LVM thin pool, and then increase the
         size of a <cmdname>serviced</cmdname> tenant device.</p>
       <codeblock>lvextend -L+300G zenoss/serviced-pool
-serviced-storage resize -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
-  -d /opt/serviced/var/volumes 58uuetj38draeu9alp6002b1y 200G</codeblock>
+serviced-storage -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
+  resize -d /opt/serviced/var/volumes 58uuetj38draeu9alp6002b1y 200G</codeblock>
+      <p>Identify the <cmdname>serviced</cmdname> application data thin pool,
+        and then remove orphaned snapshot devices.</p>
+      <codeblock>ls /dev/mapper | grep serviced
+serviced-storage -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
+  check -c /opt/serviced/var/volumes</codeblock>
     </section>
   </refbody>
 </reference>

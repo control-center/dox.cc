@@ -31,9 +31,13 @@
       
       <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp>
+        <stepxmp><b>With internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
 yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+        </stepxmp>
+        <stepxmp><b>Without internet access:</b>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum --enablerepo=zenoss-mirror install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
       </step>
       

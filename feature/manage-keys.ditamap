@@ -51,6 +51,10 @@
             href="manage/remove-images.dita"
             format="dita"
     />
+    <keydef keys="feature-manage-remove-orphan-snaps"
+            href="manage/remove-orphan-snaps.dita"
+            format="dita"
+    />
     <keydef keys="feature-manage-resize"
             href="manage/resize.dita"
             format="dita"

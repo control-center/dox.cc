@@ -5,6 +5,5 @@
   <chapter keyref="upgrade-maps-prep">
     <topicref keyref="upgrade-to12x-prep-features"/>
     <topicref keyref="upgrade-to12x-prep-howto"/>
-    <topicref keyref="upgrade-to12x-prep-images"/>
  </chapter>
 </bookmap>

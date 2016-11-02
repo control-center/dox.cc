@@ -15,8 +15,16 @@
             href="to12x/docker-config.dita"
             format="dita"
     />
+    <keydef keys="upgrade-to12x-docker-images"
+            href="to12x/docker-images.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-to12x-docker-install"
             href="to12x/docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-post-images"
+            href="to12x/post-images.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-post-pools"
@@ -29,10 +37,6 @@
     />
     <keydef keys="upgrade-to12x-prep-howto"
             href="to12x/prep-howto.dita"
-            format="dita"
-    />
-    <keydef keys="upgrade-to12x-prep-images"
-            href="to12x/prep-images.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-start-delegate-local"
