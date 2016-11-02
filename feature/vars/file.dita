@@ -185,6 +185,8 @@
               <li><varname>Port-Number</varname></li>
             </ul>
           </dd>
+          <dd>All <ph keyref="nm-cc"/> cluster hosts must have the same value 
+          for this variable.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_POLL_FREQUENCY">
