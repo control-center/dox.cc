@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Preparing to upgrade</title>
+  <title>Before upgrading</title>
   <refbody>
     <section>
       <p>This chapter provides information and procedures to prepare your 

@@ -9,6 +9,11 @@
         startup script. The order of the following list matches the order of the variables in the
         file.</p>
       
+      <note>All of the environment variables declared in this file are available to all of the
+        containers that <cmdname>serviced</cmdname> manages. You can add any valid Bash shell
+        variable to this file for application containers to use. For compatibility, please
+        avoid variables that begin with <codeph>SERVICED</codeph>.</note>
+      
       <dl>
         <dlentry id="HOME">
           <dt><varname>HOME</varname></dt>
@@ -180,6 +185,8 @@
               <li><varname>Port-Number</varname></li>
             </ul>
           </dd>
+          <dd>All <ph keyref="nm-cc"/> cluster hosts must have the same value 
+          for this variable.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_POLL_FREQUENCY">

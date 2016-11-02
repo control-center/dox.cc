@@ -11,6 +11,10 @@
             href="vars/best.dita"
             format="dita"
     />
+    <keydef keys="feature-vars-browser-all"
+            href="vars/browser-all.dita"
+            format="dita"
+    />
     <keydef keys="feature-vars-browser"
             href="vars/browser.dita"
             format="dita"

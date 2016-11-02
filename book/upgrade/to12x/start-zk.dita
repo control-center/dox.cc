@@ -4,9 +4,7 @@
   <title>Starting the ZooKeeper ensemble</title>
   <taskbody>
     <context>Use this procedure to start the ZooKeeper ensemble
-      default configuration of  the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>) is to
-      start when the host starts. This procedure is only needed after stopping
-      <cmdname>serviced</cmdname> to perform maintenance tasks.</context>
+      after upgrading <ph keyref="nm-cc"/> to version <ph keyref="lo-version-cc"/>.</context>
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -86,23 +84,6 @@
         <stepresult>If none of the nodes reports that it is the ensemble leader within a few minutes of
           starting <cmdname>serviced</cmdname>, reboot the ensemble hosts.</stepresult>
       </step>
-      
-      <step>
-        <cmd>Log in to each of the delegate hosts that are not nodes in the ZooKeeper ensemble <ph
-            conkeyref="strings/login-root"/>, and then start <cmdname>serviced</cmdname>.</cmd>
-        <stepxmp>
-          <codeblock>systemctl start serviced</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step importance="optional">
-        <cmd>Monitor the startup, if desired.</cmd>
-        <stepxmp>
-          <codeblock>journalctl -uf serviced -o cat</codeblock>
-        </stepxmp>
-      </step>
     </steps>
-    <postreq>Once <ph keyref="nm-cc"/> is started, it is ready to start managing applications.
-      For more information, refer to the documentation of your application.</postreq>
   </taskbody>
 </task>

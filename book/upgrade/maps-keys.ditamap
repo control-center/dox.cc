@@ -3,8 +3,24 @@
 <map>
  <title>Keys in upgrade/maps</title>
   <topicgroup>
+    <keydef keys="upgrade-maps-delegate"
+            href="maps/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-maps-master"
+            href="maps/master.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-maps-offline"
             href="maps/offline.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-maps-post"
+            href="maps/post.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-maps-prep"
+            href="maps/prep.dita"
             format="dita"
     />
     <keydef keys="upgrade-maps-start"
