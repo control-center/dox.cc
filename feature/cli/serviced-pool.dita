@@ -91,11 +91,11 @@
       <codeblock>serviced pool set-permission --dfs pool_01_140620</codeblock>
       <p>Give a resource pool access to administrative functions: </p>
       <codeblock>serviced pool set-permission --admin pool_01_140620</codeblock>
-      <p>Remove DFS access permission from a resource pool.<note>Remove DFS access before removing
-          access to administrative functions.</note></p>
+      <p>Remove DFS access permission from a resource pool.<note>If you need to remove access to
+          administrative functions, first remove DFS access.</note></p>
       <codeblock>serviced pool set-permission --dfs=false pool_01_140620</codeblock>
-      <p>Remove resource pool access to administrative functions.<note>Do not remove access to
-          administrative functions until you first remove DFS access.</note></p>
+      <p>Remove resource pool access to administrative functions.<note>If you need to remove access
+          to administrative functions, first remove DFS access.</note></p>
       <codeblock>serviced pool set-permission --admin=false pool_01_140620</codeblock>
     </section>
   </refbody>

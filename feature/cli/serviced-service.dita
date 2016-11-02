@@ -11,7 +11,8 @@
     </section>
     <section>
       <title>SYNTAX</title>
-      <codeblock>serviced service [global options] command [command options] [arguments...]</codeblock>
+      <codeblock>serviced service [global options] command [command options] \
+  [arguments...]</codeblock>
     </section>
     <section><title>COMMANDS</title>The following commands are available for <cmdname>serviced
         service</cmdname>:<dl>
