@@ -32,8 +32,8 @@
         <stepxmp>
           <codeblock>serviced service status</codeblock>
         </stepxmp>
-        <stepresult>When the status of the top-level service and all child services is
-          <codeph>stopped</codeph>, proceed to the next step.</stepresult>
+        <stepresult>When the status is <codeph>stopped</codeph> for the top-level service and all
+          child services, proceed to the next step.</stepresult>
       </step>
       
       <step>
