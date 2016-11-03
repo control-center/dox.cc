@@ -4,26 +4,26 @@
   <title>Security considerations</title>
   <refbody>
     <section>  
-      <p>During installation, <ph keyref="nm-cc"/> has no knowledge of the port requirements
-        of the applications it is to manage, so the installation procedure includes disabling the
-        firewall. After both <ph keyref="nm-cc"/> and an application are
-        installed, you may close unused ports.</p>
+      <p>During installation, <ph keyref="nm-cc"/> has no knowledge of the port requirements of the
+        applications it is to manage, so the installation procedure includes disabling the firewall.
+        After both <ph keyref="nm-cc"/> and an application are installed, you can close unused
+        ports.</p>
       
       
       
-      <p><ph keyref="nm-cc"/> includes a virtual multiplexer (mux), to aggregate 
-        the UDP and TCP traffic among the services it manages. The aggregation is
-        opaque to services, and mux traffic is encrypted when it travels among containers
-        on remote hosts. (Traffic among containers on the same host is not encrypted.)         
-        The mux, along with the distributed file system, enables <ph keyref="nm-cc"/> 
-        to deploy services to any pool host, rapidly. The mux also reduces the number of  
-        open ports required on a <ph keyref="nm-cc"/> host to a predictable set.</p>
+      <p><ph keyref="nm-cc"/> includes a virtual multiplexer (mux) to aggregate the UDP and TCP
+        traffic among the services it manages. The aggregation is opaque to services, and mux
+        traffic is encrypted when it travels among containers on remote hosts. (Traffic among
+        containers on the same host is not encrypted.) The mux, along with the distributed file
+        system, enables <ph keyref="nm-cc"/> to quickly deploy services to any pool host. The mux
+        also reduces the number of open ports required on a <ph keyref="nm-cc"/> host to a
+        predictable set.</p>
       
       <p>The following illustration identifies the ports that <ph keyref="nm-cc"/> requires
         for its operations. All of the ports except 4979 are configurable. All traffic is TCP.</p>
       
       <note><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions, and
-        indirectly, NTP, to synchronize clocks among multiple hosts. In the default configuration of
+        indirectly, NTP to synchronize clocks among multiple hosts. In the default configuration of
           <cmdname>ntpd</cmdname>, the firewalls of master and resource pool hosts must support an
         incoming UDP connection on port 123.</note>
       
@@ -40,9 +40,6 @@
           must have login accounts on the <ph keyref="nm-cc"/> master host. (Pluggable
           Authentication Modules (PAM) is supported.) By default, the users must be members of the
             <codeph>wheel</codeph> group. </li>
-        <li>To gain access to the <ph keyref="nm-cc"/> browser interface, users must have login
-          accounts on the <ph keyref="nm-cc"/> master host. (Pluggable Authentication Modules
-          (PAM) is supported.) By default, the users must be members of the <codeph>wheel</codeph> group.</li>
         
         <li>The <cmdname>serviced</cmdname> startup script sets
           the hard and soft open files limit to 1048576,

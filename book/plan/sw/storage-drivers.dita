@@ -4,11 +4,11 @@
   <title>Docker and <ph keyref="nm-cc"/> storage drivers</title>
   <conbody>
         
-    <p>Starting with release 1.1.1, <ph keyref="nm-cc"/> includes the <codeph>devicemapper</codeph>
-      storage driver for application data. The <ph keyref="nm-cc"/> driver is based on 
-      <xref keyref="url-docker-devicemapper">the Docker <codeph>devicemapper</codeph> 
-        storage driver</xref>, which in turn is based on the 
-      <xref keyref="url-device-mapper">device mapper framework of the Linux kernel</xref>. </p>
+    <p><ph keyref="nm-cc"/> includes the <codeph>devicemapper</codeph> storage driver for
+      application data. The <ph keyref="nm-cc"/> driver is based on <xref
+        keyref="url-docker-devicemapper">the Docker <codeph>devicemapper</codeph> storage
+        driver</xref>, which in turn is based on the <xref keyref="url-device-mapper">device mapper
+        framework of the Linux kernel</xref>. </p>
     
     <p>The key feature of the drivers is their use of thin provisioning, a 
       virtualization method that allocates data blocks only when data is
