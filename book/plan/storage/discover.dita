@@ -6,13 +6,13 @@
     <context>Perform this procedure to identify the block storage devices attached to a host, and
       learn how the devices are configured.</context>
     <steps>
-      <step>
-        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>
+      <step product="open rm">
+        <cmd>Log in to the target host <ph conkeyref="login-as/root"/>
           through a terminal session.</cmd>
       </step>
       
-      <step>
-        <cmd>Gain access to the console interface of the <ph keyref="nm-cc"/> virtual
+      <step product="ucs">
+        <cmd>Gain access to the console interface of the <ph keyref="nm-platform"/> virtual
           machine through your hypervisor.</cmd>
         <info>
           <fig>
@@ -22,14 +22,14 @@
         </info>
       </step>
       
-      <step>
+      <step product="ucs">
         <cmd>Log in as the <codeph>root</codeph> user.</cmd>
         <info>
           <image keyref="png-admin-menu" scale="70"/>
         </info>
       </step>
       
-      <step>
+      <step product="ucs">
         <cmd>Start a command-line session as <codeph>root</codeph>.</cmd>
         <substeps>
           <substep>
