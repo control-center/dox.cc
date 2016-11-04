@@ -7,43 +7,8 @@
       learn how the devices are configured.</context>
     <steps>
       <step>
-        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>
-          through a terminal session.</cmd>
-      </step>
-      
-      <step>
-        <cmd>Gain access to the console interface of the <ph keyref="nm-cc"/> virtual
-          machine through your hypervisor.</cmd>
-        <info>
-          <fig>
-            <title>Login prompt</title>
-            <image keyref="png-login-prompt" scale="70"/>
-          </fig>
-        </info>
-      </step>
-      
-      <step>
-        <cmd>Log in as the <codeph>root</codeph> user.</cmd>
-        <info>
-          <image keyref="png-admin-menu" scale="70"/>
-        </info>
-      </step>
-      
-      <step>
-        <cmd>Start a command-line session as <codeph>root</codeph>.</cmd>
-        <substeps>
-          <substep>
-            <cmd>In the <uicontrol>Appliance Administration</uicontrol> menu, use
-              the down-arrow key to select <uicontrol>Root Shell</uicontrol>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Press the <b>Tab</b> key to select <uicontrol>Run</uicontrol>,
-              and then press the <b>Return</b> key.</cmd>
-          </substep>
-        </substeps>
-        <stepresult>The menu is replaced by a command prompt similar to the following example:
-          <codeblock>[root&#64;ucspm &#126;]&#35;</codeblock>
-        </stepresult>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/> through a terminal
+          session.</cmd>
       </step>
       
       <step>

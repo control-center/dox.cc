@@ -7,6 +7,10 @@
             href="storage/discover.dita"
             format="dita"
     />
+    <keydef keys="plan-storage-new_partition"
+            href="storage/new_partition.dita"
+            format="dita"
+    />
     <keydef keys="plan-storage-partition"
             href="storage/partition.dita"
             format="dita"

@@ -7,8 +7,8 @@
       <p><ph keyref="nm-cc"/> requires the 64-bit version 
         of the following Linux distributions:</p>
         <ul>
-          <li>Red Hat Enterprise Linux (RHEL) 7.1 or 7.2</li>
-          <li>CentOS 7.1 or 7.2</li>
+          <li>Red Hat Enterprise Linux (RHEL) 7.1 or later</li>
+          <li>CentOS 7.1 or later</li>
         </ul>
         <p>All versions of the Linux kernel included in these releases, and all
         subsequent updates, are supported. However, <ph conkeyref="names/company"/> encourages you
@@ -20,8 +20,8 @@
         operating system platforms that are installed and configured with standard options.</p>
 
       <p>The RHEL/CentOS 7.x distributions provide a variety of server configurations. Docker and
-        <ph keyref="nm-cc"/> are  tested and supported the Minimal Install configuration,
-        when the NFS and NTP packages are installed as well.</p>
+          <ph keyref="nm-cc"/> are tested on and support the Minimal Install configuration when the
+        NFS and NTP packages are also installed.</p>
       
       <p><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions. The
         installation procedures include steps to add the Network Time Protocol (NTP) daemon to all

@@ -3,9 +3,9 @@
 <concept id="conceptid">
   <title>Prerequisites</title>
   <conbody>
-    <p>In addition to the requirements for <ph keyref="nm-cc"/> hosts detailed in
-      the preceding chapters, the hosts in a high-availability deployment require
-      the following, additional characteristics or resources:</p>
+    <p>In addition to the requirements for <ph keyref="nm-cc"/> hosts detailed in the preceding
+      chapters, the hosts in a high-availability deployment also require the following
+      characteristics or resources:</p>
     
       <ul>
         <li>Two identical hosts to serve as primary and secondary nodes

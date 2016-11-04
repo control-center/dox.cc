@@ -46,9 +46,9 @@
         <li>Local or remote high-performance storage (detailed separately)</li>
       </ul>
        
-      <note>An under-resourced master host does not function properly. 
-        Please do not deploy <ph keyref="nm-cc"/> and an application 
-        on a master host that does not meet the application's minimum requirements. </note>
+      <note>An under-resourced master host cannot function properly. Ensure that you deploy <ph
+          keyref="nm-cc"/> and applications on a master host that meets the application's minimum
+        requirements.</note>
     </section>
   </refbody>
 </reference>
