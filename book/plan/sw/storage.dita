@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title><ph keyref="nm-cc"/> storage </title>
+  <conbody>
+    <p><ph keyref="nm-cc"/> uses a dedicated LVM thin pool to store application data and snapshots
+      of application data. The distributed file system (DFS) of each tenant application that
+      <cmdname>serviced</cmdname> manages is stored in separate virtual devices in the thin pool.
+       The initial size of each tenant device is copied from the base device, which is created
+       during the initial startup of <cmdname>serviced</cmdname>.</p>    
+    
+    <note> The physical devices associated with the <ph keyref="nm-cc"/> thin pool must be
+      persistent. If removable or re-connectable storage such as a storage-area network based on
+      iSCSI is used, then the Device-Mapper Multipath feature of RHEL/CentOS must be enabled.</note>
+    
+    <p><ph keyref="nm-cc"/> includes the <cmdname>serviced-storage</cmdname> utility for
+      creating and managing its thin pool. The <cmdname>serviced-storage</cmdname> utility:
+      <ul>
+        <li>can use physical devices or partitions and LVM physical volumes 
+          to create a new LVM thin pool for tenant data</li>
+        <li>can add space to a tenant device at any time</li>
+        <li>can identify and clean up orphaned snapshots</li>
+      </ul></p>
+    
+    <p>For convenience, the <cmdname>serviced-storage</cmdname> utility is recommended
+    for creating the Docker thin pool.</p>
+  </conbody>
+</concept>
