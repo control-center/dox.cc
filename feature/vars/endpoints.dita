@@ -26,7 +26,7 @@
           <tbody>
             <row>
               <entry><varname>SERVICED_DOCKER_REGISTRY</varname></entry>
-              <entry><varname>Master-Host</varname><codeph>:9100</codeph></entry>
+              <entry><varname>Master-Host</varname><codeph>:5000</codeph></entry>
               <entry>The local Docker registry for <ph keyref="nm-cc"/>
                 internal services images and application images.</entry>
             </row>
@@ -47,7 +47,7 @@
             <row>
               <entry><varname>SERVICED_LOGSTASH_ES</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:9100</codeph></entry>
-              <entry>The Elasticsearch service.</entry>
+              <entry>The Elasticsearch service for logstash.</entry>
             </row>
             
             <row>

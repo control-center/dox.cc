@@ -431,7 +431,7 @@
         <dlentry id="SERVICED_LOGSTASH_ES">
           <dt><varname>SERVICED_LOGSTASH_ES</varname></dt>
           <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:9100</codeph></dd> 
-          <dd>The endpoint of the logstash Elasticsearch service. On delegate 
+          <dd>The endpoint of the Elasticsearch service for logstash. On delegate 
             hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP 
             address or hostname of the Elasticsearch host, which by default is the
             <cmdname>serviced</cmdname> master host.</dd>

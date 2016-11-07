@@ -12,6 +12,10 @@
       
       <step>
         <cmd>Ensure that Docker Engine updates are disabled.</cmd>
+        <info>During a kernel update, <cmdname>yum</cmdname> stops processing 
+          when it finds the <cmdname>serviced</cmdname> dependency on Docker
+          Engine 1.9.0. Docker Engine updates are explicitly enabled and then
+          disabled in subsequent steps.</info>
         <substeps>
           <substep>
             <cmd>Check the Docker repository file.</cmd>

@@ -31,9 +31,9 @@
         <stepxmp>
           <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
         </stepxmp>
-        <stepresult>The result is a list of 3 or 5 hosts, separated by 
-          the comma character (<codeph>&#44;</codeph>). The master host
-        is always a node in the ZooKeeper ensemble.</stepresult>
+        <stepresult>The result is a list of 1, 3, or 5 hosts, separated by the comma character
+            (<codeph>&#44;</codeph>). The master host is always a node in the ZooKeeper
+          ensemble.</stepresult>
       </step>
       
       <step>
@@ -59,7 +59,7 @@
           <substep>
             <cmd>Attach to the container of the ZooKeeper service.</cmd>
             <stepxmp>
-              <codeblock>serviced service attach serviced-isvcs_zookeeper</codeblock>
+              <codeblock>docker exec -it serviced-isvcs_zookeeper bash</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -68,7 +68,9 @@
               <codeblock>{ echo stats; sleep 1; } | nc <varname>Master</varname> 2181 | grep Mode</codeblock>
             </stepxmp>
             <stepresult>The result includes <codeph>leader</codeph> or
-              <codeph>follower</codeph>.</stepresult>
+              <codeph>follower</codeph>. When multiple hosts rely on the
+              ZooKeeper instance on the master host, the result includes
+              <codeph>standalone</codeph>.</stepresult>
           </substep>
           <substep>
             <cmd>Query the other delegate hosts to identify their role in the ensemble.</cmd>
@@ -100,7 +102,7 @@
       <step importance="optional">
         <cmd>Monitor the startup, if desired.</cmd>
         <stepxmp>
-          <codeblock>journalctl -uf serviced -o cat</codeblock>
+          <codeblock>journalctl -u serviced -f -o cat</codeblock>
         </stepxmp>
       </step>
     </steps>
