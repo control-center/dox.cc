@@ -17,19 +17,17 @@
       </dlentry>
       
       <dlentry>
-        <dt>resource pool host</dt>
+        <dt>delegate host</dt>
         <dd>A host that runs the application services scheduled for the resource pool to which it
-          belongs. A system may be configured as agent and master, or just agent, or just
-          master.</dd>
+          belongs. A system may be configured as delegate or master.</dd>
       </dlentry>
       
       <dlentry>
         <dt>master host</dt>
         <dd>The host that runs the application services scheduler, the Docker registry, the
           distributed file system, and other internal services, including the server for the <ph
-            keyref="nm-cc"/> browser interface. A system may be configured as agent and master, or
-          just agent, or just master. Only one system in a <ph keyref="nm-cc"/> cluster may be the
-          master.</dd>
+            keyref="nm-cc"/> browser interface. A system may be configured as delegate or master.
+          Only one system in a <ph keyref="nm-cc"/> cluster may be the master.</dd>
       </dlentry>
       
       <dlentry>

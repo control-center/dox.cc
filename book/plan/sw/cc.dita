@@ -18,6 +18,7 @@
       <li>Centralized logging, through Logstash and ElasticSearch</li>
       <li>Support for database services and other persistent services</li>
       <li>Encrypted communications among all services and containers</li>
+      <li>Authentication of delegate hosts and restriction of unauthorized access</li>
     </ul>
     
     <p><ph keyref="nm-cc"/> relies on declarations of application requirements to
