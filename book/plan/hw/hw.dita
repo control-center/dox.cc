@@ -4,12 +4,11 @@
   <title>Hardware requirements</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> requires real or virtual
-        hosts that implement the 64-bit version of the x86 instruction set, and 
-        support Red Hat Enterprise Linux (RHEL) 7.1 or 7.2, or CentOS 7.1 or 7.2.
-        Hardware resource requirements vary by role (master or resource pool
-        host) and by the services assigned to the resource pool to which a host
-        belongs.</p>
+      <p>Hardware resource and storage requirements for <ph keyref="nm-cc"/> vary by role (master or
+        delegate host) and by the services assigned to the resource pool to which a host belongs.
+        This chapter provides minimum requirements for multi-host and single-host deployments. For
+        more information about the requirements for your deployment, refer to your application
+        documentation.</p>
     </section>
   </refbody>
 </reference>
