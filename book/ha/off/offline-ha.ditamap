@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>HA offline</title>
+   <chapter href="offline-ha.dita">
+     <topicref keyref="ha-on-storage"/>
+     <topicref keyref="ha-on-variables"/>
+     <topicref href="download.dita"/>
+     
+     <topicref href="master-nodes.dita">
+       <topicref href="master-verify-resources.dita"/>
+       <topicref href="stage.dita"/>
+       <topicref href="master-prep.dita"/>
+       <topicref href="master-ntp.dita"/>
+       <topicref keyref="ha-on-master-backups"/>
+       <topicref href="master-docker.dita"/>
+       <topicref href="master-rm.dita"/>
+       <topicref keyref="ha-on-master-cc"/>
+
+       <topicref keyref="ha-on-lvm-configure"/>
+       
+       <topicref keyref="ha-on-drbd-config">
+         <topicref keyref="ha-on-drbd-config-do"/>
+       </topicref>
+     </topicref>
+     
+     <topicref keyref="ha-on-drbd-init"/>
+     
+     <topicref keyref="ha-on-cluster">
+       <topicref href="cluster-install.dita"/>
+       <topicref keyref="ha-on-cluster-standby"/>
+       <topicref keyref="ha-on-cluster-defaults">
+         <topicref keyref="ha-on-cluster-defaults-set"/>
+       </topicref>
+       <topicref keyref="ha-on-cluster-resources">
+         <topicref keyref="ha-on-cluster-resources-cc"/>
+       </topicref>
+     </topicref>
+     
+     <topicref keyref="ha-on-verify">
+       <topicref keyref="ha-on-verify-drbd"/>
+       <topicref keyref="ha-on-verify-pacemaker"/>
+       <topicref keyref="ha-on-verify-cc"/>
+       <topicref keyref="ha-on-verify-cluster"/>
+       <topicref keyref="ha-on-verify-failover"/>
+     </topicref>
+     
+     <topicref keyref="ha-on-newpool-make"/>
+     <topicref keyref="ha-on-newpool-master"/>
+
+     <topicref keyref="ha-on-deploy"/>
+   </chapter>
+</bookmap>

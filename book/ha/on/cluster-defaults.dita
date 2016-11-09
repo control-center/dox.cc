@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="taskid">
+  <title>Property and resource options</title>
+  <refbody>
+    <section>
+      <p>Pacemaker provides options to support cluster
+        configurations from small and simple to and large and complex.
+        The following list identifies the options that support the
+        two-node, active/passive configuration for <ph keyref="nm-cc"/>.</p>
+      <dl>
+        <dlentry>
+          <dt><codeph>resource-stickiness=100</codeph></dt>
+          <dd>Keep all resources bound to the same host.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>no-quorum-policy=ignore</codeph></dt>
+          <dd>Pacemaker supports the notion of a voting quorum for clusters of three or more nodes.
+            However, with just two nodes, if one fails, it does not make sense to have a quorum of
+            one, therefore we disable quorums.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><codeph>stonith-enabled=false</codeph></dt>
+          <dd><p>Fence or isolate a failed node. (The string "stonith" is an acronym 
+            for "shoot the other node in the head".)</p> 
+            <p>Set this option to <codeph>false</codeph> only during the intial
+            setup and testing period. For production use, set it to
+            <codeph>true</codeph>. For more information about fencing, refer to the
+            <cite conkeyref="pubs/cite-plan"/>.</p></dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

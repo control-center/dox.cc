@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in ha/cluster</title>
+  <topicgroup>
+    <keydef keys="ha-cluster-about"
+            href="cluster/about.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-cluster"
+            href="cluster/cluster.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-defaults-set"
+            href="cluster/defaults-set.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-defaults"
+            href="cluster/defaults.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-install"
+            href="cluster/install.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-resources-cc"
+            href="cluster/resources-cc.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-resources"
+            href="cluster/resources.dita"
+            format="dita"
+    />
+    <keydef keys="ha-cluster-standby"
+            href="cluster/standby.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

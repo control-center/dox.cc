@@ -47,6 +47,14 @@
       <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="book/ha/plan-keys.ditamap" format="ditamap"/>
+      <mapref href="book/ha/drbd-keys.ditamap" format="ditamap"/>
+      <mapref href="book/ha/cluster-keys.ditamap" format="ditamap"/>
+      <mapref href="book/ha/verify-keys.ditamap" format="ditamap"/>
+      <mapref href="book/ha/on-keys.ditamap" format="ditamap"/>
+      <mapref href="book/ha/off-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/config-keys.ditamap" format="ditamap"/>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
@@ -63,12 +71,22 @@
       <topicref href="book/install/maps/about.dita"/>
   </frontmatter>
   
+  <chapter href="book/ha/plan/plan.ditamap" format="ditamap"/>
+  
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
   <chapter href="feature/config/master.ditamap" format="ditamap"/>
+  
+  <chapter href="book/ha/drbd/drbd.ditamap" format="ditamap"/>
+  <chapter href="book/ha/cluster/cluster.ditamap" format="ditamap"/>
+  <chapter href="book/ha/verify/verify.ditamap" format="ditamap"/>
+  
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
-  
+  <!-- 
+  <chapter href="book/ha/on/ha.ditamap" format="ditamap"/>
+  <chapter href="book/ha/off/offline-ha.ditamap" format="ditamap"/>
+   -->
   <appendix href="feature/manage/manage.ditamap" format="ditamap"/>
   <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
   <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
