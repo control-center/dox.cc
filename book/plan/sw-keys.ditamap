@@ -3,6 +3,10 @@
 <map>
  <title>Keys in plan/sw</title>
   <topicgroup>
+    <keydef keys="plan-sw-add"
+            href="sw/add.dita"
+            format="dita"
+    />
     <keydef keys="plan-sw-cc-docker"
             href="sw/cc-docker.dita"
             format="dita"

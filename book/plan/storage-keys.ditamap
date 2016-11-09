@@ -3,8 +3,16 @@
 <map>
  <title>Keys in plan/storage</title>
   <topicgroup>
+    <keydef keys="plan-storage-delegate-storage"
+            href="storage/delegate-storage.dita"
+            format="dita"
+    />
     <keydef keys="plan-storage-discover"
             href="storage/discover.dita"
+            format="dita"
+    />
+    <keydef keys="plan-storage-master-storage"
+            href="storage/master-storage.dita"
             format="dita"
     />
     <keydef keys="plan-storage-partition"
@@ -13,6 +21,10 @@
     />
     <keydef keys="plan-storage-storage"
             href="storage/storage.dita"
+            format="dita"
+    />
+    <keydef keys="plan-storage-storage_orig"
+            href="storage/storage_orig.dita"
             format="dita"
     />
     <keydef keys="plan-storage-swap"
