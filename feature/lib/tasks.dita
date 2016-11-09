@@ -437,35 +437,41 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <stepxmp>
           <codeblock>systemctl enable dnsmasq &#38;&#38; systemctl start dnsmasq</codeblock>
         </stepxmp>
-        <!-- One more edit needed; waiting on ZEN-18437  
-        <info>If name resolution in your environment relies solely on entries 
-          in <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> 
-          to enable containers to use the file:</info>
+        <info>If name resolution in your environment relies solely on entries in
+            <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> so that containers
+          can use the file:</info>
         <substeps>
           <substep>
             <cmd>Open <filepath>/etc/dnsmasq.conf</filepath> with a text editor.</cmd>
           </substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
-              and then remove the number sign character (<codeph>&#35;</codeph>) 
-              from the beginning of the line.</cmd>
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
-              and then remove the number sign character (<codeph>&#35;</codeph>) 
-              from the beginning of the line.</cmd>
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
-              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep>
+            <cmd>Remove <codeph>net</codeph>, and then remove the number sign
+              character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#domain=example.com</codeph>, 
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep>
+            <cmd>Replace <codeph>exmaple.com</codeph> with <codeph>local</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>)
               from the beginning of the line.</cmd>
           </substep>
-          <substep>
-            <cmd>TBD</cmd>
-          </substep>
-          <substep>
-            <cmd>Save the file, and then close the text editor.</cmd>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
           <substep>
             <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
             <stepxmp>
@@ -473,7 +479,6 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-        -->
       </step>
       
       <step id="ntp">
