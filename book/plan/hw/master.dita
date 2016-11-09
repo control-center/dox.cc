@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Resource requirements for master and delegate hosts</title>
+  <title>Master host resource requirements</title>
   <refbody>
     <section id="section_avp_1sq_wx">
       <p><ph keyref="nm-cc"/> requires real or virtual  hosts that implement the 64-bit version of
@@ -34,7 +34,7 @@
     </section>
     <section>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_f3k_31r_wx">
+        <table>
           <title>Minimum resource requirements</title>
           <tgroup cols="3">
             <colspec colname="newCol1" colnum="1" colwidth="1*"/>
