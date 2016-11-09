@@ -3,6 +3,10 @@
 <bookmap>
   <title>Plan</title>
   <chapter keyref="ha-plan-plan">
+    <topicref keyref="ha-plan-overview"/>
+    <topicref keyref="ha-plan-options"/>
+    <topicref keyref="ha-plan-fencing"/>
+    <topicref keyref="ha-plan-storage"/>
     <topicref keyref="ha-plan-variables"/>
    </chapter>
 </bookmap>

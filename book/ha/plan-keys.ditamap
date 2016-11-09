@@ -3,8 +3,24 @@
 <map>
  <title>Keys in ha/plan</title>
   <topicgroup>
+    <keydef keys="ha-plan-fencing"
+            href="plan/fencing.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-options"
+            href="plan/options.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-overview"
+            href="plan/overview.dita"
+            format="dita"
+    />
     <keydef keys="ha-plan-plan"
             href="plan/plan.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-storage"
+            href="plan/storage.dita"
             format="dita"
     />
     <keydef keys="ha-plan-variables"

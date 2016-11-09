@@ -4,16 +4,13 @@
   <title>Planning a high-availability deployment</title>
   <refbody>
     <section>
-      <p>This chapter provides information for planning a high-availability
-        deployment of <ph keyref="nm-cc"/>, and for preparing to create a
+      <p>This chapter provides information about planning a high-availability
+        deployment of <ph keyref="nm-cc"/>, and about preparing to create a
         high-availability deployment. Before proceeding, please read the
         <cite conkeyref="pubs/cite-plan"/>.</p>
-        
-        <p>A high-availability deployment requires a minimum of 
-        four hosts.</p>
-      
+
       <note>For optimal results, review the contents of this guide 
-        thoroughly before starting the installation process.</note>
+        thoroughly before performing an installation.</note>
     </section>
   </refbody>
 </reference>
