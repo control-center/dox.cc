@@ -60,7 +60,7 @@
     <booklists>
       <toc/>
     </booklists>
-      <topicref href="book/install/front/about.dita"/>
+      <topicref href="book/install/maps/about.dita"/>
   </frontmatter>
   
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>

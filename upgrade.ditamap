@@ -42,10 +42,8 @@
       <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
     <topicgroup>
-      <mapref href="book/install/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/lib-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/> 
     </topicgroup>
@@ -59,7 +57,7 @@
     <booklists>
       <toc/>
     </booklists>
-    <topicref href="book/upgrade/front/about.dita"/>
+    <topicref href="book/upgrade/maps/about.dita"/>
   </frontmatter>
   
   <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
@@ -70,6 +68,6 @@
   <chapter href="book/upgrade/maps/post.ditamap" format="ditamap"/>
 
   <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
-  <appendix href="book/install/cli/cli.ditamap" format="ditamap"/>
+  <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
   <appendix href="book/upgrade/maps/offline.ditamap" format="ditamap"/>
 </bookmap>

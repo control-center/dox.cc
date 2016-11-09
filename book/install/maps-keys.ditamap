@@ -3,6 +3,10 @@
 <map>
  <title>Keys in install/maps</title>
   <topicgroup>
+    <keydef keys="install-maps-about"
+            href="maps/about.dita"
+            format="dita"
+    />
     <keydef keys="install-maps-cli"
             href="maps/cli.dita"
             format="dita"
