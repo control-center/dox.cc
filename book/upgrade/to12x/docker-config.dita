@@ -92,7 +92,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
             <li>Drop-in files: <filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>
               and <filepath>/etc/systemd/system/docker.service.d/docker.conf.bak</filepath></li>
             <li>Environment files: <filepath>/etc/sysconfig/docker</filepath> and
-                <filepath>/etc/sysconfig/docker</filepath></li>
+                <filepath>/etc/sysconfig/docker.bak</filepath></li>
           </ul>
           <p>If you change the drop-in file, reload the <cmdname>systemd</cmdname> manager
             configuration with <userinput>systemctl daemon-reload</userinput>. If you change 
