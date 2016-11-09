@@ -9,13 +9,10 @@
         <dt>application</dt>
         <dd>A collection of one or more software programs that have been converted into Docker containers.</dd>
       </dlentry>
-      
       <dlentry>
-        <dt>resource pool</dt>
-        <dd>A collection of one or more hosts, each with its own compute, network, and storage
-          resources. The name of the default resource pool is <codeph>default</codeph>.</dd>
+        <dt>cluster</dt>
+        <dd>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</dd>
       </dlentry>
-      
       <dlentry>
         <dt>delegate host</dt>
         <dd>A host that runs the application services scheduled for the resource pool to which it
@@ -29,10 +26,19 @@
             keyref="nm-cc"/> browser interface. A system may be configured as delegate or master.
           Only one system in a <ph keyref="nm-cc"/> cluster may be the master.</dd>
       </dlentry>
-      
       <dlentry>
-        <dt>cluster</dt>
-        <dd>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</dd>
+        <dt>resource pool</dt>
+        <dd>A collection of one or more hosts, each with its own compute, network, and storage
+          resources. The name of the default resource pool is <codeph>default</codeph>.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>serviced</dt>
+        <dd>The name of the <ph keyref="nm-cc"/> service and a command-line client for interacting
+          with the service.</dd>
+      </dlentry>
+      <dlentry>
+        <dt>tenant</dt>
+        <dd>An application that <ph keyref="nm-cc"/> manages.</dd>
       </dlentry>
       
     </dl>
