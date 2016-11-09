@@ -24,7 +24,7 @@
       
       <note><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions, and
         indirectly, NTP to synchronize clocks among multiple hosts. In the default configuration of
-          <cmdname>ntpd</cmdname>, the firewalls of master and resource pool hosts must support an
+          <cmdname>ntpd</cmdname>, the firewalls of master and delegate hosts must support an
         incoming UDP connection on port 123.</note>
       
       <fig>
