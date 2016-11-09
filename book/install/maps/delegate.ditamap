@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <title>Install delegate</title>
-  <chapter keyref="install-instl-delegate">
+  <chapter keyref="install-maps-delegate">
     <topicref keyref="feature-delegate-verify"/>
     <topicref keyref="feature-delegate-storage"/>
     <topicref keyref="feature-master-device-naming"/>
