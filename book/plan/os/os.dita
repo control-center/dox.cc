@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Operating system requirements</title>
+  <title>Operating system requirements and considerations</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> requires the 64-bit version 
-        of the following Linux distributions:</p>
+      <p><ph keyref="nm-cc"/> supports the 64-bit version of the following Linux distributions:</p>
         <ul>
           <li>Red Hat Enterprise Linux (RHEL) 7.1 or later (7.2 is preferred)</li>
           <li>CentOS 7.1 or later (7.2 is preferred)</li>
@@ -25,11 +24,11 @@
       <p><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions. The
         installation procedures include steps to add the Network Time Protocol (NTP) daemon to all
         hosts. By default, the NTP daemon synchronizes the system clock by communicating with
-        standard time servers available on the internet. You may configure the daemon to use a
-        timeserver in your environment, instead.</p>
+        standard time servers available on the internet. Use the default configuration or configure
+        the daemon to use a timeserver in your environment.</p>
       
-      <note>Because of the reliance on the system clock, pausing a virtual machine that belongs to a
-        <ph keyref="nm-cc"/> cluster while an application is running is not supported.</note>
+      <note>Because <ph keyref="nm-cc"/> relies on the system clock, do not pause a virtual machine
+        that belongs to a cluster while an application is running.</note>
     </section>
   </refbody>
 </reference>

@@ -7,6 +7,10 @@
             href="hw/delegate-storage.dita"
             format="dita"
     />
+    <keydef keys="plan-hw-delegate-storage_old"
+            href="hw/delegate-storage_old.dita"
+            format="dita"
+    />
     <keydef keys="plan-hw-delegate"
             href="hw/delegate.dita"
             format="dita"
@@ -19,8 +23,16 @@
             href="hw/master-storage.dita"
             format="dita"
     />
+    <keydef keys="plan-hw-master-storage_old"
+            href="hw/master-storage_old.dita"
+            format="dita"
+    />
     <keydef keys="plan-hw-master"
             href="hw/master.dita"
+            format="dita"
+    />
+    <keydef keys="plan-hw-master_old"
+            href="hw/master_old.dita"
             format="dita"
     />
    </topicgroup>
