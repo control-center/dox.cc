@@ -47,10 +47,10 @@
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicref href="book/help/front/about.dita"/> 
     <booklists>
       <toc/>
     </booklists>
+    <topicref href="book/help/front/about.dita"/>
   </frontmatter>
   <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
     <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
