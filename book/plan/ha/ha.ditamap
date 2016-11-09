@@ -3,11 +3,7 @@
 <bookmap>
 <title>High Availability</title>
   <chapter keyref="plan-ha-ha">
-    <topicref keyref="plan-ha-prereq"/>
     <topicref keyref="plan-ha-planning"/>
-    <topicref keyref="plan-ha-fencing">
-      <topicref keyref="plan-ha-fencing-private"/>
-      <topicref keyref="plan-ha-fencing-public"/>
-    </topicref>
+    <topicref keyref="plan-ha-fencing"/>
   </chapter>
 </bookmap>

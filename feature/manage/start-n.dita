@@ -100,7 +100,7 @@
       <step importance="optional">
         <cmd>Monitor the startup, if desired.</cmd>
         <stepxmp>
-          <codeblock>journalctl -uf serviced -o cat</codeblock>
+          <codeblock>journalctl -u serviced -f -o cat</codeblock>
         </stepxmp>
       </step>
     </steps>

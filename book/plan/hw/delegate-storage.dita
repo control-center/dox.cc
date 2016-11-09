@@ -5,10 +5,10 @@
   <refbody>
     <section>
       
-      <p>Like master hosts, <ph keyref="nm-cc"/> delegate hosts require high-performance local or remote storage
-        to function properly. For most deployments, solid-state disk (SSD) devices that are directly attached 
-        to the host provide an excellent storage solution, and <ph conkeyref="names/company"/> 
-        recommends them.</p> 
+      <p>Like master hosts, <ph keyref="nm-cc"/> delegate hosts require high-performance local or
+        remote storage. For most deployments, solid-state disk (SSD) devices that are directly
+        attached to the host provide an excellent storage solution, and <ph
+          conkeyref="names/company"/> recommends them.</p> 
         
       <p>Storage-area network (SAN) systems are also supported. The overall response times and
         configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/> and

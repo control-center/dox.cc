@@ -3,26 +3,28 @@
 <concept id="conceptid">
   <title>High-availability deployments</title>
   <conbody>
-    <p><ph keyref="nm-cc"/> can be deployed in a high-availability configuration. As much as
-      possible, high-availability deployments minimize downtime caused by the failure of hardware
-      components or operating system services in a <ph keyref="nm-cc"/> master host.</p>
+    <p><ph keyref="nm-cc"/> can be deployed in a high-availability configuration to minimize
+      downtime caused by the failure of hardware components or operating system services in a <ph
+        keyref="nm-cc"/> master host.</p>
       
     <p>A high-availability deployment can be configured in a variety of ways, including
       the following:<ul>
-        <li>Active-Passive, non geo-diverse (described in this chapter)</li>
         <li>Active-Active, non geo-diverse</li>
         <li>Active-Passive, geo-diverse</li>
+        <li>Active-Passive, non geo-diverse (described in this chapter)</li>
       </ul></p>
-
-    <p>This chapter describes an Active-Passive high-availability deployment without geo-diversity
-      that uses Pacemaker, Corosync, and Distributed Replicated Block Device (DRBD). This
-      configuration lacks geo-diversity because the primary and secondary nodes are located in the
-      same facility. As such, this configuration provides no protection against a facility
-      catastrophe. </p>
-    <p>This configuration requires at least two identical <ph keyref="nm-cc"/> master hosts and two
-      resource pool hosts. One master hosts is the primary node in the high-availability cluster.
-      The other (secondary node) stands by, ready to take over the role of <ph keyref="nm-cc"/>
-      master host if the primary node fails or otherwise becomes unavailable.</p>
+    <p>The configuration described in this chapter has the following characteristics and
+        requirements:<ul id="ul_fv1_15j_wx">
+        <li>uses Pacemaker, Corosync, and Distributed Replicated Block Device (DRBD)</li>
+        <li>lacks geo-diversity and provides no protection against a facility catastrophe because
+          the primary and secondary nodes are located in the same facility</li>
+        <li>has the following <ph keyref="nm-cc"/> host requirements: <ul id="ul_fnt_dtj_wx">
+            <li>two or more identical  master hosts - One is the primary node in the
+              high-availability cluster, and the other is the secondary node that takes over as
+              master host if the primary node becomes unavailable.</li>
+            <li>two delegate hosts</li>
+          </ul></li>
+      </ul></p>
     
   </conbody>
 </concept>

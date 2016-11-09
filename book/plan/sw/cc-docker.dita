@@ -3,9 +3,9 @@
 <concept id="conceptid">
   <title>Docker fundamentals</title>
   <conbody>
-    <note>This section is a summation of <xref keyref="url-docker-arch">the architecture description
-        provided by Docker</xref>, customized for <ph keyref="nm-cc"/>. For additional
-      information, refer to the Docker site.</note>
+    <p>This section summarizes <xref keyref="url-docker-arch">the architecture description provided
+        by Docker</xref> as customized for <ph keyref="nm-cc"/>. For additional information, refer
+      to the Docker site.</p>
     
     <p>Docker provides convenient tools that make use of the 
       <xref keyref="url-cgroups">cgroups feature of the Linux kernel</xref>
@@ -30,6 +30,12 @@
         <dd>Docker containers have everything
         needed to run an instance of an application, and are 
         created from images.</dd>
+      </dlentry>
+    </dl>
+    <dl>
+      <dlentry>
+        <dt>Docker storage</dt>
+        <dd/>
       </dlentry>
     </dl>
   </conbody>

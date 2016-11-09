@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title>Prerequisites</title>
+  <title>Host requirements</title>
   <conbody>
-    <p>In addition to the requirements for <ph keyref="nm-cc"/> hosts detailed in the preceding
-      chapters, the hosts in a high-availability deployment also require the following
-      characteristics or resources:</p>
+    <p><ph keyref="nm-cc"/> hosts in a high-availability deployment have the following
+      requirements.</p>
     
       <ul>
-        <li>Two identical hosts to serve as primary and secondary nodes
-          in the role of <ph keyref="nm-cc"/> master host in a separate 
-          resource pool.</li>
+        <li>Master host: In a separate resource pool, you need two identical hosts in the role of
+          <ph keyref="nm-cc"/> master host; one host serves as the primary node and the other as the
+        secondary node.</li>
         
-        <li>Two or more identical hosts to serve as resource pool hosts. Resource pool
-          hosts do not need to be members of the high-availability cluster, because
-          <ph keyref="nm-cc"/> simply restarts services on other hosts if a host becomes
-          unavailable. So, each resource pool must include N+1 hosts, where N is the number 
-          of hosts needed to satisfy the performance and scalability requirements of the pool.</li>
+        <li>Delegate hosts: You need two or more identical hosts to serve as delegate hosts. They do
+        not need to be members of the HA cluster because, if a host becomes unavailable, <ph
+          keyref="nm-cc"/> restarts services on other hosts.<p>Each resource pool requires
+            <varname>N</varname>+1 hosts, where <varname>N</varname> is the number of delegate hosts
+          needed to satisfy the performance and scalability requirements of the pool.</p></li>
         
-        <li>For primary and secondary nodes that contain only one network-interface card,
-        the network they use to communicate must support multicast.</li>
-        
-        <li>A supported fencing device. When fencing is employed, two
-          network interface cards per node in the high-availability cluster is recommended.</li>
+        <li>For primary and secondary nodes that contain only one network-interface card (NIC), the
+        network they use to communicate must support multicast.</li>
       </ul>
   </conbody>
 </concept>

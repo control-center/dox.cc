@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title>Planning a high-availability deployment</title>
+  <title>Deployment planning</title>
   <conbody>
-    <p>The recommended deployment architecture includes the following characteristics:</p>
-    <ul>
-      <li>The primary and secondary nodes each have two NICs, with one NIC dedicated to disk
-        synchronization via DRBD, and the other NIC dedicated to <ph keyref="nm-cc"/> and
-        application traffic.<p>Two NICs on each HA cluster node allows separation of network traffic
-          required for disk synchronization (DRBD) from that required by the application itself.
-          This configuration results in more up-to-date disk synchronization and better network
-          responsiveness from <ph keyref="nm-cc"/> and the application it is managing. </p></li>
-      <li>If both nodes in the high-availability cluster have two NICs, the traffic for each NIC
-        must be routed through separate subnets.</li>
-      <li>Application services are deployed on dedicated <ph keyref="nm-cc"/> resource pool hosts
-        outside of the high-availability cluster.</li>
-      <li>Fencing is employed on production high-availability clusters.</li>
-    </ul>
-    <p>If you do not have two identical, dual-NIC machines available, it is still possible to deploy
-      an HA cluster with single-NIC servers. Use two hosts for the <ph keyref="nm-cc"/> master host,
-      where the two are configured in an active/passive configuration. You will use these two hosts
-      only to run <ph keyref="nm-cc"/> itself. Do not use them to run application services. Plan to
-      deploy at least two additional resource pool hosts. Only the <ph keyref="nm-cc"/> master hosts
-      will be configured in an active/passive cluster.</p>
-    <p>Fencing is a critical consideration. Fencing is a technique to ensure that a failed node in
-      the cluster is completely stopped. This technique avoids situations where runaway processes on
-      the failed node continue trying to use shared resources, resulting in application conflicts or
-      conflicts with the cluster management software. </p>
-    <p>Fencing is recommended for production environments; however <ph keyref="nm-cc"/>
-      administrators who want to stand up an initial test deployment of a <ph keyref="nm-cc"/>
-      high-availability cluster can do so without fencing, and then add fencing later. Many fencing
-      solutions are available, making it impractical for <ph conkeyref="names/company"/> to document
-      solutions for every possible scenario. To implement a fencing solution that works for their
-      particular infrastructure, the <ph keyref="nm-cc"/> administrators must work with their IT
-      departments.</p>
+    <p>The recommended deployment architecture requires two identical dual-NIC machines for best
+      disk synchronization and network responsiveness. However, you can deploy an HA cluster with
+      single-NIC servers if two identical dual-NIC machines are not available.</p>
+    <section id="section_l3k_pjl_wx">
+      <title>Requirements for two identical dual-NIC servers</title>
+      <ul id="ul_rlp_rjl_wx">
+        <li>Master hosts: In a separate resource pool, you need two identical hosts in the role of
+            <ph keyref="nm-cc"/> master host; one host serves as the primary node and the other as
+          the secondary node.</li>
+        <li>Provide two NICs on the HA cluster primary node and two on the secondary node. On each
+          node, dedicate one NIC to<ul>
+            <li>network traffic that is required for disk synchronization via DRBD.</li>
+            <li><ph keyref="nm-cc"/> and application traffic.</li>
+          </ul><p>Route traffic for each NIC through separate subnets.</p></li>
+        <li>Delegate hosts: You need <varname>N</varname>+1 identical hosts to serve as delegate
+          hosts, where <varname>N</varname> is the number of hosts needed to satisfy the performance
+          and scalability requirements of the pool. They do not need to be members of the HA cluster
+          because, if a host becomes unavailable, <ph keyref="nm-cc"/> restarts services on other
+          hosts.</li>
+        <li>Deploy application services on dedicated <ph keyref="nm-cc"/> delegate hosts outside the
+          HA cluster.</li>
+      </ul>
+    </section>
+    <section id="section_idg_4jl_wx">
+      <title>Requirements for two single-NIC servers</title>
+      <ul id="ul_hpl_2tk_wx">
+        <li>Master host: Configure two hosts for the <ph keyref="nm-cc"/> master host in an
+          active/passive cluster.<ul id="ul_wpc_1kl_wx">
+            <li>Use the two hosts only to run <ph keyref="nm-cc"/>. Do not use them to run
+              application services.</li>
+            <li>For primary and secondary nodes that contain only one network-interface card (NIC),
+              the network they use to communicate must support multicast.</li>
+          </ul></li>
+        <li>Delegate hosts: You need <varname>N</varname>+1 identical hosts to serve as delegate
+          hosts, where <varname>N</varname> is the number of hosts needed to satisfy the performance
+          and scalability requirements of the pool. (Only the <ph keyref="nm-cc"/> master hosts must
+          be configured in an active/passive cluster.)</li>
+      </ul>
+    </section>
   </conbody>
 </concept>
