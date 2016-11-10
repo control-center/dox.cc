@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1033.16.314</bookpartno>  
+      <bookpartno>1033.16.315</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -63,7 +63,6 @@
   <chapter href="book/plan/hw/hw.ditamap" format="ditamap"/>
   <chapter href="book/plan/os/os.ditamap" format="ditamap"/>
   <chapter href="book/plan/misc/misc.ditamap" format="ditamap"/>
-  <chapter href="book/plan/ha/ha.ditamap" format="ditamap"/>
  
   <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
   
