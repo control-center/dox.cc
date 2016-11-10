@@ -26,8 +26,7 @@
         
         <li><b><ph conkeyref="names/company"/> customers:</b> Download and stage files for offline
           upgrades, if necessary. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="upgrade-maps-offline"/>. Also, this guide does not support upgrades of
-          high-availability deployments.</li>
+          <xref keyref="upgrade-maps-offline"/>.</li>
       </ol>
       
     </section>

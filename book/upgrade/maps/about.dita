@@ -6,10 +6,44 @@
    <section>
    <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for upgrading <ph
           keyref="nm-cc"/> from any 1.1.x version to version 1.2.x.</p>
+     <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
+        upgrading a high-availability deployment. For additional information, please contact your
+          <ph conkeyref="names/company"/> representative.</p>
    </section>
    
    <section conkeyref="related-pubs/cc"/>
    <section conkeyref="more-info/cc"/>
+   
+   <section>
+     <title>Supported clients and browsers</title>
+     <p>The following table identifies the supported combinations of client operating systems and
+       web browsers.</p>
+     <table>
+       <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+         <tbody>
+           <row>
+             <entry></entry>
+           </row>
+         </tbody>
+       </tgroup>
+     </table>
+   </section>
+   
+   <!-- 
+    <section>
+      <title>Change history</title>
+      <p>The following list associates document part numbers and the important 
+        changes to this guide since the previous release. Some of the changes 
+        involve features or content, but others do not. For information about 
+        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
+      <dl>
+        <dlentry>
+          <dt>1300.16.319</dt>
+          <dd>Initial release.</dd>
+        </dlentry>
+      </dl>
+    </section>
+     -->
    
  </refbody>
 </reference>

@@ -8,13 +8,29 @@
         for installing and configuring a <ph keyref="nm-cc"/> cluster. Please
         review the <cite conkeyref="pubs/cite-plan"/> carefully before using
         this guide.</p>
+      
+      <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
+        installing a high-availability deployment. For additional information, please contact your
+        <ph conkeyref="names/company"/> representative.</p>
     </section>
     
     <section conkeyref="related-pubs/cc"/>
-
-    <section product="cc" conkeyref="more-info/cc"/>
+    <section conkeyref="more-info/cc"/>
     
-    <section conkeyref="browsers-120/cc"/>
+    <section>
+      <title>Supported clients and browsers</title>
+      <p>The following table identifies the supported combinations of client operating systems and
+        web browsers.</p>
+      <table>
+        <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+          <tbody>
+            <row>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
     
     <!-- 
     <section>
@@ -25,9 +41,8 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt product="rm">1052.16.207</dt>
-          <dt product="cc">1051.16.207</dt>
-          <dd>Update release numbers.</dd>
+          <dt>1320.16.319</dt>
+          <dd>Initial release.</dd>
         </dlentry>
       </dl>
     </section>
