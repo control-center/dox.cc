@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title>Terminology and concepts</title>
-  <shortdesc>This section defines <ph keyref="nm-cc"/> terminology and concepts that are used in
-    this guide and other documentation.</shortdesc>
+  <title>Terminology, internal services, and concepts</title>
+  <shortdesc>This section defines <ph keyref="nm-cc"/> terminology, internal services that enable
+      <ph keyref="nm-cc"/> to function, and concepts that are used in this guide and other
+    documentation.</shortdesc>
   <conbody>
-    <p><b>Terminology</b><dl>
+    <p>
+      <dl>
         <dlentry>
           <dt>application</dt>
           <dd>A collection of one or more software programs that have been converted into Docker
@@ -21,11 +23,32 @@
             belongs. A system can be configured as delegate or master.</dd>
         </dlentry>
         <dlentry>
+          <dt>Docker</dt>
+          <dd>An open-source application for building, shipping, and running distributed
+            applications. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Elasticsearch</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service)  A distributed, real-time search and analytics
+            engine. <ph keyref="nm-cc"/> uses it to index log files and store service
+            definitions.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Logstash</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A log file collector and aggregator that
+            forwards parsed log file entries to Elasticsearch.</dd>
+        </dlentry>
+        <dlentry>
           <dt>master host</dt>
           <dd>The host that runs the application services scheduler, the Docker registry, the
             distributed file system, and other internal services, including the server for the <ph
               keyref="nm-cc"/> browser interface. A system can be configured as delegate or master.
             Only one system in a <ph keyref="nm-cc"/> cluster can be the master.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>OpenTSDB</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A time series database that <ph keyref="nm-cc"
+            /> uses to store its service performance metrics.</dd>
         </dlentry>
         <dlentry>
           <dt>resource pool</dt>
@@ -48,31 +71,13 @@
           <dt>tenant</dt>
           <dd>An application that <ph keyref="nm-cc"/> manages.</dd>
         </dlentry>
-      </dl></p>
-    <p><b><ph keyref="nm-cc"/> internal services</b></p>
-    <p>The following internal services enable <ph keyref="nm-cc"/> to function. They are not
-      associated with any specific application.<dl>
-        <dlentry>
-          <dt>Elasticsearch</dt>
-          <dd>A distributed, real-time search and analytics engine. <ph keyref="nm-cc"/> uses it to
-            index log files and store service definitions.</dd>
-        </dlentry>
-      </dl><dl>
-        <dlentry>
-          <dt>Logstash</dt>
-          <dd>A log file collector and aggregator that forwards parsed log file entries to
-            Elasticsearch.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>OpenTSDB</dt>
-          <dd>A time series database that <ph keyref="nm-cc"/> uses to store its service performance
-            metrics.</dd>
-        </dlentry>
         <dlentry>
           <dt>ZooKeeper</dt>
-          <dd>A centralized service that <ph keyref="nm-cc"/> uses for configuration maintenance,
-            naming, distributed synchronization, and providing group services.</dd>
+          <dd>(<ph keyref="nm-cc"/> internal service) A centralized service that <ph keyref="nm-cc"
+            /> uses for configuration maintenance, naming, distributed synchronization, and
+            providing group services.</dd>
         </dlentry>
-      </dl></p>
+      </dl>
+    </p>
   </conbody>
 </concept>

@@ -7,10 +7,9 @@
         by Docker</xref> as customized for <ph keyref="nm-cc"/>. For additional information, refer
       to the Docker site.</p>
     
-    <p>Docker is an open-source application for building, shipping, and running distributed
-      applications. It provides convenient tools that make use of the <xref keyref="url-cgroups"
-        >cgroups feature of the Linux kernel</xref> to develop, distribute, and run applications.
-      Docker internals include images, registries, and containers.</p>
+    <p>Docker provides convenient tools that make use of the <xref keyref="url-cgroups">cgroups
+        feature of the Linux kernel</xref> to develop, distribute, and run applications. Docker
+      internals include images, registries, and containers.</p>
     
     <dl>
       <dlentry>
@@ -35,7 +34,7 @@
       <dlentry>
         <dt>Docker storage</dt>
         <dd>Docker and <ph keyref="nm-cc"/> data are stored in an LVM thin pool that is created on
-          one or more block devices or partitions or LVM volume groups.</dd>
+          one or more block devices or partitions, or LVM volume groups.</dd>
       </dlentry>
     </dl>
   </conbody>
