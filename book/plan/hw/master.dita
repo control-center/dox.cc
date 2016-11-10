@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Master host resource requirements</title>
+  <title>Master host resources</title>
   <refbody>
     <section id="section_avp_1sq_wx">
       <p> You can deploy <ph keyref="nm-cc"/> with multiple hosts or a single host.<note>An
@@ -40,8 +40,7 @@
               <entry>16GB</entry>
             </row>
             <row>
-              <entry><b>Network interface controller (NIC) </b><p>must support TCP/IP and
-                IPv4</p></entry>
+              <entry><b>Network interface controller</b><p>must support TCP/IP and IPv4</p></entry>
               <entry>1</entry>
             </row>
           </tbody>
@@ -81,7 +80,7 @@
                 <entry>20GB</entry>
               </row>
               <row>
-                <entry><b>Network interface controller (NIC) </b><p>must support TCP/IP and
+                <entry><b>Network interface controller</b><p>must support TCP/IP and
                   IPv4</p></entry>
                 <entry>1</entry>
               </row>
