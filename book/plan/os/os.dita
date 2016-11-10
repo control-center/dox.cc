@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Operating system requirements and considerations</title>
+  <title>Operating system requirements</title>
   <refbody>
     <section>
       <p><ph keyref="nm-cc"/> supports the 64-bit version of the following Linux distributions. All
@@ -15,13 +15,14 @@
       <p>The RHEL/CentOS 7.x distributions provide a variety of server configurations. <ph
           keyref="nm-cc"/> is tested on operating system platforms that are installed and configured
         with standard options. Docker and <ph keyref="nm-cc"/> are tested on and support the Minimal
-        Install configuration when the NFS and NTP packages are also installed.</p>
+        Install configuration when the NFS and Network Time Protocol (NTP) packages are also
+        installed.</p>
       
       <p><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions. The
-        installation procedures include steps to add the Network Time Protocol (NTP) daemon to all
-        hosts. By default, the NTP daemon synchronizes the system clock by communicating with
-        standard time servers available on the internet. Use the default configuration or configure
-        the daemon to use a timeserver in your environment.</p>
+        installation procedures include steps to add the NTP daemon to all hosts. By default, the
+        NTP daemon synchronizes the system clock by communicating with standard time servers
+        available on the internet. Use the default configuration or configure the daemon to use a
+        time server in your environment.</p>
       
       <note>Because <ph keyref="nm-cc"/> relies on the system clock, while an application is
         running, do not pause a virtual machine that belongs to a cluster.</note>
