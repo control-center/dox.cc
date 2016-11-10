@@ -48,6 +48,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/ha/plan-keys.ditamap" format="ditamap"/>
+      <mapref href="book/ha/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/ha/drbd-keys.ditamap" format="ditamap"/>
       <mapref href="book/ha/cluster-keys.ditamap" format="ditamap"/>
       <mapref href="book/ha/verify-keys.ditamap" format="ditamap"/>
@@ -76,14 +77,14 @@
   <chapter href="book/ha/plan/plan.ditamap" format="ditamap"/>
   
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
-  <chapter href="feature/config/master.ditamap" format="ditamap"/>
+  <chapter href="book/ha/maps/config-master.ditamap" format="ditamap"/>
   
   <chapter href="book/ha/drbd/drbd.ditamap" format="ditamap"/>
   <chapter href="book/ha/cluster/cluster.ditamap" format="ditamap"/>
   <chapter href="book/ha/verify/verify.ditamap" format="ditamap"/>
   
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
-  <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/ha/maps/config-delegate.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   <!-- 
   <chapter href="book/ha/on/ha.ditamap" format="ditamap"/>
