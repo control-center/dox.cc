@@ -6,15 +6,14 @@
     <prereq>To perform this procedure, you need:
       <ul>
         <li>A host with one or more local disks, with at least one unused primary partition.</li>
-        <li>The password of the <codeph>root</codeph> account on the host, or of a user that is a
-          member of the <codeph>sudo</codeph> or <codeph>wheel</codeph> group.</li>
+        <li>The password of the <codeph>root</codeph> account on the host or a user that is a member
+          of the <codeph>wheel</codeph> group.</li>
       </ul>
     </prereq>
     <context>Perform this procedure to configure a primary partition on a local disk as swap space.
       Typically, configuring one swap partition or swap file on each local disk maximizes swap space
-      performance. <note>This procedure does not use Logical Volume Manager (LVM) tools to create a
-        swap space. For more information about LVM, refer to your operating system
-        documentation.</note></context>
+      performance. <note>This procedure does not use LVM tools to create a swap space. For more
+        information about LVM, refer to your operating system documentation.</note></context>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>

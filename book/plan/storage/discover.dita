@@ -3,8 +3,8 @@
 <task id="taskid">
   <title>Identifying storage devices and their configuration</title>
   <taskbody>
-    <context>Perform this procedure to identify the block storage devices attached to a host, and
-      learn how the devices are configured.</context>
+    <context>This procedure identifies block storage devices attached to a host and demonstrates how
+      devices are configured.</context>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/> through a terminal
@@ -16,6 +16,21 @@
         <stepxmp>
           <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
         </stepxmp>
+        <info>The following example result shows three disks (<codeph>sda</codeph>,
+            <codeph>sdb</codeph>, and <codeph>sdc</codeph>) and one CD/DVD drive
+            (<codeph>sr0</codeph>).<ul id="ul_uzk_d1b_xx">
+            <li>Disk <codeph>sda</codeph> has two primary partitions: <ul id="ul_zq1_p1b_xx">
+                <li>Partition <codeph>sda1</codeph> is devoted to <filepath>/boot</filepath>, and
+                  formatted with the <xref keyref="url-xfs">XFS</xref> file system.</li>
+                <li>Partition <codeph>sda2</codeph> includes the following logical volumes, which
+                  are managed by LVM: <ul id="ul_qhb_s1b_xx">
+                    <li>a swap volume, formatted as such</li>
+                    <li>a volume for root (<filepath>/</filepath>), formatted as XFS</li>
+                    <li>a volume for <filepath>/home</filepath>, formatted as XFS</li>
+                  </ul>
+                </li>
+              </ul></li>
+          </ul></info>
         <stepresult>Example result: <codeblock>NAME                     SIZE TYPE FSTYPE      MOUNTPOINT
 sda                      128G disk
 |-sda1                   500M part xfs         /boot
@@ -26,26 +41,8 @@ sda                      128G disk
 sdb                      768G disk
 sdc                      768G disk
 sr0                     1024M rom</codeblock>
-          <p>The preceding result shows three disks (<codeph>sda</codeph>, <codeph>sdb</codeph>, and
-              <codeph>sdc</codeph>) and one CD/DVD drive (<codeph>sr0</codeph>). There are no
-            primary partitions on <codeph>sdb</codeph> or <codeph>sdc</codeph>. There are two
-            primary partitions on <codeph>sda</codeph>: <codeph>sda1</codeph> and
-              <codeph>sda2</codeph>.</p>
-          <ul>
-            <li>
-              <codeph>sda1</codeph> is devoted to <filepath>/boot</filepath>, and formatted with the
-                <xref keyref="url-xfs">XFS</xref> file system.</li>
-            <li>Partition <codeph>sda2</codeph> includes the following logical volumes, which are
-              managed by LVM: <ul>
-                <li>a swap volume, formatted as such</li>
-                <li>a volume for root (<filepath>/</filepath>), formatted as XFS</li>
-                <li>a volume for <filepath>/home</filepath>, formatted as XFS</li>
-              </ul>
-            </li>
-          </ul>
           <p>For more information about <cmdname>lsblk</cmdname>, enter <userinput>man
-              lsblk</userinput>.</p>
-        </stepresult>
+              lsblk</userinput>.</p></stepresult>
       </step>
     </steps>
   </taskbody>
