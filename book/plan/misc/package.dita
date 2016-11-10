@@ -10,8 +10,8 @@
         public repositories maintained by <ph conkeyref="names/company"/>. The Docker images that
           <ph keyref="nm-cc"/> requires are available at a public <ph conkeyref="names/company"/>
         <xref keyref="url-docker-hub">Docker Hub</xref> repository. The default installation process
-        requires internet access. All of the repositories can be mirrored, making offline
-        installations supported.</p>
+        requires internet access. All repositories can be mirrored, supporting offline
+        installations.</p>
 
       <p>The <ph keyref="nm-cc"/> package requires approximately 50MB of storage space.</p>
       
