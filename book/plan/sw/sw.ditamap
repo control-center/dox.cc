@@ -6,7 +6,6 @@
     <topicref keyref="plan-sw-cc">
       <topicref keyref="plan-sw-cc-docker"/>
       <topicref keyref="plan-sw-cc-terms"/>
-      <topicref keyref="plan-sw-storage"/>
       <topicref keyref="plan-sw-add"/>
     </topicref>
   </chapter>
