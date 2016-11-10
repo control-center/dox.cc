@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title><ph keyref="nm-cc"/> features</title>
+  <title>Features</title>
   <conbody>
     
     <p><ph keyref="nm-cc"/> includes the following key features:</p>
     <ul>
       <li>Intuitive HTML5 interface for deploying and managing applications</li>
       <li>Integrated backup and restore, and incremental snapshot and rollback support</li>
-      <li>Centralized logging through Logstash and ElasticSearch</li>
+      <li>Centralized logging through Logstash and Elasticsearch</li>
       <li>Support for database services and other persistent services</li>
       <li>Encrypted communications among all services and containers</li>
       <li>Delegate host authentication to prevent unauthorized system access</li>
     </ul>
-    
-    <p><ph keyref="nm-cc"/> relies on declarations of application requirements to
-      support Docker containers. A <keyword>service definition template</keyword> 
-      contains the specifications of application services, in JSON format. The 
-      definition of each service includes the IDs of the Docker images needed to 
-      run the service.</p>
    </conbody>
 </concept>

@@ -23,9 +23,5 @@
             href="hw/master.dita"
             format="dita"
     />
-    <keydef keys="plan-hw-storage"
-            href="hw/storage.dita"
-            format="dita"
-    />
    </topicgroup>
 </map>

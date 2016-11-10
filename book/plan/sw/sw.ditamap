@@ -3,10 +3,10 @@
 <bookmap>
 <title>Introduction</title>
   <chapter keyref="plan-sw-sw">
-    <topicref keyref="plan-sw-cc">
-      <topicref keyref="plan-sw-cc-docker"/>
-      <topicref keyref="plan-sw-cc-terms"/>
-      <topicref keyref="plan-sw-add"/>
-    </topicref>
+    <topicref keyref="plan-sw-cc"/>
+    <topicref keyref="plan-sw-cc-terms"/>
+    <topicref keyref="plan-sw-cc-docker"/>
+    <topicref keyref="plan-sw-add"/>
+    <topicref keyref="plan-sw-data-storage"/>
   </chapter>
 </bookmap>

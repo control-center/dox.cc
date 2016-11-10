@@ -66,4 +66,13 @@
  
   <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
   
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref keyref="gl-service-definition"/>
+        <topicref keyref="gl-service-template"/>
+      </glossarylist>
+    </booklists>
+  </backmatter>
+  
 </bookmap>

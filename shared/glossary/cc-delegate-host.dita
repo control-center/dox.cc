@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>delegate host</glossterm>
+<glossdef>A host that runs the application services scheduled for the resource pool to which it
+    belongs. A system can be configured as delegate or master.</glossdef>  
+</glossentry>

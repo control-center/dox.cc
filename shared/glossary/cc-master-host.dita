@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>master host</glossterm>
+<glossdef>The host that runs the application services scheduler, the Docker registry, the
+    distributed file system, and other internal services, including the server for the <ph
+      keyref="nm-cc"/> browser interface. A system can be configured as delegate or master. Only one
+    system in a <ph keyref="nm-cc"/> cluster can be the master.</glossdef>  
+</glossentry>

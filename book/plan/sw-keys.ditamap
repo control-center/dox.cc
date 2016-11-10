@@ -19,6 +19,10 @@
             href="sw/cc.dita"
             format="dita"
     />
+    <keydef keys="plan-sw-data-storage"
+            href="sw/data-storage.dita"
+            format="dita"
+    />
     <keydef keys="plan-sw-sw"
             href="sw/sw.dita"
             format="dita"

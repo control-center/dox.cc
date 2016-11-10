@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>Elasticsearch</glossterm>
+<glossdef>A <ph keyref="nm-cc"/> internal service; it is a distributed, real-time search and
+    analytics engine. <ph keyref="nm-cc"/> uses it to index log files and store service
+    definitions.</glossdef>  
+</glossentry>

@@ -33,15 +33,17 @@
     </section>
     
     <section>
-      <title>Authorization requirements and other considerations</title>
+      <title>Additional requirements and considerations</title>
       <ul>
+        <li>To install <ph keyref="nm-cc"/>, you must log in <ph conkeyref="strings/login-root"
+          />.</li>
         <li>Access to the <ph keyref="nm-cc"/> browser interface requires a login account on the <ph
             keyref="nm-cc"/> master host. Pluggable Authentication Modules (PAM) is supported. By
           default, users must be members of the <codeph>wheel</codeph> group. </li>
         
-        <li>The <cmdname>serviced</cmdname> startup script sets
-          the hard and soft open files limit to 1048576,
-          but does not modify the <filepath>/etc/sysconfig/limits.conf</filepath> file.</li>
+        <li>The <cmdname>serviced</cmdname> startup script sets the hard and soft open files limit
+          to 1048576. The script does not modify the <filepath>/etc/sysconfig/limits.conf</filepath>
+          file. </li>
         
         <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
           Enhanced Linux</xref> in enforcing mode. The installation procedures include steps to
