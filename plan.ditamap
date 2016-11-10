@@ -43,7 +43,6 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/plan/front-keys.ditamap" format="ditamap"/>
-      <mapref href="book/plan/ha-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/hw-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/misc-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/os-keys.ditamap" format="ditamap"/>
@@ -65,14 +64,5 @@
   <chapter href="book/plan/misc/misc.ditamap" format="ditamap"/>
  
   <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
-  
-  <backmatter>
-    <booklists>
-      <glossarylist>
-        <topicref keyref="gl-service-definition"/>
-        <topicref keyref="gl-service-template"/>
-      </glossarylist>
-    </booklists>
-  </backmatter>
   
 </bookmap>
