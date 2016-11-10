@@ -24,8 +24,8 @@
           <dd>Mount point: <filepath>/opt/serviced/var/isvcs</filepath></dd>
           <dd>Resource: One or more block devices or partitions,
             or one or more LVM physical volumes.</dd>
-          <dd>Preparation: None required; the installation procedures
-            include steps for formatting the resource.</dd>
+          <dd>Preparation: None. The installation procedures include steps for formatting the
+            resource.</dd>
         </dlentry>
         
         <dlentry>
@@ -36,7 +36,7 @@
           <dd>Mount point: None</dd>
           <dd>Resource: One or more block devices or partitions,
             or one or more LVM physical volumes.</dd>
-          <dd>Preparation: None. The installation procedures include the required steps for using
+          <dd>Preparation: None. The installation procedures include steps for using
               <cmdname>serviced-storage</cmdname> to create the thin pool.</dd>
         </dlentry>
         
@@ -48,8 +48,8 @@
           <dd>Mount point: <filepath>/opt/serviced/var/backups</filepath></dd>
           <dd>Resource: One or more block devices or partitions, one or more LVM physical volumes,
             or a remote file server that is compatible with Linux.</dd>
-          <dd>Preparation: None required; the installation procedures
-            include steps for formatting or mounting the resource.</dd>
+          <dd>Preparation: None. The installation procedures include steps for formatting or
+            mounting the resource.</dd>
         </dlentry>        
       </dl>
       <p>In addition, the master host requires a dedicated swap area, and a root filesystem with a
