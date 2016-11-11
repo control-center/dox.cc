@@ -22,7 +22,7 @@
               <codeph>-s</codeph> when invoking <codeph>serviced service
               [stop|start|restart]</codeph>.</p></li>
         <li><b>Storage</b><p><ph keyref="nm-cc"/> introduces a new <codeph>serviced-storage</codeph>
-            command as part of a required storage requirement utility for creating the Docker thin
+            command as part of a required storage management utility for creating the Docker thin
             pool and creating and managing the <ph keyref="nm-cc"/> application data thin pool. You
             can now create thin pools in an existing volume group as well as creating a thin pool
             against devices with a limited size, allowing expansion without adding more physical

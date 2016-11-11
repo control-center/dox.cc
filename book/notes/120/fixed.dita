@@ -18,7 +18,7 @@
           <row>
             <entry>CC-375</entry>
             <entry>In multihost environment, unable to execute <codeph>serviced service
-                status</codeph> in minion boxes</entry>
+                status</codeph> in delegates</entry>
           </row>
           <row>
             <entry>CC-623</entry>
