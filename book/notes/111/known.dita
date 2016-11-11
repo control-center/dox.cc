@@ -20,7 +20,7 @@
         <tbody>
           <row>
             <entry>CC-1302</entry>
-            <entry>Serviced may not shut down cleanly if it loses connection to a single Zookeeper
+            <entry>Serviced may not shut down cleanly if it loses connection to a single ZooKeeper
               instance that is sharing a physical disk with Docker and data volumes</entry>
             <entry>Open</entry>
           </row>
@@ -56,7 +56,7 @@
           
           <row>
             <entry>CC-1888</entry>
-            <entry>Zookeeper maintains nodes for deleted public endpoints</entry>
+            <entry>ZooKeeper maintains nodes for deleted public endpoints</entry>
             <entry>Open</entry>
           </row>
           

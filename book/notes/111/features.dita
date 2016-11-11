@@ -46,9 +46,9 @@
       </ul>
     </section>
     <section>
-      <title>Clustered Zookeeper</title>
+      <title>Clustered ZooKeeper</title>
       <ul>
-        <li>Multi-host systems can utilize a Zookeeper cluster for improved performance and
+        <li>Multi-host systems can utilize a ZooKeeper cluster for improved performance and
           reliability.</li>
       </ul>
     </section>

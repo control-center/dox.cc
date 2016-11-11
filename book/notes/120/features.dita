@@ -21,15 +21,15 @@
             in a script, you can specify a new command line flag <codeph>--sync</codeph> or
               <codeph>-s</codeph> when invoking <codeph>serviced service
               [stop|start|restart]</codeph>.</p></li>
-        <li><b>Storage</b><p>Introduction of a <codeph>serviced-storage</codeph> command as part of
-            a new required storage requirement utility for creating the Docker thin pool and
-            creating and managing the <ph keyref="nm-cc"/> application data thin pool. You can now
-            create thin pools in an existing volume group as well as creating a thin pool against
-            devices with a limited size, allowing expansion without adding more physical disks. For
-            more information, see the "Storage management utility" appendix in the <cite
+        <li><b>Storage</b><p><ph keyref="nm-cc"/> introduces a new <codeph>serviced-storage</codeph>
+            command as part of a required storage requirement utility for creating the Docker thin
+            pool and creating and managing the <ph keyref="nm-cc"/> application data thin pool. You
+            can now create thin pools in an existing volume group as well as creating a thin pool
+            against devices with a limited size, allowing expansion without adding more physical
+            disks. For more information, see the "Storage management utility" appendix in the <cite
               conkeyref="pubs/cite-install"/>.</p></li>
-        <li><b>User Interface</b><p>The following improvements have been introduced to the <ph
-              keyref="nm-cc"/> UI:<ul id="ul_fdk_hjg_xx">
+        <li><b>Browser interface</b><p>The following improvements have been introduced to the <ph
+              keyref="nm-cc"/> browser interface:<ul id="ul_fdk_hjg_xx">
               <li>Table searching and filtering</li>
               <li>Improved service tree loading. The tree starts out collapsed and can be expanded
                 as needed.</li>
