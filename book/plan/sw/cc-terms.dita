@@ -34,6 +34,12 @@
             definitions.</dd>
         </dlentry>
         <dlentry>
+          <dt>Kibana</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A browser-based user interface that enables
+            the display and search of Elasticsearch databases, including the log files that <ph
+              keyref="nm-cc"/> monitors.</dd>
+        </dlentry>
+        <dlentry>
           <dt>Logstash</dt>
           <dd>(<ph keyref="nm-cc"/> internal service) A log file collector and aggregator that
             forwards parsed log file entries to Elasticsearch.</dd>

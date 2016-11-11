@@ -47,7 +47,10 @@
           <dd>Type: XFS file system, or a Linux-compatible file server</dd>
           <dd>Mount point: <filepath>/opt/serviced/var/backups</filepath></dd>
           <dd>Resource: One or more block devices or partitions, one or more LVM physical volumes,
-            or a remote file server that is compatible with Linux.</dd>
+            or a remote file server that is compatible with Linux.<note>When the storage for backups
+              and <ph keyref="nm-cc"/> internal services data use the same physical device, resource
+              contention can cause failures during backup and restore operations. For optimal
+              results, use separate physical devices.</note></dd>
           <dd>Preparation: None. The installation procedures include steps for formatting or
             mounting the resource.</dd>
         </dlentry>        
