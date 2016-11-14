@@ -12,5 +12,18 @@
         <codeph>storage.snapshot.allocated</codeph>. When the CentOS kernel 3.10.0-366.el7 is
         released, the full functionality of this feature will be restored.</p>
     </section>
+    <section>
+      <!-- CC-2297 and CC-2752 -->
+      <title>Docker Engine TasksMax option</title>
+      <p>The <codeph>TasksMax</codeph> option is included in the <cmdname>systemd</cmdname> drop-in
+        file for Docker Engine
+        (<filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>) 
+        that <ph keyref="nm-cc"/> 1.2.0 requires. Beginning with version 226,
+        <cmdname>systemd</cmdname> includes the <codeph>TasksMax</codeph> option, and its default
+        value is 512. Currently, CentOS 7.2 includes <cmdname>systemd</cmdname> version 219, so the
+        option is ignored. Docker Engine uses more than 512 tasks routinely, so a future upgrade of
+        <cmdname>systemd</cmdname> will cause failures; this setting prevents future failures.</p>
+    </section>
   </refbody>
+  
 </reference>
