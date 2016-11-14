@@ -4,6 +4,62 @@
   <title>Glossary</title>
   <!-- Removing an entry from this file requires a note from your mother -->
   <topicgroup>
+    <keydef keys="gl-cc-application"
+            href="cc-application.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-cluster"
+            href="cc-cluster.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-delegate-host"
+            href="cc-delegate-host.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-elasticsearch"
+            href="cc-elasticsearch.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-logstash"
+            href="cc-logstash.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-master-host"
+            href="cc-master-host.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-opentsdb"
+            href="cc-opentsdb.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-resource-pool"
+            href="cc-resource-pool.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-service"
+            href="cc-service.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-serviced"
+            href="cc-serviced.dita"
+            format="dita"
+    />
+    <keydef keys="gl-service-definition"
+            href="service-definition.dita"
+            format="dita"
+    />
+    <keydef keys="gl-service-template"
+            href="service-template.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-tenant"
+            href="cc-tenant.dita"
+            format="dita"
+    />
+    <keydef keys="gl-cc-zookeeper"
+            href="cc-zookeeper.dita"
+            format="dita"
+    />
     <keydef keys="gl-service-definition"
             href="service-definition.dita"
             format="dita"

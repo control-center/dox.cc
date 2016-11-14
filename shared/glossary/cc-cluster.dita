@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>cluster</glossterm>
+<glossdef>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</glossdef>  
+</glossentry>

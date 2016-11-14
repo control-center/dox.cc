@@ -7,17 +7,15 @@
         by Docker</xref> as customized for <ph keyref="nm-cc"/>. For additional information, refer
       to the Docker site.</p>
     
-    <p>Docker provides convenient tools that make use of the 
-      <xref keyref="url-cgroups">cgroups feature of the Linux kernel</xref>
-    to develop, distribute, and run applications. Docker internals include
-    images, registries, and containers.</p>
+    <p>Docker provides convenient tools that make use of the <xref keyref="url-cgroups">cgroups
+        feature of the Linux kernel</xref> to develop, distribute, and run applications. Docker
+      internals include images, registries, and containers.</p>
     
     <dl>
       <dlentry>
         <dt>Docker images</dt>
-        <dd>Docker images are read-only templates that are used to
-        create Docker containers. Images are easy to build, and image
-        updates are change layers, not wholesale replacements. </dd>
+        <dd>Docker images are read-only templates that are used to create Docker containers. Images
+          are easy to build, and image updates are change layers, not wholesale replacements. </dd>
       </dlentry>
       <dlentry>
         <dt>Docker registries</dt>
@@ -27,16 +25,16 @@
       </dlentry>
       <dlentry>
         <dt>Docker containers</dt>
-        <dd>Docker containers have everything
-        needed to run an instance of an application, and are 
-        created from images.</dd>
+        <dd>Docker containers have everything needed to run an instance of an application, and are
+          created from images. <ph keyref="nm-cc"/> launches each service instance in its own Docker
+          container.</dd>
       </dlentry>
     </dl>
     <dl>
       <dlentry>
         <dt>Docker storage</dt>
-        <dd>Docker data and <ph keyref="nm-cc"/> are stored in an LVM thin pool that is created on
-          one or more block devices or partitions, or an LVM volume group.</dd>
+        <dd>Docker and <ph keyref="nm-cc"/> data are stored in an LVM thin pool that is created on
+          one or more block devices or partitions, or LVM volume groups.</dd>
       </dlentry>
     </dl>
   </conbody>

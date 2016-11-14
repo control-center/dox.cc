@@ -19,8 +19,8 @@
             href="sw/cc.dita"
             format="dita"
     />
-    <keydef keys="plan-sw-storage-drivers"
-            href="sw/storage-drivers.dita"
+    <keydef keys="plan-sw-data-storage"
+            href="sw/data-storage.dita"
             format="dita"
     />
     <keydef keys="plan-sw-sw"

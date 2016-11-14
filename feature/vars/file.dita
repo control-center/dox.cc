@@ -698,9 +698,8 @@
         <dlentry id="SERVICED_VHOST_ALIASES">
           <dt><varname>SERVICED_VHOST_ALIASES</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
-          <dd>A list of hostname aliases for a host; for example, 
-            <codeph>localhost</codeph>. Separate multiple values 
-            with the comma character (<codeph>&#44;</codeph>)..</dd>
+          <dd>A list of hostname aliases for a host; for example, <codeph>localhost</codeph>.
+            Separate multiple values with the comma character (<codeph>&#44;</codeph>).</dd>
         </dlentry>
       </dl>
     </section>

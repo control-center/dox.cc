@@ -1,107 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Storage requirements for master and delegate hosts</title>
+  <title>Master host storage areas</title>
   <refbody>
     <section>
-      
-      <p>The <ph keyref="nm-cc"/> master host and delegate hosts require high-performance local or
-        remote storage. For most deployments, solid-state disk (SSD) devices that are directly
-        attached to the host are recommended.</p> 
+      <p>The <ph keyref="nm-cc"/> master host requires the following, separate storage areas:</p>
+      <dl>
+        <dlentry>
+          <dt>Docker data</dt>
+          <dd>Size: 50GB</dd>
+          <dd>Type: LVM thin pool</dd>
+          <dd>Mount point: None</dd>
+          <dd>Resource: One or more block devices or partitions,
+            or one or more LVM physical volumes.</dd>
+          <dd>Preparation: None required; the installation procedures include
+            steps for using <cmdname>serviced-storage</cmdname> to create the thin pool.</dd>
+        </dlentry>
         
-      <p>Storage-area network (SAN) systems are also supported. The overall response times and
-        configuration of a SAN affect the performance and stability of <ph keyref="nm-cc"/> and the
-        applications it manages. For example, ZooKeeper (a key internal service of <ph
-          keyref="nm-cc"/>) is sensitive to storage latency greater than 1000 milliseconds.
-        Therefore, use only high-performance SAN systems and assign separate logical unit numbers
-        (LUNs) for each mounted path.</p>
-      
-      <!-- This will change; waiting on CC-2118
-      <note>Docker and <ph keyref="nm-cc"/> require uninterrupted connection with the storage
-        systems that are used for their thin pools. Storage systems that disconnect and reconnect
-        during use, such as iSCSI, cause unrecoverable content corruption, and are not supported.</note>
-       -->
-
-      <p>In addition to the storage required for its operating system, a <ph keyref="nm-cc"/> master
-        host and delegate host require the storage areas listed in the following table.</p>
-      <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_x5n_clr_wx">
-          <title>Minimum storage requirements</title>
-          <tgroup cols="5">
-            <colspec colname="c1" colnum="1" colwidth="1.0*"/>
-            <colspec colname="newCol2" colnum="2" colwidth="1*"/>
-            <colspec colname="c2" colnum="3" colwidth="1.0*"/>
-            <colspec colname="c3" colnum="4" colwidth="1.0*"/>
-            <colspec colname="c4" colnum="5" colwidth="1.0*"/>
-            <thead>
-              <row>
-                <entry>Storage area</entry>
-                <entry>Installation preparation</entry>
-                <entry>Size</entry>
-                <entry>Type</entry>
-                <entry>Mount point</entry>
-              </row>
-            </thead>
-            <tbody>
-              <row>
-                <entry>Docker data<p>In a multi-host deployment, required for the master host and
-                    each delegate host.</p><p>Contains the images and snapshots of the containers it
-                    manages. </p></entry>
-                <entry>Create a primary partition.</entry>
-                <entry>50GB</entry>
-                <entry>Device mapper thin pool (created during installation)</entry>
-                <entry>None</entry>
-              </row>
-              <row>
-                <entry><ph keyref="nm-cc"/> internal services data<p>In a multi-host deployment,
-                    required for the master host and each delegate host so that the hosts can
-                    participate in a ZooKeeper ensemble.</p><p>Contains run-time data, including
-                    ZooKeeper data. ZooKeeper requires consistently fast storage. </p></entry>
-                <entry>Create a primary partition or logical volume. For best performance, use a
-                  separate, high-performance device with only one primary partition.</entry>
-                <entry>50GB</entry>
-                <entry>XFS file system (created during installation for a local partition)</entry>
-                <entry><filepath>/opt/serviced/var/isvcs</filepath></entry>
-              </row>
-              <row>
-                <entry><ph keyref="nm-cc"/> application data<p>Provides space for databases and for
-                    snapshots of the data. </p></entry>
-                <entry>Provide a separate block device or create a primary partition on an existing
-                  device. </entry>
-                <entry>300GB<p>For best performance, provide equal space for snapshots and
-                  data.</p></entry>
-                <entry>LVM thin pool (created during installation)</entry>
-                <entry>None</entry>
-              </row>
-              <row>
-                <entry><ph keyref="nm-cc"/> application data backups<p>Provides space for the
-                    browser interface to store backup files. In the default configuration, contains
-                    the metrics database.</p></entry>
-                <entry>Create a primary partition or  logical volume, or reserve an area on a remote
-                  file server.<p>
-                    <note importance="recommended">Provide a dedicated partition or logical volume.
-                      Otherwise, this path is part of the root partition or logical volume, and
-                      could overfill it and crash the master host.</note>
-                  </p></entry>
-                <entry>150GB (or at least 50% of the application data size)<p>For more information
-                    about sizing, contact your <ph conkeyref="names/company"/>
-                  respresentative.</p></entry>
-                <entry>XFS or any Linux-compatible file system<p>During installation, create the
-                    file system for a local partition or  mount a remote file server. </p></entry>
-                <entry><filepath>/opt/serviced/var/backups</filepath></entry>
-              </row>
-              <row>
-                <entry>(high-availability systems only) <p><ph keyref="nm-cc"/>
-                    metadata</p><p>Required to mirror data between master nodes.</p></entry>
-                <entry>Create a primary partition.</entry>
-                <entry>1GB</entry>
-                <entry>XFS file system (created during installation)</entry>
-                <entry><filepath>/opt/serviced/var/volumes</filepath></entry>
-              </row>
-            </tbody>
-          </tgroup>
-        </table>
-      </p>
+        <dlentry>
+          <dt><ph keyref="nm-cc"/> internal services data</dt>
+          <dd>Size: 50GB</dd>
+          <dd>Type: XFS file system</dd>
+          <dd>Mount point: <filepath>/opt/serviced/var/isvcs</filepath></dd>
+          <dd>Resource: One or more block devices or partitions,
+            or one or more LVM physical volumes.</dd>
+          <dd>Preparation: None. The installation procedures include steps for formatting the
+            resource.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>Application data</dt>
+          <dd>Size: 200GB suggested. The size should be twice as large as the base device,
+          which determines the size of tenant virtual devices.</dd>
+          <dd>Type: LVM thin pool</dd>
+          <dd>Mount point: None</dd>
+          <dd>Resource: One or more block devices or partitions,
+            or one or more LVM physical volumes.</dd>
+          <dd>Preparation: None. The installation procedures include steps for using
+              <cmdname>serviced-storage</cmdname> to create the thin pool.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>Application data backups</dt>
+          <dd>Size: 150GB suggested. The size should be at least 150% of the size of
+            the base device.</dd>
+          <dd>Type: XFS file system, or a Linux-compatible file server</dd>
+          <dd>Mount point: <filepath>/opt/serviced/var/backups</filepath></dd>
+          <dd>Resource: One or more block devices or partitions, one or more LVM physical volumes,
+            or a remote file server that is compatible with Linux.<note>When the storage for backups
+              and <ph keyref="nm-cc"/> internal services data use the same physical device, resource
+              contention can cause failures during backup and restore operations. For optimal
+              results, use separate physical devices.</note></dd>
+          <dd>Preparation: None. The installation procedures include steps for formatting or
+            mounting the resource.</dd>
+        </dlentry>        
+      </dl>
+      <p>In addition, the master host requires a dedicated swap area, and a root filesystem with a
+        minimum of 10GB of free space in <filepath>/tmp</filepath>.</p>
     </section>
   </refbody>
 </reference>

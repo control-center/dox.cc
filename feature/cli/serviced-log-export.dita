@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>serviced log export</title>
+  <shortdesc>The <cmdname>serviced log export</cmdname> command exports application log files from
+    Elasticsearch for one or more services based on service identifier or service name.</shortdesc>
+  <refbody>
+    <section id="section_wlf_fyb_hx">
+      <title>USAGE</title>
+      <codeblock>command export [command options] [arguments...]</codeblock>
+      <p><b>Example</b>: <codeblock>serviced log export</codeblock>
+      </p>
+    </section>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt>--from</dt>
+          <dd>Specify the start date in format <varname>yyyy.mm.dd</varname>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--to</dt>
+          <dd>Specify the end date in format <varname>yyyy.mm.dd</varname>.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--service '--service option --service option'</dt>
+          <dd>Specify the service ID or service name with path
+              (<filepath>&lt;pool>/&lt;path>/&lt;name></filepath>). Includes all subservices.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--out</dt>
+          <dd>Specify the path to the output files.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>--debug, -d</dt>
+          <dd>Show additional diagnostic messages.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

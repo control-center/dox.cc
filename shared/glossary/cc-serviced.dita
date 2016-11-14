@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>serviced</glossterm>
+<glossdef>The name of the <ph keyref="nm-cc"/> service and a command-line client for interacting
+    with the service.</glossdef>  
+</glossentry>

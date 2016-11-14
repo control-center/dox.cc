@@ -12,13 +12,13 @@
       
       <p>Key bundles are installed by using an SSH connection or a file.</p>
       <ul>
-        <li>The command to add a host to a pool can initiate an SSH connection with the
-          delegate and install the key bundle. This option is the most secure, because no file
-          is created. However, it requires either public key authentication or password 
-          authentication between the master and delegate hosts.</li>
-        <li>When no SSH connection is requested, the command to add a host to a pool creates a
-          file containing the key bundle. You can move the key bundle file to the
-          delegate host with any file transfer method, and then install it on the delegate.</li>
+        <li>The command to add a host to a pool can initiate an SSH connection with the delegate and
+          install the key bundle. This option is the most secure because no file is created.
+          However, it requires either public key authentication or password authentication between
+          the master and delegate hosts.</li>
+        <li>When no SSH connection is requested, the command to add a host to a pool creates a file
+          that contains the key bundle. You can move the key bundle file to the delegate host with
+          any file transfer method, and then install it on the delegate.</li>
       </ul>
     </section>
   </refbody>

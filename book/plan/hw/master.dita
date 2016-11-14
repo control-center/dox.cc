@@ -1,67 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Resource requirements for master and delegate hosts</title>
+  <title>Master host resources</title>
   <refbody>
     <section id="section_avp_1sq_wx">
-      <p><ph keyref="nm-cc"/> requires real or virtual  hosts that implement the 64-bit version of
-        the x86 instruction set, and support Red Hat Enterprise Linux (RHEL) 7.1 or 7.2 or CentOS
-        7.1 or 7.2. You can deploy <ph keyref="nm-cc"/> with multiple hosts or a single
-          host.<note>An under-resourced master host cannot function properly. Ensure that you deploy
-            <ph keyref="nm-cc"/> and applications on a master host that meets the application's
-          minimum requirements.</note></p>
+      <p> You can deploy <ph keyref="nm-cc"/> with multiple hosts or a single host.<note>An
+          under-resourced master host cannot function properly. Ensure that you deploy <ph
+            keyref="nm-cc"/> and applications on a master host that meets the application's minimum
+          requirements.</note></p>
     </section>
     <section id="section_dxs_t1r_wx">
       <title>Multi-host deployments</title>
-      <p>For best results, production deployments include one master host and two or more delegate
-        hosts. In this configuration, <ul id="ul_m3m_m2r_wx">
-          <li>The master host runs in its own, separate resource pool, and runs only <ph
-              keyref="nm-cc"/> internal services. Minimum resource requirements for the master host
-            are listed in the following table.</li>
-          <li>Delegate hosts require resources that are adequate to support all application services
-            assigned to the host's resource pool. Identical resources are required for all delegate
-            hosts in a resource pool. For more information, refer to your application documentation.
-          </li>
-        </ul></p>
+      <p>Best results are achieved in production deployments that include one <ph keyref="nm-cc"/>
+        master host and two or more delegate hosts. In this configuration, the master host runs in
+        its own, separate resource pool, and runs only <ph keyref="nm-cc"/> internal services.
+        Delegate hosts run application services. The following table lists minimum resource
+        requirements for the master host. Delegate hosts have additional requirements.</p>
+      <table id="table_hmj_md1_xx">
+        <tgroup cols="2">
+          <colspec colname="newCol1" colnum="1" colwidth="1*"/>
+          <colspec colname="c1" colnum="2" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Resource</entry>
+              <entry>Minimum required</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><b>CPU cores</b><ul id="ul_uj2_sd1_xx">
+                  <li>64-bit only</li>
+                  <li>real or virtual</li>
+                  <li>must support Advanced Encryption Standard (AES)</li>
+                </ul></entry>
+              <entry>4</entry>
+            </row>
+            <row>
+              <entry>Random-access memory (RAM)</entry>
+              <entry>16GB</entry>
+            </row>
+            <row>
+              <entry><b>Network interface controller</b><p>must support TCP/IP and IPv4</p></entry>
+              <entry>1</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
     </section>
     <section id="section_tbq_hsq_wx">
       <title>Single-host deployments</title>
-      <p>In a single-host deployment, the host runs all <ph keyref="nm-cc"/> internal services and
-        all application services. Minimum resource requirements for the master host functions are
-        listed in the following table. The host also requires adequate resources to support the
-        services assigned to the resource pool. For more information, refer to your application
-        documentation.</p>
+      <p>In a single-host deployment, the <ph keyref="nm-cc"/> master host runs all <ph
+          keyref="nm-cc"/> internal services and all application services. The following table lists
+        minimum resource requirements for the master host. Actual CPU and RAM requirements depend on
+        the application load.</p>
     </section>
     <section>
       <p>
-        <table frame="all" rowsep="1" colsep="1" id="table_f3k_31r_wx">
-          <title>Minimum resource requirements</title>
-          <tgroup cols="3">
+        <table>
+          <tgroup cols="2">
             <colspec colname="newCol1" colnum="1" colwidth="1*"/>
-            <colspec colname="c1" colnum="2" colwidth="1.0*"/>
-            <colspec colname="c2" colnum="3" colwidth="1.0*"/>
+            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
             <thead>
               <row>
                 <entry>Resource</entry>
-                <entry>Master, multi-host deployments</entry>
-                <entry>Master, single-host deployments</entry>
+                <entry>Minimum required</entry>
               </row>
             </thead>
             <tbody>
               <row>
-                <entry>CPU cores<p>64-bit only; real or virtual that support Advanced Encryption
-                    Standard (AES)</p></entry>
+                <entry><b>CPU cores</b><ul>
+                    <li>64-bit only</li>
+                    <li>real or virtual</li>
+                    <li>must support Advanced Encryption Standard (AES)</li>
+                  </ul></entry>
                 <entry>4</entry>
-                <entry>4<p>The actual minimum depends on the application load.</p></entry>
               </row>
               <row>
                 <entry>Random-access memory (RAM)</entry>
-                <entry>16GB</entry>
-                <entry>20GB<p>The actual minimum depends on the application load.</p></entry>
+                <entry>20GB</entry>
               </row>
               <row>
-                <entry>Network interface controller (NIC) that supports TCP/IP and IPv4NIC</entry>
-                <entry>1</entry>
+                <entry><b>Network interface controller</b><p>must support TCP/IP and
+                  IPv4</p></entry>
                 <entry>1</entry>
               </row>
             </tbody>

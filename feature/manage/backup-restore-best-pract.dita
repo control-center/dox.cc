@@ -15,8 +15,8 @@
             duplicating an instance for testing or failover purposes.</li>
           <li>Before upgrading or testing an application, ensure that you have a recent backup that
             successfully restores. </li>
-          <li>Regularly back up the production environment and potentially the system of record from
-            the initial deployment. </li>
+          <li>Regularly back up the production environment and potentially the system from the
+            initial deployment. </li>
           <li>Back up to a nonactive resource target, such as a separate disaster recovery system or
             test environment. </li>
           <li>Store backups on a machine other than the <ph keyref="nm-cc"/> master. </li>

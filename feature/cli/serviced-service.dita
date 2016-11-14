@@ -26,23 +26,19 @@
         </dlentry>
         <dlentry>
           <dt>add</dt>
-          <dd>Add a new service.</dd>
+          <dd>Add a service.</dd>
         </dlentry>
         <dlentry>
           <dt>clone</dt>
-          <dd>Clone an existing service.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>migrate, mig</dt>
-          <dd>Migrate an existing service.</dd>
+          <dd>Clone a service.</dd>
         </dlentry>
         <dlentry>
           <dt>remove, rm</dt>
-          <dd>Remove an existing service.</dd>
+          <dd>Remove a  service.</dd>
         </dlentry>
         <dlentry>
           <dt>edit</dt>
-          <dd>Edit an existing service in a text editor.</dd>
+          <dd>Edit a service in a text editor.</dd>
         </dlentry>
         <dlentry>
           <dt>assign-ip</dt>
@@ -59,10 +55,6 @@
         <dlentry>
           <dt>stop</dt>
           <dd>Stop a service.</dd>
-        </dlentry>
-        <dlentry>
-          <dt>proxy</dt>
-          <dd>Start a server proxy for a container.</dd>
         </dlentry>
         <dlentry>
           <dt>shell</dt>
@@ -92,6 +84,14 @@
         <dlentry>
           <dt>snapshot</dt>
           <dd>Take a snapshot of a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>endpoints</dt>
+          <dd>List the endpoints that are defined for a service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>public-endpoints</dt>
+          <dd>Manage public endpoints for a service.</dd>
         </dlentry>
         <dlentry>
           <dt>help, h</dt>

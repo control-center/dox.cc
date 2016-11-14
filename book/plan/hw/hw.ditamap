@@ -4,6 +4,8 @@
 <title>Hardware</title>
   <chapter keyref="plan-hw-hw">
     <topicref keyref="plan-hw-master"/>
+    <topicref keyref="plan-hw-delegate"/>
     <topicref keyref="plan-hw-master-storage"/>
+    <topicref keyref="plan-hw-delegate-storage"/>
   </chapter>
 </bookmap>
