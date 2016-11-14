@@ -666,11 +666,14 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the IPv4 address of the master host.</cmd>
+            <cmd>Create a variable for the master host.</cmd>
             <stepxmp>
-              <p>Replace <varname>Master-Host</varname> with the 
-                hostname or IPv4 address of the master host:</p>
+              <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
+                master host:</p>
               <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+              <p>The value of this variable must match the value of
+                the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
+                in <filepath>/etc/default/serviced</filepath>.</p>
             </stepxmp>
           </substep>
           <substep>

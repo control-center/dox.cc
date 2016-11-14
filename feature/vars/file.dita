@@ -78,6 +78,9 @@
             host. On delegate hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP
             address or hostname of the registry host, which by default is the
               <cmdname>serviced</cmdname> master host.</dd>
+          <dd>The value used to replace <codeph>{{SERVICED_MASTER_IP}}</codeph> in this
+            variable must match the value of the <codeph>--insecure-registry</codeph> flag in 
+            the <filepath>/etc/sysconfig/docker</filepath> file.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_OUTBOUND_IP">
