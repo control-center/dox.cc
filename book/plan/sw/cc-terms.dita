@@ -1,42 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title><ph keyref="nm-cc"/> terms and concepts</title>
+  <title>Terminology, internal services, and concepts</title>
+  <shortdesc>This section defines <ph keyref="nm-cc"/> terminology, internal services that enable
+      <ph keyref="nm-cc"/> to function, and concepts that are used in this guide and other
+    documentation.</shortdesc>
   <conbody>
-    <dl>
-      
-      <dlentry>
-        <dt>application</dt>
-        <dd>A collection of one or more software programs that have been converted into Docker containers.</dd>
-      </dlentry>
-      
-      <dlentry>
-        <dt>resource pool</dt>
-        <dd>A collection of one or more hosts, each with its own compute, network, and storage
-          resources. The name of the default resource pool is <codeph>default</codeph>.</dd>
-      </dlentry>
-      
-      <dlentry>
-        <dt>resource pool host</dt>
-        <dd>A host that runs the application services scheduled for the resource pool to which it
-          belongs. A system may be configured as agent and master, or just agent, or just
-          master.</dd>
-      </dlentry>
-      
-      <dlentry>
-        <dt>master host</dt>
-        <dd>The host that runs the application services scheduler, the Docker registry, the
-          distributed file system, and other internal services, including the server for the <ph
-            keyref="nm-cc"/> browser interface. A system may be configured as agent and master, or
-          just agent, or just master. Only one system in a <ph keyref="nm-cc"/> cluster may be the
-          master.</dd>
-      </dlentry>
-      
-      <dlentry>
-        <dt>cluster</dt>
-        <dd>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</dd>
-      </dlentry>
-      
-    </dl>
+    <p>
+      <dl>
+        <dlentry>
+          <dt>application</dt>
+          <dd>A collection of one or more software programs that have been converted into Docker
+            containers.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>cluster</dt>
+          <dd>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>delegate host</dt>
+          <dd>A host that runs the application services scheduled for the resource pool to which it
+            belongs. A system can be configured as delegate or master.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Docker</dt>
+          <dd>An open-source application for building, shipping, and running distributed
+            applications. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>Elasticsearch</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service)  A distributed, real-time search and analytics
+            engine. <ph keyref="nm-cc"/> uses it to index log files and store service
+            definitions.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Kibana</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A browser-based user interface that enables
+            the display and search of Elasticsearch databases, including the log files that <ph
+              keyref="nm-cc"/> monitors.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Logstash</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A log file collector and aggregator that
+            forwards parsed log file entries to Elasticsearch.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>master host</dt>
+          <dd>The host that runs the application services scheduler, the Docker registry, the
+            distributed file system, and other internal services, including the server for the <ph
+              keyref="nm-cc"/> browser interface. A system can be configured as delegate or master.
+            Only one system in a <ph keyref="nm-cc"/> cluster can be the master.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>OpenTSDB</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A time series database that <ph keyref="nm-cc"
+            /> uses to store its service performance metrics.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>resource pool</dt>
+          <dd>A collection of one or more hosts, each with its own compute, network, and storage
+            resources. The name of the default resource pool is <codeph>default</codeph>. <ph
+              keyref="nm-cc"/> uses resource pools (except the default pool) to run services on
+            specific hosts.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>service</dt>
+          <dd>A process and its supporting files that <ph keyref="nm-cc"/> runs in a single
+            container to provide specific functionality as part of an application. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>serviced</dt>
+          <dd>The name of the <ph keyref="nm-cc"/> service and a command-line client for interacting
+            with the service.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>tenant</dt>
+          <dd>An application that <ph keyref="nm-cc"/> manages.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>ZooKeeper</dt>
+          <dd>(<ph keyref="nm-cc"/> internal service) A centralized service that <ph keyref="nm-cc"
+            /> uses for configuration maintenance, naming, distributed synchronization, and
+            providing group services.</dd>
+        </dlentry>
+      </dl>
+    </p>
   </conbody>
 </concept>

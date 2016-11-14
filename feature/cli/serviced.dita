@@ -658,6 +658,12 @@
         procedures include <cmdname>docker</cmdname> commands. However, commands
         that manipulate containers directly, such as <codeph>docker pause</codeph>,
         should not be used when <cmdname>serviced</cmdname> is running. </p>
+      <!--CC_2971-->
+      <p>During installation, <cmdname>serviced</cmdname> creates the internal services directory on
+        the master host, so <cmdname>serviced</cmdname> commands must be run <ph
+          conkeyref="strings/login-root"/>. After the master host is added as a delegate,
+          <cmdname>serviced</cmdname> commands use the delegate host authorization keys, so root is
+        no longer required.</p>
     </section>
     
     <section>

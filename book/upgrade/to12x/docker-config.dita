@@ -42,12 +42,14 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the hostname or IPv4 address
-              of the <ph keyref="nm-cc"/> master host.</cmd>
+            <cmd>Create a variable for the master host.</cmd>
             <stepxmp>
-              <p>Replace <varname>Master-Host</varname> with the 
-                hostname or IPv4 address of the master host:</p>
+              <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
+                master host:</p>
               <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+              <p>The value of this variable must match the value of
+                the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
+                in <filepath>/etc/default/serviced</filepath>.</p>
             </stepxmp>
           </substep>
           <substep>
@@ -58,6 +60,7 @@ EOF</codeblock>
               <codeblock>myDriver="--storage-driver devicemapper"
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
+myMount="--storage-opt dm.mountopt=discard"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
 myReg="--insecure-registry=$masterIP:5000"</codeblock>
             </stepxmp>
@@ -65,7 +68,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
           <substep>
             <cmd>Add the arguments to the Docker Engine environment file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myFlag $myReg'"' \
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag $myReg'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>
@@ -80,7 +83,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
         </substeps>
       </step>
       
-      <step conkeyref="upgrade-lib-tasks/docker-dns-flag">
+      <step conkeyref="feature-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
       
@@ -88,14 +91,21 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
         <cmd>Compare the previous versions of the Docker Engine drop-in and environment files
         with the new versions, and add any customizations for your deployment to the new versions.</cmd>
         <info>The files to compare: <ul>
+          <li>Unit files: <filepath>/lib/systemd/system/docker.service</filepath> and
+                <filepath>/lib/systemd/system/docker.service.bak</filepath>. There are important and
+              necessary differences between the previous version of the Docker Engine unit file and
+              the current version. All other differences should be included in the drop-in and
+              environment files, rather than maintained as edits in the unit file.</li>
+          
             <li>Drop-in files: <filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>
-              and <filepath>/etc/systemd/system/docker.service.d/docker.conf.bak</filepath></li>
+              and <filepath>/etc/systemd/system/docker.service.d/docker.conf.bak</filepath>.
+              If you change this file, reload the <cmdname>systemd</cmdname> manager
+              configuration with <userinput>systemctl daemon-reload</userinput>.</li>
+          
             <li>Environment files: <filepath>/etc/sysconfig/docker</filepath> and
-                <filepath>/etc/sysconfig/docker</filepath></li>
+              <filepath>/etc/sysconfig/docker.bak</filepath>. If you change 
+              this file, restart Docker Engine with <userinput>systemctl restart docker</userinput>.</li>
           </ul>
-          <p>If you change the drop-in file, reload the <cmdname>systemd</cmdname> manager
-            configuration with <userinput>systemctl daemon-reload</userinput>. If you change 
-            the environment file, restart Docker Engine with <userinput>systemctl restart docker</userinput>.</p>
         </info>
       </step>
     </steps>

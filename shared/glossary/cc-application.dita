@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>application</glossterm>
+<glossdef>A collection of one or more software programs that have been converted into Docker
+    containers.</glossdef>  
+</glossentry>

@@ -10,12 +10,13 @@
         <li>The defaults of the third group may need to be
           changed before starting the master host for the first time.</li>
         <li>Typically, the defaults of the last two groups
-          of variables are not changed until <ph keyref="nm-cc"/> has managed your 
-          application for a while and you see a need to do so. Likewise, the 
-          <varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname> variable,
-          which defines the interval for collecting kernel statistics about the
-          application data thin pool.</li>
+          of variables are not changed until <ph keyref="nm-cc"/> has managed an 
+          application for a while and a need arises. </li>
       </ul>
+      <p>The <varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname> 
+        variable sets the interval for collecting kernel statistics about the
+        application data thin pool. Its default value is unlikely to require 
+        a change until a need arises.</p>
     <table>
       <tgroup cols="3">
         <colspec colname="c1" colwidth="5.2*"/>

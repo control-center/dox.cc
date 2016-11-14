@@ -31,9 +31,13 @@
       
       <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp>
+        <stepxmp><b>With internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
 yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+        </stepxmp>
+        <stepxmp><b>Without internet access:</b>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum --enablerepo=zenoss-mirror install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
       </step>
       
@@ -67,13 +71,7 @@ yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/><
         <cmd>Open the new configuration file with a text editor, 
         and then update the file for your environment.</cmd>
         <info>For more information about configuring the master host,
-        see the following resources:
-        <ul>
-          <li><xref keyref="upgrade-to12x-vars-old"/></li>
-          <li><xref keyref="upgrade-to12x-vars-new"/></li>
-          <li><xref keyref="upgrade-to12x-vars"/></li>
-        </ul>
-        </info>
+          see <xref keyref="upgrade-to12x-vars"/>.</info>
       </step>
     </steps>
   </taskbody>

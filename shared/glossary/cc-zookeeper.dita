@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>ZooKeeper</glossterm>
+<glossdef>A <ph keyref="nm-cc"/> internal service; it is a time series database that <ph
+      keyref="nm-cc"/> uses to store its service performance metrics.</glossdef>  
+</glossentry>

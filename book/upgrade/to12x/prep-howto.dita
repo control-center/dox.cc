@@ -4,28 +4,29 @@
   <title>Upgrade best practices</title>
   <refbody>
     <section>
-      
-      <note>Please download a copy of the <cite conkeyref="pubs/cite-notes"/> for this release and
-        review it before upgrading your deployment.</note>
-      
-      
-      <p>The following list outlines the preparations:</p>
-      
+      <p>The following list outlines recommended best practices for
+        upgrading <ph keyref="nm-cc"/> deployments:</p>
       <ol>
-        <li>Download and stage files for offline upgrades, if necessary.</li>
-        <li>Get set up to run a CLI session on each CC cluster host at the same time.</li>
-        <li>Start CLI sessions on all CC cluster hosts.</li>
-        <li>Verify that the CC config files on each type of CC host
-          are identical, except known diffs on ZK nodes:
-          <ul>
-            <li>master</li>
-            <li>worker-rm-zk</li>
-            <li>worker-rm</li>
-            <li>worker-collector</li>
-          </ul>
-        </li>
-        <li>Review tasks for new requirements, if any.</li>
-        <li>zk ensemble startup comes after initial post-upgrade startup.</li>
+        <li>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for 
+          this release and review its contents. The latest information
+          is included in that document.</li>
+
+        <li>On delegate hosts, most of the upgrade steps are identical. Use <cmdname>tmux</cmdname>
+          or a similar program to establish sessions on each delegate host and perform the steps at
+          the same time.</li>
+
+        <li>Review and verify the settings in delegate host configuration files
+          (<filepath>/etc/default/serviced</filepath>) before starting the upgrade.
+          Ideally, the settings on all delegate hosts are identical, except on 
+          ZooKeeper nodes and delegate hosts that do not mount the DFS.</li>
+        
+        <li>Review the procedures in this guide before performing them. Every effort is made to
+          avoid mistakes and anticipate needs; nevertheless, the instructions may be incorrect or
+          inadequate for some requirements or environments.</li>
+        
+        <li><b><ph conkeyref="names/company"/> customers:</b> Download and stage files for offline
+          upgrades, if necessary. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="upgrade-maps-offline"/>.</li>
       </ol>
       
     </section>

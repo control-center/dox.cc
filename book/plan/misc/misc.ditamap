@@ -4,6 +4,6 @@
 <title>Misc</title>
   <chapter keyref="plan-misc-misc">
     <topicref keyref="plan-misc-package"/>
-    <topicref keyref="browsers-120"/>
+    <topicref keyref="plan-misc-os-browsers"/>
   </chapter>
 </bookmap>

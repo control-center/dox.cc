@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="concept">
+  <title>About this guide</title>
+  <refbody>
+    <section>
+      <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures
+        for installing and configuring a <ph keyref="nm-cc"/> cluster. Please
+        review the <cite conkeyref="pubs/cite-plan"/> carefully before using
+        this guide.</p>
+      
+      <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
+        installing a high-availability deployment. For additional information, please contact your
+        <ph conkeyref="names/company"/> representative.</p>
+    </section>
+    
+    <section conkeyref="related-pubs/cc"/>
+    <section conkeyref="more-info/cc"/>
+    
+    <section>
+      <title>Supported clients and browsers</title>
+      <p>The following table identifies the supported combinations of client operating systems and
+        web browsers.</p>
+      <table>
+        <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+          <tbody>
+            <row>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    
+    <!-- 
+    <section>
+      <title>Change history</title>
+      <p>The following list associates document part numbers and the important 
+        changes to this guide since the previous release. Some of the changes 
+        involve features or content, but others do not. For information about 
+        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
+      <dl>
+        <dlentry>
+          <dt>1320.16.319</dt>
+          <dd>Initial release.</dd>
+        </dlentry>
+      </dl>
+    </section>
+     -->
+  </refbody>
+</reference>

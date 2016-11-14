@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:glossentry" "glossentry.dtd">
+<glossentry id="glossentryid">
+  <glossterm>resource pool</glossterm>
+<glossdef>A collection of one or more hosts, each with its own compute, network, and storage
+    resources. The name of the default resource pool is <codeph>default</codeph>. <ph keyref="nm-cc"
+    /> uses resource pools (except the default pool) to run services on specific hosts.</glossdef>  
+</glossentry>

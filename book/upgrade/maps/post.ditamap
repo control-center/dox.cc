@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap >
+ <title>After</title>
+  <chapter keyref="upgrade-maps-post">
+    <topicref keyref="upgrade-to12x-post-pools"/>
+    <topicref keyref="upgrade-to12x-post-images"/>
+    <topicref keyref="feature-manage-remove-orphan-snaps"/>
+    <topicref keyref="feature-manage-update-opentsdb-ttl"/>
+ </chapter>
+</bookmap>

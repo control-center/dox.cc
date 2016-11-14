@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Defining resources</title>
+  <taskbody>
+    <context>
+      <p>This procedure defines the following logical resources required for the cluster:</p>
+      <ul>
+          <li>DRBD Master/Secondary DFS set</li>
+          <li>Two mirrored filesystems running on top of DRBD:
+            <ul>
+              <li><filepath>/opt/serviced/var/isvcs</filepath></li>
+              <li><filepath>/opt/serviced/var/volumes</filepath></li>
+            </ul>
+          </li>
+          <li><cmdname>serviced</cmdname> logical volume group running on top of DRBD</li>
+        <li>Manage <cmdname>serviced</cmdname> storage</li>
+        <li>The floating virtual IP address of the cluster (<varname>HA-Virtual-IP</varname>),
+          which the management software assigns to the active node</li>
+          <li>Docker</li>
+          <li>NFS</li>
+          <li><ph keyref="nm-cc"/></li>
+        </ul>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, log in to the secondary
+          node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Define a resource for the DRBD device,
+          and a clone of that resource to act as the master.</cmd>
+        <substeps>
+          <substep>
+            <cmd>On the primary node, define a resource for the DRBD device.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource create DFS ocf:linbit:drbd \
+  drbd_resource=serviced-dfs \
+  op monitor interval=30s role=Master \
+  op monitor interval=60s role=Slave</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On the primary node, define a clone of that resource to act as the master.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource master DFSMaster DFS \
+  master-max=1 master-node-max=1 \
+  clone-max=2 clone-node-max=1 notify=true</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        <stepresult>For a master/slave resource, Pacemaker requires separate monitoring intervals for
+            the different roles. In this case, Pacemaker checks the master every 30 seconds
+            and the slave every 60 seconds.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Define the filesystems that are mounted on the DRBD devices.</cmd>
+        <substeps>
+          <substep>
+            <cmd>On the primary node, define a resource  
+              for <ph keyref="nm-cc"/> internal services data.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource create serviced-isvcs Filesystem \
+  device=/dev/drbd/by-res/serviced-dfs/0 \
+  directory=/opt/serviced/var/isvcs fstype=xfs</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On the primary node, define a resource  
+              for <ph keyref="nm-cc"/> metadata.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource create serviced-volumes Filesystem \
+  device=/dev/drbd/by-res/serviced-dfs/1 \
+  directory=/opt/serviced/var/volumes fstype=xfs</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        <stepresult>In the preceding definitions, <codeph>serviced-dfs</codeph> is the 
+          name of the DRBD resource defined previously,
+          in <codeph>/etc/drbd.d/serviced-dfs.res</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, define the logical volume for <cmdname>serviced</cmdname>
+          that is backed by a DRBD device.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource create serviced-lvm ocf:heartbeat:LVM volgrpname=serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, define the storage resource for <cmdname>serviced</cmdname>,
+          to ensure that the device mapper device is
+          deactivated and unmounted properly.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource create serviced-storage ocf:zenoss:serviced-storage</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, define the resource that represents the floating virtual 
+          IP address of the cluster.</cmd>
+        <info>For dual-NIC deployments, the definition includes the 
+          <codeph>nic</codeph> key-value pair, which specifies the name of the
+          network interface that is used for all traffic except the private
+          DRBD traffic between the primary and seconday nodes. For
+          single-NIC deployments, omit <codeph>nic</codeph> key-value pair.</info>
+        <stepxmp>
+          <p><b>For dual-NIC deployments</b>, replace <varname>HA-Virtual-IP</varname>
+            with the floating virtual IP address of the cluster,
+            and replace <varname>HA-Virtual-IP-NIC</varname> with the
+            name of the network interface that is bound to <varname>HA-Virtual-IP</varname>:</p>
+          <codeblock>pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
+  ip=<varname>HA-Virtual-IP</varname> nic=<varname>HA-Virtual-IP-NIC</varname> \
+  cidr_netmask=32 op monitor interval=30s</codeblock>
+        </stepxmp>
+        <stepxmp>
+          <p><b>For single-NIC deployments</b>, replace <varname>HA-Virtual-IP</varname>
+            with the floating virtual IP address of the cluster:</p>
+          <codeblock>pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
+  ip=<varname>HA-Virtual-IP</varname> cidr_netmask=32 op monitor interval=30s</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Define the Docker resource.</cmd>
+        <substeps>
+          <substep>
+            <cmd>On the primary node, define the resource.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource create docker systemd:docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On both nodes, ensure that the automatic startup of
+            Docker by <cmdname>systemd</cmdname> is disabled.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop docker &#38;&#38; systemctl disable docker</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Define the NFS resource.</cmd>
+        <info><ph keyref="nm-cc"/> uses NFS to share configuration in a multi-host deployment,
+          and failover will not work properly if NFS is not stopped on the failed node.</info>
+        <substeps>
+          <substep>
+            <cmd>On the primary node, define the resource.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource create nfs systemd:nfs</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On the primary node, disable Pacemaker monitoring of NFS health.</cmd>
+            <info>During normal operations, <ph keyref="nm-cc"/> occasionally stops and 
+              restarts NFS, which could be misinterpreted by Pacemaker and trigger
+              an unwanted failover.</info>
+            <stepxmp>
+              <codeblock>pcs resource op remove nfs monitor interval=60s
+pcs resource op add nfs monitor interval=0s</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On both nodes, ensure that the automatic startup of
+              NFS by <cmdname>systemd</cmdname> is disabled.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop nfs &#38;&#38; systemctl disable nfs</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Define the <ph keyref="nm-cc"/> resource.</cmd>
+        <substeps>
+          <substep>
+            <cmd>On the primary node, define the resource.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource create serviced ocf:zenoss:serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On both nodes, ensure that the automatic startup of
+              <cmdname>serviced</cmdname> by <cmdname>systemd</cmdname> is disabled.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop serviced &#38;&#38; systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        <stepresult>
+            <p>Pacemaker uses the default timeouts defined by the Pacemaker resource agent for <ph
+              keyref="nm-cc"/> to decide if <cmdname>serviced</cmdname> is unable to start or
+              shutdown correctly. Starting with version 0.0.5 of the Pacemaker resource agent for
+              <ph keyref="nm-cc"/>, the default values for the start and stop timeouts are 360 and
+              130 seconds respectively. </p>
+            <p>The default startup and shutdown timeouts are based on the worst case scenario. In
+              practice, <ph keyref="nm-cc"/> typically starts and stops in much less time. However,
+              this does not mean that you should decrease these timeouts. There are potential edge
+            cases, especially for startup, where <ph keyref="nm-cc"/> may take longer than usual to
+            start or stop. If the start/stop timeouts for Pacemaker are set too low, and <ph
+              keyref="nm-cc"/> encounters one of those edge cases, then Pacemaker takes unnecessary
+            or incorrect actions. For example, if the startup timeout is artificially set too low,
+            2.5 minutes for example, and <ph keyref="nm-cc"/> startup encounters an unusual case
+            where it requires at least 3 minutes to start, then Pacemaker initiates failover
+            prematurely.</p>
+        </stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

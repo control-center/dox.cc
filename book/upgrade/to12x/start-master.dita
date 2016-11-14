@@ -37,7 +37,7 @@
         <info>During this startup, <cmdname>serviced</cmdname> invokes <codeph>docker pull</codeph>
           to retrieve its updated images.</info>
         <stepxmp>
-          <codeblock>systemctl start serviced &#38;&#38; journalctl -uf serviced -o cat</codeblock>
+          <codeblock>systemctl start serviced &#38;&#38; journalctl -u serviced -f -o cat</codeblock>
         </stepxmp>
         <stepresult>Do not proceed to the next step until the following message is displayed:
           <codeblock>Host Master successfully started</codeblock>
@@ -79,12 +79,5 @@
           is always a node in the ZooKeeper ensemble.</stepresult>
       </step>
     </steps>
-    <result>
-      <ul>
-        <li><b>Single-host deployments</b>: The upgrade is complete.</li>
-        <li><b>Multi-host deployments</b>: Perform one of the next two 
-          procedures on each ZooKeeper ensemble host.</li>
-      </ul>
-    </result>
   </taskbody>
 </task>

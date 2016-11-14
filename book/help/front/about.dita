@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
- <title>About this reference</title>
+ <title>About this guide</title>
  <refbody>
    
    <section>
@@ -10,7 +10,28 @@
    </section>
 
    <section conkeyref="related-pubs/cc"/>
-   <section conkeyref="more-info/cc"/>
-
+   <section>
+     <title>Documentation feedback</title>
+     <p>To provide feedback about this document, or to report an error or omission, please send an
+        email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
+       title (<cite conkeyref="pubs/cite-ref"/>) and part number (1340.16.314) and as much information
+       as possible about the context of your feedback.</p>
+   </section>
+   
+   <section>
+     <title>Supported clients and browsers</title>
+     <p>The following table identifies the supported combinations of client operating systems and
+       web browsers.</p>
+     <table>
+       <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+         <tbody>
+           <row>
+             <entry></entry>
+           </row>
+         </tbody>
+       </tgroup>
+     </table>
+   </section>
+   
  </refbody>
 </reference>

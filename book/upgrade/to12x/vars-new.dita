@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>New variables since version 1.1.1</title>
+  <title>New variables (since version 1.1.1)</title>
   <refbody>
     <section>
       <p>The variables in the following table were not

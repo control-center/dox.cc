@@ -27,6 +27,18 @@
             href="cli/serviced-docker.dita"
             format="dita"
     />
+    <keydef keys="feature-cli-serviced-host"
+            href="cli/serviced-host.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-key"
+            href="cli/serviced-key.dita"
+            format="dita"
+    />
+    <keydef keys="feature-cli-serviced-log-export"
+            href="cli/serviced-log-export.dita"
+            format="dita"
+    />
     <keydef keys="feature-cli-serviced-pool"
             href="cli/serviced-pool.dita"
             format="dita"

@@ -6,6 +6,15 @@
     <section>
       <p>This chapter introduces <ph keyref="nm-cc"/>, an open-source application 
         service orchestrator based on <xref keyref="url-docker">Docker</xref>.</p>
+      <p><ph keyref="nm-cc"/> is a platform-as-a-service framework that can manage any Docker
+        application, from a simple web application to a multi-tiered stateful application stack. <ph
+          keyref="nm-cc"/> is based on a service-oriented architecture, which enables applications
+        to run as a set of distributed services spanning hosts, datacenters, and geographic
+        regions.</p>
+      <p><ph keyref="nm-cc"/> relies on declarations of application requirements to support Docker
+        containers. A <keyword>service definition template</keyword> contains the specifications of
+        application services in JSON format. The definition of each service includes the IDs of the
+        Docker images needed to run the service.</p>
     </section>
   </refbody>
 </reference>

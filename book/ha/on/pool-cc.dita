@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring and starting <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>This procedure customizes key configuration variables of <ph keyref="nm-cc"/>.</context>
+    <context>Perform this procedure on each resource pool host in your deployment.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the resource pool host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Configure <ph keyref="nm-cc"/> as an agent of the master host.</cmd>
+        <info>
+          <p>The following variable configures <cmdname>serviced</cmdname> to serve as agent:</p>
+          <dl>
+            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+          <p>In addition, replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
+            <varname>HA-Virtual-IP</varname>, the virtual IP address of the high-availability cluster,
+            in the following lines::</p>
+          <sl>
+            <sli><codeph># SERVICED_ZK={{SERVICED_MASTER_IP}}:2181</codeph></sli>
+            <sli><codeph># SERVICED_DOCKER_REGISTRY={{SERVICED_MASTER_IP}}:5000</codeph></sli>
+            <sli><codeph># SERVICED_ENDPOINT={{SERVICED_MASTER_IP}}:4979</codeph></sli>
+            <sli><codeph># SERVICED_LOG_ADDRESS={{SERVICED_MASTER_IP}}:5042</codeph></sli>
+            <sli><codeph># SERVICED_LOGSTASH_ES={{SERVICED_MASTER_IP}}:9100</codeph></sli>
+            <sli><codeph># SERVICED_STATS_PORT={{SERVICED_MASTER_IP}}:8443</codeph></sli>
+          </sl>
+        </info>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Find the <varname>SERVICED_AGENT</varname> declaration, and then change the value
+              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
+            <stepxmp>The following example shows the line to change:
+              <codeblock># SERVICED_AGENT=0</codeblock></stepxmp>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Find the <varname>SERVICED_MASTER</varname> declaration, and then 
+              remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Globally replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
+              the virtual IP address of the high-availability cluster (<varname>HA-Virtual-IP</varname>).</cmd>
+            <info>
+              <note>Remove the number sign character (&#35;) from the beginning of each variable
+                declaration that includes the virtual IP address.</note>
+            </info>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Specify an alternate private network for <ph keyref="nm-cc"/>, if
+          necessary.</cmd>
+        <info>
+          <p><ph keyref="nm-cc"/> requires a 16-bit, private IPv4 network for virtual 
+            IP addresses, independent of the private network used in a dual-NIC DRBD
+            configuration. The default network is 10.3/16. If the default network is
+            already in use in your environment, you may select any valid IPv4 16-bit 
+            network.</p>
+          <p>The following variable configures <cmdname>serviced</cmdname> to use
+            an alternate network:</p>
+          <dl>
+            <dlentry conkeyref="feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </info>
+        <substeps>
+          <substep conkeyref="feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Locate the <varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname> declaration,
+              and then change the value.</cmd>
+            <stepxmp>The following example shows the line to change:
+              <codeblock># SERVICED_VIRTUAL_ADDRESS_SUBNET=10.3</codeblock></stepxmp>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep conkeyref="feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Start the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>).</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+        <info>To monitor progress, open a separate window to the host,
+          and then enter the following command:
+          <codeblock>journalctl -flu serviced -o cat</codeblock>
+        </info>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1321.16.296</bookpartno>  
+      <bookpartno>1320.16.319</bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -42,8 +42,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="book/install/cli-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/instl-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ntp-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -61,17 +60,17 @@
     <booklists>
       <toc/>
     </booklists>
-      <topicref href="book/install/front/about.dita"/>
+      <topicref href="book/install/maps/about.dita"/>
   </frontmatter>
   
-  <chapter href="book/install/instl/master.ditamap" format="ditamap"/>
-  <chapter href="feature/config/master-install.ditamap" format="ditamap"/>
-  <chapter href="book/install/instl/delegate.ditamap" format="ditamap"/>
-  <chapter href="feature/config/delegate-install.ditamap" format="ditamap"/>
+  <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
+  <chapter href="feature/config/master.ditamap" format="ditamap"/>
+  <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
+  <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
   <appendix href="feature/manage/manage.ditamap" format="ditamap"/>
-  <appendix href="book/install/cli/cli.ditamap" format="ditamap"/>
+  <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
   <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
   <appendix href="book/install/ntp/ntp.ditamap" format="ditamap"/>

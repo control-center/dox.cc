@@ -157,49 +157,7 @@
         </substeps>
       </step>
       
-      <step id="agent">
-        <cmd>Configure <ph keyref="nm-cc"/> as a delegate of the master host.</cmd>
-        <info>
-          <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
-          <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
-              <dt/>
-              <dd/>
-            </dlentry>
-          </dl>
-          <p>In addition, the following lines need to be edited, to replace
-              <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with 
-            the IP address or hostname of the master host:</p>
-          <sl>
-            <sli><codeph># SERVICED_ZK={{SERVICED_MASTER_IP}}:2181</codeph></sli>
-            <sli><codeph># SERVICED_DOCKER_REGISTRY={{SERVICED_MASTER_IP}}:5000</codeph></sli>
-            <sli><codeph># SERVICED_ENDPOINT={{SERVICED_MASTER_IP}}:4979</codeph></sli>
-            <sli><codeph># SERVICED_LOG_ADDRESS={{SERVICED_MASTER_IP}}:5042</codeph></sli>
-            <sli><codeph># SERVICED_LOGSTASH_ES={{SERVICED_MASTER_IP}}:9100</codeph></sli>
-            <sli><codeph># SERVICED_STATS_PORT={{SERVICED_MASTER_IP}}:8443</codeph></sli>
-          </sl>
-        </info>
-        <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Find the <varname>SERVICED_MASTER</varname> declaration, and then 
-              remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
-          </substep>
-          <substep>
-            <cmd>Globally replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
-              the IP address of the master host.</cmd>
-            <info>
-              <note>Remove the number sign character (&#35;) from the beginning of each variable
-                declaration that includes the master IP address.</note>
-            </info>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
-        </substeps>
-      </step>
+      
       
       <step id="create-thin-docker">
         <cmd>Create an LVM thin pool for Docker data.</cmd>
@@ -437,35 +395,41 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <stepxmp>
           <codeblock>systemctl enable dnsmasq &#38;&#38; systemctl start dnsmasq</codeblock>
         </stepxmp>
-        <!-- One more edit needed; waiting on ZEN-18437  
-        <info>If name resolution in your environment relies solely on entries 
-          in <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> 
-          to enable containers to use the file:</info>
+        <info>If name resolution in your environment relies solely on entries in
+            <filepath>/etc/hosts</filepath>, configure <cmdname>dsnmasq</cmdname> so that containers
+          can use the file:</info>
         <substeps>
           <substep>
             <cmd>Open <filepath>/etc/dnsmasq.conf</filepath> with a text editor.</cmd>
           </substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
-              and then remove the number sign character (<codeph>&#35;</codeph>) 
-              from the beginning of the line.</cmd>
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
-              and then remove the number sign character (<codeph>&#35;</codeph>) 
-              from the beginning of the line.</cmd>
+              and then make a copy of the line, immediately below the original.</cmd>
           </substep>
+          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
-              and then remove the number sign character (<codeph>&#35;</codeph>) 
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep>
+            <cmd>Remove <codeph>net</codeph>, and then remove the number sign
+              character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the line that starts with <codeph>#domain=example.com</codeph>, 
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep>
+            <cmd>Replace <codeph>exmaple.com</codeph> with <codeph>local</codeph>, 
+              and then remove the number sign character (<codeph>&#35;</codeph>)
               from the beginning of the line.</cmd>
           </substep>
-          <substep>
-            <cmd>TBD</cmd>
-          </substep>
-          <substep>
-            <cmd>Save the file, and then close the text editor.</cmd>
-          </substep>
+          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
           <substep>
             <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
             <stepxmp>
@@ -473,7 +437,6 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-        -->
       </step>
       
       <step id="ntp">
@@ -661,11 +624,14 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the IPv4 address of the master host.</cmd>
+            <cmd>Create a variable for the master host.</cmd>
             <stepxmp>
-              <p>Replace <varname>Master-Host</varname> with the 
-                hostname or IPv4 address of the master host:</p>
+              <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
+                master host:</p>
               <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+              <p>The value of this variable must match the value of
+                the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
+                in <filepath>/etc/default/serviced</filepath>.</p>
             </stepxmp>
           </substep>
           <substep>
@@ -676,6 +642,7 @@ EOF</codeblock>
               <codeblock>myDriver="--storage-driver devicemapper"
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
+myMount="--storage-opt dm.mountopt=discard"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
 myReg="--insecure-registry=$masterIP:5000"</codeblock>
             </stepxmp>
@@ -683,7 +650,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
           <substep>
             <cmd>Add the arguments to the Docker configuration file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myFlag $myReg'"' \
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag $myReg'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>

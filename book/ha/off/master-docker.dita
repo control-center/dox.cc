@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing Docker and <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>This procedure installs and configures Docker, 
+      and installs <ph keyref="nm-cc"/>.</context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step conkeyref="feature-lib-tasks/docker-install-offline">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-tmp">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-svc-def">
+        <cmd/>
+      </step>
+
+      <step conkeyref="feature-lib-tasks/install-serviced-offline">
+        <cmd></cmd>
+      </step>
+      
+      <step>
+        <cmd>Disable automatic startup of
+          <ph keyref="nm-cc"/> by <cmdname>systemd</cmdname>.</cmd>
+        <info>The cluster management software controls the Docker service.</info>
+        <stepxmp>
+          <codeblock>systemctl disable serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create a device mapper thin pool for Docker data.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Docker-Partition</varname> with the 
+            path of the primary partition designated for Docker data:</p>
+          <codeblock>serviced-storage create-thin-pool docker <varname>Docker-Partition</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result includes the name of the thin pool,
+          which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
+      </step>
+
+      <step conkeyref="feature-lib-tasks/docker-config">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="feature-lib-tasks/docker-dns-flag">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Import the <ph keyref="nm-cc"/> and <ph keyref="nm-platform"/> images into the local
+          <cmdname>docker</cmdname> registry.</cmd>
+        <info>The images are contained in the self-extracting archive files that are staged in the
+          <filepath>/root</filepath> directory.</info>
+        <substeps>
+          <substep>
+            <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cd /root</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Extract the images.</cmd>
+            <stepxmp>
+              <codeblock>for image in install-*.run
+do
+  echo -n "$image: "
+  eval ./$image
+done</codeblock>
+            </stepxmp>
+            <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>
+              key and then <b>Return</b> key, the current image is extracted, but the next one is
+              not.</info>
+          </substep>
+          <substep importance="optional">
+            <cmd>Delete the archive files, if desired.</cmd>
+            <stepxmp>
+              <codeblock>rm -i ./install-*.run</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Stop and disable the Docker service.</cmd>
+        <info>The cluster management software controls the Docker service.</info>
+        <stepxmp>
+          <codeblock>systemctl stop docker &#38;&#38; systemctl disable docker</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

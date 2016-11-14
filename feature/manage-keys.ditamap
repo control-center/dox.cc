@@ -51,6 +51,10 @@
             href="manage/remove-images.dita"
             format="dita"
     />
+    <keydef keys="feature-manage-remove-orphan-snaps"
+            href="manage/remove-orphan-snaps.dita"
+            format="dita"
+    />
     <keydef keys="feature-manage-resize"
             href="manage/resize.dita"
             format="dita"
@@ -93,6 +97,10 @@
     />
     <keydef keys="feature-manage-stop-n"
             href="manage/stop-n.dita"
+            format="dita"
+    />
+    <keydef keys="feature-manage-update-opentsdb-ttl"
+            href="manage/update-opentsdb-ttl.dita"
             format="dita"
     />
    </topicgroup>

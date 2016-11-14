@@ -7,6 +7,10 @@
             href="misc/misc.dita"
             format="dita"
     />
+    <keydef keys="plan-misc-os-browsers"
+            href="misc/os-browsers.dita"
+            format="dita"
+    />
     <keydef keys="plan-misc-package"
             href="misc/package.dita"
             format="dita"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in ha/plan</title>
+  <topicgroup>
+    <keydef keys="ha-plan-fencing"
+            href="plan/fencing.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-options"
+            href="plan/options.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-overview"
+            href="plan/overview.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-plan"
+            href="plan/plan.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-storage"
+            href="plan/storage.dita"
+            format="dita"
+    />
+    <keydef keys="ha-plan-variables"
+            href="plan/variables.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

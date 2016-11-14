@@ -19,13 +19,14 @@
         </li>
       </ul>
       
-      <p>The following storage configuration is recommended for delegate hosts:</p>
+      <p>The following storage configuration is recommended for delegate hosts:
       <ul>
-        <li>One local, high-performance device or partition with a minimum of 35GB of storage,
-          formatted with XFS, for the root filesystem. </li>
-        <li>One local, unformatted, high-performance device or partition with 50GB of storage.
-          A step in this chapter configures the space as an LVM thin pool for Docker data.</li>
-      </ul>
+        <li>A root filesystem with a minimum of 35GB of storage, formatted with XFS.</li>
+        <li>A dedicated swap area.</li>
+        <li>One or more block devices or partitions, or one or more LVM physical volumes,
+          with a total of 50GB of space. A step in this chapter configures the space as 
+          an LVM thin pool for Docker data.</li>
+      </ul></p>
     </section>
   </refbody>
 </reference>

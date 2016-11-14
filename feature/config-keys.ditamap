@@ -3,12 +3,12 @@
 <map>
  <title>Keys in feature/config</title>
   <topicgroup>
-    <keydef keys="feature-config-delegate-install"
-            href="config/delegate-install.dita"
+    <keydef keys="feature-config-delegate"
+            href="config/delegate.dita"
             format="dita"
     />
-    <keydef keys="feature-config-master-install"
-            href="config/master-install.dita"
+    <keydef keys="feature-config-master"
+            href="config/master.dita"
             format="dita"
     />
    </topicgroup>

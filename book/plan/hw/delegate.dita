@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Delegate host requirements</title>
+  <title>Delegate host resources</title>
   <refbody>
-    <section>
-      <p><ph keyref="nm-cc"/> requires real or virtual resource pool 
-        hosts that implement the 64-bit version of the x86 instruction set, 
-        and support RHEL/CentOS 7.1 or 7.2.</p>
-      
-      <p>For delegate hosts supporting the recommended multi-host configuration,
-        in which the master host is in its own, separate resource pool, the resources of delegate
-        hosts must support all of the application services. For more information, refer to your
-        application documentation.</p>
-      
-      <p>In all cases, delegate hosts need enough RAM, CPU, and storage resources to
-        support the services assigned to the resource pool to which the hosts belong.
-        In all cases, the resources of all delegate hosts in a resource pool should be identical.</p>      
-      
+    <section id="section_cts_wb1_xx">
+      <p>Delegate hosts require adequate resources to support all application services assigned to
+        the host's resource pool. All delegate hosts in a resource pool need identical resources.
+        For more information, refer to your application documentation. </p>
     </section>
   </refbody>
 </reference>

@@ -17,6 +17,11 @@
           </thead>
           <tbody>
             <row>
+              <entry><cite conkeyref="pubs/cite-notes"/></entry>
+              <entry>Describes known issues, fixed issues, and late-breaking
+                information not included in other publications.</entry>
+            </row>
+            <row>
               <entry><cite conkeyref="pubs/cite-plan"/></entry>
               <entry>Provides both general and specific information about
                 preparing to deploy a <ph keyref="nm-cc"/> cluster.</entry>
@@ -26,14 +31,6 @@
               <entry>Provides detailed procedures for installing
                 and configuring a <ph keyref="nm-cc"/> cluster.</entry>
             </row>
-            <!-- 
-            <row>
-              <entry><cite conkeyref="pubs/cite-install-ha"/></entry>
-              <entry>Provides detailed procedures for installing
-                and configuring a <ph keyref="nm-cc"/> cluster
-                for a high-availability deployment.</entry>
-            </row>
-             -->
             <row>
               <entry><cite conkeyref="pubs/cite-ref"/></entry>
               <entry>Provides information and procedures for managing
@@ -41,9 +38,10 @@
                 as online help in the <ph keyref="nm-cc"/> browser interface.</entry>
             </row>
             <row>
-              <entry><cite conkeyref="pubs/cite-notes"/></entry>
-              <entry>Describes known issues, fixed issues, and late-breaking
-                information not included in other publications.</entry>
+              <entry><cite conkeyref="pubs/cite-upgrade"/></entry>
+              <entry>Provides detailed procedures for updating
+                a <ph keyref="nm-cc"/> deployment to the 
+                latest release.</entry>
             </row>
           </tbody>
         </tgroup>

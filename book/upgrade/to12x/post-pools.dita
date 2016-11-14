@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating resource pool permissions</title>
+  <taskbody>
+    <context>Use this procedure to identify and change the permissions associated with one or more
+      resource pools. During the upgrade to version <ph keyref="lo-version-cc"/>, existing resource
+      pools are assigned both administrative and DFS permissions. <p>For this release, the command
+        that displays information about pools provides integer values for the Permissions field. The
+        following list associates the values with the permissions they represent:</p>
+      <ul>
+        <li><codeph>1</codeph>, administrative permission</li>
+        <li><codeph>2</codeph>, DFS access permission</li>
+        <li><codeph>3</codeph>, both administrative and DFS access permissions</li>
+      </ul>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the list of resource pools and their permissions.</cmd>
+        <stepxmp>
+          <codeblock>serviced pool list -v | grep -E 'ID|Permissions'</codeblock>
+        </stepxmp>
+        <stepresult>Example result: <codeblock>"ID": "default",
+"Permissions": 3,
+"ID": "master",
+"Permissions": 3,</codeblock>
+          <p>In the preceding example, the <codeph>default</codeph> and <codeph>master</codeph>
+            resource pools have administrative permission and DFS access permission.</p>
+        </stepresult>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Remove DFS access permission from a pool, if desired.</cmd>
+        <info>If you intend to remove both DFS access and administrative
+        access permissions from a resource pool, you must remove DFS
+        access permissions first.</info>
+        <stepxmp>Replace <varname>Pool-Name</varname> with the name
+          of a resource pool from the previous step:
+          <codeblock>serviced pool set-permission --dfs=false <varname>Pool-Name</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Remove administrative permission from a pool, if desired.</cmd>
+        <info>Do not remove administrative permission from a resource pool
+          before removing DFS access permission from a pool.</info>
+        <stepxmp>Replace <varname>Pool-Name</varname> with the name of a resource pool from a
+          previous step:
+          <codeblock>serviced pool set-permission --admin=false <varname>Pool-Name</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

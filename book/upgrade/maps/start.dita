@@ -42,11 +42,6 @@
               <entry>Start/register all remaining delegate hosts</entry>
               <entry><xref keyref="upgrade-to12x-start-delegate"/></entry>
             </row>
-            <row>
-              <entry>5</entry>
-              <entry>Review pool permissions</entry>
-              <entry><xref keyref="upgrade-to12x-start-pools"/></entry>
-            </row>
           </tbody>
         </tgroup>
       </table>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Supported clients and browsers</title>
+  <refbody>
+    <section id="section_qql_m4h_xx">
+      <title/>
+      <p>The following table identifies the supported combinations of client operating systems and
+        web browsers.</p>
+      <table id="table_rql_m4h_xx">
+        <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+          <tbody>
+            <row>
+              <entry/>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>
