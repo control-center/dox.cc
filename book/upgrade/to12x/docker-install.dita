@@ -114,12 +114,31 @@
       </step>
 
       <step>
-        <cmd>Back up the Docker Engine drop-in and environment files.</cmd>
-        <stepxmp>
-          <codeblock>mv /etc/systemd/system/docker.service.d/docker.conf \
-  /etc/systemd/system/docker.service.d/docker.conf.bak
-mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
-        </stepxmp>
+        <cmd>Back up Docker Engine service files.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create a backup of the unit file.</cmd>
+            <stepxmp>
+              <codeblock>cp -n /lib/systemd/system/docker.service \
+  /lib/systemd/system/docker.service.bak</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a backup of the drop-in file.</cmd>
+            <stepxmp>
+              <codeblock>test -f /etc/systemd/system/docker.service.d/docker.conf \ 
+  &#38;&#38; mv /etc/systemd/system/docker.service.d/docker.conf \
+  /etc/systemd/system/docker.service.d/docker.conf.bak</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a backup of the environment file.</cmd>
+            <stepxmp>
+              <codeblock>test -f /etc/sysconfig/docker \
+  &#38;&#38; mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>

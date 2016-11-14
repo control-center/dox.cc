@@ -157,49 +157,7 @@
         </substeps>
       </step>
       
-      <step id="agent">
-        <cmd>Configure <ph keyref="nm-cc"/> as a delegate of the master host.</cmd>
-        <info>
-          <p>The following variable configures <cmdname>serviced</cmdname> to serve as delegate:</p>
-          <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
-              <dt/>
-              <dd/>
-            </dlentry>
-          </dl>
-          <p>In addition, the following lines need to be edited, to replace
-              <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with 
-            the IP address or hostname of the master host:</p>
-          <sl>
-            <sli><codeph># SERVICED_ZK={{SERVICED_MASTER_IP}}:2181</codeph></sli>
-            <sli><codeph># SERVICED_DOCKER_REGISTRY={{SERVICED_MASTER_IP}}:5000</codeph></sli>
-            <sli><codeph># SERVICED_ENDPOINT={{SERVICED_MASTER_IP}}:4979</codeph></sli>
-            <sli><codeph># SERVICED_LOG_ADDRESS={{SERVICED_MASTER_IP}}:5042</codeph></sli>
-            <sli><codeph># SERVICED_LOGSTASH_ES={{SERVICED_MASTER_IP}}:9100</codeph></sli>
-            <sli><codeph># SERVICED_STATS_PORT={{SERVICED_MASTER_IP}}:8443</codeph></sli>
-          </sl>
-        </info>
-        <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Find the <varname>SERVICED_MASTER</varname> declaration, and then 
-              remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
-          </substep>
-          <substep>
-            <cmd>Globally replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
-              the IP address of the master host.</cmd>
-            <info>
-              <note>Remove the number sign character (&#35;) from the beginning of each variable
-                declaration that includes the master IP address.</note>
-            </info>
-          </substep>
-          <substep conkeyref="feature-lib-tasks/save">
-            <cmd/>
-          </substep>
-        </substeps>
-      </step>
+      
       
       <step id="create-thin-docker">
         <cmd>Create an LVM thin pool for Docker data.</cmd>
