@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>serviced key</title>
+  <shortdesc>The <cmdname>serviced key</cmdname> command displays the host's public key.</shortdesc>
+  <refbody>
+    <section id="section_wlf_fyb_hx">
+      <title>USAGE</title>
+      <codeblock>serviced key [global options] command [command options] [arguments...]</codeblock>
+    </section>
+    <section id="section_qzq_xyb_hx"><title>COMMANDS</title>The following commands are available for
+        <cmdname>serviced key</cmdname>:<dl>
+        <dlentry>
+          <dt>list</dt>
+          <dd>Shows the public key for the host.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>reset</dt>
+          <dd>Regenerates the public key for the host.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>help, h</dt>
+          <dd>Show a list of commands or the help for a single command.</dd>
+        </dlentry>
+      </dl></section>
+    <section>
+      <title>Usage</title>
+      <p><cmdname>serviced key</cmdname>
+      </p>
+    </section>
+    <section id="section_qfy_jyb_hx">
+      <title>OPTIONS</title>
+      <dl>
+        <dlentry>
+          <dt> --generate-bash-completion</dt>
+          <dd/>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry>
+          <dt>--help, -h</dt>
+          <dd>Shows the help for an option.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

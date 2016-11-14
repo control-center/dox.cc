@@ -7,6 +7,9 @@
       <topicref keyref="feature-cli-serviced"/>
       <topicref keyref="feature-cli-serviced-backup"/>
       <topicref keyref="feature-cli-serviced-docker"/>
+      <topicref keyref="feature-cli-serviced-host"/>
+      <topicref keyref="feature-cli-serviced-key"/>
+      <topicref keyref="feature-cli-serviced-log-export"/>
       <topicref keyref="feature-cli-serviced-pool"/>
       <topicref keyref="feature-cli-serviced-restore"/>
       <topicref keyref="feature-cli-script"/>
