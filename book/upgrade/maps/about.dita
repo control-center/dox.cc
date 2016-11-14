@@ -6,7 +6,7 @@
    <section>
    <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for upgrading <ph
           keyref="nm-cc"/> from any 1.1.x version to version 1.2.x.</p>
-     <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
+    <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
         upgrading a high-availability deployment. For additional information, please contact your
           <ph conkeyref="names/company"/> representative.</p>
    </section>

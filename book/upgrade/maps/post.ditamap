@@ -6,5 +6,6 @@
     <topicref keyref="upgrade-to12x-post-pools"/>
     <topicref keyref="upgrade-to12x-post-images"/>
     <topicref keyref="feature-manage-remove-orphan-snaps"/>
+    <topicref keyref="feature-manage-update-opentsdb-ttl"/>
  </chapter>
 </bookmap>
