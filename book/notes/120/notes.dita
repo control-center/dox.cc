@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Notes and workarounds</title>
+  <refbody>
+    <section>
+      <title>CentOS kernel defect affects volume status feature</title>
+      <p>Due to an issue in the CentOS kernel (<xref keyref="url-centos-kernel"
+        >https://bugzilla.redhat.com/show_bug.cgi?id=1286500</xref>), the <codeph>serviced volume
+          status</codeph> feature that was introduced in <ph keyref="nm-cc"/> 1.1.6 has been changed
+        to not report <codeph>storage.device.allocated</codeph> and
+        <codeph>storage.snapshot.allocated</codeph>. When the CentOS kernel 3.10.0-366.el7 is
+        released, the full functionality of this feature will be restored.</p>
+    </section>
+  </refbody>
+</reference>

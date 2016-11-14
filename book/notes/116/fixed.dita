@@ -44,7 +44,7 @@
           </row>
           <row>
             <entry>CC-2238</entry>
-            <entry>In zookeeper, set lock on read/write connection</entry>
+            <entry>In ZooKeeper, set lock on read/write connection</entry>
           </row>
           <row>
             <entry>CC-2258</entry>
@@ -74,7 +74,7 @@
           </row>
           <row>
             <entry>CC-2315</entry>
-            <entry>Make zookeeper session timeout configurable</entry>
+            <entry>Make ZooKeeper session timeout configurable</entry>
           </row>
           <row>
             <entry>CC-2318</entry>
