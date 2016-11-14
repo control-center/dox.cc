@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in ha/verify</title>
+  <topicgroup>
+    <keydef keys="ha-verify-about"
+            href="verify/about.dita"
+            format="dita"
+    />
+    <keydef keys="ha-verify-cc"
+            href="verify/cc.dita"
+            format="dita"
+    />
+    <keydef keys="ha-verify-cluster"
+            href="verify/cluster.dita"
+            format="dita"
+    />
+    <keydef keys="ha-verify-drbd"
+            href="verify/drbd.dita"
+            format="dita"
+    />
+    <keydef keys="ha-verify-failover"
+            href="verify/failover.dita"
+            format="dita"
+    />
+    <keydef keys="ha-verify-pacemaker"
+            href="verify/pacemaker.dita"
+            format="dita"
+    />
+    <keydef keys="ha-verify-verify"
+            href="verify/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -81,7 +81,7 @@ myReg="--insecure-registry=$masterIP:5000"</codeblock>
         </substeps>
       </step>
       
-      <step conkeyref="upgrade-lib-tasks/docker-dns-flag">
+      <step conkeyref="feature-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
       

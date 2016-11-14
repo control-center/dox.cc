@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating the OpenTSDB time-to-live value</title>
+  <taskbody>
+    <context>Older versions of <ph keyref="nm-cc"/> used a longer time-to-live (TTL)
+      value for data maintained by the OpenTSDB database. The correct value 
+      for this version is 2592000 seconds (30 days). Use this procedure to
+      update the TTL value, if necessary.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Start an interactive shell in the OpenTSDB container.</cmd>
+        <stepxmp>
+          <codeblock>docker exec -it serviced-isvcs_opentsdb bash</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start an interactive HBase shell.</cmd>
+        <stepxmp>
+          <codeblock>/opt/hbase/bin/hbase shell</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>HBase Shell; enter 'help&#60;RETURN&#62;' for list of supported commands.
+Type "exit&#60;RETURN&#62;" to leave the HBase Shell
+Version 0.94.16, r1557241, Fri Jan 10 20:43:03 UTC 2014
+              
+hbase(main):001:0&#62;</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Display the current settings of the <codeph>tsdb</codeph> table.</cmd>
+        <stepxmp>
+          <codeblock>describe 'tsdb'</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result includes <codeph>TTL =&#62; '2592000'</codeph>, 
+            stop. Use the <cmdname>exit</cmdname> command twice, to end the HBase 
+            shell and then the shell in the OpenTSDB container.</choice>
+          <choice>If the result includes a larger value for the TTL setting,
+            perform the remaining substeps.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Disable the <codeph>tsdb</codeph> table.</cmd>
+        <stepxmp>
+          <codeblock>disable 'tsdb'</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Set the TTL value to 2592000 seconds (30 days).</cmd>
+        <stepxmp>
+          <codeblock>alter 'tsdb', {NAME=>'t', TTL=>'2592000'}</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Enable the <codeph>tsdb</codeph> table.</cmd>
+        <stepxmp>
+          <codeblock>enable 'tsdb'</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Display the current settings.</cmd>
+        <stepxmp>
+          <codeblock>describe 'tsdb'</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result includes <codeph>TTL =&#62; '2592000'</codeph>, 
+            proceed to the next step.</choice>
+          <choice>If the result includes a different value for the TTL setting,
+            repeat the preceding substeps.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>End the interactive HBase shell.</cmd>
+        <stepxmp>
+          <codeblock>exit</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>End the interactive shell in the OpenTSDB container.</cmd>
+        <stepxmp>
+          <codeblock>exit</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

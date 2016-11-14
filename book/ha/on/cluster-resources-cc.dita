@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Defining the <ph keyref="nm-cc"/> resource group</title>
+  <taskbody>
+    <context>
+      <p>The resources in a resource group are started in the order they appear in the group, and
+        stopped in the reverse order they appear in the group. The start order is:</p>
+      <ol>
+          <li>Mount the filesystems (<codeph>serviced-isvcs</codeph>
+            and <codeph>serviced-volumes</codeph>)</li>
+          <li>Start the <codeph>serviced</codeph> logical volume.</li>
+        <li>Manage <cmdname>serviced</cmdname> storage.</li>
+        <li>Enable the virtual IP address of the cluster.</li>
+          <li>Start Docker.</li>
+          <li>Start NFS.</li>
+          <li>Start <ph keyref="nm-cc"/>.</li>
+        </ol>
+      <p>In the event of a failover, Pacemaker stops the resources on the failed node in the reverse
+        order they are defined before starting the resource group on the standby node.</p>
+    </context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create the <ph keyref="nm-cc"/> resource group.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource group add serviced-group \
+  serviced-isvcs serviced-volumes \
+  serviced-lvm serviced-storage \
+  VirtualIP docker nfs \
+  serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Define constraints for the <ph keyref="nm-cc"/> resource group.</cmd>
+        <info>Pacemaker resource constraints control when and where resources are deployed in a
+          cluster.</info>
+        <substeps>
+          <substep>
+            <cmd>Ensure that <codeph>serviced-group</codeph> runs on the same node as
+              <codeph>DFSMaster</codeph>.</cmd>
+            <stepxmp>
+              <codeblock>pcs constraint colocation add serviced-group with DFSMaster \
+  INFINITY with-rsc-role=Master</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Ensure that <codeph>serviced-group</codeph> is only started after 
+              <codeph>DFSMaster</codeph> is started.</cmd>
+            <stepxmp>
+              <codeblock>pcs constraint order promote DFSMaster then \
+  start serviced-group</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

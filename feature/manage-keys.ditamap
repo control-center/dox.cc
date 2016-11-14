@@ -99,5 +99,9 @@
             href="manage/stop-n.dita"
             format="dita"
     />
+    <keydef keys="feature-manage-update-opentsdb-ttl"
+            href="manage/update-opentsdb-ttl.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>
