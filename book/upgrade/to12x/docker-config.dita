@@ -11,8 +11,18 @@
       
       <step>
         <cmd>Create a new Docker Engine drop-in file.</cmd>
-        <stepxmp>
-          <codeblock>cat &#60;&#60;EOF > /etc/systemd/system/docker.service.d/docker.conf
+        <substeps>
+          <substep>
+            <cmd>Create a directory for the drop-in file, if necessary.</cmd>
+            <stepxmp>
+              <codeblock>test -d /etc/systemd/system/docker.service.d \
+  || mkdir -p /etc/systemd/system/docker.service.d</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create the file.</cmd>
+            <stepxmp>
+              <codeblock>cat &#60;&#60;EOF > /etc/systemd/system/docker.service.d/docker.conf
 [Service]
 TimeoutSec=300
 EnvironmentFile=-/etc/sysconfig/docker
@@ -20,7 +30,9 @@ ExecStart=
 ExecStart=/usr/bin/dockerd \$OPTIONS
 TasksMax=infinity
 EOF</codeblock>
-        </stepxmp>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>
@@ -46,7 +58,7 @@ EOF</codeblock>
             <stepxmp>
               <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
                 master host:</p>
-              <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+              <codeblock>masterHost="<varname>Master-Host</varname>"</codeblock>
               <p>The value of this variable must match the value of
                 the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
                 in <filepath>/etc/default/serviced</filepath>.</p>
@@ -62,7 +74,7 @@ myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myMount="--storage-opt dm.mountopt=discard"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=$masterIP:5000"</codeblock>
+myReg="--insecure-registry=$masterHost:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
