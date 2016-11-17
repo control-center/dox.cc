@@ -126,7 +126,7 @@
           <substep>
             <cmd>Create a backup of the drop-in file.</cmd>
             <stepxmp>
-              <codeblock>test -f /etc/systemd/system/docker.service.d/docker.conf \ 
+              <codeblock>test -f /etc/systemd/system/docker.service.d/docker.conf \
   &#38;&#38; mv /etc/systemd/system/docker.service.d/docker.conf \
   /etc/systemd/system/docker.service.d/docker.conf.bak</codeblock>
             </stepxmp>
