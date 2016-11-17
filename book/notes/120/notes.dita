@@ -4,15 +4,6 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title>CentOS kernel defect affects volume status feature</title>
-      <p>Due to an issue in the CentOS kernel (<xref keyref="url-centos-kernel"
-        >https://bugzilla.redhat.com/show_bug.cgi?id=1286500</xref>), the <codeph>serviced volume
-          status</codeph> feature that was introduced in <ph keyref="nm-cc"/> 1.1.6 has been changed
-        to not report <codeph>storage.device.allocated</codeph> and
-        <codeph>storage.snapshot.allocated</codeph>. When the CentOS kernel 3.10.0-366.el7 is
-        released, the full functionality of this feature will be restored.</p>
-    </section>
-    <section>
       <!-- CC-2297 and CC-2752 -->
       <title>Docker Engine TasksMax option</title>
       <p>The <codeph>TasksMax</codeph> option is included in the <cmdname>systemd</cmdname> drop-in
@@ -24,6 +15,15 @@
         option is ignored. Docker Engine uses more than 512 tasks routinely, so a future upgrade of
         <cmdname>systemd</cmdname> will cause failures; this setting prevents future failures.</p>
     </section>
+    
+    <section>
+      <!-- CC-3020 -->
+      <title>Copy-paste adds spurious line breaks to PDF text displayed in browsers</title>
+      <p>In some web browsers, using a mouse to copy text from a PDF adds line breaks randomly
+        to the text pasted in a terminal window. The workaround is to download the PDF and
+        use a local PDF viewer, rather than the viewer embedded in the browser.</p>
+    </section> 
+    
   </refbody>
   
 </reference>
