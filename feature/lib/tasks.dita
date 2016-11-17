@@ -81,14 +81,14 @@
       
       <step id="docker-hub">
         <cmd>Authenticate to the Docker Hub repository.</cmd>
-        <info>Replace <varname>USER</varname> and <varname>EMAIL</varname> with the values
-          associated with your Docker Hub account.</info>
+        <info>Replace <varname>User</varname> with the name
+          of your Docker Hub account.</info>
         <stepxmp>
-          <codeblock>docker login -u <varname>USER</varname> -e <varname>EMAIL</varname></codeblock>
+          <codeblock>docker login -u <varname>User</varname></codeblock>
         </stepxmp>
-        <stepresult>The <cmdname>docker</cmdname> command prompts you for your Docker Hub password,
-          and saves a hash of your credentials in the <filepath>$HOME/.dockercfg</filepath> file
-          (root user account).</stepresult>
+        <stepresult>The <cmdname>docker</cmdname> command prompts you for the Docker Hub password,
+          and saves a hash of the credentials in the <filepath>$HOME/.docker/config.json</filepath> 
+          file (root user account).</stepresult>
       </step>
       
       <step id="cfg-subnet" importance="optional">

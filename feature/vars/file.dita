@@ -18,7 +18,7 @@
         <dlentry id="HOME">
           <dt><varname>HOME</varname></dt>
           <dd><b>Default</b>: (the value of shell variable <varname>HOME</varname>)</dd> 
-          <dd>The path Docker Engine clients use to locate the <filepath>.dockercfg</filepath>
+          <dd>The path Docker Engine clients use to locate the <filepath>.docker/config.json</filepath>
             authentication file, which contains Docker Hub credentials.</dd>
         </dlentry>
         
