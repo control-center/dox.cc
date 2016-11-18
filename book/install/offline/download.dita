@@ -50,7 +50,7 @@
           (<codeph>centos7.1</codeph> or <codeph>centos7.2</codeph>)
           with the version of RHEL/CentOS installed on all of the hosts
           in your <ph keyref="nm-cc"/> cluster. Also, choose the file
-          with the highest version number. The version number represented as <varname>Version</varname>
+          with the highest version number. The version number is represented as <varname>Version</varname>
           in the following file names:
           <ul>
             <li><filepath>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</filepath></li>
