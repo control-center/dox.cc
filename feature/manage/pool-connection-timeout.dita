@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Setting the connection timeout of a resource pool</title>
+  <taskbody>
+    <context>Use this procedure to set the length of time
+      the scheduler waits for a disconnected delegate host to rejoin its pool before moving 
+      the services scheduled for the delegate to a different host in the pool. This feature
+      is useful for remote resource pools that are connected through a high-latency, wide-area
+      network.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-serviced"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Display the list of resource pools and their connection timeout values.</cmd>
+        <stepxmp>
+          <codeblock>serviced pool list -v | grep -E 'ID|ConnectionTimeout'</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Set the connection timeout value of a resource pool, if desired.</cmd>
+        <info>This command accepts the following units identifiers:
+        <ul>
+          <li><codeph>ms</codeph>, milliseconds</li>
+          <li><codeph>s</codeph>, seconds</li>
+          <li><codeph>m</codeph>, minutes</li>
+          <li><codeph>h</codeph>, hours</li>
+        </ul>
+        </info>
+        <stepxmp>Replace <varname>Pool-ID</varname> with a resource pool identifier, and replace
+            <varname>Timeout+Units</varname> with an integer followed by a units identifier:
+          <codeblock>serviced pool set-conn-timeout <varname>Pool-ID</varname> <varname>Timeout+Units</varname></codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

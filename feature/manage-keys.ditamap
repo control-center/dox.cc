@@ -47,6 +47,10 @@
             href="manage/multiple.dita"
             format="dita"
     />
+    <keydef keys="feature-manage-pool-connection-timeout"
+            href="manage/pool-connection-timeout.dita"
+            format="dita"
+    />
     <keydef keys="feature-manage-remove-images"
             href="manage/remove-images.dita"
             format="dita"
