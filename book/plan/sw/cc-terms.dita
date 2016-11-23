@@ -11,7 +11,7 @@
         <dlentry>
           <dt>application</dt>
           <dd>A collection of one or more software programs that have been converted into Docker
-            containers.</dd>
+            Engine containers.</dd>
         </dlentry>
         <dlentry>
           <dt>cluster</dt>
@@ -23,7 +23,7 @@
             belongs. A system can be configured as delegate or master.</dd>
         </dlentry>
         <dlentry>
-          <dt>Docker</dt>
+          <dt>Docker Engine</dt>
           <dd>An open-source application for building, shipping, and running distributed
             applications. </dd>
         </dlentry>
@@ -59,9 +59,8 @@
         <dlentry>
           <dt>resource pool</dt>
           <dd>A collection of one or more hosts, each with its own compute, network, and storage
-            resources. The name of the default resource pool is <codeph>default</codeph>. <ph
-              keyref="nm-cc"/> uses resource pools (except the default pool) to run services on
-            specific hosts.</dd>
+            resources. All of the hosts in a resource pool must be located in the same data center
+            and on the same subnet.</dd>
         </dlentry>
         <dlentry>
           <dt>service</dt>
