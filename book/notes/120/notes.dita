@@ -22,6 +22,12 @@
       <p>In some web browsers, using a mouse to copy text from a PDF adds line breaks randomly
         to the text pasted in a terminal window. The workaround is to download the PDF and
         use a local PDF viewer, rather than the viewer embedded in the browser.</p>
+    </section>
+    <section>
+      <title>Important configuration changes</title>
+      <p>See the <cite conkeyref="pubs/cite-install"/> for important configuration changes to
+        fstrim, the <codeph>serviced-storage</codeph> thresholds, and the Docker configuration
+        file.</p>
     </section> 
     
   </refbody>
