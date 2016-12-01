@@ -4,13 +4,46 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title>CentOS kernel defect affects volume status feature</title>
-      <p>Due to an issue in the CentOS kernel (<xref keyref="url-centos-kernel"
-        >https://bugzilla.redhat.com/show_bug.cgi?id=1286500</xref>), the <codeph>serviced volume
-          status</codeph> feature that was introduced in <ph keyref="nm-cc"/> 1.1.6 has been changed
-        to not report <codeph>storage.device.allocated</codeph> and
-        <codeph>storage.snapshot.allocated</codeph>. When the CentOS kernel 3.10.0-366.el7 is
-        released, the full functionality of this feature will be restored.</p>
+      <!-- CC-2297 and CC-2752 -->
+      <title>Docker Engine TasksMax option</title>
+      <p>The <codeph>TasksMax</codeph> option is included in the <cmdname>systemd</cmdname> drop-in
+        file for Docker Engine
+        (<filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>) 
+        that <ph keyref="nm-cc"/> 1.2.0 requires. Beginning with version 226,
+        <cmdname>systemd</cmdname> includes the <codeph>TasksMax</codeph> option, and its default
+        value is 512. Currently, CentOS 7.2 includes <cmdname>systemd</cmdname> version 219, so the
+        option is ignored. Docker Engine uses more than 512 tasks routinely, so a future upgrade of
+        <cmdname>systemd</cmdname> will cause failures; this setting prevents future failures.</p>
     </section>
+    
+    <section>
+      <!-- CC-3020 -->
+      <title>Copy-paste adds spurious line breaks to PDF text displayed in browsers</title>
+      <p>In some web browsers, using a mouse to copy text from a PDF adds line breaks randomly
+        to the text pasted in a terminal window. The workaround is to download the PDF and
+        use a local PDF viewer, rather than the viewer embedded in the browser.</p>
+    </section>
+    <section>
+      <title>Updating CentOS 7.2 creates an updated version of device mapper driver that need to be
+        manually downgraded (CC-3073)</title>
+      <p>If you update CentOS 7.2, the device-mapper package gets updated to version
+          "<filepath>device-mapper-1.02.107-5.el7_2.5.x86_64</filepath>", which causes the following
+        error:<codeblock>Error: Package: 7:device-mapper-event-1.02.107-5.el7.x86_64 (zenoss-mirror)
+  Requires: device-mapper = 7:1.02.107-5.el7
+  Installed: 7:device-mapper-1.02.107-5.el7_2.5.x86_64 (@updates)
+    device-mapper = 7:1.02.107-5.el7_2.5
+You could try using --skip-broken to work around the problem
+You could try running: rpm -Va --nofiles --nodigest</codeblock></p>
+      <p>To fix this error, you need to downgrade device-mapper by issuing the following
+        command:<codeblock>yum downgrade device-mapper-1.02.107-5.el7.x86_64 device-mapper-libs-1.02.107-5.el7.x86_64</codeblock></p>
+    </section>
+    <section>
+      <title>Important configuration changes</title>
+      <p>See the <cite conkeyref="pubs/cite-install"/> for important configuration changes to
+        fstrim, the <codeph>serviced-storage</codeph> thresholds, and the Docker configuration
+        file.</p>
+    </section> 
+    
   </refbody>
+  
 </reference>
