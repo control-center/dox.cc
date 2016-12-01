@@ -6,11 +6,10 @@
     storage.</shortdesc>
   <refbody>
     <section>
-      <title>USAGE</title>
       <p>Use this command to create LVM thin pools for Docker Engine and <ph keyref="nm-cc"/>.</p>
     </section>
     <section>
-      <title>SYNTAX</title>
+      <title>USAGE</title>
       <codeblock>serviced-storage  [-h|--help] [-o <varname>DeviceMapperOption</varname>=<varname>Value</varname>] \
   [-v] Command [<varname>CommandOptions</varname>]</codeblock>
     </section>
@@ -147,7 +146,8 @@
     </section>
     <section>
       <title>EXAMPLES</title>
-      <p>Create an LVM volume group named <codeph>zenoss</codeph> and use it for both thin pools:</p>
+      <p>Create an LVM volume group named <codeph>zenoss</codeph> and use it for both thin
+        pools:</p>
       <codeblock>vgcreate zenoss /dev/sdb /dev/sdc
 serviced-storage create-thin-pool --size=50G docker zenoss
 serviced-storage create-thin-pool --size=50% serviced zenoss</codeblock>
@@ -168,8 +168,8 @@ serviced-storage create-thin-pool serviced /dev/sdc3</codeblock>
       <codeblock>lvextend -L+300G zenoss/serviced-pool
 serviced-storage -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
   resize -d /opt/serviced/var/volumes 58uuetj38draeu9alp6002b1y 200G</codeblock>
-      <p>Identify the <cmdname>serviced</cmdname> application data thin pool,
-        and then remove orphaned snapshot devices.</p>
+      <p>Identify the <cmdname>serviced</cmdname> application data thin pool, and then remove
+        orphaned snapshot devices.</p>
       <codeblock>ls /dev/mapper | grep serviced
 serviced-storage -o dm.thinpooldev=/dev/mapper/zenoss-serviced--pool \
   check -c /opt/serviced/var/volumes</codeblock>
