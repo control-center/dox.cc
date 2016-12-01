@@ -24,7 +24,7 @@
         use a local PDF viewer, rather than the viewer embedded in the browser.</p>
     </section>
     <section>
-      <title>Upgrading CentOS 7.2 creates an updated version of device mapper driver that need to be
+      <title>Updating CentOS 7.2 creates an updated version of device mapper driver that need to be
         manually downgraded (CC-3073)</title>
       <p>If you update CentOS 7.2, the device-mapper package gets updated to version
           "<filepath>device-mapper-1.02.107-5.el7_2.5.x86_64</filepath>", which causes the following
