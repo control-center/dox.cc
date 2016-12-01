@@ -24,6 +24,20 @@
         use a local PDF viewer, rather than the viewer embedded in the browser.</p>
     </section>
     <section>
+      <title>Upgrading CentOS 7.2 creates an updated version of device mapper driver that need to be
+        manually downgraded (CC-3073)</title>
+      <p>If you update CentOS 7.2, the device-mapper package gets updated to version
+          "<filepath>device-mapper-1.02.107-5.el7_2.5.x86_64</filepath>", which causes the following
+        error:<codeblock>Error: Package: 7:device-mapper-event-1.02.107-5.el7.x86_64 (zenoss-mirror)
+  Requires: device-mapper = 7:1.02.107-5.el7
+  Installed: 7:device-mapper-1.02.107-5.el7_2.5.x86_64 (@updates)
+    device-mapper = 7:1.02.107-5.el7_2.5
+You could try using --skip-broken to work around the problem
+You could try running: rpm -Va --nofiles --nodigest</codeblock></p>
+      <p>To fix this error, you need to downgrade device-mapper by issuing the following
+        command:<codeblock>yum downgrade device-mapper-1.02.107-5.el7.x86_64 device-mapper-libs-1.02.107-5.el7.x86_64</codeblock></p>
+    </section>
+    <section>
       <title>Important configuration changes</title>
       <p>See the <cite conkeyref="pubs/cite-install"/> for important configuration changes to
         fstrim, the <codeph>serviced-storage</codeph> thresholds, and the Docker configuration
