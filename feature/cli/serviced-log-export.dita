@@ -8,7 +8,8 @@
     <section id="section_wlf_fyb_hx">
       <title>USAGE</title>
       <codeblock>command export [command options] [arguments...]</codeblock>
-      <p><b>Example</b>: <codeblock>serviced log export</codeblock>
+      <p><b>Example</b>:
+        <codeblock>serviced log export --service SERVICE_ID1 --service SERVICE_ID2</codeblock>
       </p>
     </section>
     <section id="section_qfy_jyb_hx">
@@ -16,16 +17,15 @@
       <dl>
         <dlentry>
           <dt>--from</dt>
-          <dd>Specify the start date in format <varname>yyyy.mm.dd</varname>.</dd>
+          <dd>Specify the start date.</dd>
         </dlentry>
         <dlentry>
           <dt>--to</dt>
-          <dd>Specify the end date in format <varname>yyyy.mm.dd</varname>.</dd>
+          <dd>Specify the end date.</dd>
         </dlentry>
         <dlentry>
           <dt>--service '--service option --service option'</dt>
-          <dd>Specify the service ID or service name with path
-              (<filepath>&lt;pool>/&lt;path>/&lt;name></filepath>). Includes all subservices.</dd>
+          <dd>Specify the service ID or service name. Includes all subservices.</dd>
         </dlentry>
         <dlentry>
           <dt>--out</dt>
