@@ -23,12 +23,12 @@
             href="to12x/docker-install.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-post-images"
-            href="to12x/post-images.dita"
+    <keydef keys="upgrade-to12x-pool-permissions"
+            href="to12x/pool-permissions.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-post-pools"
-            href="to12x/post-pools.dita"
+    <keydef keys="upgrade-to12x-post-images"
+            href="to12x/post-images.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-prep-features"

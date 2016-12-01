@@ -69,34 +69,56 @@
         </dlentry>
       </dl></section>
     <section>
+      <title>serviced pool set-conn-timeout</title>
+      <p>The <cmdname>serviced pool set-conn-timeout</cmdname> command sets the length of time
+        the scheduler waits for a disconnected delegate to rejoin its pool before moving 
+        the services scheduled for the delegate to a different host in the pool.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced pool set-conn-timeout <varname>POOLID</varname> <varname>TIMEOUT</varname></codeblock>
+      <p>The <varname>TIMEOUT</varname> value is specified with an integer followed by the units identifier.
+        This command accepts the following units identifiers:
+        <ul>
+          <li><codeph>ms</codeph>, milliseconds</li>
+          <li><codeph>s</codeph>, seconds</li>
+          <li><codeph>m</codeph>, minutes</li>
+          <li><codeph>h</codeph>, hours</li>
+        </ul>
+        For example, <codeph>50ms</codeph> or <codeph>2m</codeph>.
+      </p>
+    </section>
+    <section>
       <title>serviced pool set-permission</title>
       <p>The <cmdname>serviced pool set-permission</cmdname> command sets permission flags for hosts
         in the resource pool, <varname>POOLID</varname>. Before removing access to administrative
         functions (<cmdname>--admin</cmdname>), remove DFS access.</p>
-      <p><b>Syntax</b>:</p>
-      <codeblock>serviced pool set-permission [<varname>CommandOptions</varname>] <varname>POOLID</varname></codeblock>
-      <p><b>Command options:</b></p>
+      <p>Syntax:</p>
+      <codeblock>serviced pool set-permission [--dfs[=false]][--admin[=false]] <varname>POOLID</varname></codeblock>
+      <p>Command options:</p>
       <dl>
         <dlentry>
-          <dt>--dfs</dt>
-          <dd>Control permission to mount DFS. </dd>
+          <dt>--dfs[=false]]</dt>
+          <dd>Add or remove permission to mount the DFS. The default value is <codeph>true</codeph>.</dd>
         </dlentry>
         <dlentry>
-          <dt>--admin</dt>
-          <dd>Control permission to use administrative functions. </dd>
+          <dt>--admin[=false]]</dt>
+          <dd>Add or remove permission to perform administrative functions DFS. The default value is <codeph>true</codeph>.</dd>
         </dlentry>
       </dl>
-      <p><b>Examples</b></p>
+    </section>
+    <section>
+      <title>Examples</title>
       <p>Give a resource pool distributed file system (DFS) access: </p>
       <codeblock>serviced pool set-permission --dfs pool_01_140620</codeblock>
       <p>Give a resource pool access to administrative functions: </p>
       <codeblock>serviced pool set-permission --admin pool_01_140620</codeblock>
       <p>Remove DFS access permission from a resource pool.<note>If you need to remove access to
-          administrative functions, first remove DFS access.</note></p>
+        administrative functions, first remove DFS access.</note></p>
       <codeblock>serviced pool set-permission --dfs=false pool_01_140620</codeblock>
       <p>Remove resource pool access to administrative functions.<note>If you need to remove access
-          to administrative functions, first remove DFS access.</note></p>
+        to administrative functions, first remove DFS access.</note></p>
       <codeblock>serviced pool set-permission --admin=false pool_01_140620</codeblock>
+      <p>Set the connection timeout value to 3 minutes:</p>
+      <codeblock>serviced pool set-conn-timeout pool_01_140620 3m</codeblock>
     </section>
   </refbody>
 </reference>

@@ -29,7 +29,7 @@
      </table>
    </section>
    
-   <!-- 
+   
     <section>
       <title>Change history</title>
       <p>The following list associates document part numbers and the important 
@@ -38,12 +38,17 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1300.16.319</dt>
+          <dt>1300.16.327</dt>
+          <dd>Add a description of a new feature, setting the connection timeout
+            value of a resource pool, to the pre-upgrade chapter.</dd>            
+          <dd>Add a procedure for the new feature to the post-upgrade chapter.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1300.16.322</dt>
           <dd>Initial release.</dd>
         </dlentry>
       </dl>
     </section>
-     -->
    
  </refbody>
 </reference>

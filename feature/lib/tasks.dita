@@ -81,14 +81,14 @@
       
       <step id="docker-hub">
         <cmd>Authenticate to the Docker Hub repository.</cmd>
-        <info>Replace <varname>USER</varname> and <varname>EMAIL</varname> with the values
-          associated with your Docker Hub account.</info>
+        <info>Replace <varname>User</varname> with the name
+          of your Docker Hub account.</info>
         <stepxmp>
-          <codeblock>docker login -u <varname>USER</varname> -e <varname>EMAIL</varname></codeblock>
+          <codeblock>docker login -u <varname>User</varname></codeblock>
         </stepxmp>
-        <stepresult>The <cmdname>docker</cmdname> command prompts you for your Docker Hub password,
-          and saves a hash of your credentials in the <filepath>$HOME/.dockercfg</filepath> file
-          (root user account).</stepresult>
+        <stepresult>The <cmdname>docker</cmdname> command prompts you for the Docker Hub password,
+          and saves a hash of the credentials in the <filepath>$HOME/.docker/config.json</filepath> 
+          file (root user account).</stepresult>
       </step>
       
       <step id="cfg-subnet" importance="optional">
@@ -628,7 +628,7 @@ EOF</codeblock>
             <stepxmp>
               <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
                 master host:</p>
-              <codeblock>masterIP="<varname>Master-Host</varname>"</codeblock>
+              <codeblock>masterHost="<varname>Master-Host</varname>"</codeblock>
               <p>The value of this variable must match the value of
                 the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
                 in <filepath>/etc/default/serviced</filepath>.</p>
@@ -644,7 +644,7 @@ myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myMount="--storage-opt dm.mountopt=discard"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=$masterIP:5000"</codeblock>
+myReg="--insecure-registry=$masterHost:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>

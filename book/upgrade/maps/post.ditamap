@@ -3,7 +3,8 @@
 <bookmap >
  <title>After</title>
   <chapter keyref="upgrade-maps-post">
-    <topicref keyref="upgrade-to12x-post-pools"/>
+    <topicref keyref="upgrade-to12x-pool-permissions"/>
+    <topicref keyref="feature-manage-pool-connection-timeout"/>
     <topicref keyref="upgrade-to12x-post-images"/>
     <topicref keyref="feature-manage-remove-orphan-snaps"/>
     <topicref keyref="feature-manage-update-opentsdb-ttl"/>
