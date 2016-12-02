@@ -3,6 +3,6 @@
 <bookmap >
  <title>Micro</title>
   <chapter keyref="upgrade-micro-micro">
-    <topicref keyref="upgrade-to12x-pool-permissions"/>
+    <topicref keyref="upgrade-topics-best-practices"/>
  </chapter>
 </bookmap>

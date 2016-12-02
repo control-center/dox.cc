@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/topics</title>
+  <topicgroup>
+    <keydef keys="upgrade-topics-best-practices"
+            href="topics/best-practices.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-topics-remove-images"
+            href="topics/remove-images.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -4,8 +4,8 @@
   <title>Upgrading 1.2.x to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
-      <p>Perform the procedures in this chapter to upgrade an earlier 
-        micro release of <ph keyref="nm-cc"/> to the latest micro release.</p>
+      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/>
+        1.2.0 system to <ph keyref="lo-version-cc"/>.</p>
     </section>
   </refbody>
 </reference>

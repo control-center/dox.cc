@@ -48,7 +48,8 @@
       <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/micro-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/scope-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/topics-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
@@ -70,6 +71,8 @@
       <navtitle>Upgrading 1.2.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/front/micro.dita"/>
+    <topicref href="book/upgrade/topics/best-practices.dita"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/micro/micro.ditamap" format="ditamap"/>
   </part>
   
@@ -77,7 +80,6 @@
     <topicmeta>
       <navtitle>Upgrading 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
-    <topicref href="book/upgrade/front/minor.dita"/>
     <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
