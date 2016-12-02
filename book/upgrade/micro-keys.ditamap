@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in upgrade/lib</title>
+ <title>Keys in upgrade/micro</title>
   <topicgroup>
-    <keydef keys="upgrade-lib-tasks"
-            href="lib/tasks.dita"
+    <keydef keys="upgrade-micro-micro"
+            href="micro/micro.dita"
             format="dita"
     />
    </topicgroup>

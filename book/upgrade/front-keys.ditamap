@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/front</title>
+  <topicgroup>
+    <keydef keys="upgrade-front-about"
+            href="front/about.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-front-micro"
+            href="front/micro.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-front-minor"
+            href="front/minor.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

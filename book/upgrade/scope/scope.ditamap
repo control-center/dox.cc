@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap >
+ <title>Scope</title>
+ <chapter keyref="upgrade-scope-scope">
+   <topicref keyref="upgrade-scope-dates"/>
+   <topicref keyref="upgrade-scope-paths"/>
+ </chapter>
+</bookmap>

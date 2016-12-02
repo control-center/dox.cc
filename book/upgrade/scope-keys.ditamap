@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/scope</title>
+  <topicgroup>
+    <keydef keys="upgrade-scope-dates"
+            href="scope/dates.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-scope-paths"
+            href="scope/paths.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-scope-scope"
+            href="scope/scope.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
