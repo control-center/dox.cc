@@ -809,7 +809,15 @@ node3=<varname>Delegate-B</varname></codeblock>
       </step>
       
       <step id="zk-pull-isvcs">
-        <cmd>Pull the required <ph keyref="nm-cc"/> ZooKeeper image from the master host.</cmd>
+        <cmd>Pull or import the required ZooKeeper
+          image into the local Docker Engine repository.</cmd>
+        <choices>
+          <choice><b><ph conkeyref="names/company"/> customers</b>: If you are
+            deploying a <ph keyref="nm-cc"/> without internet access, enter the 
+          following command:
+          <codeblock></codeblock>
+          </choice>
+        </choices>
         <substeps>
           <substep>
             <cmd>Identify the image to pull.</cmd>
@@ -817,7 +825,7 @@ node3=<varname>Delegate-B</varname></codeblock>
               <codeblock>serviced version | grep IsvcsImages</codeblock>
             </stepxmp>
             <stepresult>Example result:
-              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v48 zenoss/isvcs-zookeeper:v7]</codeblock>
+              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v52 zenoss/isvcs-zookeeper:v8]</codeblock>
             </stepresult>
           </substep>
           <substep>

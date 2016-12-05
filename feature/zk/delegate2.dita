@@ -3,6 +3,8 @@
 <task id="taskid">
   <title>Configuring delegate host B as a ZooKeeper node</title>
   <taskbody>
+    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
+      keyref="install-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to configure the delegate host designated as
         <varname>Delegate-B</varname> as a ZooKeeper node.</context>
     <steps>

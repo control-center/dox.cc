@@ -6,5 +6,6 @@
        <topicref keyref="install-offline-download"/>
        <topicref keyref="install-offline-stage-rpm"/>
        <topicref keyref="install-offline-stage-run"/>
+       <topicref keyref="install-offline-stage-run-zk"/>
    </appendix>
 </bookmap>
