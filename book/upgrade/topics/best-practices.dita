@@ -3,7 +3,7 @@
 <reference id="conceptid">
   <title>Upgrade best practices</title>
   <refbody>
-    <section>
+    <section id="best-practices">
       <p>The following list outlines recommended best practices for
         upgrading <ph keyref="nm-cc"/> deployments:</p>
       <ol>

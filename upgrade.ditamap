@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="2" modification="0"/>        
+        <vrm version="1" release="2" modification="1"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.327</bookpartno>
+      <bookpartno>1300.16.344</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -47,7 +47,7 @@
       <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/micro-keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/scope-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/paths-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics-keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -64,14 +64,13 @@
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <chapter href="book/upgrade/scope/scope.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
       <navtitle>Upgrading 1.2.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/front/micro.dita"/>
-    <topicref href="book/upgrade/topics/best-practices.dita"/>
     <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/micro/micro.ditamap" format="ditamap"/>
   </part>
@@ -80,6 +79,7 @@
     <topicmeta>
       <navtitle>Upgrading 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
+    <topicref href="book/upgrade/front/minor.dita"/>
     <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>

@@ -4,12 +4,12 @@
   <title>Scope</title>
   <refbody>
     <section>
-      <p>The chapters in this part provide instructions for upgrading <ph keyref="nm-cc"/>
-        from release 1.1 to 1.2. </p>
+      <p>The chapters in this part provide instructions for performing a minor
+        upgrade of <ph keyref="nm-cc"/>, from version 1.1.x to <ph keyref="lo-version-cc"/>.</p>
       
       <p>The following table identifies the upgrades of <ph keyref="nm-cc"/>
         that are documented in this part.</p>
-      <table conkeyref="upgrade-scope-paths/minor">
+      <table conkeyref="upgrade-paths-documented/minor">
         <tgroup cols="2"><tbody><row><entry/></row></tbody></tgroup>
       </table>
     </section>

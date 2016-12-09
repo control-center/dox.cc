@@ -4,8 +4,8 @@
   <title>Documented upgrade paths</title>
   <refbody>
     <section>
-      <p>This chapter identifies the release dates of <ph keyref="nm-cc"/>,
-        and the upgrade paths included in this guide.</p>
+      <p>This chapter includes the dates of <ph keyref="nm-cc"/> releases
+        and the upgrade paths that are documented in this guide.</p>
     </section>
   </refbody>
 </reference>
