@@ -11,10 +11,6 @@
             href="maps/master.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-offline"
-            href="maps/offline.dita"
-            format="dita"
-    />
     <keydef keys="upgrade-maps-post"
             href="maps/post.dita"
             format="dita"

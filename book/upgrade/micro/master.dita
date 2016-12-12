@@ -104,5 +104,14 @@ yum --enablerepo=zenoss-mirror install -y serviced-<ph keyref="lo-version-cc"/><
         </choices>
       </step>
     </steps>
+    <postreq>
+      <ul>
+        <li>If you are upgrading a multi-host deployment, 
+          continue to the next procedure.</li>
+        <li>If you are upgrading a single-host deployment, 
+          start <ph keyref="nm-cc"/>.
+        <codeblock>systemctl start serviced</codeblock></li>
+      </ul>
+    </postreq>
   </taskbody>
 </task>

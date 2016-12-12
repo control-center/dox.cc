@@ -42,8 +42,8 @@ hbase(main):001:0&#62;</codeblock>
           <choice>If the result includes <codeph>TTL =&#62; '2592000'</codeph>, 
             stop. Use the <cmdname>exit</cmdname> command twice, to end the HBase 
             shell and then the shell in the OpenTSDB container.</choice>
-          <choice>If the result includes a larger value for the TTL setting,
-            perform the remaining substeps.</choice>
+          <choice>If the result includes a larger value for the TTL setting, perform the remaining
+            steps.</choice>
         </choices>
       </step>
       
@@ -76,8 +76,8 @@ hbase(main):001:0&#62;</codeblock>
         <choices>
           <choice>If the result includes <codeph>TTL =&#62; '2592000'</codeph>, 
             proceed to the next step.</choice>
-          <choice>If the result includes a different value for the TTL setting,
-            repeat the preceding substeps.</choice>
+          <choice>If the result includes a different value for the TTL setting, repeat the preceding
+            steps.</choice>
         </choices>
       </step>
       

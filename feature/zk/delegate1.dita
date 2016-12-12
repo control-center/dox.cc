@@ -3,8 +3,6 @@
 <task id="taskid">
   <title>Configuring delegate host A as a ZooKeeper node</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="install-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to configure the delegate host designated
       as <varname>Delegate-A</varname> as a ZooKeeper node.</context>
     <steps>
@@ -144,11 +142,6 @@ SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@198.51.100.135:2888:3888,\
   2@0.0.0.0:2888:3888,3@198.51.100.137:2888:3888
 SERVICED_ZK_SESSION_TIMEOUT=15</codeblock>
         </stepresult> 
-      </step>
-      
-      <!-- Not performed on appliances -->
-      <step conkeyref="feature-lib-tasks/zk-pull-isvcs">
-        <cmd/>
       </step>
       
     </steps>

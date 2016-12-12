@@ -3,8 +3,7 @@
 <task id="taskid">
   <title>Starting the ZooKeeper ensemble</title>
   <taskbody>
-    <context>Use this procedure to start the ZooKeeper ensemble
-      after upgrading <ph keyref="nm-cc"/> to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Use this procedure to start the ZooKeeper ensemble.</context>
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>

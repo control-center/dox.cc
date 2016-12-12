@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Pulling the ZooKeeper image for Docker Engine</title>
+  <taskbody>
+    <prereq>To perform this procedure, ZooKeeper ensemble nodes must have internet access.</prereq>
+    <context>Use this procedure to pull the Docker Engine image for the ZooKeeper service from
+      Docker Hub to a ZooKeeper ensemble node. Repeat this procedure on each node in the ZooKeeper
+      ensemble.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the ZooKeeper ensemble node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the images associated with the
+          installed version of <cmdname>serviced</cmdname>.</cmd>
+        <stepxmp>
+          <codeblock>serviced version | grep Images</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v54 zenoss/isvcs-zookeeper:v8]</codeblock>
+          <p>In this example, the tag of the ZooKeeper 
+            image is <codeph>isvcs-zookeeper:v8</codeph>.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Pull the required image from Docker Hub to the local repository.</cmd>
+        <stepxmp>Replace <varname>ZooKeeper-Tag</varname> with the
+          tag displayed in the previous step:
+          <codeblock>docker pull zenoss/<varname>ZooKeeper-Tag</varname></codeblock></stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

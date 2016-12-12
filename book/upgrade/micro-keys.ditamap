@@ -15,5 +15,9 @@
             href="micro/micro.dita"
             format="dita"
     />
+    <keydef keys="upgrade-micro-zk-image"
+            href="micro/zk-image.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>

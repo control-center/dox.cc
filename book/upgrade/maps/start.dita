@@ -35,7 +35,7 @@
             <row>
               <entry>3</entry>
               <entry>Start the ZooKeeper ensemble</entry>
-              <entry><xref keyref="upgrade-to12x-start-zk"/></entry>
+              <entry><xref keyref="upgrade-topics-start-zk"/></entry>
             </row>
             <row>
               <entry>4</entry>

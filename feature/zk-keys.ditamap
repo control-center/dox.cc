@@ -23,6 +23,18 @@
             href="zk/example.dita"
             format="dita"
     />
+    <keydef keys="feature-zk-image-import"
+            href="zk/image-import.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-image-pull"
+            href="zk/image-pull.dita"
+            format="dita"
+    />
+    <keydef keys="feature-zk-image"
+            href="zk/image.dita"
+            format="dita"
+    />
     <keydef keys="feature-zk-master"
             href="zk/master.dita"
             format="dita"

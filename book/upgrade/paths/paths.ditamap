@@ -4,7 +4,7 @@
  <title>Paths</title>
  <chapter keyref="upgrade-paths-paths">
    <topicref keyref="upgrade-paths-dates"/>
+   <topicref keyref="upgrade-paths-images"/>
    <topicref keyref="upgrade-paths-documented"/>
-   <!-- add heads-up here if new config file variables? -->
  </chapter>
 </bookmap>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Installing the ZooKeeper image for Docker Engine</title>
+  <refbody>
+    <section>
+      <p>Use one of the procedures in this section to pull or import the Docker Engine image
+        for the ZooKeeper service on each ZooKeeper ensemble node.</p>
+    </section>
+  </refbody>
+</reference>

@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.16.344</bookpartno>
+      <bookpartno>1300.16.347</bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -90,5 +90,5 @@
   
   <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
-  <appendix href="book/upgrade/maps/offline.ditamap" format="ditamap"/>
+  <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
 </bookmap>

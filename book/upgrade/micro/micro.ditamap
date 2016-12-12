@@ -6,7 +6,7 @@
   <chapter keyref="upgrade-micro-micro">
     <topicref keyref="upgrade-micro-master"/>
     <topicref keyref="upgrade-micro-delegate"/>
-    <!-- procedure to install updated zk image on ZK nodes (offline only) -->
-    <!-- start procedure -->
+    <topicref keyref="upgrade-micro-zk-image"/>
+    <topicref keyref="upgrade-topics-start-zk"/>
  </chapter>
 </bookmap>

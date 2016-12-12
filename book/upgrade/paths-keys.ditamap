@@ -11,6 +11,10 @@
             href="paths/documented.dita"
             format="dita"
     />
+    <keydef keys="upgrade-paths-images"
+            href="paths/images.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-paths-paths"
             href="paths/paths.dita"
             format="dita"

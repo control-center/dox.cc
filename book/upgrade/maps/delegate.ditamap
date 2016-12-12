@@ -6,5 +6,6 @@
     <topicref keyref="upgrade-to12x-docker-install"/>
     <topicref keyref="upgrade-to12x-docker-config"/>
     <topicref keyref="upgrade-to12x-cc-delegate"/>
+    <topicref keyref="upgrade-to12x-zk-image"/>
  </chapter>
 </bookmap>

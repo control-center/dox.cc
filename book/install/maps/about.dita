@@ -32,7 +32,6 @@
       </table>
     </section>
     
-    
     <section>
       <title>Change history</title>
       <p>The following list associates document part numbers and the important 
@@ -41,12 +40,17 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
+          <dt>1320.16.348</dt>
+          <dd>Add procedures for importing the ZooKeeper image file on offline nodes.</dd>
+          <dd>Update release number (1.2.1).</dd>
+        </dlentry>
+        <dlentry>
           <dt>1320.16.327</dt>
           <dd>Add new best practice guideline for managing configuration files.</dd>
         </dlentry>
         <dlentry>
           <dt>1320.16.319</dt>
-          <dd>Initial release.</dd>
+          <dd>Initial release (1.2.0).</dd>
         </dlentry>
       </dl>
     </section>
