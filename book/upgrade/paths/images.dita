@@ -33,7 +33,7 @@
           </row>
           <row>
             <entry><ph keyref="nm-cc"/> 1.2.0</entry>
-            <entry>zenoss/serviced-isvcs:v52</entry>
+            <entry>zenoss/serviced-isvcs:v53</entry>
             <entry>zenoss/isvcs-zookeeper:v8</entry>
           </row>
         </tbody>
