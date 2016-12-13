@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/paths</title>
+  <topicgroup>
+    <keydef keys="upgrade-paths-dates"
+            href="paths/dates.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-paths-documented"
+            href="paths/documented.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-paths-images"
+            href="paths/images.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-paths-paths"
+            href="paths/paths.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

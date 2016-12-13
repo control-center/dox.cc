@@ -8,6 +8,6 @@
         <topicref keyref="upgrade-to12x-start-delegate-ssh"/>
         <topicref keyref="upgrade-to12x-start-delegate-local"/>
       </topicref>
-      <topicref keyref="upgrade-to12x-start-zk"/>
+     <topicref keyref="upgrade-topics-start-zk"/>
    </appendix>
 </bookmap>

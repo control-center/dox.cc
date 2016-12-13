@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Staging Docker image archive files</title>
+  <title>Staging Docker image files on the master host</title>
   <taskbody>
     
     <prereq>Before performing this procedure, verify that approximately 640MB of temporary space is
       available on the file system where <filepath>/root</filepath> is located.</prereq>
     
-    <context>Use this procedure to add Docker image archive files to the <ph keyref="nm-cc"/> 
-      master host. The files are used when Docker is fully configured.</context>
+    <context>Use this procedure to add Docker image files to the <ph keyref="nm-cc"/> master host.
+      The files are used when Docker is fully configured.</context>
     
     
     <steps>

@@ -808,29 +808,6 @@ node3=<varname>Delegate-B</varname></codeblock>
           <codeblock>echo "SERVICED_ZK_SESSION_TIMEOUT=15" &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
       </step>
       
-      <step id="zk-pull-isvcs">
-        <cmd>Pull the required <ph keyref="nm-cc"/> ZooKeeper image from the master host.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Identify the image to pull.</cmd>
-            <stepxmp>
-              <codeblock>serviced version | grep IsvcsImages</codeblock>
-            </stepxmp>
-            <stepresult>Example result:
-              <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v48 zenoss/isvcs-zookeeper:v7]</codeblock>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Pull the <ph keyref="nm-cc"/> ZooKeeper image.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Isvcs-ZK-Image</varname> with the name and version
-                number of the ZooKeeper image from the previous substep:</p>
-              <codeblock>docker pull <varname>Isvcs-ZK-Image</varname></codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-      
       <step id="nfs-workaround">
         <cmd>Add a drop-in file for the NFS service.</cmd>
         <info>This step is a workaround for an <xref keyref="url-rpcbin-bug">an unresolved issue</xref>.</info>

@@ -4,12 +4,9 @@
   <title>Configuring a ZooKeeper ensemble</title>
   <refbody>
     <section>
-      <p>This chapter describes how to create a ZooKeeper ensemble (cluster) for a
-        multi-host <ph keyref="nm-cc"/> deployment. If you are installing a 
-        single-host deployment, or if your deployment includes fewer than two 
-        delegate hosts, skip this chapter.</p>
+      <p>This chapter describes how to create a ZooKeeper ensemble (cluster) for a multi-host 
+        <ph keyref="nm-cc"/> deployment that includes a minimum of three hosts. If your
+        deployment includes just one host or two hosts, skip this chapter.</p>
     </section>
   </refbody>
 </reference>
-
-

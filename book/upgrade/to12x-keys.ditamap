@@ -27,16 +27,8 @@
             href="to12x/pool-permissions.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-post-images"
-            href="to12x/post-images.dita"
-            format="dita"
-    />
     <keydef keys="upgrade-to12x-prep-features"
             href="to12x/prep-features.dita"
-            format="dita"
-    />
-    <keydef keys="upgrade-to12x-prep-howto"
-            href="to12x/prep-howto.dita"
             format="dita"
     />
     <keydef keys="upgrade-to12x-start-delegate-local"
@@ -55,10 +47,6 @@
             href="to12x/start-master.dita"
             format="dita"
     />
-    <keydef keys="upgrade-to12x-start-zk"
-            href="to12x/start-zk.dita"
-            format="dita"
-    />
     <keydef keys="upgrade-to12x-vars-new"
             href="to12x/vars-new.dita"
             format="dita"
@@ -69,6 +57,10 @@
     />
     <keydef keys="upgrade-to12x-vars"
             href="to12x/vars.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-zk-image"
+            href="to12x/zk-image.dita"
             format="dita"
     />
    </topicgroup>

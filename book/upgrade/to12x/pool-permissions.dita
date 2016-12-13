@@ -8,11 +8,11 @@
       pools are assigned both administrative and DFS permissions. <p>In this release, the command
         that displays information about pools uses integer values for the Permissions field. The
         following list associates the values with the permissions they represent:</p>
-      <ul>
-        <li><codeph>1</codeph>, administrative permission</li>
-        <li><codeph>2</codeph>, DFS access permission</li>
-        <li><codeph>3</codeph>, both administrative and DFS access permissions</li>
-      </ul>
+      <sl>
+        <sli><codeph>1</codeph>, administrative permission</sli>
+        <sli><codeph>2</codeph>, DFS access permission</sli>
+        <sli><codeph>3</codeph>, both administrative and DFS access permissions</sli>
+      </sl>
     </context>
     <steps>
       <step>

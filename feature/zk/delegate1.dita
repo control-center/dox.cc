@@ -144,11 +144,6 @@ SERVICED_ZK_SESSION_TIMEOUT=15</codeblock>
         </stepresult> 
       </step>
       
-      <!-- Not performed on appliances -->
-      <step conkeyref="feature-lib-tasks/zk-pull-isvcs">
-        <cmd/>
-      </step>
-      
     </steps>
   </taskbody>
 </task>

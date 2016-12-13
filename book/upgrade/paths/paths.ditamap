@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap >
+ <title>Paths</title>
+ <chapter keyref="upgrade-paths-paths">
+   <topicref keyref="upgrade-paths-dates"/>
+   <topicref keyref="upgrade-paths-images"/>
+   <topicref keyref="upgrade-paths-documented"/>
+ </chapter>
+</bookmap>

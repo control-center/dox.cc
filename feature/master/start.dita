@@ -43,5 +43,7 @@
         </stepresult>
       </step>
     </steps>
+    <result><note>Until the master host is added to a pool, all <cmdname>serviced</cmdname> 
+      CLI commands that use the RPC server must be run as <codeph>root</codeph>.</note></result>
   </taskbody>
 </task>

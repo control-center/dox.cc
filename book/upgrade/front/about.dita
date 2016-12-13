@@ -4,8 +4,13 @@
  <title>About this guide</title>
  <refbody>
    <section>
-   <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for upgrading <ph
-          keyref="nm-cc"/> from any 1.1.x version to version 1.2.x.</p>
+   <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for performing the
+     following upgrades:
+     <ul>
+       <li>Micro upgrades, from version 1.2.x to version <ph keyref="lo-version-cc"/></li>
+       <li>Minor upgrades, from version 1.1.x to version <ph keyref="lo-version-cc"/></li>
+     </ul>
+     </p>
     <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
         upgrading a high-availability deployment. For additional information, please contact your
           <ph conkeyref="names/company"/> representative.</p>
@@ -38,14 +43,25 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
+          <dt>1300.16.344</dt>
+          <dd>Add a chapter of details about releases and upgrades.</dd>
+          <dd>Create a part for the minor release upgrade chapters.</dd>
+          <dd>Add a part and new chapters for micro release upgrades.</dd>
+          <dd>Add a procedure for updating ZooKeeper images on offline nodes.</dd>
+          <dd>Clarify the procedures for stopping a cluster.</dd>
+          <dd>Update release number (1.2.1).</dd>
+        </dlentry>
+        
+        <dlentry>
           <dt>1300.16.327</dt>
           <dd>Add a description of a new feature, setting the connection timeout
             value of a resource pool, to the pre-upgrade chapter.</dd>            
           <dd>Add a procedure for the new feature to the post-upgrade chapter.</dd>
         </dlentry>
+        
         <dlentry>
           <dt>1300.16.322</dt>
-          <dd>Initial release.</dd>
+          <dd>Initial release (1.2.0).</dd>
         </dlentry>
       </dl>
     </section>
