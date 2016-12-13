@@ -7,14 +7,13 @@
     for testing or failover purposes by restoring a backup file to a new, similarly configured
     cluster.</shortdesc>
   <refbody>
-    <section id="section_xd3_xvg_hx">
-      <title>USAGE</title>
+    <section>
       <p>If you are restoring from a backup that was taken on another system, copy the backup
         archive file to the target system. For more information, see <xref
           keyref="feature-manage-restore"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
-      <title>SYNTAX</title>
+      <title>USAGE</title>
       <codeblock>serviced restore [command options] [arguments...]</codeblock>
     </section>
     <section id="section_qfy_jyb_hx">

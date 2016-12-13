@@ -6,14 +6,13 @@
     the system, the state of all services, and application data to a compressed tar archive file
       (<filepath>.tgz</filepath>). </shortdesc>
   <refbody>
-    <section id="section_csb_1wg_hx">
-      <title>USAGE</title>
+    <section>
       <p>You can backup the entire system, or exclude certain directories, such as a directory that
         contains application performance data. For more information and examples, see <xref
           keyref="feature-manage-backup-from-cli"/>.</p>
     </section>
     <section id="section_wlf_fyb_hx">
-      <title>SYNTAX</title>
+      <title>USAGE</title>
       <codeblock>serviced backup [command options] [arguments...]</codeblock>
     </section>
     <section id="section_qfy_jyb_hx">

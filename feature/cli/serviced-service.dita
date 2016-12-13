@@ -6,11 +6,10 @@
     individual services.</shortdesc>
   <refbody>
     <section>
-      <title>USAGE</title>
       <p>Use this command to perform administrative actions on a specific service.</p>
     </section>
     <section>
-      <title>SYNTAX</title>
+      <title>USAGE</title>
       <codeblock>serviced service [global options] command [command options] \
   [arguments...]</codeblock>
     </section>

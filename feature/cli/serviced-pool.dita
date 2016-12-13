@@ -106,7 +106,7 @@
       </dl>
     </section>
     <section>
-      <title>Examples</title>
+      <title>EXAMPLES</title>
       <p>Give a resource pool distributed file system (DFS) access: </p>
       <codeblock>serviced pool set-permission --dfs pool_01_140620</codeblock>
       <p>Give a resource pool access to administrative functions: </p>

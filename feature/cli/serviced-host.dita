@@ -36,11 +36,6 @@
           <dd>Shows a list of commands or the help for a single command.</dd>
         </dlentry>
       </dl></section>
-    <section>
-      <title>Usage</title>
-      <p><cmdname>serviced host</cmdname>
-      </p>
-    </section>
     <section id="section_qfy_jyb_hx">
       <title>OPTIONS</title>
       <dl>

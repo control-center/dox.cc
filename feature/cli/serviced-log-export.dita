@@ -8,9 +8,6 @@
     <section id="section_wlf_fyb_hx">
       <title>USAGE</title>
       <codeblock>command export [command options] [arguments...]</codeblock>
-      <p><b>Example</b>:
-        <codeblock>serviced log export --service SERVICE_ID1 --service SERVICE_ID2</codeblock>
-      </p>
     </section>
     <section id="section_qfy_jyb_hx">
       <title>OPTIONS</title>
@@ -36,6 +33,10 @@
           <dd>Show additional diagnostic messages.</dd>
         </dlentry>
       </dl>
+    </section>
+    <section id="section_kqd_lnd_dy">
+      <title>EXAMPLE</title>
+      <codeblock>serviced log export --service SERVICE_ID1 --service SERVICE_ID2</codeblock>
     </section>
   </refbody>
 </reference>
