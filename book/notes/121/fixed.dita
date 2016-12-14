@@ -16,20 +16,30 @@
         </thead>
         <tbody>
           <row>
-            <entry>CC-1101</entry>
-            <entry>Cannot move a service to a pool in the <ph keyref="nm-cc"/> UI</entry>
+            <entry>CC-3024</entry>
+            <entry>WAN outage causes collector services to shut down</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3028</entry>
+            <entry><codeph>serviced restore</codeph> command failed on a large system</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3031</entry>
+            <entry>WAN instability causes a panic condition</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3035</entry>
+            <entry>Frequent error in <ph keyref="nm-cc"/> log:
+                <codeph>ControlCenter.GetRunningServices timedout waiting for reply</codeph></entry>
+          </row>
+          <row>
+            <entry>CC-3036</entry>
+            <entry>Cannot use <codeph>mariadb-model</codeph> by name in CLI commands</entry>
+          </row>
+          <row>
+            <entry>CC-3072</entry>
+            <entry>Internal MetricConsumer <codeph>maxClientWaitTime</codeph> and
+                <codeph>perClientMaxBacklogSize</codeph> should have defaults changed</entry>
           </row>
         </tbody>
       </tgroup>
