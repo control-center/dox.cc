@@ -37,7 +37,8 @@ yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/><
         </stepxmp>
         <stepxmp><b>Without internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum --enablerepo=zenoss-mirror install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+yum install -y --enablerepo=zenoss-mirror \
+  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>
       

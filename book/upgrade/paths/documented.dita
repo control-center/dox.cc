@@ -39,6 +39,10 @@
           </thead>
           <tbody>
             <row>
+              <entry><ph keyref="nm-cc"/> 1.1.10</entry>
+              <entry><ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/></entry>
+            </row>
+            <row>
               <entry><ph keyref="nm-cc"/> 1.1.9</entry>
               <entry><ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/></entry>
             </row>
