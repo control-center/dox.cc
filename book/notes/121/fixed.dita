@@ -41,6 +41,16 @@
             <entry>Internal MetricConsumer <codeph>maxClientWaitTime</codeph> and
                 <codeph>perClientMaxBacklogSize</codeph> should have defaults changed</entry>
           </row>
+          <row>
+            <entry>CC-3101</entry>
+            <entry>During a WAN outage, concurrent map read and map write errors kills <ph
+                keyref="nm-cc"/></entry>
+          </row>
+          <row>
+            <entry>CC-3104</entry>
+            <entry>All services maintain a status of <codeph>"starting"</codeph>, while the UI shows
+              services are up and running</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
