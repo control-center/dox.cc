@@ -54,6 +54,11 @@
                 <codeph>serviced</codeph> starts or restarts.</entry>
             <entry>Open</entry>
           </row>
+          <row>
+            <entry>CC-3125</entry>
+            <entry>Insecure Cipher RC4 is enabled on <ph keyref="nm-cc"/> version 1.2.x</entry>
+            <entry>Open</entry>
+          </row>
           
         </tbody>
       </tgroup>
