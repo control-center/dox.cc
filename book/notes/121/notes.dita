@@ -12,6 +12,8 @@
           <li>Locate <codeph>SERVICED_TLS_CIPHERS</codeph>.</li>
           <li>Remove <codeph>TLS_RSA_WITH_RC4_128_SHA</codeph> from the list of ciphers.</li>
           <li>Save and close the file.</li>
+          <li>Execute the following to restart
+            <codeph>serviced</codeph>:<codeblock>systemctl restart serviced</codeblock></li>
         </ol></p>
     </section> 
     
