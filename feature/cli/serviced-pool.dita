@@ -2,15 +2,11 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title>serviced pool</title>
-  <shortdesc>The <cmdname>serviced pool</cmdname> command administers <ph keyref="nm-cc"/> resource
-    pool data.</shortdesc>
+  <shortdesc>Use the <cmdname>serviced pool</cmdname> command to view and manage <ph keyref="nm-cc"
+    /> resource pools.</shortdesc>
   <refbody>
     <section id="section_tgt_1qk_5x">
       <title>USAGE</title>
-      <p>Use this command to view and manage <ph keyref="nm-cc"/> resource pools.</p>
-    </section>
-    <section id="section_wlf_fyb_hx">
-      <title>SYNTAX</title>
       <codeblock>serviced pool [global options] command [command options] [arguments...]</codeblock>
     </section>
     <section id="section_qfy_jyb_hx">
