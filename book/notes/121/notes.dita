@@ -15,6 +15,62 @@
           <li>Execute the following to restart
             <codeph>serviced</codeph>:<codeblock>systemctl restart serviced</codeblock></li>
         </ol></p>
+    </section>
+    <section>
+      <title>Installing missing device-mapper libraries (CC-3073)</title>
+      <p>Installing or upgrading <ph keyref="nm-cc"/> with the offline mirror and the
+          <cmdname>serviced</cmdname> RPM file may return <codeph>device-mapper</codeph> dependency
+        errors similar to the
+        following:<codeblock>Error: Package: 7:device-mapper-event-1.02.107-5.el7.x86_64 (zenoss-mirror)
+           Requires: device-mapper = 7:1.02.107-5.el7
+           Installed: 7:device-mapper-1.02.107-5.el7_2.5.x86_64 (@updates)
+               device-mapper = 7:1.02.107-5.el7_2.5
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest</codeblock>If
+        you get an error message like this, use the following procedure to install the required
+        libraries.</p>
+      <p>To perform the following procedure, you need a RHEL/CentOS host that <ul id="ul_yg1_xmb_hy">
+          <li>implements the 64-bit version of the x86 instruction set</li>
+          <li>supports Advanced Encryption Standard (AES)</li>
+          <li>has the same version of RHEL/CentOS installed as the host on which the
+              <codeph>device-mapper</codeph> dependencies are missing</li>
+          <li>has internet access</li>
+          <li>has a secure network copy program installed</li>
+        </ul></p>
+      <p>Perform these steps:<ol id="ol_pmz_cnb_hy">
+          <li>Determine which version of the missing libraries are required.<ol id="ol_rbz_dnb_hy">
+              <li>Log in to the host with the missing libraries <ph conkeyref="strings/login-root"
+                />.</li>
+              <li>Query the package database and extract the version
+                  number.<codeblock>rpm -q device-mapper | cut -d - -f 3-</codeblock><p>Record the
+                  result for use in a subsequent step.</p></li>
+            </ol></li>
+          <li>Log in to the download host <ph conkeyref="strings/login-root"/>.</li>
+          <li>Download the <codeph>device-mapper</codeph> RPM files, and then create a
+              <cmdname>tar</cmdname> archive.<ol id="ol_ejm_lnb_hy">
+              <li>Change directory to <filepath>/tmp</filepath>.<codeblock>cd /tmp</codeblock></li>
+              <li>Create a temporary directory for the RPM
+                files.<codeblock>mkdir ./dm-libs</codeblock></li>
+              <li>Download the <codeph>device-mapper</codeph> RPM files. Replace
+                  <varname>DM-Version</varname> with the version string recorded
+                previously:<codeblock>yum update --downloadonly --downloaddir=./dm-libs device-mapper-event-<varname>DM-Version</varname></codeblock></li>
+              <li>Create a <cmdname>tar</cmdname> archive of the RPM
+                files.<codeblock>tar -cvf ./dm-libs.tar ./dm-libs</codeblock></li>
+            </ol></li>
+          <li>Use a secure copy program to copy the <cmdname>tar</cmdname> archive to the host on
+            which the updated kernel is required. The <filepath>/tmp</filepath> directory is
+            recommended location for the copied <cmdname>tar</cmdname> archive file.</li>
+          <li>Install the missing libraries.<ol id="ol_uy2_c4b_hy">
+              <li>In the shell session on the host with the missing libraries, change directory to
+                  <filepath>/tmp</filepath>.<codeblock>cd /tmp</codeblock></li>
+              <li>Extract the RPM files from the <cmdname>tar</cmdname>
+                archive.<codeblock>tar -xvf dm-libs.tar</codeblock></li>
+              <li>Install the
+                  libraries.<codeblock>yum install -y $(ls ./dm-libs/*.rpm)</codeblock><p>When the
+                  libraries are installed, repeat the step to install or upgrade <ph keyref="nm-cc"
+                  /> with the offline mirror and the <cmdname>serviced</cmdname> RPM file.</p></li>
+            </ol></li>
+        </ol></p>
     </section> 
     
   </refbody>
