@@ -50,7 +50,7 @@
           <substep>
             <cmd>Add an entry to <filepath>/etc/hosts</filepath> for <codeph>localhost</codeph>.</cmd>
             <stepxmp>
-              <codeblock>echo "127.0.0.1  localhost" &#62;&#62; /etc/hosts</codeblock>
+              <codeblock>echo "127.0.0.1 localhost" &#62;&#62; /etc/hosts</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -246,8 +246,7 @@
         <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
           and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
-          <codeblock>test -f /etc/hostid || genhostid
-hostid</codeblock>
+          <codeblock>test -f /etc/hostid || genhostid ; hostid</codeblock>
         </stepxmp>
         <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
       </step>
@@ -257,8 +256,7 @@ hostid</codeblock>
         <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
           and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
-          <codeblock>test -f /etc/hostid || genhostid
-hostid</codeblock>
+          <codeblock>test -f /etc/hostid || genhostid ; hostid</codeblock>
         </stepxmp>
         <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
       </step>
@@ -332,25 +330,17 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
       </step>
 
       <step id="update-os">
-        <cmd>Update the operating system, if necessary.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Determine which release is installed.</cmd>
-            <stepxmp>
-              <codeblock>cat /etc/redhat-release</codeblock>
-            </stepxmp>
-            <stepresult>If the result includes <codeph>7.0</codeph>, perform
-              the following substeps.</stepresult>
-          </substep>
-          <substep>
-            <cmd>Update the operating system and then restart the host.</cmd>
-            <info>The following commands require internet access 
-              or a local mirror of operating system packages.</info>
-            <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+        <cmd>Determine whether the installed operating system release is supported.</cmd>
+        <stepxmp>
+          <codeblock>cat /etc/redhat-release</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result includes <codeph>7.1</codeph> 
+            or <codeph>7.2</codeph>, proceed to the next step.</choice>
+          <choice>If the result does not include <codeph>7.1</codeph> 
+            or <codeph>7.2</codeph>, select a different host,
+          and then start this procedure again.</choice>
+        </choices>
       </step>
       
       <step id="update-kernel">
@@ -362,21 +352,48 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               <codeblock>uname -r</codeblock>
             </stepxmp>
             <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
-              perform the following substeps.</stepresult>
+              perform the following substep.</stepresult>
           </substep>
           <substep>
-            <cmd>Update the kernel or the operating system, and then restart the host.</cmd>
+            <cmd>Update the kernel, and then restart the host.</cmd>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
-            <stepxmp><b>Update only the kernel</b>:
+            <stepxmp>
               <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
-            </stepxmp>
-            <stepxmp><b>Update the operating system, including the kernel</b>:
-              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
       </step>
+      
+      <!-- 
+      <step id="update-kernel">
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <info>If the result is <codeph>3.10.0-327.22.2.el7.x86_64</codeph>
+              or a later version, continue to the next procedure. Otherwise:
+              <ul>
+                <li>If the candidate host has internet access, 
+                  perform the following substep.</li>
+                <li>If the candidate host does not have internet access, 
+                  see TBD.</li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Update the kernel, and then restart the host.</cmd>
+            <info>The following commands require internet access.</info>
+            <stepxmp>
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+       -->
       
       <step id="journal" importance="optional">
         <cmd>Enable persistent storage for log files, if desired.</cmd>
@@ -777,7 +794,8 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+              <codeblock>yum install -y --enablerepo=zenoss-mirror \
+  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>
         </substeps>

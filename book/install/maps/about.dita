@@ -40,8 +40,11 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1320.16.348</dt>
-          <dd>Add procedures for importing the ZooKeeper image file on offline nodes.</dd>
+          <dt>1320.16.350</dt>
+          <dd>Add steps to download and use the <cmdname>serviced</cmdname> 
+            RPM file (<ph conkeyref="names/company"/> customers only).</dd>
+          <dd>Add procedures for importing the ZooKeeper image file on offline nodes
+            (<ph conkeyref="names/company"/> customers only).</dd>
           <dd>Update release number (1.2.1).</dd>
         </dlentry>
         <dlentry>

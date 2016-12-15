@@ -43,11 +43,14 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1300.16.344</dt>
+          <dt>1300.16.350</dt>
           <dd>Add a chapter of details about releases and upgrades.</dd>
           <dd>Create a part for the minor release upgrade chapters.</dd>
           <dd>Add a part and new chapters for micro release upgrades.</dd>
-          <dd>Add a procedure for updating ZooKeeper images on offline nodes.</dd>
+          <dd>Add steps to download and use the <cmdname>serviced</cmdname> 
+            RPM file (<ph conkeyref="names/company"/> customers only).</dd>
+          <dd>Add a procedure for updating ZooKeeper images on offline nodes
+            (<ph conkeyref="names/company"/> customers only).</dd>
           <dd>Clarify the procedures for stopping a cluster.</dd>
           <dd>Update release number (1.2.1).</dd>
         </dlentry>
