@@ -450,7 +450,7 @@
             more information, see the section about configuration file environment variables. </dd>
         </dlentry>
         <dlentry>
-          <dt>auth-token-expiry</dt>
+          <dt>--auth-token-expiry</dt>
           <dd>The expiration time, in seconds, of delegate authentication tokens. The default value
             is 3600 (one hour) unless <varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname> is set in
             the configuration file. For more information, see the section about configuration file
@@ -569,8 +569,16 @@
           <dd>Report on the <cmdname>serviced</cmdname> configuration.</dd>
         </dlentry>
         <dlentry>
+          <dt><synph><kwd>debug</kwd></synph></dt>
+          <dd>Manage debugging.</dd>
+        </dlentry>
+        <dlentry>
           <dt><synph><kwd>docker</kwd></synph></dt>
           <dd>Docker administration commands.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><synph><kwd>healthcheck</kwd></synph></dt>
+          <dd>Report on the health of <cmdname>serviced</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><delim>[</delim><kwd>help</kwd><delim>|</delim><kwd>h</kwd><delim>]</delim></synph></dt>
@@ -579,10 +587,6 @@
         <dlentry>
           <dt><synph><kwd>host</kwd></synph></dt>
           <dd>Administer hosts.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>healthcheck</kwd></synph></dt>
-          <dd>Report on the health of <cmdname>serviced</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>key</kwd></synph></dt>
@@ -597,7 +601,7 @@
         </dlentry>
         <dlentry>
           <dt><synph><kwd>pool</kwd></synph></dt>
-          <dd>Administer resource pools.</dd>
+          <dd>Administer resource pool data.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>restore</kwd></synph></dt>
@@ -615,11 +619,6 @@
         <dlentry>
           <dt><synph><kwd>snapshot</kwd></synph></dt>
           <dd>Administer snapshots.</dd>
-        </dlentry>
-        <dlentry>
-          <dt><synph><kwd>server</kwd></synph>
-          </dt>
-          <dd>Start <cmdname>serviced</cmdname>.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><kwd>template</kwd></synph></dt>
