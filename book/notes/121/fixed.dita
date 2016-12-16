@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Fixed issues</title>
+  <refbody>
+    <table id="table_uhs_n4q_453">
+      <title>Release 1.2.1</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="5*"/>
+        <thead>
+          <row>
+            <entry>ID</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>CC-3024</entry>
+            <entry>WAN outage causes collector services to shut down</entry>
+          </row>
+          <row>
+            <entry>CC-3028</entry>
+            <entry><codeph>serviced restore</codeph> command failed on a large system</entry>
+          </row>
+          <row>
+            <entry>CC-3031</entry>
+            <entry>WAN instability causes a panic condition</entry>
+          </row>
+          <row>
+            <entry>CC-3035</entry>
+            <entry>Frequent error in <ph keyref="nm-cc"/> log:
+                <codeph>ControlCenter.GetRunningServices timedout waiting for reply</codeph></entry>
+          </row>
+          <row>
+            <entry>CC-3036</entry>
+            <entry>Cannot use <codeph>mariadb-model</codeph> by name in CLI commands</entry>
+          </row>
+          <row>
+            <entry>CC-3072</entry>
+            <entry>Internal MetricConsumer <codeph>maxClientWaitTime</codeph> and
+                <codeph>perClientMaxBacklogSize</codeph> should have defaults changed</entry>
+          </row>
+          <row>
+            <entry>CC-3101</entry>
+            <entry>During a WAN outage, concurrent map read and map write errors kills <ph
+                keyref="nm-cc"/></entry>
+          </row>
+          <row>
+            <entry>CC-3104</entry>
+            <entry>All services maintain a status of <codeph>"starting"</codeph>, while the UI shows
+              services are up and running</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>
