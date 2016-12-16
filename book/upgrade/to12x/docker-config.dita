@@ -100,25 +100,13 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
       </step>
       
       <step>
-        <cmd>Compare the previous versions of the Docker Engine drop-in and environment files
-        with the new versions, and add any customizations for your deployment to the new versions.</cmd>
-        <info>The files to compare: <ul>
-          <li>Unit files: <filepath>/lib/systemd/system/docker.service</filepath> and
-                <filepath>/lib/systemd/system/docker.service.bak</filepath>. There are important and
-              necessary differences between the previous version of the Docker Engine unit file and
-              the current version. All other differences should be included in the drop-in and
-              environment files, rather than maintained as edits in the unit file.</li>
-          
-            <li>Drop-in files: <filepath>/etc/systemd/system/docker.service.d/docker.conf</filepath>
-              and <filepath>/etc/systemd/system/docker.service.d/docker.conf.bak</filepath>.
-              If you change this file, reload the <cmdname>systemd</cmdname> manager
-              configuration with <userinput>systemctl daemon-reload</userinput>.</li>
-          
-            <li>Environment files: <filepath>/etc/sysconfig/docker</filepath> and
-              <filepath>/etc/sysconfig/docker.bak</filepath>. If you change 
-              this file, restart Docker Engine with <userinput>systemctl restart docker</userinput>.</li>
-          </ul>
-        </info>
+        <cmd>Compare the previous version of the Docker Engine environment file
+        with the new version, and add any customizations for your deployment to the new version.</cmd>
+        <stepxmp>
+          <codeblock>diff /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
+        </stepxmp>
+        <info>If you change this file, restart Docker Engine 
+          with <userinput>systemctl restart docker</userinput>.</info>
       </step>
     </steps>
   </taskbody>

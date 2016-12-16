@@ -8,5 +8,9 @@
     <topicref keyref="upgrade-topics-remove-images"/>
     <topicref keyref="feature-manage-remove-orphan-snaps"/>
     <topicref keyref="feature-manage-update-opentsdb-ttl"/>
+    <topicref keyref="upgrade-to12x-cron">
+      <topicref keyref="feature-master-cron"/>
+      <topicref keyref="feature-delegate-cron"/>
+    </topicref>
  </chapter>
 </bookmap>

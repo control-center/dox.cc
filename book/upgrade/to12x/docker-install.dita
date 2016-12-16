@@ -63,14 +63,11 @@
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Update the kernel or the operating system, and then restart the host.</cmd>
-            <info>The following commands require internet access 
-              or a local mirror of operating system packages.</info>
-            <stepxmp><b>Update only the kernel</b>:
+            <cmd>Update the kernel, and then restart the host.</cmd>
+            <info>The following commands require internet access or a local mirror of operating
+              system packages.</info>
+            <stepxmp>
               <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
-            </stepxmp>
-            <stepxmp><b>Update the operating system, including the kernel</b>:
-              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -114,31 +111,11 @@
       </step>
 
       <step>
-        <cmd>Back up Docker Engine service files.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Create a backup of the unit file.</cmd>
-            <stepxmp>
-              <codeblock>cp -n /lib/systemd/system/docker.service \
-  /lib/systemd/system/docker.service.bak</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Create a backup of the drop-in file.</cmd>
-            <stepxmp>
-              <codeblock>test -f /etc/systemd/system/docker.service.d/docker.conf \
-  &#38;&#38; mv /etc/systemd/system/docker.service.d/docker.conf \
-  /etc/systemd/system/docker.service.d/docker.conf.bak</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Create a backup of the environment file.</cmd>
-            <stepxmp>
-              <codeblock>test -f /etc/sysconfig/docker \
+        <cmd>Back up the Docker Engine environment file.</cmd>
+        <stepxmp>
+          <codeblock>test -f /etc/sysconfig/docker \
   &#38;&#38; mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+        </stepxmp>
       </step>
       
       <step>

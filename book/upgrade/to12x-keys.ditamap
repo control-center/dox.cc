@@ -11,6 +11,14 @@
             href="to12x/cc-master.dita"
             format="dita"
     />
+    <keydef keys="upgrade-to12x-cron"
+            href="to12x/cron.dita"
+            format="dita"
+    />
+    <keydef keys="upgrade-to12x-dnsmasq"
+            href="to12x/dnsmasq.dita"
+            format="dita"
+    />
     <keydef keys="upgrade-to12x-docker-config"
             href="to12x/docker-config.dita"
             format="dita"

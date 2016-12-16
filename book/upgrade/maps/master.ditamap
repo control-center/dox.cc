@@ -3,6 +3,8 @@
 <bookmap >
  <title>Master</title>
   <chapter keyref="upgrade-maps-master">
+    <topicref keyref="feature-master-device-naming"/>
+    <topicref keyref="upgrade-to12x-dnsmasq"/>
     <topicref keyref="upgrade-to12x-docker-install"/>
     <topicref keyref="upgrade-to12x-docker-config"/>
     <topicref keyref="upgrade-to12x-docker-images"/>
