@@ -16,6 +16,10 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="feature-lib-tasks/update-os">
+        <cmd></cmd>
+      </step>
+      
       <step conkeyref="feature-lib-tasks/check-cpu-count">
         <cmd></cmd>
       </step>
@@ -40,9 +44,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/update-os">
-        <cmd></cmd>
-      </step>
+      
       <step conkeyref="feature-lib-tasks/update-kernel">
         <cmd></cmd>
       </step>

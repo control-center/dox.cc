@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading and installing an updated kernel</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need a RHEL/CentOS host that 
+    <ul>
+      <li>implements the 64-bit version of the x86 instruction set</li>
+      <li>supports Advanced Encryption Standard (AES)</li>
+      <li>has the same version of RHEL/CentOS installed as the host on which the updated kernel is required</li>
+      <li>has internet access</li>
+      <li>has a secure network copy program installed</li>
+    </ul>
+    </prereq>
+    <context>Use this procedure to download the latest kernel package and install it on 
+      a candidate <ph keyref="nm-cc"/> cluster host.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the download host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Download the kernel RPM files, and then create a <cmdname>tar</cmdname> archive.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Change directory to <filepath>/tmp</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a temporary directory for the RPM files.</cmd>
+            <stepxmp>
+              <codeblock>mkdir ./kernel</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Download the kernel RPM files.</cmd>
+            <stepxmp>
+              <codeblock>yum update --downloadonly --downloaddir=./kernel kernel.x86_64</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a <cmdname>tar</cmdname> archive of the RPM files.</cmd>
+            <stepxmp>
+              <codeblock>tar -cvf ./kernel.tar ./kernel</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Use a secure copy program to copy the <cmdname>tar</cmdname> archive to the 
+          host on which the updated kernel is required.</cmd>
+        <info>The <filepath>/tmp</filepath> directory is recommended location for the
+        copied file.</info>
+      </step>
+      
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Install the updated kernel files.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Change directory</cmd>
+          </substep>
+          <substep>
+            <cmd>Extract the RPM files from the <cmdname>tar</cmdname> archive.</cmd>
+            <stepxmp>
+              <codeblock>tar -cvf /tmp/kernel.tar /tmp/kernel</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

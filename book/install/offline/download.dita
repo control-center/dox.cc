@@ -30,14 +30,21 @@
       
       <step>
         <cmd>Download the self-installing Docker image files.</cmd>
-        <stepxmp>Select the files with the highest version number.
+        <info>Select the files with the highest version number.
           The version number is represented as <varname>Version</varname> in
           the following file names:
-          <ul>
-            <li><filepath>install-zenoss-isvcs-zookeeper:v<varname>Version</varname>.run</filepath></li>
-            <li><filepath>install-zenoss-serviced-isvcs:v<varname>Version</varname>.run</filepath></li>
-          </ul>
-        </stepxmp>
+          <sl>
+            <sli><filepath>install-zenoss-isvcs-zookeeper:v<varname>Version</varname>.run</filepath></sli>
+            <sli><filepath>install-zenoss-serviced-isvcs:v<varname>Version</varname>.run</filepath></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step>
+        <cmd>Download the <ph keyref="nm-cc"/> RPM file.</cmd>
+        <info>Select the file for the new release:<sl>
+            <sli><codeph>serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeph></sli>
+          </sl></info>
       </step>
       
       <step>
@@ -45,18 +52,18 @@
         <info>The download site provides a repository mirror file each supported
           release of RHEL/CentOS. Each file contains the <ph keyref="nm-cc"/>
           package and its dependencies.</info>
-        <stepxmp>To download the correct repository mirror file,
+        <info>To download the correct repository mirror file,
           match the operating system release number in the file name 
           (<codeph>centos7.1</codeph> or <codeph>centos7.2</codeph>)
           with the version of RHEL/CentOS installed on all of the hosts
           in your <ph keyref="nm-cc"/> cluster. Also, choose the file
           with the highest version number. The version number is represented as <varname>Version</varname>
           in the following file names:
-          <ul>
-            <li><filepath>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</filepath></li>
-            <li><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></li>
-          </ul>
-        </stepxmp>
+          <sl>
+            <sli><filepath>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</filepath></sli>
+            <sli><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></sli>
+          </sl>
+        </info>
       </step>
       
       
@@ -65,7 +72,7 @@
         <info>
           <ul>
             <li>Copy all of the files to the master host.</li>
-            <li>Copy the repository mirror (RPM) file to all delegate hosts.</li>
+            <li>Copy the RHEL/CentOS RPM and the <ph keyref="nm-cc"/> RPM to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper
               (<filepath>install-zenoss-isvcs-zookeeper:v*.run</filepath>)
               to delegate hosts that are ZooKeeper ensemble nodes.</li>

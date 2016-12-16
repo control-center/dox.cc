@@ -3,9 +3,10 @@
 <task id="taskid">
   <title>Installing the repository mirror</title>
   <taskbody>
-    <context>Use this procedure to install a local RHEL/CentOS repository mirror 
-      on a <ph keyref="nm-cc"/> host. The mirror contains packages that are required 
-      on all <ph keyref="nm-cc"/> cluster hosts, and its size is approximately 55MB.</context>
+    <context>Use this procedure to install a local RHEL/CentOS repository mirror on a <ph
+        keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
+        keyref="nm-cc"/> cluster hosts, and its size is approximately 95MB (version 7.2) or 140MB
+      (version 7.1).</context>
 
     <steps>
       <step>
@@ -13,20 +14,31 @@
       </step>
       
       <step>
-        <cmd>Copy or move the RPM file to <filepath>/tmp</filepath>.</cmd>
+        <cmd>Move the RPM files to <filepath>/tmp</filepath>.</cmd>
       </step>
             
       <step>
         <cmd>Install the RHEL/CentOS repository mirror.</cmd>
         <stepxmp>
-          <codeblock>yum install -y /tmp/yum-mirror-*.x86_64.rpm</codeblock>
+          <codeblock>yum install -y /tmp/yum-mirror-*.rpm</codeblock>
         </stepxmp>
+        <stepresult>The <cmdname>yum</cmdname> command copies the contents 
+          of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Copy the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>
+        <stepxmp>
+          <codeblock>cp /tmp/serviced-*.rpm /opt/zenoss-repo-mirror</codeblock>
+        </stepxmp>
+        <stepresult>The <cmdname>yum</cmdname> command copies the contents 
+          of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
       </step>
       
       <step importance="optional">
-        <cmd>Delete the RPM file, if desired.</cmd>
+        <cmd>Delete the RPM files, if desired.</cmd>
         <stepxmp>
-          <codeblock>rm /tmp/yum-mirror-*.x86_64.rpm</codeblock>
+          <codeblock>rm /tmp/yum-mirror-*.rpm /tmp/serviced-*.rpm</codeblock>
         </stepxmp>
       </step>
 
