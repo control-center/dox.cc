@@ -43,6 +43,13 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
+          <dt>1300.16.351</dt>
+          <dd>Add sections for configuring <cmdname>dnsmasq</cmdname> and 
+          removing consistent network device naming.</dd>
+          <dd>Simplify Docker Engine install and configuration steps.</dd>
+          <dd>Add sections about the maintenance scripts that are installed.</dd>
+        </dlentry>
+        <dlentry>
           <dt>1300.16.350</dt>
           <dd>Add a chapter of details about releases and upgrades.</dd>
           <dd>Create a part for the minor release upgrade chapters.</dd>
