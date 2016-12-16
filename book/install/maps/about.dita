@@ -40,6 +40,10 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
+          <dt>1320.16.351</dt>
+          <dd>Minor changes to synchronize with the Upgrade Guide.</dd>
+        </dlentry>
+        <dlentry>
           <dt>1320.16.350</dt>
           <dd>Add steps to download and use the <cmdname>serviced</cmdname> 
             RPM file (<ph conkeyref="names/company"/> customers only).</dd>
