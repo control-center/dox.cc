@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1320.16.351</bookpartno>  
+      <bookpartno>1320.<keyword keyref="lo-build-date"/></bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -30,6 +30,7 @@
   </bookmeta>
   <frontmatter>
     <topicgroup>
+      <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
       <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
       <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
@@ -38,6 +39,7 @@
     <topicgroup>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/build.ditamap" format="ditamap"/>
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
