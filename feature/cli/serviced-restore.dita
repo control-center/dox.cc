@@ -9,14 +9,13 @@
   <refbody>
     <section>
       <p>If you are restoring from a backup that was taken on another system, copy the backup
-        archive file to the target system. For more information, see <xref
-          keyref="feature-manage-restore"/>.</p>
+        archive file to the target system.</p>
     </section>
-    <section id="section_wlf_fyb_hx">
+    <section>
       <title>USAGE</title>
       <codeblock>serviced restore [command options] [arguments...]</codeblock>
     </section>
-    <section id="section_qfy_jyb_hx">
+    <section>
       <title>OPTIONS</title>
       <dl>
         <dlentry>

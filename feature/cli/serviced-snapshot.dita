@@ -6,17 +6,17 @@
     snapshots.</shortdesc>
   <refbody>
     <section>
-      <p>Use this command to create a short-term save point of a system. For more information, see
-          <xref keyref="feature-manage-snapshot-rollback"/>.</p>
+      <p>Use this command to create a short-term save point of a system.</p>
     </section>
-    <section id="section_p3x_mng_hx"/>
-    <section id="section_wlf_fyb_hx">
+    <section>
       <title>USAGE</title>
       <codeblock>serviced snapshot [global options] \
   command [command options] [arguments...]</codeblock>
     </section>
-    <section id="section_qzq_xyb_hx"><title>COMMANDS</title>The following commands are available for
-        <cmdname>serviced snapshot</cmdname>:<dl>
+    <section><title>COMMANDS</title>
+      <p>The following commands are available for
+        <cmdname>serviced snapshot</cmdname>:</p>
+      <dl>
         <dlentry>
           <dt>list</dt>
           <dd>List all snapshots. </dd>
@@ -50,7 +50,7 @@
           <dd>Show a list of commands or the help for a single command.</dd>
         </dlentry>
       </dl></section>
-    <section id="section_qfy_jyb_hx">
+    <section>
       <title>OPTIONS</title>
       <dl>
         <dlentry>

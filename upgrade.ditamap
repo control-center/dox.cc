@@ -59,6 +59,7 @@
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/master-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
@@ -94,4 +95,5 @@
   <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
   <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
+  <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
 </bookmap>

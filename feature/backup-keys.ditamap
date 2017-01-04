@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in feature/backup</title>
+  <topicgroup>
+    <keydef keys="feature-backup-backup"
+            href="backup/backup.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-best-practice"
+            href="backup/best-practice.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-cli-all"
+            href="backup/cli-all.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-cli-exclude-multiple"
+            href="backup/cli-exclude-multiple.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-cli-exclude-one"
+            href="backup/cli-exclude-one.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-cli"
+            href="backup/cli.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-overview"
+            href="backup/overview.dita"
+            format="dita"
+    />
+    <keydef keys="feature-backup-restore"
+            href="backup/restore.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

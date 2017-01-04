@@ -22,7 +22,7 @@
       <p>The following table identifies the supported combinations of client operating systems and
         web browsers.</p>
       <table>
-        <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+        <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
           <tbody>
             <row>
               <entry></entry>

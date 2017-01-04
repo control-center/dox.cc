@@ -32,8 +32,41 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/ntp">
-        <cmd></cmd>
+      <step>
+        <cmd>Install and configure the NTP package.</cmd>
+        <info>
+          <note>This procedure assumes the host has internet access. 
+            To install and configure NTP on a host that does not have 
+            internet access, see <xref keyref="feature-ntp-ntp"/>.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Install the package.</cmd>
+            <stepxmp>
+              <codeblock>yum install -y ntp</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set the system time.</cmd>
+            <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable ntpd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
+            <info>Currently, an unresolved issue associated with NTP
+              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot. 
+              The following commands provide a workaround to ensure that it does. </info>
+            <stepxmp>
+              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step conkeyref="feature-lib-tasks/zenoss-repo">

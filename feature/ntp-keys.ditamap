@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in install/ntp</title>
+ <title>Keys in feature/ntp</title>
   <topicgroup>
-    <keydef keys="install-ntp-delegate"
+    <keydef keys="feature-ntp-delegate"
             href="ntp/delegate.dita"
             format="dita"
     />
-    <keydef keys="install-ntp-master"
+    <keydef keys="feature-ntp-master"
             href="ntp/master.dita"
             format="dita"
     />
-    <keydef keys="install-ntp-ntp"
+    <keydef keys="feature-ntp-ntp"
             href="ntp/ntp.dita"
             format="dita"
     />

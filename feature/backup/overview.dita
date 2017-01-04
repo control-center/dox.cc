@@ -35,7 +35,7 @@
       <p>When you create a backup, <ph keyref="nm-cc"/> also exports the snapshots to an archive
         file and moves them out of the LVM thin pool. Backups do not affect time-to-live (TTL).</p>
       <p>For more information, see <xref keyref="feature-manage-snapshot-rollback"/> and <xref
-          keyref="feature-cli-cli"/>.</p>
+        keyref="feature-cli-cli"/>.</p>
     </section>
   </refbody>
 </reference>

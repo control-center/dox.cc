@@ -43,20 +43,17 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="book/plan/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/hw-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/misc-keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/os-keys.ditamap" format="ditamap"/>
-	  <mapref href="book/plan/storage-keys.ditamap" format="ditamap"/>
-	  <mapref href="book/plan/sw-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/storage-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/sw-keys.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup>
-      <!-- <mapref href="feature/zk-keys.ditamap" format="ditamap"/> -->
-    </topicgroup>
+    
     <booklists>
       <toc/>
     </booklists>
-      <topicref href="book/plan/front/about.dita"/>
+      <topicref href="book/plan/lib/about.dita"/>
   </frontmatter>
   
   <chapter href="book/plan/sw/sw.ditamap" format="ditamap"/>

@@ -7,34 +7,6 @@
             href="manage/admin.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-backup-cli-all"
-            href="manage/backup-cli-all.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-backup-cli-exclude-mult"
-            href="manage/backup-cli-exclude-mult.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-backup-cli-exclude-one"
-            href="manage/backup-cli-exclude-one.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-backup-from-cli"
-            href="manage/backup-from-cli.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-backup-restore-best-pract"
-            href="manage/backup-restore-best-pract.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-backup-restore"
-            href="manage/backup-restore.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-backup"
-            href="manage/backup.dita"
-            format="dita"
-    />
     <keydef keys="feature-manage-intro-stop-start"
             href="manage/intro-stop-start.dita"
             format="dita"
@@ -61,10 +33,6 @@
     />
     <keydef keys="feature-manage-resize"
             href="manage/resize.dita"
-            format="dita"
-    />
-    <keydef keys="feature-manage-restore"
-            href="manage/restore.dita"
             format="dita"
     />
     <keydef keys="feature-manage-rollback"

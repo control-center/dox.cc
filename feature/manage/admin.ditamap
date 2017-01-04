@@ -4,15 +4,15 @@
    <title>Administration reference</title>
    <chapter keyref="feature-manage-admin">
       <topicref keyref="feature-manage-resize"/>
-      <topicref keyref="feature-manage-backup-restore">
-         <topicref keyref="feature-manage-backup-restore-best-pract"/>
-         <topicref keyref="feature-manage-backup"/>
-         <topicref keyref="feature-manage-backup-from-cli">
-            <topicref keyref="feature-manage-backup-cli-all"/>
-            <topicref keyref="feature-manage-backup-cli-exclude-one"/>
-            <topicref keyref="feature-manage-backup-cli-exclude-mult"/>
+      <topicref keyref="feature-backup-overview">
+         <topicref keyref="feature-backup-best-practice"/>
+         <topicref keyref="feature-backup-backup"/>
+         <topicref keyref="feature-backup-cli">
+            <topicref keyref="feature-backup-cli-all"/>
+            <topicref keyref="feature-backup-cli-exclude-one"/>
+            <topicref keyref="feature-backup-cli-exclude-multiple"/>
          </topicref>
-         <topicref keyref="feature-manage-restore"/>
+         <topicref keyref="feature-backup-restore"/>
       </topicref>
       <topicref keyref="feature-manage-snapshot-rollback">
          <topicref keyref="feature-manage-snapshot"/>

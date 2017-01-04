@@ -44,7 +44,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
-      <mapref href="book/help/front-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -53,8 +53,9 @@
     </booklists>
     <topicref href="book/help/front/about.dita"/>
   </frontmatter>
+  
   <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
-    <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
+  <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>
     <booklists>
