@@ -43,8 +43,22 @@
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup>
-      <mapref href="book/notes/keys.ditamap" format="ditamap"/>
+    <topicgroup> <!-- never need editing -->
+      <mapref href="book/notes/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/back-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup> <!-- add as needed -->
+      <mapref href="book/notes/121-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/120-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/119-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/118-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/117-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/116-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/115-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/114-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/113-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/112-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/111-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <preface>
       <topicref href="book/notes/front/about.dita"/>
@@ -61,5 +75,6 @@
   <chapter  href="book/notes/113/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/112/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/111/self.ditamap" format="ditamap"/>
+  
   <appendix href="book/notes/back/back.ditamap" format="ditamap"/>
 </bookmap>

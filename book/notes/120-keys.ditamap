@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in dox.cc/book/notes/120 (2016-09-13 17:38:28)</title>
+ <title>Keys in notes/120</title>
   <topicgroup>
-    <keydef keys="dox.cc-book-notes-120-features"
+    <keydef keys="notes-120-features"
             href="120/features.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-120-fixed"
+    <keydef keys="notes-120-fixed"
             href="120/fixed.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-120-known"
+    <keydef keys="notes-120-known"
             href="120/known.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-120-notes"
+    <keydef keys="notes-120-notes"
             href="120/notes.dita"
             format="dita"
     />
-    <keydef keys="dox.cc-book-notes-120-self"
+    <keydef keys="notes-120-self"
             href="120/self.dita"
             format="dita"
     />
