@@ -7,6 +7,11 @@
   <bookmeta>
     <publisherinformation>
       <organization>Zenoss, Inc.</organization>
+      <published> <!-- do not edit these data elements, like, evah -->
+        <data name="year" value="2017"/>
+        <data name="ordinal-date" value="016"/>
+        <data name="version" value="0"/>
+      </published>
     </publisherinformation>
     <prodinfo>
       <prodname>Control Center</prodname>
