@@ -11,15 +11,15 @@
         <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/install-serviced">
+      <step conkeyref="cc-feature-lib-tasks/install-serviced">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/serviced-cfg-backup">
+      <step conkeyref="cc-feature-lib-tasks/serviced-cfg-backup">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/nfs-workaround">
+      <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
         <cmd/>
       </step>
 

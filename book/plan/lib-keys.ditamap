@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in lib</title>
+ <title>Keys in plan/lib</title>
   <topicgroup>
-    <keydef keys="cc-feature-lib-tasks"
-            href="lib/tasks.dita"
+    <keydef keys="cc-plan-lib-about"
+            href="lib/about.dita"
             format="dita"
     />
    </topicgroup>

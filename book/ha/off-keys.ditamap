@@ -3,55 +3,55 @@
 <map>
  <title>Keys in ha/off</title>
   <topicgroup>
-    <keydef keys="ha-off-cluster-install"
+    <keydef keys="cc-ha-off-cluster-install"
             href="off/cluster-install.dita"
             format="dita"
     />
-    <keydef keys="ha-off-download"
+    <keydef keys="cc-ha-off-download"
             href="off/download.dita"
             format="dita"
     />
-    <keydef keys="ha-off-master-docker"
+    <keydef keys="cc-ha-off-master-docker"
             href="off/master-docker.dita"
             format="dita"
     />
-    <keydef keys="ha-off-master-nodes"
+    <keydef keys="cc-ha-off-master-nodes"
             href="off/master-nodes.dita"
             format="dita"
     />
-    <keydef keys="ha-off-master-ntp"
+    <keydef keys="cc-ha-off-master-ntp"
             href="off/master-ntp.dita"
             format="dita"
     />
-    <keydef keys="ha-off-master-prep"
+    <keydef keys="cc-ha-off-master-prep"
             href="off/master-prep.dita"
             format="dita"
     />
-    <keydef keys="ha-off-master-rm"
+    <keydef keys="cc-ha-off-master-rm"
             href="off/master-rm.dita"
             format="dita"
     />
-    <keydef keys="ha-off-master-verify-resources"
+    <keydef keys="cc-ha-off-master-verify-resources"
             href="off/master-verify-resources.dita"
             format="dita"
     />
-    <keydef keys="ha-off-offline-ha"
+    <keydef keys="cc-ha-off-offline-ha"
             href="off/offline-ha.dita"
             format="dita"
     />
-    <keydef keys="ha-off-pool-docker"
+    <keydef keys="cc-ha-off-pool-docker"
             href="off/pool-docker.dita"
             format="dita"
     />
-    <keydef keys="ha-off-pool-ntp"
+    <keydef keys="cc-ha-off-pool-ntp"
             href="off/pool-ntp.dita"
             format="dita"
     />
-    <keydef keys="ha-off-pool-prep"
+    <keydef keys="cc-ha-off-pool-prep"
             href="off/pool-prep.dita"
             format="dita"
     />
-    <keydef keys="ha-off-stage"
+    <keydef keys="cc-ha-off-stage"
             href="off/stage.dita"
             format="dita"
     />

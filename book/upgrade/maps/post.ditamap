@@ -2,15 +2,15 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>After</title>
-  <chapter keyref="upgrade-maps-post">
-    <topicref keyref="upgrade-to12x-pool-permissions"/>
-    <topicref keyref="feature-manage-pool-connection-timeout"/>
-    <topicref keyref="upgrade-topics-remove-images"/>
-    <topicref keyref="feature-manage-remove-orphan-snaps"/>
-    <topicref keyref="feature-manage-update-opentsdb-ttl"/>
-    <topicref keyref="upgrade-to12x-cron">
-      <topicref keyref="feature-master-cron"/>
-      <topicref keyref="feature-delegate-cron"/>
+  <chapter keyref="cc-upgrade-maps-post">
+    <topicref keyref="cc-upgrade-to12x-pool-permissions"/>
+    <topicref keyref="cc-feature-manage-pool-connection-timeout"/>
+    <topicref keyref="cc-upgrade-topics-remove-images"/>
+    <topicref keyref="cc-feature-manage-remove-orphan-snaps"/>
+    <topicref keyref="cc-feature-manage-update-opentsdb-ttl"/>
+    <topicref keyref="cc-upgrade-to12x-cron">
+      <topicref keyref="cc-feature-master-cron"/>
+      <topicref keyref="cc-feature-delegate-cron"/>
     </topicref>
  </chapter>
 </bookmap>

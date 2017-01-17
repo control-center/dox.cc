@@ -10,7 +10,7 @@
         <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-define-ips">
+      <step conkeyref="cc-feature-lib-tasks/zk-define-ips">
         <cmd/>
       </step>
       
@@ -39,7 +39,7 @@
       </step>
        -->
       
-      <step conkeyref="feature-lib-tasks/zk-set-nodes">
+      <step conkeyref="cc-feature-lib-tasks/zk-set-nodes">
         <cmd/>
       </step>
 
@@ -57,7 +57,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
         </stepxmp>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-set-timeout">
+      <step conkeyref="cc-feature-lib-tasks/zk-set-timeout">
         <cmd/>
       </step>
       
@@ -65,12 +65,12 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
         <cmd>Set the <varname>SERVICED_ISVCS_START</varname> variable, and clean
           up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Locate the line for the <varname>SERVICED_ISVCS_START</varname> variable, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Delete all but <codeph>zookeeper</codeph> from its list of values.</cmd>
           </substep>
@@ -119,7 +119,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
               variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
       

@@ -9,11 +9,11 @@
       
       <p>The following table identifies the upgrades of <ph keyref="nm-cc"/>
         that are documented in this part.</p>
-      <table conkeyref="upgrade-paths-documented/micro">
+      <table conkeyref="cc-upgrade-paths-documented/micro">
         <tgroup cols="2"><tbody><row><entry/></row></tbody></tgroup>
       </table>
     </section>
-    <section conkeyref="upgrade-topics-best-practices/best-practices">
+    <section conkeyref="cc-upgrade-topics-best-practices/best-practices">
       <p/>
     </section>
   </refbody>

@@ -95,7 +95,7 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
         </substeps>
       </step>
       
-      <step conkeyref="feature-lib-tasks/docker-dns-flag">
+      <step conkeyref="cc-feature-lib-tasks/docker-dns-flag">
         <cmd/>
       </step>
       

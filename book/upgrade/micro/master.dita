@@ -100,7 +100,7 @@ yum install -y --enablerepo=zenoss-mirror \
             <codeblock>cp /etc/default/serviced-pre-<ph keyref="lo-version-cc"/> \
   /etc/default/serviced &#38;&#38; chmod 0644 /etc/default/serviced</codeblock>
             <p>For more information about configuring the master host,
-              see <xref keyref="upgrade-to12x-vars"/>.</p>
+              see <xref keyref="cc-upgrade-to12x-vars"/>.</p>
           </choice>
         </choices>
       </step>

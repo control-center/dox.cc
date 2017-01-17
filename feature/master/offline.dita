@@ -12,7 +12,7 @@
       following configuration variable informs <cmdname>serviced</cmdname> that internet 
       access is not available: 
       <dl>
-        <dlentry conkeyref="feature-vars-file/SERVICED_OUTBOUND_IP"><dt/><dd/></dlentry>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_OUTBOUND_IP"><dt/><dd/></dlentry>
       </dl>
       </p>
       <p>Perform these steps:</p>
@@ -32,16 +32,16 @@
       <step>
         <cmd>Edit the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Locate the line for the <varname>SERVICED_OUTBOUND_IP</varname> variable, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Change the value to the IPv4 address identified in the previous step.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
       <step>

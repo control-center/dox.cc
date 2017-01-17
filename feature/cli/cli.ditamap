@@ -2,20 +2,20 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>CLI reference</title>
-   <chapter keyref="feature-cli-cli">
-      <topicref keyref="feature-cli-invoking-serviced"/>
-      <topicref keyref="feature-cli-serviced"/>
-      <topicref keyref="feature-cli-serviced-backup"/>
-      <topicref keyref="feature-cli-serviced-docker"/>
-      <topicref keyref="feature-cli-serviced-host"/>
-      <topicref keyref="feature-cli-serviced-key"/>
-      <topicref keyref="feature-cli-serviced-log-export"/>
-      <topicref keyref="feature-cli-serviced-pool"/>
-      <topicref keyref="feature-cli-serviced-restore"/>
-      <topicref keyref="feature-cli-script"/>
-      <topicref keyref="feature-cli-serviced-service"/>
-      <topicref keyref="feature-cli-serviced-snapshot"/>
-      <topicref keyref="feature-cli-serviced-storage"/>
-      <topicref keys="serviced-vars" keyref="feature-vars-file"/>
+   <chapter keyref="cc-feature-cli-cli">
+      <topicref keyref="cc-feature-cli-invoking-serviced"/>
+      <topicref keyref="cc-feature-cli-serviced"/>
+      <topicref keyref="cc-feature-cli-serviced-backup"/>
+      <topicref keyref="cc-feature-cli-serviced-docker"/>
+      <topicref keyref="cc-feature-cli-serviced-host"/>
+      <topicref keyref="cc-feature-cli-serviced-key"/>
+      <topicref keyref="cc-feature-cli-serviced-log-export"/>
+      <topicref keyref="cc-feature-cli-serviced-pool"/>
+      <topicref keyref="cc-feature-cli-serviced-restore"/>
+      <topicref keyref="cc-feature-cli-script"/>
+      <topicref keyref="cc-feature-cli-serviced-service"/>
+      <topicref keyref="cc-feature-cli-serviced-snapshot"/>
+      <topicref keyref="cc-feature-cli-serviced-storage"/>
+      <topicref keys="serviced-vars" keyref="cc-feature-vars-file"/>
    </chapter>
 </bookmap>

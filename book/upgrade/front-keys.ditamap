@@ -3,15 +3,15 @@
 <map>
  <title>Keys in upgrade/front</title>
   <topicgroup>
-    <keydef keys="upgrade-front-about"
+    <keydef keys="cc-upgrade-front-about"
             href="front/about.dita"
             format="dita"
     />
-    <keydef keys="upgrade-front-micro"
+    <keydef keys="cc-upgrade-front-micro"
             href="front/micro.dita"
             format="dita"
     />
-    <keydef keys="upgrade-front-minor"
+    <keydef keys="cc-upgrade-front-minor"
             href="front/minor.dita"
             format="dita"
     />

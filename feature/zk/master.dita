@@ -12,7 +12,7 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-define-ips">
+      <step conkeyref="cc-feature-lib-tasks/zk-define-ips">
         <cmd/>
       </step>
       
@@ -23,7 +23,7 @@
         </stepxmp>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-set-nodes">
+      <step conkeyref="cc-feature-lib-tasks/zk-set-nodes">
         <cmd/>
       </step>
       
@@ -40,14 +40,14 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
   &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-set-timeout">
+      <step conkeyref="cc-feature-lib-tasks/zk-set-timeout">
         <cmd/>
       </step>
       
       <step>
         <cmd>Clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
             <cmd>Navigate to the end of the file, and cut the line that contains the
               <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
@@ -86,7 +86,7 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
               variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>
       </step>
       

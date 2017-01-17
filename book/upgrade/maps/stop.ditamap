@@ -2,11 +2,11 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Stop</title>
-   <appendix keyref="upgrade-maps-stop">
-      <topicref keyref="feature-manage-stop-1"/>
-      <topicref keyref="feature-manage-stop-n">
-         <topicref keyref="feature-manage-stop-n-master"/>
-         <topicref keyref="feature-manage-stop-n-delegate"/>
+   <appendix keyref="cc-upgrade-maps-stop">
+      <topicref keyref="cc-feature-manage-stop-1"/>
+      <topicref keyref="cc-feature-manage-stop-n">
+         <topicref keyref="cc-feature-manage-stop-n-master"/>
+         <topicref keyref="cc-feature-manage-stop-n-delegate"/>
       </topicref>
    </appendix>
 </bookmap>

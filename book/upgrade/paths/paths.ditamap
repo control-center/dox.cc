@@ -2,9 +2,9 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Paths</title>
- <chapter keyref="upgrade-paths-paths">
-   <topicref keyref="upgrade-paths-dates"/>
-   <topicref keyref="upgrade-paths-images"/>
-   <topicref keyref="upgrade-paths-documented"/>
+ <chapter keyref="cc-upgrade-paths-paths">
+   <topicref keyref="cc-upgrade-paths-dates"/>
+   <topicref keyref="cc-upgrade-paths-images"/>
+   <topicref keyref="cc-upgrade-paths-documented"/>
  </chapter>
 </bookmap>

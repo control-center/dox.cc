@@ -3,19 +3,19 @@
 <map>
  <title>Keys in upgrade/micro</title>
   <topicgroup>
-    <keydef keys="upgrade-micro-delegate"
+    <keydef keys="cc-upgrade-micro-delegate"
             href="micro/delegate.dita"
             format="dita"
     />
-    <keydef keys="upgrade-micro-master"
+    <keydef keys="cc-upgrade-micro-master"
             href="micro/master.dita"
             format="dita"
     />
-    <keydef keys="upgrade-micro-micro"
+    <keydef keys="cc-upgrade-micro-micro"
             href="micro/micro.dita"
             format="dita"
     />
-    <keydef keys="upgrade-micro-zk-image"
+    <keydef keys="cc-upgrade-micro-zk-image"
             href="micro/zk-image.dita"
             format="dita"
     />

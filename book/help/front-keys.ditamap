@@ -3,7 +3,7 @@
 <map>
  <title>Keys in help/front</title>
   <topicgroup>
-    <keydef keys="help-front-about"
+    <keydef keys="cc-help-front-about"
             href="front/about.dita"
             format="dita"
     />

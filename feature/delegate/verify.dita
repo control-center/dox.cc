@@ -12,40 +12,40 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/verify-64">
+      <step conkeyref="cc-feature-lib-tasks/verify-64">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/update-os">
+      <step conkeyref="cc-feature-lib-tasks/update-os">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/check-cpu-count">
+      <step conkeyref="cc-feature-lib-tasks/check-cpu-count">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/check-cpu-aes">
+      <step conkeyref="cc-feature-lib-tasks/check-cpu-aes">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/check-memory-pool">
+      <step conkeyref="cc-feature-lib-tasks/check-memory-pool">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/check-hostid">
+      <step conkeyref="cc-feature-lib-tasks/check-hostid">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/check-name-resolution">
+      <step conkeyref="cc-feature-lib-tasks/check-name-resolution">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/localhost-entry">
+      <step conkeyref="cc-feature-lib-tasks/localhost-entry">
         <cmd></cmd>
       </step>
       
       
-      <step conkeyref="feature-lib-tasks/update-kernel">
+      <step conkeyref="cc-feature-lib-tasks/update-kernel">
         <cmd></cmd>
       </step>
     </steps>

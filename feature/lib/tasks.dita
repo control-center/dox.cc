@@ -98,14 +98,14 @@
           <p>The default private subnet may already be in use in your environment. 
             The following variable configures <cmdname>serviced</cmdname> to use an alternate subnet:</p>
           <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+            <dlentry conkeyref="cc-feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -116,10 +116,10 @@
             </stepxmp>
             <info>For example, change the value to <codeph>203.0.113.0/20</codeph>.</info>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -132,14 +132,14 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as master:</p>
           <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
+            <dlentry conkeyref="cc-feature-vars-file/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -148,10 +148,10 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_MASTER=0</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -162,7 +162,7 @@
       <step id="create-thin-docker">
         <cmd>Create an LVM thin pool for Docker data.</cmd>
         <info>For more information about the <cmdname>serviced-storage</cmdname> command,
-        see <xref keyref="feature-cli-serviced-storage"/>.</info>
+        see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
         <stepxmp>Replace <varname>Storage</varname> with the paths of one or more block 
           devices or partitions, or the name of an LVM volume group:
           <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Storage</varname></codeblock>
@@ -423,12 +423,12 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
@@ -446,7 +446,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               and then remove the number sign character (<codeph>&#35;</codeph>)
               from the beginning of the line.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
           <substep>
             <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
             <stepxmp>

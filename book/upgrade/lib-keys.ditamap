@@ -3,7 +3,7 @@
 <map>
  <title>Keys in upgrade/lib</title>
   <topicgroup>
-    <keydef keys="upgrade-lib-tasks"
+    <keydef keys="cc-upgrade-lib-tasks"
             href="lib/tasks.dita"
             format="dita"
     />

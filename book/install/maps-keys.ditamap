@@ -3,19 +3,19 @@
 <map>
  <title>Keys in install/maps</title>
   <topicgroup>
-    <keydef keys="install-maps-about"
+    <keydef keys="cc-install-maps-about"
             href="maps/about.dita"
             format="dita"
     />
-    <keydef keys="install-maps-cli"
+    <keydef keys="cc-install-maps-cli"
             href="maps/cli.dita"
             format="dita"
     />
-    <keydef keys="install-maps-delegate"
+    <keydef keys="cc-install-maps-delegate"
             href="maps/delegate.dita"
             format="dita"
     />
-    <keydef keys="install-maps-master"
+    <keydef keys="cc-install-maps-master"
             href="maps/master.dita"
             format="dita"
     />

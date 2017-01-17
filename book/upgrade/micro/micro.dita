@@ -8,7 +8,7 @@
         1.2.x system to <ph keyref="lo-version-cc"/>.</p>
       <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
         a deployment that does not have internet access, perform the steps in <xref
-          keyref="install-offline-offline"/> before performing the procedures in this chapter.</note>
+          keyref="cc-install-offline-offline"/> before performing the procedures in this chapter.</note>
     </section>
   </refbody>
 </reference>

@@ -4,7 +4,7 @@
   <title>Updating the ZooKeeper image on ensemble nodes that do not have internet access</title>
   <taskbody>
     <prereq>Before performing this procedure, review the information in the following table to
-      determine whether it is necessary. <table conkeyref="upgrade-paths-images/micro">
+      determine whether it is necessary. <table conkeyref="cc-upgrade-paths-images/micro">
         <tgroup cols="3">
           <tbody>
             <row>
@@ -22,7 +22,7 @@
             conkeyref="names/company"/> customer, perform this procedure.</li>
       </ul>
       <p><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-          keyref="install-offline-offline"/> before performing this procedure.</p>
+          keyref="cc-install-offline-offline"/> before performing this procedure.</p>
     </prereq>
     <context>Use this procedure to install a new Docker Engine image for
       ZooKeeper on ZooKeeper ensemble nodes that do not have internet access. 

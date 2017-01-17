@@ -3,27 +3,27 @@
 <map>
  <title>Keys in ha/drbd</title>
   <topicgroup>
-    <keydef keys="ha-drbd-config-do"
+    <keydef keys="cc-ha-drbd-config-do"
             href="drbd/config-do.dita"
             format="dita"
     />
-    <keydef keys="ha-drbd-config"
+    <keydef keys="cc-ha-drbd-config"
             href="drbd/config.dita"
             format="dita"
     />
-    <keydef keys="ha-drbd-drbd"
+    <keydef keys="cc-ha-drbd-drbd"
             href="drbd/drbd.dita"
             format="dita"
     />
-    <keydef keys="ha-drbd-init"
+    <keydef keys="cc-ha-drbd-init"
             href="drbd/init.dita"
             format="dita"
     />
-    <keydef keys="ha-drbd-install"
+    <keydef keys="cc-ha-drbd-install"
             href="drbd/install.dita"
             format="dita"
     />
-    <keydef keys="ha-drbd-lvm"
+    <keydef keys="cc-ha-drbd-lvm"
             href="drbd/lvm.dita"
             format="dita"
     />

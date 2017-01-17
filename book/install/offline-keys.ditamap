@@ -3,23 +3,27 @@
 <map>
  <title>Keys in install/offline</title>
   <topicgroup>
-    <keydef keys="install-offline-download"
+    <keydef keys="cc-install-offline-download"
             href="offline/download.dita"
             format="dita"
     />
-    <keydef keys="install-offline-offline"
+    <keydef keys="cc-install-offline-kernel"
+            href="offline/kernel.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-offline-offline"
             href="offline/offline.dita"
             format="dita"
     />
-    <keydef keys="install-offline-stage-rpm"
+    <keydef keys="cc-install-offline-stage-rpm"
             href="offline/stage-rpm.dita"
             format="dita"
     />
-    <keydef keys="install-offline-stage-run-zk"
+    <keydef keys="cc-install-offline-stage-run-zk"
             href="offline/stage-run-zk.dita"
             format="dita"
     />
-    <keydef keys="install-offline-stage-run"
+    <keydef keys="cc-install-offline-stage-run"
             href="offline/stage-run.dita"
             format="dita"
     />

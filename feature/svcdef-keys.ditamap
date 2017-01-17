@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/svcdef</title>
+ <title>Keys in svcdef</title>
   <topicgroup>
-    <keydef keys="feature-svcdef-configFile"
+    <keydef keys="cc-feature-svcdef-configFile"
             href="svcdef/configFile.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-datapoint"
+    <keydef keys="cc-feature-svcdef-datapoint"
             href="svcdef/datapoint.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-endpoint"
+    <keydef keys="cc-feature-svcdef-endpoint"
             href="svcdef/endpoint.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template-bytesToMB"
+    <keydef keys="cc-feature-svcdef-go-template-bytesToMB"
             href="svcdef/go-template-bytesToMB.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template-child"
+    <keydef keys="cc-feature-svcdef-go-template-child"
             href="svcdef/go-template-child.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template-each"
+    <keydef keys="cc-feature-svcdef-go-template-each"
             href="svcdef/go-template-each.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template-parent"
+    <keydef keys="cc-feature-svcdef-go-template-parent"
             href="svcdef/go-template-parent.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template-percentScale"
+    <keydef keys="cc-feature-svcdef-go-template-percentScale"
             href="svcdef/go-template-percentScale.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template-plus"
+    <keydef keys="cc-feature-svcdef-go-template-plus"
             href="svcdef/go-template-plus.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-go-template"
+    <keydef keys="cc-feature-svcdef-go-template"
             href="svcdef/go-template.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-graphConfig"
+    <keydef keys="cc-feature-svcdef-graphConfig"
             href="svcdef/graphConfig.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-health"
+    <keydef keys="cc-feature-svcdef-health"
             href="svcdef/health.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-logconfig"
+    <keydef keys="cc-feature-svcdef-logconfig"
             href="svcdef/logconfig.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-metric"
+    <keydef keys="cc-feature-svcdef-metric"
             href="svcdef/metric.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-metricConfig"
+    <keydef keys="cc-feature-svcdef-metricConfig"
             href="svcdef/metricConfig.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-object"
+    <keydef keys="cc-feature-svcdef-object"
             href="svcdef/object.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-svcdef"
+    <keydef keys="cc-feature-svcdef-svcdef"
             href="svcdef/svcdef.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-task"
+    <keydef keys="cc-feature-svcdef-task"
             href="svcdef/task.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-template"
+    <keydef keys="cc-feature-svcdef-template"
             href="svcdef/template.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-thresholdConfig"
+    <keydef keys="cc-feature-svcdef-thresholdConfig"
             href="svcdef/thresholdConfig.dita"
             format="dita"
     />
-    <keydef keys="feature-svcdef-volume"
+    <keydef keys="cc-feature-svcdef-volume"
             href="svcdef/volume.dita"
             format="dita"
     />

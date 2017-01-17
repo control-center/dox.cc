@@ -3,143 +3,143 @@
 <map>
  <title>Keys in ha/on</title>
   <topicgroup>
-    <keydef keys="ha-on-cluster-defaults-set"
+    <keydef keys="cc-ha-on-cluster-defaults-set"
             href="on/cluster-defaults-set.dita"
             format="dita"
     />
-    <keydef keys="ha-on-cluster-defaults"
+    <keydef keys="cc-ha-on-cluster-defaults"
             href="on/cluster-defaults.dita"
             format="dita"
     />
-    <keydef keys="ha-on-cluster-install"
+    <keydef keys="cc-ha-on-cluster-install"
             href="on/cluster-install.dita"
             format="dita"
     />
-    <keydef keys="ha-on-cluster-resources-cc"
+    <keydef keys="cc-ha-on-cluster-resources-cc"
             href="on/cluster-resources-cc.dita"
             format="dita"
     />
-    <keydef keys="ha-on-cluster-resources"
+    <keydef keys="cc-ha-on-cluster-resources"
             href="on/cluster-resources.dita"
             format="dita"
     />
-    <keydef keys="ha-on-cluster-standby"
+    <keydef keys="cc-ha-on-cluster-standby"
             href="on/cluster-standby.dita"
             format="dita"
     />
-    <keydef keys="ha-on-cluster"
+    <keydef keys="cc-ha-on-cluster"
             href="on/cluster.dita"
             format="dita"
     />
-    <keydef keys="ha-on-deploy"
+    <keydef keys="cc-ha-on-deploy"
             href="on/deploy.dita"
             format="dita"
     />
-    <keydef keys="ha-on-drbd-config-do"
+    <keydef keys="cc-ha-on-drbd-config-do"
             href="on/drbd-config-do.dita"
             format="dita"
     />
-    <keydef keys="ha-on-drbd-config"
+    <keydef keys="cc-ha-on-drbd-config"
             href="on/drbd-config.dita"
             format="dita"
     />
-    <keydef keys="ha-on-drbd-init"
+    <keydef keys="cc-ha-on-drbd-init"
             href="on/drbd-init.dita"
             format="dita"
     />
-    <keydef keys="ha-on-drbd-install"
+    <keydef keys="cc-ha-on-drbd-install"
             href="on/drbd-install.dita"
             format="dita"
     />
-    <keydef keys="ha-on-ha"
+    <keydef keys="cc-ha-on-ha"
             href="on/ha.dita"
             format="dita"
     />
-    <keydef keys="ha-on-lvm-configure"
+    <keydef keys="cc-ha-on-lvm-configure"
             href="on/lvm-configure.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-backups"
+    <keydef keys="cc-ha-on-master-backups"
             href="on/master-backups.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-cc"
+    <keydef keys="cc-ha-on-master-cc"
             href="on/master-cc.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-docker"
+    <keydef keys="cc-ha-on-master-docker"
             href="on/master-docker.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-nodes"
+    <keydef keys="cc-ha-on-master-nodes"
             href="on/master-nodes.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-prep"
+    <keydef keys="cc-ha-on-master-prep"
             href="on/master-prep.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-rm"
+    <keydef keys="cc-ha-on-master-rm"
             href="on/master-rm.dita"
             format="dita"
     />
-    <keydef keys="ha-on-master-verify-resources"
+    <keydef keys="cc-ha-on-master-verify-resources"
             href="on/master-verify-resources.dita"
             format="dita"
     />
-    <keydef keys="ha-on-newpool-make"
+    <keydef keys="cc-ha-on-newpool-make"
             href="on/newpool-make.dita"
             format="dita"
     />
-    <keydef keys="ha-on-newpool-master"
+    <keydef keys="cc-ha-on-newpool-master"
             href="on/newpool-master.dita"
             format="dita"
     />
-    <keydef keys="ha-on-pool-cc"
+    <keydef keys="cc-ha-on-pool-cc"
             href="on/pool-cc.dita"
             format="dita"
     />
-    <keydef keys="ha-on-pool-docker"
+    <keydef keys="cc-ha-on-pool-docker"
             href="on/pool-docker.dita"
             format="dita"
     />
-    <keydef keys="ha-on-pool-install"
+    <keydef keys="cc-ha-on-pool-install"
             href="on/pool-install.dita"
             format="dita"
     />
-    <keydef keys="ha-on-pool-prep"
+    <keydef keys="cc-ha-on-pool-prep"
             href="on/pool-prep.dita"
             format="dita"
     />
-    <keydef keys="ha-on-storage"
+    <keydef keys="cc-ha-on-storage"
             href="on/storage.dita"
             format="dita"
     />
-    <keydef keys="ha-on-variables"
+    <keydef keys="cc-ha-on-variables"
             href="on/variables.dita"
             format="dita"
     />
-    <keydef keys="ha-on-verify-cc"
+    <keydef keys="cc-ha-on-verify-cc"
             href="on/verify-cc.dita"
             format="dita"
     />
-    <keydef keys="ha-on-verify-cluster"
+    <keydef keys="cc-ha-on-verify-cluster"
             href="on/verify-cluster.dita"
             format="dita"
     />
-    <keydef keys="ha-on-verify-drbd"
+    <keydef keys="cc-ha-on-verify-drbd"
             href="on/verify-drbd.dita"
             format="dita"
     />
-    <keydef keys="ha-on-verify-failover"
+    <keydef keys="cc-ha-on-verify-failover"
             href="on/verify-failover.dita"
             format="dita"
     />
-    <keydef keys="ha-on-verify-pacemaker"
+    <keydef keys="cc-ha-on-verify-pacemaker"
             href="on/verify-pacemaker.dita"
             format="dita"
     />
-    <keydef keys="ha-on-verify"
+    <keydef keys="cc-ha-on-verify"
             href="on/verify.dita"
             format="dita"
     />

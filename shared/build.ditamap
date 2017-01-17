@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
-  <title>Build date -- DO NOT EDIT</title>
+  <title>Build date</title>
   <topicgroup>
     <keydef keys="lo-build-date">
       <topicmeta>
         <keywords>
-          <keyword>16.361</keyword>
+          <keyword>17.017</keyword>
         </keywords>
       </topicmeta>
     </keydef>

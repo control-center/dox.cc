@@ -11,7 +11,7 @@
         <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/docker-install">
+      <step conkeyref="cc-feature-lib-tasks/docker-install">
         <cmd/>
       </step>
       

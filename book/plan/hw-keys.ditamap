@@ -3,23 +3,23 @@
 <map>
  <title>Keys in plan/hw</title>
   <topicgroup>
-    <keydef keys="plan-hw-delegate-storage"
+    <keydef keys="cc-plan-hw-delegate-storage"
             href="hw/delegate-storage.dita"
             format="dita"
     />
-    <keydef keys="plan-hw-delegate"
+    <keydef keys="cc-plan-hw-delegate"
             href="hw/delegate.dita"
             format="dita"
     />
-    <keydef keys="plan-hw-hw"
+    <keydef keys="cc-plan-hw-hw"
             href="hw/hw.dita"
             format="dita"
     />
-    <keydef keys="plan-hw-master-storage"
+    <keydef keys="cc-plan-hw-master-storage"
             href="hw/master-storage.dita"
             format="dita"
     />
-    <keydef keys="plan-hw-master"
+    <keydef keys="cc-plan-hw-master"
             href="hw/master.dita"
             format="dita"
     />

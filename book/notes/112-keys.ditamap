@@ -3,11 +3,11 @@
 <map>
  <title>Keys in notes/112</title>
   <topicgroup>
-    <keydef keys="notes-112-fixed"
+    <keydef keys="cc-notes-112-fixed"
             href="112/fixed.dita"
             format="dita"
     />
-    <keydef keys="notes-112-self"
+    <keydef keys="cc-notes-112-self"
             href="112/self.dita"
             format="dita"
     />

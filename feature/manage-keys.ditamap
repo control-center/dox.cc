@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/manage</title>
+ <title>Keys in manage</title>
   <topicgroup>
-    <keydef keys="feature-manage-admin"
+    <keydef keys="cc-feature-manage-admin"
             href="manage/admin.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-intro-stop-start"
+    <keydef keys="cc-feature-manage-intro-stop-start"
             href="manage/intro-stop-start.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-manage"
+    <keydef keys="cc-feature-manage-manage"
             href="manage/manage.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-multiple"
+    <keydef keys="cc-feature-manage-multiple"
             href="manage/multiple.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-pool-connection-timeout"
+    <keydef keys="cc-feature-manage-pool-connection-timeout"
             href="manage/pool-connection-timeout.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-remove-images"
+    <keydef keys="cc-feature-manage-remove-images"
             href="manage/remove-images.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-remove-orphan-snaps"
+    <keydef keys="cc-feature-manage-remove-orphan-snaps"
             href="manage/remove-orphan-snaps.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-resize"
+    <keydef keys="cc-feature-manage-resize"
             href="manage/resize.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-rollback"
+    <keydef keys="cc-feature-manage-rollback"
             href="manage/rollback.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-snapshot-rollback"
+    <keydef keys="cc-feature-manage-snapshot-rollback"
             href="manage/snapshot-rollback.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-snapshot"
+    <keydef keys="cc-feature-manage-snapshot"
             href="manage/snapshot.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-start-1"
+    <keydef keys="cc-feature-manage-start-1"
             href="manage/start-1.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-start-n"
+    <keydef keys="cc-feature-manage-start-n"
             href="manage/start-n.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-stop-1"
+    <keydef keys="cc-feature-manage-stop-1"
             href="manage/stop-1.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-stop-n-delegate"
+    <keydef keys="cc-feature-manage-stop-n-delegate"
             href="manage/stop-n-delegate.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-stop-n-master"
+    <keydef keys="cc-feature-manage-stop-n-master"
             href="manage/stop-n-master.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-stop-n"
+    <keydef keys="cc-feature-manage-stop-n"
             href="manage/stop-n.dita"
             format="dita"
     />
-    <keydef keys="feature-manage-update-opentsdb-ttl"
+    <keydef keys="cc-feature-manage-update-opentsdb-ttl"
             href="manage/update-opentsdb-ttl.dita"
             format="dita"
     />

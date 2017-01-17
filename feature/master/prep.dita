@@ -6,7 +6,7 @@
     <prereq>
       <note><b><ph conkeyref="names/company"/> customers</b>: If you 
         are creating a deployment without internet access, 
-        perform the steps in <xref keyref="install-offline-offline"/>,
+        perform the steps in <xref keyref="cc-install-offline-offline"/>,
         before performing this procedure.</note>
     </prereq>
 
@@ -19,19 +19,19 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
 
-      <step conkeyref="feature-lib-tasks/firewall">
+      <step conkeyref="cc-feature-lib-tasks/firewall">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/journal">
+      <step conkeyref="cc-feature-lib-tasks/journal">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/kill-selinux">
+      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/dnsmasq">
+      <step conkeyref="cc-feature-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>
 
@@ -40,7 +40,7 @@
         <info>
           <note>This procedure assumes the host has internet access. 
             To install and configure NTP on a host that does not have 
-            internet access, see <xref keyref="feature-ntp-ntp"/>.</note>
+            internet access, see <xref keyref="cc-feature-ntp-ntp"/>.</note>
         </info>
         <substeps>
           <substep>
@@ -72,7 +72,7 @@ chmod +x /etc/rc.d/rc.local</codeblock>
         </substeps>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zenoss-repo">
+      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
         <cmd></cmd>
       </step>
       

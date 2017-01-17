@@ -4,7 +4,7 @@
   <title>Importing the ZooKeeper image for Docker Engine</title>
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="install-offline-offline"/> before performing this procedure.</prereq>
+      keyref="cc-install-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to import the Docker Engine image
       for the ZooKeeper service from a ZooKeeper image file. Repeat this procedure 
       on each node in the ZooKeeper ensemble.</context>

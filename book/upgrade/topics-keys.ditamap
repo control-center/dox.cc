@@ -3,15 +3,15 @@
 <map>
  <title>Keys in upgrade/topics</title>
   <topicgroup>
-    <keydef keys="upgrade-topics-best-practices"
+    <keydef keys="cc-upgrade-topics-best-practices"
             href="topics/best-practices.dita"
             format="dita"
     />
-    <keydef keys="upgrade-topics-remove-images"
+    <keydef keys="cc-upgrade-topics-remove-images"
             href="topics/remove-images.dita"
             format="dita"
     />
-    <keydef keys="upgrade-topics-start-zk"
+    <keydef keys="cc-upgrade-topics-start-zk"
             href="topics/start-zk.dita"
             format="dita"
     />

@@ -3,31 +3,31 @@
 <map>
  <title>Keys in ha/verify</title>
   <topicgroup>
-    <keydef keys="ha-verify-about"
+    <keydef keys="cc-ha-verify-about"
             href="verify/about.dita"
             format="dita"
     />
-    <keydef keys="ha-verify-cc"
+    <keydef keys="cc-ha-verify-cc"
             href="verify/cc.dita"
             format="dita"
     />
-    <keydef keys="ha-verify-cluster"
+    <keydef keys="cc-ha-verify-cluster"
             href="verify/cluster.dita"
             format="dita"
     />
-    <keydef keys="ha-verify-drbd"
+    <keydef keys="cc-ha-verify-drbd"
             href="verify/drbd.dita"
             format="dita"
     />
-    <keydef keys="ha-verify-failover"
+    <keydef keys="cc-ha-verify-failover"
             href="verify/failover.dita"
             format="dita"
     />
-    <keydef keys="ha-verify-pacemaker"
+    <keydef keys="cc-ha-verify-pacemaker"
             href="verify/pacemaker.dita"
             format="dita"
     />
-    <keydef keys="ha-verify-verify"
+    <keydef keys="cc-ha-verify-verify"
             href="verify/verify.dita"
             format="dita"
     />

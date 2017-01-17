@@ -3,31 +3,31 @@
 <map>
  <title>Keys in upgrade/maps</title>
   <topicgroup>
-    <keydef keys="upgrade-maps-delegate"
+    <keydef keys="cc-upgrade-maps-delegate"
             href="maps/delegate.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-master"
+    <keydef keys="cc-upgrade-maps-master"
             href="maps/master.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-post"
+    <keydef keys="cc-upgrade-maps-post"
             href="maps/post.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-prep"
+    <keydef keys="cc-upgrade-maps-prep"
             href="maps/prep.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-start"
+    <keydef keys="cc-upgrade-maps-start"
             href="maps/start.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-stop"
+    <keydef keys="cc-upgrade-maps-stop"
             href="maps/stop.dita"
             format="dita"
     />
-    <keydef keys="upgrade-maps-vars"
+    <keydef keys="cc-upgrade-maps-vars"
             href="maps/vars.dita"
             format="dita"
     />

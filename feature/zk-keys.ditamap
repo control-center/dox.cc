@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/zk</title>
+ <title>Keys in zk</title>
   <topicgroup>
-    <keydef keys="feature-zk-about"
+    <keydef keys="cc-feature-zk-about"
             href="zk/about.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-delegate1"
+    <keydef keys="cc-feature-zk-delegate1"
             href="zk/delegate1.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-delegate2"
+    <keydef keys="cc-feature-zk-delegate2"
             href="zk/delegate2.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-enable"
+    <keydef keys="cc-feature-zk-enable"
             href="zk/enable.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-example"
+    <keydef keys="cc-feature-zk-example"
             href="zk/example.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-image-import"
+    <keydef keys="cc-feature-zk-image-import"
             href="zk/image-import.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-image-pull"
+    <keydef keys="cc-feature-zk-image-pull"
             href="zk/image-pull.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-image"
+    <keydef keys="cc-feature-zk-image"
             href="zk/image.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-master"
+    <keydef keys="cc-feature-zk-master"
             href="zk/master.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-nodes"
+    <keydef keys="cc-feature-zk-nodes"
             href="zk/nodes.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-other"
+    <keydef keys="cc-feature-zk-other"
             href="zk/other.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-vars"
+    <keydef keys="cc-feature-zk-vars"
             href="zk/vars.dita"
             format="dita"
     />
-    <keydef keys="feature-zk-zk"
+    <keydef keys="cc-feature-zk-zk"
             href="zk/zk.dita"
             format="dita"
     />

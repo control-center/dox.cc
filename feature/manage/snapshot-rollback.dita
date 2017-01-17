@@ -36,7 +36,7 @@
    <p>Because snapshots track changes to the file system over time, their space requirements
       expand incrementally as application data changes. Application data and snapshots share the
       same base device; therefore, ensure that snapshots do not fill up the base device storage. For
-      information about extending storage, see <xref keyref="feature-manage-resize"/>.</p>
+      information about extending storage, see <xref keyref="cc-feature-manage-resize"/>.</p>
     </section>
   </refbody>
 </reference>

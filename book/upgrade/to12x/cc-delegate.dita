@@ -73,9 +73,9 @@ yum install -y --enablerepo=zenoss-mirror \
         <info>Among other changes, the <varname>SERVICED_NFS_CLIENT</varname> variable is
           deprecated. Make note of the delegates that use the setting, and then rescind DFS access
           permission from the resource pool to which they belong. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="upgrade-to12x-pool-permissions"/>.</info>
+          <xref keyref="cc-upgrade-to12x-pool-permissions"/>.</info>
         <info>For more information about configuring a delegate host,
-          see <xref keyref="upgrade-to12x-vars"/>.</info>
+          see <xref keyref="cc-upgrade-to12x-vars"/>.</info>
         
       </step>
       

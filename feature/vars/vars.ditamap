@@ -2,8 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Variables</title>
-    <appendix keyref="feature-vars-vars">
-       <topicref keyref="feature-vars-best"/>
-       <topicref keyref="feature-vars-file"/>
+    <appendix keyref="cc-feature-vars-vars">
+       <topicref keyref="cc-feature-vars-best"/>
+       <topicref keyref="cc-feature-vars-file"/>
    </appendix>
 </bookmap>
