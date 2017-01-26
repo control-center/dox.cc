@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
-  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <title>Supported operating systems and browsers</title>
   <refbody>
     <section id="cc">
       <p>The following table identifies the supported combinations of client operating systems and

@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="2" modification="1"/> 
+        <vrm version="1" release="2" modification="2"/> 
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -19,7 +19,7 @@
     </bookid>
     <bookrights>
       <copyrfirst>
-        <year>2016</year>
+        <year>2017</year>
       </copyrfirst>
       <bookowner>
         <organization>Zenoss, Inc., 11305 Four Points Drive, 
@@ -48,6 +48,7 @@
       <mapref href="book/notes/back-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup> <!-- add as needed -->
+      <mapref href="book/notes/122-keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/121-keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/120-keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -55,6 +56,7 @@
       <topicref href="book/notes/front/about.dita"/>
     </preface>
   </frontmatter>
+  <chapter  href="book/notes/122/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/121/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/120/self.ditamap" format="ditamap"/>
   

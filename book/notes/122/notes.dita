@@ -4,7 +4,7 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title>Insecure Cipher RC4 is enabled on <ph keyref="nm-cc"/> version 1.2.x (CC-3126)</title>
+      <title>Insecure Cipher RC4 is enabled on <ph keyref="nm-cc"/> version 1.2.x (CC-3125)</title>
       <p>The encryption used for HTTPS is configurable. If you do not want to use Cipher RC4, you
         can change the configuration and remove it as an option. Perform the following:<ol
           id="ol_jlj_nn5_gy">
