@@ -442,7 +442,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
           <substep>
-            <cmd>Replace <codeph>exmaple.com</codeph> with <codeph>local</codeph>, 
+            <cmd>Replace <codeph>example.com</codeph> with <codeph>local</codeph>, 
               and then remove the number sign character (<codeph>&#35;</codeph>)
               from the beginning of the line.</cmd>
           </substep>
