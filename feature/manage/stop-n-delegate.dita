@@ -18,7 +18,7 @@
         </stepxmp>
       </step>
       
-      <step>
+      <step id="stop-containers">
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
@@ -94,7 +94,7 @@
         </substeps>
       </step>
       
-      <step>
+      <step id="stop-nfs">
         <cmd>Dismount all filesystems mounted from the <ph keyref="nm-cc"/> master host.</cmd>
         <info>This step ensures no stale mounts remain when the storage on the
           master host is replaced.</info>

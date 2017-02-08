@@ -10,103 +10,18 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step>
-        <cmd>Stop the top-level service <cmdname>serviced</cmdname> is managing, if necessary.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Show the status of running services.</cmd>
-            <stepxmp>
-              <codeblock>serviced service status</codeblock>
-            </stepxmp>
-            <stepresult>The top-level service is the service listed immediately below the headings
-              line. <ul>
-                <li>If the status of the top-level service and all child services is
-                    <codeph>stopped</codeph>, proceed to the next step.</li>
-                <li>If the status of the top-level service and all child services is <b>not</b>
-                  <codeph>stopped</codeph>, perform the remaining substeps.</li>
-              </ul>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Stop the top-level service.</cmd>
-            <stepxmp>Replace <varname>Service</varname> with the name or identifier of the top-level
-              service: <codeblock>serviced service stop <varname>Service</varname></codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Monitor the stop.</cmd>
-            <stepxmp>
-              <codeblock>serviced service status</codeblock>
-            </stepxmp>
-            <stepresult>When the status of the top-level service and all child services is
-                <codeph>stopped</codeph>, proceed to the next step.</stepresult>
-          </substep>
-        </substeps>
+      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+        <cmd></cmd>
       </step>
       
-      <step>
-        <cmd>Stop the <ph keyref="nm-cc"/> service.</cmd>
-        <stepxmp>
-          <codeblock>systemctl stop serviced</codeblock>
-        </stepxmp>
+      <step conkeyref="cc-feature-manage-stop-1/stop-cc">
+        <cmd></cmd>
       </step>
       
-      <step>
-        <cmd>Ensure that no containers remain in the local repository.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Display the identifiers of all containers, running and exited.</cmd>
-            <stepxmp>
-              <codeblock>docker ps -qa</codeblock>
-            </stepxmp>
-            <stepresult>
-            <ul>
-              <li>If the command returns no result, stop. This procedure is complete.</li>
-              <li>If the command returns a result, perform the following substeps.</li>
-            </ul>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Remove all remaining containers.</cmd>
-            <stepxmp>
-              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Display the identifiers of all containers, running and exited.</cmd>
-            <stepxmp>
-              <codeblock>docker ps -qa</codeblock>
-            </stepxmp>
-            <stepresult>
-              <ul>
-                <li>If the command returns no result, stop. This procedure is complete.</li>
-                <li>If the command returns a result, perform the remaining substeps.</li>
-              </ul>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>Disable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
-            <stepxmp>
-              <codeblock>systemctl disable serviced</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Reboot the host.</cmd>
-            <stepxmp>
-              <codeblock>reboot</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Enable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
-            <stepxmp>
-              <codeblock>systemctl enable serviced</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+      <step conkeyref="cc-feature-manage-stop-1/stop-containers">
+        <cmd></cmd>
       </step>
+      
     </steps>
   </taskbody>
 </task>

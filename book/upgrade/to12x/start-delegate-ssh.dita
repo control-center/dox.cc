@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Starting and registering a delegate using SSH</title>
   <taskbody>
-    <prereq>To succeed, the following statements about the
+    <prereq id="prereq">To succeed, the following statements about the
       login account used to perform this procedure must be true:
       <ul>
         <li>The account exists on both the master host and on the delegate host.</li>
