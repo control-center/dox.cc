@@ -10,7 +10,7 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step>
+      <step id="stop-app">
         <cmd>Stop the top-level service <cmdname>serviced</cmdname> is managing, if necessary.</cmd>
         <substeps>
           <substep>
@@ -46,14 +46,14 @@
         </substeps>
       </step>
       
-      <step>
+      <step id="stop-cc">
         <cmd>Stop the <ph keyref="nm-cc"/> service.</cmd>
         <stepxmp>
           <codeblock>systemctl stop serviced</codeblock>
         </stepxmp>
       </step>
       
-      <step>
+      <step id="stop-containers">
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
