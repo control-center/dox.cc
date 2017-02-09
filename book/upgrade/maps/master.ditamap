@@ -4,7 +4,6 @@
  <title>Master</title>
   <chapter keyref="cc-upgrade-maps-master">
     <topicref keyref="cc-feature-master-device-naming"/>
-    <topicref keyref="cc-upgrade-to12x-dnsmasq"/>
     <topicref keyref="cc-upgrade-to12x-docker-install"/>
     <topicref keyref="cc-upgrade-to12x-docker-config"/>
     <topicref keyref="cc-upgrade-to12x-docker-images"/>

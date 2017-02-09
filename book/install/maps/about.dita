@@ -46,6 +46,13 @@
       <dl>
         <dlentry>
           <dt>1320.<keyword keyref="lo-build-date"/></dt>
+          <dd>Update release number (1.2.3).</dd>
+          <dd>Remove <codeph>TLS_RSA_WITH_RC4_128_SHA</codeph> from list of 
+            ciphers associated with <varname>SERVICED_TLS_CIPHERS</varname>.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1320.17.024</dt>
           <dd>Update release number (1.2.2).</dd>
         </dlentry>
         
