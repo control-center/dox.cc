@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd></cmd>
+        <!-- These substeps are used in serviced config file editing procedures -->
+        <substeps>
+          <substep id="open-file">
+            <cmd>Open <filepath>/etc/default/serviced</filepath> in a text editor.</cmd>
+          </substep>
+          <substep id="uncomment">
+            <cmd>Remove the number sign character (<codeph>&#35;</codeph>) from the beginning of the line.</cmd>
+          </substep>
+          <substep id="save">
+            <cmd>Save the file, and then close the editor.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="zk-define-ips">
+        <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
+        <stepxmp>Replace <varname>Master</varname> with the IP address or hostname
+          of the <ph keyref="nm-cc"/> master host, and replace 
+          <varname>Delegate-A</varname> and <varname>Delegate-B</varname>
+          with the IP addresses or hostnames of the delegate hosts to include in the ensemble:
+          <codeblock>node1=<varname>Master</varname>
+node2=<varname>Delegate-A</varname>
+node3=<varname>Delegate-B</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="zk-set-nodes">
+        <cmd>Specify the nodes in the ZooKeeper ensemble.</cmd>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
+  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+      
+      <step id="zk-set-timeout">
+        <cmd>Specify the timeout for inactive connections.</cmd>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ZK_SESSION_TIMEOUT=15" &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
