@@ -66,6 +66,13 @@
         </info>
       </step>
       
+      <step importance="optional">
+        <cmd>Download the Pacemaker resource agent for <ph keyref="nm-cc"/>, if necessary.</cmd>
+        <info>The resource agent is only needed for high-availability deployments.</info>
+        <stepxmp>
+          <codeblock>serviced-resource-agents-<varname>Version</varname>.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
       
       <step>
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> cluster hosts.</cmd>
