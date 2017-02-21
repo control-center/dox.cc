@@ -50,7 +50,7 @@
         <cmd>Format the partitions for <ph keyref="nm-cc"/> internal services data 
           and for <ph keyref="nm-cc"/> metadata.</cmd>
         <info>The following commands use the paths of the DRBD devices defined previously, not the
-          paths of the primary partions.</info>
+          paths of the primary partitions.</info>
         <stepxmp>
           <codeblock>mkfs.xfs /dev/drbd0
 mkfs.xfs /dev/drbd1</codeblock>
@@ -87,13 +87,13 @@ mkfs.xfs /dev/drbd1</codeblock>
       <step>
         <cmd>Configure <ph keyref="nm-cc"/> with the name of the new thin pool.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
             <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> declaration.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
@@ -103,7 +103,7 @@ mkfs.xfs /dev/drbd1</codeblock>
               <codeblock>SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool</codeblock>
             </stepxmp>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -117,13 +117,13 @@ mkfs.xfs /dev/drbd1</codeblock>
             <cmd>In a separate window, log in to the secondary node <ph conkeyref="strings/login-root"
               />.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
             <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> declaration.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
@@ -135,7 +135,7 @@ mkfs.xfs /dev/drbd1</codeblock>
               <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>

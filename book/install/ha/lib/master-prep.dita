@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Misc master steps</title>
+  <taskbody>    
+    <steps>
+    <step>
+        <cmd>Add the required hostnames and IP addresses of both the primary and the secondary node
+          to the <filepath>/etc/hosts</filepath> file.</cmd>
+        <stepxmp>
+          <p><b>For a dual-NIC system</b>, replace each variable name with the values designated for
+            each node, and replace <codeph>example.com</codeph> with the domain name of your
+            orgnanization:</p>
+          <codeblock>echo "<varname>Primary-Public-IP</varname> <varname>Primary-Public-Name</varname>.example.com \
+  <varname>Primary-Public-Name</varname>" &#62;&#62; /etc/hosts
+echo "<varname>Primary-Private-IP</varname> <varname>Primary-Private-Name</varname>.example.com \
+  <varname>Primary-Private-Name</varname>" &#62;&#62; /etc/hosts
+echo "<varname>Secondary-Public-IP</varname> <varname>Secondary-Public-Name</varname>.example.com \
+  <varname>Secondary-Public-Name</varname>" &#62;&#62; /etc/hosts
+echo "<varname>Secondary-Private-IP</varname> <varname>Secondary-Private-Name</varname>.example.com \
+  <varname>Secondary-Private-Name</varname>" &#62;&#62; /etc/hosts</codeblock>
+        </stepxmp>
+        <stepxmp>
+          <p><b>For a single-NIC system</b>, replace each variable name with the values designated
+            for each node, and replace <codeph>example.com</codeph> with the domain name of your
+            orgnanization:</p>
+          <codeblock>echo "<varname>Primary-Public-IP</varname> <varname>Primary-Public-Name</varname>.example.com \
+  <varname>Primary-Public-Name</varname>" &#62;&#62; /etc/hosts
+echo "<varname>Secondary-Public-IP</varname> <varname>Secondary-Public-Name</varname>.example.com \
+  <varname>Secondary-Public-Name</varname>" &#62;&#62; /etc/hosts</codeblock>
+        </stepxmp>
+      </step>
+	 </steps>
+	</taskbody>
+</task>	

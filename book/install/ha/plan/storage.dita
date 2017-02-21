@@ -4,9 +4,10 @@
   <title>Storage considerations</title>
   <refbody>
     <section>
-      <p>In an HA cluster, all <ph keyref="nm-cc"/> master host nodes require an independent mount
-        point for tenant volume metadata. The size is small; just 1GB. The underlying storage must
-        be a separate real or virtual device that DRBD can replicate to secondary nodes.</p>
+      <p>In a high-availability cluster, all <ph keyref="nm-cc"/> master host nodes require an
+        independent mount point for tenant volume metadata. The size is small; just 1GB. The
+        underlying storage must be a separate real or virtual device that DRBD can replicate to
+        secondary nodes.</p>
       <p>For improved reliability and performance, <ph conkeyref="names/company"/> recommends using
         shared remote storage or network-attached storage for backup files.</p>
     </section>

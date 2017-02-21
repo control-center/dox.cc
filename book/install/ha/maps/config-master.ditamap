@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Configure master</title>
+  <chapter keyref="cc-install-ha-maps-config-master">
+    <topicref keyref="cc-feature-master-cron"/>
+    <topicref keyref="cc-feature-access-access">
+      <topicref keyref="cc-feature-access-wheel"/>
+      <topicref keyref="cc-feature-access-serviced"/>
+      <topicref keyref="cc-feature-access-cli"/>
+    </topicref>
+    <topicref keyref="cc-feature-master-storage-config"/>
+    <topicref keyref="cc-feature-master-role"/>
+    <topicref keyref="cc-feature-master-offline"/>
+    <topicref keyref="cc-feature-vars-master">
+      <topicref keyref="cc-feature-vars-best"/>
+      <topicref keyref="cc-feature-vars-storage"/>
+      <topicref keyref="cc-feature-vars-endpoints"/>
+      <topicref keyref="cc-feature-vars-rpc"/>
+      <topicref keyref="cc-feature-vars-mux"/>
+      <topicref keyref="cc-feature-vars-http"/>
+      <topicref keyref="cc-feature-vars-browser"/>
+      <topicref keyref="cc-feature-vars-tune-master"/>
+    </topicref>
+    <topicref keyref="cc-feature-vars-all">
+      <topicref keyref="cc-feature-vars-role"/>
+      <topicref keyref="cc-feature-vars-browser-all"/>
+      <topicref keyref="cc-feature-vars-networking"/>
+      <topicref keyref="cc-feature-vars-debug"/>
+      <topicref keyref="cc-feature-vars-tune"/>
+    </topicref>
+    <topicref keyref="cc-feature-master-start"/>
+    <topicref keyref="cc-feature-master-add-multi"/>
+   </chapter>
+</bookmap>

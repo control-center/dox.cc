@@ -23,7 +23,7 @@
         </stepxmp>
         <stepresult>The result should be consistent with the configuration
           created previously. For more information, 
-          see <xref keyref="ha-drbd-config"/>.</stepresult>
+          see <xref keyref="cc-install-ha-drbd-config"/>.</stepresult>
       </step>
       
       <step>
