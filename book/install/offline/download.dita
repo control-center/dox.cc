@@ -68,7 +68,7 @@
       
       <step importance="optional">
         <cmd>Download the Pacemaker resource agent for <ph keyref="nm-cc"/>, if necessary.</cmd>
-        <info>The resource agent is only needed for high-availability deployments.</info>
+        <info>The resource agent is required only for high-availability deployments.</info>
         <stepxmp>
           <codeblock>serviced-resource-agents-<varname>Version</varname>.x86_64.rpm</codeblock>
         </stepxmp>
@@ -78,7 +78,7 @@
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> cluster hosts.</cmd>
         <info>
           <ul>
-            <li>Copy all of the files to the master host.</li>
+            <li>Copy all of the files to the master host or both master nodes (high-availability deployments).</li>
             <li>Copy the RHEL/CentOS RPM and the <ph keyref="nm-cc"/> RPM to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper
               (<filepath>install-zenoss-isvcs-zookeeper:v*.run</filepath>)

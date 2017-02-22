@@ -51,6 +51,7 @@
       <mapref href="book/install/ha/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/drbd-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/cluster-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/offline-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/verify-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
@@ -89,6 +90,6 @@
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
-    <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
+    <appendix href="book/install/ha/offline/offline.ditamap" format="ditamap"/>
   </appendices>
 </bookmap>

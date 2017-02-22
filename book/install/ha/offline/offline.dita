@@ -37,6 +37,10 @@
               <entry><xref keyref="cc-install-offline-stage-run-zk"/></entry>
               <entry>Delegate hosts that are ZooKeeper ensemble nodes</entry>
             </row>
+            <row>
+              <entry><xref keyref="cc-install-offline-other-packages"/></entry>
+              <entry>A RHEL/CentOS system with internet access</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>

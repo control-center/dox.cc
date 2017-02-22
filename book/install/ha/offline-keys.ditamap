@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/offline</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-offline-offline"
+            href="offline/offline.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
