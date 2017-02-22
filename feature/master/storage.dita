@@ -58,14 +58,14 @@
                 filesystem. If the storage is local, ensure that it does not cause contention with
                 the storage for <ph keyref="nm-cc"/> internal services.</entry>
             </row>
-            <!-- 
+            <!-- For HA systems only. Uncomment to include (until Dita 1.3) -->
             <row>
               <entry><ph keyref="nm-cc"/> metadata</entry>
               <entry>1GB (required)</entry>
               <entry>Local, high-performance storage formatted as an XFS filesystem.
                 (High-availability deployments only.)</entry>
             </row>
-             -->
+             <!-- -->
           </tbody>
         </tgroup>
       </table>

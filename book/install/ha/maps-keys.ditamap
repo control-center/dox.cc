@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in ha/maps</title>
+ <title>Keys in install/ha/maps</title>
   <topicgroup>
-    <keydef keys="cc-ha-maps-config-delegate"
+    <keydef keys="cc-install-ha-maps-config-delegate"
             href="maps/config-delegate.dita"
             format="dita"
     />
-    <keydef keys="cc-ha-maps-config-master"
+    <keydef keys="cc-install-ha-maps-config-master"
             href="maps/config-master.dita"
             format="dita"
     />

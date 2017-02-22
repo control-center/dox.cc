@@ -13,7 +13,7 @@
         application documentation before configuring <ph keyref="nm-cc"/> on the master host.</p>
       
       <p>This chapter includes synopses of the configuration variables that affect the
-      master host. For more information about a variable, see <xref keyref="feature-vars-vars"/>.</p>
+      master host. For more information about a variable, see <xref keyref="cc-feature-vars-vars"/>.</p>
     </section>
   </refbody>
 </reference>

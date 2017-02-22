@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Configure delegate</title>
+  <chapter keyref="cc-install-ha-maps-config-delegate">
+    <topicref keyref="cc-feature-delegate-cron"/>
+    <topicref keyref="cc-feature-access-cli"/>
+    <topicref keyref="cc-feature-delegate-role"/>
+    <topicref keyref="cc-feature-delegate-endpoints"/>
+    <topicref keyref="cc-feature-master-offline"/>
+    <topicref keyref="cc-feature-vars-delegate-about">
+      <topicref keyref="cc-feature-vars-delegate"/>
+      <topicref keyref="cc-feature-vars-endpoints"/>
+      <topicref keyref="cc-feature-vars-rpc"/>
+      <topicref keyref="cc-feature-vars-mux"/>
+    </topicref>
+    <topicref keyref="cc-feature-vars-all">
+      <topicref keyref="cc-feature-vars-role"/>
+      <topicref keyref="cc-feature-vars-browser-all"/>
+      <topicref keyref="cc-feature-vars-networking"/>
+      <topicref keyref="cc-feature-vars-debug"/>
+      <topicref keyref="cc-feature-vars-tune"/>
+    </topicref>
+    <topicref keyref="cc-feature-delegate-start"/>
+    <topicref keyref="cc-feature-delegate-add">
+      <topicref keyref="cc-feature-delegate-add-ssh"/>
+      <topicref keyref="cc-feature-delegate-add-feet"/>
+    </topicref>
+   </chapter>
+</bookmap>
