@@ -4,12 +4,13 @@
   <title>Master host storage requirements</title>
   <refbody>
     <section>
-      <p>This section provides a quick reference for the minimum storage requirements of a <ph
-          keyref="nm-cc"/> master host. These requirements are in addition to the storage required
-        for the host's operating system. For more information, refer to the <cite
-          conkeyref="pubs/cite-plan"/>.</p>
+      <p>This section provides a quick reference for the minimum storage requirements of <ph
+          keyref="nm-cc"/> master host nodes in high-availability deployments. These requirements
+        are in addition to the storage required for the host's operating system. For more
+        information, refer to the <cite conkeyref="pubs/cite-plan"/> and the planning chapter of
+        this guide.</p>
       
-      <p><ph keyref="nm-cc"/> cluster hosts need either unformatted block storage devices or partitions,
+      <p><ph keyref="nm-cc"/> master hosts need either unformatted block storage devices or partitions,
       or free space in one or more LVM volume groups.</p>
       
       <ul>
@@ -52,11 +53,9 @@
               <entry>Local, high-performance storage.</entry>
             </row>
             <row>
-              <entry>Application data backups</entry>
-              <entry>150GB (suggested)</entry>
-              <entry>A remote file server compatible with XFS or a local storage formatted as an XFS
-                filesystem. If the storage is local, ensure that it does not cause contention with
-                the storage for <ph keyref="nm-cc"/> internal services.</entry>
+              <entry><ph keyref="nm-cc"/> metadata</entry>
+              <entry>1GB (required)</entry>
+              <entry>Local, high-performance storage formatted as an XFS filesystem.</entry>
             </row>
           </tbody>
         </tgroup>
@@ -64,6 +63,10 @@
 
       <p>The storage for Docker data and application data is configured as LVM thin pools in
         subsequent procedures. </p>
+      
+      <p>The suggested minimum size for application data backups is 150GB. <ph
+          conkeyref="names/company"/> strongly recommends using a file server that is not part of
+        the high-availability cluster for application data backups.</p>
       
       <p>The suggested minimum sizes for application data and application data backups should be
         replaced with sizes that meet your application requirements. To calculate the appropriate
@@ -76,9 +79,9 @@
           data.</li>
       </ul>
       
-      <p>The following sections provide procedures for formatting and mounting local storage
-        as XFS filesystems for <ph keyref="nm-cc"/> internal services data and application
-        data backups.</p>   
+      <p>The following sections provide a procedure for formatting and mounting local storage
+        as an XFS filesystem for <ph keyref="nm-cc"/> internal services data, and a procedure
+        for mounting a remove filesystem for application data backups.</p>   
 
     </section>
   </refbody>

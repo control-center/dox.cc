@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Install master</title>
+  <chapter keyref="cc-install-ha-master-master">
+    <topicref keyref="cc-feature-master-verify"/>
+    <topicref keyref="cc-install-ha-master-storage">
+      <topicref keyref="cc-feature-master-storage-isvcs"/>
+      <topicref keyref="cc-install-ha-master-storage-backups"/>
+    </topicref>
+    <topicref keyref="cc-feature-master-device-naming"/>
+    <topicref keyref="cc-install-ha-master-stage"/>
+    <topicref keyref="cc-install-ha-master-prep"/>
+    <topicref keyref="cc-feature-master-docker-install">
+      <topicref keyref="cc-feature-master-docker-install-on"/>
+      <topicref keyref="cc-feature-master-docker-install-off"/>
+    </topicref>
+    <topicref keyref="cc-feature-master-cc-install">
+      <topicref keyref="cc-feature-master-cc-install-on"/>
+      <topicref keyref="cc-feature-master-cc-install-off"/>
+    </topicref>
+    <topicref keyref="cc-feature-master-docker-config"/>
+    <topicref keyref="cc-feature-master-docker-images"/>
+    <topicref keyref="cc-feature-master-storage-create"/>
+   </chapter>
+</bookmap>

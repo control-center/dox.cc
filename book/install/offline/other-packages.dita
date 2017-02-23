@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading required packages for high-availability deployments</title>
+  <title>Downloading and installing packages for high-availability deployments</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>
@@ -76,7 +76,8 @@
           <substep>
             <cmd>Add the repository to the download host.</cmd>
             <stepxmp>
-              <codeblock>rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</codeblock>
+              <codeblock>rpm -Uvh \
+  http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -89,7 +90,7 @@
       </step>
       
       <step>
-        <cmd>Download the required packages, and then create a 
+        <cmd>Download the required packages and their dependencies, and then create a 
           <cmdname>tar</cmdname> archive of the package files.</cmd>
         <substeps>
           <substep>
@@ -99,12 +100,15 @@
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Download the packages and their dependencies to the temporary directory.</cmd>
+            <cmd>Download the DRBD packages to the temporary directory.</cmd>
             <stepxmp>
-              <codeblock>for pkg in drbd84-utils kmod-drbd84 corosync pacemaker pcs
-do
-  yumdownloader --destdir=/tmp/downloads --assumeyes --resolve $pkg
-done</codeblock>
+              <codeblock>repotrack -a x86_64 -r elrepo -p /tmp/downloads kmod-drbd84</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Download the Corosync/Pacemaker packages to the temporary directory.</cmd>
+            <stepxmp>
+              <codeblock>repotrack -a x86_64 -p /tmp/downloads pcs</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -117,7 +121,31 @@ done</codeblock>
       </step>
       
       <step>
-        <cmd>Use a secure copy program to copy the packages archive to each master host node.</cmd>
+        <cmd>Use a secure copy program to copy the packages archive to 
+          the <filepath>/tmp</filepath> directory of each master host node.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Extract and install the required packages.</cmd>
+        <info>Perform the following substeps on each master host node.</info>
+        <substeps>
+          <substep>
+            <cmd>Log in to the master host node <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Extract the packages.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp &#38;&#38; tar xzf ./downloads.tgz</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the packages.</cmd>
+            <stepxmp>
+              <codeblock>yum --disablerepo=\* install -y ./downloads/*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        
       </step>
     </steps>
   </taskbody>

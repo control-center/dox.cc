@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/master</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-master-master"
+            href="master/master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-prep"
+            href="master/prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-stage"
+            href="master/stage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-storage-backups"
+            href="master/storage-backups.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-storage"
+            href="master/storage.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -47,11 +47,12 @@
       <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="book/install/ha/plan-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/ha/maps-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/ha/drbd-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/cluster-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/drbd-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/master-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/offline-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/plan-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/verify-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
@@ -74,7 +75,7 @@
   
   <chapter href="book/install/ha/plan/plan.ditamap" format="ditamap"/>
   
-  <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
+  <chapter href="book/install/ha/master/master.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/config-master.ditamap" format="ditamap"/>
   
   <chapter href="book/install/ha/drbd/drbd.ditamap" format="ditamap"/>
