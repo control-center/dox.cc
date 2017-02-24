@@ -48,6 +48,7 @@
       <mapref href="book/notes/back-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup> <!-- add as needed -->
+      <mapref href="book/notes/123-keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/122-keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/121-keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/120-keys.ditamap" format="ditamap"/>
@@ -56,6 +57,7 @@
       <topicref href="book/notes/front/about.dita"/>
     </preface>
   </frontmatter>
+  <chapter  href="book/notes/123/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/122/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/121/self.ditamap" format="ditamap"/>
   <chapter  href="book/notes/120/self.ditamap" format="ditamap"/>
