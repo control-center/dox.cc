@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Installing and configuring the cluster management software</title>
+  <title>Configuring cluster management</title>
   <taskbody>
     <context>Perform this procedure to install and configure the cluster management software.</context>
     <steps>
@@ -15,20 +15,31 @@
       </step>
       
       <step>
-        <cmd>On both nodes, install the cluster management software.</cmd>
-        <stepxmp>
-          <codeblock>yum install -y corosync pacemaker pcs</codeblock>
-        </stepxmp>
+        <cmd>On both nodes, extract and install the cluster management packages.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Extract the packages.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp &#38;&#38; tar xzf ./downloads.tgz</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the packages.</cmd>
+            <stepxmp>
+              <codeblock>yum --disablerepo=\* install -y ./downloads/*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>
         <cmd>On both nodes, install the Pacemaker resource agent for <ph keyref="nm-cc"/>.</cmd>
         <info>Pacemaker uses resource agents (scripts) to implement a standardized
           interface for managing arbitrary resources in a cluster. <ph conkeyref="names/company"/> 
-          provides a Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host
-          in a high-availability cluster.</info>
+          provides a Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host.</info>
         <stepxmp>
-          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-resource-agents</codeblock>
+          <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror \
+  install -y serviced-resource-agents</codeblock>
         </stepxmp>
       </step>
       

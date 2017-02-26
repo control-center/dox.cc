@@ -24,8 +24,8 @@
             <cmd>Exclude the partition for <ph keyref="nm-cc"/> application data.</cmd>
             <info>The line to edit is in the <codeph>devices</codeph> section.</info>
             <stepxmp>
-              <p>Replace <varname>App-Data-Partition</varname> with the path of the
-                primary partition designated for <ph keyref="nm-cc"/> application data.</p>
+              <p>Replace <varname>App-Data-Partition</varname> with the path of the block storage
+                designated for <ph keyref="nm-cc"/> application data.</p>
               <codeblock>filter = ["r|<varname>App-Data-Partition</varname>|"]</codeblock>
             </stepxmp>
           </substep>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="referenceid">
-  <title>Cluster</title>
-  <refbody>
-    <section>
-      <p/>
-    </section>
-  </refbody>
-</reference>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Cluster management software</title>
+  <conbody>
+    <p>Pacemaker is an open source cluster resource manager, and Corosync is a cluster
+      infrastructure application for communication and membership services. The Pacemaker/Corosync
+      daemon (<codeph>pcs.d</codeph>) communicates across nodes in the cluster. When
+        <codeph>pcs.d</codeph> is installed, started, and configured, the majority of PCS  commands
+      can be run on either node in the cluster.</p>
+  </conbody>
+</concept>

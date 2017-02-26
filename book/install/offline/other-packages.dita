@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading and installing packages for high-availability deployments</title>
+  <title>Downloading and staging packages for high-availability deployments</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>
@@ -123,29 +123,6 @@
       <step>
         <cmd>Use a secure copy program to copy the packages archive to 
           the <filepath>/tmp</filepath> directory of each master host node.</cmd>
-      </step>
-      
-      <step>
-        <cmd>Extract and install the required packages.</cmd>
-        <info>Perform the following substeps on each master host node.</info>
-        <substeps>
-          <substep>
-            <cmd>Log in to the master host node <ph conkeyref="strings/login-root"/>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Extract the packages.</cmd>
-            <stepxmp>
-              <codeblock>cd /tmp &#38;&#38; tar xzf ./downloads.tgz</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Install the packages.</cmd>
-            <stepxmp>
-              <codeblock>yum --disablerepo=\* install -y ./downloads/*.rpm</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-        
       </step>
     </steps>
   </taskbody>

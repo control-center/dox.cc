@@ -23,7 +23,7 @@
             </stepxmp>
             <stepresult>The command may return right away, while the synchronization
               process continues running in the background. Depending on the sizes of 
-              the partitions, this process can take several hours.</stepresult>
+              the storage areas, this process can take several hours.</stepresult>
           </substep>
           <substep>
             <cmd>Monitor the progress of the synchronization.</cmd>
@@ -47,10 +47,9 @@
       </step>
       
       <step>
-        <cmd>Format the partitions for <ph keyref="nm-cc"/> internal services data 
+        <cmd>Format the block storage for <ph keyref="nm-cc"/> internal services data 
           and for <ph keyref="nm-cc"/> metadata.</cmd>
-        <info>The following commands use the paths of the DRBD devices defined previously, not the
-          paths of the primary partitions.</info>
+        <info>The following commands use the paths of the DRBD devices defined previously, not the block storage paths.</info>
         <stepxmp>
           <codeblock>mkfs.xfs /dev/drbd0
 mkfs.xfs /dev/drbd1</codeblock>
@@ -61,26 +60,11 @@ mkfs.xfs /dev/drbd1</codeblock>
       
       <step>
         <cmd>Create a device mapper thin pool for <ph keyref="nm-cc"/> application data.</cmd>
-        <info>Likewise, this command uses the path of the DRBD device defined previously.</info>
-        <substeps>
-          <substep>
-            <cmd>Create a variable for 50% of the space available on the DRDB device.</cmd>
-            <info>The thin pool stores application data and snapshots of
-              the data. You can add storage to the pool at any time.</info>
-            <stepxmp>Replace <varname>Half-Of-Available-Space</varname> with 50% of the space
-              available on the DRDB device, in gigabytes. Include the symbol for gigabytes
-              (<codeph>G</codeph>) after the numeric value.
-              <codeblock>myFifty=<varname>Half-Of-Available-Space</varname>G</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Create the thin pool.</cmd>
-            <stepxmp>
-              <codeblock>serviced-storage create-thin-pool -o dm.basesize=$myFifty \
-  serviced /dev/drbd2 -v</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+        <info>The following command uses the path of the DRBD device defined previously, not the
+          block storage path.</info>
+        <stepxmp>
+          <codeblock>serviced-storage -v create-thin-pool serviced /dev/drbd2</codeblock>
+        </stepxmp>
         <stepresult>On success, DRBD mirrors the device mapper thin pool to the secondary node.</stepresult>
       </step>
       

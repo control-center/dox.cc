@@ -3,10 +3,6 @@
 <map>
  <title>Keys in install/ha/drbd</title>
   <topicgroup>
-    <keydef keys="cc-install-ha-drbd-config-do"
-            href="drbd/config-do.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-drbd-config"
             href="drbd/config.dita"
             format="dita"

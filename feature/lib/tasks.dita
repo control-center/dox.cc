@@ -758,8 +758,8 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum install -y --enablerepo=zenoss-mirror \
-  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
+  serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>
         </substeps>

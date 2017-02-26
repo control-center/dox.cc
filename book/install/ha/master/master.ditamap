@@ -3,24 +3,20 @@
 <bookmap>
   <title>Install master</title>
   <chapter keyref="cc-install-ha-master-master">
-    <topicref keyref="cc-feature-master-verify"/>
-    <topicref keyref="cc-install-ha-master-storage">
-      <topicref keyref="cc-feature-master-storage-isvcs"/>
-      <topicref keyref="cc-install-ha-master-storage-backups"/>
-    </topicref>
+    <topicref keyref="cc-install-ha-master-verify"/>
     <topicref keyref="cc-feature-master-device-naming"/>
-    <topicref keyref="cc-install-ha-master-stage"/>
     <topicref keyref="cc-install-ha-master-prep"/>
-    <topicref keyref="cc-feature-master-docker-install">
-      <topicref keyref="cc-feature-master-docker-install-on"/>
-      <topicref keyref="cc-feature-master-docker-install-off"/>
+    <topicref keyref="cc-install-ha-master-download">
+      <topicref keyref="cc-install-offline-download"/>
+      <topicref keyref="cc-install-offline-stage-rpm"/>
+      <topicref keyref="cc-install-offline-stage-run"/>
+      <topicref keyref="cc-install-offline-other-packages"/>
     </topicref>
-    <topicref keyref="cc-feature-master-cc-install">
-      <topicref keyref="cc-feature-master-cc-install-on"/>
-      <topicref keyref="cc-feature-master-cc-install-off"/>
+    <topicref keyref="cc-install-ha-master-ntp">
+      <topicref keyref="cc-install-ha-master-ntp-master"/>
     </topicref>
-    <topicref keyref="cc-feature-master-docker-config"/>
-    <topicref keyref="cc-feature-master-docker-images"/>
-    <topicref keyref="cc-feature-master-storage-create"/>
+    <topicref keyref="cc-install-ha-master-docker-install"/>
+    <topicref keyref="cc-install-ha-master-cc-install"/>
+    <topicref keyref="cc-install-ha-master-docker-config"/>
    </chapter>
 </bookmap>

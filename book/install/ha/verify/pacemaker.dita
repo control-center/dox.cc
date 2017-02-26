@@ -13,12 +13,11 @@
       </step>
       
       <step>
-        <cmd>Check resource defaverify-pacemaker.ditaults.</cmd>
+        <cmd>Check resource defaults.</cmd>
         <stepxmp>
           <codeblock>pcs resource defaults</codeblock>
         </stepxmp>
-        <stepresult>Example result:
-          <codeblock>resource-stickiness: 100</codeblock>
+        <stepresult>Example result: <codeblock>resource-stickiness: 100</codeblock>
         </stepresult>
       </step>
       
@@ -35,9 +34,9 @@
  no-quorum-policy: ignore
  stonith-enabled: false</codeblock>
           <note>Set the <codeph>stonith-enabled</codeph> option to <codeph>false</codeph> only
-            during the intial setup and testing period. For production use, set it to
-              <codeph>true</codeph>. For more information about fencing, refer to the <cite
-              conkeyref="pubs/cite-plan"/>.</note>
+            during the initial setup and testing period. For production use, set it to
+              <codeph>true</codeph>. For more information about fencing, see
+            <xref keyref="cc-install-ha-plan-plan"/>.</note>
         </stepresult>
       </step>
 

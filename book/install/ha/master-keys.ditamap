@@ -3,8 +3,40 @@
 <map>
  <title>Keys in install/ha/master</title>
   <topicgroup>
+    <keydef keys="cc-install-ha-master-cc-install"
+            href="master/cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-config-endpoints"
+            href="master/config-endpoints.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-config-offline"
+            href="master/config-offline.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-docker-config"
+            href="master/docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-docker-install"
+            href="master/docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-download"
+            href="master/download.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-master-master"
             href="master/master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-ntp-master"
+            href="master/ntp-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-ntp"
+            href="master/ntp.dita"
             format="dita"
     />
     <keydef keys="cc-install-ha-master-prep"
@@ -19,8 +51,8 @@
             href="master/storage-backups.dita"
             format="dita"
     />
-    <keydef keys="cc-install-ha-master-storage"
-            href="master/storage.dita"
+    <keydef keys="cc-install-ha-master-verify"
+            href="master/verify.dita"
             format="dita"
     />
    </topicgroup>
