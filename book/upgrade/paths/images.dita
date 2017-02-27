@@ -25,6 +25,11 @@
           </thead>
           <tbody>
             <row>
+              <entry><ph keyref="nm-cc"/> 1.2.3</entry>
+              <entry>zenoss/serviced-isvcs:v??</entry>
+              <entry>zenoss/isvcs-zookeeper:v?</entry>
+            </row>
+            <row>
               <entry><ph keyref="nm-cc"/> 1.2.2</entry>
               <entry>zenoss/serviced-isvcs:v??</entry>
               <entry>zenoss/isvcs-zookeeper:v?</entry>
