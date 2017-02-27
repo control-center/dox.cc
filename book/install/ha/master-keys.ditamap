@@ -31,6 +31,14 @@
             href="master/master.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-master-newpool-make"
+            href="master/newpool-make.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-newpool-master"
+            href="master/newpool-master.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-master-ntp-master"
             href="master/ntp-master.dita"
             format="dita"

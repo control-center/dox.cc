@@ -30,6 +30,9 @@
 node2=<varname>Delegate-A</varname>
 node3=<varname>Delegate-B</varname></codeblock>
         </stepxmp>
+        <info>For high-availability deployments, use the 
+          virtual IP address or hostname of the high-availability cluster 
+          as the value for <codeph>node1</codeph>.</info>
       </step>
       
       <step id="zk-set-nodes">

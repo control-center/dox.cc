@@ -335,10 +335,10 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
           <codeblock>cat /etc/redhat-release</codeblock>
         </stepxmp>
         <choices>
-          <choice>If the result includes <codeph>7.1</codeph> 
-            or <codeph>7.2</codeph>, proceed to the next step.</choice>
-          <choice>If the result does not include <codeph>7.1</codeph> 
-            or <codeph>7.2</codeph>, select a different host,
+          <choice>If the result includes <codeph>7.1</codeph>, <codeph>7.2</codeph>, 
+            or <codeph>7.3</codeph> proceed to the next step.</choice>
+          <choice>If the result does not include <codeph>7.1</codeph>, 
+            <codeph>7.2</codeph>, or <codeph>7.3</codeph>, select a different host,
           and then start this procedure again.</choice>
         </choices>
       </step>
@@ -531,7 +531,8 @@ EOF</codeblock>
           <substep>
             <cmd>Install Docker Engine.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+              <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
+  docker-engine-<ph keyref="lo-version-docker"/></codeblock>
             </stepxmp>
           </substep>
         </substeps>
