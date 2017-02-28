@@ -35,6 +35,10 @@
             href="zk/image.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-zk-lib"
+            href="zk/lib.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-zk-master"
             href="zk/master.dita"
             format="dita"
