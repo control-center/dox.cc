@@ -54,13 +54,11 @@
           package and its dependencies.</info>
         <info>To download the correct repository mirror file,
           match the operating system release number in the file name 
-          (<codeph>centos7.1</codeph> or <codeph>centos7.2</codeph>)
           with the version of RHEL/CentOS installed on all of the hosts
-          in your <ph keyref="nm-cc"/> cluster. Also, choose the file
-          with the highest version number. The version number is represented as <varname>Version</varname>
-          in the following file names:
+          in your <ph keyref="nm-cc"/> cluster.
           <sl>
             <sli><filepath>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</filepath></sli>
+            <sli><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></sli>
             <sli><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></sli>
           </sl>
         </info>

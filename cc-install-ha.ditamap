@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="2" modification="0"/>        
+        <vrm version="1" release="2" modification="2"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -48,6 +48,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/ha/cluster-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/delegate-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/drbd-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/master-keys.ditamap" format="ditamap"/>
@@ -88,7 +89,7 @@
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
   <appendices>
-    <appendix href="feature/manage/manage.ditamap" format="ditamap"/>
+    <!-- <appendix href="feature/manage/manage.ditamap" format="ditamap"/> -->
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
   </appendices>

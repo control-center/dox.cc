@@ -6,11 +6,10 @@
     <topicref keyref="cc-feature-delegate-cron"/>
     <topicref keyref="cc-feature-access-cli"/>
     <topicref keyref="cc-feature-delegate-role"/>
-    <topicref keyref="cc-feature-delegate-endpoints"/>
-    <topicref keyref="cc-feature-master-offline"/>
+    <topicref keyref="cc-install-ha-master-config-offline"/>
+    <topicref keyref="cc-install-ha-master-config-endpoints"/>
     <topicref keyref="cc-feature-vars-delegate-about">
       <topicref keyref="cc-feature-vars-delegate"/>
-      <topicref keyref="cc-feature-vars-endpoints"/>
       <topicref keyref="cc-feature-vars-rpc"/>
       <topicref keyref="cc-feature-vars-mux"/>
     </topicref>

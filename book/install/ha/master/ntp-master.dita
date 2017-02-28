@@ -20,7 +20,7 @@
       <step>
         <cmd>Install the NTP package.</cmd>
         <stepxmp>
-          <codeblock>yum --disablerepo=\* -enablerepo=zenoss-mirror install -y ntp</codeblock>
+          <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y ntp</codeblock>
         </stepxmp>
       </step>
       
@@ -78,12 +78,7 @@ restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
           </substep>
         </substeps>
       </step>
-      
-      <step>
-        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp><codeblock>systemctl stop serviced</codeblock></stepxmp>
-      </step>
-      
+
       <step>
         <cmd>Enable and start the NTP daemon.</cmd>
         <substeps>

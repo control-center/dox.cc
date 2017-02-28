@@ -27,6 +27,10 @@
             href="master/download.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-master-lib"
+            href="master/lib.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-master-master"
             href="master/master.dita"
             format="dita"
