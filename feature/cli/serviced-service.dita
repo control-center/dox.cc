@@ -5,8 +5,8 @@
   <shortdesc>The <cmdname>serviced service</cmdname> command lets you manage an application's
     individual services.</shortdesc>
   <refbody>
-    <section>
-      <p>Use this command to perform administrative actions on a specific service.</p>
+    <section><!-- CC_3097 -->
+      <p>Use this command to perform administrative actions on a specific service or view service status information.</p>
     </section>
     <section>
       <title>USAGE</title>
