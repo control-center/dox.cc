@@ -5,8 +5,8 @@
   <taskbody>
     <context>Use this procedure to install a local RHEL/CentOS repository mirror on a <ph
         keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
-        keyref="nm-cc"/> cluster hosts, and its size is approximately 95MB (version 7.2) or 140MB
-      (version 7.1).</context>
+        keyref="nm-cc"/> cluster hosts, and its size is approximately 95MB (version 7.2 or
+      7.3<!--CC3321-->) or 140MB (version 7.1).</context>
 
     <steps>
       <step>

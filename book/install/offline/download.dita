@@ -52,16 +52,15 @@
         <info>The download site provides a repository mirror file each supported
           release of RHEL/CentOS. Each file contains the <ph keyref="nm-cc"/>
           package and its dependencies.</info>
-        <info>To download the correct repository mirror file,
-          match the operating system release number in the file name 
-          (<codeph>centos7.1</codeph> or <codeph>centos7.2</codeph>)
-          with the version of RHEL/CentOS installed on all of the hosts
-          in your <ph keyref="nm-cc"/> cluster. Also, choose the file
-          with the highest version number. The version number is represented as <varname>Version</varname>
-          in the following file names:
-          <sl>
+        <info>To download the correct repository mirror file, match the operating system release
+          number in the file name (<codeph>centos7.1</codeph>, <codeph>centos7.2</codeph>, or
+            <codeph>centos7.3</codeph><!--CC3321-->) with the version of RHEL/CentOS installed on
+          all of the hosts in your <ph keyref="nm-cc"/> cluster. Also, choose the file with the
+          highest version number. The version number is represented as <varname>Version</varname> in
+          the following file names: <sl>
             <sli><filepath>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</filepath></sli>
             <sli><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></sli>
+            <sli><!--CC3321--><filepath>yum-mirror-centos7.centos7.3-<varname>Version</varname>.x86_64.rpm</filepath></sli>
           </sl>
         </info>
       </step>
