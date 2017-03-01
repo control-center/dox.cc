@@ -71,6 +71,10 @@
             href="manage/stop-n.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-emer-sdown-overview"
+            href="manage/emer-sdown-overview.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-update-opentsdb-ttl"
             href="manage/update-opentsdb-ttl.dita"
             format="dita"
