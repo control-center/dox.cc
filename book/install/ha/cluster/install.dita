@@ -38,8 +38,8 @@
           interface for managing arbitrary resources in a cluster. <ph conkeyref="names/company"/> 
           provides a Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host.</info>
         <stepxmp>
-          <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror \
-  install -y serviced-resource-agents</codeblock>
+          <codeblock>yum install -y --disablerepo=\* \
+  /opt/zenoss-repo-mirror/serviced-resource-agents</codeblock>
         </stepxmp>
       </step>
       

@@ -15,10 +15,6 @@
             href="drbd/init.dita"
             format="dita"
     />
-    <keydef keys="cc-install-ha-drbd-install"
-            href="drbd/install.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-drbd-lvm"
             href="drbd/lvm.dita"
             format="dita"

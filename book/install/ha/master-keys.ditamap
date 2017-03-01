@@ -63,6 +63,10 @@
             href="master/storage-backups.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-master-storage-create"
+            href="master/storage-create.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-master-verify"
             href="master/verify.dita"
             format="dita"

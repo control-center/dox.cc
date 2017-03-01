@@ -18,5 +18,6 @@
     <topicref keyref="cc-install-ha-master-docker-install"/>
     <topicref keyref="cc-install-ha-master-cc-install"/>
     <topicref keyref="cc-install-ha-master-docker-config"/>
+    <topicref keyref="cc-install-ha-master-storage-create"/>
    </chapter>
 </bookmap>

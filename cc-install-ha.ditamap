@@ -63,6 +63,7 @@
       <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/master-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp-keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
       <mapref href="feature/zk-keys.ditamap" format="ditamap"/>

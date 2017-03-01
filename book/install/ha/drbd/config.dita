@@ -29,9 +29,9 @@
               <thead>
                 <row>
                   <entry>Node</entry>
-                  <entry><varname>Isvcs-Partition</varname></entry>
-                  <entry><varname>Metadata-Partition</varname></entry>
-                  <entry><varname>App-Data-Partition</varname></entry>
+                  <entry><varname>Isvcs-Storage</varname></entry>
+                  <entry><varname>Metadata-Storage</varname></entry>
+                  <entry><varname>App-Data-Storage</varname></entry>
                 </row>
               </thead>
               <tbody>
@@ -93,17 +93,17 @@ common {
               <codeblock>resource serviced-dfs {
    volume 0 {
       device /dev/drbd0;
-      disk <varname>Isvcs-Partition</varname>;
+      disk <varname>Isvcs-Storage</varname>;
       meta-disk internal;
    }
    volume 1 {
       device /dev/drbd1;
-      disk <varname>Metadata-Partition</varname>;
+      disk <varname>Metadata-Storage</varname>;
       meta-disk internal;
    }
    volume 2 {
       device /dev/drbd2;
-      disk <varname>App-Data-Partition</varname>;
+      disk <varname>App-Data-Storage</varname>;
       meta-disk internal;
    }
    syncer   {
@@ -130,17 +130,17 @@ common {
               <codeblock>resource serviced-dfs {
    volume 0 {
       device /dev/drbd0;
-      disk <varname>Isvcs-Partition</varname>;
+      disk <varname>Isvcs-Storage</varname>;
       meta-disk internal;
    }
    volume 1 {
       device /dev/drbd1;
-      disk <varname>Metadata-Partition</varname>;
+      disk <varname>Metadata-Storage</varname>;
       meta-disk internal;
    }
    volume 2 {
       device /dev/drbd2;
-      disk <varname>App-Data-Partition</varname>;
+      disk <varname>App-Data-Storage</varname>;
       meta-disk internal;
    }
    syncer   {

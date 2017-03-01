@@ -59,7 +59,7 @@
           <sl>
             <sli><filepath>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</filepath></sli>
             <sli><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></sli>
-            <sli><filepath>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</filepath></sli>
+            <sli><filepath>yum-mirror-centos7.centos7.3-<varname>Version</varname>.x86_64.rpm</filepath></sli>
           </sl>
         </info>
       </step>

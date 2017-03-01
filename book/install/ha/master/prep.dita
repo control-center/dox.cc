@@ -67,6 +67,27 @@ echo "<varname>Secondary-Public-IP</varname> <varname>Secondary-Public-Name</var
       </step>
       
       <step>
+        <cmd>Create a mount point for <ph keyref="nm-cc"/> internal services data.</cmd>
+        <info>The default mount point is <filepath>/opt/serviced/var/isvcs</filepath>.
+          You can change the default by editing the <varname>SERVICED_ISVCS_PATH</varname>
+          variable in the <ph keyref="nm-cc"/> configuration file.</info>
+        <stepxmp>
+          <codeblock>mkdir -p /opt/serviced/var/isvcs</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Remove file system signatures from the
+          required storage areas.</cmd>
+        <stepxmp>
+          <p>Replace each variable name with the path of each storage area:</p>
+          <codeblock>wipefs -a <varname>Isvcs-Storage</varname>
+wipefs -a <varname>Metadata-Storage</varname>
+wipefs -a <varname>App-Data-Storage</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
         <cmd>Reboot the host.</cmd>
         <stepxmp>
           <codeblock>reboot</codeblock>
