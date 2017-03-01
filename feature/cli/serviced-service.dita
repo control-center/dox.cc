@@ -5,8 +5,8 @@
   <shortdesc>The <cmdname>serviced service</cmdname> command lets you manage an application's
     individual services.</shortdesc>
   <refbody>
-    <section>
-      <p>Use this command to perform administrative actions on a specific service.</p>
+    <section><!-- CC_3097 -->
+      <p>Use this command to perform administrative actions on a specific service or view service status information.</p>
     </section>
     <section>
       <title>USAGE</title>
@@ -27,6 +27,17 @@
           <dt>add</dt>
           <dd>Add a service.</dd>
         </dlentry>
+        <dlentry><!--CC_3107-->
+          <dt>clear-emergency</dt>
+          <dd>After you have resolved the tenant space consumption that caused an emergency
+            shutdown, reset emergency-shutdown flags to false for the service and all child
+            services. <p>To check the status of the emergency shutdown flag, issue the following
+              command:</p><codeblock>for s in $(serviced service list --show-fields ServiceID); \
+     do serviced service list $s | grep EmergencyShutdown\"; done;
+</codeblock><p>"True"
+              indicates an emergency shutdown; "false" indicates that the flags have been cleared
+              and you can restart the service.</p></dd>
+        </dlentry>
         <dlentry>
           <dt>clone</dt>
           <dd>Clone a service.</dd>
@@ -44,16 +55,18 @@
           <dd>Assign an IP address to service endpoints that require an explicit IP address.</dd>
         </dlentry>
         <dlentry>
-          <dt>start</dt>
-          <dd>Start a service. </dd>
+          <dt>start</dt> <!-- CC_3201 -->
+          <dd>Start one or more services. </dd>
         </dlentry>
         <dlentry>
           <dt>restart</dt>
-          <dd>Restart a service. </dd>
+          <!-- CC_3201 -->
+          <dd>Restart one or more services. </dd>
         </dlentry>
         <dlentry>
           <dt>stop</dt>
-          <dd>Stop a service.</dd>
+          <!-- CC_3201 -->
+          <dd>Stop one or more services.</dd>
         </dlentry>
         <dlentry>
           <dt>shell</dt>
