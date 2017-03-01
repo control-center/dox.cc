@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Resetting emergency shutdown flags</title>
+  <shortdesc>After resolving the issue that caused an emergency shutdown, user this procedure to
+    service status, and then restart the service. </shortdesc>
+  <taskbody>
+    <!--CC_3107-->
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host <ph conkeyref="strings/login-root"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Check services for the emergency shutdown flag: </cmd>
+        <info>
+          <codeblock>for s in $(serviced service list --show-fields ServiceID); \
+               do serviced service list $s | grep EmergencyShutdown\"; done;
+</codeblock>
+          <p>"True" indicates an emergency shutdown.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Clear the emergency-shutdown flag for the service:</cmd>
+        <stepxmp>
+          <codeblock>serviced service clear-emergency SERVICEID</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Check services for the emergency shutdown flag: </cmd>
+        <info>
+          <codeblock>for s in $(serviced service list --show-fields ServiceID); \
+               do serviced service list $s | grep EmergencyShutdown\"; done;
+</codeblock>
+          <p>"False" indicates that the flags have been cleared.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Start the service:</cmd>
+        <stepxmp>
+          <codeblock>serviced service start ServiceID</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
