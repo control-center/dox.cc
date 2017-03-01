@@ -162,14 +162,26 @@
       <codeblock>serviced service restart [<varname>commandOptions</varname>] \ 
     {<varname>ServiceID</varname> | <varname>instanceID</varname>}</codeblock>
       <p>Command option: <dl>
+<!-- CC_344 -->
         <dlentry>
-          <dt>--sync, -s</dt>
-          <dd>Schedules services synchronously. Specify this flag if a script expects the
-            <codeph>serviced service restart</codeph> command to wait to return
-            until the service operation has been scheduled. If this flag is not specified,
-            services are scheduled asynchronously, in the background. </dd>
-        </dlentry>
-      </dl></p>
+            <dt>--auto-launch</dt>
+            <dd>Recursively schedules child services.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>--sync, -s</dt>
+            <dd>Schedules services synchronously. Specify this flag if a script expects the
+                <codeph>serviced service restart</codeph> command to wait to return until the
+              service operation has been scheduled. If this flag is not specified, services are
+              scheduled asynchronously, in the background. </dd>
+          </dlentry>
+          <dlentry>
+            <dt>--rebalance</dt>
+            <dd>Stops all instances of a service before restarting, instead of performing a rolling
+              restart.</dd>
+          </dlentry>
+        </dl>
+      </p>
+      <p/>
     </section>
   </refbody>
 </reference>
