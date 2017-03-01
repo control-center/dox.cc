@@ -36,14 +36,8 @@
         </dlentry>
         <dlentry><!--CC_3107-->
           <dt>clear-emergency</dt>
-          <dd>After you have resolved the tenant space consumption that caused an emergency
-            shutdown, reset emergency-shutdown flags to false for the service and all child
-            services. <p>To check the status of the emergency shutdown flag, issue the following
-              command:</p><codeblock>for s in $(serviced service list --show-fields ServiceID); \
-     do serviced service list $s | grep EmergencyShutdown\"; done;
-</codeblock><p>"True"
-              indicates an emergency shutdown; "false" indicates that the flags have been cleared
-              and you can restart the service.</p></dd>
+          <dd>Reset the emergency-shutdown flag for a service that was shut down due to a
+            low-storage condition. </dd>
         </dlentry>
         <dlentry>
           <dt>clone</dt>
@@ -181,7 +175,6 @@
           </dlentry>
         </dl>
       </p>
-      <p/>
     </section>
   </refbody>
 </reference>

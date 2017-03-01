@@ -75,6 +75,10 @@
             href="manage/emer-sdown-overview.dita"
             format="dita"
     />
+          <keydef keys="cc-feature-manage-clear-emerg"
+            href="manage/clear-emerg.dita"
+            format="dita"
+    /> 
     <keydef keys="cc-feature-manage-update-opentsdb-ttl"
             href="manage/update-opentsdb-ttl.dita"
             format="dita"

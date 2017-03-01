@@ -3,12 +3,10 @@
 <concept id="conceptid">
   <title>Rolling restart of services</title>
   <shortdesc>To reduce or eliminate downtime for services with multiple instances, <ph
-      keyref="nm-cc"/> performs a <term>rolling restart</term> by default. In a <term>rolling
-      restart</term>, one instance of the service restarts at a time until all instances are
-    restarted.</shortdesc>
+      keyref="nm-cc"/> restarts one instance of the service at a time.</shortdesc>
   <conbody>
-    <p>The <ph keyref="nm-cc"/> indicates that a rolling restart is occurring and whether  and
-      instance is down during the restart.  </p>
+    <p>The <ph keyref="nm-cc"/> browser interface visually indicates that a rolling restart is
+      occurring and whether an instance is down during the restart. </p>
     <p>When a  wide area network (WAN) outage occurs, the rolling restart proceeds, and the
       instances on the disconnected hosts restart when the WAN is restored, though they might not
       restart in a rolling manner.</p>

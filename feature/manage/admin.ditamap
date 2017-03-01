@@ -27,6 +27,8 @@
          </topicref>
          <topicref keyref="cc-feature-manage-start-n"/>
       </topicref>
-      <topicref keyref="cc-feature-manage-emer-sdown-overview"/>
+      <topicref keyref="cc-feature-manage-emer-sdown-overview">
+         <topicref keyref="cc-feature-manage-clear-emerg"/>
+      </topicref>
    </chapter>
 </bookmap>
