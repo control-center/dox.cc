@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>Use this procedure to install <ph keyref="nm-cc"/>.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/install-serviced-offline">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Disable automatic startup of <ph keyref="nm-cc"/>.</cmd>
+        <info>The cluster management software controls the <cmdname>serviced</cmdname> service.</info>
+        <stepxmp>
+          <codeblock>systemctl disable serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/serviced-cfg-backup">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Import the <ph keyref="nm-cc"/> images into the local
+          Docker Engine repository.</cmd>
+        <info>The images are contained in the self-extracting archive files 
+          that are staged in <filepath>/root</filepath>.</info>
+        <substeps>
+          <substep>
+            <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cd /root</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Extract the images.</cmd>
+            <stepxmp>
+              <codeblock>for image in install-zenoss-*.run
+do
+  /bin/echo -n "$image: "
+  ./$image
+done</codeblock>
+            </stepxmp>
+            <info>Image extraction begins when you press <b>y</b>. If you press <b>y</b> and then
+                <b>Enter</b>, the current image is extracted, but the next one is not.</info>
+          </substep>
+          <substep importance="optional">
+            <cmd>Delete the archive files, if desired.</cmd>
+            <stepxmp>
+              <codeblock>rm -i ./install-zenoss-*.run</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

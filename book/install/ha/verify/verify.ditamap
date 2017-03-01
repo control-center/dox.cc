@@ -3,12 +3,10 @@
 <bookmap>
   <title>Verify</title>
   <chapter keyref="cc-install-ha-verify-verify">
-    <topicref keyref="cc-install-ha-verify-about">
-      <topicref keyref="cc-install-ha-verify-drbd"/>
-      <topicref keyref="cc-install-ha-verify-pacemaker"/>
-      <topicref keyref="cc-install-ha-verify-cc"/>
-      <topicref keyref="cc-install-ha-verify-cluster"/>
-      <topicref keyref="cc-install-ha-verify-failover"/>
-     </topicref>
+    <topicref keyref="cc-install-ha-verify-drbd"/>
+    <topicref keyref="cc-install-ha-verify-pacemaker"/>
+    <topicref keyref="cc-install-ha-verify-cc"/>
+    <topicref keyref="cc-install-ha-verify-cluster"/>
+    <topicref keyref="cc-install-ha-verify-failover"/>
    </chapter>
 </bookmap>

@@ -4,7 +4,32 @@
   <title>Configuring DRBD</title>
   <refbody>
     <section>
-      <p/>
+      <p>The procedures in this chapter configure LVM and DRBD for a two-node
+      high-availability cluster.</p>
+    </section>
+    <section>
+      <p>The following list identifies the assumptions that inform the DRBD resource
+        definition for <ph keyref="nm-cc"/>:</p>
+      <ul>
+        <li>Each node has either one or two NICs. In dual-NIC hosts the private
+          IP/hostnames are reserved for DRBD traffic. This is recommended configuration, which
+          enables real-time writes for disk synchronization between the active and passive
+          nodes, and no contention with application traffic. However, it is possible to use DRBD
+          with a single NIC.</li>
+        <li>The default port number for DRBD traffic is 7789.</li>
+        <li>All volumes should synchronize and failover together. This is accomplished
+          by creating a single resource definition.</li>
+        
+        <li>DRBD stores its metadata on each volume (<codeph>meta-disk/internal</codeph>), so
+          the total amount of space reported on the logical device
+          <filepath>/dev/drbd<varname>n</varname></filepath> is always less than the amount
+          of physical space available on the underlying primary partition.</li>
+        <li>The <codeph>syncer/rate</codeph> key controls the rate, in bytes per second, at
+          which DRBD synchronizes disks. Set the rate to 30% of the available replication
+          bandwidth, which is the slowest of either the I/O subsystem or the network interface.
+          The following example assumes 100MB/s available for total replication bandwidth (0.30
+          * 100MB/s = 30MB/s).</li>
+      </ul>
     </section>
   </refbody>
 </reference>

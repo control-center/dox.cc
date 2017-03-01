@@ -3,11 +3,9 @@
 <task id="taskid">
   <title>Installing the repository mirror</title>
   <taskbody>
-    <context>Use this procedure to install a local RHEL/CentOS repository mirror on a <ph
-        keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
-        keyref="nm-cc"/> cluster hosts, and its size is approximately 95MB (version 7.2 or
-      7.3<!--CC3321-->) or 140MB (version 7.1).</context>
-
+    <context>Use this procedure to install the <ph conkeyref="names/company"/> repository mirror on
+      a <ph keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
+        keyref="nm-cc"/> cluster hosts.</context>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -18,7 +16,7 @@
       </step>
             
       <step>
-        <cmd>Install the RHEL/CentOS repository mirror.</cmd>
+        <cmd>Install the repository mirror.</cmd>
         <stepxmp>
           <codeblock>yum install -y /tmp/yum-mirror-*.rpm</codeblock>
         </stepxmp>

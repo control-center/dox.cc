@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring Docker Engine</title>
+  <taskbody>
+    <context>Use this procedure to configure Docker Engine.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step conkeyref="cc-feature-lib-tasks/docker-tmp">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/docker-svc-def">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/create-thin-docker">
+        <cmd/>
+      </step>
+      
+      <!-- This one ain't like the others... -->
+      <step conkeyref="cc-install-ha-master-lib/docker-config">
+        <cmd/>
+      </step>
+
+      <step conkeyref="cc-feature-lib-tasks/docker-dns-flag">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Stop and disable the Docker Engine service.</cmd>
+        <info>The cluster management software controls the Docker Engine service.</info>
+        <stepxmp>
+          <codeblock>systemctl stop docker &#38;&#38; systemctl disable docker</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

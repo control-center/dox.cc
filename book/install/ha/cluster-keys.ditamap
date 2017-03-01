@@ -3,10 +3,6 @@
 <map>
  <title>Keys in install/ha/cluster</title>
   <topicgroup>
-    <keydef keys="cc-install-ha-cluster-about"
-            href="cluster/about.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-cluster-cluster"
             href="cluster/cluster.dita"
             format="dita"

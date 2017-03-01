@@ -3,10 +3,6 @@
 <map>
  <title>Keys in install/ha/verify</title>
   <topicgroup>
-    <keydef keys="cc-install-ha-verify-about"
-            href="verify/about.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-verify-cc"
             href="verify/cc.dita"
             format="dita"

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Key variables</title>
+  <title>Key variables used in this guide</title>
   <refbody>
     <section>
-      <p>The following tables associate important features of a high-availability deployment with
-        the variables used in this guide.</p>
+      <p>The following tables associate key features of a high-availability deployment with
+        variables used in this guide.</p>
       
       <table>
         <tgroup cols="3">
           <colspec colname="c1" colwidth="6*"/>
-          <colspec colname="c2" colwidth="4*"/>
-          <colspec colname="c3" colwidth="4*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <colspec colname="c3" colwidth="3*"/>
           <thead>
             <row >
               <entry morerows="1">Feature</entry>
@@ -29,7 +29,7 @@
               <entry><varname>Secondary-Public-IP</varname></entry>
             </row>
             <row>
-              <entry>Public hostname of master node (returned by <codeph>uname -n</codeph>; resolves to the public
+              <entry>Public hostname of master node (returned by <codeph>uname</codeph>; resolves to the public
                 IP address)</entry>
               <entry><varname>Primary-Public-Name</varname></entry>
               <entry><varname>Secondary-Public-Name</varname></entry>
@@ -51,7 +51,7 @@
       <table>
         <tgroup cols="2">
           <colspec colname="c1" colwidth="5*"/>
-          <colspec colname="c2" colwidth="2*"/>
+          <colspec colname="c2" colwidth="1.5*"/>
           <thead>
             <row >
               <entry>Feature</entry>
@@ -70,34 +70,16 @@
               <entry><varname>HA-Virtual-Name</varname></entry>
             </row>
             <row>
-              <entry>Hostname or public IP address of delegate host A (for ZooKeeper
-                ensemble)</entry>
-              <entry><varname>Delegate-A-IP</varname></entry>
-            </row>
-            <row>
-              <entry>Hostname or public IP address of delegate host B (for ZooKeeper
-                ensemble)</entry>
-              <entry><varname>Delegate-B-IP</varname></entry>
-            </row>
-            <row>
-              <entry>Storage for Docker data (not mirrored)</entry>
-              <entry><varname>Docker-Storage</varname></entry>
-            </row>
-            <row>
-              <entry>Storage for <ph keyref="nm-cc"/> internal services data (mirrored)</entry>
+              <entry>Mirrored storage for <ph keyref="nm-cc"/> internal services data</entry>
               <entry><varname>Isvcs-Storage</varname></entry>
             </row>
             <row>
-              <entry>Storage for <ph keyref="nm-cc"/> metadata (mirrored)</entry>
+              <entry>Mirrored storage for application metadata</entry>
               <entry><varname>Metadata-Storage</varname></entry>
             </row>
             <row>
-              <entry>Storage for <ph keyref="nm-cc"/> application data (mirrored)</entry>
+              <entry>Mirrored storage for application data</entry>
               <entry><varname>App-Data-Storage</varname></entry>
-            </row>
-            <row>
-              <entry>Storage for <ph keyref="nm-cc"/> backups (not mirrored)</entry>
-              <entry><varname>Backups-Storage</varname></entry>
             </row>
           </tbody>
         </tgroup>

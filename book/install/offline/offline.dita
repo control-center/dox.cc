@@ -31,7 +31,7 @@
             </row>
             <row>
               <entry><xref keyref="cc-install-offline-stage-run"/></entry>
-              <entry>The master host</entry>
+              <entry>The master host or both master nodes (high-availability deployments)</entry>
             </row>
             <row>
               <entry><xref keyref="cc-install-offline-stage-run-zk"/></entry>

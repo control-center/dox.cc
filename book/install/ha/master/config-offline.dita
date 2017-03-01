@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring offline use</title>
+  <taskbody>
+    <context>Use this procedure to configure master host nodes to send their responses 
+      to the virtual IP address of the high-availability cluster. The 
+      following configuration variable specifies the IP address: 
+      <dl>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_OUTBOUND_IP"><dt/><dd/></dlentry>
+      </dl>
+      <p>Perform these steps:</p>
+      </context>
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Edit the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
+          <substep>
+            <cmd>Locate the line for the <varname>SERVICED_OUTBOUND_IP</varname> variable, 
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value to the virtual IP address of the
+              high-availability cluster (<varname>HA-Virtual-IP</varname>).</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Verify the settings.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

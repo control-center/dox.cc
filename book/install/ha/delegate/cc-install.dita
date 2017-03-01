@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>Use this procedure to install <ph keyref="nm-cc"/>.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/install-serviced-offline">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/serviced-cfg-backup">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
+        <cmd/>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Import the Docker Engine image for ZooKeeper into the local
+          repository, if necessary.</cmd>
+        <info>Delegate hosts that are not ZooKeeper ensemble nodes do not need the image. The image
+          file is staged in <filepath>/root</filepath> during a preceding procedure.</info>
+        <substeps>
+          <substep>
+            <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>cd /root</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Extract the image.</cmd>
+            <stepxmp>
+              <codeblock>./install-zenoss-isvcs-zookeeper:v*.run</codeblock>
+            </stepxmp>
+            <info>Image extraction begins when you press <b>y</b>.</info>
+          </substep>
+          <substep importance="optional">
+            <cmd>Delete the image file, if desired.</cmd>
+            <stepxmp>
+              <codeblock>rm -i ./install-zenoss-*.run</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

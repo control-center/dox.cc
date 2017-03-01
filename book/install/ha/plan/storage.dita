@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="referenceid">
-  <title>Storage considerations</title>
+<reference id="topicid">
+  <title>Master host storage requirements</title>
   <refbody>
     <section>
-      <p>In a high-availability cluster, all <ph keyref="nm-cc"/> master host nodes require an
-        independent mount point for tenant volume metadata. The size is small; just 1GB. The
-        underlying storage must be a separate real or virtual device that DRBD can replicate to
-        secondary nodes.</p>
-      <p>For improved reliability and performance, <ph conkeyref="names/company"/> recommends using
-        shared remote storage or network-attached storage for backup files.</p>
+      <p>The following table identifies the minimum local storage requirements of 
+        <ph keyref="nm-cc"/> master host nodes in high-availability deployments. 
+        The storage requirements are in addition to the storage required for the 
+        host's operating system.</p>
+
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>Purpose</entry>
+              <entry>Minimum size</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Docker data</entry>
+              <entry>50GB (required)</entry>
+              <entry>Local, high-performance storage.</entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> internal services data</entry>
+              <entry>50GB (required)</entry>
+              <entry>Local, high-performance storage formatted as an XFS filesystem.</entry>
+            </row>
+            <row>
+              <entry>Application data</entry>
+              <entry>200GB (suggested)</entry>
+              <entry>Local, high-performance storage.</entry>
+            </row>
+            <row>
+              <entry>Application metadata</entry>
+              <entry>1GB (required)</entry>
+              <entry>Local, high-performance storage formatted as an XFS filesystem.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+      <p>This guide includes procedures for preparing the required block storage areas. Except for
+        the Docker data storage area, the underlying storage must be separate real or virtual
+        devices that DRBD can replicate.</p>
+      
+      <p>The suggested minimum size for application data backups is 150GB. For improved reliability
+        and performance, <ph conkeyref="names/company"/> strongly recommends using shared remote
+        storage or network-attached storage for application data backups. This guide does not
+        include instructions for mounting remote storage, but does include a step for creating the
+        mount point.</p>
+      
+      <p>The suggested minimum sizes for application data and application data backups should be
+        replaced with sizes that meet your application requirements. To calculate the appropriate
+        sizes for these storage areas, use the following guidelines:</p>
+      <ul>
+        <li>Application data storage includes space for both data and snapshots. The default base
+          size for data is 100GB, and the recommended space for snapshots is 100% of the base size.
+          Adding the two yields the suggested minimum size of 200GB.</li>
+        <li>For application data backups, the recommended space is 150% of the base size for
+          data.</li>
+      </ul>
+      
     </section>
   </refbody>
 </reference>

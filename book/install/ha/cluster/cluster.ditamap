@@ -3,15 +3,13 @@
 <bookmap>
    <title>Cluster</title>
   <chapter keyref="cc-install-ha-cluster-cluster">
-    <topicref keyref="cc-install-ha-cluster-about">
-      <topicref keyref="cc-install-ha-cluster-install"/>
-      <topicref keyref="cc-install-ha-cluster-standby"/>
-      <topicref keyref="cc-install-ha-cluster-defaults">
-        <topicref keyref="cc-install-ha-cluster-defaults-set"/>
-       </topicref>
-      <topicref keyref="cc-install-ha-cluster-resources">
-        <topicref keyref="cc-install-ha-cluster-resources-cc"/>
-       </topicref>
-     </topicref>
+    <topicref keyref="cc-install-ha-cluster-install"/>
+    <topicref keyref="cc-install-ha-cluster-standby"/>
+    <topicref keyref="cc-install-ha-cluster-defaults">
+      <topicref keyref="cc-install-ha-cluster-defaults-set"/>
+    </topicref>
+    <topicref keyref="cc-install-ha-cluster-resources">
+      <topicref keyref="cc-install-ha-cluster-resources-cc"/>
+    </topicref>
    </chapter>
 </bookmap>

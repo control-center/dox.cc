@@ -23,10 +23,10 @@
           <dt><codeph>stonith-enabled=false</codeph></dt>
           <dd><p>Fence or isolate a failed node. (The string "stonith" is an acronym 
             for "shoot the other node in the head".)</p> 
-            <p>Set this option to <codeph>false</codeph> only during the intial
+            <p>Set this option to <codeph>false</codeph> only during the initial
             setup and testing period. For production use, set it to
-            <codeph>true</codeph>. For more information about fencing, refer to the
-            <cite conkeyref="pubs/cite-plan"/>.</p></dd>
+            <codeph>true</codeph>. For more information about fencing, 
+              see <xref keyref="cc-install-ha-plan-plan"/>.</p></dd>
         </dlentry>
       </dl>
     </section>

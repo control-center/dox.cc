@@ -3,11 +3,9 @@
 <bookmap>
   <title>DRBD</title>
   <chapter keyref="cc-install-ha-drbd-drbd">
-      <topicref keyref="cc-install-ha-drbd-lvm"/>
-      <topicref keyref="cc-install-ha-drbd-install"/>
-      <topicref keyref="cc-install-ha-drbd-config">
-        <topicref keyref="cc-install-ha-drbd-config-do"/>
-      </topicref>
-      <topicref keyref="cc-install-ha-drbd-init"/>
+    <topicref keyref="cc-install-ha-cluster-install"/>
+    <topicref keyref="cc-install-ha-drbd-lvm"/>
+    <topicref keyref="cc-install-ha-drbd-config"/>
+    <topicref keyref="cc-install-ha-drbd-init"/>
    </chapter>
 </bookmap>

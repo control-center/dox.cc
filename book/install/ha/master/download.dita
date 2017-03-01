@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="refid">
+  <title>Installing required software and images</title>
+  <refbody>
+    <section>
+      <p>Master host nodes need cluster-management packages and <ph keyref="nm-cc"/> software to
+        perform their roles in a high-availability deployment. Use the procedures in the
+        following sections to
+        download and stage or install required software and Docker Engine images.</p>
+      <p>Perform the procedures for each master host node.</p>
+    </section>
+  </refbody>
+</reference>

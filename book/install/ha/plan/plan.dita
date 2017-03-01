@@ -9,8 +9,11 @@
         high-availability deployment. Before proceeding, please read the
         <cite conkeyref="pubs/cite-plan"/>.</p>
 
-      <note>For optimal results, review the contents of this guide 
-        thoroughly before performing an installation.</note>
+      <p>For optimal results, review the contents of this guide 
+        thoroughly before performing an installation.</p>
+      
+      <note>The procedures in this guide describe how to configure a deployment without internet
+        access.</note>
     </section>
   </refbody>
 </reference>
