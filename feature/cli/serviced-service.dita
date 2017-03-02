@@ -170,8 +170,8 @@
           </dlentry>
           <dlentry>
             <dt>--rebalance</dt>
-            <dd>Stops all instances of a service before restarting, instead of performing a rolling
-              restart.</dd>
+            <dd>Stops all instances of a service before restarting, instead of performing a serial
+              restart of multi-instance services.</dd>
           </dlentry>
         </dl>
       </p>

@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
-<concept id="conceptid">
-  <title>Rolling restart of services</title>
-  <shortdesc>To reduce or eliminate downtime for services with multiple instances, <ph
-      keyref="nm-cc"/> restarts one instance of the service at a time.</shortdesc>
+<concept id="conceptid"><!-- CC_3199 -->
+  <title>Rolling restart of services </title>
+  <shortdesc>To reduce or eliminate downtime for services with multiple instances, by default, <ph
+      keyref="nm-cc"/> restarts instances of the service one at a time.</shortdesc>
   <conbody>
-    <p>The <ph keyref="nm-cc"/> browser interface visually indicates that a rolling restart is
-      occurring and whether an instance is down during the restart. </p>
-    <p>When a  wide area network (WAN) outage occurs, the rolling restart proceeds, and the
-      instances on the disconnected hosts restart when the WAN is restored, though they might not
-      restart in a rolling manner.</p>
-    <p>5) the timeout when waiting for an instance to restart before moving on to the next one is
-      set by SERVICED_RUNLEVEL_TIMEOUT</p>
-    <p> 6) An extra flag can be specified to the serviced service restart command that will trigger
-      a non-rolling restart: {code}serviced service restart --rebalance SERVICE{code}</p>
+    <p><ph keyref="nm-cc"/> shuts down services in the following order: databases; services that
+      cannot be recovered; indices and services that are difficult to recover; any other services.
+      It reverses the order when restarting. </p>
+    <p>The <ph keyref="nm-cc"/> browser interface visually indicates when a service restart is
+      occurring and whether an instance is down during the restart. When a wide area network (WAN)
+      outage occurs, the rolling restart proceeds, with instances on the disconnected hosts
+      restarting when the WAN is restored.</p>
+    <p>Instead of the rolling restart, you can specify that <ph keyref="nm-cc"/> stop all instances
+      of a service before restarting.</p>
   </conbody>
-  <related-links>
-    <link keyref="cc-feature-cli-serviced-service"/>
-  </related-links>
 </concept>
