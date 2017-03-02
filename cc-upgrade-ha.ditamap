@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <booktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-upgrade-ha"/></mainbooktitle>
+  </booktitle>
+  <bookmeta>
+    <publisherinformation>
+      <organization>Zenoss, Inc.</organization>
+    </publisherinformation>
+    <prodinfo>
+      <prodname>Control Center</prodname>
+      <vrmlist>
+        <vrm version="1" release="2" modification="3"/>        
+      </vrmlist>
+    </prodinfo>
+    <bookid>
+      <bookpartno>1302.<keyword keyref="lo-build-date"/></bookpartno>
+    </bookid>
+    <bookrights>
+      <copyrfirst>
+        <year>2017</year>
+      </copyrfirst>
+      <bookowner>
+        <organization>Zenoss, Inc., 11305 Four Points Drive, 
+          Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>        
+      </bookowner>
+    </bookrights>
+    <data conkeyref="data/zentm"/>
+  </bookmeta>
+  <frontmatter>
+    <topicgroup>
+      <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
+      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/front/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/urls.ditamap" format="ditamap"/>
+      <mapref href="shared/build.ditamap" format="ditamap"/>
+      <mapref href="shared/versions.ditamap" format="ditamap" />
+    </topicgroup>
+    <topicgroup>
+      <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/micro-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/paths-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/topics-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/access-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/master-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <booklists>
+      <toc/>
+    </booklists>
+    <topicref href="book/upgrade/front/about.dita"/>
+  </frontmatter>
+  
+  <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Upgrading 1.2.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/micro.dita"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/micro/micro.ditamap" format="ditamap"/>
+  </part>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Upgrading 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/minor.dita"/>
+    <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/post.ditamap" format="ditamap"/>
+  </part>
+  
+  <appendices>
+    <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
+    <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+  </appendices>
+  
+</bookmap>
