@@ -41,7 +41,7 @@
       <step>
         <cmd>Start the service:</cmd>
         <stepxmp>
-          <codeblock>serviced service start ServiceID</codeblock>
+          <codeblock>serviced service start SERVICEID</codeblock>
         </stepxmp>
       </step>
     </steps>
