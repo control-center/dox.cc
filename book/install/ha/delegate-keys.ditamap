@@ -11,6 +11,10 @@
             href="delegate/delegate.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-delegate-docker-config"
+            href="delegate/docker-config.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-delegate-download"
             href="delegate/download.dita"
             format="dita"
