@@ -8,6 +8,10 @@
     while enough space is available to perform recovery operations, <ph keyref="nm-cc"/> minimizes
     the risk of data corruption. </shortdesc>
   <conbody>
+    <!-- CC_3301 -->
+    <p>Emergency shutdown is performed for services that are in a resource pool that has DFS access.
+      Services that are in pools that do not have DFS permissions and do not write to the DFS
+      continue running.</p>
     <p><ph keyref="nm-cc"/> displays thin pool and DFS information in the following graphs in the
       browser interface: <ul id="ul_j34_vpg_cz">
         <li>On the <uicontrol>Applications</uicontrol> tab, the <uicontrol>Thin Pool

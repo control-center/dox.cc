@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Resetting emergency shutdown flags</title>
-  <shortdesc>After resolving the issue that caused an emergency shutdown, user this procedure to
+  <shortdesc>After resolving the issue that caused an emergency shutdown, use this procedure to
     service status, and then restart the service. </shortdesc>
   <taskbody>
     <!--CC_3107-->
@@ -21,9 +21,12 @@
         </info>
       </step>
       <step>
-        <cmd>Clear the emergency-shutdown flag for the service:</cmd>
+        <cmd>Clear the emergency-shutdown flag for a service or the entire application:</cmd>
         <stepxmp>
           <codeblock>serviced service clear-emergency SERVICEID</codeblock>
+        </stepxmp>
+        <stepxmp>
+          <codeblock>serviced service clear-emergency APPLICATION_ID</codeblock>
         </stepxmp>
       </step>
       <step>
