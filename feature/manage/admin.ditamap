@@ -30,5 +30,8 @@
       <topicref keyref="cc-feature-manage-emer-sdown-overview">
          <topicref keyref="cc-feature-manage-clear-emerg"/>
       </topicref>
+      <topicref keyref="cc-feature-manage-rolling-restart-overview">
+         <topicref keyref="cc-feature-manage-change-rolling-restart"/>   
+      </topicref>
    </chapter>
 </bookmap>
