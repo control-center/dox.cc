@@ -69,6 +69,7 @@
   <chapter href="feature/config/master.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
+  <!-- items in zk are commented for RM/Core; check before building -->
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
   <appendix href="feature/manage/manage.ditamap" format="ditamap"/>
