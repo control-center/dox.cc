@@ -21,8 +21,9 @@
       <step conkeyref="cc-feature-lib-tasks/create-thin-docker">
         <cmd/>
       </step>
-
-      <step conkeyref="cc-feature-lib-tasks/docker-config">
+      
+      <!-- this one ain't like the others -->
+      <step conkeyref="cc-install-ha-master-lib/docker-config">
         <cmd/>
       </step>
 

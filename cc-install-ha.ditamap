@@ -84,13 +84,14 @@
   <chapter href="book/install/ha/verify/verify.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/auth.ditamap" format="ditamap"/>
   
-  <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
+  <chapter href="book/install/ha/maps/install-delegate.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/config-delegate.ditamap" format="ditamap"/>
   
+  <!-- items in zk are commented for RM/Core; check before building -->
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
   
   <appendices>
-    <!-- <appendix href="feature/manage/manage.ditamap" format="ditamap"/> -->
+    <appendix href="feature/manage/manage-ha.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
   </appendices>
