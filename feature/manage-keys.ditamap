@@ -7,6 +7,18 @@
             href="manage/admin.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-change-rolling-restart"
+            href="manage/change-rolling-restart.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-clear-emerg"
+            href="manage/clear-emerg.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-emer-sdown-overview"
+            href="manage/emer-sdown-overview.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-intro-stop-start"
             href="manage/intro-stop-start.dita"
             format="dita"
@@ -37,6 +49,10 @@
     />
     <keydef keys="cc-feature-manage-rollback"
             href="manage/rollback.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-rolling-restart-overview"
+            href="manage/rolling-restart-overview.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-snapshot-rollback"
@@ -71,14 +87,6 @@
             href="manage/stop-n.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-emer-sdown-overview"
-            href="manage/emer-sdown-overview.dita"
-            format="dita"
-    />
-          <keydef keys="cc-feature-manage-clear-emerg"
-            href="manage/clear-emerg.dita"
-            format="dita"
-    /> 
     <keydef keys="cc-feature-manage-update-opentsdb-ttl"
             href="manage/update-opentsdb-ttl.dita"
             format="dita"
