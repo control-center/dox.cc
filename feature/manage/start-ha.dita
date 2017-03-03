@@ -9,23 +9,28 @@
         <cmdname>serviced</cmdname> to perform maintenance tasks.</context>
     <steps>
       <step>
-        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the primary node
+          <ph conkeyref="strings/login-root"/>.</cmd>
+        <info>In this context, the primary node is the node that was the current node when 
+          you stopped <ph keyref="nm-cc"/>.</info>
       </step>
       
       <step>
-        <cmd>Determine whether <codeph>serviced</codeph> is configured to start
-          when the system starts.</cmd>
+        <cmd>Take the cluster out of standby mode.</cmd>
         <stepxmp>
-          <codeblock>systemctl is-enabled serviced</codeblock>
+          <codeblock>pcs cluster unstandby --all</codeblock>
         </stepxmp>
-        <choices>
-          <choice>If the result is <codeph>enabled</codeph>, proceed to the next step.</choice>
-          <choice>If the result is <codeph>disabled</codeph>, enter the following command:
-            <codeblock>systemctl enable serviced</codeblock>
-          </choice>
-        </choices>
       </step>
       
+      <step>
+        <cmd>Monitor the status of cluster resources.</cmd>
+        <stepxmp>
+          <codeblock>watch pcs status</codeblock>
+        </stepxmp>
+        <stepresult>Monitor the status until all resources report <codeph>Started</codeph>. Resolve
+          any issues before continuing.</stepresult>
+      </step>
+
       <step>
         <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
         <stepxmp>
