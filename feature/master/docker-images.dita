@@ -3,8 +3,8 @@
 <task id="taskid">
   <title>Optional: Loading image files</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="cc-install-offline-offline"/> before performing this procedure.</prereq>
+    <prereq><b><ph conkeyref="names/company"/> customers</b>: Before performing this procedure,
+      perform the steps in <xref keyref="cc-install-offline-offline"/>.</prereq>
     <context>Use this procedure to load images into the local repository
       on a host that does not have internet access.</context>
     <steps>

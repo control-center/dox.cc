@@ -7,8 +7,8 @@
       <p>The variables in the following table are set only on the master host. </p>
       <ul>
         <li>Use one of the first two groups of variables but not both.</li>
-        <li>The defaults of the third group may need to be
-          changed before starting the master host for the first time.</li>
+        <li>Before starting the master host for the first time, you might need to change the
+          defaults of the third group.</li>
         <li>Typically, the defaults of the last two groups
           of variables are not changed until <ph keyref="nm-cc"/> has managed an 
           application for a while and a need arises. </li>

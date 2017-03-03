@@ -6,6 +6,7 @@
     <context>Use this procedure to install the <ph conkeyref="names/company"/> repository mirror on
       a <ph keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
         keyref="nm-cc"/> cluster hosts.</context>
+    <context id="context_frw_x4w_cz"/>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -34,7 +35,7 @@
       </step>
       
       <step importance="optional">
-        <cmd>Delete the RPM files, if desired.</cmd>
+        <cmd>Delete the RPM files.</cmd>
         <stepxmp>
           <codeblock>rm /tmp/yum-mirror-*.rpm /tmp/serviced-*.rpm</codeblock>
         </stepxmp>

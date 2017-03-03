@@ -16,7 +16,9 @@
         </dlentry>
         <dlentry>
           <dt>add</dt>
-          <dd>Adds a host.</dd>
+          <dd>Adds a host. <p id="NAT"><!-- CC_3299 --> If the host is behind a router or firewall for network address translation (NAT),
+            include the option <cmdname>--nat-address</cmdname> to specify the device host name or
+            IP address and port of the delegate host.</p></dd>
         </dlentry>
         <dlentry>
           <dt>remove, rm </dt>
