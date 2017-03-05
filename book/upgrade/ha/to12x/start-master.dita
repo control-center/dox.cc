@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting and registering the master host</title>
+  <taskbody>
+    <context>Use this procedure to start the master host after upgrading <ph keyref="nm-cc"/> to
+      version <ph keyref="lo-version-cc"/>. This procedure also includes steps to create and
+      register the authentication credentials the master needs for its role as a delegate.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Determine whether <codeph>serviced</codeph> is configured to start
+          when the system starts.</cmd>
+        <stepxmp>
+          <codeblock>systemctl is-enabled serviced</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result is <codeph>enabled</codeph>, proceed to the next step.</choice>
+          <choice>If the result is <codeph>disabled</codeph>, enter the following command:
+          <codeblock>systemctl enable serviced</codeblock>
+          </choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Verify the settings in the <cmdname>serviced</cmdname> configuration file.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start <cmdname>serviced</cmdname>, and then monitor the startup.</cmd>
+        <info>During this startup, <cmdname>serviced</cmdname> invokes <codeph>docker pull</codeph>
+          to retrieve its updated images.</info>
+        <stepxmp>
+          <codeblock>systemctl start serviced &#38;&#38; journalctl -u serviced -f -o cat</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed to the next step until the following message is displayed:
+          <codeblock>Host Master successfully started</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Obtain the host ID of the master host.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the host IDs of all cluster hosts.</cmd>
+            <stepxmp>
+              <codeblock>serviced host list | cut -c-85</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Record the host ID of the master host.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Create authentication credentials for the master host,
+          and register the credentials.</cmd>
+        <stepxmp>Replace <varname>Host-ID</varname> with the 
+          host ID of the master host:
+          <codeblock>serviced key reset --register <varname>Host-ID</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
+        <info>This step is only required for multi-host deployments.</info>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The result is a list of 3 or 5 hosts, separated by 
+          the comma character (<codeph>&#44;</codeph>). The master host
+          is always a node in the ZooKeeper ensemble.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -68,28 +68,28 @@
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
       <navtitle>Upgrading 1.2.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
-    <topicref href="book/upgrade/front/micro.dita"/>
-    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/micro/micro.ditamap" format="ditamap"/>
+    <topicref href="book/upgrade/ha/front/micro.dita"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/micro/micro.ditamap" format="ditamap"/>
   </part>
   
   <part>
     <topicmeta>
       <navtitle>Upgrading 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
-    <topicref href="book/upgrade/front/minor.dita"/>
-    <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/delegate.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/post.ditamap" format="ditamap"/>
+    <topicref href="book/upgrade/ha/front/minor.dita"/>
+    <chapter href="book/upgrade/ha/maps/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/post.ditamap" format="ditamap"/>
   </part>
   
   <appendices>

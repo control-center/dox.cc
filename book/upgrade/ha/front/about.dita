@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="concept_zbv_qgy_nl0">
+ <title>About this guide</title>
+ <refbody>
+   <section>
+   <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for performing the
+     following upgrades:
+     <ul>
+       <li>Micro upgrades, from version 1.2.x to version <ph keyref="lo-version-cc"/></li>
+       <li>Minor upgrades, from version 1.1.x to version <ph keyref="lo-version-cc"/></li>
+     </ul>
+     </p>
+    <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
+        upgrading a high-availability deployment. For additional information, please contact your
+          <ph conkeyref="names/company"/> representative.</p>
+   </section>
+   
+   <section conkeyref="related-pubs/cc"/>
+   <section conkeyref="more-info/cc"/>
+   
+   <section>
+     <title>Supported clients and browsers</title>
+     <p>The following table identifies the supported combinations of client operating systems and
+       web browsers.</p>
+     <table>
+       <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
+         <tbody>
+           <row>
+             <entry></entry>
+           </row>
+         </tbody>
+       </tgroup>
+     </table>
+   </section>
+   
+   
+    <section>
+      <title>Change history</title>
+      <p>The following list associates document part numbers and the important 
+        changes to this guide since the previous release. Some of the changes 
+        involve features or content, but others do not. For information about 
+        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
+      
+      <!-- Use the lo-build-date variable through finals. Then, replace it with
+           the published build number and use the variable only in the version
+           in development. 
+        -->
+      <dl>
+        <dlentry>
+          <dt>1320.<keyword keyref="lo-build-date"/></dt>
+          <dd>Update release number (1.2.3).</dd>
+          <dd>Remove <codeph>TLS_RSA_WITH_RC4_128_SHA</codeph> from list of 
+            ciphers associated with <varname>SERVICED_TLS_CIPHERS</varname>.</dd>
+          <dd>Remove section for configuring <cmdname>dnsmasq</cmdname>.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1320.17.024</dt>
+          <dd>Update release number (1.2.2).</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1300.16.351</dt>
+          <dd>Add sections for configuring <cmdname>dnsmasq</cmdname> and 
+          removing consistent network device naming.</dd>
+          <dd>Simplify Docker Engine install and configuration steps.</dd>
+          <dd>Add sections about the maintenance scripts that are installed.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1300.16.350</dt>
+          <dd>Add a chapter of details about releases and upgrades.</dd>
+          <dd>Create a part for the minor release upgrade chapters.</dd>
+          <dd>Add a part and new chapters for micro release upgrades.</dd>
+          <dd>Add steps to download and use the <cmdname>serviced</cmdname> 
+            RPM file (<ph conkeyref="names/company"/> customers only).</dd>
+          <dd>Add a procedure for updating ZooKeeper images on offline nodes
+            (<ph conkeyref="names/company"/> customers only).</dd>
+          <dd>Clarify the procedures for stopping a cluster.</dd>
+          <dd>Update release number (1.2.1).</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1300.16.327</dt>
+          <dd>Add a description of a new feature, setting the connection timeout
+            value of a resource pool, to the pre-upgrade chapter.</dd>            
+          <dd>Add a procedure for the new feature to the post-upgrade chapter.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1300.16.322</dt>
+          <dd>Initial release (1.2.0).</dd>
+        </dlentry>
+      </dl>
+    </section>
+   
+ </refbody>
+</reference>

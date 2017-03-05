@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Optional: Loading image files</title>
+  <taskbody>
+    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
+      keyref="cc-install-offline-offline"/> before performing this procedure.</prereq>
+    <context>Use this procedure to load images into the local repository
+      on a host that does not have internet access.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>cd /root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Extract the images.</cmd>
+        <stepxmp>
+          <codeblock>for image in install-*.run
+do
+echo -n "$image: "
+eval ./$image
+done</codeblock>
+        </stepxmp>
+        <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>
+          key and then <b>Return</b> key, the current image is extracted, but the next one is
+          not.</info>
+      </step>
+      
+      <step>
+        <cmd>List the images in the registry.</cmd>
+        <stepxmp>
+          <codeblock>docker images</codeblock>
+        </stepxmp>
+        <stepresult>The result should show one image for each archive file.</stepresult>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Delete the archive files, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm -i ./install-*.run</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

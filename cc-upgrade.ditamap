@@ -92,8 +92,11 @@
     <chapter href="book/upgrade/maps/post.ditamap" format="ditamap"/>
   </part>
   
-  <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
-  <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
-  <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
-  <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+  <appendices>
+    <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
+    <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+  </appendices>
+  
 </bookmap>
