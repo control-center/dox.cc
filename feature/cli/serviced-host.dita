@@ -16,9 +16,12 @@
         </dlentry>
         <dlentry>
           <dt>add</dt>
-          <dd>Adds a host. <p id="NAT"><!-- CC_3299 --> If the host is behind a router or firewall for network address translation (NAT),
-            include the option <cmdname>--nat-address</cmdname> to specify the device host name or
-            IP address and port of the delegate host.</p></dd>
+          <dd>Adds a host. <p id="NAT"><!-- CC_3299 --> If the host is behind a router or firewall
+              for network address translation (NAT), include the option
+                <cmdname>--nat-address</cmdname> to specify the NAT device's hostname or IP address
+              and port of the delegate
+            host.</p><codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname> \
+    <ph id="nat-address-port">--nat-address==<varname>NAT-Hostname-Or-IP</varname>:<varname>NAT-Port</varname></ph></codeblock></dd>
         </dlentry>
         <dlentry>
           <dt>remove, rm </dt>
