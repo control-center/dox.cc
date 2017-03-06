@@ -23,6 +23,14 @@
             href="manage/intro-stop-start.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-NAT-overview"
+            href="manage/NAT-overview.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-manage-ha"
+            href="manage/manage-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-manage"
             href="manage/manage.dita"
             format="dita"
@@ -67,12 +75,28 @@
             href="manage/start-1.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-start-ha"
+            href="manage/start-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-start-n"
             href="manage/start-n.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-stop-1"
             href="manage/stop-1.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-stop-ha-delegate"
+            href="manage/stop-ha-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-stop-ha-master"
+            href="manage/stop-ha-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-stop-ha"
+            href="manage/stop-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-stop-n-delegate"

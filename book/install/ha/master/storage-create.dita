@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Creating the application data thin pool</title>
+  <taskbody>
+    <context>Use this procedure to create a thin pool for application data storage.
+      <note>This procedure does not include a specific value for the size of the thin pool. For
+        more information about sizing this resource, refer to the documentation for your
+        application. Or, use the suggested minimum value, 200GB. You can add storage to an LVM thin
+        pool at any time.</note>
+      <p>Perform these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create an LVM thin pool for application data.</cmd>
+        <info>For more information about the <cmdname>serviced-storage</cmdname> command,
+          see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
+        <stepxmp>Replace <varname>App-Data-Storage</varname> with the paths of one or more
+          block devices or partitions, or the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool serviced <varname>App-Data-Storage</varname></codeblock>
+        </stepxmp>
+        <stepresult>On success, the result is the device mapper name of the thin pool, which always
+          starts with <codeph>/dev/mapper</codeph>.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

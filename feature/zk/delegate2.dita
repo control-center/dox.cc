@@ -13,15 +13,6 @@
       <step conkeyref="cc-feature-zk-lib/zk-define-ips">
         <cmd/>
       </step>
-      
-      <!-- Appliances appreciate this step
-      <step>
-        <cmd>Set the ZooKeeper start flag.</cmd>
-        <stepxmp>
-          <codeblock>echo "SERVICED_ISVCS_START=zookeeper" &#62;&#62; /etc/default/serviced</codeblock>
-        </stepxmp>
-      </step>
-      -->
 
       <step>
         <cmd>Set the ID of this node in the ZooKeeper ensemble.</cmd>
@@ -29,16 +20,7 @@
           <codeblock>echo "SERVICED_ISVCS_ZOOKEEPER_ID=3" &#62;&#62; /etc/default/serviced</codeblock>
         </stepxmp>
       </step>
-      
-      <!-- Appliances appreciate this step
-      <step>
-        <cmd>Remove the default setting for the ZooKeeper cluster.</cmd>
-        <stepxmp>
-          <codeblock>sed -i.bak '/SERVICED_ZK=/ d' /etc/default/serviced</codeblock>
-        </stepxmp>
-      </step>
-       -->
-      
+
       <step conkeyref="cc-feature-zk-lib/zk-set-nodes">
         <cmd/>
       </step>

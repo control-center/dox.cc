@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding master nodes to their resource pool</title>
+  <taskbody>
+
+    <context>This procedure adds the <ph keyref="nm-cc"/> master nodes to their resource pool,
+      named <codeph>master</codeph>. The master nodes are added to the resource
+      pool with their public hostnames, so that you can easily see which node is active when you log
+      in to the <ph keyref="nm-cc"/> browser interface.</context>
+    
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname (<varname>HA-Virtual-Name</varname>) or
+          virtual IP address (<varname>HA-Virtual-IP</varname>) of the 
+          high-availability cluster to start a Bash shell on the <ph keyref="nm-cc"/> 
+          master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the public hostname of the current node.</cmd>
+        <stepxmp>
+          <codeblock>uname -n</codeblock>
+        </stepxmp>
+        <stepresult>The result is either <varname>Primary-Public-Name</varname>
+          or <varname>Secondary-Public-Name</varname>.
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Add the current node to the <codeph>master</codeph> resource pool.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Node-Hostname</varname> with the 
+            public hostname of the current node:</p>
+          <codeblock>serviced host add --register <varname>Node-Hostname</varname>:4979 master</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Force a failover.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Node-Hostname</varname> with the public hostname
+            of the current node:</p>
+          <codeblock>pcs cluster standby <varname>Node-Hostname</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Monitor the cluster status.</cmd>
+        <stepxmp>
+          <codeblock>watch pcs status</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until all resources report a status of
+          <codeph>Started</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Use the virtual hostname (<varname>HA-Virtual-Name</varname>) or
+          virtual IP address (<varname>HA-Virtual-IP</varname>) of the 
+          high-availability cluster to start a Bash shell on the <ph keyref="nm-cc"/> 
+          master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the public hostname of the current node.</cmd>
+        <stepxmp>
+          <codeblock>uname -n</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Add the current node to the <codeph>master</codeph> resource pool.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Node-Hostname</varname> with the 
+            public hostname of the current node:</p>
+          <codeblock>serviced host add --register <varname>Node-Hostname</varname>:4979 master</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Restore the cluster.</cmd>
+        <stepxmp>
+          <p>Replace <varname>Standby-Node-Hostname</varname> with the public hostname
+            of the node that is in standby mode:</p>
+          <codeblock>pcs cluster unstandby <varname>Standby-Node-Hostname</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

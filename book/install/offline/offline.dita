@@ -4,10 +4,10 @@
   <title>Preparing to install without internet access</title>
   <refbody>
     <section>
-      <p>This appendix includes procedures for downloading and installing or staging
-        <ph keyref="nm-cc"/> software and its operating system dependencies. This
-        distribution option is available only to <ph conkeyref="names/company"/> customers,
-        to enable creating <ph keyref="nm-cc"/> deployments without internet access.</p>
+      <p>This appendix includes procedures for downloading and installing or staging <ph
+          keyref="nm-cc"/> software and its operating system dependencies. This distribution option
+        is available only to <ph conkeyref="names/company"/> customers to enable creating <ph
+          keyref="nm-cc"/> deployments without internet access.</p>
       
       <p>The following table identifies where to perform each procedure in this appendix.</p>
       <table>
@@ -31,7 +31,7 @@
             </row>
             <row>
               <entry><xref keyref="cc-install-offline-stage-run"/></entry>
-              <entry>The master host</entry>
+              <entry>The master host or both master nodes (high-availability deployments)</entry>
             </row>
             <row>
               <entry><xref keyref="cc-install-offline-stage-run-zk"/></entry>

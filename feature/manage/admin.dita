@@ -4,10 +4,8 @@
    <title>Administration reference</title>
   <refbody>
     <section>
-      <p>This section contains information about and procedures for performing administrative tasks.
-        Tasks include adding application storage, copying applications and data, reverting to a
-        backup or snapshot, and properly stopping and starting <ph keyref="nm-cc"/> for maintenance
-        purposes.</p>
+      <p>This section contains information about and procedures for performing administrative tasks
+        in <ph keyref="nm-cc"/>.</p>
     </section>
   </refbody>
 </reference>

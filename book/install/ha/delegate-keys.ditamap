@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/delegate</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-delegate-cc-install"
+            href="delegate/cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-delegate-delegate"
+            href="delegate/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-delegate-docker-config"
+            href="delegate/docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-delegate-download"
+            href="delegate/download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-delegate-prep"
+            href="delegate/prep.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Verifying candidate host resources</title>
+  <taskbody>
+    <context>Use this procedure to determine whether the hardware resources and installed operating 
+      system of a host are sufficient to serve as a <ph keyref="nm-cc"/> master host.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the candidate host 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/verify-64">
+        <cmd></cmd>
+      </step>
+
+      <step conkeyref="cc-feature-lib-tasks/update-os">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-cpu-count">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-cpu-aes">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-memory-master">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-hostid-master">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-name-resolution">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/localhost-entry">
+        <cmd></cmd>
+      </step>
+
+      <step conkeyref="cc-feature-lib-tasks/update-kernel">
+        <cmd></cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the available block storage on the candidate host.</cmd>
+        <stepxmp>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </stepxmp>
+        <stepresult>Compare the results with the storage requirements described in <xref
+            keyref="cc-install-ha-plan-storage"/>.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

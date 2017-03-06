@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Mounting a filesystem for application data backups</title>
+  <taskbody>
+    <prereq>This procedure requires a remote file server that is compatible with XFS.</prereq>
+    <context>Use this procedure to mount a remote filesystem for application data backups.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create an entry in the <filepath>/etc/fstab</filepath> file.</cmd>
+        <stepxmp>
+          <p>Replace <varname>File-System-Specification</varname> with a remote server specification.</p>
+          <codeblock>echo "<varname>File-System-Specification</varname> \
+  /opt/serviced/var/backups xfs defaults 0 0" >> /etc/fstab</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create the mount point for backup data.</cmd>
+        <stepxmp>
+          <codeblock>mkdir -p /opt/serviced/var/backups</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Mount the filesystem, and then verify it mounted correctly.</cmd>
+        <stepxmp>
+          <codeblock>mount -a &#38;&#38; mount | grep backups</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>/dev/sdb3 on /opt/serviced/var/backups type xfs (rw,relatime,seclabel,attr2,inode64,noquota)</codeblock>
+        </stepresult>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

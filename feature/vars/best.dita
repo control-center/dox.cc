@@ -9,8 +9,8 @@
         startup script. The following list describes recommended best practices for its use and
         maintenance:</p>
       <ol>
-        <li>When in doubt, make a backup. Making a backup copy of the configuration file before
-          editing it is always the safest choice. </li>
+        <li>When in doubt, make a backup. Before editing, making a backup copy of the configuration
+          file is always the safest choice. </li>
         <li>Copy a variable, then edit the copy. If you need to revert a variable to its default
           value, you don't have to leave the file to look it up.</li>
         <li>Copy and edit a variable only if the default value needs to be changed. It's easier to

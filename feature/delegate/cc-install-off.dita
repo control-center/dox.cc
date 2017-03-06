@@ -5,8 +5,9 @@
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
       keyref="cc-install-offline-offline"/> before performing this procedure.</prereq>
-    <context>Use this procedure to install <ph keyref="nm-cc"/>
-      on a host that does not have internet access.</context>
+    <context>Use this procedure to install <ph keyref="nm-cc"/> on a host that does not have
+      internet access. <note conkeyref="cc-feature-master-docker-install-off/avoid-depend-errors"
+      /></context>
     <steps>
       
       <step>

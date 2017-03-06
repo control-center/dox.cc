@@ -16,5 +16,5 @@
       <topicref keyref="cc-feature-delegate-cc-install-off"/>
     </topicref>
     <topicref keyref="cc-feature-delegate-docker-config"/>
-   </chapter>
+  </chapter>
 </bookmap>

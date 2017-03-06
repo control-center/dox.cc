@@ -34,8 +34,7 @@
         <stepxmp>
           <codeblock>grep -E '^[^#]*SERVICED' /etc/default/serviced | sort</codeblock>
         </stepxmp>
-        <stepresult>Example result: <codeblock>SERVICED_AGENT=1
-SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool
+        <stepresult>Example result: <codeblock>SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool
 SERVICED_DOCKER_REGISTRY=<varname>HA-Virtual-IP</varname>:5000
 SERVICED_ENDPOINT=<varname>HA-Virtual-IP</varname>:4979
 SERVICED_FS_TYPE=devicemapper
