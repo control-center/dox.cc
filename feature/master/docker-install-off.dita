@@ -7,7 +7,10 @@
       Docker Engine without internet access, perform the steps in <xref
         keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to install Docker Engine on 
-      a host that does not have internet access.</context>
+      a host that does not have internet access.
+      <note id="avoid-depend-errors"><!-- CC_3330 -->To avoid dependency errors when installing
+        without internet access, install only from the local repository mirror.</note>
+    </context>
     <steps>
       
       <step>

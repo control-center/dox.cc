@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+ 
+  <!--  CC_3299 --><title>Using <ph keyref="nm-cc"/> with a NAT device</title>
+  <refbody>
+    <section id="section_ggr_ccr_dz">
+      <p>Network address translation (NAT) enables one device (a router, switch, or firewall) to
+        connect a local area network with the internet and outside devices. The NAT device forwards
+        traffic to the intended host, and serves as a firewall to systems that are behind the
+        device, making them inaccessible from outside the network.</p>
+      <p>In a <ph keyref="nm-cc"/> system without a NAT device, the master host connects directly to
+        the delegate host's <apiname>address:rpcport</apiname> and requests host information.</p>
+      <p>When the <ph keyref="nm-cc"/> master host is outside the network, it can connect to the NAT
+        device, but cannot access delegate hosts behind the device because they have private IP
+        addresses. The NAT device forwards its port to the delegate hosts'
+          <apiname>address:rpcport</apiname>.</p>
+    </section>
+    <section id="section_ilt_kfr_dz">
+      <p>When you add a delegate host by using either <ph keyref="nm-cc"/> interface (browser or
+        command-line) you must specify the hostname or IP address and port for the NAT device. After
+        you add delegate hosts, you must transfer host keys to the delegate hosts and registered
+        them.</p>
+      <p>If you have two delegates behind the NAT device, change the port forwarding for port 22
+        between adding the hosts, or transfer the keys file manually to and register from each
+        delegate.</p>
+      <p>The <ph keyref="nm-cc"/> master host always attempts registration on port 22.  If the NAT
+        device forwards port 22 to the delegate host that you are registering, you can remotely
+        register the keys.</p>
+      <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:<varname>Host-Port</varname> \
+    <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/> \
+    [–register]</codeblock>
+    </section>
+    <section id="section_okz_m2r_dz">
+      <p>When resetting keys, the CLI supports the <cmdname>--nat-address</cmdname> argument. If the
+        delegate is behind a NAT device and port 22 is forwarded to that delegate, you can attempt
+        to register the delegate when resetting the key: </p>
+      <codeblock>serviced key reset <varname>Hostname-Or-IP</varname>:<varname>Host-Port</varname> --register \ 
+    <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/></codeblock>
+      <title>Example: Adding delegate hosts to a resource pool</title>
+      <p>The master host is outside the network. Delegate hosts delegate1 and delegate2 are behind a
+        NAT router. IP address and port information is as follow:<ul id="ul_x55_krr_dz">
+          <li>NAT router: 98.138.252.30:<b>4980</b></li>
+          <li>Delegate1: 192.168.22.100:4979</li>
+          <li>Delegate2: 192.168.22.101:4979</li>
+        </ul></p>
+      <p>The router forwards port 4979 to delegate1's RPC port (4979):
+        <codeblock>serviced host add 192.168.22.100:<b>4979</b> <varname>Resource-Pool</varname> \
+    --nat-address=98.138.252.30:<b>4979</b></codeblock></p>
+      <p>The router forwards port 4980 to delegate2's RPC port
+        (4979):<codeblock>serviced host add 192.168.22.101:<b>4979</b> <varname>Resource-Pool</varname> \
+    --nat-address=98.138.252.30:<b>4980</b> </codeblock></p>
+    </section>
+    <section id="section_pyj_s2r_dz">
+      <title>Security considerations for using <ph keyref="nm-cc"/>with a NAT device</title>
+      <p>To attach to a service on a delegates behind the NAT device, you must use ssh to access the
+        delegate. From the delegate host, run <cmdname>serviced service attach</cmdname>. For
+        security reasons, you cannot use <cmdname>serviced service attach</cmdname> from the master
+        to connect to a delegate. </p>
+      <p>In the <ph keyref="nm-cc"/> browser interface, for security reasons, you cannot drill down
+        to a service that is running on a delegate behind a NAT device and click
+          <uicontrol>Container Log</uicontrol> for the instance</p>
+    </section>
+  </refbody>
+</reference>

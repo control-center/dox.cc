@@ -4,6 +4,7 @@
    <title>Administration reference</title>
    <chapter keyref="cc-feature-manage-admin">
       <topicref keyref="cc-feature-manage-resize"/>
+      <topicref keyref="cc-feature-manage-NAT-overview"/>
       <topicref keyref="cc-feature-backup-overview">
          <topicref keyref="cc-feature-backup-best-practice"/>
          <topicref keyref="cc-feature-backup-backup"/>
@@ -26,6 +27,12 @@
             <topicref keyref="cc-feature-manage-stop-n-delegate"/>
          </topicref>
          <topicref keyref="cc-feature-manage-start-n"/>
+      </topicref>
+      <topicref keyref="cc-feature-manage-emer-sdown-overview">
+         <topicref keyref="cc-feature-manage-clear-emerg"/>
+      </topicref>
+      <topicref keyref="cc-feature-manage-rolling-restart-overview">
+         <topicref keyref="cc-feature-manage-change-rolling-restart"/>   
       </topicref>
    </chapter>
 </bookmap>

@@ -22,6 +22,13 @@
         <dlentry>
           <dt>status</dt>
           <dd>Display the status of deployed services.</dd>
+          <!-- cc_3097: emergency stopped -->
+          <dd>The status <codeph>emergency-stopped</codeph> indicates that <ph keyref="nm-cc"/>
+            performed an emergency shutdown of the service due to low storage. Before you can
+            restart the service, resolve the space issue, and then use  the
+              <cmdname>clear-emergency</cmdname> command (listed below) to remove the
+            emergency-shutdown flags. For more information, see <xref
+              keyref="cc-feature-manage-emer-sdown-overview"/>.</dd>
         </dlentry>
         <dlentry>
           <dt>add</dt>
@@ -29,14 +36,8 @@
         </dlentry>
         <dlentry><!--CC_3107-->
           <dt>clear-emergency</dt>
-          <dd>After you have resolved the tenant space consumption that caused an emergency
-            shutdown, reset emergency-shutdown flags to false for the service and all child
-            services. <p>To check the status of the emergency shutdown flag, issue the following
-              command:</p><codeblock>for s in $(serviced service list --show-fields ServiceID); \
-     do serviced service list $s | grep EmergencyShutdown\"; done;
-</codeblock><p>"True"
-              indicates an emergency shutdown; "false" indicates that the flags have been cleared
-              and you can restart the service.</p></dd>
+          <dd>Reset the emergency-shutdown flag for a service that was shut down due to a
+            low-storage condition. </dd>
         </dlentry>
         <dlentry>
           <dt>clone</dt>
@@ -126,24 +127,54 @@
       </dl>
     </section>
     <!--CC_2792-->
-    <section id="section_gyp_fpp_tx">
-      <title>serviced service [start | restart | stop]</title>
-      <p>By default, <ph keyref="nm-cc"/> version 5.2.0 and later schedules services in the
-        background to start, restart, and stop. The asynchronous scheduling improves the speed of
-        these operations, especially in large-scale installations. However, if you use a script that
-        depends on synchronous scheduling that was used in earlier versions of <ph keyref="nm-cc"/>,
-        specify the command line option <cmdname>--sync</cmdname>.</p>
+    <section>
+      <title>serviced service [start | stop]</title>
+      <p>By default, <ph keyref="nm-cc"/> schedules services in the background to start, and stop. The asynchronous scheduling improves the speed of these operations, especially in
+        large-scale installations. However, if you use a script that depends on synchronous
+        scheduling that was used in earlier versions of <ph keyref="nm-cc"/>, specify the command
+        line option <cmdname>--sync</cmdname>.</p>
       <p>Syntax:</p>
-      <codeblock>serviced service [start | restart | stop] [-s|--sync] <varname>ServiceID</varname></codeblock>
+      <codeblock>serviced service [start | stop] [-s|--sync] <varname>ServiceID</varname></codeblock>
       <p>Command option: <dl>
           <dlentry>
             <dt>--sync, -s</dt>
             <dd>Schedules services synchronously. Specify this flag if a script expects the
-                <codeph>serviced service [start | restart | stop]</codeph> command to wait to return
+                <codeph>serviced service [start | stop]</codeph> command to wait to return
               until the service operation has been scheduled. If this flag is not specified,
               services are scheduled asynchronously, in the background. </dd>
           </dlentry>
         </dl></p>
+    </section>
+    <!--CC_2792, CC_3199_rebalance-->
+    <section>
+      <title>serviced service restart</title>
+      <p>By default, <ph keyref="nm-cc"/> schedules services in the background to restart to improve the speed of the operation, especially in
+        large-scale installations. However, if you use a script that depends on synchronous
+        scheduling that was used in earlier versions of <ph keyref="nm-cc"/>, specify the command
+        line option <cmdname>--sync</cmdname>.</p>
+      <p>Syntax:</p>
+      <codeblock>serviced service restart [<varname>commandOptions</varname>] \ 
+    {<varname>ServiceID</varname> | <varname>instanceID</varname>}</codeblock>
+      <p>Command option: <dl>
+<!-- CC_344 -->
+        <dlentry>
+            <dt>--auto-launch</dt>
+            <dd>Recursively schedules child services.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>--sync, -s</dt>
+            <dd>Schedules services synchronously. Specify this flag if a script expects the
+                <codeph>serviced service restart</codeph> command to wait to return until the
+              service operation has been scheduled. If this flag is not specified, services are
+              scheduled asynchronously, in the background. </dd>
+          </dlentry>
+          <dlentry>
+            <dt>--rebalance</dt>
+            <dd>Stops all instances of a service before restarting, instead of performing a serial
+              restart of multi-instance services.</dd>
+          </dlentry>
+        </dl>
+      </p>
     </section>
   </refbody>
 </reference>

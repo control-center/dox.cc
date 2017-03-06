@@ -18,18 +18,23 @@
           </thead>
           <tbody>
             <row>
-              <entry morerows="3">Windows 7 and 8.1</entry>
+              <entry>Windows 7 and 8.1</entry>
               <entry>Internet Explorer 11 (Enterprise mode only; compatibility mode is not
                 supported.)</entry>
             </row>
             <row>
-              <entry>Internet Explorer 10 (Compatibility mode is not supported.)</entry>
+              <entry morerows="3">Windows 10</entry>
+              <entry>Internet Explorer 11 (Enterprise mode only; compatibility mode is not
+                supported.)</entry>
             </row>
             <row>
-              <entry>Firefox 30 and above</entry>
+              <entry>Firefox 50 and later</entry>
             </row>
             <row>
-              <entry>Chrome 30 and above</entry>
+              <entry>Chrome 54 and later</entry>
+            </row>
+            <row>
+              <entry>Microsoft Edge</entry>
             </row>
             
             <row>

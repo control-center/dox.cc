@@ -4,9 +4,16 @@
   <title>Optional: Installing <ph keyref="nm-cc"/> without internet access</title>
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
+<<<<<<< HEAD
       keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to install <ph keyref="nm-cc"/>
       on a host that does not have internet access.</context>
+=======
+      keyref="cc-install-offline-offline"/> before performing this procedure.</prereq>
+    <context>Use this procedure to install <ph keyref="nm-cc"/> on a host that does not have
+      internet access. <note conkeyref="cc-feature-master-docker-install-off/avoid-depend-errors"
+      /></context>
+>>>>>>> develop
     <steps>
       
       <step>
