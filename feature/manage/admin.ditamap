@@ -4,6 +4,7 @@
    <title>Administration reference</title>
    <chapter keyref="cc-feature-manage-admin">
       <topicref keyref="cc-feature-manage-resize"/>
+      <topicref keyref="cc-feature-manage-NAT-overview"/>
       <topicref keyref="cc-feature-backup-overview">
          <topicref keyref="cc-feature-backup-best-practice"/>
          <topicref keyref="cc-feature-backup-backup"/>

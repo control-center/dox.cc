@@ -10,8 +10,8 @@
     <context>
       <p>Use this procedure to configure an NTP master server on the <ph keyref="nm-cc"/> master host.
       Perform this procedure only if the host does not have internet access.</p>
-      <note>On VMware vSphere guests, disable time synchronization between guest 
-        and host operating systems before performing this procedure.</note>
+      <note>On VMware vSphere guests, before performing this procedure, disable time synchronization
+        between guest and host operating systems.</note>
     </context>
     <steps>
       <step>
