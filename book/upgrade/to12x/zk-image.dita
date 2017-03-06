@@ -4,7 +4,7 @@
   <title>Updating the ZooKeeper image on ensemble nodes that do not have internet access</title>
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-          keyref="cc-install-offline-offline"/> before performing this procedure.</prereq>
+      keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to install a new Docker Engine image for
       ZooKeeper on ZooKeeper ensemble nodes that do not have internet access. 
       <ph keyref="nm-cc"/> pulls the required image from Docker Hub on

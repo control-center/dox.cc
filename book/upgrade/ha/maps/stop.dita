@@ -4,11 +4,12 @@
   <title>Stopping a <ph keyref="nm-cc"/> deployment</title>
   <refbody>
     <section>
-      <p>This chapter includes procedures for stopping both 
-        single-host and multi-host <ph keyref="nm-cc"/> deployments.</p>
+      <p>This chapter includes procedures for stopping a high-availability <ph keyref="nm-cc"/>
+        deployment.</p>
       <note>The procedures in this chapter assume that <ph keyref="nm-cc"/>
         is the only source of Docker Engine containers that are run
         on <ph keyref="nm-cc"/> cluster hosts.</note>
+      <p>Perform the procedures in this chapter in order.</p>
     </section>
   </refbody>
 </reference>

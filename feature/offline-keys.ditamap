@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in install/offline</title>
+ <title>Keys in offline</title>
   <topicgroup>
-    <keydef keys="cc-install-offline-download"
+    <keydef keys="cc-feature-offline-download"
             href="offline/download.dita"
             format="dita"
     />
-    <keydef keys="cc-install-offline-kernel"
-            href="offline/kernel.dita"
-            format="dita"
-    />
-    <keydef keys="cc-install-offline-offline"
+    <keydef keys="cc-feature-offline-offline"
             href="offline/offline.dita"
             format="dita"
     />
-    <keydef keys="cc-install-offline-other-packages"
+    <keydef keys="cc-feature-offline-other-packages"
             href="offline/other-packages.dita"
             format="dita"
     />
-    <keydef keys="cc-install-offline-stage-rpm"
+    <keydef keys="cc-feature-offline-stage-rpm"
             href="offline/stage-rpm.dita"
             format="dita"
     />
-    <keydef keys="cc-install-offline-stage-run-zk"
+    <keydef keys="cc-feature-offline-stage-run-zk"
             href="offline/stage-run-zk.dita"
             format="dita"
     />
-    <keydef keys="cc-install-offline-stage-run"
+    <keydef keys="cc-feature-offline-stage-run"
             href="offline/stage-run.dita"
             format="dita"
     />

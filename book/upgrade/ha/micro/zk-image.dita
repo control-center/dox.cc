@@ -22,7 +22,7 @@
             conkeyref="names/company"/> customer, perform this procedure.</li>
       </ul>
       <p><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-          keyref="cc-install-offline-offline"/> before performing this procedure.</p>
+        keyref="cc-feature-offline-offline"/> before performing this procedure.</p>
     </prereq>
     <context>Use this procedure to install a new Docker Engine image for
       ZooKeeper on ZooKeeper ensemble nodes that do not have internet access. 

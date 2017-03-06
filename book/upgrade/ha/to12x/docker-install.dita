@@ -53,7 +53,7 @@
             <stepxmp>
               <codeblock>uname -r</codeblock>
             </stepxmp>
-            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+            <stepresult>If the result is <codeph>3.10.0-327.36.2</codeph> or lower,
               perform the following substeps.</stepresult>
           </substep>
           <substep>
@@ -140,7 +140,8 @@ yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
         </stepxmp>
         <stepxmp><b>Without internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
+  docker-engine-<ph keyref="lo-version-docker"/></codeblock>
         </stepxmp>
       </step>
       

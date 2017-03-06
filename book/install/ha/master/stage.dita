@@ -5,7 +5,7 @@
   <taskbody>
     
     <prereq>Before performing this procedure, complete all of the steps in <xref
-      keyref="cc-install-ha-offline-offline"/>. In addition, verify that approximately 4GB of temporary space
+      keyref="cc-install-ha-maps-offline"/>. In addition, verify that approximately 4GB of temporary space
       is available on the file system where <filepath>/root</filepath> is located.</prereq>
     
     <context>This procedure adds files for offline installation to master nodes.

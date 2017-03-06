@@ -44,13 +44,21 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/micro-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/paths-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/micro-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/paths-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/to12x-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/topics-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
@@ -60,6 +68,7 @@
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/master-keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/offline-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
@@ -95,7 +104,7 @@
   <appendices>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
-    <appendix href="book/install/offline/offline.ditamap" format="ditamap"/>
+    <appendix href="feature/offline/offline.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
   </appendices>
   

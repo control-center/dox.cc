@@ -22,23 +22,23 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="cc-install-offline-download"/></entry>
+              <entry><xref keyref="cc-feature-offline-download"/></entry>
               <entry>A workstation with internet access</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-install-offline-stage-rpm"/></entry>
+              <entry><xref keyref="cc-feature-offline-stage-rpm"/></entry>
               <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-install-offline-stage-run"/></entry>
+              <entry><xref keyref="cc-feature-offline-stage-run"/></entry>
               <entry>The master host or both master nodes (high-availability deployments)</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-install-offline-stage-run-zk"/></entry>
+              <entry><xref keyref="cc-feature-offline-stage-run-zk"/></entry>
               <entry>Delegate hosts that are ZooKeeper ensemble nodes</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-install-offline-other-packages"/></entry>
+              <entry><xref keyref="cc-feature-offline-other-packages"/></entry>
               <entry>A RHEL/CentOS system with internet access</entry>
             </row>
           </tbody>
