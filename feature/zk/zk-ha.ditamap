@@ -4,11 +4,11 @@
    <title>Configure ZK</title>
   <chapter keyref="cc-feature-zk-zk">
     <topicref keyref="cc-feature-zk-about"/>
-    <topicref keyref="cc-feature-zk-nodes">
+    <topicref keyref="cc-feature-zk-nodes-ha">
       <topicref keyref="cc-feature-zk-vars"/>
       <topicref keyref="cc-feature-zk-example"/>
      </topicref>
-    <topicref keyref="cc-feature-zk-master"/>
+    <topicref keyref="cc-feature-zk-master-ha"/>
     <topicref keyref="cc-feature-zk-delegate1"/>
     <topicref keyref="cc-feature-zk-delegate2"/>
     <topicref keyref="cc-feature-zk-image">
