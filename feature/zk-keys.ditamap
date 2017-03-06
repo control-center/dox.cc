@@ -39,8 +39,16 @@
             href="zk/lib.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-zk-master-ha"
+            href="zk/master-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-zk-master"
             href="zk/master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-nodes-ha"
+            href="zk/nodes-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-zk-nodes"
