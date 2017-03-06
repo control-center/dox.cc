@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+<!-- CC_3332 -->
+  <title>Adding storage for thin pool metadata</title>
+  <taskbody>
+    <context>Use this procedure to check the size of the metadata portion of the LVM thin pool
+      device, and to resize if necessary.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the location of tenant volumes.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_VOLUMES_PATH' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the command returns a result, the location of tenant
+            volumes is the value of the <varname>SERVICED_VOLUMES_PATH</varname> 
+            variable. </choice>
+          <choice>If the command does not return a result, the location of tenant
+            volumes is the default value of <varname>SERVICED_VOLUMES_PATH</varname>,
+            <filepath>/opt/serviced/var/volumes</filepath>.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Identify the device of the <cmdname>serviced</cmdname> thin pool.</cmd>
+        <stepxmp>
+          <codeblock>ls /dev/mapper | grep serviced</codeblock>
+        </stepxmp>
+        <stepresult>Example result: <codeblock>serviced-serviced--pool
+serviced-serviced--pool_tdata
+serviced-serviced--pool_tmeta</codeblock>
+          <p>The first result is the thin pool device. The other results represent the data and
+            metadata portions of the device.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Identify the size of the metadata volume:</cmd>
+        <stepxmp>
+          <codeblock>serviced volume status</codeblock>
+        </stepxmp>
+        <info>The output displays the total, used, and available space for the data and metadata
+          portions of the device. </info>
+        <info>The metadata portion must be at least one percent of the data size.</info>
+      </step>
+      
+      <step>
+        <cmd>Extend the size of the metadata portion of the device. The following example command
+          adds 400 megabytes.</cmd>
+        <stepxmp>
+          <codeblock>lvextend -L+400M serviced/serviced-pool_tmeta</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>
