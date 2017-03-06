@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid"><!-- CC_3199 -->
+  <title>Rolling restart of services </title>
+  <shortdesc>To reduce or eliminate downtime for services with multiple instances, <ph
+      keyref="nm-cc"/> restarts instances of the service one at a time.</shortdesc>
+  <conbody>
+    <p>The <ph keyref="nm-cc"/> browser interface visually indicates when a service is restarting
+      and whether an instance is down during the restart. When a wide area network (WAN) outage
+      occurs, the rolling restart proceeds, with instances on the disconnected hosts restarting when
+      the WAN is restored.</p>
+    <p>The serial process applies to <i>restart</i> only. When stopping are starting services, <ph
+        keyref="nm-cc"/> starts and stops all instances immediately.</p>
+    <p>Optionally, you can specify that <ph keyref="nm-cc"/> stop all instances of a service before
+      restarting.</p>
+  </conbody>
+</concept>

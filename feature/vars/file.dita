@@ -383,12 +383,12 @@
           <dd>This setting is ignored when the operating system
             kernel version is less than 3.10.0-366.</dd>
         </dlentry>
-<!-- CC_2381, CC_3198. Do the following parameters need to be documented, or are they intended to be hidden from users? If they should be documented, where do they belong (i.e., what order?
-
+<!-- CC_2381, CC_3198, CC_3253. Until further notice, the following parameters are intended for internal use only, and are hidden from users. 
         <dlentry id="SERVICED_RUN_LEVEL_TIMEOUT">
           <dt><varname>SSERVICED_RUN_LEVEL_TIMEOUT</varname></dt>
-          <dd><b>Default</b>: <codeph>60</codeph> </dd> 
-          <dd>The number of seconds until ???? times out.</dd>
+          <dd><b>Default</b>: <codeph>600</codeph> </dd> 
+          <dd>The number of seconds to wait for services to start or stop before starting or 
+         stopping services at the next run level.</dd>
          </dlentry>
          
         <dlentry id="SERVICED_STORAGE_REPORT_INTERVAL">

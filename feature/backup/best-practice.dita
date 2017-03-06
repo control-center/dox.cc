@@ -24,8 +24,8 @@
             storage space usage on the master.</li>
           <li>Backups that were created using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
               keyref="nm-cc"/> 1.1.x or later. </li>
-          <li><!-- CC_3233 -->In <ph keyref="nm-cc"/> 1.2.x, you can restore backups that were
-            created using <ph keyref="nm-cc"/> 1.1.x.</li>
+          <li><!-- CC_3233 -->In <ph keyref="nm-cc"/> 1.2.x and later, you can restore backups that
+            were created using <ph keyref="nm-cc"/> 1.1.x or later.</li>
           <li>You can restore a backup to the system on which it was created or to an alternate
             system. When restoring a backup from one system to an alternate system, ensure that <ul
               id="ul_bj3_css_nx">
