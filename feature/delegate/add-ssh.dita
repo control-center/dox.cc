@@ -42,16 +42,19 @@
         <cmd>Add a delegate host to a resource pool.</cmd>
         <info>If the master and delegate host are configured for key-based access, the following
           command does not prompt you to add the delegate to the list of known hosts or to provide
-          the password of the remote user account.<p conkeyref="cc-feature-cli-serviced-host/NAT"
-          /></info>
-        <info>You can use a hostname or an IP address to identify a <ph keyref="nm-cc"/> cluster
-          host. If you use a hostname, all hosts in the cluster must be able to resolve it, either
-          through an entry in <filepath>/etc/hosts</filepath> or through a nameserver on the
-          network.</info>
-        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname
-          or IP address of a delegate host, and replace <varname>Resource-Pool</varname>
-          with the name of a resource pool:
-          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname></codeblock>
+          the password of the remote user account.</info>
+        <info id="host-or-ip">Use the hostname or IP address to identify a <ph keyref="nm-cc"/>
+          cluster host. If you use a hostname, all hosts in the cluster must be able to resolve it,
+          either through an entry in <filepath>/etc/hosts</filepath> or through a nameserver on the
+          network. In the following example, replace <varname>Hostname-Or-IP</varname> with the
+          hostname or IP address of a delegate host, and replace <varname>Resource-Pool</varname>
+          with the name of a resource pool.</info>
+        <info>
+          <p conkeyref="cc-feature-cli-serviced-host/NAT"/>
+        </info>
+        <stepxmp>
+          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname> \
+    <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/></codeblock>
         </stepxmp>
       </step>
     </steps>
