@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating <ph keyref="nm-cc"/> on the master host</title>
+  <taskbody>
+    <context>Use this procedure to update <ph keyref="nm-cc"/> on the
+      master host to version <ph keyref="lo-version-cc"/>.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Save the current <cmdname>serviced</cmdname> configuration file as a reference.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Rename the file.</cmd>
+            <stepxmp>
+              <codeblock>mv /etc/default/serviced /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp><b>With internet access:</b>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+        </stepxmp>
+        <stepxmp><b>Without internet access:</b>
+          <codeblock>yum clean all &#38;&#38; yum makecache fast
+yum install -y --enablerepo=zenoss-mirror \
+  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Make a backup copy of the new configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Copy the file.</cmd>
+            <stepxmp>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      
+      <step>
+        <cmd>Compare the new configuration file with the configuration file of the previous
+          release.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the configuration files to compare.</cmd>
+            <stepxmp>
+              <codeblock>ls -l /etc/default/serviced*</codeblock>
+            </stepxmp>
+            <stepresult>The original versions of the configuration files
+             should end with <codeph>orig</codeph>, but you may have to
+             compare the dates of the files.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Compare the new and previous configuration files.</cmd>
+            <stepxmp>Replace <varname>New-Version</varname> with the name of
+              the new configuration file, and replace <varname>Previous-Version</varname>
+              with the name of the previous configuration file:
+              <codeblock>diff <varname>New-Version</varname> <varname>Previous-Version</varname></codeblock>
+              <p>For example, to compare versions 1.2.0 and <ph keyref="lo-version-cc"/>,
+              enter the following command:
+                <codeblock>diff /etc/default/serviced-1.2.0-orig \
+  /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+              </p>
+            </stepxmp>
+          </substep>
+        </substeps>
+        <choices>
+          <choice>If the command returns no result, restore the backup of 
+            the previous configuration file.
+            <codeblock>cp /etc/default/serviced-pre-<ph keyref="lo-version-cc"/> \
+  /etc/default/serviced &#38;&#38; chmod 0644 /etc/default/serviced</codeblock>
+          </choice>
+          <choice>If the command returns a result, restore
+            the backup of the previous configuration file,
+            and then use the results to edit the restored version, if necessary or desired.
+            <codeblock>cp /etc/default/serviced-pre-<ph keyref="lo-version-cc"/> \
+  /etc/default/serviced &#38;&#38; chmod 0644 /etc/default/serviced</codeblock>
+            <p>For more information about configuring the master host,
+              see <xref keyref="cc-upgrade-to12x-vars"/>.</p>
+          </choice>
+        </choices>
+      </step>
+    </steps>
+    <postreq>
+      <ul>
+        <li>If you are upgrading a multi-host deployment, 
+          continue to the next procedure.</li>
+        <li>If you are upgrading a single-host deployment, 
+          start <ph keyref="nm-cc"/>.
+        <codeblock>systemctl start serviced</codeblock></li>
+      </ul>
+    </postreq>
+  </taskbody>
+</task>

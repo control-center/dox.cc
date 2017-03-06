@@ -5,7 +5,7 @@
    <appendix keyref="cc-feature-manage-manage-ha">
       <topicref keyref="cc-feature-manage-stop-ha">
          <topicref keyref="cc-feature-manage-stop-ha-master"/>
-         <topicref keyref="cc-feature-manage-stop-ha-delegate"/>
+         <topicref keyref="cc-feature-manage-stop-n-delegate"/>
       </topicref>
       <topicref keyref="cc-feature-manage-start-ha"/>
    </appendix>

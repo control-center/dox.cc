@@ -4,22 +4,70 @@
   <title>Stopping a master host node</title>
   <taskbody>
     <context>Use this procedure to stop the <ph keyref="nm-cc"/> 
-      service (<cmdname>serviced</cmdname>) on the master host in a multi-host deployment.</context>
+      service (<cmdname>serviced</cmdname>) on the master host in a high-availability deployment.</context>
     <steps>
       <step>
-        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Use the virtual hostname or virtual IP address of the 
+          high-availability cluster to log in to the <ph keyref="nm-cc"/> 
+          master node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the public hostname of the current node.</cmd>
+        <stepxmp>
+          <codeblock>uname -n</codeblock>
+        </stepxmp>
+        <stepresult>Make a note of which node (primary or secondary) is the
+          current node, for use in a subsequent step.</stepresult>
       </step>
       
       <step conkeyref="cc-feature-manage-stop-1/stop-app">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-cc">
-        <cmd></cmd>
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/> with the cluster management tool.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster standby --all</codeblock>
+        </stepxmp>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-containers">
-        <cmd></cmd>
+      <step>
+        <cmd>Monitor the status of cluster resources.</cmd>
+        <stepxmp>
+          <codeblock>watch pcs status</codeblock>
+        </stepxmp>
+        <stepresult>Monitor the status until all resources report <codeph>Stopped</codeph>. Resolve
+          any issues before continuing.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Ensure that no containers remain in the local repository.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the identifiers of all containers, running and exited.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the command returns no result, stop. This procedure is complete.</li>
+                <li>If the command returns a result, perform the following substep.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Remove all remaining containers.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Log in to the other master node <ph conkeyref="strings/login-root"/>,
+          and then repeat the preceding step.</cmd>
       </step>
       
     </steps>

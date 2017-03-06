@@ -5,7 +5,7 @@
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: If you 
       are creating a deployment without internet access, 
-      perform the steps in <xref keyref="cc-install-offline-offline"/>,
+      perform the steps in <xref keyref="cc-feature-offline-offline"/>,
       before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS

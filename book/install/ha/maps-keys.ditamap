@@ -19,5 +19,9 @@
             href="maps/config-master.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-maps-offline"
+            href="maps/offline.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>

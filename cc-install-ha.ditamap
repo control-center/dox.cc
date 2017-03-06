@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="2" modification="2"/>        
+        <vrm version="1" release="2" modification="3"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -44,7 +44,6 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/offline-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/ha/cluster-keys.ditamap" format="ditamap"/>
@@ -52,7 +51,6 @@
       <mapref href="book/install/ha/drbd-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/master-keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/ha/offline-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/plan-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/verify-keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -64,6 +62,7 @@
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/master-keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/offline-keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
       <mapref href="feature/zk-keys.ditamap" format="ditamap"/>

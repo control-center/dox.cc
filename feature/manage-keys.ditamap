@@ -23,10 +23,6 @@
             href="manage/intro-stop-start.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-NAT-overview"
-            href="manage/NAT-overview.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-manage-manage-ha"
             href="manage/manage-ha.dita"
             format="dita"
@@ -37,6 +33,10 @@
     />
     <keydef keys="cc-feature-manage-multiple"
             href="manage/multiple.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-NAT-overview"
+            href="manage/NAT-overview.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-pool-connection-timeout"
@@ -85,10 +85,6 @@
     />
     <keydef keys="cc-feature-manage-stop-1"
             href="manage/stop-1.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-ha-delegate"
-            href="manage/stop-ha-delegate.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-stop-ha-master"
