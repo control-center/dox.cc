@@ -15,6 +15,10 @@
             href="zk/delegate2.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-zk-enable-ha"
+            href="zk/enable-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-zk-enable"
             href="zk/enable.dita"
             format="dita"

@@ -15,7 +15,7 @@
       <topicref keyref="cc-feature-zk-image-pull"/>
       <topicref keyref="cc-feature-zk-image-import"/>
     </topicref>
-    <topicref keyref="cc-feature-zk-enable"/>
+    <topicref keyref="cc-feature-zk-enable-ha"/>
     <topicref keyref="cc-feature-zk-other"/>
    </chapter>
 </bookmap>
