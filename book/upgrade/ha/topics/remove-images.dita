@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Removing unused images</title>
+  <taskbody>
+    <context>Use this procedure to identify and remove unused <ph keyref="nm-cc"/> images.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the images associated with the
+        installed version of <cmdname>serviced</cmdname>.</cmd>
+        <stepxmp>
+          <codeblock>serviced version | grep Images</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v50 zenoss/isvcs-zookeeper:v7]</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Display the <cmdname>serviced</cmdname> images in the local repository.</cmd>
+        <stepxmp>
+          <codeblock>docker images | awk '/REPO|isvcs/'</codeblock>
+        </stepxmp>
+        <stepresult>Example result (edited to fit):
+          <codeblock>REPOSITORY                     TAG       IMAGE ID
+zenoss/serviced-isvcs          v40       88cd6c24cc82
+zenoss/serviced-isvcs          v50       0aab5a2123f2
+zenoss/isvcs-zookeeper         v3        46fa0a2fc4bf
+zenoss/isvcs-zookeeper         v7        0ff3b3117fb8</codeblock>
+          <p>The example result shows the current versions and one set
+            of previous versions. Your result may include additional
+          previous versions and will show different images IDs.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Remove unused images.</cmd>
+        <stepxmp>Replace <varname>Image-ID</varname> with the
+          image ID of an image for a previous version.
+          <codeblock>docker rmi <varname>Image-ID</varname></codeblock>
+        </stepxmp>
+        <info>Repeat this command for each unused image.</info>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

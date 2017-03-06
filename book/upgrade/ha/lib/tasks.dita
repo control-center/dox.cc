@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <taskbody>
+    <steps>
+      
+      <step id="os-upgrade-online">
+        <cmd>Upgrade the operating system, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which release is installed.</cmd>
+            <stepxmp>
+              <codeblock>cat /etc/redhat-release</codeblock>
+            </stepxmp>
+            <stepresult>If the result includes <codeph>7.0</codeph>, perform 
+              the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable the <cmdname>serviced</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Upgrade the operating system.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum update -y</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Restart the operating system.</cmd>
+            <stepxmp>
+              <codeblock>reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in to the <ph keyref="nm-cc"/> cluster host <ph conkeyref="strings/login-root"
+              />.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable the <cmdname>serviced</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="os-upgrade-offline">
+        <cmd>Upgrade the operating system, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which release is installed.</cmd>
+            <stepxmp>
+              <codeblock>cat /etc/redhat-release</codeblock>
+            </stepxmp>
+            <stepresult>If the result includes <codeph>7.0</codeph>, perform 
+              the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable the <cmdname>serviced</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Upgrade the operating system.</cmd>
+            <info>You may use a local mirror or other upgrade media.</info>
+          </substep>
+          <substep>
+            <cmd>Restart the operating system.</cmd>
+            <stepxmp>
+              <codeblock>reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in to the <ph keyref="nm-cc"/> cluster host <ph conkeyref="strings/login-root"
+              />.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable the <cmdname>serviced</cmdname> service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      
+      
+      <step id="update-kernel">
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+              perform the following substep.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Update the kernel or the operating system and then restart the host.</cmd>
+            <info>The following commands require internet access 
+              or a local mirror of operating system packages.</info>
+            <stepxmp><b>Update only the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+            <stepxmp><b>Update the operating system, including the kernel</b>:
+              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="docker-svc-def">
+        <cmd>Create a <cmdname>systemd</cmdname> override file 
+          for the Docker service definition.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create the override directory.</cmd>
+            <stepxmp>
+              <codeblock>mkdir -p /etc/systemd/system/docker.service.d</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create the override file.</cmd>
+            <stepxmp>
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/systemd/system/docker.service.d/docker.conf
+[Service]
+TimeoutSec=300
+EnvironmentFile=-/etc/sysconfig/docker
+ExecStart=
+ExecStart=/usr/bin/docker daemon \$OPTIONS -H fd:// 
+EOF</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <stepxmp>
+              <codeblock>systemctl daemon-reload</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="install-serviced">
+        <cmd>Install <ph keyref="nm-cc"/>.</cmd>
+        <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating a
+          device mapper thin pool.</info>
+        <stepxmp>
+          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+        </stepxmp>
+        <stepresult>The installation preserves the existing version 
+          of the <cmdname>serviced</cmdname> configuration
+          file, and installs the new one as 
+          <filepath>/etc/default/serviced.rpmnew</filepath>.</stepresult>
+      </step>
+      
+      <step id="serviced-cfg-files">
+        <cmd>Manage the <ph keyref="nm-cc"/> configuration files. </cmd>
+        <substeps>
+          <substep>
+            <cmd>Change directory to the configuration file directory.</cmd>
+            <stepxmp>
+              <codeblock>cd /etc/default</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Rename the existing configuration file, as a backup.</cmd>
+            <stepxmp>
+              <codeblock>mv serviced serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Rename the new configuration file, and then create a copy of it.</cmd>
+            <stepxmp>
+              <codeblock>mv serviced.rpmnew serviced.orig-<ph keyref="lo-version-cc"/>
+  cp serviced.orig-<ph keyref="lo-version-cc"/> serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="serviced-cfg-copy">
+        <cmd>Copy settings from the previous
+          <ph keyref="nm-cc"/> configuration 
+          file to the new one.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Identify the customized variables in the pre-upgrade configuration file.</cmd>
+            <stepxmp>
+              <codeblock>grep -E '^\b*SERVICED' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Open <filepath>/etc/default/serviced</filepath> with a text editor, and then 
+              customize the same variables that were customized in the pre-upgrade configuration file.</cmd>
+            <info>The following variables are deprecated, and are not needed in the new
+              configuration file:
+              <ul>
+                <li><varname>SERVICED_REGISTRY</varname></li>
+                <li><varname>SERVICED_VARPATH</varname></li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Add <varname>SERVICED_DOCKER_REGISTRY</varname> to the file.</cmd>
+            <info>The variable specifies the host and port at which the local Docker
+              registry is available.</info>
+            <stepxmp>
+              <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or 
+                IP address of the <ph keyref="nm-cc"/> master host:</p>
+              <codeblock>SERVICED_DOCKER_REGISTRY=<varname>Hostname-Or-IP</varname>:5000</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Save the file and close the text editor.</cmd>
+          </substep>
+        </substeps>
+      </step>      
+    </steps>
+  </taskbody>
+</task>

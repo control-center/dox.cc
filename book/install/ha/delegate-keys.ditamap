@@ -19,6 +19,10 @@
             href="delegate/download.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-delegate-ntp"
+            href="delegate/ntp.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-delegate-prep"
             href="delegate/prep.dita"
             format="dita"

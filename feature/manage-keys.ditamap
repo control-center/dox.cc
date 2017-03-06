@@ -87,10 +87,6 @@
             href="manage/stop-1.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-stop-ha-delegate"
-            href="manage/stop-ha-delegate.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-manage-stop-ha-master"
             href="manage/stop-ha-master.dita"
             format="dita"

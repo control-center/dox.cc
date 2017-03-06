@@ -4,12 +4,13 @@
   <title>Install delegate</title>
   <chapter keyref="cc-install-ha-delegate-delegate">
     <topicref keyref="cc-feature-delegate-verify"/>
-    <topicref keyref="cc-install-ha-delegate-download">
-      <topicref keyref="cc-install-offline-download"/>
-      <topicref keyref="cc-install-offline-stage-rpm"/>
-      <topicref keyref="cc-install-offline-stage-run-zk"/>
-    </topicref>
     <topicref keyref="cc-feature-delegate-storage"/>
+    <topicref keyref="cc-install-ha-delegate-download">
+      <topicref keyref="cc-feature-offline-download"/>
+      <topicref keyref="cc-feature-offline-stage-rpm"/>
+      <topicref keyref="cc-feature-offline-stage-run-zk"/>
+    </topicref>
+    <topicref keyref="cc-install-ha-delegate-ntp"/>
     <topicref keyref="cc-feature-master-device-naming"/>
     <topicref keyref="cc-feature-delegate-prep"/>
     <topicref keyref="cc-install-ha-master-docker-install"/>
