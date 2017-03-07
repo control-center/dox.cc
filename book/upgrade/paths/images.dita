@@ -25,14 +25,19 @@
           </thead>
           <tbody>
             <row>
+              <entry><ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/></entry>
+              <entry>zenoss/serviced-isvcs:v<ph keyref="lo-version-isvcs"/></entry>
+              <entry>zenoss/isvcs-zookeeper:v<ph keyref="lo-version-zk"/></entry>
+            </row>
+            <row>
               <entry><ph keyref="nm-cc"/> 1.2.3</entry>
-              <entry>zenoss/serviced-isvcs:v??</entry>
-              <entry>zenoss/isvcs-zookeeper:v?</entry>
+              <entry>zenoss/serviced-isvcs:v54</entry>
+              <entry>zenoss/isvcs-zookeeper:v8</entry>
             </row>
             <row>
               <entry><ph keyref="nm-cc"/> 1.2.2</entry>
-              <entry>zenoss/serviced-isvcs:v??</entry>
-              <entry>zenoss/isvcs-zookeeper:v?</entry>
+              <entry>zenoss/serviced-isvcs:v54</entry>
+              <entry>zenoss/isvcs-zookeeper:v8</entry>
             </row>
             <row>
               <entry><ph keyref="nm-cc"/> 1.2.1</entry>

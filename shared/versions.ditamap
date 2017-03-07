@@ -18,6 +18,20 @@
         </keywords>
       </topicmeta>
     </keydef>
+    <keydef keys="lo-version-isvcs">
+      <topicmeta>
+        <keywords>
+          <keyword>54</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef>
+    <keydef keys="lo-version-zk">
+      <topicmeta>
+        <keywords>
+          <keyword>8</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
     

@@ -56,12 +56,7 @@
             <stepresult>If the result is <codeph>3.10.0-327.36.2</codeph> or lower,
               perform the following substeps.</stepresult>
           </substep>
-          <substep>
-            <cmd>Disable automatic start of <cmdname>serviced</cmdname>.</cmd>
-            <stepxmp>
-              <codeblock>systemctl disable serviced</codeblock>
-            </stepxmp>
-          </substep>
+          
           <substep>
             <cmd>Update the kernel, and then restart the host.</cmd>
             <info>The following commands require internet access or a local mirror of operating
@@ -70,15 +65,8 @@
               <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
-          <substep>
-            <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Enable automatic start of <cmdname>serviced</cmdname>.</cmd>
-            <stepxmp>
-              <codeblock>systemctl enable serviced</codeblock>
-            </stepxmp>
-          </substep>
+          
+          
         </substeps>
       </step>
       
@@ -101,13 +89,30 @@
       
       <step>
         <cmd>Identify the name of the LVM thin pool for Docker Engine.</cmd>
-        <stepxmp>
-          <codeblock>docker info 2>/dev/null | grep 'Pool Name'</codeblock>
-        </stepxmp>
-        <stepresult>Example result:
-          <codeblock> Pool Name: docker-docker--pool</codeblock>
-          <p>Record the name for use in a subsequent step.</p>
-        </stepresult>
+        <substeps>
+          <substep>
+            <cmd>Start the Docker Engine service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Display the name of the LVM thin pool for Docker Engine.</cmd>
+            <stepxmp>
+              <codeblock>docker info 2>/dev/null | grep 'Pool Name'</codeblock>
+            </stepxmp>
+            <stepresult>Example result:
+              <codeblock> Pool Name: docker-docker--pool</codeblock>
+              <p>Record the name for use in a subsequent step.</p>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Stop the Docker Engine service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop docker</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
 
       <step>
@@ -115,13 +120,6 @@
         <stepxmp>
           <codeblock>test -f /etc/sysconfig/docker \
   &#38;&#38; mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step>
-        <cmd>Stop the Docker Engine service.</cmd>
-        <stepxmp>
-          <codeblock>systemctl stop docker</codeblock>
         </stepxmp>
       </step>
       
