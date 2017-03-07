@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Optional: Loading image files</title>
+  <title>Loading image files</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
-    <context>Use this procedure to load images into the local repository
-      on a host that does not have internet access.</context>
+    <context>Use this procedure to load images into the local repository.</context>
     <steps>
       
       <step>
@@ -21,17 +18,19 @@
       </step>
       
       <step>
-        <cmd>Extract the images.</cmd>
+        <cmd>Extract the internal services image.</cmd>
         <stepxmp>
-          <codeblock>for image in install-*.run
-do
-echo -n "$image: "
-eval ./$image
-done</codeblock>
+          <codeblock>./install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeblock>
         </stepxmp>
-        <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>
-          key and then <b>Return</b> key, the current image is extracted, but the next one is
-          not.</info>
+        <info>At the prompt, press <b>y</b>.</info>
+      </step>
+      
+      <step>
+        <cmd>Extract the ZooKeeper image.</cmd>
+        <stepxmp>
+          <codeblock>./install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeblock>
+        </stepxmp>
+        <info>At the prompt, press <b>y</b>.</info>
       </step>
       
       <step>
@@ -49,6 +48,12 @@ done</codeblock>
         </stepxmp>
       </step>
       
+      <step>
+        <cmd>Stop the Docker Engine service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
     </steps>
   </taskbody>
 </task>

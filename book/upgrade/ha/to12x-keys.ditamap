@@ -23,6 +23,10 @@
             href="to12x/docker-config.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-to12x-docker-images-zk"
+            href="to12x/docker-images-zk.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-to12x-docker-images"
             href="to12x/docker-images.dita"
             format="dita"

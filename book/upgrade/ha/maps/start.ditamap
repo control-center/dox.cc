@@ -2,12 +2,14 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Start</title>
-   <appendix keyref="cc-upgrade-maps-start">
-      <topicref keyref="cc-upgrade-to12x-start-master"/>
-      <topicref keyref="cc-upgrade-to12x-start-delegate">
-        <topicref keyref="cc-upgrade-to12x-start-delegate-ssh"/>
-        <topicref keyref="cc-upgrade-to12x-start-delegate-local"/>
-      </topicref>
+   <appendix keyref="cc-upgrade-ha-maps-start">
+     
+     <topicref keyref="cc-upgrade-ha-to12x-start-master"/>
+     <topicref keyref="cc-upgrade-to12x-start-delegate">
+       <topicref keyref="cc-upgrade-to12x-start-delegate-ssh"/>
+       <topicref keyref="cc-upgrade-to12x-start-delegate-local"/>
+     </topicref>
      <topicref keyref="cc-upgrade-topics-start-zk"/>
+     <topicref keyref="cc-feature-manage-start-ha"/>
    </appendix>
 </bookmap>

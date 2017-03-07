@@ -56,7 +56,6 @@
             <stepresult>If the result is <codeph>3.10.0-327.36.2</codeph> or lower,
               perform the following substeps.</stepresult>
           </substep>
-          
           <substep>
             <cmd>Update the kernel, and then restart the host.</cmd>
             <info>The following commands require internet access or a local mirror of operating
@@ -65,8 +64,6 @@
               <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
-          
-          
         </substeps>
       </step>
       
@@ -132,13 +129,8 @@
       
       <step>
         <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>.</cmd>
-        <stepxmp><b>With internet access:</b>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
-        </stepxmp>
-        <stepxmp><b>Without internet access:</b>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
+        <stepxmp>
+          <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
   docker-engine-<ph keyref="lo-version-docker"/></codeblock>
         </stepxmp>
       </step>
