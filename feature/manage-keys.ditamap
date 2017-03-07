@@ -111,5 +111,9 @@
             href="manage/update-opentsdb-ttl.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-resize-thin-pool-meta"
+            href="manage/resize-thin-pool-meta.dita"
+            format="dita"
+          />
    </topicgroup>
 </map>

@@ -8,8 +8,14 @@
       upgrade process. The following list provides an overview of the changes
       that are addressed during this upgrade:</p>
       
-      <ul>
-        <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
+      <ul><!-- CC_3332 -->
+        <li>This release includes a new emergency shutdown feature. When storage becomes critically
+          low, <ph keyref="nm-cc"/> initiates an emergency shutdown while sufficient resources
+          remain to take action to avoid data loss. Support for this feature requires at least 3GB
+          of free space in the thin pool for data and metadata. The upgrade chapter includes
+          procedures for checking the metadata volume size, and, if necessary, resizing it. </li>
+        
+          <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
           <codeph>3.10.0-327.22.2.el7.x86_64</codeph>. The kernel is available for RHEL/CentOS 7.1
           and 7.2. For optimal results, the 7.2 release is recommended, and the instructions for
           checking and updating the kernel include an option to update the operating system at the
