@@ -7,9 +7,8 @@
       service (<cmdname>serviced</cmdname>) on the master host in a high-availability deployment.</context>
     <steps>
       <step>
-        <cmd>Use the virtual hostname or virtual IP address of the 
-          high-availability cluster to log in to the <ph keyref="nm-cc"/> 
-          master node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -45,29 +44,33 @@
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
+            <cmd>Start the Docker Engine service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
             <cmd>Display the identifiers of all containers, running and exited.</cmd>
             <stepxmp>
               <codeblock>docker ps -qa</codeblock>
             </stepxmp>
-            <stepresult>
-              <ul>
-                <li>If the command returns no result, stop. This procedure is complete.</li>
-                <li>If the command returns a result, perform the following substep.</li>
-              </ul>
+            <stepresult>If the command returns a result, enter the following command:
+              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
             </stepresult>
           </substep>
           <substep>
-            <cmd>Remove all remaining containers.</cmd>
+            <cmd>Stop the Docker Engine service.</cmd>
             <stepxmp>
-              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
+              <codeblock>systemctl stop docker</codeblock>
             </stepxmp>
           </substep>
         </substeps>
       </step>
       
       <step>
-        <cmd>Log in to the other master node <ph conkeyref="strings/login-root"/>,
-          and then repeat the preceding step.</cmd>
+        <cmd>To ensure that no containers remain in both Docker Engine repositories, log in to the
+          other master node <ph conkeyref="strings/login-root"/>, and then perform the preceding
+          step.</cmd>
       </step>
       
     </steps>

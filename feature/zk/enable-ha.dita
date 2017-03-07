@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting a ZooKeeper ensemble</title>
+  <taskbody>
+    <context>Use this procedure to start a ZooKeeper ensemble.
+      
+      <p>The window of time for starting a ZooKeeper ensemble is 
+        relatively short. The goal of this procedure is to restart
+        <ph keyref="nm-cc"/> on each ensemble node at about the 
+        same time, so that each node can participate in electing
+        the leader.</p>
+    </context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the primary node of the high-availability cluster
+          <ph conkeyref="strings/login-root"/>.</cmd>
+        <info>To ensure you are logging in to the primary node, use
+          the virtual hostname (<varname>HA-Virtual-Name</varname>) or
+          virtual IP address (<varname>HA-Virtual-IP</varname>) of the 
+          high-availability cluster.</info>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, log in to the second node of the ZooKeeper ensemble
+            (<varname>Delegate-A</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a different window, log in to the third node of the ZooKeeper ensemble
+            (<varname>Delegate-B</varname>) <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, put the high-availability cluster in standby mode.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster standby --all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, monitor the status of cluster resources.</cmd>
+        <stepxmp>
+          <codeblock>watch pcs status</codeblock>
+        </stepxmp>
+        <stepresult>Monitor the status until all resources report <codeph>Stopped</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Start the ZooKeeper ensemble nodes.</cmd>
+        <substeps>
+          <substep>
+            <cmd>On the primary node, start the high-availability cluster.</cmd>
+            <stepxmp>
+              <codeblock>pcs cluster unstandby --all</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>On delegate host that are ZooKeeper ensemble nodes, stop and start <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop serviced &#38;&#38; systemctl start serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, check the status of the ZooKeeper ensemble.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Attach to the container of the ZooKeeper service.</cmd>
+            <stepxmp>
+              <codeblock>docker exec -it serviced-isvcs_zookeeper /bin/bash</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Query the master host and identify its role in the ensemble.</cmd>
+            <stepxmp>Replace <varname>Master</varname> with the hostname or IP address of the master host:
+              <codeblock>{ echo stats; sleep 1; } | nc <varname>Master</varname> 2181 | grep Mode</codeblock>
+            </stepxmp>
+            <stepresult>The result includes <codeph>leader</codeph> or
+              <codeph>follower</codeph>.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Query delegate host A and identify its role in the ensemble.</cmd>
+            <stepxmp>Replace <varname>Delegate-A</varname> with the hostname or IP address of delegate host A:
+              <codeblock>{ echo stats; sleep 1; } | nc <varname>Delegate-A</varname> 2181 | grep Mode</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Query delegate host B and identify its role in the ensemble.</cmd>
+            <stepxmp>Replace <varname>Delegate-B</varname> with the hostname or IP address of delegate host B:
+              <codeblock>{ echo stats; sleep 1; } | nc <varname>Delegate-B</varname> 2181 | grep Mode</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Detach from the container of the ZooKeeper service.</cmd>
+            <stepxmp>
+              <codeblock>exit</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

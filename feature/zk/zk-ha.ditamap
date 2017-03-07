@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Configure ZK</title>
+  <chapter keyref="cc-feature-zk-zk">
+    <topicref keyref="cc-feature-zk-about"/>
+    <topicref keyref="cc-feature-zk-nodes-ha">
+      <topicref keyref="cc-feature-zk-vars"/>
+      <topicref keyref="cc-feature-zk-example"/>
+     </topicref>
+    <topicref keyref="cc-feature-zk-master-ha"/>
+    <topicref keyref="cc-feature-zk-delegate1"/>
+    <topicref keyref="cc-feature-zk-delegate2"/>
+    <topicref keyref="cc-feature-zk-image">
+      <topicref keyref="cc-feature-zk-image-pull"/>
+      <topicref keyref="cc-feature-zk-image-import"/>
+    </topicref>
+    <topicref keyref="cc-feature-zk-enable-ha"/>
+    <topicref keyref="cc-feature-zk-other"/>
+   </chapter>
+</bookmap>
+

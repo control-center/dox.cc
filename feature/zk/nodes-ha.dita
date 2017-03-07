@@ -28,18 +28,18 @@
           <tbody>
             <row>
               <entry><codeph>node1</codeph></entry>
-              <entry><varname>Master</varname></entry>
-              <entry>The IP address or hostname of the master host.</entry>
+              <entry><varname>HA-Virtual-IP</varname> or <varname>HA-Virtual-Name</varname></entry>
+              <entry>Virtual IP address or hostname of the high-availability cluster</entry>
             </row>
             <row>
               <entry><codeph>node2</codeph></entry>
               <entry><varname>Delegate-A</varname></entry>
-              <entry>The IP address or hostname of delegate host A.</entry>
+              <entry>IP address or hostname of delegate host A</entry>
             </row>
             <row>
               <entry><codeph>node3</codeph></entry>
               <entry><varname>Delegate-B</varname></entry>
-              <entry>The IP address or hostname of delegate host B.</entry>
+              <entry>IP address or hostname of delegate host B</entry>
             </row>
           </tbody>
         </tgroup>
