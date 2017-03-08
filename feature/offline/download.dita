@@ -78,7 +78,7 @@
           <ul>
             <li>Copy all files to the master host or both master nodes (high-availability
               deployments).</li>
-            <li>Copy the RHEL/CentOS RPM and the <ph keyref="nm-cc"/> RPM to all delegate hosts.</li>
+            <li>Copy the RHEL/CentOS RPM file and the <ph keyref="nm-cc"/> RPM file to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper
               (<filepath>install-zenoss-isvcs-zookeeper:v*.run</filepath>)
               to delegate hosts that are ZooKeeper ensemble nodes.</li>

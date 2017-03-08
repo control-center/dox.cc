@@ -11,6 +11,10 @@
             href="offline/offline.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-offline-other-packages-up"
+            href="offline/other-packages-up.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-offline-other-packages"
             href="offline/other-packages.dita"
             format="dita"
