@@ -31,7 +31,8 @@
         <info>For example, exclude <filepath>hbase-master</filepath>. Replace
             <varname>Tenant-ID</varname> with your tenant
           identifier.<codeblock>serviced backup /opt/serviced/var/backups \
-  --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/hbase-master</codeblock></info>
+      <!-- update from Hong: " instead of "--exclude /opt/serviced/var/volumes/Tenant-ID/hbase-master" -->
+        --exclude hbase-master</codeblock></info>
       </step>
     </steps>
     <postreq id="postreq_a4c_xkl_sx">If you use automated backups, edit the scripts to exclude
