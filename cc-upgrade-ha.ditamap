@@ -43,7 +43,6 @@
       <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
     <topicgroup>
-      <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/micro-keys.ditamap" format="ditamap"/>
@@ -53,6 +52,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/agent-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/micro-keys.ditamap" format="ditamap"/>
@@ -106,6 +106,7 @@
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/offline/offline.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/ha/agent/agent.ditamap" format="ditamap"/>
   </appendices>
   
 </bookmap>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Identifying the available version of the resource agents</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>Permission to download files from the <xref keyref="url-leapfile">File Portal - Download
+            Zenoss Enterprise Software</xref> site. You may request permission by filing a ticket at
+            <ph conkeyref="names/support-site"/>.</li>
+      </ul>
+    </prereq>
+    <context>Use this procedure to identify the available version of the Pacemaker resource agents
+      for <ph keyref="nm-cc"/>, and to download its package file, if necessary.</context>
+    <steps>
+      <step>
+        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile">File Portal - Download Zenoss 
+          Enterprise Software</xref> site.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in with the account provided by <ph conkeyref="names/support"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the version number of the resource agents package file.</cmd>
+        <info>The file name is
+            <filepath>serviced-resource-agents-<varname>Version</varname>.x86_64.rpm</filepath>.</info>
+        <choices>
+          <choice>If the version number of the package file is greater than the installed version
+            number, download the package file.</choice>
+          <choice>If the version number of the package file is equal to the installed version
+            number, log out of the portal site.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Use a secure copy program to copy the package file to both master host nodes.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>
