@@ -155,13 +155,13 @@ serviced-storage create-thin-pool --size=50% serviced zenoss</codeblock>
         volume group with the same name as the thin pool. The following example yields the same
         result as the previous, except the name of the volume group is <codeph>docker</codeph>
         instead of <codeph>zenoss</codeph>:</p>
-      <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sdb /dev/sdc
-serviced-storage create-thin-pool --size=50% serviced docker</codeblock>
+      <codeblock>serviced-storage create-thin-pool docker /dev/sdb /dev/sdc
+serviced-storage create-thin-pool serviced docker</codeblock>
       <p>Create thin pools on separate block devices:</p>
-      <codeblock>serviced-storage create-thin-pool --size=50G docker /dev/sdb
-serviced-storage create-thin-pool --size=200G serviced /dev/sdc</codeblock>
+      <codeblock>serviced-storage create-thin-pool docker /dev/sdb
+serviced-storage create-thin-pool serviced /dev/sdc</codeblock>
       <p>Create thin pools on separate partitions:</p>
-      <codeblock>serviced-storage create-thin-pool --size=50% docker /dev/sdb1
+      <codeblock>serviced-storage create-thin-pool docker /dev/sdb1
 serviced-storage create-thin-pool serviced /dev/sdc3</codeblock>
       <p>Increase the size of the <cmdname>serviced</cmdname> LVM thin pool, and then increase the
         size of a <cmdname>serviced</cmdname> tenant device.</p>
