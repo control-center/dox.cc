@@ -43,7 +43,7 @@ done</codeblock>
       </step>
       
       <step importance="optional">
-        <cmd>Delete the archive files, if desired.</cmd>
+        <cmd>Delete the archive files.</cmd>
         <stepxmp>
           <codeblock>rm -i ./install-*.run</codeblock>
         </stepxmp>

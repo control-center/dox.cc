@@ -29,11 +29,9 @@
       <step>
         <cmd>Exclude multiple tenant volumes from the backup.</cmd>
         <info>For example, exclude <filepath>mariadb-events</filepath> and
-            <filepath>zeneventserver</filepath>. Replace <varname>Tenant-ID</varname> with your
-          tenant
-          identifier.<codeblock>serviced backup /opt/serviced/var/backups \
-  --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/mariadb-events \
-  --exclude opt/serviced/var/volumes/<varname>Tenant-ID</varname>/zeneventserver</codeblock></info>
+            <filepath>zeneventserver</filepath>. <!-- update from Hong-->
+          <codeblock>serviced backup /opt/serviced/var/backups --exclude mariadb-events \ 
+   --exclude zeneventserver</codeblock></info>
       </step>
     </steps>
   </taskbody>

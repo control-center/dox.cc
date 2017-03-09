@@ -15,5 +15,9 @@
             href="topics/start-zk.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-topics-remove-old-mirror"
+            href="topics/remove-old-mirror.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>

@@ -9,9 +9,9 @@
       and whether an instance is down during the restart. When a wide area network (WAN) outage
       occurs, the rolling restart proceeds, with instances on the disconnected hosts restarting when
       the WAN is restored.</p>
-    <p>The serial process applies to <i>restart</i> only. When stopping are starting services, <ph
+    <p>The serial process applies to <i>restart</i> only. When stopping and starting services, <ph
         keyref="nm-cc"/> starts and stops all instances immediately.</p>
-    <p>Optionally, you can specify that <ph keyref="nm-cc"/> stop all instances of a service before
-      restarting.</p>
+    <p>Optionally, you can specify that <ph keyref="nm-cc"/> is to stop all instances of a service
+      before restarting.</p>
   </conbody>
 </concept>

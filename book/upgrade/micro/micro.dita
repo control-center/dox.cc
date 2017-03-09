@@ -4,8 +4,8 @@
   <title>Upgrading 1.2.x to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
-      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/>
-        1.2.x system to <ph keyref="lo-version-cc"/>.</p>
+      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/> 1.2.x system to
+          <ph keyref="lo-version-cc"/>.</p>
       <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
         a deployment that does not have internet access, perform the steps in <xref
           keyref="cc-feature-offline-offline"/> before performing the procedures in this chapter.</note>

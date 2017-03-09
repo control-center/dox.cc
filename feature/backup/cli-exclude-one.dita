@@ -28,10 +28,9 @@
       </step>
       <step>
         <cmd>Exclude the tenant volume from the backup.</cmd>
-        <info>For example, exclude <filepath>hbase-master</filepath>. Replace
-            <varname>Tenant-ID</varname> with your tenant
-          identifier.<codeblock>serviced backup /opt/serviced/var/backups \
-  --exclude /opt/serviced/var/volumes/<varname>Tenant-ID</varname>/hbase-master</codeblock></info>
+        <info>For example, exclude <filepath>hbase-master</filepath>.
+          <!-- update from Hong -->
+          <codeblock>serviced backup /opt/serviced/var/backups --exclude hbase-master</codeblock></info>
       </step>
     </steps>
     <postreq id="postreq_a4c_xkl_sx">If you use automated backups, edit the scripts to exclude

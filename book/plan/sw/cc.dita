@@ -12,6 +12,9 @@
       <li>Support for database services and other persistent services</li>
       <li>Encrypted communications among all services and containers</li>
       <li>Delegate host authentication to prevent unauthorized system access</li>
+      <li>Storage monitoring and emergency shutdown of services to minimize the risk of data
+        corruption</li>
+      <li>Rolling restart of services to reduce downtime of multi-instance services</li>
     </ul>
    </conbody>
 </concept>
