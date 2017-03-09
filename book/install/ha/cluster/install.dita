@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring cluster management</title>
+  <title>Installing cluster management</title>
   <taskbody>
-    <context>Perform this procedure to install and configure the cluster management software.</context>
+    <context>Perform this procedure to install the cluster management software.</context>
     <steps>
       <step>
         <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>

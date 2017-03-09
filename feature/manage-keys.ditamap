@@ -51,6 +51,10 @@
             href="manage/remove-orphan-snaps.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-resize-thin-pool-meta"
+            href="manage/resize-thin-pool-meta.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-resize"
             href="manage/resize.dita"
             format="dita"

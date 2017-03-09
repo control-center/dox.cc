@@ -12,20 +12,6 @@
       </step>
       
       <step>
-        <cmd>Determine whether <codeph>serviced</codeph> is configured to start
-          when the system starts.</cmd>
-        <stepxmp>
-          <codeblock>systemctl is-enabled serviced</codeblock>
-        </stepxmp>
-        <choices>
-          <choice>If the result is <codeph>enabled</codeph>, proceed to the next step.</choice>
-          <choice>If the result is <codeph>disabled</codeph>, enter the following command:
-          <codeblock>systemctl enable serviced</codeblock>
-          </choice>
-        </choices>
-      </step>
-      
-      <step>
         <cmd>Verify the settings in the <cmdname>serviced</cmdname> configuration file.</cmd>
         <stepxmp>
           <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
@@ -48,7 +34,7 @@
         <cmd>Obtain the host ID of the master host.</cmd>
         <substeps>
           <substep>
-            <cmd>Display the host IDs of all cluster hosts.</cmd>
+            <cmd>Display the host IDs of* all cluster hosts.</cmd>
             <stepxmp>
               <codeblock>serviced host list | cut -c-85</codeblock>
             </stepxmp>

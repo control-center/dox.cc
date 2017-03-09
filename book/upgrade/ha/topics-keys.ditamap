@@ -7,6 +7,14 @@
             href="topics/best-practices.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-topics-download-delegate"
+            href="topics/download-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-topics-download"
+            href="topics/download.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-topics-remove-images"
             href="topics/remove-images.dita"
             format="dita"
