@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Offline upgrade</title>
+    <appendix keyref="cc-feature-offline-offline">
+       <topicref keyref="cc-feature-offline-download"/>
+      <topicref keyref="cc-upgrade-topics-remove-old-mirror"/>
+        <topicref keyref="cc-feature-offline-stage-rpm"/>
+       <topicref keyref="cc-feature-offline-stage-run"/>
+       <topicref keyref="cc-feature-offline-stage-run-zk"/>
+   </appendix>
+</bookmap>

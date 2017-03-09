@@ -95,7 +95,7 @@
   <appendices>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
-    <appendix href="feature/offline/offline.ditamap" format="ditamap"/>
+    <appendix href="feature/offline/offline-upgrade.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
   </appendices>
   
