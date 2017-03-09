@@ -26,10 +26,9 @@
         <cmd>Create an LVM thin pool for application data.</cmd>
         <info>For more information about the <cmdname>serviced-storage</cmdname> command,
           see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
-        <stepxmp>Replace <varname>Value</varname> with the fixed or relative amount of space to use
-          for the thin pool; and replace <varname>Storage</varname> with the paths of one or more
+        <stepxmp>Replace <varname>Storage</varname> with the paths of one or more
           block devices or partitions, or the name of an LVM volume group:
-          <codeblock>serviced-storage create-thin-pool --size=<varname>Value</varname> serviced <varname>Storage</varname></codeblock>
+          <codeblock>serviced-storage create-thin-pool serviced <varname>Storage</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result is the device mapper name of the thin pool, which always
           starts with <codeph>/dev/mapper</codeph>. Record the name for use in the next
