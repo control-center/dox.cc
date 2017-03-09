@@ -35,9 +35,8 @@
           <codeblock>yum clean all &#38;&#38; yum makecache fast
 yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
-        <stepxmp><b>Without internet access:</b>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install -y --enablerepo=zenoss-mirror \
+        <stepxmp><b>Without internet access:</b><!-- cc_3377 -->
+          <codeblock>yum install -y --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>
@@ -93,13 +92,11 @@ yum install -y --enablerepo=zenoss-mirror \
             <codeblock>cp /etc/default/serviced-pre-<ph keyref="lo-version-cc"/> \
   /etc/default/serviced &#38;&#38; chmod 0644 /etc/default/serviced</codeblock>
           </choice>
-          <choice>If the command returns a result, restore
-            the backup of the previous configuration file,
-            and then use the results to edit the restored version, if necessary or desired.
-            <codeblock>cp /etc/default/serviced-pre-<ph keyref="lo-version-cc"/> \
+          <choice>If the command returns a result, restore the backup of the previous configuration
+            file, and then optionally, use the results to edit the restored version. <codeblock>cp /etc/default/serviced-pre-<ph keyref="lo-version-cc"/> \
   /etc/default/serviced &#38;&#38; chmod 0644 /etc/default/serviced</codeblock>
-            <p>For more information about configuring a delegate host,
-              see <xref keyref="cc-upgrade-to12x-vars"/>.</p>
+            <p>For more information about configuring a delegate host, see <xref
+                keyref="cc-upgrade-to12x-vars"/>.</p>
           </choice>
         </choices>
       </step>

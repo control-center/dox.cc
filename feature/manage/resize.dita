@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Adding space to a tenant device</title>
+  <title>Adding space to a device</title>
   <taskbody>
-    <context><ph keyref="nm-cc"/> creates one virtual device in its LVM thin pool for each tenant
-      (application) it manages, and stores tenant data in the virtual device. The initial size of a
-      tenant virtual device is determined by the value of the
-        <varname>SERVICED_DM_BASESIZE</varname> configuration variable when
-        <cmdname>serviced</cmdname> is started for the first time. Use this procedure to increase
-      the size of an existing tenant virtual device.</context>
+ <!-- updates for cc_3375 in upgrade guide -->
+    <context id="context_fqy_zwh_2z"><ph keyref="nm-cc"/> uses a virtual device in its LVM thin pool
+      for application data and metadata. For each tenant (application) it manages, there is one
+      virtual device in which it stores tenant data. </context>
+    <context id="context_gqy_zwh_2z">In the thin pool, <ph keyref="nm-cc"/> requires at least 3GB of
+      free data space and at least 62MB of free metadata space. It requires at least 3GB of free
+      space in each application's tenant volume. Use this procedure to check the amount of free
+      space and if necessary, increase the size of an existing virtual device.</context>
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -20,14 +22,9 @@
         <stepxmp>
           <codeblock>serviced volume status</codeblock>
         </stepxmp>
-        <info>The result includes detailed information about the <cmdname>serviced</cmdname>
-          thin pool and about each tenant virtual device.</info>
-        <choices>
-          <choice>If the thin pool has enough space to support both a larger tenant device and the
-            snapshots your environment requires, proceed to the next step.</choice>
-          <choice>If the thin pool does not have enough space, perform the 
-          following substeps.</choice>
-        </choices>
+        <info>The result includes detailed information about the <cmdname>serviced</cmdname> thin
+          pool and about the thin pool and each tenant virtual device. If the thin pool does not
+          have enough space, perform the following substeps.</info>
         <substeps>
           <substep>
             <cmd>Identify the volume group to which the <cmdname>serviced</cmdname> thin pool belongs.</cmd>
@@ -43,9 +40,12 @@
               volume group that contains the <cmdname>serviced</cmdname> thin pool:
               <codeblock>vgs --no-headings --options=vg_free <varname>Volume-Group-Name</varname></codeblock>
             </stepxmp>
-            <stepresult>If the volume group contains the amount of free space you wish to add the
-              <cmdname>serviced</cmdname> thin pool, proceed to the next substep. Otherwise,
-              add physical or logical storage to the volume group.</stepresult>
+          </substep>
+          <substep>
+            <cmd>If the volume group contains the amount of free space you want to add the
+                <cmdname>serviced</cmdname> thin pool, proceed to the next substep. If not, before
+              continuing with this procedure, add physical or logical storage to the volume
+              group.</cmd>
           </substep>
           <substep>
             <cmd>Add storage to the <cmdname>serviced</cmdname> thin pool.</cmd>

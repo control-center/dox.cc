@@ -4,6 +4,7 @@
    <title>Offline</title>
     <appendix keyref="cc-feature-offline-offline">
        <topicref keyref="cc-feature-offline-download"/>
+      <topicref keyref="cc-upgrade-topics-remove-old-mirror"/>
        <topicref keyref="cc-feature-offline-stage-rpm"/>
        <topicref keyref="cc-feature-offline-stage-run"/>
        <topicref keyref="cc-feature-offline-stage-run-zk"/>

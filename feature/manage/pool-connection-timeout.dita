@@ -20,14 +20,13 @@
       </step>
       
       <step importance="optional">
-        <cmd>Set the connection timeout value of a resource pool, if desired.</cmd>
-        <info>This command accepts the following units identifiers:
-        <sl>
-          <sli><codeph>ms</codeph> (milliseconds)</sli>
-          <sli><codeph>s</codeph> (seconds)</sli>
-          <sli><codeph>m</codeph> (minutes)</sli>
-          <sli><codeph>h</codeph> (hours)</sli>
-        </sl>
+        <cmd>Set the connection timeout value of a resource pool.</cmd>
+        <info>This command accepts the following units identifiers: <sl>
+            <sli><codeph>ms</codeph> (milliseconds)</sli>
+            <sli><codeph>s</codeph> (seconds)</sli>
+            <sli><codeph>m</codeph> (minutes)</sli>
+            <sli><codeph>h</codeph> (hours)</sli>
+          </sl>
         </info>
         <stepxmp>Replace <varname>Pool-ID</varname> with a resource pool identifier, and replace
             <varname>Timeout+Units</varname> with an integer followed by a units identifier:

@@ -40,7 +40,7 @@
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/build.ditamap" format="ditamap"/>
-      <mapref href="shared/versions.ditamap" format="ditamap" />
+      <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
@@ -69,6 +69,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
@@ -84,7 +85,6 @@
       <navtitle>Upgrading 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/front/minor.dita"/>
-    <chapter href="book/upgrade/maps/prep.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/delegate.ditamap" format="ditamap"/>
