@@ -31,12 +31,14 @@
           <choice>If the version number of the package file is greater than the installed version
             number, download the package file.</choice>
           <choice>If the version number of the package file is equal to the installed version
-            number, log out of the portal site.</choice>
+            number, stop. The installed version is up-to-date.</choice>
         </choices>
       </step>
       
       <step>
-        <cmd>Use a secure copy program to copy the package file to both master host nodes.</cmd>
+        <cmd>Use a secure copy program to copy the package file to each master host node.</cmd>
+        <info>The recommended storage location for the
+          package file is <filepath>/opt/zenoss-repo-mirror</filepath>.</info>
       </step>
     </steps>
   </taskbody>

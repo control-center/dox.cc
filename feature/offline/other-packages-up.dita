@@ -134,10 +134,21 @@
       </step>
       
       <step>
-        <cmd>On both nodes, stop the PCS daemon.</cmd>
-        <stepxmp>
-          <codeblock>systemctl stop pcsd.service</codeblock>
-        </stepxmp>
+        <cmd>On both nodes, stop the cluster software.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Stop the PCS daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop pcsd.service</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Stop DRBD.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm down all</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>
@@ -159,10 +170,7 @@
       </step>
       
       <step>
-        <cmd>On both nodes, install the Pacemaker resource agent for <ph keyref="nm-cc"/>.</cmd>
-        <info>Pacemaker uses resource agents (scripts) to implement a standardized interface for
-          managing arbitrary resources in a cluster. <ph conkeyref="names/company"/> provides a
-          Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host.</info>
+        <cmd>On both nodes, install the Pacemaker resource agents for <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
           <codeblock>yum install -y --disablerepo=\* \
   /opt/zenoss-repo-mirror/serviced-resource-agents-*.x86_64.rpm</codeblock>
@@ -170,10 +178,21 @@
       </step>
       
       <step>
-        <cmd>On both nodes, stop the PCS daemon.</cmd>
-        <stepxmp>
-          <codeblock>systemctl stop pcsd.service</codeblock>
-        </stepxmp>
+        <cmd>On both nodes, start the cluster software.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start DRBD.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm up all</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start the PCS daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start pcsd.service</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
     </steps>

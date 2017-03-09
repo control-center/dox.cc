@@ -28,8 +28,8 @@
       
       <step>
         <cmd>On both nodes, install the latest version of the resource agents package.</cmd>
-        <stepxmp>For example, if the package file is located in the <filepath>/tmp</filepath>
-          directory: <codeblock>yum install -y -/tmp/serviced-resource-agents-*.rpm</codeblock>
+        <stepxmp>For example, if the package file is located in the <filepath>/opt/zenoss-repo-mirror</filepath>
+          directory: <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-resource-agents-*.rpm</codeblock>
         </stepxmp>
       </step>
       
