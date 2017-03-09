@@ -4,42 +4,41 @@
   <title>New features</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> 1.2.0 introduces enhancements in the following functional areas:</p>
+      <p><ph keyref="nm-cc"/> 1.3.0 introduces enhancements in the following functional areas:</p>
       <ul id="ul_nqp_3xf_xx">
-        <li><b>Security</b><p><ph keyref="nm-cc"/> generates keys used by delegate hosts to
-            authenticate. Flags control the level of access by authorized hosts to system functions,
-            the TCP multiplexer, the REST API, and the network file system (NFS). For more
-            information, see the "Configuring and starting delegate hosts" chapter in the <cite
-              conkeyref="pubs/cite-install"/> and the "Updating hosts for authentication" section in
-            the <cite conkeyref="pubs/cite-upgrade"/>.</p></li>
-        <li><b>Performance</b><p>A single <ph keyref="nm-cc"/> master supports up to 100 collector
-            pools and their associated services. Service providers or enterprises with many remote
-            sites can have a collector for each customer or remote site that their application
-            instance manages.</p><p><ph keyref="nm-cc"/> now stops/starts/restarts services
-            asynchronously, scheduling them in the background, which improves the speed of these
-            operations, especially in large-scale environments. If you need synchronous scheduling
-            in a script, you can specify a new command line flag <codeph>--sync</codeph> or
-              <codeph>-s</codeph> when invoking <codeph>serviced service
-              [stop|start|restart]</codeph>.</p></li>
-        <li><b>Storage</b><p><ph keyref="nm-cc"/> introduces a new <codeph>serviced-storage</codeph>
-            command as part of a required storage management utility for creating the Docker thin
-            pool and creating and managing the <ph keyref="nm-cc"/> application data thin pool. You
-            can now create thin pools in an existing volume group as well as creating a thin pool
-            against devices with a limited size, allowing expansion without adding more physical
-            disks. For more information, see the "Storage management utility" appendix in the <cite
-              conkeyref="pubs/cite-install"/>.</p></li>
-        <li><b>Browser interface</b><p>The following improvements have been introduced to the <ph
-              keyref="nm-cc"/> browser interface:<ul id="ul_fdk_hjg_xx">
-              <li>Table searching and filtering</li>
-              <li>Improved service tree loading. The tree starts out collapsed and can be expanded
-                as needed.</li>
-              <li>User's time zone can be set.</li>
-              <li>WAN timeout value can be set on the Resource Pool Detail page. This value is the
-                time the system will wait for disconnected worker nodes to rejoin a particular pool
-                before moving services to another host in the pool. For more information, see the
-                  <codeph>serviced pool</codeph> command in the <cite conkeyref="pubs/cite-ref"
-                />.</li>
-            </ul></p></li>
+        <li><b>Emergency shutdown</b><p>For services in a resource pool with DFS access, <ph
+              keyref="nm-cc"/> monitors storage usage levels and trends. Using collected data, it
+            predicts when a service will exhaust storage space. Data corruption can result if thin
+            pool or metadata volume space is exhausted. If <ph keyref="nm-cc"/> projects that the
+            service is likely to exhaust available storage space in a pre-determined window, it will
+            initiate an automatic emergency shutdown of the service, while enough space is still
+            available to perform recovery operations. Support for this feature requires at least 3GB
+            of free space in the thin pool for data and metadata. For more information on this
+            feature, including how to view current storage utilization and how to recover from an
+            emergency shutdown, see the <cite conkeyref="pubs/cite-ref"
+              />.<note><!--CC3384 and CC3363-->Before upgrading to <ph keyref="nm-cc"/> 1.3.0, you
+                <i>must</i> ensure you have sufficient free space in both the thin pool metadata
+              volume and the thin pool data volume. The thin pool metadata volume should be at least
+              1% of the size of the thin pool data volume (if created by an earlier version of
+                <codeph>serviced-storage</codeph>, it may be smaller). In addition, you must have at
+              least 3GB of available space in the thin pool data volume, as this is the minimum
+              buffer before an emergency shutdown will commence. If less than 3GB is available, you
+              must provision additional storage or <codeph>serviced</codeph> will fail to start
+              after the upgrade. See the <cite conkeyref="pubs/cite-upgrade"/> for
+            details.</note></p></li>
+        <li><b>Rolling restart</b><p><ph keyref="nm-cc"/> restarts instances of multi-instance
+            services one at a time. This rolling restart reduces or eliminates downtime for these
+            services. In a WAN outage, the rolling restart proceeds, and instances on disconnected
+            hosts restart when the WAN is restored.</p></li>
+        <li><b>Graceful shutdown</b><p>Improved service startup, restart, and shutdown order to
+            optimize startup times and perform normal shutdowns more gracefully. When taking a
+            snapshot, all services pause while the snapshot is taken, and then return to their prior
+            state. Requests to start, stop, or restart a service during the snapshot are delayed
+            until after the snapshot.</p></li>
+        <li><b>NAT support</b><p><ph keyref="nm-cc"/> supports the use of network address
+            translation (NAT). When you add a delegate host, you specify the hostname or IP address
+            and port for the NAT device, and then transfer host keys to the delegate hosts and
+            register them.</p></li>
       </ul>
     </section>
     
