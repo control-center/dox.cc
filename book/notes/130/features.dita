@@ -26,10 +26,11 @@
               must provision additional storage or <codeph>serviced</codeph> will fail to start
               after the upgrade. See the <cite conkeyref="pubs/cite-upgrade"/> for
             details.</note></p></li>
-        <li><b>Rolling restart</b><p><ph keyref="nm-cc"/> restarts instances of multi-instance
+        <li><b>Rolling restart</b><p><ph keyref="nm-cc"/> now restarts instances of multi-instance
             services one at a time. This rolling restart reduces or eliminates downtime for these
-            services. In a WAN outage, the rolling restart proceeds, and instances on disconnected
-            hosts restart when the WAN is restored.</p></li>
+            services on Restart, such as following a ZenPack install or upgrade. In a WAN outage,
+            the rolling restart proceeds, and instances on disconnected hosts restart when the WAN
+            is restored.</p></li>
         <li><b>Graceful shutdown</b><p>Improved service startup, restart, and shutdown order to
             optimize startup times and perform normal shutdowns more gracefully. When taking a
             snapshot, all services pause while the snapshot is taken, and then return to their prior
