@@ -14,7 +14,7 @@
       <step>
         <cmd>Search for the existing repository mirror:</cmd>
         <stepxmp>
-          <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}')</codeblock>
+          <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}'</codeblock>
         </stepxmp>
       </step>
       <step>
