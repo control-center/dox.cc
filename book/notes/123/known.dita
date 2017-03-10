@@ -49,7 +49,7 @@
             <entry>Open</entry>
           </row>
           <row>
-            <entry>CC-2806</entry>
+            <entry>CC-2791</entry>
             <entry>There is a 20 second delay to view logs the first time after
                 <codeph>serviced</codeph> starts or restarts.</entry>
             <entry>Open</entry>
