@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading and updating cluster software</title>
+  <title>Optional: Downloading and updating cluster software</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>
@@ -10,13 +10,8 @@
         <li>A secure network copy program.</li>
       </ul>
     </prereq>
-    <context>High-availability deployments rely on the following non-standard operating system
-      packages: <ul>
-        <li>For Distributed Replicated Block Device (DRBD): <codeph>drbd84-utils</codeph> and
-            <codeph>kmod-drbd84</codeph>.</li>
-        <li>For Pacemaker/Corosync: <codeph>pacemaker</codeph>, <codeph>corosync</codeph>, and
-            <codeph>pcs</codeph>.</li>
-      </ul>
+    <context>Use this procedure to update Distributed Replicated Block Device (DRBD)
+      and Pacemaker/Corosync, if desired. 
       <p>Follow these steps to download and install the packages on master host nodes:</p>
     </context>
     <steps>
