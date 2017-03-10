@@ -49,11 +49,17 @@
           </substep>
           <substep>
             <cmd>Add storage to the <cmdname>serviced</cmdname> thin pool.</cmd>
-            <stepxmp>Replace <varname>Size</varname> with the amount of space to 
-              add to the <cmdname>serviced</cmdname> thin pool, and replace
-              <varname>Volume-Group-Name</varname> with the name of the
-              volume group that contains the <cmdname>serviced</cmdname> thin pool:
+            <stepxmp>Replace <varname>Size</varname> with the amount of space to add to the
+                <cmdname>serviced</cmdname> thin pool, and replace
+                <varname>Volume-Group-Name</varname> with the name of the volume group that contains
+              the <cmdname>serviced</cmdname> thin pool.
               <codeblock>lvextend -L+<varname>Size</varname>G <varname>Volume-Group-Name</varname>/serviced-pool</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Add storage to the <cmdname>serviced</cmdname> metadata volume:</cmd>
+            <stepxmp>Replace <varname>Size</varname> with the amount of space to add.
+              <codeblock>lvextend -L+<varname>Size</varname>M serviced/serviced-pool_tmeta</codeblock>
             </stepxmp>
           </substep>
         </substeps>
