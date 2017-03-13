@@ -77,8 +77,9 @@
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
-  <!-- 
+  
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/ha/maps/prep.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
@@ -88,14 +89,13 @@
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/micro/micro.ditamap" format="ditamap"/>
   </part>
-   -->
+  
   
   <part>
     <topicmeta>
       <navtitle>Upgrading 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/ha/front/minor.dita"/>
-    <chapter href="book/upgrade/ha/maps/prep.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/delegate.ditamap" format="ditamap"/>
