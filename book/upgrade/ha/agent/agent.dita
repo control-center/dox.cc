@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Upgrading only the Pacemaker resource agents</title>
+  <conbody>
+    <p>This appendix includes procedures for upgrading the Pacemaker resource agents for <ph
+        keyref="nm-cc"/> in a high-availability deployment.</p>
+  </conbody>
+</concept>

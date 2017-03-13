@@ -43,7 +43,6 @@
       <mapref href="shared/versions.ditamap" format="ditamap" />
     </topicgroup>
     <topicgroup>
-      <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/micro-keys.ditamap" format="ditamap"/>
@@ -53,6 +52,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/agent-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/maps-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/micro-keys.ditamap" format="ditamap"/>
@@ -77,6 +77,7 @@
     <topicref href="book/upgrade/front/about.dita"/>
   </frontmatter>
   
+  <!-- 
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
   
   <part>
@@ -87,6 +88,7 @@
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/micro/micro.ditamap" format="ditamap"/>
   </part>
+   -->
   
   <part>
     <topicmeta>
@@ -102,10 +104,11 @@
   </part>
   
   <appendices>
-    <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/ha/agent/agent.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
-    <appendix href="feature/offline/offline.ditamap" format="ditamap"/>
-    <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <!-- <appendix href="feature/offline/offline.ditamap" format="ditamap"/> -->
+    <!-- <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/> -->
+    <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>
   
 </bookmap>

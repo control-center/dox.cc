@@ -165,7 +165,7 @@
         see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
         <stepxmp>Replace <varname>Storage</varname> with the paths of one or more block 
           devices or partitions, or the name of an LVM volume group:
-          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Storage</varname></codeblock>
+          <codeblock>serviced-storage create-thin-pool docker <varname>Storage</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result is the device mapper name of the thin pool,
           which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
@@ -505,6 +505,12 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
             <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
               a text editor.</cmd>
           </substep>
@@ -533,6 +539,12 @@ EOF</codeblock>
             <stepxmp>
               <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
   docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable docker</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -726,6 +738,12 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
               <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
+          <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
         </substeps>
       </step>
       
@@ -761,6 +779,12 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
             <stepxmp>
               <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
             </stepxmp>
           </substep>
         </substeps>

@@ -4,9 +4,15 @@
  <title>Master</title>
   <chapter keyref="cc-upgrade-ha-maps-master">
     <topicref keyref="cc-feature-master-device-naming"/>
+    <topicref keyref="cc-upgrade-ha-topics-download">
+      <topicref keyref="cc-feature-offline-download"/>
+      <topicref keyref="cc-feature-offline-stage-rpm"/>
+      <topicref keyref="cc-feature-offline-stage-run"/>
+      <topicref keyref="cc-feature-offline-other-packages-up"/>
+    </topicref>
     <topicref keyref="cc-upgrade-ha-to12x-docker-install"/>
-    <topicref keyref="cc-upgrade-to12x-docker-config"/>
-    <topicref keyref="cc-upgrade-to12x-docker-images"/>
-    <topicref keyref="cc-upgrade-to12x-cc-master"/>
+    <topicref keyref="cc-upgrade-ha-to12x-docker-config"/>
+    <topicref keyref="cc-upgrade-ha-to12x-docker-images"/>
+    <topicref keyref="cc-upgrade-ha-to12x-cc-master"/>
  </chapter>
 </bookmap>

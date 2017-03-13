@@ -4,9 +4,14 @@
  <title>Delegate</title>
   <chapter keyref="cc-upgrade-maps-delegate">
     <topicref keyref="cc-feature-master-device-naming"/>
-    <topicref keyref="cc-upgrade-to12x-docker-install"/>
-    <topicref keyref="cc-upgrade-to12x-docker-config"/>
-    <topicref keyref="cc-upgrade-to12x-cc-delegate"/>
-    <topicref keyref="cc-upgrade-to12x-zk-image"/>
+    <topicref keyref="cc-upgrade-ha-topics-download-delegate">
+      <topicref keyref="cc-feature-offline-download"/>
+      <topicref keyref="cc-feature-offline-stage-rpm"/>
+      <topicref keyref="cc-feature-offline-stage-run-zk"/>
+    </topicref>
+    <topicref keyref="cc-upgrade-ha-to12x-docker-install"/>
+    <topicref keyref="cc-upgrade-ha-to12x-docker-config"/>
+    <topicref keyref="cc-upgrade-ha-to12x-cc-delegate"/>
+    <topicref keyref="cc-upgrade-ha-to12x-zk-image"/>
  </chapter>
 </bookmap>

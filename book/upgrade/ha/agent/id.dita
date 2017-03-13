@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Identifying the Pacemaker resource agents version</title>
+  <taskbody>
+    <context>Use this procedure to identify the installed version of the 
+      Pacemaker resource agents for <ph keyref="nm-cc"/>.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, log in to the secondary 
+          node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, identify the installed version of the 
+          Pacemaker resource agents for <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum info serviced-resource-agents | grep Version</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+    <postreq>Perform the next procedure to determine the available
+    version of the resource agents.</postreq>
+  </taskbody>
+</task>
