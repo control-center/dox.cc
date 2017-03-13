@@ -5,8 +5,8 @@
   <taskbody>
  <!-- updates for cc_3375 in upgrade guide -->
     <context>
-      <p><ph keyref="nm-cc"/> uses an LVM thin pool to store tenant (application) data. Each thin
-        pool includes a separate storage area for data and a separate storage area for metadata. In
+      <p><ph keyref="nm-cc"/> uses an LVM thin pool to store tenant (application) data. LVM thin
+        pools include a separate storage area for data and a separate storage area for metadata. In
         addition, <ph keyref="nm-cc"/> maintains separate virtual devices for each tenant it
         manages.</p>
       
@@ -36,8 +36,8 @@
           <codeblock>serviced volume status</codeblock>
         </stepxmp>
         <info>The result includes detailed information about the <cmdname>serviced</cmdname> thin
-          pool and about the thin pool and each tenant virtual device. If the thin pool does not
-          have enough space, perform the following substeps.</info>
+          pool and each tenant virtual device. If the free space is insufficient, perform the
+          following substeps.</info>
         <substeps>
           <substep>
             <cmd>Identify the volume group to which the <cmdname>serviced</cmdname> thin pool belongs.</cmd>
@@ -61,7 +61,8 @@
               group.</cmd>
           </substep>
           <substep>
-            <cmd>Add storage to the <cmdname>serviced</cmdname> thin pool.</cmd>
+            <cmd>Add storage to the data storage area of the <cmdname>serviced</cmdname> thin
+              pool.</cmd>
             <stepxmp>Replace <varname>Size</varname> with the amount of space to add to the
                 <cmdname>serviced</cmdname> thin pool, and replace
                 <varname>Volume-Group-Name</varname> with the name of the volume group that contains
@@ -69,15 +70,13 @@
               <codeblock>lvextend -L+<varname>Size</varname>G <varname>Volume-Group-Name</varname>/serviced-pool</codeblock>
             </stepxmp>
           </substep>
-          <!-- Added by RP for CC-3383, backed out by GE. I'm not so sure we should
-               include this...I'd like to see developer confirmation it's needed first.
           <substep>
-            <cmd>Add storage to the <cmdname>serviced</cmdname> metadata volume:</cmd>
+            <cmd>Add storage to the metadata storage area of the <cmdname>serviced</cmdname> thin
+              pool:</cmd>
             <stepxmp>Replace <varname>Size</varname> with the amount of space to add.
               <codeblock>lvextend -L+<varname>Size</varname>M serviced/serviced-pool_tmeta</codeblock>
             </stepxmp>
           </substep>
-           -->
         </substeps>
       </step>
       
