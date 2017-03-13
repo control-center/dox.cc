@@ -23,10 +23,8 @@
       <title>Upgrading from 1.1.x to 1.3.0</title>
       <ul>
         <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
-            <codeph>3.10.0-327.22.2.el7.x86_64</codeph>. The kernel is available for RHEL/CentOS 7.1
-          and 7.2. For optimal results, the 7.2 release is recommended, and the instructions for
-          checking and updating the kernel include an option to update the operating system at the
-          same time. To prevent dependency issues, updating the kernel or operating system is a step
+          <codeph>3.10.0-327.36.2</codeph>. For optimal results, the most recent kernel is recommended.
+          To prevent dependency issues, updating the kernel or operating system is a step
           in the Docker Engine update procedure.</li>
         <li>The <cmdname>serviced</cmdname> configuration file includes many new variables since
           version 1.1.1, and some deprecated variables. <ph conkeyref="strings/fmi-int"/>
