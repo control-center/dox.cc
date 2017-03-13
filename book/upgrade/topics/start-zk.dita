@@ -56,7 +56,7 @@
           <substep>
             <cmd>Attach to the container of the ZooKeeper service.</cmd>
             <stepxmp>
-              <codeblock>serviced service attach serviced-isvcs_zookeeper</codeblock>
+              <codeblock>docker exec -it serviced-isvcs_zookeeper /bin/bash</codeblock>
             </stepxmp>
           </substep>
           <substep>

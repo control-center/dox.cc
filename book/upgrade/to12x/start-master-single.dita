@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Starting and registering the master host</title>
+  <title>Starting and registering the master host (single-host deployment)</title>
   <taskbody>
-    <context>Use this procedure to start the master host after upgrading <ph keyref="nm-cc"/> to
-      version <ph keyref="lo-version-cc"/>. This procedure also includes steps to create and
-      register the authentication credentials the master needs for its role as a delegate.</context>
+    <context>Use this procedure to start the master host in a single-host deployment after upgrading
+        <ph keyref="nm-cc"/> to version <ph keyref="lo-version-cc"/>. This procedure also includes
+      steps to create and register the authentication credentials the master needs for its role as a
+      delegate.</context>
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -67,17 +68,7 @@
           <codeblock>serviced key reset --register <varname>Host-ID</varname></codeblock>
         </stepxmp>
       </step>
-      
-      <step importance="optional">
-        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
-        <info>This step is only required for multi-host deployments.</info>
-        <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
-        </stepxmp>
-        <stepresult>The result is a list of 3 or 5 hosts, separated by 
-          the comma character (<codeph>&#44;</codeph>). The master host
-          is always a node in the ZooKeeper ensemble.</stepresult>
-      </step>
+     
     </steps>
   </taskbody>
 </task>

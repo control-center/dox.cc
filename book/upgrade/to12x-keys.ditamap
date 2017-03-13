@@ -51,8 +51,12 @@
             href="to12x/start-delegate.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-to12x-start-master"
-            href="to12x/start-master.dita"
+    <keydef keys="cc-upgrade-to12x-start-master-multi"
+            href="to12x/start-master-multi.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-to12x-start-master-single"
+            href="to12x/start-master-single.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-to12x-vars-new"
