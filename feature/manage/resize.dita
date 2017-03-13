@@ -4,13 +4,26 @@
   <title>Adding space to a device</title>
   <taskbody>
  <!-- updates for cc_3375 in upgrade guide -->
-    <context id="context_fqy_zwh_2z"><ph keyref="nm-cc"/> uses a virtual device in its LVM thin pool
-      for application data and metadata. For each tenant (application) it manages, there is one
-      virtual device in which it stores tenant data. </context>
-    <context id="context_gqy_zwh_2z">In the thin pool, <ph keyref="nm-cc"/> requires at least 3GB of
-      free data space and at least 62MB of free metadata space. It requires at least 3GB of free
-      space in each application's tenant volume. Use this procedure to check the amount of free
-      space and if necessary, increase the size of an existing virtual device.</context>
+    <context>
+      <p><ph keyref="nm-cc"/> uses an LVM thin pool to store tenant (application) data. Each thin
+        pool includes a separate storage area for data and a separate storage area for metadata. In
+        addition, <ph keyref="nm-cc"/> maintains separate virtual devices for each tenant it
+        manages.</p>
+      
+      <p>To ensure consistency, <ph keyref="nm-cc"/> requires the following, minimum 
+        free space in its thin pool:
+      <ul>
+        <li>3GB in the data storage area</li>
+        <li>62MB in the metadata storage area</li>
+        <li>3GB for each tenant volume</li>
+      </ul>So, if <ph keyref="nm-cc"/> is managing two applications, it requires a minimum of
+        62MB of free space in the metadata storage area and 6GB of storage in the data
+        storage area.</p>
+
+      <p>Use this procedure to check the amount of free space and if necessary, increase the size of an
+        existing virtual device.</p>
+    </context>
+    
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -56,12 +69,15 @@
               <codeblock>lvextend -L+<varname>Size</varname>G <varname>Volume-Group-Name</varname>/serviced-pool</codeblock>
             </stepxmp>
           </substep>
+          <!-- Added by RP for CC-3383, backed out by GE. I'm not so sure we should
+               include this...I'd like to see developer confirmation it's needed first.
           <substep>
             <cmd>Add storage to the <cmdname>serviced</cmdname> metadata volume:</cmd>
             <stepxmp>Replace <varname>Size</varname> with the amount of space to add.
               <codeblock>lvextend -L+<varname>Size</varname>M serviced/serviced-pool_tmeta</codeblock>
             </stepxmp>
           </substep>
+           -->
         </substeps>
       </step>
       
