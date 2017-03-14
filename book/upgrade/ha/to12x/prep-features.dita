@@ -14,9 +14,16 @@
           shutdown</i> of applications and services while sufficient resources remain to take action
         to avoid data loss. Support for this feature requires at least 3GB free data space in the
         thin pool, at least 62MB of free metadata space in the thin pool, and at least 3GB of free
-        space in each application's tenant volume. Before you upgrade, ensure that the DFS is
+        space in each application's tenant volume. Before you upgrade, ensure that the thin pool is
         adequate and if necessary, resize. <ph conkeyref="strings/fmi-int"/>
         <xref keyref="cc-feature-manage-resize"/>.</p>
+      
+      <p>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
+          keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
+        /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two
+        database services. The services requires additional RAM and CPU resources. For more
+        information about the amount of RAM and CPU resources to add to master host nodes, please
+        contact your <ph conkeyref="names/company"/> representative.</p>
     </section>
     <section>
       <title>Upgrading from 1.1.x to 1.3.0</title>

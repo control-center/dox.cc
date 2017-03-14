@@ -124,8 +124,8 @@
       </step>
       
       <step>
-        <cmd>In a separate window, log in to the secondary node <ph conkeyref="strings/login-root"
-        />.</cmd>
+        <cmd>In a separate window, log in to the secondary 
+          node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -173,7 +173,38 @@
       </step>
       
       <step>
-        <cmd>On both nodes, start the cluster software.</cmd>
+        <cmd>Determine which node is the primary node.</cmd>
+        <stepxmp>
+          <codeblock>pcs status</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, start the cluster software.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start DRBD.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm up all</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start DRBD and assign the primary role.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm up all &#38;&#38; drbdadm primary --force serviced-dfs</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start the PCS daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start pcsd.service</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the secondary node, start the cluster software.</cmd>
         <substeps>
           <substep>
             <cmd>Start DRBD.</cmd>

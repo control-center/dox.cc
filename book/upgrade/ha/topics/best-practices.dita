@@ -24,8 +24,6 @@
           avoid mistakes and anticipate needs; nevertheless, the instructions may be incorrect or
           inadequate for some requirements or environments.</li>
         
-        <li>Download and stage files for upgrades. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-offline-offline"/>.</li>
       </ol>
       
     </section>

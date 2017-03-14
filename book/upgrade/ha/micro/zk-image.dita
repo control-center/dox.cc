@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Updating the ZooKeeper image on ensemble nodes that do not have internet access</title>
+  <title>Updating the ZooKeeper image on ensemble nodes</title>
   <taskbody>
     <prereq>Before performing this procedure, review the information in the following table to
       determine whether it is necessary. <table conkeyref="cc-upgrade-paths-images/micro">
@@ -16,10 +16,9 @@
         </tgroup>
       </table>
       <ul>
-        <li>If the tags of the ZooKeeper images are the same for the micro upgrade you are
-          performing, skip this procedure.</li>
-        <li>If the tags of the ZooKeeper images are not the same, and you are a <ph
-            conkeyref="names/company"/> customer, perform this procedure.</li>
+        <li>If the tags of the ZooKeeper images are the same for the upgrade you are performing,
+          skip this procedure.</li>
+        <li>If the tags of the ZooKeeper images are not the same, perform this procedure.</li>
       </ul>
       <p><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
         keyref="cc-feature-offline-offline"/> before performing this procedure.</p>

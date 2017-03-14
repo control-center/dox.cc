@@ -15,6 +15,26 @@
       <step>
         <cmd>Move the RPM files to <filepath>/tmp</filepath>.</cmd>
       </step>
+      
+      <step importance="optional">
+        <cmd>Remove the existing repository mirror, if necessary.</cmd>
+        <info>This step is not necessary during installations, only upgrades.</info>
+        <substeps>
+          <substep>
+            <cmd>Search for the existing repository mirror.</cmd>
+            <stepxmp>
+              <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Remove the mirror.</cmd>
+            <stepxmp>Replace <varname>Old-Mirror</varname> with the name of the
+              <ph conkeyref="names/company"/> repository mirror returned in the previous substep:
+              <codeblock>yum remove -y <varname>Old-Mirror</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
             
       <step>
         <cmd>Install the repository mirror.</cmd>
