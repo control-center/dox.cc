@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p><ph keyref="nm-cc"/> 1.3.0 introduces enhancements in the following functional areas:</p>
-      <ul id="ul_nqp_3xf_xx">
+      <ul>
         <li><b>Emergency shutdown</b><p>For services in a resource pool with DFS access, <ph
               keyref="nm-cc"/> monitors storage usage levels and trends. Using collected data, it
             predicts when a service will exhaust storage space. Data corruption can result if thin
@@ -25,7 +25,12 @@
               buffer before an emergency shutdown will commence. If less than 3GB is available, you
               must provision additional storage or <codeph>serviced</codeph> will fail to start
               after the upgrade. See the <cite conkeyref="pubs/cite-upgrade"/> for
-            details.</note></p></li>
+            details.</note></p>
+          
+          <note><ph conkeyref="names/company"/> applications may require additional steps
+          to prepare to use this release. For more information, refer to the documentation
+          for your application.</note>
+        </li>
         <li><b>Rolling restart</b><p><ph keyref="nm-cc"/> now restarts instances of multi-instance
             services one at a time. This rolling restart reduces or eliminates downtime for these
             services on Restart, such as following a ZenPack install or upgrade. In a WAN outage,

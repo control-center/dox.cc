@@ -15,9 +15,13 @@
           shutdown</i> of applications and services while sufficient resources remain to take action
         to avoid data loss. Support for this feature requires at least 3GB free data space in the
         thin pool, at least 62MB of free metadata space in the thin pool, and at least 3GB of free
-        space in each application's tenant volume. Before you upgrade, ensure that the DFS is
-        adequate and if necessary, resize. <ph conkeyref="strings/fmi-int"/>
+        space in each application's tenant volume. Before you upgrade, ensure that 
+        the <cmdname>serviced</cmdname> thin pool is adequate and if necessary, resize it. 
+        <ph conkeyref="strings/fmi-int"/>
         <xref keyref="cc-feature-manage-resize"/>.</p>
+      <note><ph conkeyref="names/company"/> applications may require additional steps
+        to prepare to use this release. For more information, refer to the documentation
+        for your application.</note>
     </section>
     <section>
       <title>Upgrading from 1.1.x to 1.3.0</title>
