@@ -51,8 +51,16 @@
             href="manage/remove-orphan-snaps.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-resize"
-            href="manage/resize.dita"
+    <keydef keys="cc-feature-manage-resize-data"
+            href="manage/resize-data.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-resize-meta"
+            href="manage/resize-meta.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-resize-tenant-vd"
+            href="manage/resize-tenant-vd.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-rollback"
@@ -105,6 +113,14 @@
     />
     <keydef keys="cc-feature-manage-stop-n"
             href="manage/stop-n.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-thinpool-examine"
+            href="manage/thinpool-examine.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-manage-thinpool-minimums"
+            href="manage/thinpool-minimums.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-update-opentsdb-ttl"
