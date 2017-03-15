@@ -3,7 +3,12 @@
 <bookmap>
    <title>Administration reference</title>
    <chapter keyref="cc-feature-manage-admin">
-      <topicref keyref="cc-feature-manage-resize"/>
+      <topicref keyref="cc-feature-manage-thinpool-minimums">
+         <topicref keyref="cc-feature-manage-thinpool-examine"/>
+         <topicref keyref="cc-feature-manage-resize-meta"/>
+         <topicref keyref="cc-feature-manage-resize-data"/>
+         <topicref keyref="cc-feature-manage-resize-tenant-vd"/>
+      </topicref>
       <topicref keyref="cc-feature-manage-NAT-overview"/>
       <topicref keyref="cc-feature-backup-overview">
          <topicref keyref="cc-feature-backup-best-practice"/>

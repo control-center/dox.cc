@@ -18,7 +18,7 @@
         space in each application's tenant volume. Before you upgrade, ensure that 
         the <cmdname>serviced</cmdname> thin pool is adequate and if necessary, resize it. 
         <ph conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-feature-manage-resize"/>.</p>
+        <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
       <note><ph conkeyref="names/company"/> applications may require additional steps
         to prepare to use this release. For more information, refer to the documentation
         for your application.</note>

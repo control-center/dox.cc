@@ -33,7 +33,7 @@
         <li>Examine the service that was shut down to determine why it was using excessive storage
           and correct the issue. For example:<ul id="ul_avm_gyx_yy">
             <li>If an application was writing a large amount of performance data to the tenant
-              device, add space to the device. See <xref keyref="cc-feature-manage-resize"/>.</li>
+              device, add space to the device. See <xref keyref="cc-feature-manage-thinpool-minimums"/>.</li>
             <li>If too many snapshots are stored on the device, delete those that you no longer
               need. See <xref keyref="cc-feature-manage-snapshot-rollback"/>.</li>
             <li>If a usage anomaly might have occurred, wait for usage levels to return to
