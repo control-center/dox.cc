@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding space to a device</title>
+  <taskbody>
+    <context>
+      <p><ph keyref="nm-cc"/> uses an LVM thin pool to store tenant (application) data. LVM thin
+        pools include a separate storage area for data and a separate storage area for metadata. In
+        addition, <ph keyref="nm-cc"/> maintains separate virtual devices for each tenant it
+        manages.</p>
+      
+      <p>To ensure consistency, <ph keyref="nm-cc"/> requires the following, minimum 
+        free space in its thin pool:
+      <ul>
+        <li>3GB in the data storage area</li>
+        <li>62MB in the metadata storage area</li>
+        <li>3GB for each tenant volume</li>
+      </ul>So, if <ph keyref="nm-cc"/> is managing two applications, it requires a minimum of
+        62MB of free space in the metadata storage area and 6GB of storage in the data
+        storage area.</p>
+
+      <p>Use this procedure to check the amount of free space and if necessary, increase the size of an
+        existing virtual device.</p>
+    </context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the amount of space available in the <cmdname>serviced</cmdname>
+          thin pool, and then increase it, if necessary.</cmd>
+        <stepxmp>
+          <codeblock>serviced volume status</codeblock>
+        </stepxmp>
+        <info>The result includes detailed information about the <cmdname>serviced</cmdname> thin
+          pool and each tenant virtual device. If the free space is insufficient, perform the
+          following substeps.</info>
+        <substeps>
+          <substep>
+            <cmd>Identify the volume group to which the <cmdname>serviced</cmdname> thin pool belongs.</cmd>
+            <stepxmp>
+              <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
+            </stepxmp>
+            <stepresult>The volume group associated with <codeph>serviced-pool</codeph> 
+              contains the <cmdname>serviced</cmdname> thin pool.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Display the amount of unused space in the volume group.</cmd>
+            <stepxmp>Replace <varname>Volume-Group-Name</varname> with the name of the
+              volume group that contains the <cmdname>serviced</cmdname> thin pool:
+              <codeblock>vgs --no-headings --options=vg_free <varname>Volume-Group-Name</varname></codeblock>
+            </stepxmp>
+            <info>
+              <ul>
+                <li>If the volume group contains enough free space to expand the metadata
+                  storage area to its required minimum, enter the following command:
+                  </li>
+                <li>If the volume group contains enough free space to expand the data
+                  storage area to its required minimum</li>
+              </ul>
+               If not, before continuing with this procedure, add physical or logical
+              storage to the volume group. <!-- fmi, see appx --></info>
+          </substep>
+          <substep>
+            <cmd>Add storage to the metadata storage area of the <cmdname>serviced</cmdname> thin
+              pool:</cmd>
+            <stepxmp>Replace <varname>Size</varname> with the amount of space to add.
+              <codeblock>lvextend -L+<varname>Size</varname>M serviced/serviced-pool_tmeta</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>
