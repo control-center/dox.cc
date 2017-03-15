@@ -19,6 +19,10 @@
             href="topics/remove-images.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-topics-resize"
+            href="topics/resize.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-topics-start-zk"
             href="topics/start-zk.dita"
             format="dita"
