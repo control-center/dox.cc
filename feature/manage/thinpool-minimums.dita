@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title><ph keyref="nm-cc"/> thin pool space requirements</title>
+  <title><ph keyref="nm-cc"/> application data storage requirements</title>
   <conbody>
     <p><ph keyref="nm-cc"/> uses an LVM thin pool to store tenant (application) data. LVM thin pools
       include separate storage areas for data and for metadata. For each tenant it manages, <ph
-        keyref="nm-cc"/> maintains a separate virtual device in the data storage area of its LVM
-      thin pool.</p>
+        keyref="nm-cc"/> maintains a separate virtual device (a volume) in the data storage area of
+      its LVM thin pool.</p>
     
     <p>To ensure consistency, <ph keyref="nm-cc"/> requires the following, minimum amount of free
       space in its thin pool: <ul>
-        <li>3GB in the data storage area</li>
-        <li>62MB in the metadata storage area</li>
-        <li>3GB for each tenant virtual device</li>
-      </ul>So, if <ph keyref="nm-cc"/> is managing two applications, it requires a minimum of 62MB
-      of free space in the metadata storage area of its LVM thin pool and 6GB of storage in the data
-      storage area. </p>
+        <li>3GiB available for each tenant volume</li>
+        <li>3GiB available in the data storage area</li>
+        <li>62MiB available in the metadata storage area</li>
+        <li>The total amount of metadata storage must be 1% of total data storage</li>
+      </ul></p>
   </conbody>
 </concept>
