@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>New features that affect upgrades</title>
+  <title>New features that affect upgrades from 1.1.x</title>
   <refbody>
     <section>
       <p>This release includes new features and new requirements that affect the upgrade process.
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
-    </section>
-    <section>
-      <title>Upgrading from 1.1.x or 1.2.x to 1.3.0</title>
-      <p>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
-          shutdown</i> of applications and services while sufficient resources remain to take action
-        to avoid data loss. Support for this feature requires at least 3GB free data space in the
-        thin pool, at least 62MB of free metadata space in the thin pool, and at least 3GB of free
-        space in each application's tenant volume. Before you upgrade, ensure that the thin pool is
-        adequate and if necessary, resize. <ph conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-feature-manage-resize"/>.</p>
-      
-      <p>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
-          keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
-        /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two
-        database services. The services requires additional RAM and CPU resources. For more
-        information about the amount of RAM and CPU resources to add to master host nodes, please
-        contact your <ph conkeyref="names/company"/> representative.</p>
-    </section>
-    <section>
-      <title>Upgrading from 1.1.x to 1.3.0</title>
+      <note><ph conkeyref="names/company"/> applications may require additional steps
+        to prepare to use this release. For more information, refer to the documentation
+        for your application.</note>
       <ul>
+        <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
+          shutdown</i> of applications and services while sufficient resources remain to take action
+          to avoid data loss. Support for this feature requires at least 3GB free data space in the
+          thin pool, at least 62MB of free metadata space in the thin pool, and at least 3GB of free
+          space in each application's tenant volume. Before you upgrade, ensure that the thin pool is
+          adequate and if necessary, resize. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-manage-thinpool-minimums"/>.</li>
+        <li>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
+          keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
+          /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two
+          database services. The services requires additional RAM and CPU resources. For more
+          information about the amount of RAM and CPU resources to add to master host nodes, please
+          contact your <ph conkeyref="names/company"/> representative.</li>
         <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
           <codeph>3.10.0-327.36.2</codeph>. For optimal results, the most recent kernel is recommended.
           To prevent dependency issues, updating the kernel or operating system is a step
