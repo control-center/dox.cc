@@ -48,23 +48,31 @@
       <step>
         <cmd>Display the amount of free space in the volume group 
           that contains the <cmdname>serviced</cmdname> thin pool.</cmd>
-        <stepxmp>Replace <varname>Volume-Group-Name</varname> with the name of the volume group 
+        <stepxmp>Replace <varname>Volume-Group</varname> with the name of the volume group 
           identified in the previous step:
-          <codeblock>vgs --no-headings --options=vg_free <varname>Volume-Group-Name</varname></codeblock>
+          <codeblock>vgs --no-headings --options=vg_free <varname>Volume-Group</varname></codeblock>
         </stepxmp>
         <choices>
           <choice>If the amount of free space in the volume group is not sufficient to increase 
             one or both of the storage areas of the <cmdname>serviced</cmdname> thin pool
             to their required minimums, add physical or logical storage to the volume group.
             For more information, refer to your operating system documentation.</choice>
-          <choice>If the amount of free space is sufficient to increase the
-            metadata portion of the <cmdname>serviced</cmdname> thin pool to its required
-            minimum, proceed to <xref keyref="cc-feature-manage-resize-meta"/>.</choice>
-          <choice>If the amount of free space is sufficient to increase the
-            data portion of the <cmdname>serviced</cmdname> thin pool to its required
-            minimum, proceed to <xref keyref="cc-feature-manage-resize-data"/>.</choice>
-          <choice>If the amount of free space is sufficient to increase the
-            size of a tenant virtual device,
+          <choice>If the amount of free space in the volume group is sufficient to increase 
+            one or both of the storage areas of the <cmdname>serviced</cmdname> thin pool
+            to their required minimums, proceed to the next step</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Increase the free space in one or both areas of
+          the <cmdname>serviced</cmdname> thin pool.</cmd>
+        <choices>
+          <choice>To increase the amount of space in the metadata 
+            area, proceed to <xref keyref="cc-feature-manage-resize-meta"/>.</choice>
+          <choice>To increase the amount of space in the data 
+            area, proceed to <xref keyref="cc-feature-manage-resize-data"/>.</choice>
+          <choice>To increase the size of a tenant virtual device,
+            which relies on the data area of the thin pool,
             proceed to <xref keyref="cc-feature-manage-resize-tenant-vd"/>.</choice>
         </choices>
       </step>
