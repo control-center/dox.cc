@@ -10,9 +10,9 @@
       <topicref keyref="cc-feature-offline-stage-run"/>
       <topicref keyref="cc-feature-offline-other-packages-up"/>
     </topicref>
-    <topicref keyref="cc-upgrade-ha-to12x-docker-install"/>
-    <topicref keyref="cc-upgrade-ha-to12x-docker-config"/>
-    <topicref keyref="cc-upgrade-ha-to12x-docker-images"/>
-    <topicref keyref="cc-upgrade-ha-to12x-cc-master"/>
+    <topicref keyref="cc-upgrade-ha-11x-docker-install"/>
+    <topicref keyref="cc-upgrade-ha-11x-docker-config"/>
+    <topicref keyref="cc-upgrade-ha-11x-docker-images"/>
+    <topicref keyref="cc-upgrade-ha-11x-cc-master"/>
  </chapter>
 </bookmap>

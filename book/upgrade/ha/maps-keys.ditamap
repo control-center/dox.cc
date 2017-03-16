@@ -15,10 +15,6 @@
             href="maps/post.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-maps-prep"
-            href="maps/prep.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-maps-start"
             href="maps/start.dita"
             format="dita"
