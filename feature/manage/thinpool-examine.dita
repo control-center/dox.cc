@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Examining a tenant data thin pool</title>
+  <title>Examining application data storage status</title>
   <taskbody>
     <context>    
        <p>Beginning with release 1.3.0, <ph keyref="nm-cc"/> initiates an emergency shutdown when
         the minimum required amounts of free space are not available in the
-          <cmdname>serviced</cmdname> thin pool. <ph conkeyref="strings/fmi-int"/>
+          <cmdname>serviced</cmdname> thin pool or tenant volumes. <ph conkeyref="strings/fmi-int"/>
         <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
 
-      <p>Use this procedure to display the amount of free space in a <ph keyref="nm-cc"/> thin pool,
-        and to determine how much space is available in the LVM volume group that contains the thin
-        pool.</p>
+      <p>Use this procedure to display the amount of free space in a <ph keyref="nm-cc"/> thin pool
+        and tenant volumes, to determine how much space is available in the LVM volume group that
+        contains the thin pool, and to determine whether additional steps are required.</p>
     </context>
     
     <steps>
@@ -25,8 +25,15 @@
         <stepxmp>
           <codeblock>serviced volume status</codeblock>
         </stepxmp>
+        <info>
+          <fig>
+            <title>Example output with highlighted values</title>
+            <image keyref="svg-volstats"/>
+          </fig>
+          
+        </info>
         <info>The result includes detailed information about the <cmdname>serviced</cmdname> thin
-          pool and each tenant virtual device.</info>
+          pool and each tenant volume.</info>
         <choices>
           <choice>If the amount of free space in the <cmdname>serviced</cmdname> thin 
             pool is sufficient, stop. No further action is required.</choice>
@@ -71,9 +78,8 @@
             area, proceed to <xref keyref="cc-feature-manage-resize-meta"/>.</choice>
           <choice>To increase the amount of space in the data 
             area, proceed to <xref keyref="cc-feature-manage-resize-data"/>.</choice>
-          <choice>To increase the size of a tenant virtual device,
-            which relies on the data area of the thin pool,
-            proceed to <xref keyref="cc-feature-manage-resize-tenant-vd"/>.</choice>
+          <choice>To increase the size of a tenant volume, which relies on the data area of the thin
+            pool, proceed to <xref keyref="cc-feature-manage-resize-tenant-vd"/>.</choice>
         </choices>
       </step>
     </steps>
