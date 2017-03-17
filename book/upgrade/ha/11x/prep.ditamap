@@ -5,11 +5,11 @@
   <chapter keyref="cc-upgrade-ha-11x-prep">
     <topicref keyref="cc-upgrade-ha-11x-prep-features"/>
     <topicref keyref="cc-upgrade-ha-topics-best-practices"/>
-    <topicref keyref="cc-feature-manage-thinpool-minimums">
-      <topicref keyref="cc-feature-manage-thinpool-examine"/>
-      <topicref keyref="cc-feature-manage-resize-meta"/>
-      <topicref keyref="cc-feature-manage-resize-data"/>
-      <topicref keyref="cc-feature-manage-resize-tenant-vd"/>
+    <topicref keyref="cc-upgrade-ha-topics-download">
+      <topicref keyref="cc-feature-offline-download"/>
+      <topicref keyref="cc-feature-offline-stage-rpm"/>
+      <topicref keyref="cc-feature-offline-stage-run"/>
+      <topicref keyref="cc-feature-offline-other-packages-up-dl"/>
     </topicref>
  </chapter>
 </bookmap>

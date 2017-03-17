@@ -25,7 +25,7 @@
         <cmd>Log in to a compatible host that is connected to the internet
           <ph conkeyref="strings/login-root"/>.</cmd>
         <info>The host must have the same operating system (RHEL or CentOS) and
-        release installed.</info>
+        release installed, and the same version of the Linux kernel, as the master host nodes.</info>
       </step>
       
       <step>

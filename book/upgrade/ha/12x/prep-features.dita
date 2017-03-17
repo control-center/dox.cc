@@ -12,11 +12,11 @@
         for your application.</note>
       <ul>
         <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
-          shutdown</i> of applications and services while sufficient resources remain to take action
-          to avoid data loss. Support for this feature requires at least 3GB free data space in the
-          thin pool, at least 62MB of free metadata space in the thin pool, and at least 3GB of free
-          space in each application's tenant volume. Before you upgrade, ensure that the thin pool is
-          adequate and if necessary, resize. <ph conkeyref="strings/fmi-int"/>
+            shutdown</i> of applications and services while sufficient resources remain to take
+          action to avoid data loss. Support for this feature requires specific minimum amounts of
+          space in the <ph keyref="nm-cc"/> thin pool for application data. Before you upgrade, 
+          determine whether the thin pool is adequate and if necessary,
+          resize. <ph conkeyref="strings/fmi-int"/>
           <xref keyref="cc-feature-manage-thinpool-minimums"/>.</li>
         <li>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
           keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
