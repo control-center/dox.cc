@@ -7,12 +7,12 @@
             href="12x/12x.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-12x-delegate"
-            href="12x/delegate.dita"
+    <keydef keys="cc-upgrade-ha-12x-cc-delegate"
+            href="12x/cc-delegate.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-12x-master"
-            href="12x/master.dita"
+    <keydef keys="cc-upgrade-ha-12x-cc-master"
+            href="12x/cc-master.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-12x-prep-features"

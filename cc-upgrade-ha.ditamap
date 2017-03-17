@@ -106,6 +106,7 @@
     <appendix href="book/upgrade/ha/maps/thins.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/agent/agent.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/manage/manage-ha.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>
   
