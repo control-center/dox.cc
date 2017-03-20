@@ -25,7 +25,7 @@
         </choices>
       </step>
     </steps>
-    <result id="result_kql_fqt_qx">When the backup is complete, the compressed archive file name is
-      displayed.</result>
+    <result id="result_kql_fqt_qx"><ph id="backup-success">After a successful backup, the system
+        displays the name of the backup file.</ph></result>
   </taskbody>
 </task>

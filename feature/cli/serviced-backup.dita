@@ -10,8 +10,9 @@
     <section>
       <p>You can back up the entire system or exclude certain directories, such as a directory that
         contains application performance data. </p>
-      <p><ph conkeyref="cc-feature-backup-overview/backup-space-est"/> Exit code 1 indicates
-        insufficient space. <ph conkeyref="cc-feature-backup-backup/backup-space-insufficient"/></p>
+      <p><ph conkeyref="cc-feature-backup-overview/backup-space-est"/>
+        <ph conkeyref="cc-feature-backup-cli/exit-code-1"/>
+        <ph conkeyref="cc-feature-backup-backup/backup-space-insufficient"/></p>
     </section>
     <section>
       <title>USAGE</title>
