@@ -4,12 +4,19 @@
   <title>Application details page</title>
   <refbody>
     <section>
-      <image scale="50" keyref="png-xf-app-detail"/>
-      <p>An application details page includes the following sections.</p>
-      <ul>
-        <li></li>
-      </ul>
-    </section>
+      <!--<image scale="50" keyref="png-xf-app-detail"/>-->
+      <p>The application details page for the Zenoss application includes information about public
+        endpoints, IP assignments, configuration files, services associated with the application,
+        and instances of the application.</p><p>Graphs visually represent the following information
+        about the application: <ul id="ul_k2g_5xp_hz">
+          <li>CPU usage by the system and users</li>
+          <li>Memory usage (total RSS and cache)</li>
+          <li>DFS usage</li>
+          <li>Network usage</li>
+          <li>Open connection information</li>
+        </ul></p>
+      <p>For more information, see <xref keyref="cc-feature-manage-emer-sdown-overview"/> and <xref
+          keyref="cc-feature-manage-rolling-restart-overview"/></p>.</section>
   </refbody>
 </reference>
 

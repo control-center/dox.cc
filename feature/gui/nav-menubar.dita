@@ -3,8 +3,8 @@
 <concept id="conceptid">
   <title>Navigation</title>
   <conbody>
-    <p>Use the menu bar at the top of the <ph keyref="nm-cc"/> web-based user interface to
-      access different functional areas of the application.</p>
+    <p>Use the menu bar at the top of the <ph keyref="nm-cc"/> browser interface to access different
+      functional areas of the application.</p>
     <p>
       <fig id="fig_z1t_gss_zr">
         <image id="image_otz_5xs_zr" keyref="png-menubar" scale="50"/>

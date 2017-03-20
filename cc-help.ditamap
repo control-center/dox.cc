@@ -55,7 +55,7 @@
   </frontmatter>
   
   <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
-  <!-- <chapter href="feature/gui/gui.ditamap" format="ditamap"/> -->  
+  <chapter href="feature/gui/gui.ditamap" format="ditamap"/>  
   <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
   
   <backmatter>

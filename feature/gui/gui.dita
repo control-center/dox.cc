@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title>Web interface reference</title>
+  <title>Browser interface reference</title>
   <conbody>
-    <p>The <ph keyref="nm-cc"/> binary provides an RPC API, which the command-line interface utilizes, and
-    a REST API, which the web interface utilizes.</p>
+    <p>This section contains information about the <ph keyref="nm-cc"/>  browser interface.</p>
   </conbody>
 </concept>

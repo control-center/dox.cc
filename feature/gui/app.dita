@@ -2,23 +2,19 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><uicontrol>Applications</uicontrol> page</title>
-  <shortdesc>The <uicontrol>Applications</uicontrol> page displays upon login, 
-    and features a table listing both deployed applications and the services 
-    that support <ph keyref="nm-cc"/>.</shortdesc>
+  <shortdesc>The <uicontrol>Applications</uicontrol> page features a table listing deployed
+    applications and the services that support <ph keyref="nm-cc"/>.</shortdesc>
   <refbody>
     <section>
-      <fig>
-        <title><uicontrol>Applications</uicontrol> page</title>
-        <image scale="50" keyref="png-xf-app"/>
-      </fig>
+      <!--<fig><title><uicontrol>Applications</uicontrol> page</title><image scale="50" keyref="png-xf-app"/></fig>-->
       <ul>
-        <li>To display the details page of an application, click its name (in this example,
-            <uicontrol>Zenoss.core</uicontrol>).</li>
+        <li>To display a details page for an application, click its name (<uicontrol audience="open"
+            >Zenoss.core</uicontrol><uicontrol audience="rm">Zenoss.resmgr</uicontrol>).</li>
         <li>To display the Internal Services page, click <uicontrol>Internal Services</uicontrol>.</li>
       </ul>
-      <p>The space at the bottom-left of the menu bar 
-        displays the relative location of the page in the
-        <ph keyref="nm-cc"/> web interface hierarchy.</p>
+      <!--<p>The space at the bottom-left of the menu bar displays the relative location of the page in the <ph keyref="nm-cc"/> web interface hierarchy.</p>-->
+      <p>The graphs section  shows thin pool usage information. For more information, see <xref
+          keyref="cc-feature-manage-thinpool-minimums"/>.</p>
     </section>
   </refbody>
 </reference>
