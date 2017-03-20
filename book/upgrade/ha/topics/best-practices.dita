@@ -10,6 +10,11 @@
         <li>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for 
           this release and review its contents. The latest information
           is included in that document.</li>
+        
+        <li>Compare the Docker Engine images that accompany this release with the
+        images that accompany the installed release, and determine whether the
+        image files need to be downloaded and installed. <ph conkeyref="strings/fmi-int"/>
+        <xref keyref="cc-upgrade-paths-images"/>.</li>
 
         <li>On delegate hosts, most of the upgrade steps are identical. Use <cmdname>tmux</cmdname>
           or a similar program to establish sessions on each delegate host and perform the steps at

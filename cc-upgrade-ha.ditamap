@@ -58,6 +58,7 @@
       <mapref href="book/upgrade/ha/12x-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/paths-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/11x-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/11x/offline-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/topics-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>

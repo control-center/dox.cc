@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Upgrading the Pacemaker resource agents</title>
+  <title>Updating the Pacemaker resource agents</title>
   <taskbody>
-    <context>Use this procedure to upgrade the Pacemaker resource agents for <ph keyref="nm-cc"/>.</context>
+    <context>Use this procedure to update the Pacemaker resource agents for <ph keyref="nm-cc"
+      />.</context>
     <steps>
       <step>
         <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
           in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
+
       <step conkeyref="cc-feature-manage-stop-1/stop-app">
         <cmd/>
       </step>
-      
+
       <step>
         <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
           <codeblock>pcs resource disable serviced</codeblock>
         </stepxmp>
       </step>
-      
+
       <step>
         <cmd>In a separate window, log in to the other master node <ph
             conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
+
       <step>
         <cmd>On both nodes, install the latest version of the resource agents package.</cmd>
-        <stepxmp>For example, if the package file is located in the <filepath>/opt/zenoss-repo-mirror</filepath>
-          directory: <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-resource-agents-*.rpm</codeblock>
+        <stepxmp>For example, if the package file is located in the
+            <filepath>/opt/zenoss-repo-mirror</filepath> directory:
+          <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-resource-agents-*.rpm</codeblock>
         </stepxmp>
       </step>
-      
+
       <step>
         <cmd>On either node, start <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
           <codeblock>pcs resource enable serviced</codeblock>
         </stepxmp>
       </step>
-      
+
       <step>
         <cmd>On either node, start the application.</cmd>
         <stepxmp>
