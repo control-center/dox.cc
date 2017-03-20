@@ -11,16 +11,8 @@
             href="offline/offline.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-offline-other-packages"
-            href="offline/other-packages.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-offline-pcs-drbd-download"
             href="offline/pcs-drbd-download.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-offline-pcs-drbd-install"
-            href="offline/pcs-drbd-install.dita"
             format="dita"
     />
     <keydef keys="cc-feature-offline-stage-rpm"

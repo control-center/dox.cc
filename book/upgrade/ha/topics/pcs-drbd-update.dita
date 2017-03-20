@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Optional: Updating cluster software</title>
+  <title>Updating cluster software</title>
   <taskbody>
     <context>Use this procedure to update Distributed Replicated Block Device (DRBD)
       and Pacemaker/Corosync, if desired.</context>
     <steps>
       <step>
-        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Stop all applications, and then stop the high-availability cluster.</cmd>
+        <info><ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-maps-stop"/>.</info>
       </step>
       
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
       <step>
         <cmd>In a separate window, log in to the secondary 
           node <ph conkeyref="strings/login-root"/>.</cmd>
@@ -108,6 +113,10 @@
         </substeps>
       </step>
       
+      <step>
+        <cmd>Start the high-availability cluster, and then start applications.</cmd>
+        <info><ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-manage-start-ha"/>.</info>
+      </step>
     </steps>
   </taskbody>
 </task>

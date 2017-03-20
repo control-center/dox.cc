@@ -7,6 +7,10 @@
             href="topics/best-practices.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-topics-pcs-drbd-update"
+            href="topics/pcs-drbd-update.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-topics-remove-images"
             href="topics/remove-images.dita"
             format="dita"

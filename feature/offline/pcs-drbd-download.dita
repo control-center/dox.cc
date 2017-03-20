@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Optional: Downloading cluster software</title>
+  <title>Downloading and staging and staging cluster software</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>
@@ -11,11 +11,11 @@
       </ul>
     </prereq>
     <context>Use this procedure to download packages for Distributed Replicated Block Device (DRBD)
-      and Pacemaker/Corosync, if desired.</context>
+      and Pacemaker/Corosync, and to bundle them for installation on master host nodes.</context>
     <steps>
       <step>
-        <cmd>Log in to a compatible host that is connected to the internet <ph
-            conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to a compatible host that is connected to 
+            the internet <ph conkeyref="strings/login-root"/>.</cmd>
         <info>The host must have the same operating system (RHEL or CentOS) and release installed,
           and the same version of the Linux kernel, as the master host nodes.</info>
       </step>
