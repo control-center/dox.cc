@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting the cluster on the current master node</title>
+  <taskbody>
+    <context>Use this procedure to complete the startup on the current master node.</context>
+    
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the master node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Start the storage resource.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource enable serviced-storage</codeblock>
+        </stepxmp>
+      </step>
+            
+      <step>
+        <cmd>Confirm that the resource starts up.</cmd>
+        <stepxmp>
+          <codeblock>pcs status</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Take the original master host out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Previous-Master</varname> with the
+          hostname of the previous master host node:
+          <codeblock>pcs cluster unstandy <varname>Previous-Master</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Confirm that disk replication is started.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start the <ph keyref="nm-cc"/> resource.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource enable serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start your application.</cmd>
+        <stepxmp>For example, the <ph conkeyref="names/company"/> application:
+          <codeblock>serviced service start Zenoss.resmgr</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

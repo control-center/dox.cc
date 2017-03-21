@@ -115,6 +115,10 @@
             href="manage/stop-n.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-manage-thinpool-examine-ha"
+            href="manage/thinpool-examine-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-thinpool-examine"
             href="manage/thinpool-examine.dita"
             format="dita"

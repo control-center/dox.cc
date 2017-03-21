@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Resizing the partition</title>
+  <taskbody>
+    <context>Use this procedure to resize the partition that contains the 
+    <cmdname>serviced</cmdname> thin pool.</context>
+    
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate terminal session, log in to the other 
+          master host node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>On both nodes, inform the kernel of the partition table change that occurred when
+          the size of the <cmdname>serviced</cmdname> thin pool device was increased.</cmd>
+        <stepxmp>
+          <codeblock>partprobe</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, confirm the size increase of the raw device.</cmd>
+        <stepxmp>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </stepxmp>
+        <info>Subordinate device sizes are unchanged.</info>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, recreate the partition of the raw device.</cmd>
+        <info>The following substeps assume that the raw device has a single
+        partition that contains all of the space in the device. If you are using
+        a different layout, adjust the procedure as required.</info>
+        <substeps>
+          <substep>
+            <cmd>Start the disk partition utility.</cmd>
+            <stepxmp>Replace <varname>Raw-Device</varname> with the path of 
+              the raw device associated with <filepath>/dev/drbd2</filepath>
+              or its equivalent in your environment:
+              <codeblock>fdisk <varname>Raw-Device</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Display the partition table.</cmd>
+            <stepxmp>
+              <codeblock>p</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Delete the partition table.</cmd>
+            <stepxmp>
+              <codeblock>d</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a new partition table.</cmd>
+            <stepxmp>
+              <codeblock>n</codeblock>
+            </stepxmp>
+            <stepresult>Accept the defaults to create a new primary partition, and for the 
+            starting and ending cylinders of the partition. The starting cylinder should
+            match the starting cylinder displayed previously. The ending cylinder should
+            be greater than the ending cylinder displayed previously.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Write the new partition table, and then exit the disk partition utility.</cmd>
+            <stepxmp>
+              <codeblock>w</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, confirm the size increase of the partition.</cmd>
+        <stepxmp>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </stepxmp>
+        <info>The subordinate device size should be larger.</info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

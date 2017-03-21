@@ -5,11 +5,11 @@
   <chapter keyref="cc-upgrade-ha-11x-prep">
     <topicref keyref="cc-upgrade-ha-11x-prep-features"/>
     <topicref keyref="cc-upgrade-ha-topics-best-practices"/>
-    <topicref keyref="cc-upgrade-ha-11x-offline-upgrade">
-      <topicref keyref="cc-upgrade-ha-11x-offline-download"/>
-      <topicref keyref="cc-upgrade-ha-11x-offline-stage-rpm"/>
-      <topicref keyref="cc-upgrade-ha-11x-offline-stage-run"/>
-      <topicref keyref="cc-upgrade-ha-11x-offline-stage-run-zk"/>
+    <topicref keyref="cc-upgrade-ha-11x-offline">
+      <topicref keyref="cc-upgrade-ha-11x-download"/>
+      <topicref keyref="cc-upgrade-ha-11x-stage-rpm"/>
+      <topicref keyref="cc-upgrade-ha-11x-stage-run"/>
+      <topicref keyref="cc-upgrade-ha-11x-stage-run-zk"/>
     </topicref>
  </chapter>
 </bookmap>
