@@ -55,6 +55,10 @@
             href="gui/assign-ip.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-gui-backup-restore-page"
+            href="gui/backup-restore-page.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-gui-gui"
             href="gui/gui.dita"
             format="dita"
