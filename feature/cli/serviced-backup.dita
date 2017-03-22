@@ -6,9 +6,13 @@
     the system, the state of all services, and application data to a compressed tar archive file
       (<filepath>.tgz</filepath>). </shortdesc>
   <refbody>
+    <!--CC_3333-->
     <section>
-      <p>You can backup the entire system, or exclude certain directories, such as a directory that
-        contains application performance data.</p>
+      <p>You can back up the entire system or exclude certain directories, such as a directory that
+        contains application performance data. </p>
+      <p><ph conkeyref="cc-feature-backup-overview/backup-space-est"/>
+        <ph conkeyref="cc-feature-backup-cli/exit-code-1"/>
+        <ph conkeyref="cc-feature-backup-backup/backup-space-insufficient"/></p>
     </section>
     <section>
       <title>USAGE</title>
@@ -16,11 +20,21 @@
     </section>
     <section>
       <title>OPTIONS</title>
-      <!--CC_2442 -->
       <dl>
         <dlentry>
           <dt>--exclude '--exclude option --exclude option'</dt>
           <dd>Subdirectory of the tenant volumes to exclude from a backup. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>--check</dt>
+          <dd>Estimate the backup file size and check available storage space, but do not start the
+            backup. </dd>
+        </dlentry>
+        <dlentry>
+          <dt>--force</dt>
+          <dd>Attempt to perform a backup even if the check for sufficient storage space failed. Use
+            this override option with caution. If the backup exhausts storage space on the device,
+            you must restart <cmdname>serviced</cmdname>.</dd>
         </dlentry>
       </dl>
       <dl>

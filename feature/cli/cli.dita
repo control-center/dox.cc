@@ -5,8 +5,8 @@
   <refbody>
     <section>
       <p>This section contains information about and procedures for using the <ph keyref="nm-cc"/>
-        command-line interface (CLI). The CLI uses the same application programming interface that
-        the browser interface uses. To perform many actions, you can use either interface.</p>
+        command-line interface (CLI). The CLI uses the same application programming interface (API)
+        that the browser interface uses. To perform many actions, you can use either interface.</p>
     </section>
   </refbody>
 </reference>

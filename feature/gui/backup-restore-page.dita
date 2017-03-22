@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><uicontrol>Backup/Restore</uicontrol> page</title>
+  <shortdesc>The <uicontrol>Backup/Restore</uicontrol> page displays a list of backup files for the
+    system.</shortdesc>
+  <refbody>
+    <section>
+      <p>You can search for and create a backup and restore from a backup file.</p>
+      <p>For more information about backing up and restoring the system, see <xref
+          keyref="cc-feature-backup-overview"/>.</p>
+    </section>
+  </refbody>
+</reference>

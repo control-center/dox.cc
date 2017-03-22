@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="3" modification="0"/>
+        <vrm version="1" release="3" modification="1"/>
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -53,9 +53,9 @@
     </booklists>
     <topicref href="book/help/front/about.dita"/>
   </frontmatter>
-  
-  <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
+  <chapter href="feature/gui/gui.ditamap" format="ditamap"/>  
   <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
+  <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
   
   <backmatter>
     <booklists>
