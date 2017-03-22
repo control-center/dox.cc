@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Snapshot and rollback</title>
+  <title>Creating snapshots and rolling back</title>
   <shortdesc>Though backups are the most reliable and durable way to preserve Docker images and
     configurations, creating a backup of an entire application is not always practical. However, you
     need to safeguard against potential risk when changing the system. In these cases, you can

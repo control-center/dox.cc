@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Backup and restore</title>
+  <title>Backing up and restoring</title>
   <shortdesc>Use <ph keyref="nm-cc"/> to back up applications that <ph keyref="nm-cc"/> manages.
     Having accurate and tested system backups can mitigate problems caused by software or hardware
     issues. </shortdesc>
