@@ -19,9 +19,8 @@
       </step>
       
       <step>
-        <cmd>Copy or move the 
-          <filepath>install-zenoss-isvcs-zookeeper:v*.run</filepath>
-          file to <filepath>/root</filepath>.</cmd>
+        <cmd>Copy or move the <codeph>install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeph> file to
+            <filepath>/root</filepath>.</cmd>
       </step>
       
       <step>

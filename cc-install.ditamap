@@ -45,9 +45,11 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/install/maps-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
       <mapref href="feature/config-keys.ditamap" format="ditamap"/>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>

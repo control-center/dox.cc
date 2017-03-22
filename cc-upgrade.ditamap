@@ -50,9 +50,11 @@
       <mapref href="book/upgrade/paths-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/to12x-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
