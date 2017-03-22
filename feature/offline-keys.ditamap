@@ -3,14 +3,6 @@
 <map>
  <title>Keys in offline</title>
   <topicgroup>
-    <keydef keys="cc-feature-offline-download-delegate"
-            href="offline/download-delegate.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-offline-download-master"
-            href="offline/download-master.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-offline-download"
             href="offline/download.dita"
             format="dita"
@@ -19,12 +11,8 @@
             href="offline/offline.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-offline-other-packages-up"
-            href="offline/other-packages-up.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-offline-other-packages"
-            href="offline/other-packages.dita"
+    <keydef keys="cc-feature-offline-pcs-drbd-download"
+            href="offline/pcs-drbd-download.dita"
             format="dita"
     />
     <keydef keys="cc-feature-offline-stage-rpm"

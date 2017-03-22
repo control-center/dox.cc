@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="2" modification="3"/>        
+        <vrm version="1" release="3" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -58,6 +58,7 @@
       <mapref href="book/upgrade/ha/12x-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/paths-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/11x-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/topics-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
@@ -103,8 +104,11 @@
   </part>
   
   <appendices>
+    <appendix href="book/upgrade/ha/maps/thins.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/agent/agent.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/manage/manage-ha.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/ha/maps/pcs.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>
   

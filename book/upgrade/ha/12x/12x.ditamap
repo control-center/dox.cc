@@ -4,9 +4,10 @@
 <bookmap >
  <title>Micro</title>
   <chapter keyref="cc-upgrade-ha-12x-12x">
-    <topicref keyref="cc-upgrade-ha-12x-master"/>
-    <topicref keyref="cc-upgrade-ha-12x-delegate"/>
-    <topicref keyref="cc-upgrade-ha-12x-zk-image"/>
-    <topicref keyref="cc-upgrade-topics-start-zk"/>
+    <topicref keyref="cc-upgrade-ha-12x-cc-master">
+      <topicref keyref="cc-upgrade-ha-12x-image"/>
+      <topicref keyref="cc-upgrade-ha-12x-agent"/>
+    </topicref>
+    <topicref keyref="cc-upgrade-ha-12x-cc-delegate"/>
  </chapter>
 </bookmap>

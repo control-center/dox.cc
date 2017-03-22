@@ -7,12 +7,28 @@
             href="12x/12x.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-12x-delegate"
-            href="12x/delegate.dita"
+    <keydef keys="cc-upgrade-ha-12x-agent"
+            href="12x/agent.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-12x-master"
-            href="12x/master.dita"
+    <keydef keys="cc-upgrade-ha-12x-cc-delegate"
+            href="12x/cc-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-cc-master"
+            href="12x/cc-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-download"
+            href="12x/download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-image"
+            href="12x/image.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-offline"
+            href="12x/offline.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-12x-prep-features"
@@ -23,8 +39,16 @@
             href="12x/prep.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-12x-zk-image"
-            href="12x/zk-image.dita"
+    <keydef keys="cc-upgrade-ha-12x-stage-agent"
+            href="12x/stage-agent.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-stage-rpm"
+            href="12x/stage-rpm.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-stage-run"
+            href="12x/stage-run.dita"
             format="dita"
     />
    </topicgroup>

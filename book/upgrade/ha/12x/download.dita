@@ -29,7 +29,11 @@
       </step>
       
       <step>
-        <cmd>Download the self-installing Docker image files.</cmd>
+        <cmd>Download the self-installing Docker Engine image files.</cmd>
+        <info>Compare the Docker Engine images that accompany this release with the
+          images that accompany the installed release, and determine whether the
+          image files need to be downloaded and installed. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-upgrade-paths-images"/>.</info>
         <info>
           <sl>
             <sli><codeph>install-zenoss-serviced-isvcs:v<ph keyref="lo-version-isvcs"/>.run</codeph></sli>
@@ -46,27 +50,10 @@
           </sl>
         </info>
       </step>
-      
+
       <step>
-        <cmd>Download a RHEL/CentOS repository mirror file.</cmd>
-        <info>The download site provides a repository mirror file for each supported release of
-          RHEL/CentOS. Each file contains the <ph keyref="nm-cc"/> package and its
-          dependencies.</info>
-        <info>To download the correct repository mirror file,
-          match the operating system release number in the file name 
-          with the version of RHEL/CentOS installed on all of the hosts
-          in your <ph keyref="nm-cc"/> cluster.
-          <sl>
-            <sli><codeph>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</codeph></sli>
-            <sli><codeph>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</codeph></sli>
-            <sli><codeph>yum-mirror-centos7.centos7.3-<varname>Version</varname>.x86_64.rpm</codeph></sli>
-          </sl>
-        </info>
-      </step>
-      
-      <step importance="optional">
         <cmd>Download the Pacemaker resource agent for <ph keyref="nm-cc"/>.</cmd>
-        <info>The resource agent is required only for high-availability deployments.
+        <info>
         <sl>
           <sli><codeph>serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeph></sli>
         </sl>
@@ -77,9 +64,8 @@
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> cluster hosts.</cmd>
         <info>
           <ul>
-            <li>Copy all files to the master host or both master nodes (high-availability
-              deployments).</li>
-            <li>Copy the RHEL/CentOS RPM file and the <ph keyref="nm-cc"/> RPM file to all delegate hosts.</li>
+            <li>Copy all files to both master nodes.</li>
+            <li>Copy <ph keyref="nm-cc"/> RPM file to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper to delegate hosts that are ZooKeeper
               ensemble nodes.</li>
           </ul>

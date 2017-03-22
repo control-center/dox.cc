@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting the cluster and restoring previous roles</title>
+  <taskbody>
+    <context>Use this procedure to complete the startup and
+      make <varname>Active-Node</varname> the master/primary node.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to <varname>Passive-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Stop the <cmdname>serviced</cmdname> resource group.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource disable serviced-group</codeblock>
+        </stepxmp>
+      </step>
+            
+      <step>
+        <cmd>Take <varname>Active-Node</varname> out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Active-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster unstandby <varname>Active-Node</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Confirm that disk replication is started.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until the status of all 
+          devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Put <varname>Passive-Node</varname> into standby mode.</cmd>
+        <stepxmp>Replace <varname>Passive-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster standby <varname>Passive-Node</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Confirm that node roles are reversed.</cmd>
+        <stepxmp>
+          <codeblock>pcs status resources</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until <varname>Active-Node</varname> is
+          in the list named <codeph>Masters</codeph> and <varname>Passive-Node</varname> 
+          is in the list named <codeph>Slaves</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Take <varname>Passive-Node</varname> out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Passive-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster unstandby <varname>Passive-Node</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Confirm that disk replication is started.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until the status of all 
+          devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Start cluster resources.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start the <cmdname>serviced</cmdname> group.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource enable serviced-group</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start the storage group.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource enable serviced-storage</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Start your application.</cmd>
+        <stepxmp>For example, the <ph conkeyref="names/company"/> application:
+          <codeblock>serviced service start Zenoss.resmgr</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

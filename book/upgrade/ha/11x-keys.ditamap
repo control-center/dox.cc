@@ -31,6 +31,14 @@
             href="11x/docker-install.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-11x-download"
+            href="11x/download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-11x-offline"
+            href="11x/offline.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-11x-pool-permissions"
             href="11x/pool-permissions.dita"
             format="dita"
@@ -41,6 +49,18 @@
     />
     <keydef keys="cc-upgrade-ha-11x-prep"
             href="11x/prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-11x-stage-rpm"
+            href="11x/stage-rpm.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-11x-stage-run-zk"
+            href="11x/stage-run-zk.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-11x-stage-run"
+            href="11x/stage-run.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-11x-start-delegate-local"

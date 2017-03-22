@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating cluster software</title>
+  <taskbody>
+    <context>Use this procedure to update Distributed Replicated Block Device (DRBD)
+      and Pacemaker/Corosync, if desired.</context>
+    <steps>
+      <step>
+        <cmd>Stop all applications, and then stop the high-availability cluster.</cmd>
+        <info><ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-maps-stop"/>.</info>
+      </step>
+      
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>In a separate window, log in to the secondary 
+          node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, stop the cluster software.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Stop the PCS daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop pcsd.service</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Stop DRBD.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm down all</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, extract and install the cluster management packages.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Extract the packages.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp &#38;&#38; tar xzf ./downloads.tgz</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the packages.</cmd>
+            <stepxmp>
+              <codeblock>yum --disablerepo=\* install -y ./downloads/*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, install the Pacemaker resource agents for <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Determine which node is the primary node.</cmd>
+        <stepxmp>
+          <codeblock>pcs status</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, start the cluster software.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start DRBD.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm up all</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start DRBD and assign the primary role.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm up all &#38;&#38; drbdadm primary --force serviced-dfs</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start the PCS daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start pcsd.service</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the secondary node, start the cluster software.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start DRBD.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm up all</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start the PCS daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start pcsd.service</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Start the high-availability cluster, and then start applications.</cmd>
+        <info><ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-manage-start-ha"/>.</info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

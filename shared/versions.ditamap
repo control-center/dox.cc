@@ -26,9 +26,16 @@
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-zk">
-      <topicmeta>
+      <topicmeta> <!-- ZooKeeper image -->
         <keywords>
           <keyword>8</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef>
+    <keydef keys="lo-version-ra">
+      <topicmeta> <!-- Pacemaker resource agents -->
+        <keywords>
+          <keyword>1.0.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>

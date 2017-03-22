@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="taskid">
+  <title>Adding space to the data area of a <ph keyref="nm-cc"/> thin pool</title>
+  <refbody>
+    <section>
+      <p>Use the procedures in this section to increase the amount of space in the data 
+        area of a <ph keyref="nm-cc"/> thin pool. For more information about required minimums,
+        see <xref keyref="cc-feature-manage-thinpool-minimums"/>. Perform the 
+        procedures in this section in order.</p>
+      
+      <note>Before proceeding, use the <ph keyref="nm-cc"/> backup feature to perform a complete backup.
+        Creating a backup is required. One of the procedures in this section manipulates the volume
+        group partition, which could cause a loss of data if performed incorrectly. You must have a
+        valid backup before proceeding.</note>
+    </section>
+  </refbody>
+</reference>
