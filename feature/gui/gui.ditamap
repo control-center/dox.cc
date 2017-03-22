@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-   <title>Browser interface reference</title>
+   <title>Browser interface overview</title>
    <chapter href="gui.dita">
     <topicref href="nav-menubar.dita"/>
      <!-- <topicref href="initial.dita"/> -->
@@ -31,6 +31,7 @@
   <!-- <topicref href="add-host.dita"/> -->
      </topicref>
      <topicref href="logs.dita"/>
+    <topicref href="backup-restore-page.dita"/>
    </chapter>
    
 </bookmap>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title>Browser interface reference</title>
+  <title>Browser interface overview</title>
   <conbody>
-    <p>This section provides high-level overview information about the <ph keyref="nm-cc"/> browser
-      interface. For more context-specific information about elements in the browser interface,
-      hover the pointer over a items to open tooltips and information boxes, where applicable.</p>
+    <p>This section provides high-level reference information about the <ph keyref="nm-cc"/> browser
+      interface. For context-specific information about elements in the browser interface, hover the
+      pointer over items to open tooltips and information boxes.</p>
   </conbody>
 </concept>

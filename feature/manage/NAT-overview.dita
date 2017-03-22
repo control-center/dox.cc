@@ -39,15 +39,14 @@
         Adding delegate hosts to a resource pool</title><p>The master host is outside the network.
         Delegate hosts delegate1 and delegate2 are behind a NAT router. IP address and port
         information is as follow:<ul id="ul_x55_krr_dz">
-          <li>NAT router: 98.138.252.30</li>
-          <li>Delegate1: 192.168.22.100:4979</li>
-          <li>Delegate2: 192.168.22.101:4979</li>
+          <li>NAT router: 192.0.2.0</li>
+          <li>Delegate1: 198.51.100.0:4979</li>
+          <li>Delegate2: 203.0.113.0:4979</li>
         </ul></p><p>The router forwards port 4979 to delegate1's RPC port (4979):
-        <codeblock>serviced host add 192.168.22.100:<b>4979</b> <varname>Resource-Pool</varname> \
-    --nat-address=98.138.252.30:<b>4979</b></codeblock></p><p>The
-        router forwards port 4980 to delegate2's RPC port
-        (4979):<codeblock>serviced host add 192.168.22.101:<b>4979</b> <varname>Resource-Pool</varname> \
-    --nat-address=98.138.252.30:<b>4980</b> </codeblock></p></section>
+        <codeblock>serviced host add 198.51.100.0:<b>4979</b> <varname>Resource-Pool</varname> \
+    --nat-address=192.0.2.0:<b>4979</b></codeblock></p><p>The router forwards port 4980 to delegate2's RPC port
+        (4979):<codeblock>serviced host add 203.0.113.0:<b>4979</b> <varname>Resource-Pool</varname> \
+    --nat-address=192.0.2.0:<b>4980</b> </codeblock></p></section>
     <section id="section_pyj_s2r_dz">
       <title>Security considerations for using <ph keyref="nm-cc"/>with a NAT device</title>
       <p>To attach to a service on a delegates behind the NAT device, you must use ssh to access the
