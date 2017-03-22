@@ -8,13 +8,13 @@
     
     <steps>
       <step>
-        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
-          in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to <varname>Active-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>In a separate terminal session, log in to the other 
-          master host node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>In a separate terminal session, log in to
+          <varname>Passive-Node</varname> <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
 
       <step>

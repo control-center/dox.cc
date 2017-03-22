@@ -1,202 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Starting the cluster</title>
+  <title>Starting the cluster and restoring previous roles</title>
   <taskbody>
-    <context>Use this procedure to start cluster services.</context>
+    <context>Use this procedure to complete the startup and
+      make <varname>Active-Node</varname> the master/primary node.</context>
     
     <steps>
       <step>
-        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
-          in to the primary master node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to <varname>Passive-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>In a separate terminal session, log in to the secondary 
-          master node <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-      
-      <step>
-        <cmd>Start DRBD.</cmd>
-        <substeps>
-          <substep>
-            <cmd>On the primary node, start DRBD.</cmd>
-            <stepxmp>
-              <codeblock>drbdadm up all</codeblock>
-            </stepxmp>
-            <stepresult>The following example output is expected:
-              <codeblock>Moving the internal meta data to its proper location
-Internal drbd meta data successfully moved.</codeblock>
-            </stepresult>
-          </substep>
-          <substep>
-            <cmd>On the secondary node, start DRBD.</cmd>
-            <stepxmp>
-              <codeblock>drbdadm up all</codeblock>
-            </stepxmp>
-            <stepresult>The output of this command should match the output on the primary node.</stepresult>
-          </substep>
-          <substep>
-            <cmd>On both nodes, confirm that the DRBD device for 
-            the <cmdname>serviced</cmdname> thin pool is larger.</cmd>
-            <stepxmp>
-              <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-      
-      <step>
-        <cmd>On the primary node, wait for disks to synchronize.</cmd>
+        <cmd>Stop the <cmdname>serviced</cmdname> resource group.</cmd>
         <stepxmp>
-          <codeblock>watch drbd-overview</codeblock>
+          <codeblock>pcs resource disable serviced-group</codeblock>
+        </stepxmp>
+      </step>
+            
+      <step>
+        <cmd>Take <varname>Active-Node</varname> out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Active-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster unstandby <varname>Active-Node</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Confirm that disk replication is started.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
         </stepxmp>
         <stepresult>Do not proceed until the status of all 
           devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
       </step>
       
       <step>
-        <cmd>On the primary node, start cluster services for the distributed file system.</cmd>
-        <stepxmp>
-          <codeblock>pcs cluster unstandby --all</codeblock>
+        <cmd>Put <varname>Passive-Node</varname> into standby mode.</cmd>
+        <stepxmp>Replace <varname>Passive-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster standby <varname>Passive-Node</varname></codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Confirm the identity of the primary node.</cmd>
+        <cmd>Confirm that node roles are reversed.</cmd>
         <stepxmp>
-          <codeblock>pcs status</codeblock>
+          <codeblock>pcs status resources</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until <varname>Active-Node</varname> is
+          in the list named <codeph>Masters</codeph> and <varname>Passive-Node</varname> 
+          is in the list named <codeph>Slaves</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Take <varname>Passive-Node</varname> out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Passive-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster unstandby <varname>Passive-Node</varname></codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>On the primary node, resize the volume group that
-          contains the <cmdname>serviced</cmdname> thin pool.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Identify the volume group that contains the
-              <cmdname>serviced</cmdname> thin pool.</cmd>
-            <stepxmp>
-              <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
-            </stepxmp>
-            <stepresult>Typically, the logical volume is <codeph>serviced-pool</codeph>
-              and the containing volume group is <cmdname>serviced</cmdname>.</stepresult>
-          </substep>
-          <substep>
-            <cmd>Display information about the volume group.</cmd>
-            <stepxmp>Replace <varname>Volume-Group</varname> with the
-              name of the volume group identified in the previous substep:
-              <codeblock>vgdisplay <varname>Volume-Group</varname></codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Identify the DRBD disk associated with the
-            serviced thin pool.</cmd>
-            <info>Typically, the <cmdname>serviced</cmdname> thin pool device
-              is associated with <filepath>/dev/drbd2</filepath>. To verify
-              the configuration in your environment, review 
-              <filepath>/etc/drbd.d/serviced-dfs.res</filepath>.</info>
-          </substep>
-          <substep>
-            <cmd>Resize the volume group.</cmd>
-            <stepxmp>Replace <varname>DRBD-Device</varname> with the
-              DRBD device associated with the <cmdname>serviced</cmdname> thin pool:
-              <codeblock>pvresize <varname>DRBD-Device</varname></codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Display information about the volume group.</cmd>
-            <stepxmp>Replace <varname>Volume-Group</varname> with the
-              name of the volume group identified in the previous substep:
-              <codeblock>vgdisplay <varname>Volume-Group</varname></codeblock>
-            </stepxmp>
-            <stepresult>The size of the volume group should be larger.</stepresult>
-          </substep>
-        </substeps>
-        
+        <cmd>Confirm that disk replication is started.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until the status of all 
+          devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
       </step>
       
       <step>
-        <cmd>On the primary node, resize the <cmdname>serviced</cmdname> thin pool.</cmd>
+        <cmd>Start cluster resources.</cmd>
         <substeps>
           <substep>
-            <cmd>Start the <cmdname>serviced</cmdname> group cluster services.</cmd>
+            <cmd>Start the <cmdname>serviced</cmdname> group.</cmd>
             <stepxmp>
               <codeblock>pcs resource enable serviced-group</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Add space to the data storage area 
-              of the <cmdname>serviced</cmdname> thin pool.</cmd>
-            <stepxmp>In the following command:
-              <ul>
-                <li>Replace <varname>Total-Size</varname> with the sum of the existing device size plus
-                  the space to add to the device, in gigabytes. Include the units identifier,
-                  <codeph>G</codeph>.</li>
-                <li>Replace <varname>Volume-Group</varname> with the 
-                  name of the LVM volume group identified in the previous step.</li>
-                <li>Replace <varname>Logical-Volume</varname> with the name of the logical volume
-                  identified in the previous step.</li>
-              </ul>
-              <codeblock>lvextend -L+<varname>Total-Size</varname>G <varname>Volume-Group</varname>/<varname>Logical-Volume</varname></codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Display information about LVM logical volumes on the host.</cmd>
-            <stepxmp>
-              <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
-            </stepxmp>
-            <stepresult>The result should show the larger size of the logical volume.</stepresult>
-          </substep>
-        </substeps>
-      </step>
-      
-      <step>
-        <cmd>On the primary node, start the storage resource.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Start the storage service.</cmd>
+            <cmd>Start the storage group.</cmd>
             <stepxmp>
               <codeblock>pcs resource enable serviced-storage</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Confirm that the service started correctly.</cmd>
+            <cmd>Start <cmdname>serviced</cmdname>.</cmd>
             <stepxmp>
-              <codeblock>pcs status</codeblock>
+              <codeblock>pcs resource enable serviced</codeblock>
             </stepxmp>
           </substep>
         </substeps>
       </step>
       
-      <step importance="optional">
-        <cmd>Increase the size of the application tenant volume, if desired.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Display the device mapper name of the <cmdname>serviced</cmdname> thin pool.</cmd>
-            <stepxmp>
-              <codeblock>grep -E '^\b*SERVICED_DM_THINPOOLDEV' /etc/default/serviced \
-  | sed -e 's/.*=//'</codeblock>
-            </stepxmp>
-            <info>Typically, the name is <codeph>/dev/mapper/serviced-serviced--pool</codeph>.</info>
-          </substep>
-          <substep>
-            <cmd>Increase the size of the tenant device.</cmd>
-            <stepxmp>In the following command: <ul>
-              <li>Replace <varname>Device-Mapper-Name</varname> with the device mapper name of the
-                thin pool.</li>
-              <li>Replace <varname>Tenant-ID</varname> with the identifier of the tenant
-                device.</li>
-              <li>Replace <varname>Total-Size</varname> with the sum of the existing device size plus
-                the space to add to the device, in gigabytes. Include the units identifier,
-                <codeph>G</codeph>.</li>
-            </ul>
-              <codeblock>serviced-storage resize -d /opt/serviced/var/volumes \
-  -o dm.thinpooldev=<varname>Device-Mapper-Name</varname> <varname>Tenant-ID</varname> <varname>Total-Size</varname>G</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+      <step>
+        <cmd>Start your application.</cmd>
+        <stepxmp>For example, the <ph conkeyref="names/company"/> application:
+          <codeblock>serviced service start Zenoss.resmgr</codeblock>
+        </stepxmp>
       </step>
     </steps>
   </taskbody>
 </task>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

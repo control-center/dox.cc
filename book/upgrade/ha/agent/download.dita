@@ -26,7 +26,7 @@
       <step>
         <cmd>Identify the version number of the resource agents package file.</cmd>
         <info>The file name is
-            <filepath>serviced-resource-agents-<varname>Version</varname>.x86_64.rpm</filepath>.</info>
+          <codeph>serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeph>.</info>
         <choices>
           <choice>If the version number of the package file is greater than the installed version
             number, download the package file.</choice>

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Starting the cluster on the current master node</title>
+  <title>Starting the cluster and keeping current roles</title>
   <taskbody>
-    <context>Use this procedure to complete the startup on the current master node.</context>
+    <context>Use this procedure to complete the startup and
+      keep <varname>Passive-Node</varname> in its current role as the master/primary node.</context>
     
     <steps>
       <step>
-        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
-          in to the master node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to <varname>Passive-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -26,10 +27,10 @@
       </step>
       
       <step>
-        <cmd>Take the original master host out of standby mode.</cmd>
-        <stepxmp>Replace <varname>Previous-Master</varname> with the
-          hostname of the previous master host node:
-          <codeblock>pcs cluster unstandy <varname>Previous-Master</varname></codeblock>
+        <cmd>Take <varname>Active-Node</varname> out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Active-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster unstandby <varname>Active-Node</varname></codeblock>
         </stepxmp>
       </step>
       
@@ -38,6 +39,8 @@
         <stepxmp>
           <codeblock>drbd-overview</codeblock>
         </stepxmp>
+        <stepresult>Do not proceed until the status of all 
+          devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
       </step>
       
       <step>

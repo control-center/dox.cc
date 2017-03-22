@@ -27,7 +27,7 @@
       <step>
         <cmd>Move the Pacemaker resource agents RPM file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>mv /tmp/serviced-resource-agents-*.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>mv /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.rpm /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       

@@ -48,7 +48,7 @@
       <step>
         <cmd>Copy the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-*.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>cp /tmp/serviced-<ph keyref="lo-version-cc"/>-1.rpm /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
         <stepresult>The <cmdname>yum</cmdname> command copies the contents 
           of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
@@ -57,7 +57,7 @@
       <step>
         <cmd>Copy the Pacemaker resource agents RPM file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-resource-agents-*.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>cp /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.rpm /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       

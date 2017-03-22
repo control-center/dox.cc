@@ -72,7 +72,7 @@
         <cmd>Download the Pacemaker resource agent for <ph keyref="nm-cc"/>.</cmd>
         <info>
         <sl>
-          <sli><codeph>serviced-resource-agents-<varname>Version</varname>.x86_64.rpm</codeph></sli>
+          <sli><codeph>serviced-resource-agents-<ph keyref="lo-version-ra"/>.x86_64.rpm</codeph></sli>
         </sl>
         </info>
       </step>

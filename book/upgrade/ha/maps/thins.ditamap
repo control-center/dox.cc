@@ -6,6 +6,7 @@
     <topicref keyref="cc-feature-manage-thinpool-examine-ha"/>
     <topicref keyref="cc-feature-manage-resize-meta"/>
     <topicref keyref="cc-upgrade-ha-resize-data">
+      <topicref keyref="cc-upgrade-ha-resize-identify"/>
       <topicref keyref="cc-upgrade-ha-resize-stop"/>
       <topicref keyref="cc-upgrade-ha-resize-partition"/>
       <topicref keyref="cc-upgrade-ha-resize-start"/>

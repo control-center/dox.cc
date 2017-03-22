@@ -7,20 +7,20 @@
     
     <steps>
       <step>
-        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
-          in to the primary master node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to <varname>Active-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>In a separate terminal session, log in to the secondary 
-          master node <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>In a separate terminal session, log in to
+          <varname>Passive-Node</varname> <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
         <cmd>Start DRBD.</cmd>
         <substeps>
           <substep>
-            <cmd>On the primary node, start DRBD.</cmd>
+            <cmd>On <varname>Active-Node</varname>, start DRBD.</cmd>
             <stepxmp>
               <codeblock>drbdadm up all</codeblock>
             </stepxmp>
@@ -30,11 +30,12 @@ Internal drbd meta data successfully moved.</codeblock>
             </stepresult>
           </substep>
           <substep>
-            <cmd>On the secondary node, start DRBD.</cmd>
+            <cmd>On <varname>Passive-Node</varname>, start DRBD.</cmd>
             <stepxmp>
               <codeblock>drbdadm up all</codeblock>
             </stepxmp>
-            <stepresult>The output of this command should match the output on the primary node.</stepresult>
+            <stepresult>The output of this command should match the
+              output on <varname>Active-Node</varname>.</stepresult>
           </substep>
           <substep>
             <cmd>On both nodes, confirm that the DRBD device for 
@@ -47,7 +48,7 @@ Internal drbd meta data successfully moved.</codeblock>
       </step>
       
       <step>
-        <cmd>On the primary node, wait for disks to synchronize.</cmd>
+        <cmd>On <varname>Active-Node</varname>, wait for disks to synchronize.</cmd>
         <stepxmp>
           <codeblock>watch drbd-overview</codeblock>
         </stepxmp>
@@ -56,21 +57,23 @@ Internal drbd meta data successfully moved.</codeblock>
       </step>
       
       <step>
-        <cmd>On the primary node, start cluster services for the distributed file system.</cmd>
+        <cmd>On <varname>Active-Node</varname>, start cluster 
+          services for the distributed file system.</cmd>
         <stepxmp>
           <codeblock>pcs cluster unstandby --all</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Confirm the identity of the primary node.</cmd>
+        <cmd>On either node, confirm the identity of the primary node.</cmd>
         <stepxmp>
-          <codeblock>pcs status</codeblock>
+          <codeblock>pcs status resources</codeblock>
         </stepxmp>
+        <stepresult>The first section shows the status of the nodes.</stepresult>
       </step>
       
       <step>
-        <cmd>On the primary node, resize the volume group that
+        <cmd>On <varname>Active-Node</varname>, resize the volume group that
           contains the <cmdname>serviced</cmdname> thin pool.</cmd>
         <substeps>
           <substep>
@@ -117,7 +120,7 @@ Internal drbd meta data successfully moved.</codeblock>
       </step>
       
       <step>
-        <cmd>On the primary node, resize the <cmdname>serviced</cmdname> thin pool.</cmd>
+        <cmd>On <varname>Active-Node</varname>, resize the <cmdname>serviced</cmdname> thin pool.</cmd>
         <substeps>
           <substep>
             <cmd>Start the <cmdname>serviced</cmdname> group cluster services.</cmd>
@@ -152,7 +155,7 @@ Internal drbd meta data successfully moved.</codeblock>
       </step>
       
       <step>
-        <cmd>On the primary node, start the storage resource.</cmd>
+        <cmd>On <varname>Active-Node</varname>, start the storage resource.</cmd>
         <substeps>
           <substep>
             <cmd>Start the storage service.</cmd>
@@ -161,7 +164,7 @@ Internal drbd meta data successfully moved.</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Confirm that the service started correctly.</cmd>
+            <cmd>Confirm that the resource started correctly.</cmd>
             <stepxmp>
               <codeblock>pcs status</codeblock>
             </stepxmp>
@@ -170,7 +173,8 @@ Internal drbd meta data successfully moved.</codeblock>
       </step>
       
       <step importance="optional">
-        <cmd>Increase the size of the application tenant volume, if desired.</cmd>
+        <cmd>On <varname>Active-Node</varname>, increase the size 
+          of the application tenant volume, if desired.</cmd>
         <substeps>
           <substep>
             <cmd>Display the device mapper name of the <cmdname>serviced</cmdname> thin pool.</cmd>

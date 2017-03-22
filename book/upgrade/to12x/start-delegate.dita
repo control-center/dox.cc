@@ -4,12 +4,12 @@
   <title>Updating delegate hosts with authentication</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> requires authentication tokens for all delegate communications.
-        The tokens are based on RSA key pairs created by the master <cmdname>serviced</cmdname> 
-        instance. When you create a key pair for a delegate, <cmdname>serviced</cmdname> bundles 
-        its public key with the delegate's private key. The <cmdname>serviced</cmdname> instance
-        on the delegate installs the credentials and uses them to sign messages with the required
-        unique tokens.</p>
+      <p>Starting with version 1.3.0, <ph keyref="nm-cc"/> requires authentication tokens for all
+        delegate communications. The tokens are based on RSA key pairs created by the master
+          <cmdname>serviced</cmdname> instance. When you create a key pair for a delegate,
+          <cmdname>serviced</cmdname> bundles its public key with the delegate's private key. The
+          <cmdname>serviced</cmdname> instance on the delegate installs the credentials and uses
+        them to sign messages with the required unique tokens.</p>
       
       <p>Credentials are installed by using an SSH connection or a file.</p>
       <ul>
