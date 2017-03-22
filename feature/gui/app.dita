@@ -2,19 +2,21 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><uicontrol>Applications</uicontrol> page</title>
-  <shortdesc>The <uicontrol>Applications</uicontrol> page features a table listing deployed
-    applications and the services that support <ph keyref="nm-cc"/>.</shortdesc>
+  <shortdesc>The <uicontrol>Applications</uicontrol> page lists managed applications, the services
+    that support <ph keyref="nm-cc"/>, application templates, and a graph showing thin pool usage. </shortdesc>
   <refbody>
-    <section>
+    <section id="section_zbr_fyv_hz">
       <!--<fig><title><uicontrol>Applications</uicontrol> page</title><image scale="50" keyref="png-xf-app"/></fig>-->
-      <ul>
-        <li>To display a details page for an application, click its name (<uicontrol audience="open"
-            >Zenoss.core</uicontrol><uicontrol audience="rm">Zenoss.resmgr</uicontrol>).</li>
-        <li>To display the Internal Services page, click <uicontrol>Internal Services</uicontrol>.</li>
-      </ul>
-      <!--<p>The space at the bottom-left of the menu bar displays the relative location of the page in the <ph keyref="nm-cc"/> web interface hierarchy.</p>-->
-      <p>The graphs section  shows thin pool usage information. For more information, see <xref
-          keyref="cc-feature-manage-thinpool-minimums"/>.</p>
+      In the <uicontrol>Applications</uicontrol> area, to display a details page for an application,
+      click its name. To display the <uicontrol>Internal Services</uicontrol> page, click
+        <uicontrol>Internal Services</uicontrol>. You can also search for, start or stop, and add or
+      delete an application. In the <uicontrol>Resource Pools</uicontrol> column, click the resource
+      pool name to access a details page. In the <uicontrol>Public Endpoint</uicontrol> column,
+      click the link to open an application.<!--<p>The space at the bottom-left of the menu bar displays the relative location of the page in the <ph keyref="nm-cc"/> web interface hierarchy.</p>-->
+      <p>In the <uicontrol>Application Templates</uicontrol> area, you can search for and add or
+        delete an application template.</p><p>The graphs area shows thin pool usage information. You
+        can change range, aggregator, and refresh settings. For more information about thin pool
+        requirements, see <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
     </section>
   </refbody>
 </reference>

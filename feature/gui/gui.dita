@@ -3,6 +3,8 @@
 <concept id="conceptid">
   <title>Browser interface reference</title>
   <conbody>
-    <p>This section contains information about the <ph keyref="nm-cc"/>  browser interface.</p>
+    <p>This section provides high-level overview information about the <ph keyref="nm-cc"/> browser
+      interface. For more context-specific information about elements in the browser interface,
+      hover the pointer over a items to open tooltips and information boxes, where applicable.</p>
   </conbody>
 </concept>

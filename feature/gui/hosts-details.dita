@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Host details page</title>
+  <title>Host details</title>
   
   <refbody>
     <section>
-      <p>
-        
-      </p>
+      <p>The hosts details page displays information about a specific machine that is assigned to a
+        resource pool. </p>
+      <p>On this page, you can edit the host name and RAM limit, and reset the host's authentication
+        keys and generate a new key pair. When you reset keys, services that are running on the host
+        cannot connect until you register the new keys by using the <cmdname>serviced host
+          register</cmdname> command.</p>
+      <p>The graphs show </p>
       
     </section>
   </refbody>

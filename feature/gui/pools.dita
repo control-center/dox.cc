@@ -2,15 +2,23 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><uicontrol>Resource Pools</uicontrol> page</title>
-  <shortdesc>The <uicontrol>Resource Pools</uicontrol> page lists 
-    the resource pools <ph keyref="nm-cc"/> is employing, with
-    aggregate information about the hosts in each pool.</shortdesc>
+  <shortdesc>The <uicontrol>Resource Pools</uicontrol> page lists the resource pools that <ph
+      keyref="nm-cc"/> employs, with aggregate information about the hosts in each pool.</shortdesc>
   <refbody>
     <section>
       <p>The <uicontrol>Resource Pools</uicontrol> table shows the total resources available in each
-        pool.</p>
-      <p>The <uicontrol>Resource Pool</uicontrol> button, located immediately above the right side
-        of the table, displays the <xref keyref="ref-xface-add-pool"><uicontrol>Add Pool</uicontrol> dialog</xref>.</p>
+        pool. You can search for and add resource pools. To view a details page for a pool, click
+        the pool name. </p>
+      <p>The resource pool details page displays pool summary information. You can add a virtual IP
+        for the pool, view hosts, and edit the following settings for the resource pool:</p>
+      <ul id="ul_vgf_1tw_hz">
+        <li>Name of the resource pool. </li>
+        <li>Length of time that the scheduler waits for a disconnected delegate host to rejoin its
+          pool before moving the services scheduled for the delegate to a different host in the
+          pool. This feature is useful for remote resource pools that are connected through a
+          high-latency, wide-area network.</li>
+        <li>Permissions, which requires a restart of the delegate.</li>
+      </ul>
     </section>
   </refbody>
 </reference>
