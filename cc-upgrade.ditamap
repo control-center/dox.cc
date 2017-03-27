@@ -53,6 +53,7 @@
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib-keys.ditamap" format="ditamap"/>
