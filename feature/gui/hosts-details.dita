@@ -5,13 +5,27 @@
   
   <refbody>
     <section>
-      <p>The hosts details page displays information about a specific machine that is assigned to a
-        resource pool. </p>
-      <p>On this page, you can edit the host name and RAM limit, and reset the host's authentication
-        keys and generate a new key pair. When you reset keys, services that are running on the host
-        cannot connect until you register the new keys by using the <cmdname>serviced host
+      <p>The details page for a host displays information about the specific machine that is
+        assigned to a resource pool. </p>
+      <p>You can edit the host name and RAM limit, and reset the host's authentication keys and
+        generate a new key pair. When you reset keys, services that are running on the host cannot
+        connect until you register the new keys by using the <cmdname>serviced host
           register</cmdname> command.</p>
-      <p>The graphs show </p>
+      <p>The graph shows memory usage for the entire system, (all Docker containers and all other
+        services that are running on the system).</p>
+      <note><ph id="host-memory">The memory values in the hosts table on the
+            <uicontrol>Hosts</uicontrol> page differ from those in the <uicontrol>Memory
+            Usage</uicontrol> graph on the host details page. The table shows memory usage for the
+          Docker containers only. The graph shows total system memory usage for Docker containers
+          and all services that are running on the system.</ph></note>
+      <p>The graphs show dynamic information about the host's CPU usage, memory usage (free,
+        buffers, cached, and used), load average, and other details. In a graph, you can filter the
+        information that is displayed. For example, in the <uicontrol>Memory Usage</uicontrol>
+        graph, click <uicontrol>Used</uicontrol> to hide used memory, and then click it again to
+        display used memory. You can edit the graph settings to change the time range, whether the
+        graph shows the sum or the average, and the refresh frequency. </p>
+      <p>Below the graphs, the page displays IP information and information about service instances.
+        You can search each table for specify IP or service information.</p>
       
     </section>
   </refbody>

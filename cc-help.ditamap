@@ -43,6 +43,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="feature/gui-keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
       <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>

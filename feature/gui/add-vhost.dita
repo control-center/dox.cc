@@ -32,7 +32,7 @@
               <entry><uicontrol>Application - Endpoint</uicontrol></entry>
               <entry>Required</entry>
               <entry>The application and endpoint combination for this virtual host. The list of
-                enpoints is defined in the <xref keyref="ref-svcdef-object">ServiceDefinition</xref>
+                enpoints is defined in the Service Definition
                 object of the service.</entry>
             </row>
           </tbody>
