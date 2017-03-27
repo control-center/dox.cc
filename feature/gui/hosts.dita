@@ -7,16 +7,16 @@
     <section>
       <p>The <uicontrol>Hosts</uicontrol> table lists each machine that is assigned to a resource
         pool. Summary information about each host includes whether it is active, its resource pool,
-        memory, RAM limit and usage for the Docker containers, CPU cores, kernel version, and the
-        version of <ph keyref="nm-cc"/> that the host is running, and actions that you can perform
-        on the host.</p>
-      <note><ph id="host-memory">The memory values in the hosts table on the
-            <uicontrol>Hosts</uicontrol> page differ from those in the <uicontrol>Memory
-            Usage</uicontrol> graph on the host details page. The table shows memory usage for the
-          Docker containers only. The graph shows total system memory usage for Docker containers
-          and all services that are running on the system.</ph></note>
+        memory, RAM limit and usage (for the Docker containers only), CPU cores, kernel version, and
+        the version of <ph keyref="nm-cc"/> that the host is running, and actions that you can
+        perform on the host.</p>
       <p>You can search for, add, and delete hosts. To display details about a host, click the host
         name.  </p>
+      <note><ph id="host-memory">The memory values in the table on the <uicontrol>Hosts</uicontrol>
+          page differ from those in the <uicontrol>Memory Usage</uicontrol> graph on the host
+          details page. The table shows memory usage for the Docker containers only. The graph shows
+          total system memory usage for the Docker containers and all services that are running on
+          the system.</ph></note>
     </section>
   </refbody>
 </reference>
