@@ -32,7 +32,7 @@
           in the Docker Engine update procedure.</li>
         <li>The <cmdname>serviced</cmdname> configuration file includes many new variables since
           version 1.1.1, and some deprecated variables. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-upgrade-to12x-vars"/>.</li>
+          <xref keyref="cc-upgrade-11x-vars"/>.</li>
         <li>All delegate communications are authenticated. To enable this feature, all existing
           hosts must install unique credentials, which are generated on the master host. The
           installation steps are included in the startup procedures.</li>

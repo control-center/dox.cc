@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/12x</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-12x-delegate"
+            href="12x/delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-12x-master"
+            href="12x/master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-12x-micro"
+            href="12x/micro.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-12x-zk-image"
+            href="12x/zk-image.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

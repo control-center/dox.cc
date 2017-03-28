@@ -3,7 +3,7 @@
 <bookmap >
  <title>Before</title>
   <chapter keyref="cc-upgrade-maps-prep">
-    <topicref keyref="cc-upgrade-to12x-prep-features"/>
+    <topicref keyref="cc-upgrade-11x-prep-features"/>
     <topicref keyref="cc-upgrade-topics-best-practices"/>
     <topicref keyref="cc-feature-manage-thinpool-minimums">
       <topicref keyref="cc-feature-manage-thinpool-examine"/>

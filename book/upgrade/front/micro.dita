@@ -10,7 +10,7 @@
       
       <p>The following table identifies the upgrades of <ph keyref="nm-cc"/>
         that are documented in this part.</p>
-      <table conkeyref="cc-upgrade-paths-documented/micro">
+      <table conkeyref="cc-upgrade-paths-documented/micro-12x">
         <tgroup cols="2"><tbody><row><entry/></row></tbody></tgroup>
       </table>
     </section>

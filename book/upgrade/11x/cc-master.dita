@@ -71,7 +71,7 @@ yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/><
         <cmd>Open the new configuration file with a text editor, 
         and then update the file for your environment.</cmd>
         <info>For more information about configuring the master host,
-          see <xref keyref="cc-upgrade-to12x-vars"/>.</info>
+          see <xref keyref="cc-upgrade-11x-vars"/>.</info>
       </step>
     </steps>
   </taskbody>

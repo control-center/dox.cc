@@ -4,9 +4,9 @@
  <title>Delegate</title>
   <chapter keyref="cc-upgrade-maps-delegate">
     <topicref keyref="cc-feature-master-device-naming"/>
-    <topicref keyref="cc-upgrade-to12x-docker-install"/>
-    <topicref keyref="cc-upgrade-to12x-docker-config"/>
-    <topicref keyref="cc-upgrade-to12x-cc-delegate"/>
-    <topicref keyref="cc-upgrade-to12x-zk-image"/>
+    <topicref keyref="cc-upgrade-11x-docker-install"/>
+    <topicref keyref="cc-upgrade-11x-docker-config"/>
+    <topicref keyref="cc-upgrade-11x-cc-delegate"/>
+    <topicref keyref="cc-upgrade-11x-zk-image"/>
  </chapter>
 </bookmap>

@@ -3,10 +3,10 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Micro</title>
-  <chapter keyref="cc-upgrade-micro-micro">
-    <topicref keyref="cc-upgrade-micro-master"/>
-    <topicref keyref="cc-upgrade-micro-delegate"/>
-    <topicref keyref="cc-upgrade-micro-zk-image"/>
+  <chapter keyref="cc-upgrade-12x-micro">
+    <topicref keyref="cc-upgrade-12x-master"/>
+    <topicref keyref="cc-upgrade-12x-delegate"/>
+    <topicref keyref="cc-upgrade-12x-zk-image"/>
     <topicref keyref="cc-upgrade-topics-start-zk"/>
  </chapter>
 </bookmap>

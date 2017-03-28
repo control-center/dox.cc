@@ -76,7 +76,7 @@
     <booklists>
       <toc/>
     </booklists>
-    <topicref href="book/upgrade/front/about.dita"/>
+    <topicref href="book/upgrade/front/about-ha.dita"/>
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
