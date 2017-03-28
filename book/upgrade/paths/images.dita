@@ -25,7 +25,8 @@
           </thead>
           <tbody>
             <row>
-              <entry><ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/></entry>
+              <entry><ph keyref="nm-cc"/>
+                <ph keyref="lo-version-cc"/></entry>
               <entry>zenoss/serviced-isvcs:v<ph keyref="lo-version-isvcs"/></entry>
               <entry>zenoss/isvcs-zookeeper:v<ph keyref="lo-version-zk"/></entry>
             </row>
