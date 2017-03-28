@@ -11,12 +11,12 @@
             href="maps/master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-maps-post"
-            href="maps/post.dita"
+    <keydef keys="cc-upgrade-ha-maps-pcs"
+            href="maps/pcs.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-maps-prep"
-            href="maps/prep.dita"
+    <keydef keys="cc-upgrade-ha-maps-post"
+            href="maps/post.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-maps-start"

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting the cluster and keeping current roles</title>
+  <taskbody>
+    <context>Use this procedure to complete the startup and
+      keep <varname>Passive-Node</varname> in its current role as the master/primary node.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to <varname>Passive-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Start the storage resource.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource enable serviced-storage</codeblock>
+        </stepxmp>
+      </step>
+            
+      <step>
+        <cmd>Confirm that the resource starts up.</cmd>
+        <stepxmp>
+          <codeblock>pcs status</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Take <varname>Active-Node</varname> out of standby mode.</cmd>
+        <stepxmp>Replace <varname>Active-Node</varname> with the
+          hostname assigned in <xref keyref="cc-upgrade-ha-resize-identify"/>:
+          <codeblock>pcs cluster unstandby <varname>Active-Node</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Confirm that disk replication is started.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>Do not proceed until the status of all 
+          devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Start the <ph keyref="nm-cc"/> resource.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource enable serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start your application.</cmd>
+        <stepxmp>For example, the <ph conkeyref="names/company"/> application:
+          <codeblock>serviced service start Zenoss.resmgr</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

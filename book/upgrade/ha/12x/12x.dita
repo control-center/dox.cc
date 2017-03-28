@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Before upgrading</title>
+  <title>Upgrading <ph keyref="nm-cc"/> cluster hosts</title>
   <refbody>
     <section>
-      <p>This chapter provides information and procedures to prepare your high-availability <ph
-          keyref="nm-cc"/> deployment for an upgrade.</p>
+      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/>
+        1.2.x system to <ph keyref="lo-version-cc"/>.</p>
+      
     </section>
   </refbody>
 </reference>

@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="2" modification="3"/>        
+        <vrm version="1" release="3" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -53,9 +53,11 @@
       <mapref href="book/install/ha/master-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/plan-keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/verify-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
       <mapref href="feature/config-keys.ditamap" format="ditamap"/>
       <mapref href="feature/delegate-keys.ditamap" format="ditamap"/>

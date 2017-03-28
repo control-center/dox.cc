@@ -16,9 +16,36 @@
       </step>
       
       <step>
+        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The result is a list of 1, 3, or 5 hosts, separated by the comma character
+          (<codeph>&#44;</codeph>). The master host is always a node in the ZooKeeper
+          ensemble.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>In separate windows, log in to each of the delegate hosts
+          that are nodes in the ZooKeeper ensemble <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
         <cmd>Take the cluster out of standby mode.</cmd>
         <stepxmp>
           <codeblock>pcs cluster unstandby --all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the other ZooKeeper ensemble hosts, start <cmdname>serviced</cmdname>.</cmd>
+        <info>The window of time for starting a ZooKeeper ensemble is 
+          relatively short. The goal of this step is to start
+          <ph keyref="nm-cc"/> on each ensemble node at about the 
+          same time, so that each node can participate in electing
+          the leader.</info>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
         </stepxmp>
       </step>
       
@@ -29,33 +56,6 @@
         </stepxmp>
         <stepresult>Monitor the status until all resources report <codeph>Started</codeph>. Resolve
           any issues before continuing.</stepresult>
-      </step>
-
-      <step>
-        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
-        <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
-        </stepxmp>
-        <stepresult>The result is a list of 1, 3, or 5 hosts, separated by the comma character
-            (<codeph>&#44;</codeph>). The master host is always a node in the ZooKeeper
-          ensemble.</stepresult>
-      </step>
-      
-      <step>
-        <cmd>In separate windows, log in to each of the delegate hosts
-          that are nodes in the ZooKeeper ensemble <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-      
-      <step>
-        <cmd>On all ensemble hosts, start <cmdname>serviced</cmdname>.</cmd>
-        <info>The window of time for starting a ZooKeeper ensemble is 
-          relatively short. The goal of this step is to start
-          <ph keyref="nm-cc"/> on each ensemble node at about the 
-          same time, so that each node can participate in electing
-          the leader.</info>
-        <stepxmp>
-          <codeblock>systemctl start serviced</codeblock>
-        </stepxmp>
       </step>
       
       <step>

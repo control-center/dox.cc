@@ -38,7 +38,7 @@
               <entry>Delegate hosts that are ZooKeeper ensemble nodes</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-feature-offline-other-packages"/></entry>
+              <entry><xref keyref="cc-feature-offline-pcs-drbd-download"/></entry>
               <entry>A RHEL/CentOS system with internet access</entry>
             </row>
           </tbody>

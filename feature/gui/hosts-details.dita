@@ -5,8 +5,8 @@
   
   <refbody>
     <section>
-      <p>The details page for a host displays information about the specific machine that is
-        assigned to a resource pool. </p>
+      <p>The hosts details page displays information about a specific machine that is assigned to a
+        resource pool.</p>
       <p>You can edit the host name and RAM limit, and reset the host's authentication keys and
         generate a new key pair. When you reset keys, services that are running on the host cannot
         connect until you register the new keys by using the <cmdname>serviced host
@@ -20,7 +20,6 @@
         frequency. </p>
       <p>Below the graphs is IP and service instance information. You can search each table for
         specific IP or service information.</p>
-      
     </section>
   </refbody>
 </reference>

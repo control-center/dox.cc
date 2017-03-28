@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting <ph keyref="nm-cc"/> and verifying the cluster</title>
+  <taskbody>
+    <context>Use this procedure to start <ph keyref="nm-cc"/> and verify the cluster.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to <varname>Active-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The result is a list of 1, 3, or 5 hosts, separated by the comma character
+          (<codeph>&#44;</codeph>). The master host is always a node in the ZooKeeper
+          ensemble.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>In separate windows, log in to each of the delegate hosts
+          that are nodes in the ZooKeeper ensemble <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On <varname>Active-Node</varname>, start the <ph keyref="nm-cc"/> resource.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource enable serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the other ZooKeeper ensemble hosts, start <cmdname>serviced</cmdname>.</cmd>
+        <info>The window of time for starting a ZooKeeper ensemble is 
+          relatively short. The goal of this step is to start
+          <ph keyref="nm-cc"/> on each ensemble node at about the 
+          same time, so that each node can participate in electing
+          the leader.</info>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On <varname>Active-Node</varname>, confirm that <cmdname>serviced</cmdname> 
+          starts successfully.</cmd>
+        <stepxmp>
+          <codeblock>journalctl -flu serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On <varname>Active-Node</varname>, stop the cluster.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Stop the <cmdname>serviced</cmdname> resource.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Confirm that <cmdname>serviced</cmdname> stops successfully.</cmd>
+            <stepxmp>
+              <codeblock>journalctl -flu serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Stop the storage resource.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource disable serviced-storage</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Stop the <cmdname>serviced</cmdname> group.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource disable serviced-group</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Wait for all cluster resources to stop.</cmd>
+            <stepxmp>
+              <codeblock>watch pcs status</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On <varname>Active-Node</varname>, fail 
+          over to <varname>Passive-Node</varname>.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Place <varname>Active-Node</varname> in standby mode.</cmd>
+            <stepxmp>
+              <codeblock>pcs cluster standby <varname>Active-Node</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Confirm that <varname>Active-Node</varname> switches roles.</cmd>
+            <stepxmp>
+              <codeblock>pcs status resources</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Confirm that the storage shows the correct size.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start the <cmdname>serviced</cmdname> group.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource enable serviced-group</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Confirm that the <codeph>serviced-lvm</codeph> resource starts.</cmd>
+            <stepxmp>
+              <codeblock>pcs status</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Confirm that the logical volume of the <codeph>serviced</codeph> thin pool
+              shows the correct size.</cmd>
+            <stepxmp>
+              <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    
+    <postreq>Complete the startup by keeping or changing the current roles:
+      <ul>
+        <li>To keep <varname>Passive-Node</varname> in its current role as the master/primary node, 
+          proceed to <xref keyref="cc-upgrade-ha-resize-start-secondary"/>.</li>
+        <li>To make <varname>Active-Node</varname> the master/primary node,
+          proceed to <xref keyref="cc-upgrade-ha-resize-start-primary"/>.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+</task>

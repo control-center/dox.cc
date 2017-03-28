@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading and staging cluster software</title>
+  <title>Downloading and staging and staging cluster software</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>
@@ -10,22 +10,14 @@
         <li>A secure network copy program.</li>
       </ul>
     </prereq>
-    <context>High-availability deployments rely on the following non-standard operating system
-      packages: <ul>
-        <li>For Distributed Replicated Block Device (DRBD): <codeph>drbd84-utils</codeph> and
-            <codeph>kmod-drbd84</codeph>.</li>
-        <li>For Pacemaker/Corosync: <codeph>pacemaker</codeph>, <codeph>corosync</codeph>, and
-            <codeph>pcs</codeph>.</li>
-      </ul>
-      <p>Follow these steps to download the packages and bundle them for installation on master host
-        nodes:</p>
-    </context>
+    <context>Use this procedure to download packages for Distributed Replicated Block Device (DRBD)
+      and Pacemaker/Corosync, and to bundle them for installation on master host nodes.</context>
     <steps>
       <step>
-        <cmd>Log in to a compatible host that is connected to the internet
-          <ph conkeyref="strings/login-root"/>.</cmd>
-        <info>The host must have the same operating system (RHEL or CentOS) and
-        release installed.</info>
+        <cmd>Log in to a compatible host that is connected to 
+            the internet <ph conkeyref="strings/login-root"/>.</cmd>
+        <info>The host must have the same operating system (RHEL or CentOS) and release installed,
+          and the same version of the Linux kernel, as the master host nodes.</info>
       </step>
       
       <step>

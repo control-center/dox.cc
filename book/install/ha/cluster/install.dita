@@ -39,7 +39,7 @@
           provides a Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host.</info>
         <stepxmp>
           <codeblock>yum install -y --disablerepo=\* \
-  /opt/zenoss-repo-mirror/serviced-resource-agents-*.x86_64.rpm</codeblock>
+            /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>
       

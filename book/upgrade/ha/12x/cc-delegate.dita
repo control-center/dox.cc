@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating <ph keyref="nm-cc"/> on delegate hosts</title>
+  <taskbody>
+    <context>This procedure updates <ph keyref="nm-cc"/> on
+      delegate hosts to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Perform this procedure on each delegate host in your deployment.</context>
+    <steps>
+      <step>
+        <cmd>Log in to a delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Save the current <cmdname>serviced</cmdname> configuration file as a reference.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Rename the file.</cmd>
+            <stepxmp>
+              <codeblock>mv /etc/default/serviced /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Make a backup copy of the new configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Copy the file.</cmd>
+            <stepxmp>
+              <codeblock>cp /etc/default/serviced /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set permissions to read-only.</cmd>
+            <stepxmp>
+              <codeblock>chmod 0440 /etc/default/serviced-<ph keyref="lo-version-cc"/>-orig</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Display the settings of the reference configuration file.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Open the new configuration file with a text editor, 
+          and then update the file for your environment.</cmd>
+        <info>For more information about configuring a delegate host,
+          see <xref keyref="cc-upgrade-to12x-vars"/>.</info>
+      </step>
+      
+    </steps>
+    <postreq>When all delegate hosts are updated, start the cluster. 
+      <ph conkeyref="strings/fmi-int"/> 
+      <xref keyref="cc-feature-manage-manage-ha"/>.</postreq>
+  </taskbody>
+</task>
