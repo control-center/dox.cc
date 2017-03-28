@@ -6,7 +6,7 @@
     <!-- Once again, it'd be nice to have DITA 1.3...commented for RM/Core install guide -->
     <!-- -->
     <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
+        keyref="pl-feature-offline-offline"/>, and then perform this procedure.</prereq>
     
     <context>Use this procedure to import the Docker Engine image
       for the ZooKeeper service from a ZooKeeper image file. Repeat this procedure 

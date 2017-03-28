@@ -43,6 +43,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="feature/gui-keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/resize-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
