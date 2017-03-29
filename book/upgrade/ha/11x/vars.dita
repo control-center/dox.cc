@@ -5,8 +5,8 @@
   <conbody>
     <p>This appendix includes the content in the following list:</p>
     <ol>
-      <li><xref keyref="cc-upgrade-to12x-vars-old"/></li>
-      <li><xref keyref="cc-upgrade-to12x-vars-new"/></li>
+      <li><xref keyref="cc-upgrade-11x-vars-old"/></li>
+      <li><xref keyref="cc-upgrade-11x-vars-new"/></li>
       <li><xref keyref="cc-feature-vars-master"/></li>
       <li><xref keyref="cc-feature-vars-delegate-about"/></li>
       <li><xref keyref="cc-feature-vars-all"/></li>

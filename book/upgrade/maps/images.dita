@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title><ph keyref="nm-cc"/> releases and images</title>
+  <refbody>
+    <section>
+      <p>This appendix associates <ph keyref="nm-cc"/> releases with the
+        tags of the required Docker Engine images for each release. The images provide
+        the virtual containers of the <ph keyref="nm-cc"/> internal services and
+        the ZooKeeper service. In addition, this appendix includes a procedure
+      for identifying installed images.</p>
+    </section>
+  </refbody>
+</reference>

@@ -4,9 +4,9 @@
    <title>Start</title>
    <appendix keyref="cc-upgrade-ha-maps-start">
      <topicref keyref="cc-upgrade-ha-11x-start-master"/>
-     <topicref keyref="cc-upgrade-to12x-start-delegate">
-       <topicref keyref="cc-upgrade-to12x-start-delegate-ssh"/>
-       <topicref keyref="cc-upgrade-to12x-start-delegate-local"/>
+     <topicref keyref="cc-upgrade-11x-start-delegate">
+       <topicref keyref="cc-upgrade-11x-start-delegate-ssh"/>
+       <topicref keyref="cc-upgrade-11x-start-delegate-local"/>
      </topicref>
    </appendix>
 </bookmap>

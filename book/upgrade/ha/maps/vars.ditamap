@@ -2,9 +2,9 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Variables</title>
-    <appendix keyref="cc-upgrade-to12x-vars">
-       <topicref keyref="cc-upgrade-to12x-vars-old"/> 
-       <topicref keyref="cc-upgrade-to12x-vars-new"/>
+    <appendix keyref="cc-upgrade-11x-vars">
+       <topicref keyref="cc-upgrade-11x-vars-old"/> 
+       <topicref keyref="cc-upgrade-11x-vars-new"/>
        <topicref keyref="cc-feature-vars-master">
           <topicref keyref="cc-feature-vars-storage"/>
           <topicref keyref="cc-feature-vars-endpoints"/>

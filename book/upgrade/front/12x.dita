@@ -5,12 +5,11 @@
   <refbody>
     <section>
       <p>The chapters in this part provide instructions for performing a micro upgrade of <ph
-          keyref="nm-cc"/>, from version 1.2.x to <ph keyref="lo-version-cc"/>. Before you begin,
-        review topics in <xref keyref="cc-upgrade-maps-prep"/>.</p>
+          keyref="nm-cc"/>, from version 1.2.x to <ph keyref="lo-version-cc"/>. </p>
       
       <p>The following table identifies the upgrades of <ph keyref="nm-cc"/>
         that are documented in this part.</p>
-      <table conkeyref="cc-upgrade-paths-documented/micro">
+      <table conkeyref="cc-upgrade-paths-documented/micro-12x">
         <tgroup cols="2"><tbody><row><entry/></row></tbody></tgroup>
       </table>
     </section>

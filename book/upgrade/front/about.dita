@@ -7,13 +7,14 @@
      <p>The <cite conkeyref="pubs/cite-upgrade"/> provides detailed instructions for performing the
        following upgrades:
        <ul>
-         <li>Micro upgrades, from version 1.2.x to version <ph keyref="lo-version-cc"/></li>
-         <li>Minor upgrades, from version 1.1.x to version <ph keyref="lo-version-cc"/></li>
+         <li>Upgrade from version 1.3.x to version <ph keyref="lo-version-cc"/></li>
+         <li>Upgrade from version 1.2.x to version <ph keyref="lo-version-cc"/></li>
+         <li>Upgrade from version 1.1.x to version <ph keyref="lo-version-cc"/></li>
        </ul>
      </p>
      <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
-       upgrading a high-availability deployment. For additional information, please contact your
-       <ph conkeyref="names/company"/> representative.</p>   </section>
+       upgrading a high-availability deployment. <ph conkeyref="strings/fmi-ext"/>
+       <cite conkeyref="pubs/cite-upgrade-ha"/>.</p>   </section>
    
    <section conkeyref="related-pubs/cc"/>
    <section conkeyref="more-info/cc"/>
@@ -48,7 +49,10 @@
       <dl>
         <dlentry>
           <dt>1320.<keyword keyref="lo-build-date"/></dt>
-          <dd>Editorial updates.</dd>
+          <dd>Update release number (1.3.1).</dd>
+          <dd>Add a part for upgrading 1.3.x systems to the latest release.</dd>
+          <dd>Move thin pool resize procedures to an appendix.</dd>
+          <dd>Move information about Docker Engine images to an appendix.</dd>
         </dlentry>
         <dlentry>
           <dt>1320.17.076</dt>
