@@ -39,6 +39,10 @@
             href="11x/prep-features.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-11x-prep"
+            href="11x/prep.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-11x-start-delegate-local"
             href="11x/start-delegate-local.dita"
             format="dita"

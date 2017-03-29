@@ -15,6 +15,14 @@
             href="12x/micro.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-12x-prep-features"
+            href="12x/prep-features.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-12x-prep"
+            href="12x/prep.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-12x-zk-image"
             href="12x/zk-image.dita"
             format="dita"

@@ -8,6 +8,8 @@
       <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
         your deployment without internet access, perform the steps in <xref
           keyref="cc-feature-offline-offline"/> before performing the procedures in this chapter.</note>
+      <p>Before performing the procedures in this chapter, stop <ph keyref="nm-cc"/> on all
+        hosts in the cluster. <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-maps-stop"/>.</p>
     </section>
   </refbody>
 </reference>

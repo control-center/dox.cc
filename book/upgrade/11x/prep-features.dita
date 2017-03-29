@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>New features that affect upgrades</title>
+  <title>New features that affect upgrades from 1.1.x</title>
   <refbody>
-    <section id="section_sqt_wnh_2z">
+    <section>
       <p>This release includes new features and new requirements that affect the upgrade process.
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
-    </section>
-    <section id="section_igx_c4h_2z">
-      <!-- CC_3332 -->
-      <title>Upgrading from 1.1.x or 1.2.x to 1.3.0</title>
-      <p>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
-          shutdown</i> of applications and services while sufficient resources remain to take action
-        to avoid data loss. Support for this feature requires at least 3GB free data space in the
-        thin pool, at least 62MB of free metadata space in the thin pool, and at least 3GB of free
-        space in each application's tenant volume. Before you upgrade, ensure that 
-        the <cmdname>serviced</cmdname> thin pool is adequate and if necessary, resize it. 
-        <ph conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
       <note><ph conkeyref="names/company"/> applications may require additional steps
         to prepare to use this release. For more information, refer to the documentation
         for your application.</note>
-    </section>
-    <section>
-      <title>Upgrading from 1.1.x to 1.3.0</title>
       <ul>
+        <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
+          shutdown</i> of applications and services while sufficient resources remain to take
+          action to avoid data loss. Support for this feature requires specific minimum amounts of
+          space in the <ph keyref="nm-cc"/> thin pool for application data. 
+          <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
+            resize it. <ph conkeyref="strings/fmi-int"/>
+            <xref keyref="cc-feature-manage-thinpool-minimums"/>.</note></li>
         <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
           <codeph>3.10.0-327.36.2</codeph>. For optimal results, the most recent kernel is recommended.
           To prevent dependency issues, updating the kernel or operating system is a step
@@ -42,7 +34,7 @@
           includes an optional procedure for removing permissions from a resource pool.</li>
         <li>In previous releases, the <varname>SERVICED_NFS_CLIENT</varname> variable was set on
           delegate hosts to prevent access to the DFS. In this release,
-            <varname>SERVICED_NFS_CLIENT</varname> is deprecated in favor of setting DFS access
+          <varname>SERVICED_NFS_CLIENT</varname> is deprecated in favor of setting DFS access
           permission at the resource pool level. To ease the transition to the new functionality,
           delegate host configurations that include the <varname>SERVICED_NFS_CLIENT</varname>
           variable are still supported.</li>
@@ -50,15 +42,13 @@
           the scheduler waits for a disconnected delegate host to rejoin its pool before moving the
           services scheduled for the delegate to a different host in the pool. This feature is
           useful for remote resource pools that are connected through a high-latency, wide-area
-          network. <!--cc_3389-->
-          <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-manage-pool-connection-timeout"/>.</li>
+          network.</li>
         <li>Among other changes since version 1.9.0, Docker Engine <ph keyref="lo-version-docker"/>
           includes a new storage subsystem. The initial startup takes a little longer, as the old
           layout is replaced with the new layout.</li>
       </ul>
       <p>For more information about this release, refer to the <cite conkeyref="pubs/cite-notes"
-        />.</p>
+      />.</p>
     </section>
   </refbody>
 </reference>
