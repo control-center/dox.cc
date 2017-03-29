@@ -12,8 +12,10 @@
       <p>For optimal results, review the contents of this guide 
         thoroughly before performing an installation.</p>
       
-      <note>The procedures in this guide describe how to configure a deployment without internet
-        access.</note>
+      <note>The procedures in this guide describe how to configure a deployment 
+        that does not have internet access. You may create a deployment that
+      does have internet access; the procedures assume that the deployment 
+      does not have access.</note>
     </section>
   </refbody>
 </reference>

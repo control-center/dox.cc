@@ -790,6 +790,24 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
         </substeps>
       </step>
       
+      <step id="install-serviced-offline-ha">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install <ph keyref="nm-cc"/>.</cmd>
+            <stepxmp>
+              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
+  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
 
       
       <step id="nfs-workaround">

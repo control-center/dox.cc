@@ -17,7 +17,14 @@
         </stepxmp>
       </step>
     </steps>
-    <result>If the installed image versions are not higher than the
-    versions that accompany a release, the images do not need to be updated.</result>
+    <result>
+      <ul>
+        <li>If the installed image versions are higher than the
+          versions that accompany a release, the images need to be updated.
+        The upgrade procedures include steps for installing the required images.</li>
+        <li>If the installed image versions are not higher than the
+          versions that accompany a release, the images do not need to be updated.</li>
+      </ul>
+      </result>
   </taskbody>
 </task>

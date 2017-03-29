@@ -19,7 +19,7 @@
       <step>
         <cmd>On both nodes, verify the settings in the <cmdname>serviced</cmdname> configuration file.</cmd>
         <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced | sort</codeblock>
         </stepxmp>
         <info>The settings must be identical on both hosts.</info>
       </step>
@@ -89,6 +89,12 @@
               <codeblock>serviced key reset --register <varname>Host-ID</varname></codeblock>
             </stepxmp>
           </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the active node, fail over to the passive node, and then monitor the process.</cmd>
+        <substeps>
           <substep>
             <cmd>Display the status of mirrored storage areas.</cmd>
             <stepxmp>
@@ -97,12 +103,6 @@
             <stepresult>Do not proceed until the status of all 
               devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
           </substep>
-        </substeps>
-      </step>
-      
-      <step>
-        <cmd>On the active node, fail over to the passive node, and then monitor the process.</cmd>
-        <substeps>
           <substep>
             <cmd>Fail over to the passive node.</cmd>
             <stepxmp>Replace <varname>Active-Node</varname> with the IP address or hostname
@@ -145,14 +145,6 @@
               <codeblock>serviced key reset --register <varname>Host-ID</varname></codeblock>
             </stepxmp>
           </substep>
-          <substep>
-            <cmd>Display the status of mirrored storage areas.</cmd>
-            <stepxmp>
-              <codeblock>drbd-overview</codeblock>
-            </stepxmp>
-            <stepresult>Do not proceed until the status of all 
-              devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
-          </substep>
         </substeps>
       </step>
       
@@ -163,7 +155,7 @@
             <cmd>Restore the cluster.</cmd>
             <stepxmp>Replace <varname>Former-Active-Node</varname> with the IP address or hostname
               of the now-passive master host:
-              <codeblock>pcs cluster standby <varname>Former-Active-Node</varname></codeblock>
+              <codeblock>pcs cluster unstandby <varname>Former-Active-Node</varname></codeblock>
             </stepxmp>
           </substep>
           <substep>

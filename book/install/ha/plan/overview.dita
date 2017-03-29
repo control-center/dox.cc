@@ -23,6 +23,7 @@
       <li>provides no protection against a facility catastrophe because the HA cluster nodes
         are located in the same facility</li>      
       </ul></p>
-    
+    <note><ph conkeyref="names/company"/> supports DRBD 8.4, not DRBD 9.0. The procedures in this 
+      guide install the latest version of release 8.4.</note>
   </conbody>
 </concept>

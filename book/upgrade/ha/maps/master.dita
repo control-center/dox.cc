@@ -5,6 +5,8 @@
   <refbody>
     <section>
       <p>Perform the procedures in this chapter on each master host node.</p>
+      <p>Before performing the procedures in this chapter, stop <ph keyref="nm-cc"/> on all
+        hosts in the cluster. <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-maps-stop"/>.</p>
     </section>
   </refbody>
 </reference>

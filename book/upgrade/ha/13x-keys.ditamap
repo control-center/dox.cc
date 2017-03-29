@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha/13x</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-ha-13x-13x"
+            href="13x/13x.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-agent"
+            href="13x/agent.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-cc-delegate"
+            href="13x/cc-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-cc-master"
+            href="13x/cc-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-download"
+            href="13x/download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-image"
+            href="13x/image.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-offline"
+            href="13x/offline.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-post"
+            href="13x/post.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-prep-features"
+            href="13x/prep-features.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-prep"
+            href="13x/prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-stage-agent"
+            href="13x/stage-agent.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-stage-rpm"
+            href="13x/stage-rpm.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-stage-run"
+            href="13x/stage-run.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

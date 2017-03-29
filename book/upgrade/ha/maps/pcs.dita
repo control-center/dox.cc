@@ -7,6 +7,8 @@
       <p>The procedures in this appendix describe how to update the Distributed Replicated Block Device (DRBD)
         and Pacemaker/Corosync software, if desired. Typically, the software is updated only to resolve issues
         caused by the currently-installed versions of the packages.</p>
+      <note><ph conkeyref="names/company"/> supports DRBD 8.4, not DRBD 9.0. The procedures in this section
+      download the latest version of release 8.4.</note>
     </section>
   </refbody>
 </reference>
