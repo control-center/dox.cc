@@ -31,6 +31,10 @@
             href="12x/offline.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-12x-post"
+            href="12x/post.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-12x-prep-features"
             href="12x/prep-features.dita"
             format="dita"

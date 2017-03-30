@@ -20,7 +20,7 @@
       <step>
         <cmd>Extract the internal services image.</cmd>
         <stepxmp>
-          <codeblock>./install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeblock>
+          <codeblock>./install-zenoss-serviced-isvcs:v<ph keyref="lo-version-isvcs"/>.run</codeblock>
         </stepxmp>
         <info>At the prompt, press <b>y</b>.</info>
       </step>
@@ -28,7 +28,7 @@
       <step>
         <cmd>Extract the ZooKeeper image.</cmd>
         <stepxmp>
-          <codeblock>./install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeblock>
+          <codeblock>./install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeblock>
         </stepxmp>
         <info>At the prompt, press <b>y</b>.</info>
       </step>

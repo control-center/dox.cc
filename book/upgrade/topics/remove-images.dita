@@ -17,7 +17,7 @@
           <codeblock>serviced version | grep Images</codeblock>
         </stepxmp>
         <stepresult>Example result:
-          <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v50 zenoss/isvcs-zookeeper:v7]</codeblock>
+          <codeblock>IsvcsImages: [zenoss/serviced-isvcs:v<ph keyref="lo-version-isvcs"/> zenoss/isvcs-zookeeper:v<ph keyref="lo-version-zk"/>]</codeblock>
         </stepresult>
       </step>
       
@@ -26,15 +26,13 @@
         <stepxmp>
           <codeblock>docker images | awk '/REPO|isvcs/'</codeblock>
         </stepxmp>
-        <stepresult>Example result (edited to fit):
-          <codeblock>REPOSITORY                     TAG       IMAGE ID
+        <stepresult>Example result (edited to fit): <codeblock>REPOSITORY                     TAG       IMAGE ID
 zenoss/serviced-isvcs          v40       88cd6c24cc82
-zenoss/serviced-isvcs          v50       0aab5a2123f2
+zenoss/serviced-isvcs          v<ph keyref="lo-version-isvcs"/>       0aab5a2123f2
 zenoss/isvcs-zookeeper         v3        46fa0a2fc4bf
-zenoss/isvcs-zookeeper         v7        0ff3b3117fb8</codeblock>
-          <p>The example result shows the current versions and one set
-            of previous versions. Your result may include additional
-          previous versions and will show different images IDs.</p>
+zenoss/isvcs-zookeeper         v<ph keyref="lo-version-zk"/>        0ff3b3117fb8</codeblock>
+          <p>The example result shows the current versions and one set of previous versions. Your
+            result may include additional previous versions and will show different images IDs.</p>
         </stepresult>
       </step>
       

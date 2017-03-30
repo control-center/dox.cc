@@ -10,7 +10,7 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="cc-feature-lib-tasks/install-serviced-offline">
+      <step conkeyref="cc-feature-lib-tasks/install-serviced-offline-ha">
         <cmd/>
       </step>
       
