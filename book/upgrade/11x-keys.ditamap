@@ -19,6 +19,10 @@
             href="11x/dnsmasq.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-11x-docker-config-master"
+            href="11x/docker-config-master.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-11x-docker-config"
             href="11x/docker-config.dita"
             format="dita"

@@ -23,7 +23,7 @@
       </step>
       
       <!-- This one ain't like the others... -->
-      <step conkeyref="cc-install-ha-master-lib/docker-config">
+      <step conkeyref="cc-install-ha-master-lib/docker-config-master">
         <cmd/>
       </step>
 

@@ -22,7 +22,7 @@
         <cmd/>
       </step>
 
-      <step conkeyref="cc-feature-lib-tasks/docker-config">
+      <step conkeyref="cc-feature-lib-tasks/docker-config-master">
         <cmd/>
       </step>
 
