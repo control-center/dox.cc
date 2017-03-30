@@ -16,7 +16,6 @@
         </thead>
         <tbody>
           <row>
-            <entry><ph keyref="nm-cc"/> 1.3.1</entry>
             <entry><ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/></entry>
             <entry>06 Apr 2017</entry>
           </row>
