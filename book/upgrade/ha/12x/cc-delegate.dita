@@ -65,7 +65,7 @@
         <cmd>Open the new configuration file with a text editor, 
           and then update the file for your environment.</cmd>
         <info>For more information about configuring a delegate host,
-          see <xref keyref="cc-upgrade-to12x-vars"/>.</info>
+          see <xref keyref="cc-upgrade-11x-vars"/>.</info>
       </step>
       
     </steps>

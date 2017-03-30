@@ -4,7 +4,7 @@
   <title>Updating the ZooKeeper image on ensemble nodes that do not have internet access</title>
   <taskbody>
     <prereq>Before performing this procedure, review the information in the following table to
-      determine whether it is necessary. <table conkeyref="cc-upgrade-paths-images/micro">
+      determine whether it is necessary. <table conkeyref="cc-upgrade-paths-images/images">
         <tgroup cols="3">
           <tbody>
             <row>

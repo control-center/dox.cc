@@ -3,11 +3,11 @@
 <bookmap>
    <title>Start</title>
    <appendix keyref="cc-upgrade-maps-start">
-     <topicref keyref="cc-upgrade-to12x-start-master-single"/>
-     <topicref keyref="cc-upgrade-to12x-start-master-multi"/>
-      <topicref keyref="cc-upgrade-to12x-start-delegate">
-        <topicref keyref="cc-upgrade-to12x-start-delegate-ssh"/>
-        <topicref keyref="cc-upgrade-to12x-start-delegate-local"/>
+     <topicref keyref="cc-upgrade-11x-start-master-single"/>
+     <topicref keyref="cc-upgrade-11x-start-master-multi"/>
+     <topicref keyref="cc-upgrade-11x-start-delegate">
+       <topicref keyref="cc-upgrade-11x-start-delegate-ssh"/>
+       <topicref keyref="cc-upgrade-11x-start-delegate-local"/>
       </topicref>
      <topicref keyref="cc-upgrade-topics-start-zk"/>
    </appendix>

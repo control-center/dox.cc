@@ -7,6 +7,10 @@
             href="maps/delegate.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-maps-images"
+            href="maps/images.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-maps-master"
             href="maps/master.dita"
             format="dita"
