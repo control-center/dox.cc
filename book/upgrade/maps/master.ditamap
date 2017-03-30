@@ -5,7 +5,7 @@
   <chapter keyref="cc-upgrade-maps-master">
     <topicref keyref="cc-feature-master-device-naming"/>
     <topicref keyref="cc-upgrade-11x-docker-install"/>
-    <topicref keyref="cc-upgrade-11x-docker-config"/>
+    <topicref keyref="cc-upgrade-11x-docker-config-master"/>
     <topicref keyref="cc-upgrade-11x-docker-images"/>
     <topicref keyref="cc-upgrade-11x-cc-master"/>
  </chapter>

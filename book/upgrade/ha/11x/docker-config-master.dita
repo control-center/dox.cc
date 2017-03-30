@@ -54,19 +54,6 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the master host.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Master</varname> with 
-                the virtual hostname (<varname>HA-Virtual-Name</varname>)
-                or IPv4 address (<varname>HA-Virtual-IP</varname>)
-                of the high-availability cluster:</p>
-              <codeblock>myCluster="<varname>Master</varname>"</codeblock>
-              <p>The value of this variable must match the value of
-                the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
-                in <filepath>/etc/default/serviced</filepath>.</p>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Create variables for adding arguments to the Docker configuration file. The
               <codeph>--exec-opt</codeph> argument is a workaround for <xref
                 keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
@@ -75,14 +62,13 @@ EOF</codeblock>
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myMount="--storage-opt dm.mountopt=discard"
-myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=$myCluster:5000"</codeblock>
+myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Add the arguments to the Docker configuration file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag $myReg'"' \
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>

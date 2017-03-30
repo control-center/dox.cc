@@ -4,6 +4,46 @@
   <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
   <taskbody>
     <steps>
+      <step id="docker-config-master">
+        <cmd>Configure and start the Docker service.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create a variable for the name of the Docker thin pool.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Thin-Pool-Device</varname> with the name of the
+                thin pool device created in the previous step:</p>
+              <codeblock>myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create variables for adding arguments to the Docker configuration file. The
+              <codeph>--exec-opt</codeph> argument is a workaround for <xref
+                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+            <stepxmp>
+              <codeblock>myDriver="--storage-driver devicemapper"
+myLog="--log-level=error"
+myFix="--exec-opt native.cgroupdriver=cgroupfs"
+myMount="--storage-opt dm.mountopt=discard"
+myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Add the arguments to the Docker configuration file.</cmd>
+            <stepxmp>
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag'"' \
+  &#62;&#62; /etc/sysconfig/docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start or restart Docker.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart docker</codeblock>
+            </stepxmp>
+            <stepresult>The startup may take up to a minute, and may fail. If startup
+              fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
+          </substep>
+        </substeps>
+      </step>
 
       <step id="docker-config">
         <cmd>Configure and start the Docker service.</cmd>
@@ -39,7 +79,7 @@ myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myMount="--storage-opt dm.mountopt=discard"
 myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=myCluster:5000"</codeblock>
+myReg="--insecure-registry=$myCluster:5000"</codeblock>
             </stepxmp>
           </substep>
           <substep>
