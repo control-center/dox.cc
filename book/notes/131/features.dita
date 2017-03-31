@@ -4,47 +4,9 @@
   <title>New features</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> 1.3.0 introduces enhancements in the following functional areas:</p>
+      <p><ph keyref="nm-cc"/> 1.3.1 introduces enhancements in the following functional areas:</p>
       <ul>
-        <li><b>Emergency shutdown</b><p>For services in a resource pool with DFS access, <ph
-              keyref="nm-cc"/> monitors storage usage levels and trends. Using collected data, it
-            predicts when a service will exhaust storage space. Data corruption can result if thin
-            pool or metadata volume space is exhausted. If <ph keyref="nm-cc"/> projects that the
-            service is likely to exhaust available storage space in a pre-determined window, it will
-            initiate an automatic emergency shutdown of the service, while enough space is still
-            available to perform recovery operations. Support for this feature requires at least 3GB
-            of free space in the thin pool for data and metadata. For more information on this
-            feature, including how to view current storage utilization and how to recover from an
-            emergency shutdown, see the <cite conkeyref="pubs/cite-ref"
-              />.<note><!--CC3384 and CC3363-->Before upgrading to <ph keyref="nm-cc"/> 1.3.0, you
-                <i>must</i> ensure you have sufficient free space in both the thin pool metadata
-              volume and the thin pool data volume. The thin pool metadata volume should be at least
-              1% of the size of the thin pool data volume (if created by an earlier version of
-                <codeph>serviced-storage</codeph>, it may be smaller). In addition, you must have at
-              least 3GB of available space in the thin pool data volume, as this is the minimum
-              buffer before an emergency shutdown will commence. If less than 3GB is available, you
-              must provision additional storage or <codeph>serviced</codeph> will fail to start
-              after the upgrade. See the <cite conkeyref="pubs/cite-upgrade"/> for
-            details.</note></p>
-          
-          <note><ph conkeyref="names/company"/> applications may require additional steps
-          to prepare to use this release. For more information, refer to the documentation
-          for your application.</note>
-        </li>
-        <li><b>Rolling restart</b><p><ph keyref="nm-cc"/> now restarts instances of multi-instance
-            services one at a time. This rolling restart reduces or eliminates downtime for these
-            services on Restart, such as following a ZenPack install or upgrade. In a WAN outage,
-            the rolling restart proceeds, and instances on disconnected hosts restart when the WAN
-            is restored.</p></li>
-        <li><b>Graceful shutdown</b><p>Improved service startup, restart, and shutdown order to
-            optimize startup times and perform normal shutdowns more gracefully. When taking a
-            snapshot, all services pause while the snapshot is taken, and then return to their prior
-            state. Requests to start, stop, or restart a service during the snapshot are delayed
-            until after the snapshot.</p></li>
-        <li><b>NAT support</b><p><ph keyref="nm-cc"/> supports the use of network address
-            translation (NAT). When you add a delegate host, you specify the hostname or IP address
-            and port for the NAT device, and then transfer host keys to the delegate hosts and
-            register them.</p></li>
+        <li><b/></li>
       </ul>
     </section>
     
