@@ -19,6 +19,9 @@
           It's easier to <cmdname>grep</cmdname> for settings when each one starts a line.</li>
         <li>Add customizations to the top of the file. Customizations at the end of the file or
           scattered throughout the file may be overlooked.</li>
+        <li>In high-availability deployments, the contents of <filepath>/etc/default/serviced</filepath> 
+          on the master nodes must be identical. Use a utility like <cmdname>sum</cmdname> to compare
+          the files quickly.</li>
       </ol>
     </section>
   </refbody>

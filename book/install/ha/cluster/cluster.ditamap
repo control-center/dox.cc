@@ -3,7 +3,6 @@
 <bookmap>
    <title>Cluster</title>
   <chapter keyref="cc-install-ha-cluster-cluster">
-    <topicref keyref="cc-install-ha-cluster-install"/>
     <topicref keyref="cc-install-ha-cluster-standby"/>
     <topicref keyref="cc-install-ha-cluster-defaults">
       <topicref keyref="cc-install-ha-cluster-defaults-set"/>

@@ -35,12 +35,15 @@
         <substeps>
           <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
-            <cmd>Add <varname>SERVICED_DM_BASESIZE</varname> immediately after
-              <varname>SERVICED_DM_THINPOOLDEV</varname>, and set its value.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Fifty-Percent</varname> with the value that is less than or
+            <cmd>Locate the line for the <varname>SERVICED_DM_BASESIZE</varname> variable, and 
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value, if necessary.</cmd>
+            <stepxmp>Replace <varname>Fifty-Percent</varname> with the value that is less than or
                 equal to 50% of the size of the thin pool for application data.
-                Include the symbol for gigabytes, <codeph>G</codeph>:</p>
+                Include the symbol for gigabytes, <codeph>G</codeph>:
               <codeblock>SERVICED_DM_BASESIZE=<varname>Fifty-Percent</varname>G</codeblock>
             </stepxmp>
           </substep>

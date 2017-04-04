@@ -15,6 +15,10 @@
             href="offline/pcs-drbd-download.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-offline-stage-rpm-ha"
+            href="offline/stage-rpm-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-offline-stage-rpm"
             href="offline/stage-rpm.dita"
             format="dita"

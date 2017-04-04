@@ -42,6 +42,11 @@
               <entry>1GB (required)</entry>
               <entry>Local, high-performance storage formatted as an XFS filesystem.</entry>
             </row>
+            <row>
+              <entry>Application data backups</entry>
+              <entry>150GB (suggested)</entry>
+              <entry>Remote, XFS-compatible storage.</entry>
+            </row>
           </tbody>
         </tgroup>
       </table>
@@ -49,12 +54,6 @@
       <p>This guide includes procedures for preparing the required block storage areas. Except for
         the Docker data storage area, the underlying storage must be separate real or virtual
         devices that DRBD can replicate.</p>
-      
-      <p>The suggested minimum size for application data backups is 150GB. For improved reliability
-        and performance, <ph conkeyref="names/company"/> strongly recommends using shared remote
-        storage or network-attached storage for application data backups. This guide does not
-        include instructions for mounting remote storage, but does include a step for creating the
-        mount point.</p>
       
       <p>The suggested minimum sizes for application data and application data backups should be
         replaced with sizes that meet your application requirements. To calculate the appropriate
@@ -66,6 +65,12 @@
         <li>For application data backups, the recommended space is 150% of the base size for
           data.</li>
       </ul>
+      
+      <p>The suggested minimum size for application data backups is 150GB. For improved reliability
+        and performance, <ph conkeyref="names/company"/> strongly recommends using shared remote
+        storage or network-attached storage for application data backups. This guide does not
+        include instructions for mounting remote storage, but does include a step for creating the
+        mount point.</p>
       
     </section>
   </refbody>

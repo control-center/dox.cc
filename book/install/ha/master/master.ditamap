@@ -8,7 +8,7 @@
     <topicref keyref="cc-install-ha-master-prep"/>
     <topicref keyref="cc-install-ha-master-download">
       <topicref keyref="cc-feature-offline-download"/>
-      <topicref keyref="cc-feature-offline-stage-rpm"/>
+      <topicref keyref="cc-feature-offline-stage-rpm-ha"/>
       <topicref keyref="cc-feature-offline-stage-run"/>
       <topicref keyref="cc-feature-offline-pcs-drbd-download"/>
     </topicref>
@@ -18,6 +18,5 @@
     <topicref keyref="cc-install-ha-master-docker-install"/>
     <topicref keyref="cc-install-ha-master-cc-install"/>
     <topicref keyref="cc-install-ha-master-docker-config"/>
-    <topicref keyref="cc-install-ha-master-storage-create"/>
    </chapter>
 </bookmap>

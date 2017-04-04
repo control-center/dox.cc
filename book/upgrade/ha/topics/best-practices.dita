@@ -22,6 +22,9 @@
         images that accompany the installed release, and determine whether the
         image files need to be downloaded and installed. <ph conkeyref="strings/fmi-int"/>
         <xref keyref="cc-upgrade-paths-images"/>.</li>
+        
+        <li>The contents of <filepath>/etc/default/serviced</filepath> on the master nodes must be
+          identical. Use a utility like <cmdname>sum</cmdname> to compare the files quickly.</li>
 
         <li>On delegate hosts, most of the upgrade steps are identical. Use <cmdname>tmux</cmdname>
           or a similar program to establish sessions on each delegate host and perform the steps at

@@ -21,25 +21,18 @@
       
       <step>
         <cmd>Create a variable for the group to designate as the administrative group.</cmd>
-        <info>In this example, the name of group to create is <codeph>serviced</codeph>. You may
-          choose any name or use an existing group.</info>
+        <info>In this example, the group is <codeph>serviced</codeph>. You may
+          create and use a different group.</info>
         <stepxmp>
-          <codeblock>GROUP=serviced</codeblock>
+          <codeblock>myGROUP=serviced</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd importance="optional">Create a new group, if necessary.</cmd>
-        <stepxmp>
-          <codeblock>groupadd $GROUP</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step>
-        <cmd>Add one or more existing users to the new administrative group.</cmd>
+        <cmd>Add one or more existing users to the group.</cmd>
         <stepxmp>
           <p>Replace <varname>User</varname> with the name of a login account on the host:</p>
-          <codeblock>usermod -aG $GROUP <varname>User</varname></codeblock>
+          <codeblock>usermod -aG $myGROUP <varname>User</varname></codeblock>
         </stepxmp>
         <info>Repeat the preceding command for each user to add.</info>
       </step>

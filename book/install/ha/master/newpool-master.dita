@@ -32,7 +32,7 @@
         <stepxmp>
           <p>Replace <varname>Node-Hostname</varname> with the 
             public hostname of the current node:</p>
-          <codeblock>serviced host add --register <varname>Node-Hostname</varname>:4979 master</codeblock>
+          <codeblock>serviced host add <varname>Node-Hostname</varname>:4979 master</codeblock>
         </stepxmp>
       </step>
       

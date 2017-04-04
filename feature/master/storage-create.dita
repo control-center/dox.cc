@@ -45,12 +45,13 @@
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
-            <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
-              <varname>SERVICED_FS_TYPE</varname>, and set its value.</cmd>
-            <stepxmp>Replace <varname>Thin-Pool-Name</varname> with the device mapper 
-              name of the thin pool for application data:
-              <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
-            </stepxmp>
+            <cmd>Locate the line for the <varname>SERVICED_DM_THINPOOLDEV</varname> variable, and 
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Set the value to the device mapper 
+              name of the thin pool for application data.</cmd>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>
