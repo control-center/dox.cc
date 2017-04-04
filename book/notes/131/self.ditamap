@@ -6,6 +6,6 @@
    <topicref keyref="cc-notes-131-features"/>
    <topicref keyref="cc-notes-131-fixed"/> 
    <topicref keyref="cc-notes-131-known"/>
-   <!--  <topicref keyref="cc-notes-131-notes"/> -->
+   <topicref keyref="cc-notes-131-notes"/>
  </chapter>
 </bookmap>
