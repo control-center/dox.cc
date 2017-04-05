@@ -16,96 +16,64 @@
         </thead>
         <tbody>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-2651</entry>
+            <entry><codeph>serviced volume status</codeph> fails and logs <codeph>"can't load a
+                volume that uses the base device..."</codeph> to <codeph>serviced</codeph> logs when
+              stale metadata entries for old</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3182</entry>
+            <entry>After updating the interface on a host, <ph keyref="nm-cc"/> does not display the
+              updated interface name.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3207</entry>
+            <entry>A restore will fail if the backup has resource pools with VIPs that do not exist
+              in the target <ph keyref="nm-cc"/>.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3223</entry>
+            <entry>Defect with RHEL 7.3 in certain configurations where disabling the consistent
+              network device naming and then restarting will cause inconsistent, changing, or
+              missing network device names.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3247</entry>
+            <entry>After restoring a backup, only non-virtual IP assignments are restored.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3355</entry>
+            <entry>Delegate authentication will fail if the master time is too far ahead of the
+              delegate time. Allow for authentication to be less sensitive to time drift.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3359</entry>
+            <entry>A flare message should be displayed if a user clicks start/restart button for a
+              group of services that are in emergency state.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3362</entry>
+            <entry>Services that have been emergency stopped should not have a way to change state
+              or status except with the CLI command <codeph>serviced service
+                clear-emergency</codeph>.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3382</entry>
+            <entry>A backup can be started even if there is not enough space to store it.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3396</entry>
+            <entry>When using the <codeph>--force-restart</codeph> option, a rollback to a snapshot
+              does not automatically start services.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3397</entry>
+            <entry>Services with VIP assignments do not move to another available host if the
+              timeout is exceeded on an outage.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry>CC-3243</entry>
-            <entry>A timeout of a <cmdname>serviced</cmdname> health check forces 
-              failover in a high-availability cluster. This fix is included in the
-              PCS resource agents for <ph keyref="nm-cc"/> package.</entry>
-          </row>
-          <row>
-            <entry>CC-3283</entry>
-            <entry>The <cmdname>serviced-storage</cmdname> resource agent does not deactivate
-              all of the <ph keyref="nm-cc"/> storage devices during a failover. This 
-              fix is included in the PCS resource agents for <ph keyref="nm-cc"/> package.</entry>
+            <entry>CC-3404</entry>
+            <entry>Backup will fail when remote collectors are unavailable.</entry>
           </row>
         </tbody>
       </tgroup>
