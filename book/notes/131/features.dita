@@ -12,7 +12,7 @@
           resource agents for <ph keyref="nm-cc"/> package to version <ph keyref="lo-version-ra"/>
           as soon as possible. You can upgrade the resource agents without upgrading <ph
             keyref="nm-cc"/>. For more information about upgrading the package, refer to the <cite
-            conkeyref="pubs/cite-upgrade"/>.</li>
+            conkeyref="pubs/cite-upgrade-ha"/>.</li>
         <li><!--cc_3452, 3421--> This release includes the new <parmname>serviced</parmname> group
           and changes to the file permissions. To execute the <ph keyref="nm-cc"/> command-line
           interface (CLI), you must be the <cmdname>root</cmdname> user or a member of the
