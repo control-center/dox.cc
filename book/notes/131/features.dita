@@ -16,7 +16,7 @@
         <li><!--cc_3452, 3421--> This release includes the new <parmname>serviced</parmname> group
           and changes to the file permissions. To execute the <ph keyref="nm-cc"/> command-line
           interface (CLI), you must be the <cmdname>root</cmdname> user or a member of the
-            <cmdname>serviced</cmdname> group. For more information, refer to the<cite
+            <cmdname>serviced</cmdname> group. For more information, refer to the <cite
             conkeyref="pubs/cite-install"/>.</li>
       </ul>
     </section>
