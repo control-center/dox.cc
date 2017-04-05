@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>New features</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> 1.3.1 introduces enhancements in the following functional areas:</p>
+      <ul>
+        <li>The PCS resource agents for <ph keyref="nm-cc"/> package includes important fixes that
+          improve failover reliability. <ph conkeyref="names/company"/> strongly recommends that all
+          high-availability deployments upgrade the installed PCS resource agents for <ph
+            keyref="nm-cc"/> package to version <ph keyref="lo-version-ra"/> as soon as possible.
+          You may upgrade the resource agents without upgrading <ph keyref="nm-cc"/>. For more
+          information about upgrading the package, refer to the <cite conkeyref="pubs/cite-upgrade"
+          />.</li>
+      </ul>
+    </section>
+    
+  </refbody>
+</reference>
