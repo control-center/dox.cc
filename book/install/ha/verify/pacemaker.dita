@@ -33,10 +33,9 @@
  have-watchdog: false
  no-quorum-policy: ignore
  stonith-enabled: false</codeblock>
-          <note>Set the <codeph>stonith-enabled</codeph> option to <codeph>false</codeph> only
-            during the initial setup and testing period. For production use, set it to
-              <codeph>true</codeph>. For more information about fencing, see
-            <xref keyref="cc-install-ha-plan-plan"/>.</note>
+          <note>Set the <codeph>stonith-enabled</codeph> option to <codeph>true</codeph> only if
+            fencing is implemented. For more information about fencing, see <xref
+              keyref="cc-install-ha-plan-plan"/>.</note>
         </stepresult>
       </step>
 

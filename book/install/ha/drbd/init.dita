@@ -69,20 +69,28 @@ mkfs.xfs /dev/drbd1</codeblock>
       </step>
       
       <step>
-        <cmd>Configure <ph keyref="nm-cc"/> with the name of the new thin pool.</cmd>
+        <cmd>Configure <ph keyref="nm-cc"/> storage variables.</cmd>
         <substeps>
           <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
-            <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> declaration.</cmd>
+            <cmd>Locate the line for the <varname>SERVICED_FS_TYPE</varname> variable, and then make
+              a copy of the line, immediately below the original.</cmd>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
           <substep>
-            <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
-              <varname>SERVICED_FS_TYPE</varname>.</cmd>
+            <cmd>Locate the line for the <varname>SERVICED_DM_THINPOOLDEV</varname> variable, and
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Set the value to the device mapper name of the thin pool for application
+              data.</cmd>
             <stepxmp>
               <codeblock>SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool</codeblock>
             </stepxmp>
@@ -94,35 +102,11 @@ mkfs.xfs /dev/drbd1</codeblock>
       </step>
       
       <step>
-        <cmd>Replicate the <ph keyref="nm-cc"/> configuration on the
-        secondary node.</cmd>
-        <substeps>
-          <substep>
-            <cmd>In a separate window, log in to the secondary node <ph conkeyref="strings/login-root"
-              />.</cmd>
-          </substep>
-          <substep conkeyref="cc-feature-lib-tasks/open-file">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Locate the <varname>SERVICED_FS_TYPE</varname> declaration.</cmd>
-          </substep>
-          <substep conkeyref="cc-feature-lib-tasks/uncomment">
-            <cmd/>
-          </substep>
-          <substep>
-            <cmd>Add <varname>SERVICED_DM_THINPOOLDEV</varname> immediately after
-              <varname>SERVICED_FS_TYPE</varname>.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Thin-Pool-Name</varname> with the name of 
-                the thin pool created previously:</p>
-              <codeblock>SERVICED_DM_THINPOOLDEV=<varname>Thin-Pool-Name</varname></codeblock>
-            </stepxmp>
-          </substep>
-          <substep conkeyref="cc-feature-lib-tasks/save">
-            <cmd/>
-          </substep>
-        </substeps>
+        <cmd>In a separate window, log in to the secondary node
+          <ph conkeyref="strings/login-root"/>, and then replicate the 
+          <ph keyref="nm-cc"/> configuration on the secondary node.</cmd>
+        <info>Use a utility like <cmdname>sum</cmdname> to compare the files
+        and ensure their contents are identical.</info>
       </step>
       
       <step>

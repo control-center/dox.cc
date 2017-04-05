@@ -65,8 +65,8 @@
       </step>
       
       <step importance="optional">
-        <cmd>Download the Pacemaker resource agent for <ph keyref="nm-cc"/>.</cmd>
-        <info>The resource agent is required only for high-availability deployments.
+        <cmd>Download the Pacemaker resource agents for <ph keyref="nm-cc"/>.</cmd>
+        <info>The resource agents are required only for high-availability deployments.
         <sl>
           <sli><codeph>serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeph></sli>
         </sl>

@@ -51,6 +51,10 @@
             href="delegate/isvcs.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-delegate-prep-ha"
+            href="delegate/prep-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-delegate-prep"
             href="delegate/prep.dita"
             format="dita"

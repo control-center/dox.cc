@@ -52,6 +52,14 @@
         </stepxmp>
       </step>
       
+      <step>
+        <cmd>Copy the Pacemaker resource agents for <ph keyref="nm-cc"/> to the mirror directory.</cmd>
+        <stepxmp>
+          <codeblock>cp /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm \
+  /opt/zenoss-repo-mirror</codeblock>
+        </stepxmp>
+      </step>
+      
       <step importance="optional">
         <cmd>Delete the RPM files.</cmd>
         <stepxmp>

@@ -15,6 +15,7 @@
       
       <p>This chapter includes synopses of the configuration variables that affect the
       master host. For more information about a variable, see <xref keyref="cc-feature-vars-vars"/>.</p>
+      
     </section>
   </refbody>
 </reference>
