@@ -4,13 +4,14 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title>Kernel message about container lockup requires reboot of host (CC-3255)</title>
-      <p>There is a known issue with kernel <codeph>3.10.0-514.6.1.el7.x86_64</codeph> and
-          <codeph>3.10.0-514.2.2.el7.x86_64</codeph> and Docker versions as late as 1.12.6 where
-        container-level lockups have been reported with messages similar to the following
-          <codeph>"kernel:unregister_netdevice: waiting for Io to become free. Usage count =
-          1"</codeph>. Users are unable to start or stop running containers. To work around this
-        issue, reboot the host.</p>
+      <title>Docker Engine configuration on master host (CC-3455)</title>
+      <p>Previously, the Docker Engine configuration procedures in the 
+        <cite conkeyref="pubs/cite-install"/> and 
+        the <cite conkeyref="pubs/cite-upgrade"/> instructed users to set
+        the <codeph>--insecure-registry</codeph> flag
+        in <filepath>/etc/sysconfig/docker</filepath>. This setting is not
+        needed on the master host in a <ph keyref="nm-cc"/> cluster,
+        and required on all delegate hosts.</p>
     </section> 
     
   </refbody>
