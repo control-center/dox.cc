@@ -6,13 +6,18 @@
     <section>
       <p><ph keyref="nm-cc"/> 1.3.1 introduces enhancements in the following functional areas:</p>
       <ul>
-        <li>The PCS resource agents for <ph keyref="nm-cc"/> package includes important fixes that
-          improve failover reliability. <ph conkeyref="names/company"/> strongly recommends that all
-          high-availability deployments upgrade the installed PCS resource agents for <ph
-            keyref="nm-cc"/> package to version <ph keyref="lo-version-ra"/> as soon as possible.
-          You may upgrade the resource agents without upgrading <ph keyref="nm-cc"/>. For more
-          information about upgrading the package, refer to the <cite conkeyref="pubs/cite-upgrade"
-          />.</li>
+        <li><!--cc_3423-->The PCS resource agents for <ph keyref="nm-cc"/> package includes
+          important fixes that improve failover reliability. <ph conkeyref="names/company"/>
+          strongly recommends that all high-availability deployments upgrade the installed PCS
+          resource agents for <ph keyref="nm-cc"/> package to version <ph keyref="lo-version-ra"/>
+          as soon as possible. You can upgrade the resource agents without upgrading <ph
+            keyref="nm-cc"/>. For more information about upgrading the package, refer to the <cite
+            conkeyref="pubs/cite-upgrade"/>.</li>
+        <li><!--cc_3452, 3421--> This release includes the new <parmname>serviced</parmname> group
+          and changes to the file permissions. To execute the <ph keyref="nm-cc"/> command-line
+          interface (CLI), you must be the <cmdname>root</cmdname> user or a member of the
+            <cmdname>serviced</cmdname> group. For more information, refer to the<cite
+            conkeyref="pubs/cite-install"/>.</li>
       </ul>
     </section>
     
