@@ -163,9 +163,13 @@
         <cmd>Create an LVM thin pool for Docker data.</cmd>
         <info>For more information about the <cmdname>serviced-storage</cmdname> command,
         see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
-        <stepxmp>Replace <varname>Storage</varname> with the paths of one or more block 
-          devices or partitions, or the name of an LVM volume group:
-          <codeblock>serviced-storage create-thin-pool docker <varname>Storage</varname></codeblock>
+        <stepxmp><b>To use an entire block device or partition</b> for the thin pool, replace
+            <varname>Device-Path</varname> with the device path:
+          <codeblock>serviced-storage create-thin-pool docker <varname>Device-Path</varname></codeblock>
+        </stepxmp>
+        <stepxmp><b>To use 50GB of an LVM volume group</b> for the thin pool, replace
+            <varname>Volume-Group</varname> with the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Volume-Group</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result is the device mapper name of the thin pool,
           which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
