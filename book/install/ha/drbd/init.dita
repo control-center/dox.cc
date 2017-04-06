@@ -120,6 +120,13 @@ mkfs.xfs /dev/drbd1</codeblock>
       </step>
       
       <step>
+        <cmd>On the primary node, deactivate the <codeph>serviced</codeph> volume group.</cmd>
+        <stepxmp>
+          <codeblock>vgchange -an serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
         <cmd>On both nodes, stop DRBD.</cmd>
         <stepxmp>
           <codeblock>drbdadm down all</codeblock>
