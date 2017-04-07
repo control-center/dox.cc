@@ -139,7 +139,8 @@
 yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
         </stepxmp>
         <stepxmp><b>Without internet access:</b><!-- cc_3377 -->
-          <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+          <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
+  docker-engine-<ph keyref="lo-version-docker"/></codeblock>
         </stepxmp>
       </step>
       

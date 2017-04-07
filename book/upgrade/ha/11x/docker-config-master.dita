@@ -20,7 +20,15 @@
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create the file.</cmd>
+            <cmd>Create a backup of the drop-in file, if it exists.</cmd>
+            <stepxmp>
+              <codeblock>test -f /etc/systemd/system/docker.service.d/docker.conf \
+  &#38;&#38; cp -p /etc/systemd/system/docker.service.d/docker.conf \
+  /etc/systemd/system/docker.service.d/docker.conf.bak</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create the new file.</cmd>
             <stepxmp>
               <codeblock>cat &#60;&#60;EOF > /etc/systemd/system/docker.service.d/docker.conf
 [Service]
