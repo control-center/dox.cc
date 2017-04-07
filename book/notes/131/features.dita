@@ -19,6 +19,15 @@
             <cmdname>serviced</cmdname> group. For more information, refer to the <cite
             conkeyref="pubs/cite-install"/>.</li>
       </ul>
+      <note><!--CC3384 and CC3363-->Before upgrading to <ph keyref="nm-cc"/> 1.3.1, you <i>must</i>
+        ensure you have sufficient free space in both the thin pool metadata volume and the thin
+        pool data volume. The thin pool metadata volume should be at least 1% of the size of the
+        thin pool data volume (if created by an earlier version of
+        <codeph>serviced-storage</codeph>, it may be smaller). In addition, you must have at least
+        3GB of available space in the thin pool data volume, as this is the minimum buffer before an
+        emergency shutdown will commence. If less than 3GB is available, you must provision
+        additional storage or <codeph>serviced</codeph> will fail to start after the upgrade. See
+        the <cite conkeyref="pubs/cite-upgrade"/> for details.</note>
     </section>
     
   </refbody>

@@ -49,11 +49,6 @@
             <entry>Open</entry>
           </row>
           <row>
-            <entry>CC-2421</entry>
-            <entry>Do not start a backup if there is not enough space to store it.</entry>
-            <entry>Open</entry>
-          </row>
-          <row>
             <entry>CC-2791</entry>
             <entry>There is a 20 second delay to view logs the first time after
                 <codeph>serviced</codeph> starts or restarts.</entry>
