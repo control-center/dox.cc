@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="referenceid">
+<reference id="referenceid131">
   <title>Known issues</title>
   <refbody>
     
@@ -19,45 +19,45 @@
         </thead>
         <tbody>
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-1302</entry>
+            <entry>Serviced may not shut down cleanly if it loses connection to a single ZooKeeper
+              instance that is sharing a physical disk with Docker and data volumes</entry>
+            <entry>Open</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-1577</entry>
+            <entry>Application service details graphs may not populate for time periods less than
+              last 12 hours</entry>
+            <entry>Open</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-1621</entry>
+            <entry>Deleted application templates may be displayed again after a serviced restart,
+              until the view is refreshed</entry>
+            <entry>Open</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-1762</entry>
+            <entry>When localized, some elements of the <ph keyref="nm-cc"/> UI are not translated
+              as expected</entry>
+            <entry>Open</entry>
           </row>
           
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-1888</entry>
+            <entry>ZooKeeper maintains nodes for deleted public endpoints</entry>
+            <entry>Open</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-2791</entry>
+            <entry>There is a 20 second delay to view logs the first time after
+                <codeph>serviced</codeph> starts or restarts.</entry>
+            <entry>Open</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
-            <entry/>
-          </row>
-          <row>
-            <entry/>
-            <entry/>
-            <entry/>
+            <entry>CC-3073</entry>
+            <entry>Missing device-mapper libraries</entry>
+            <entry>Open</entry>
           </row>
           
         </tbody>

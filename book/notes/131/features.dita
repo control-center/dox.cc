@@ -12,13 +12,22 @@
           resource agents for <ph keyref="nm-cc"/> package to version <ph keyref="lo-version-ra"/>
           as soon as possible. You can upgrade the resource agents without upgrading <ph
             keyref="nm-cc"/>. For more information about upgrading the package, refer to the <cite
-            conkeyref="pubs/cite-upgrade"/>.</li>
+            conkeyref="pubs/cite-upgrade-ha"/>.</li>
         <li><!--cc_3452, 3421--> This release includes the new <parmname>serviced</parmname> group
           and changes to the file permissions. To execute the <ph keyref="nm-cc"/> command-line
           interface (CLI), you must be the <cmdname>root</cmdname> user or a member of the
-            <cmdname>serviced</cmdname> group. For more information, refer to the<cite
+            <cmdname>serviced</cmdname> group. For more information, refer to the <cite
             conkeyref="pubs/cite-install"/>.</li>
       </ul>
+      <note><!--CC3384 and CC3363-->Before upgrading to <ph keyref="nm-cc"/> 1.3.1, you <i>must</i>
+        ensure you have sufficient free space in both the thin pool metadata volume and the thin
+        pool data volume. The thin pool metadata volume should be at least 1% of the size of the
+        thin pool data volume (if created by an earlier version of
+        <codeph>serviced-storage</codeph>, it may be smaller). In addition, you must have at least
+        3GB of available space in the thin pool data volume, as this is the minimum buffer before an
+        emergency shutdown will commence. If less than 3GB is available, you must provision
+        additional storage or <codeph>serviced</codeph> will fail to start after the upgrade. See
+        the <cite conkeyref="pubs/cite-upgrade"/> for details.</note>
     </section>
     
   </refbody>
