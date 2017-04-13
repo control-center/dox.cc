@@ -3,23 +3,23 @@
 <map>
  <title>Keys in plan/storage</title>
   <topicgroup>
-    <keydef keys="plan-storage-discover"
+    <keydef keys="cc-plan-storage-discover"
             href="storage/discover.dita"
             format="dita"
     />
-    <keydef keys="plan-storage-partition"
+    <keydef keys="cc-plan-storage-partition"
             href="storage/partition.dita"
             format="dita"
     />
-    <keydef keys="plan-storage-storage"
+    <keydef keys="cc-plan-storage-storage"
             href="storage/storage.dita"
             format="dita"
     />
-    <keydef keys="plan-storage-swap"
+    <keydef keys="cc-plan-storage-swap"
             href="storage/swap.dita"
             format="dita"
     />
-    <keydef keys="plan-storage-thin-extend"
+    <keydef keys="cc-plan-storage-thin-extend"
             href="storage/thin-extend.dita"
             format="dita"
     />

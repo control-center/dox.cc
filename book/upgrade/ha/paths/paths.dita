@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Documented upgrade paths</title>
+  <refbody>
+    <section>
+      <p>This chapter includes the dates of <ph keyref="nm-cc"/> releases
+        and the upgrade paths that are documented in this guide.</p>
+    </section>
+  </refbody>
+</reference>

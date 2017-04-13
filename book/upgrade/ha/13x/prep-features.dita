@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>New features that affect upgrades from release 1.3.x</title>
+  <refbody>
+    <section>
+      <p>This release includes no new features or requirements that affect the upgrade process.</p>
+    </section>
+  </refbody>
+</reference>

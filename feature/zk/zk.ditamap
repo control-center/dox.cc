@@ -2,21 +2,21 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Configure ZK</title>
-  <chapter keyref="feature-zk-zk">
-    <topicref keyref="feature-zk-about"/>
-    <topicref keyref="feature-zk-nodes">
-      <topicref keyref="feature-zk-vars"/>
-      <topicref keyref="feature-zk-example"/>
+  <chapter keyref="cc-feature-zk-zk">
+    <topicref keyref="cc-feature-zk-about"/>
+    <topicref keyref="cc-feature-zk-nodes">
+      <topicref keyref="cc-feature-zk-vars"/>
+      <topicref keyref="cc-feature-zk-example"/>
      </topicref>
-    <topicref keyref="feature-zk-master"/>
-    <topicref keyref="feature-zk-delegate1"/>
-    <topicref keyref="feature-zk-delegate2"/>
-    <topicref keyref="feature-zk-image">
-      <topicref keyref="feature-zk-image-pull"/>
-      <topicref keyref="feature-zk-image-import"/>
+    <topicref keyref="cc-feature-zk-master"/>
+    <topicref keyref="cc-feature-zk-delegate1"/>
+    <topicref keyref="cc-feature-zk-delegate2"/>
+    <topicref keyref="cc-feature-zk-image">
+      <topicref keyref="cc-feature-zk-image-pull"/>
+      <topicref keyref="cc-feature-zk-image-import"/>
     </topicref>
-    <topicref keyref="feature-zk-enable"/>
-    <topicref keyref="feature-zk-other"/>
+    <topicref keyref="cc-feature-zk-enable"/>
+    <topicref keyref="cc-feature-zk-other"/>
    </chapter>
 </bookmap>
 

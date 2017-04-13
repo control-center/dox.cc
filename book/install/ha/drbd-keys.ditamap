@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/drbd</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-drbd-config"
+            href="drbd/config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-drbd-drbd"
+            href="drbd/drbd.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-drbd-init"
+            href="drbd/init.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-drbd-lvm"
+            href="drbd/lvm.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

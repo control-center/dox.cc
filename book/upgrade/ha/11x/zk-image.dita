@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating the ZooKeeper image on ensemble nodes</title>
+  <taskbody>
+    <context>Use this procedure to install a new Docker Engine image for
+      ZooKeeper into the local repository of delegate hosts that are
+      ZooKeeper ensemble nodes.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The result is a list of 3 or 5 hosts, separated by 
+          the comma character (<codeph>&#44;</codeph>). The master host
+          is always a node in the ZooKeeper ensemble.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Log in to a ZooKeeper ensemble node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>cd /root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Extract the ZooKeeper image.</cmd>
+        <stepxmp>
+          <codeblock>./install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeblock>
+        </stepxmp>
+        <info>At the prompt, press <b>y</b>.</info>
+      </step>
+
+      <step importance="optional">
+        <cmd>Delete the archive file, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm -i ./install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Repeat the preceding four steps on each ZooKeeper node in the ensemble.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

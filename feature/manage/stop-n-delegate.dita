@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Stopping a delegate host (multi-host deployment)</title>
+  <title>Stopping a delegate host</title>
   <taskbody>
     <context>Use this procedure to stop the <ph keyref="nm-cc"/> service
         (<cmdname>serviced</cmdname>) on a delegate host in a multi-host deployment. Repeat this
@@ -18,7 +18,7 @@
         </stepxmp>
       </step>
       
-      <step>
+      <step id="stop-containers">
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
@@ -94,7 +94,7 @@
         </substeps>
       </step>
       
-      <step>
+      <step id="stop-nfs">
         <cmd>Dismount all filesystems mounted from the <ph keyref="nm-cc"/> master host.</cmd>
         <info>This step ensures no stale mounts remain when the storage on the
           master host is replaced.</info>

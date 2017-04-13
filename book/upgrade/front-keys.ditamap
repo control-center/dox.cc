@@ -3,16 +3,28 @@
 <map>
  <title>Keys in upgrade/front</title>
   <topicgroup>
-    <keydef keys="upgrade-front-about"
+    <keydef keys="cc-upgrade-front-11x"
+            href="front/11x.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-front-12x"
+            href="front/12x.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-front-13x"
+            href="front/13x.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-front-about-ha"
+            href="front/about-ha.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-front-about"
             href="front/about.dita"
             format="dita"
     />
-    <keydef keys="upgrade-front-micro"
-            href="front/micro.dita"
-            format="dita"
-    />
-    <keydef keys="upgrade-front-minor"
-            href="front/minor.dita"
+    <keydef keys="cc-upgrade-front-about_ha"
+            href="front/about_ha.dita"
             format="dita"
     />
    </topicgroup>

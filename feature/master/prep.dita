@@ -6,12 +6,12 @@
     <prereq>
       <note><b><ph conkeyref="names/company"/> customers</b>: If you 
         are creating a deployment without internet access, 
-        perform the steps in <xref keyref="install-offline-offline"/>,
+        perform the steps in <xref keyref="cc-feature-offline-offline"/>,
         before performing this procedure.</note>
     </prereq>
 
-    <context>Use this procedure to prepare a RHEL/CentOS 7.1 or 
-      7.2 host as a <ph keyref="nm-cc"/> master host.</context>
+    <context>Use this procedure to prepare a RHEL/CentOS  
+      host as a <ph keyref="nm-cc"/> master host.</context>
     
     <steps>
       <step>
@@ -19,27 +19,60 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
 
-      <step conkeyref="feature-lib-tasks/firewall">
+      <step conkeyref="cc-feature-lib-tasks/firewall">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/journal">
+      <step conkeyref="cc-feature-lib-tasks/journal">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/kill-selinux">
+      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/dnsmasq">
+      <step conkeyref="cc-feature-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>
 
-      <step conkeyref="feature-lib-tasks/ntp">
-        <cmd></cmd>
+      <step>
+        <cmd>Install and configure the NTP package.</cmd>
+        <info>
+          <note>This procedure assumes the host has internet access. 
+            To install and configure NTP on a host that does not have 
+            internet access, see <xref keyref="cc-feature-ntp-ntp"/>.</note>
+        </info>
+        <substeps>
+          <substep>
+            <cmd>Install the package.</cmd>
+            <stepxmp>
+              <codeblock>yum install -y ntp</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set the system time.</cmd>
+            <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable ntpd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
+            <info>Currently, an unresolved issue associated with NTP
+              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot. 
+              The following commands provide a workaround to ensure that it does. </info>
+            <stepxmp>
+              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zenoss-repo">
+      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
         <cmd></cmd>
       </step>
       

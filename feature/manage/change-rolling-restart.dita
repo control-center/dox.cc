@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid"><!-- CC_3199 -->
+  <title>Changing rolling restart</title>
+  <shortdesc>Use this procedure to stop all instances of a service before restarting, instead of
+    performing a rolling restart.</shortdesc>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host <ph conkeyref="strings/login-root"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Restart the service with the <cmdname>--rebalance</cmdname> option: </cmd>
+        <info>Replace <varname>Service</varname> with the name or identifier of the service:</info>
+        <stepxmp>
+          <codeblock>serviced service restart --rebalance <varname>Service</varname></codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

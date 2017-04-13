@@ -2,10 +2,10 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
 <title>Hardware</title>
-  <chapter keyref="plan-hw-hw">
-    <topicref keyref="plan-hw-master"/>
-    <topicref keyref="plan-hw-delegate"/>
-    <topicref keyref="plan-hw-master-storage"/>
-    <topicref keyref="plan-hw-delegate-storage"/>
+  <chapter keyref="cc-plan-hw-hw">
+    <topicref keyref="cc-plan-hw-master"/>
+    <topicref keyref="cc-plan-hw-delegate"/>
+    <topicref keyref="cc-plan-hw-master-storage"/>
+    <topicref keyref="cc-plan-hw-delegate-storage"/>
   </chapter>
 </bookmap>

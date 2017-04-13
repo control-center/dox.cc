@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Configuring <ph keyref="nm-cc"/> on master host nodes</title>
+  <refbody>
+    <section>
+      <p>This chapter includes the procedures for configuring <ph keyref="nm-cc"/> on
+        master host nodes, and describes the configuration options that apply to master 
+        hosts.</p>
+        
+      <p>Many configuration choices depend on application requirements. Please review your 
+        application documentation before configuring <ph keyref="nm-cc"/>.</p>
+      
+      <note>Perform the procedures in this chapter on the primary node and the secondary node.</note>
+      
+      <p>This chapter includes synopses of the configuration variables that affect the
+      master host. For more information about a variable, see <xref keyref="cc-feature-vars-vars"/>.</p>
+      
+    </section>
+  </refbody>
+</reference>

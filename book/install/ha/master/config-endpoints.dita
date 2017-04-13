@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring endpoints</title>
+  <taskbody>
+    <context>Use this procedure to customize the internal services 
+      endpoints of <ph keyref="nm-cc"/>. The following configuration 
+       variables specify the endpoints:
+      <dl>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_ZK"><dt/><dd/></dlentry>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_DOCKER_REGISTRY"><dt/><dd/></dlentry>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_ENDPOINT"><dt/><dd/></dlentry>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOG_ADDRESS"><dt/><dd/></dlentry>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOGSTASH_ES"><dt/><dd/></dlentry>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_STATS_PORT"><dt/><dd/></dlentry>
+      </dl>
+      <p>Perform these steps:</p>
+    </context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Edit the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
+          <substep>
+            <cmd>Globally replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
+              the virtual IP address of the high-availability cluster (<varname>HA-Virtual-IP</varname>).</cmd>
+            <info>
+              <note>Remove the number sign character (&#35;) from the beginning of each variable
+                declaration that includes the IP address.</note>
+            </info>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Verify the settings.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

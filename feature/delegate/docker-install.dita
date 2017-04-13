@@ -10,11 +10,11 @@
         <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/docker-install-offline">
+      <step conkeyref="cc-feature-lib-tasks/docker-install-offline">
         <cmd/>
       </step>
 
-      <step conkeyref="feature-lib-tasks/docker-install">
+      <step conkeyref="cc-feature-lib-tasks/docker-install">
         <cmd/>
       </step>
       

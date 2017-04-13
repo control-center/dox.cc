@@ -2,11 +2,11 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
 <title>Introduction</title>
-  <chapter keyref="plan-sw-sw">
-    <topicref keyref="plan-sw-cc"/>
-    <topicref keyref="plan-sw-cc-terms"/>
-    <topicref keyref="plan-sw-cc-docker"/>
-    <topicref keyref="plan-sw-add"/>
-    <topicref keyref="plan-sw-data-storage"/>
+  <chapter keyref="cc-plan-sw-sw">
+    <topicref keyref="cc-plan-sw-cc"/>
+    <topicref keyref="cc-plan-sw-cc-terms"/>
+    <topicref keyref="cc-plan-sw-cc-docker"/>
+    <topicref keyref="cc-plan-sw-add"/>
+    <topicref keyref="cc-plan-sw-data-storage"/>
   </chapter>
 </bookmap>

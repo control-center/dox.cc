@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping a master host node</title>
+  <taskbody>
+    <context>Use this procedure to stop the <ph keyref="nm-cc"/> 
+      service (<cmdname>serviced</cmdname>) on the master host in a high-availability deployment.</context>
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the public hostname of the current node.</cmd>
+        <stepxmp>
+          <codeblock>uname -n</codeblock>
+        </stepxmp>
+        <stepresult>Make a note of which node (primary or secondary) is the
+          current node, for use in a subsequent step.</stepresult>
+      </step>
+      
+      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+        <cmd></cmd>
+      </step>
+      
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/> with the cluster management tool.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster standby --all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Monitor the status of cluster resources.</cmd>
+        <stepxmp>
+          <codeblock>watch pcs status</codeblock>
+        </stepxmp>
+        <stepresult>Monitor the status until all resources report <codeph>Stopped</codeph>. Resolve
+          any issues before continuing.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Ensure that no containers remain in the local repository.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start the Docker Engine service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Display the identifiers of all containers, running and exited.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa</codeblock>
+            </stepxmp>
+            <stepresult>If the command returns a result, enter the following command:
+              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Stop the Docker Engine service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop docker</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>To ensure that no containers remain in both Docker Engine repositories, log in to the
+          other master node <ph conkeyref="strings/login-root"/>, and then perform the preceding
+          step.</cmd>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

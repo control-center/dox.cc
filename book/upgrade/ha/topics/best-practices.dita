@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Upgrade best practices</title>
+  <refbody>
+    <section id="best-practices">
+      <p>The following list outlines recommended best practices for upgrading high-availability <ph
+          keyref="nm-cc"/> deployments:</p>
+      <ol>
+        <li>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for 
+          this release and review its contents. The latest information
+          is included in that document.</li>
+        <li>Upgrade only what needs upgrading. For example, you can update some components
+          independently. For more information, see the following appendices:
+        <ul>
+          <li><xref keyref="cc-upgrade-ha-agent-agent"/></li>
+          <li><xref keyref="cc-upgrade-ha-maps-pcs"/></li>
+        </ul>
+        </li>
+        
+        <li>Compare the Docker Engine images that accompany this release with the
+        images that accompany the installed release, and determine whether the
+        image files need to be downloaded and installed. <ph conkeyref="strings/fmi-int"/>
+        <xref keyref="cc-upgrade-paths-images"/>.</li>
+        
+        <li>The contents of <filepath>/etc/default/serviced</filepath> on the master nodes must be
+          identical. Use a utility like <cmdname>sum</cmdname> to compare the files quickly.</li>
+
+        <li>On delegate hosts, most of the upgrade steps are identical. Use <cmdname>tmux</cmdname>
+          or a similar program to establish sessions on each delegate host and perform the steps at
+          the same time.</li>
+
+        <li>Review and verify the settings in delegate host configuration files
+          (<filepath>/etc/default/serviced</filepath>) before starting the upgrade.
+          Ideally, the settings on all delegate hosts are identical, except on 
+          ZooKeeper nodes and delegate hosts that do not mount the DFS.</li>
+        
+        <li>Review the procedures in this guide before performing them. Every effort is made to
+          avoid mistakes and anticipate needs; nevertheless, the instructions may be incorrect or
+          inadequate for some requirements or environments.</li>
+        
+      </ol>
+      
+    </section>
+  </refbody>
+</reference>

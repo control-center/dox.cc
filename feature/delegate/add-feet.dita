@@ -31,14 +31,13 @@
 
       <step>
         <cmd>Add a delegate host to a resource pool.</cmd>
-        <info>You can use a hostname or an IP address to identify a <ph keyref="nm-cc"/>
-          cluster host. If you use a hostname, all of the hosts in your cluster must be 
-          able to resolve it, either through an entry in <filepath>/etc/hosts</filepath>
-          or through a nameserver on the network.</info>
-        <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname
-          or IP address of a delegate host, and replace <varname>Resource-Pool</varname>
-          with the name of a resource pool:
-          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname></codeblock>
+        <info conkeyref="cc-feature-delegate-add-ssh/host-or-ip"> </info>
+        <stepxmp>
+          <p conkeyref="cc-feature-cli-serviced-host/NAT"/>
+        </stepxmp>
+        <stepxmp>
+          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname> \
+    <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/></codeblock>
         </stepxmp>
         <stepresult>The command creates a unique key bundle file in the local
           directory.</stepresult>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap >
+ <title>Images</title>
+ <chapter keyref="cc-upgrade-maps-images">
+   <topicref keyref="cc-upgrade-paths-images"/>
+   <topicref keyref="cc-upgrade-paths-images-id"/>
+   <topicref keyref="cc-upgrade-topics-remove-images"/>
+ </chapter>
+</bookmap>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Registering the master host nodes</title>
+  <taskbody>
+    <context>Use this procedure to register authentication credentials for the master host
+      nodes.</context>
+    <steps>
+      <step>
+        <cmd>Log in to a master host node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, 
+          log in to the other master host node 
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, verify the settings in the <cmdname>serviced</cmdname> configuration file.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced | sort</codeblock>
+        </stepxmp>
+        <info>The settings must be identical on both hosts.</info>
+      </step>
+      
+      <step>
+        <cmd>Start each delegate host that is a member of the ZooKeeper ensemble.</cmd>
+        <info>The ensemble is needed to start the master host instance of <ph keyref="nm-cc"/>.</info>
+        <substeps>
+          <substep>
+            <cmd>Identify the hosts.</cmd>
+            <stepxmp>
+              <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
+            </stepxmp>
+            <stepresult>The result is a list of 3 or 5 hosts, separated by 
+              the comma character (<codeph>&#44;</codeph>). The master host
+              is always a node in the ZooKeeper ensemble.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Log in to each delegate host in the
+              ensemble <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>On each delegate host, start <ph keyref="nm-cc"/>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On either node, start the cluster, and then monitor the startup process.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start the cluster.</cmd>
+            <stepxmp>
+              <codeblock>pcs cluster unstandby --all</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Monitor the startup process.</cmd>
+            <stepxmp>
+              <codeblock>watch pcs status</codeblock>
+            </stepxmp>
+            <info>Do not proceed until all resources report <codeph>Started</codeph>.</info>
+          </substep>
+          <substep>
+            <cmd>Identify the active node in the cluster.</cmd>
+            <info>The information is included in the output of <codeph>pcs status</codeph>.</info>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the active node, display the host ID, and then register the host.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the host ID of the active host.</cmd>
+            <stepxmp>
+              <codeblock>hostid</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Register the active master host.</cmd>
+            <stepxmp>Replace <varname>Host-ID</varname> with the 
+              host ID of the active node:
+              <codeblock>serviced key reset --register <varname>Host-ID</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the active node, fail over to the passive node, and then monitor the process.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the status of mirrored storage areas.</cmd>
+            <stepxmp>
+              <codeblock>drbd-overview</codeblock>
+            </stepxmp>
+            <stepresult>Do not proceed until the status of all 
+              devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Fail over to the passive node.</cmd>
+            <stepxmp>Replace <varname>Active-Node</varname> with the IP address or hostname
+              of the active master host:
+              <codeblock>pcs cluster standby <varname>Active-Node</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Monitor the failover process.</cmd>
+            <stepxmp>
+              <codeblock>watch pcs status</codeblock>
+            </stepxmp>
+            <info>The failover process takes several minutes. Do not proceed until 
+              all resources report <codeph>Started</codeph>.</info>
+          </substep>
+          <substep>
+            <cmd>Display the status of mirrored storage areas.</cmd>
+            <stepxmp>
+              <codeblock>drbd-overview</codeblock>
+            </stepxmp>
+            <stepresult>Do not proceed until the status of all 
+              devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On the formerly-passive node, register the host.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the host ID of the now-active host.</cmd>
+            <stepxmp>
+              <codeblock>hostid</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Register the now-active master host.</cmd>
+            <stepxmp>Replace <varname>Host-ID</varname> with the 
+              host ID of the now-active node:
+              <codeblock>serviced key reset --register <varname>Host-ID</varname></codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On either node, restore the cluster.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Restore the cluster.</cmd>
+            <stepxmp>Replace <varname>Former-Active-Node</varname> with the IP address or hostname
+              of the now-passive master host:
+              <codeblock>pcs cluster unstandby <varname>Former-Active-Node</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Monitor the startup process.</cmd>
+            <stepxmp>
+              <codeblock>watch pcs status</codeblock>
+            </stepxmp>
+            <info>Do not proceed until all resources report <codeph>Started</codeph>.</info>
+          </substep>
+          <substep>
+            <cmd>Display the status of mirrored storage areas.</cmd>
+            <stepxmp>
+              <codeblock>drbd-overview</codeblock>
+            </stepxmp>
+            <stepresult>Do not proceed until the status of all 
+              devices is <codeph>UpToDate/UpToDate</codeph>.</stepresult>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

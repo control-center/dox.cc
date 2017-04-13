@@ -15,7 +15,7 @@
       
       <table>
         <tgroup cols="3">
-          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c1" colwidth=".75*"/>
           <colspec colname="c2" colwidth="1*"/>
           <colspec colname="c3" colwidth="3*"/>
           <thead>
@@ -29,17 +29,17 @@
             <row>
               <entry><codeph>node1</codeph></entry>
               <entry><varname>Master</varname></entry>
-              <entry>IP address or hostname of the master host</entry>
+              <entry>The IP address or hostname of the master host.</entry>
             </row>
             <row>
               <entry><codeph>node2</codeph></entry>
               <entry><varname>Delegate-A</varname></entry>
-              <entry>IP address or hostname of delegate host A</entry>
+              <entry>The IP address or hostname of delegate host A.</entry>
             </row>
             <row>
-              <entry><codeph>node1</codeph></entry>
+              <entry><codeph>node3</codeph></entry>
               <entry><varname>Delegate-B</varname></entry>
-              <entry>IP address or hostname of delegate host B</entry>
+              <entry>The IP address or hostname of delegate host B.</entry>
             </row>
           </tbody>
         </tgroup>

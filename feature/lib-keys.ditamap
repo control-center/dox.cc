@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in feature/lib</title>
+ <title>Keys in lib</title>
   <topicgroup>
-    <keydef keys="feature-lib-tasks"
+    <keydef keys="cc-feature-lib-tasks"
             href="lib/tasks.dita"
             format="dita"
     />

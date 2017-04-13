@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring Logical Volume Manager</title>
+  <taskbody>
+    <context><ph keyref="nm-cc"/> application data is managed by a device mapper thin pool
+        created with Logical Volume Manager (LVM). This procedure adjusts the LVM 
+        configuration for mirroring by DRBD.</context>
+    <context>Perform this procedure on the primary node and on the secondary node.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create a backup copy of the LVM configuration file.</cmd>
+        <stepxmp>
+          <codeblock>cp -p /etc/lvm/lvm.conf /etc/lvm/lvm.conf.bak</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Open <filepath>/etc/lvm/lvm.conf</filepath> with a text editor.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Edit the <codeph>devices/filter</codeph> configuration option to exclude the partition
+          for <ph keyref="nm-cc"/> application data.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Search for the following text, which marks the beginning of the section about
+              the <codeph>devices/filter</codeph> configuration option:</cmd>
+            <stepxmp>
+              <codeblock># Configuration option devices/filter</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>At the end of section, remove the comment character (<codeph>#</codeph>)
+              from the beginning of the following line:</cmd>
+            <stepxmp>
+              <codeblock># filter = [ "a|.*/|" ]</codeblock>
+            </stepxmp>
+            <info>The line to edit is about 30 lines below the beginning the section.</info>
+          </substep>
+          <substep>
+            <cmd>Exclude the partition for <ph keyref="nm-cc"/> application data.</cmd>
+            <stepxmp>Replace <varname>App-Data-Storage</varname> with the path of the block storage
+              designated for <ph keyref="nm-cc"/> application data:
+              <codeblock>filter = ["r|<varname>App-Data-Storage</varname>|"]</codeblock>
+            </stepxmp>
+            <info>For example, if the value of <varname>App-Data-Storage</varname> in your environment
+              is <filepath>/dev/sdd</filepath>, the result should look like the following line:
+              <codeblock>filter = ["r|/dev/sdd|"]</codeblock>
+            </info>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Edit the <codeph>devices/write_cache_state</codeph> configuration option
+          to disable caching.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Search for the following text, which marks the beginning of the section about
+              the <codeph>devices/write_cache_state</codeph> configuration option:</cmd>
+            <stepxmp>
+              <codeblock># Configuration option devices/write_cache_state</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set the value of the <codeph>write_cache_state</codeph> option to 0.</cmd>
+            <stepxmp>The result should look like the following line:
+              <codeblock>write_cache_state = 0</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Edit the <codeph>global/use_lvmetad</codeph> configuration option
+          to disable the metadata daemon.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Search for the following text, which marks the beginning of the section about
+              the <codeph>global/use_lvmetad</codeph> configuration option:</cmd>
+            <stepxmp>
+              <codeblock># Configuration option global/use_lvmetad</codeblock>
+            </stepxmp>
+            <info>The line to edit is about 27 lines below the beginning the section.</info>
+          </substep>
+          <substep>
+            <cmd>Set the value of the <codeph>use_lvmetad</codeph> option to 0.</cmd>
+            <stepxmp>The result should look like the following line:
+              <codeblock>use_lvmetad = 0</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Save the file and close the text editor.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Delete any stale cache entries.</cmd>
+        <stepxmp>
+          <codeblock>rm -f /etc/lvm/cache/.cache</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Restart the host.</cmd>
+        <stepxmp>
+          <codeblock>reboot</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

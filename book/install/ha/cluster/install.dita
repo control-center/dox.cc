@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing cluster management</title>
+  <taskbody>
+    <context>Perform this procedure to install the cluster management software.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, log in to the secondary 
+          node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, extract and install the cluster management packages.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Extract the packages.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp &#38;&#38; tar xzf ./downloads.tgz</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the packages.</cmd>
+            <stepxmp>
+              <codeblock>yum --disablerepo=\* install -y ./downloads/*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, install the Pacemaker resource agent for <ph keyref="nm-cc"/>.</cmd>
+        <info>Pacemaker uses resource agents (scripts) to implement a standardized
+          interface for managing arbitrary resources in a cluster. <ph conkeyref="names/company"/> 
+          provides a Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host.</info>
+        <stepxmp>
+          <codeblock>yum install -y --disablerepo=\* \
+  /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, start and enable the PCS daemon.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start pcsd.service &#38;&#38; systemctl enable pcsd.service</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, set the password of the <codeph>hacluster</codeph> account.</cmd>
+        <info>The Pacemaker package creates the <codeph>hacluster</codeph> user account,
+          which must have the same password on both nodes.</info>
+        <stepxmp>
+          <codeblock>passwd hacluster</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

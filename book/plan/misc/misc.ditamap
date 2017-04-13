@@ -2,8 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
 <title>Misc</title>
-  <chapter keyref="plan-misc-misc">
-    <topicref keyref="plan-misc-package"/>
-    <topicref keyref="plan-misc-os-browsers"/>
+  <chapter keyref="cc-plan-misc-misc">
+    <topicref keyref="cc-plan-misc-package"/>
+    <topicref keyref="cc-plan-misc-os-browsers"/>
   </chapter>
 </bookmap>

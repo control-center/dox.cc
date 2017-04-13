@@ -69,10 +69,10 @@
         <dlentry id="SERVICED_DOCKER_REGISTRY">
           <dt><varname>SERVICED_DOCKER_REGISTRY</varname></dt>
           <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:5000</codeph></dd> 
-          <dd>The endpoint of the <cmdname>serviced</cmdname> Docker registry
-            host. On delegate hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP
-            address or hostname of the registry host, which by default is the
-              <cmdname>serviced</cmdname> master host.</dd>
+          <dd>The endpoint of the <cmdname>serviced</cmdname> Docker registry host. On delegate
+            hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or hostname
+            of the registry host, which by default is the <cmdname>serviced</cmdname> master host.
+            On the master host, this variable is ignored.</dd>
           <dd>The value used to replace <codeph>{{SERVICED_MASTER_IP}}</codeph> in this
             variable must match the value of the <codeph>--insecure-registry</codeph> flag in 
             the <filepath>/etc/sysconfig/docker</filepath> file.</dd>
@@ -301,11 +301,10 @@
               <li><codeph>TLS_RSA_WITH_AES_256_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_CBC_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_3DES_EDE_CBC_SHA</codeph></li>
-              <li><codeph>TLS_RSA_WITH_RC4_128_SHA</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_128_GCM_SHA256</codeph></li>
               <li><codeph>TLS_RSA_WITH_AES_256_GCM_SHA384</codeph></li>
-              <li><codeph>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</codeph></li>
-              <li><codeph>TLS_ECDHE_RSA_WITH_RC4_128_SHA</codeph></li>
+              <!-- CC_3132 <li><codeph>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</codeph></li>
+              <li><codeph>TLS_ECDHE_RSA_WITH_RC4_128_SHA</codeph></li> -->
             </ol></dd>
           <dd>To disable support for most ciphers, you can remove them from the list. 
             The following rules apply to the list:<ul>
@@ -384,7 +383,42 @@
           <dd>This setting is ignored when the operating system
             kernel version is less than 3.10.0-366.</dd>
         </dlentry>
-        
+<!-- CC_2381, CC_3198, CC_3253. Until further notice, the following parameters are intended for internal use only, and are hidden from users. 
+        <dlentry id="SERVICED_RUN_LEVEL_TIMEOUT">
+          <dt><varname>SSERVICED_RUN_LEVEL_TIMEOUT</varname></dt>
+          <dd><b>Default</b>: <codeph>600</codeph> </dd> 
+          <dd>The number of seconds to wait for services to start or stop before starting or 
+         stopping services at the next run level.</dd>
+         </dlentry>
+         
+        <dlentry id="SERVICED_STORAGE_REPORT_INTERVAL">
+          <dt><varname>SERVICED_STORAGE_REPORT_INTERVAL</varname></dt>
+          <dd><b>Default</b>: <codeph>30</codeph> </dd> 
+          <dd>The frequency in seconds to report storage statistics to OpenTSDB.</dd>
+         </dlentry>
+         
+        <dlentry id="SERVICED_STORAGE_METRIC_MONITOR_WINDOW">
+          <dt><varname>SERVICED_STORAGE_METRIC_MONITOR_WINDOW</varname></dt>
+          <dd><b>Default</b>: <codeph>300</codeph> (5 minutes)</dd> 
+          <dd>The number of seconds for which serviced will consider storage
+           availability metrics to predict future availability.</dd>
+        </dlentry>
+         
+        <dlentry id="SERVICED_STORAGE_LOOKAHEAD_PERIOD">
+          <dt><varname>SERVICED_STORAGE_LOOKAHEAD_PERIOD</varname></dt>
+          <dd><b>Default</b>: <codeph>360</codeph> (6 minutes)</dd> 
+          <dd>The number of seconds in the future that serviced should predict storage 
+            availability for the purposes of emergency shutdown.</dd>
+         </dlentry>
+         
+        <dlentry id="SERVICED_STORAGE_MIN_FREE">
+          <dt><varname>SERVICED_STORAGE_MIN_FREE</varname></dt>
+          <dd><b>Default</b>: <codeph>3GB</codeph> </dd> 
+          <dd>The amount of space that the emergency shutdown algorithm should reserve 
+            when deciding to shut down a service.</dd>
+         </dlentry>
+        -->        
+
         <dlentry id="SERVICED_ALLOW_LOOP_BACK">
           <dt><varname>SERVICED_ALLOW_LOOP_BACK</varname></dt>
           <dd><b>Default</b>: <codeph>false</codeph></dd> 

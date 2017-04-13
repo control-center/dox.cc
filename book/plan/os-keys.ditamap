@@ -3,15 +3,15 @@
 <map>
  <title>Keys in plan/os</title>
   <topicgroup>
-    <keydef keys="plan-os-network"
+    <keydef keys="cc-plan-os-network"
             href="os/network.dita"
             format="dita"
     />
-    <keydef keys="plan-os-os"
+    <keydef keys="cc-plan-os-os"
             href="os/os.dita"
             format="dita"
     />
-    <keydef keys="plan-os-security"
+    <keydef keys="cc-plan-os-security"
             href="os/security.dita"
             format="dita"
     />

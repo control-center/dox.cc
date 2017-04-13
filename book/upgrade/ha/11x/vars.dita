@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="taskid">
+  <title><ph keyref="nm-cc"/> configuration variables</title>
+  <conbody>
+    <p>This appendix includes the content in the following list:</p>
+    <ol>
+      <li><xref keyref="cc-upgrade-11x-vars-old"/></li>
+      <li><xref keyref="cc-upgrade-11x-vars-new"/></li>
+      <li><xref keyref="cc-feature-vars-master"/></li>
+      <li><xref keyref="cc-feature-vars-delegate-about"/></li>
+      <li><xref keyref="cc-feature-vars-all"/></li>
+      <li><xref keyref="cc-feature-vars-best"/></li>
+      <li><xref keyref="cc-feature-vars-file"/></li>
+    </ol>
+    <p>Many configuration choices depend on application requirements. Please review your 
+      application documentation before configuring hosts.</p>
+  </conbody>
+</concept>
+
+

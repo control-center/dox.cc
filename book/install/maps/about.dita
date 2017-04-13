@@ -4,10 +4,9 @@
   <title>About this guide</title>
   <refbody>
     <section>
-      <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures
-        for installing and configuring a <ph keyref="nm-cc"/> cluster. Please
-        review the <cite conkeyref="pubs/cite-plan"/> carefully before using
-        this guide.</p>
+      <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures for installing and
+        configuring a <ph keyref="nm-cc"/> cluster. Before using this guide, carefully review the
+          <cite conkeyref="pubs/cite-plan"/>.</p>
       
       <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
         installing a high-availability deployment. For additional information, please contact your
@@ -22,7 +21,7 @@
       <p>The following table identifies the supported combinations of client operating systems and
         web browsers.</p>
       <table>
-        <tgroup conkeyref="browsers-120/cc-tgroup" cols="2">
+        <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
           <tbody>
             <row>
               <entry></entry>
@@ -38,11 +37,43 @@
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
+      
+      <!-- Use the lo-build-date variable through finals. Then, replace it with
+           the published build number and use the variable only in the version
+           in development. 
+        -->
       <dl>
+        <dlentry>
+          <dt>1320.<keyword keyref="lo-build-date"/></dt>
+          <dd>Update release number (1.3.1).</dd>
+          <dd>Modify the step for configuring Docker Engine on master hosts.
+            The <codeph>--insecure-registry</codeph> flag is only needed 
+            on delegate hosts.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1320.17.076</dt>
+          <dd>Update release number (1.3.0).</dd>
+          <dd>Add clarification that offline installations must be performed completely
+            offline.</dd>
+          <dd>Add procedure for adding delegates when using network address translation (NAT).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1320.17.59</dt>
+          <dd>Update release number (1.2.3).</dd>
+          <dd>Remove <codeph>TLS_RSA_WITH_RC4_128_SHA</codeph> from list of ciphers associated with
+              <varname>SERVICED_TLS_CIPHERS</varname>.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>1320.17.024</dt>
+          <dd>Update release number (1.2.2).</dd>
+        </dlentry>
+        
         <dlentry>
           <dt>1320.16.351</dt>
           <dd>Minor changes to synchronize with the Upgrade Guide.</dd>
         </dlentry>
+        
         <dlentry>
           <dt>1320.16.350</dt>
           <dd>Add steps to download and use the <cmdname>serviced</cmdname> 
@@ -51,6 +82,7 @@
             (<ph conkeyref="names/company"/> customers only).</dd>
           <dd>Update release number (1.2.1).</dd>
         </dlentry>
+        
         <dlentry>
           <dt>1320.16.327</dt>
           <dd>Add new best practice guideline for managing configuration files.</dd>

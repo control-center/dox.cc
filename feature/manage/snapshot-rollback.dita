@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Snapshot and rollback</title>
+  <title>Creating snapshots and rolling back</title>
   <shortdesc>Though backups are the most reliable and durable way to preserve Docker images and
     configurations, creating a backup of an entire application is not always practical. However, you
     need to safeguard against potential risk when changing the system. In these cases, you can
@@ -12,7 +12,7 @@
         Create a snapshot whenever you need a save point for Docker images, such as before
         committing container changes. </p>
       <p>With both snapshot and backup, <ph keyref="nm-cc"/>
-        <ul id="ul_iyk_cq1_jx">
+        <ul>
           <li>Creates a tag for the Docker image of each service with metadata about the application
             data.</li>
           <li>Creates a separate snapshot of the LVM thin pool, which stores both application data
@@ -30,14 +30,13 @@
     <note>Rolling back from a snapshot does not remove services that you added after creating the
         snapshot. That is, if you create a snapshot, add a service, and then roll back, the service
         remains on the system; it is not deleted as part of the roll back.</note>
-    <p>
-        <ph keyref="nm-cc"/> uses <i>thin provisioning</i>, which enables it to create snapshots of
+    <p><ph keyref="nm-cc"/> uses <i>thin provisioning</i>, which enables it to create snapshots of
         the application data volume. Thin provisioning is a virtualization method that allocates
         data blocks only when data is written (copy-on-write). </p>
    <p>Because snapshots track changes to the file system over time, their space requirements
       expand incrementally as application data changes. Application data and snapshots share the
       same base device; therefore, ensure that snapshots do not fill up the base device storage. For
-      information about extending storage, see <xref keyref="feature-manage-resize"/>.</p>
+      information about extending storage, see <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
     </section>
   </refbody>
 </reference>

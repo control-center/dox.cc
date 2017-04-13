@@ -49,7 +49,7 @@
             <entry>Open</entry>
           </row>
           <row>
-            <entry>CC-2806</entry>
+            <entry>CC-2791</entry>
             <entry>There is a 20 second delay to view logs the first time after
                 <codeph>serviced</codeph> starts or restarts.</entry>
             <entry>Open</entry>
@@ -60,9 +60,9 @@
             <entry>Open</entry>
           </row>
           <row>
-            <entry>CC-3125</entry>
+            <entry>CC-3126</entry>
             <entry>Insecure Cipher RC4 is enabled on <ph keyref="nm-cc"/> version 1.2.x</entry>
-            <entry>Open</entry>
+            <entry>Fixed in 1.2.2</entry>
           </row>
           
         </tbody>

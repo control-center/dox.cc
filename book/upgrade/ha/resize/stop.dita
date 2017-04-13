@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping the cluster</title>
+  <taskbody>
+    <context>Use this procedure to stop the applications that <cmdname>serviced</cmdname>
+    is managing, <cmdname>serviced</cmdname> itself, and cluster services.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to <varname>Active-Node</varname>
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+        <cmd></cmd>
+      </step>
+      
+      <step>
+        <cmd>Disable <cmdname>serviced</cmdname>.</cmd>
+        <stepxmp>
+          <codeblock>pcs resource disable serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Stop <cmdname>serviced</cmdname> on all delegate hosts.</cmd>
+        <info><ph conkeyref="strings/fmi-int"/> 
+          <xref keyref="cc-feature-manage-stop-n-delegate"/>.</info>
+      </step>
+      
+      <step>
+        <cmd>Disable additional resources.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Disable storage resources.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource disable serviced-storage</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Disable the <cmdname>serviced</cmdname> group.</cmd>
+            <stepxmp>
+              <codeblock>pcs resource disable serviced-group</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Confirm that all resources are stopped, and identify the master node.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Confirm that all resources are stopped.</cmd>
+            <stepxmp>
+              <codeblock>watch pcs status</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Disable replication.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster standby --all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>In a separate terminal session, log in to
+          <varname>Passive-Node</varname> <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, confirm that replication is disabled.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>The output should match the following example:
+          <codeblock>0:serviced-dfs/0  Unconfigured . .
+1:serviced-dfs/1  Unconfigured . .
+2:serviced-dfs/2  Unconfigured . .</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, display the size of 
+          the <cmdname>serviced</cmdname> thin pool device.</cmd>
+        <info>Typically, the <cmdname>serviced</cmdname> thin pool device
+          is associated with <filepath>/dev/drbd2</filepath>. To verify
+          the configuration in your environment, review 
+          <filepath>/etc/drbd.d/serviced-dfs.res</filepath>.</info>
+        <stepxmp>
+          <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+        </stepxmp>
+        <info>None of devices listed in the output should include subordinate DRBD devices.</info>
+      </step>
+      
+    </steps>
+    <postreq>
+      <note>When this procedure is complete, add storage to the device
+      that contains the serviced thin pool. For more information, refer to your
+    operating system or hypervisor documentation. Perform the procedure on
+    both master host nodes.</note>
+    </postreq>
+  </taskbody>
+</task>

@@ -3,9 +3,9 @@
   PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <title>Storage</title>
-   <appendix keyref="plan-storage-storage">
-     <topicref keyref="plan-storage-discover"/>
-     <topicref keyref="plan-storage-partition"/>
-     <topicref keyref="plan-storage-swap"/>
+   <appendix keyref="cc-plan-storage-storage">
+     <topicref keyref="cc-plan-storage-discover"/>
+     <topicref keyref="cc-plan-storage-partition"/>
+     <topicref keyref="cc-plan-storage-swap"/>
    </appendix>
 </bookmap>

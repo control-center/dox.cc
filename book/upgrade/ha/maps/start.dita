@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Starting an upgraded deployment</title>
+  <refbody>
+    <section>
+      <p>This chapter includes the procedure for starting 
+        a high-availability <ph keyref="nm-cc"/> deployment
+        after upgrading to version <ph keyref="lo-version-cc"/>.</p>
+    </section>
+  </refbody>
+</reference>

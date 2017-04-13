@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/verify</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-verify-cc"
+            href="verify/cc.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-verify-cluster"
+            href="verify/cluster.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-verify-drbd"
+            href="verify/drbd.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-verify-failover"
+            href="verify/failover.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-verify-pacemaker"
+            href="verify/pacemaker.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-verify-verify"
+            href="verify/verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

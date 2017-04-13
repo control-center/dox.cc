@@ -7,7 +7,7 @@
       <p>This chapter includes procedures for starting 
         single-host and multi-host <ph keyref="nm-cc"/> deployments
         after upgrading to version <ph keyref="lo-version-cc"/>.</p>
-      <p><b>Single-host deployments</b>: <xref keyref="upgrade-to12x-start-master"/>.</p>
+      <p><b>Single-host deployments</b>: <xref keyref="cc-upgrade-11x-start-master-single"/>.</p>
       <p><b>Multi-host deployments</b>: Use the procedures in this section
           in the order shown in the following table.</p>
       <table>
@@ -25,22 +25,22 @@
             <row>
               <entry>1</entry>
               <entry>Start/register the master host</entry>
-              <entry><xref keyref="upgrade-to12x-start-master"/></entry>
+              <entry><xref keyref="cc-upgrade-11x-start-master-multi"/></entry>
             </row>
             <row>
               <entry>2</entry>
               <entry>Start/register ZooKeeper ensemble hosts</entry>
-              <entry><xref keyref="upgrade-to12x-start-delegate"/></entry>
+              <entry><xref keyref="cc-upgrade-11x-start-delegate"/></entry>
             </row>
             <row>
               <entry>3</entry>
               <entry>Start the ZooKeeper ensemble</entry>
-              <entry><xref keyref="upgrade-topics-start-zk"/></entry>
+              <entry><xref keyref="cc-upgrade-topics-start-zk"/></entry>
             </row>
             <row>
               <entry>4</entry>
               <entry>Start/register all remaining delegate hosts</entry>
-              <entry><xref keyref="upgrade-to12x-start-delegate"/></entry>
+              <entry><xref keyref="cc-upgrade-11x-start-delegate"/></entry>
             </row>
           </tbody>
         </tgroup>

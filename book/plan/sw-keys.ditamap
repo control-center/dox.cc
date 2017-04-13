@@ -3,27 +3,27 @@
 <map>
  <title>Keys in plan/sw</title>
   <topicgroup>
-    <keydef keys="plan-sw-add"
+    <keydef keys="cc-plan-sw-add"
             href="sw/add.dita"
             format="dita"
     />
-    <keydef keys="plan-sw-cc-docker"
+    <keydef keys="cc-plan-sw-cc-docker"
             href="sw/cc-docker.dita"
             format="dita"
     />
-    <keydef keys="plan-sw-cc-terms"
+    <keydef keys="cc-plan-sw-cc-terms"
             href="sw/cc-terms.dita"
             format="dita"
     />
-    <keydef keys="plan-sw-cc"
+    <keydef keys="cc-plan-sw-cc"
             href="sw/cc.dita"
             format="dita"
     />
-    <keydef keys="plan-sw-data-storage"
+    <keydef keys="cc-plan-sw-data-storage"
             href="sw/data-storage.dita"
             format="dita"
     />
-    <keydef keys="plan-sw-sw"
+    <keydef keys="cc-plan-sw-sw"
             href="sw/sw.dita"
             format="dita"
     />

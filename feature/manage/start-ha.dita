@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Starting <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <context>Use this procedure to start <ph keyref="nm-cc"/> in a high-availability deployment. The
+      default configuration of the <ph keyref="nm-cc"/> service (<cmdname>serviced</cmdname>) is to
+      start when the host starts. This procedure is only needed after stopping
+        <cmdname>serviced</cmdname> to perform maintenance tasks.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node
+          <ph conkeyref="strings/login-root"/>.</cmd>
+        <info>In this context, the primary node is the node that was the current node when 
+          you stopped <ph keyref="nm-cc"/>.</info>
+      </step>
+      
+      <step>
+        <cmd>Identify the hosts in the ZooKeeper ensemble.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_ZK=' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The result is a list of 1, 3, or 5 hosts, separated by the comma character
+          (<codeph>&#44;</codeph>). The master host is always a node in the ZooKeeper
+          ensemble.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>In separate windows, log in to each of the delegate hosts
+          that are nodes in the ZooKeeper ensemble <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Take the cluster out of standby mode.</cmd>
+        <stepxmp>
+          <codeblock>pcs cluster unstandby --all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the other ZooKeeper ensemble hosts, start <cmdname>serviced</cmdname>.</cmd>
+        <info>The window of time for starting a ZooKeeper ensemble is 
+          relatively short. The goal of this step is to start
+          <ph keyref="nm-cc"/> on each ensemble node at about the 
+          same time, so that each node can participate in electing
+          the leader.</info>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Monitor the status of cluster resources.</cmd>
+        <stepxmp>
+          <codeblock>watch pcs status</codeblock>
+        </stepxmp>
+        <stepresult>Monitor the status until all resources report <codeph>Started</codeph>. Resolve
+          any issues before continuing.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>On the master host, check the status of the ZooKeeper ensemble.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Attach to the container of the ZooKeeper service.</cmd>
+            <stepxmp>
+              <codeblock>docker exec -it serviced-isvcs_zookeeper bash</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Query the master host and identify its role in the ensemble.</cmd>
+            <stepxmp>Replace <varname>Master</varname> with the hostname or IP address of the master host:
+              <codeblock>{ echo stats; sleep 1; } | nc <varname>Master</varname> 2181 | grep Mode</codeblock>
+            </stepxmp>
+            <stepresult>The result includes <codeph>leader</codeph> or
+              <codeph>follower</codeph>. When multiple hosts rely on the
+              ZooKeeper instance on the master host, the result includes
+              <codeph>standalone</codeph>.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Query the other delegate hosts to identify their role in the ensemble.</cmd>
+            <stepxmp>Replace <varname>Delegate</varname> with the hostname or IP address of a delegate host:
+              <codeblock>{ echo stats; sleep 1; } | nc <varname>Delegate</varname> 2181 | grep Mode</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Detach from the container of the ZooKeeper service.</cmd>
+            <stepxmp>
+              <codeblock>exit</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        <stepresult>If none of the nodes reports that it is the ensemble leader within a few minutes of
+          starting <cmdname>serviced</cmdname>, reboot the ensemble hosts.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Log in to each of the delegate
+          hosts that are not nodes in the ZooKeeper ensemble
+          <ph conkeyref="strings/login-root"/>,
+          and then start <cmdname>serviced</cmdname>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Monitor the startup, if desired.</cmd>
+        <stepxmp>
+          <codeblock>journalctl -u serviced -f -o cat</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+    <postreq>Once <ph keyref="nm-cc"/> is started, it is ready to start managing applications.
+      For more information, refer to the documentation of your application.</postreq>
+  </taskbody>
+</task>

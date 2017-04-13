@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="taskid">
+  <title><ph keyref="nm-cc"/> configuration variables</title>
+  <conbody>
+    <p>This appendix includes the list of <codeph>serviced</codeph> configuration variables.
+    The list uses the order present in the file, not alphabetical order.</p>
+  </conbody>
+</concept>
+
+

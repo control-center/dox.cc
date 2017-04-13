@@ -3,23 +3,23 @@
 <map>
  <title>Keys in notes/118</title>
   <topicgroup>
-    <keydef keys="notes-118-features"
+    <keydef keys="cc-notes-118-features"
             href="118/features.dita"
             format="dita"
     />
-    <keydef keys="notes-118-fixed"
+    <keydef keys="cc-notes-118-fixed"
             href="118/fixed.dita"
             format="dita"
     />
-    <keydef keys="notes-118-known"
+    <keydef keys="cc-notes-118-known"
             href="118/known.dita"
             format="dita"
     />
-    <keydef keys="notes-118-notes"
+    <keydef keys="cc-notes-118-notes"
             href="118/notes.dita"
             format="dita"
     />
-    <keydef keys="notes-118-self"
+    <keydef keys="cc-notes-118-self"
             href="118/self.dita"
             format="dita"
     />

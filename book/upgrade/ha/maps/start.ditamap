@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Start</title>
+   <appendix keyref="cc-upgrade-ha-maps-start">
+     <topicref keyref="cc-upgrade-ha-11x-start-master"/>
+     <topicref keyref="cc-upgrade-11x-start-delegate">
+       <topicref keyref="cc-upgrade-11x-start-delegate-ssh"/>
+       <topicref keyref="cc-upgrade-11x-start-delegate-local"/>
+     </topicref>
+   </appendix>
+</bookmap>

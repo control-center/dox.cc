@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Removing the old repository mirror</title>
+  <taskbody>
+    <context>Use this procedure to find an installed <ph conkeyref="names/company"/> repository
+      mirror on a <ph keyref="nm-cc"/> host before installing the new repository mirror.</context>
+    <context id="context_frw_x4w_cz"/>
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Search for the existing repository mirror:</cmd>
+        <stepxmp>
+          <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}'</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Remove the existing mirror:</cmd>
+        <stepxmp>
+          <codeblock>yum remove -y <varname>Old-Mirror</varname></codeblock>
+        </stepxmp>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

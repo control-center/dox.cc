@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding space to the data area of a <ph keyref="nm-cc"/> thin pool</title>
+  <taskbody>
+    <context>Use this procedure to increase the amount of space in the data 
+      area of a <ph keyref="nm-cc"/> thin pool. <ph conkeyref="strings/fmi-int"/>
+      <xref keyref="cc-feature-manage-thinpool-minimums"/>. </context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display information about LVM logical volumes on the host.</cmd>
+        <stepxmp>
+          <codeblock>lvs --options=lv_name,vg_name,lv_size</codeblock>
+        </stepxmp>
+        <stepresult>Typically, the logical volume is <codeph>serviced-pool</codeph>
+          and the containing volume group is <cmdname>serviced</cmdname>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Add space to the data storage area 
+          of the <cmdname>serviced</cmdname> thin pool.</cmd>
+        <stepxmp>In the following command:
+          <ul>
+            <li>Replace <varname>Total-Size</varname> with the sum of the existing device size plus
+              the space to add to the device, in gigabytes. Include the units identifier,
+                <codeph>G</codeph>.</li>
+            <li>Replace <varname>Volume-Group</varname> with the 
+              name of the LVM volume group identified in the previous step.</li>
+            <li>Replace <varname>Logical-Volume</varname> with the name of the logical volume
+              identified in the previous step.</li>
+          </ul>
+          <codeblock>lvextend -L+<varname>Total-Size</varname>G <varname>Volume-Group</varname>/<varname>Logical-Volume</varname></codeblock>
+        </stepxmp>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

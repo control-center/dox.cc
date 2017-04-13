@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Initializing DRBD</title>
+  <taskbody>
+    <context>
+      <p>Perform this procedure to initialize DRBD and the mirrored storage areas.</p>
+      <note>Unlike the preceding procedures, most of the steps in this procedure are performed on
+        the primary node only.</note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the primary node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Synchronize the storage areas of both nodes.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Start the synchronization.</cmd>
+            <stepxmp>
+              <codeblock>drbdadm primary --force serviced-dfs</codeblock>
+            </stepxmp>
+            <stepresult>The command may return right away, while the synchronization
+              process continues running in the background. Depending on the sizes of 
+              the storage areas, this process can take several hours.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Monitor the progress of the synchronization.</cmd>
+            <stepxmp>
+              <codeblock>drbd-overview</codeblock>
+            </stepxmp>
+            <stepresult>
+              <p>Do not proceed until the status is <codeph>UpToDate/UpToDate</codeph>, as in the
+                following example output:</p>
+              <codeblock>0:serviced-dfs/0 Connected Primary/Secondary UpToDate/UpToDate
+1:serviced-dfs/1 Connected Primary/Secondary UpToDate/UpToDate
+2:serviced-dfs/2 Connected Primary/Secondary UpToDate/UpToDate</codeblock>
+              <p>The <codeph>Primary/Secondary</codeph> values show that the command was run on the
+                primary node; otherwise, the values are <codeph>Secondary/Primary</codeph>.
+                Likewise, the first value in the <codeph>UpToDate/UpToDate</codeph> field is the
+                status of the node on which the command is run, and the second value is the status
+                of the remote node.</p>
+            </stepresult>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Format the block storage for <ph keyref="nm-cc"/> internal services data 
+          and for <ph keyref="nm-cc"/> metadata.</cmd>
+        <info>The following commands use the paths of the DRBD devices defined previously, not the block storage paths.</info>
+        <stepxmp>
+          <codeblock>mkfs.xfs /dev/drbd0
+mkfs.xfs /dev/drbd1</codeblock>
+        </stepxmp>
+        <stepresult>The commands create XFS filesystems on the primary node, and DRBD mirrors the
+          filesystems to the secondary node.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Create a device mapper thin pool for <ph keyref="nm-cc"/> application data.</cmd>
+        <info>The following command uses the path of the DRBD device defined previously, not the
+          block storage path.</info>
+        <stepxmp>
+          <codeblock>serviced-storage -v create-thin-pool serviced /dev/drbd2</codeblock>
+        </stepxmp>
+        <stepresult>On success, DRBD mirrors the device mapper thin pool to the secondary node.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Configure <ph keyref="nm-cc"/> storage variables.</cmd>
+        <substeps>
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Locate the line for the <varname>SERVICED_FS_TYPE</varname> variable, and then make
+              a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Locate the line for the <varname>SERVICED_DM_THINPOOLDEV</varname> variable, and
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
+          <substep>
+            <cmd>Set the value to the device mapper name of the thin pool for application
+              data.</cmd>
+            <stepxmp>
+              <codeblock>SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool</codeblock>
+            </stepxmp>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save">
+            <cmd/>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>In a separate window, log in to the secondary node
+          <ph conkeyref="strings/login-root"/>, and then replicate the 
+          <ph keyref="nm-cc"/> configuration on the secondary node.</cmd>
+        <info>Use a utility like <cmdname>sum</cmdname> to compare the files
+        and ensure their contents are identical.</info>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, monitor the progress of the synchronization.</cmd>
+        <stepxmp>
+          <codeblock>drbd-overview</codeblock>
+        </stepxmp>
+        <stepresult>
+          <note>Do not proceed until synchronization is complete.</note>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>On the primary node, deactivate the <codeph>serviced</codeph> volume group.</cmd>
+        <stepxmp>
+          <codeblock>vgchange -an serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, stop DRBD.</cmd>
+        <stepxmp>
+          <codeblock>drbdadm down all</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

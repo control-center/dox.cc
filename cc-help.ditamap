@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <booktitle>
+    <mainbooktitle>Control Center Reference Guide</mainbooktitle>
+  </booktitle>
+  <bookmeta>
+    <publisherinformation>
+      <organization>Zenoss, Inc.</organization>
+    </publisherinformation>
+    <prodinfo>
+      <prodname>Control Center</prodname>
+      <vrmlist>
+        <vrm version="1" release="3" modification="1"/>
+      </vrmlist>
+    </prodinfo>
+    <bookid>
+      <bookpartno>1340.<keyword keyref="lo-build-date"/></bookpartno>
+    </bookid>
+    <bookrights>
+      <copyrfirst>
+        <year>2017</year>
+      </copyrfirst>
+      <bookowner>
+        <organization>Zenoss, Inc., 11305 Four Points Drive,
+          Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>
+      </bookowner>
+    </bookrights>
+    <data conkeyref="data/zentm"/>
+  </bookmeta>
+  <frontmatter>
+    <topicgroup>
+      <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
+      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="shared/front/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/build.ditamap" format="ditamap"/>
+      <mapref href="shared/urls.ditamap" format="ditamap"/>
+      <mapref href="shared/versions.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/gui-keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/manage-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli-keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars-keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <booklists>
+      <toc/>
+    </booklists>
+    <topicref href="book/help/front/about.dita"/>
+  </frontmatter>
+  <chapter href="feature/gui/gui.ditamap" format="ditamap"/>  
+  <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
+  <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
+  
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref keyref="gl-cc-application"/>
+        <topicref keyref="gl-cc-cluster"/>
+        <topicref keyref="gl-cc-delegate-host"/>
+        <topicref keyref="gl-cc-master-host"/>
+        <topicref keyref="gl-cc-resource-pool"/>
+        <topicref keyref="gl-cc-service"/>        
+        <topicref keyref="gl-service-definition"/>
+        <topicref keyref="gl-service-template"/>
+        <topicref keyref="gl-cc-serviced"/>
+        <topicref keyref="gl-cc-tenant"/>        
+      </glossarylist>
+    </booklists>
+  </backmatter>
+  
+</bookmap>

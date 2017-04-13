@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
  <title>112</title>
- <chapter keyref="notes-112-self">
-   <topicref keyref="notes-112-fixed"/> 
+ <chapter keyref="cc-notes-112-self">
+   <topicref keyref="cc-notes-112-fixed"/> 
  </chapter>
 </bookmap>

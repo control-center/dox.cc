@@ -4,7 +4,7 @@
   <title>Optional: Installing <ph keyref="nm-cc"/> without internet access</title>
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="install-offline-offline"/> before performing this procedure.</prereq>
+      keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to install <ph keyref="nm-cc"/>
       on a host that does not have internet access.</context>
     <steps>
@@ -13,15 +13,15 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/install-serviced-offline">
+      <step conkeyref="cc-feature-lib-tasks/install-serviced-offline">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/serviced-cfg-backup">
+      <step conkeyref="cc-feature-lib-tasks/serviced-cfg-backup">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/nfs-workaround">
+      <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
         <cmd/>
       </step>
 

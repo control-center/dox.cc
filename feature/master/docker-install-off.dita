@@ -5,16 +5,19 @@
   <taskbody>
     <prereq><b><ph conkeyref="names/company"/> customers</b>: If you are installing
       Docker Engine without internet access, perform the steps in <xref
-        keyref="install-offline-offline"/> before performing this procedure.</prereq>
+        keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
     <context>Use this procedure to install Docker Engine on 
-      a host that does not have internet access.</context>
+      a host that does not have internet access.
+      <note id="avoid-depend-errors"><!-- CC_3330 -->To avoid dependency errors when installing
+        without internet access, install only from the local repository mirror.</note>
+    </context>
     <steps>
       
       <step>
         <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/docker-install-offline">
+      <step conkeyref="cc-feature-lib-tasks/docker-install-offline">
         <cmd/>
       </step>
       

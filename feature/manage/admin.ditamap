@@ -2,30 +2,42 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Administration reference</title>
-   <chapter keyref="feature-manage-admin">
-      <topicref keyref="feature-manage-resize"/>
-      <topicref keyref="feature-manage-backup-restore">
-         <topicref keyref="feature-manage-backup-restore-best-pract"/>
-         <topicref keyref="feature-manage-backup"/>
-         <topicref keyref="feature-manage-backup-from-cli">
-            <topicref keyref="feature-manage-backup-cli-all"/>
-            <topicref keyref="feature-manage-backup-cli-exclude-one"/>
-            <topicref keyref="feature-manage-backup-cli-exclude-mult"/>
-         </topicref>
-         <topicref keyref="feature-manage-restore"/>
+   <chapter keyref="cc-feature-manage-admin">
+      <topicref keyref="cc-feature-manage-thinpool-minimums">
+         <topicref keyref="cc-feature-manage-thinpool-examine"/>
+         <topicref keyref="cc-feature-manage-resize-meta"/>
+         <topicref keyref="cc-feature-manage-resize-data"/>
+         <topicref keyref="cc-feature-manage-resize-tenant-vd"/>
       </topicref>
-      <topicref keyref="feature-manage-snapshot-rollback">
-         <topicref keyref="feature-manage-snapshot"/>
-         <topicref keyref="feature-manage-rollback"/>
+      <topicref keyref="cc-feature-manage-emer-sdown-overview">
+         <topicref keyref="cc-feature-manage-clear-emerg"/>
       </topicref>
-      <topicref keyref="feature-manage-intro-stop-start">
-         <topicref keyref="feature-manage-stop-1"/>
-         <topicref keyref="feature-manage-start-1"/>
-         <topicref keyref="feature-manage-stop-n">
-            <topicref keyref="feature-manage-stop-n-master"/>
-            <topicref keyref="feature-manage-stop-n-delegate"/>
+      <topicref keyref="cc-feature-manage-NAT-overview"/>
+      <topicref keyref="cc-feature-backup-overview">
+         <topicref keyref="cc-feature-backup-best-practice"/>
+         <topicref keyref="cc-feature-backup-backup"/>
+         <topicref keyref="cc-feature-backup-cli">
+            <topicref keyref="cc-feature-backup-cli-all"/>
+            <topicref keyref="cc-feature-backup-cli-exclude-one"/>
+            <topicref keyref="cc-feature-backup-cli-exclude-multiple"/>
          </topicref>
-         <topicref keyref="feature-manage-start-n"/>
+         <topicref keyref="cc-feature-backup-restore"/>
+      </topicref>
+      <topicref keyref="cc-feature-manage-snapshot-rollback">
+         <topicref keyref="cc-feature-manage-snapshot"/>
+         <topicref keyref="cc-feature-manage-rollback"/>
+      </topicref>
+      <topicref keyref="cc-feature-manage-intro-stop-start">
+         <topicref keyref="cc-feature-manage-stop-1"/>
+         <topicref keyref="cc-feature-manage-start-1"/>
+         <topicref keyref="cc-feature-manage-stop-n">
+            <topicref keyref="cc-feature-manage-stop-n-master"/>
+            <topicref keyref="cc-feature-manage-stop-n-delegate"/>
+         </topicref>
+         <topicref keyref="cc-feature-manage-start-n"/>
+      </topicref>
+      <topicref keyref="cc-feature-manage-rolling-restart-overview">
+         <topicref keyref="cc-feature-manage-change-rolling-restart"/>   
       </topicref>
    </chapter>
 </bookmap>

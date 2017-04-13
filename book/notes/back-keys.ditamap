@@ -3,19 +3,19 @@
 <map>
  <title>Keys in notes/back</title>
   <topicgroup>
-    <keydef keys="notes-back-back"
+    <keydef keys="cc-notes-back-back"
             href="back/back.dita"
             format="dita"
     />
-    <keydef keys="notes-back-errata"
+    <keydef keys="cc-notes-back-errata"
             href="back/errata.dita"
             format="dita"
     />
-    <keydef keys="notes-back-limits"
+    <keydef keys="cc-notes-back-limits"
             href="back/limits.dita"
             format="dita"
     />
-    <keydef keys="notes-back-more-info"
+    <keydef keys="cc-notes-back-more-info"
             href="back/more-info.dita"
             format="dita"
     />

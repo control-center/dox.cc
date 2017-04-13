@@ -2,8 +2,14 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Before</title>
-  <chapter keyref="upgrade-maps-prep">
-    <topicref keyref="upgrade-to12x-prep-features"/>
-    <topicref keyref="upgrade-topics-best-practices"/>
- </chapter>
+  <chapter keyref="cc-upgrade-maps-prep">
+    <topicref keyref="cc-upgrade-11x-prep-features"/>
+    <topicref keyref="cc-upgrade-topics-best-practices"/>
+    <topicref keyref="cc-feature-manage-thinpool-minimums">
+      <topicref keyref="cc-feature-manage-thinpool-examine"/>
+      <topicref keyref="cc-feature-manage-resize-meta"/>
+      <topicref keyref="cc-feature-manage-resize-data"/>
+      <topicref keyref="cc-feature-manage-resize-tenant-vd"/>
+    </topicref>
+  </chapter>
 </bookmap>

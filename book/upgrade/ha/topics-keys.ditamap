@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha/topics</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-ha-topics-best-practices"
+            href="topics/best-practices.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-topics-pcs-drbd-update"
+            href="topics/pcs-drbd-update.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-topics-remove-images"
+            href="topics/remove-images.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-topics-resize"
+            href="topics/resize.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-topics-start-zk"
+            href="topics/start-zk.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

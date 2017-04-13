@@ -98,14 +98,14 @@
           <p>The default private subnet may already be in use in your environment. 
             The following variable configures <cmdname>serviced</cmdname> to use an alternate subnet:</p>
           <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
+            <dlentry conkeyref="cc-feature-vars-file/SERVICED_VIRTUAL_ADDRESS_SUBNET">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -116,10 +116,10 @@
             </stepxmp>
             <info>For example, change the value to <codeph>203.0.113.0/20</codeph>.</info>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -132,14 +132,14 @@
         <info>
           <p>The following variable configures <cmdname>serviced</cmdname> to serve as master:</p>
           <dl>
-            <dlentry conkeyref="feature-vars-file/SERVICED_MASTER">
+            <dlentry conkeyref="cc-feature-vars-file/SERVICED_MASTER">
               <dt/>
               <dd/>
             </dlentry>
           </dl>
         </info>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-lib-tasks/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -148,10 +148,10 @@
             <stepxmp>The following example shows the line to change:
               <codeblock># SERVICED_MASTER=0</codeblock></stepxmp>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment">
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
             <cmd/>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-lib-tasks/save">
             <cmd/>
           </substep>
         </substeps>
@@ -162,10 +162,14 @@
       <step id="create-thin-docker">
         <cmd>Create an LVM thin pool for Docker data.</cmd>
         <info>For more information about the <cmdname>serviced-storage</cmdname> command,
-        see <xref keyref="feature-cli-serviced-storage"/>.</info>
-        <stepxmp>Replace <varname>Storage</varname> with the paths of one or more block 
-          devices or partitions, or the name of an LVM volume group:
-          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Storage</varname></codeblock>
+        see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
+        <stepxmp><b>To use an entire block device or partition</b> for the thin pool, replace
+            <varname>Device-Path</varname> with the device path:
+          <codeblock>serviced-storage create-thin-pool docker <varname>Device-Path</varname></codeblock>
+        </stepxmp>
+        <stepxmp><b>To use 50GB of an LVM volume group</b> for the thin pool, replace
+            <varname>Volume-Group</varname> with the name of an LVM volume group:
+          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Volume-Group</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result is the device mapper name of the thin pool,
           which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
@@ -335,10 +339,10 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
           <codeblock>cat /etc/redhat-release</codeblock>
         </stepxmp>
         <choices>
-          <choice>If the result includes <codeph>7.1</codeph> 
-            or <codeph>7.2</codeph>, proceed to the next step.</choice>
-          <choice>If the result does not include <codeph>7.1</codeph> 
-            or <codeph>7.2</codeph>, select a different host,
+          <choice>If the result includes <codeph>7.1</codeph>, <codeph>7.2</codeph>, 
+            or <codeph>7.3</codeph> proceed to the next step.</choice>
+          <choice>If the result does not include <codeph>7.1</codeph>, 
+            <codeph>7.2</codeph>, or <codeph>7.3</codeph>, select a different host,
           and then start this procedure again.</choice>
         </choices>
       </step>
@@ -423,12 +427,12 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
@@ -442,11 +446,11 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
           <substep>
-            <cmd>Replace <codeph>exmaple.com</codeph> with <codeph>local</codeph>, 
+            <cmd>Replace <codeph>example.com</codeph> with <codeph>local</codeph>, 
               and then remove the number sign character (<codeph>&#35;</codeph>)
               from the beginning of the line.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
           <substep>
             <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
             <stepxmp>
@@ -456,42 +460,6 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         </substeps>
       </step>
       
-      <step id="ntp">
-        <cmd>Install and configure the NTP package.</cmd>
-        <info>
-          <note>This procedure assumes the host has internet access. 
-            To install and configure NTP on a host that does not have 
-            internet access, see <xref keyref="install-ntp-ntp"/>.</note>
-        </info>
-        <substeps>
-          <substep>
-            <cmd>Install the package.</cmd>
-            <stepxmp>
-              <codeblock>yum install -y ntp</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Set the system time.</cmd>
-            <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
-          </substep>
-          <substep>
-            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
-            <stepxmp>
-              <codeblock>systemctl enable ntpd</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
-            <info>Currently, an unresolved issue associated with NTP
-              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot. 
-              The following commands provide a workaround to ensure that it does. </info>
-            <stepxmp>
-              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
-chmod +x /etc/rc.d/rc.local</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
       
       <step id="nc-online">
         <cmd>Install the <xref keyref="url-nmap-ncat">Nmap Ncat</xref> utility.</cmd>
@@ -541,6 +509,12 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
             <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
               a text editor.</cmd>
           </substep>
@@ -567,7 +541,14 @@ EOF</codeblock>
           <substep>
             <cmd>Install Docker Engine.</cmd>
             <stepxmp>
-              <codeblock>yum install --enablerepo=zenoss-mirror -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+              <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
+  docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable docker</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -625,6 +606,47 @@ EOF</codeblock>
             <stepxmp>
               <codeblock>systemctl daemon-reload</codeblock>
             </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="docker-config-master">
+        <cmd>Configure and start the Docker service.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create a variable for the name of the Docker thin pool.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Thin-Pool-Device</varname> with the name of the
+                thin pool device created in the previous step:</p>
+              <codeblock>myPool="<varname>Thin-Pool-Device</varname>"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create variables for adding arguments to the Docker configuration file. The
+              <codeph>--exec-opt</codeph> argument is a workaround for <xref
+                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+            <stepxmp>
+              <codeblock>myDriver="--storage-driver devicemapper"
+myLog="--log-level=error"
+myFix="--exec-opt native.cgroupdriver=cgroupfs"
+myMount="--storage-opt dm.mountopt=discard"
+myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Add the arguments to the Docker configuration file.</cmd>
+            <stepxmp>
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag'"' \
+  &#62;&#62; /etc/sysconfig/docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start or restart Docker.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart docker</codeblock>
+            </stepxmp>
+            <stepresult>The startup may take up to a minute, and may fail. If startup
+              fails, repeat the <cmdname>restart</cmdname> command.</stepresult>
           </substep>
         </substeps>
       </step>
@@ -761,6 +783,12 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
               <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
+          <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
         </substeps>
       </step>
       
@@ -794,37 +822,38 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum install -y --enablerepo=zenoss-mirror \
+              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Enable automatic startup.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
             </stepxmp>
           </substep>
         </substeps>
       </step>
       
-      <step id="zk-define-ips">
-        <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
-        <stepxmp>Replace <varname>Master</varname> with the IP address or hostname
-          of the <ph keyref="nm-cc"/> master host, and replace 
-          <varname>Delegate-A</varname> and <varname>Delegate-B</varname>
-          with the IP addresses or hostnames of the delegate hosts to include in the ensemble:
-          <codeblock>node1=<varname>Master</varname>
-node2=<varname>Delegate-A</varname>
-node3=<varname>Delegate-B</varname></codeblock>
-        </stepxmp>
+      <step id="install-serviced-offline-ha">
+        <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install <ph keyref="nm-cc"/>.</cmd>
+            <stepxmp>
+              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
+  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
-      
-      <step id="zk-set-nodes">
-        <cmd>Specify the nodes in the ZooKeeper ensemble.</cmd>
-        <stepxmp>You can copy the following text and paste it in your console:
-          <codeblock>echo "SERVICED_ZK=${node1}:2181,${node2}:2181,${node3}:2181" \
-  &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
-      </step>
-      
-      <step id="zk-set-timeout">
-        <cmd>Specify the timeout for inactive connections.</cmd>
-        <stepxmp>You can copy the following text and paste it in your console:
-          <codeblock>echo "SERVICED_ZK_SESSION_TIMEOUT=15" &#62;&#62; /etc/default/serviced</codeblock></stepxmp>
-      </step>
+
       
       <step id="nfs-workaround">
         <cmd>Add a drop-in file for the NFS service.</cmd>
@@ -855,6 +884,7 @@ EOF</codeblock>
           </substep>
         </substeps>
       </step>
+      
     </steps>
   </taskbody>
 </task>

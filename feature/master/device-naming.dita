@@ -89,15 +89,45 @@
           </substep>
           <substep>
             <cmd>Rename and edit device files.</cmd>
-            <info>For example, if you have a device file named
-              <filepath>ifcfg-eno16777736</filepath>, use the <cmdname>mv</cmdname> command
-              rename it to <filepath>ifcfg-eth0</filepath>,
-              and then change the values of the <varname>NAME</varname> and <varname>DEVICE</varname>
-              variables inside the file to <codeph>eth0</codeph>.</info>
+            <info>For example, if you have a device file named <filepath>ifcfg-enp0s3</filepath>,
+              use the <cmdname>mv</cmdname> command rename it to <filepath>ifcfg-eth0</filepath>,
+              and then change the values of the <varname>NAME</varname> and
+                <varname>DEVICE</varname> variables inside the file to <codeph>eth0</codeph>.</info>
           </substep>
         </substeps>
       </step>
-
+      
+      <step>
+        <cmd>Update the default route.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the current default route.</cmd>
+            <stepxmp>
+              <codeblock>ip route show | head -n 1</codeblock>
+            </stepxmp>
+            <stepresult>Example result, showing device <codeph>enp0s3</codeph>
+              and gateway host <codeph>198.51.100.1</codeph>:
+              <codeblock>default via 198.51.100.1 dev enp0s3  proto static  metric 100</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Update the network device.</cmd>
+            <stepxmp>Replace <varname>Device-Name</varname> with the name of the device to update:
+              <codeblock>ip link set <varname>Device-Name</varname> down ; \
+  ip link set <varname>Device-Name</varname> name eth0 ; ip link set eth0 up</codeblock>
+            </stepxmp>
+            <info>To maintain your terminal session, perform the preceding commands as shown.</info>
+          </substep>
+          <substep>
+            <cmd>Update the default route.</cmd>
+            <stepxmp>Replace <varname>Gateway-Address</varname> 
+              with the IP address of the gateway host:
+              <codeblock>ip route replace default via <varname>Gateway-Address</varname> dev eth0</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
       <step>
         <cmd>Reboot the host.</cmd>
       </step>

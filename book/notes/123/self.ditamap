@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+ <title>123</title>
+  <chapter keyref="cc-notes-123-self">
+   <!--  <topicref keyref="cc-notes-123-features"/> -->
+   <topicref keyref="cc-notes-123-fixed"/> 
+   <topicref keyref="cc-notes-123-known"/>
+   <topicref keyref="cc-notes-123-notes"/>
+ </chapter>
+</bookmap>

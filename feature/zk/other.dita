@@ -15,18 +15,18 @@
           host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-define-ips">
+      <step conkeyref="cc-feature-zk-lib/zk-define-ips">
         <cmd/>
       </step>
       
-      <step conkeyref="feature-lib-tasks/zk-set-nodes">
+      <step conkeyref="cc-feature-zk-lib/zk-set-nodes">
         <cmd/>
       </step>
       
       <step>
         <cmd>Update the variable.</cmd>
         <substeps>
-          <substep conkeyref="feature-lib-tasks/open-file">
+          <substep conkeyref="cc-feature-zk-lib/open-file">
             <cmd/>
           </substep>
           <substep>
@@ -43,7 +43,7 @@
             <cmd>Paste the <varname>SERVICED_ZK</varname> variable declaration
               from the end of the file in the location of the just-deleted declaration.</cmd>
           </substep>
-          <substep conkeyref="feature-lib-tasks/save">
+          <substep conkeyref="cc-feature-zk-lib/save">
             <cmd/>
           </substep>
         </substeps>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>New features that affect upgrades from release 1.2.x</title>
+  <refbody>
+    <section>
+      <p>This release includes new features and new requirements that affect the upgrade process.
+        The following list provides an overview of the changes that are addressed during this
+        upgrade.</p>
+      <note><ph conkeyref="names/company"/> applications may require additional steps
+        to prepare to use this release. For more information, refer to the documentation
+        for your application.</note>
+      <ul>
+        <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
+            shutdown</i> of applications and services while sufficient resources remain to take
+          action to avoid data loss. Support for this feature requires specific minimum amounts of
+          space in the <ph keyref="nm-cc"/> thin pool for application data. 
+          <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
+          resize it. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-manage-thinpool-minimums"/>.</note></li>
+        <li>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
+          keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
+          /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two
+          database services. The services requires additional RAM and CPU resources. For more
+          information about the amount of RAM and CPU resources to add to master host nodes, please
+          contact your <ph conkeyref="names/company"/> representative.</li>
+      </ul>
+      <p>For more information about this release, refer to the <cite conkeyref="pubs/cite-notes"
+        />.</p>
+    </section>
+  </refbody>
+</reference>

@@ -3,15 +3,15 @@
 <map>
  <title>Keys in plan/misc</title>
   <topicgroup>
-    <keydef keys="plan-misc-misc"
+    <keydef keys="cc-plan-misc-misc"
             href="misc/misc.dita"
             format="dita"
     />
-    <keydef keys="plan-misc-os-browsers"
+    <keydef keys="cc-plan-misc-os-browsers"
             href="misc/os-browsers.dita"
             format="dita"
     />
-    <keydef keys="plan-misc-package"
+    <keydef keys="cc-plan-misc-package"
             href="misc/package.dita"
             format="dita"
     />

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>New features that affect upgrades from 1.1.x</title>
+  <refbody>
+    <section>
+      <p>This release includes new features and new requirements that affect the upgrade process.
+        The following list provides an overview of the changes that are addressed during this
+        upgrade.</p>
+      <note><ph conkeyref="names/company"/> applications may require additional steps
+        to prepare to use this release. For more information, refer to the documentation
+        for your application.</note>
+      <ul>
+        <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
+          shutdown</i> of applications and services while sufficient resources remain to take
+          action to avoid data loss. Support for this feature requires specific minimum amounts of
+          space in the <ph keyref="nm-cc"/> thin pool for application data. 
+          <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
+            resize it. <ph conkeyref="strings/fmi-int"/>
+            <xref keyref="cc-feature-manage-thinpool-minimums"/>.</note></li>
+        <li>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
+          keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
+          /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two
+          database services. The services requires additional RAM and CPU resources. For more
+          information about the amount of RAM and CPU resources to add to master host nodes, please
+          contact your <ph conkeyref="names/company"/> representative.</li>
+        <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
+          <codeph>3.10.0-327.36.2</codeph>. For optimal results, the most recent kernel is recommended.
+          To prevent dependency issues, updating the kernel or operating system is a step
+          in the Docker Engine update procedure.</li>
+        <li>The <cmdname>serviced</cmdname> configuration file includes many new variables since
+          version 1.1.1, and some deprecated variables. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-upgrade-11x-vars"/>.</li>
+        <li>All delegate communications are authenticated. To enable this feature, all existing
+          hosts must install unique credentials, which are generated on the master host. The
+          installation steps are included in the startup procedures.</li>
+        <li>With delegate authentication, <ph keyref="nm-cc"/> can control administrative and DFS
+          access permissions at the resource pool level. During the upgrade, all existing resource
+          pools are given both administrative and DFS access permissions. The post-upgrade chapter
+          includes an optional procedure for removing permissions from a resource pool.</li>
+        <li>In previous releases, the <varname>SERVICED_NFS_CLIENT</varname> variable was set on
+          delegate hosts to prevent access to the DFS. In this release,
+            <varname>SERVICED_NFS_CLIENT</varname> is deprecated in favor of setting DFS access
+          permission at the resource pool level. To ease the transition to the new functionality,
+          delegate host configurations that include the <varname>SERVICED_NFS_CLIENT</varname>
+          variable are still supported.</li>
+        <li>This release includes a new resource pool feature, the ability to set the length of time
+          the scheduler waits for a disconnected delegate host to rejoin its pool before moving the
+          services scheduled for the delegate to a different host in the pool. This feature is
+          useful for remote resource pools that are connected through a high-latency, wide-area
+          network.</li>
+        <li>Among other changes since version 1.9.0, Docker Engine <ph keyref="lo-version-docker"/>
+          includes a new storage subsystem. The initial startup takes a little longer, as the old
+          layout is replaced with the new layout.</li>
+      </ul>
+      <p>For more information about this release, refer to the <cite conkeyref="pubs/cite-notes"
+        />.</p>
+    </section>
+  </refbody>
+</reference>

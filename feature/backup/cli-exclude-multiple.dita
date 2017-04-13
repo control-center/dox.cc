@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Exclude multiple tenant volumes from the backup</title>
+  <shortdesc/>
+  <taskbody>
+    <context id="context_tfj_ltt_qx">By default, <ph keyref="nm-cc"/> stores application data in
+        <filepath>/opt/serviced/var/volumes</filepath>. The directory can be changed by specifying
+      the <filepath>SERVICED_VOLUMES_PATH</filepath> environment variable in the <ph keyref="nm-cc"
+      /> configuration file, <filepath>/etc/default/serviced</filepath>. If necessary, replace
+        <filepath>/opt/serviced/var/volumes</filepath> with your path.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master host <ph conkeyref="strings/login-root"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Display the <ph keyref="nm-cc"/> tenant identifier.</cmd>
+        <info>
+          <codeblock>ls /opt/serviced/var/volumes</codeblock>
+        </info>
+        <stepresult>Example result:<codeblock>cvs0ul2tmvjcitolrm7p0d8bx</codeblock></stepresult>
+      </step>
+      <step>
+        <cmd>Display the directories under the <ph keyref="nm-cc"/> tenant identifier. </cmd>
+        <info>Replace <varname>Tenant-ID</varname> with the identifier displayed in the previous
+          step.<codeblock>ls /opt/serviced/var/volumes/<varname>Tenant-ID</varname></codeblock></info>
+      </step>
+      <step>
+        <cmd>Exclude multiple tenant volumes from the backup.</cmd>
+        <info>For example, exclude <filepath>mariadb-events</filepath> and
+            <filepath>zeneventserver</filepath>. <!-- update from Hong-->
+          <codeblock>serviced backup /opt/serviced/var/backups --exclude mariadb-events \ 
+   --exclude zeneventserver</codeblock></info>
+      </step>
+    </steps>
+  </taskbody>
+</task>
