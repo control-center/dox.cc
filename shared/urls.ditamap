@@ -174,10 +174,6 @@
       href="http://nano-editor.org/"
       format="html" scope="external"
     />
-    <keydef keys="url-ucs-pm-page "
-      href="http://www.cisco.com/c/en/us/support/servers-unified-computing/ucs-performance-manager/tsd-products-support-series-home.html"
-      format="html" scope="external"
-    />
     <keydef keys="url-zlib1 " 
       href="http://communities.vmware.com/message/1858173"
       format="html" scope="external"
