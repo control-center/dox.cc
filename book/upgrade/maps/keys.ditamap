@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/maps</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-maps-delegate"
+            href="delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-images"
+            href="images.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-master"
+            href="master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-post"
+            href="post.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-prep"
+            href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-start"
+            href="start.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-stop"
+            href="stop.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-maps-vars"
+            href="vars.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

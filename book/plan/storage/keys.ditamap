@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/storage</title>
+  <topicgroup>
+    <keydef keys="cc-plan-storage-discover"
+            href="discover.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-storage-partition"
+            href="partition.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-storage-storage"
+            href="storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-storage-swap"
+            href="swap.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-storage-thin-extend"
+            href="thin-extend.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

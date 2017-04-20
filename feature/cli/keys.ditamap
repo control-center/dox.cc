@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in cli</title>
+  <topicgroup>
+    <keydef keys="cc-feature-cli-cli"
+            href="cli.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-invoking-serviced"
+            href="invoking-serviced.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-script"
+            href="script.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-service-clone"
+            href="service-clone.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-backup"
+            href="serviced-backup.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-docker"
+            href="serviced-docker.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-host"
+            href="serviced-host.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-key"
+            href="serviced-key.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-log-export"
+            href="serviced-log-export.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-pool"
+            href="serviced-pool.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-restore"
+            href="serviced-restore.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-service"
+            href="serviced-service.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-snapshot"
+            href="serviced-snapshot.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced-storage"
+            href="serviced-storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-cli-serviced"
+            href="serviced.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

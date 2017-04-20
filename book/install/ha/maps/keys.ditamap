@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/maps</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-maps-about"
+            href="about.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-maps-auth"
+            href="auth.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-maps-config-delegate"
+            href="config-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-maps-config-master"
+            href="config-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-maps-offline"
+            href="offline.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

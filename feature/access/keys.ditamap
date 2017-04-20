@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in access</title>
+  <topicgroup>
+    <keydef keys="cc-feature-access-access"
+            href="access.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-access-cli"
+            href="cli.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-access-serviced"
+            href="serviced.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-access-wheel"
+            href="wheel.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

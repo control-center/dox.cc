@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in delegate</title>
+  <topicgroup>
+    <keydef keys="cc-feature-delegate-add-feet"
+            href="add-feet.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-add-ssh"
+            href="add-ssh.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-add"
+            href="add.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-cc-install-off"
+            href="cc-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-cc-install-on"
+            href="cc-install-on.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-cc-install"
+            href="cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-cron"
+            href="cron.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-docker-config"
+            href="docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-docker"
+            href="docker.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-endpoints"
+            href="endpoints.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-isvcs"
+            href="isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-prep-ha"
+            href="prep-ha.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-prep"
+            href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-role"
+            href="role.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-start"
+            href="start.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-storage"
+            href="storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-verify"
+            href="verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

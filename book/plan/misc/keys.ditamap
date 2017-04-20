@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/misc</title>
+  <topicgroup>
+    <keydef keys="cc-plan-misc-misc"
+            href="misc.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-misc-os-browsers"
+            href="os-browsers.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-misc-package"
+            href="package.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
