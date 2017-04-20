@@ -43,11 +43,11 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="book/plan/hw-keys.ditamap" format="ditamap"/>
-      <mapref href="book/plan/misc-keys.ditamap" format="ditamap"/>
-      <mapref href="book/plan/os-keys.ditamap" format="ditamap"/>
-      <mapref href="book/plan/storage-keys.ditamap" format="ditamap"/>
-      <mapref href="book/plan/sw-keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/hw/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/misc/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/os/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/sw/keys.ditamap" format="ditamap"/>
     </topicgroup>
     
     <booklists>

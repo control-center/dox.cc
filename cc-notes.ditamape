@@ -44,12 +44,12 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup> <!-- never need editing -->
-      <mapref href="book/notes/front/keys.ditamap" format="ditamap"/>
-      <mapref href="book/notes/back/keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/front-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/back-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup> <!-- add as needed -->
-      <mapref href="book/notes/131/keys.ditamap" format="ditamap"/>
-      <mapref href="book/notes/130/keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/131-keys.ditamap" format="ditamap"/>
+      <mapref href="book/notes/130-keys.ditamap" format="ditamap"/>
     </topicgroup>
     <preface>
       <topicref href="book/notes/front/about.dita"/>

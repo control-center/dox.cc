@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha/resize</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-ha-resize-data"
+            href="data.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-identify"
+            href="identify.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-partition"
+            href="partition.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-start-primary"
+            href="start-primary.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-start-secondary"
+            href="start-secondary.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-start"
+            href="start.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-stop"
+            href="stop.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-resize-verify"
+            href="verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

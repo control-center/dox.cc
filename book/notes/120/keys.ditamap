@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in notes/120</title>
+  <topicgroup>
+    <keydef keys="cc-notes-120-features"
+            href="features.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-120-fixed"
+            href="fixed.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-120-known"
+            href="known.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-120-notes"
+            href="notes.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-120-self"
+            href="self.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

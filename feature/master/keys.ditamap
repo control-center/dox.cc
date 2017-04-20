@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in master</title>
+  <topicgroup>
+    <keydef keys="cc-feature-master-add-multi"
+            href="add-multi.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-add-single"
+            href="add-single.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-add"
+            href="add.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-cc-install-off"
+            href="cc-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-cc-install-on"
+            href="cc-install-on.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-cc-install"
+            href="cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-cron"
+            href="cron.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-device-naming"
+            href="device-naming.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-docker-config"
+            href="docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-docker-images"
+            href="docker-images.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-docker-install-off"
+            href="docker-install-off.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-docker-install-on"
+            href="docker-install-on.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-offline"
+            href="offline.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-prep"
+            href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-role"
+            href="role.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-start"
+            href="start.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-storage-about"
+            href="storage-about.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-storage-backups"
+            href="storage-backups.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-storage-config"
+            href="storage-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-storage-create"
+            href="storage-create.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-storage-isvcs"
+            href="storage-isvcs.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-storage"
+            href="storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-verify"
+            href="verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

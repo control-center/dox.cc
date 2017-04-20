@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/master</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-master-cc-install"
+            href="cc-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-config-endpoints"
+            href="config-endpoints.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-config-offline"
+            href="config-offline.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-docker-config"
+            href="docker-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-download"
+            href="download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-lib"
+            href="lib.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-master"
+            href="master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-newpool-make"
+            href="newpool-make.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-newpool-master"
+            href="newpool-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-ntp-master"
+            href="ntp-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-ntp"
+            href="ntp.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-prep"
+            href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-stage"
+            href="stage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-storage-backups"
+            href="storage-backups.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-storage-create"
+            href="storage-create.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-master-verify"
+            href="verify.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
