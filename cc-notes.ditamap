@@ -28,7 +28,6 @@
     </bookrights>
     <data conkeyref="data/zentm"/>
   </bookmeta>
-
   <frontmatter>
     <topicgroup>
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
@@ -37,13 +36,13 @@
       <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="shared/build.ditamap" format="ditamap"/>
       <mapref href="shared/front/keys.ditamap" format="ditamap"/>
       <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
-      <mapref href="shared/build.ditamap" format="ditamap"/>
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup> <!-- never need editing -->
+    <topicgroup> <!-- never need changing -->
       <mapref href="book/notes/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/back/keys.ditamap" format="ditamap"/>
     </topicgroup>
