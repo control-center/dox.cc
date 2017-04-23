@@ -83,24 +83,12 @@
             href="start-1.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-start-ha"
-            href="start-ha.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-manage-start-n"
             href="start-n.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-stop-1"
             href="stop-1.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-ha-master"
-            href="stop-ha-master.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-ha"
-            href="stop-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-stop-n-delegate"
@@ -113,10 +101,6 @@
     />
     <keydef keys="cc-feature-manage-stop-n"
             href="stop-n.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-thinpool-examine-ha"
-            href="thinpool-examine-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-thinpool-examine"
