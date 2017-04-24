@@ -3,7 +3,7 @@
 <bookmap>
  <title>Thin pool resize</title>
   <appendix keyref="cc-feature-manage-thinpool-minimums">
-    <topicref keyref="cc-feature-manage-thinpool-examine-ha"/>
+    <topicref keyref="cc-feature-manage-ha-thinpool-examine"/>
     <topicref keyref="cc-feature-manage-resize-meta"/>
     <topicref keyref="cc-upgrade-ha-resize-data">
       <topicref keyref="cc-upgrade-ha-resize-identify"/>
