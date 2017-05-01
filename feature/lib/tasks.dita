@@ -462,7 +462,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
       
       
       <step id="nc-online">
-        <cmd>Install the <xref keyref="url-nmap-ncat">Nmap Ncat</xref> utility.</cmd>
+        <cmd>Install the <xref keyref="url-nmap-ncat"/> utility.</cmd>
         <info>The utility is used to verify ZooKeeper ensemble configurations.
         <b>If you are installing a single-host deployment, skip this step</b>.</info>
         <stepxmp>
@@ -471,7 +471,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
       </step>
       
       <step id="nc-online-pool">
-        <cmd>Install the <xref keyref="url-nmap-ncat">Nmap Ncat</xref> utility.</cmd>
+        <cmd>Install the <xref keyref="url-nmap-ncat"/> utility.</cmd>
         <info>The utility is used to verify ZooKeeper ensemble configurations. <b>Perform this step
             only on the two delegate hosts that are designated for use in the ZooKeeper
           ensemble</b>.</info>
@@ -624,7 +624,7 @@ EOF</codeblock>
           <substep>
             <cmd>Create variables for adding arguments to the Docker configuration file. The
               <codeph>--exec-opt</codeph> argument is a workaround for <xref
-                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+                keyref="url-docker-17653"/> on RHEL/CentOS 7.x systems.</cmd>
             <stepxmp>
               <codeblock>myDriver="--storage-driver devicemapper"
 myLog="--log-level=error"
@@ -676,7 +676,7 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
           <substep>
             <cmd>Create variables for adding arguments to the Docker configuration file. The
                 <codeph>--exec-opt</codeph> argument is a workaround for <xref
-                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+                keyref="url-docker-17653"/> on RHEL/CentOS 7.x systems.</cmd>
             <stepxmp>
               <codeblock>myDriver="--storage-driver devicemapper"
 myLog="--log-level=error"
@@ -857,7 +857,7 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
       
       <step id="nfs-workaround">
         <cmd>Add a drop-in file for the NFS service.</cmd>
-        <info>This step is a workaround for an <xref keyref="url-rpcbin-bug">an unresolved issue</xref>.</info>
+        <info>This step is a workaround for an <xref keyref="url-rpcbin-bug"/>.</info>
         <substeps>
           <substep>
             <cmd>Create a directory for the drop-in file.</cmd>

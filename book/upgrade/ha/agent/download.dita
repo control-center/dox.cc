@@ -6,8 +6,8 @@
     <prereq>To perform this procedure, you need:
       <ul>
         <li>A workstation with internet access.</li>
-        <li>Permission to download files from the <xref keyref="url-leapfile">File Portal - Download
-            Zenoss Enterprise Software</xref> site. You may request permission by filing a ticket at
+        <li>Permission to download files from the <xref keyref="url-leapfile"/> site.
+          You may request permission by filing a ticket at
             <ph conkeyref="names/support-site"/>.</li>
       </ul>
     </prereq>
@@ -15,8 +15,7 @@
       for <ph keyref="nm-cc"/>, and to download its package file, if necessary.</context>
     <steps>
       <step>
-        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile">File Portal - Download Zenoss 
-          Enterprise Software</xref> site.</cmd>
+        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile"/> site.</cmd>
       </step>
       
       <step>
