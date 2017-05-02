@@ -7,11 +7,11 @@
       <p>When upgrading a <ph keyref="nm-cc"/> delegate, the following instructions are a mandatory
         workaround:</p>
       <title>Error in PREIN scriptlet in rpm package of serviced (CC-3512)</title>
-      <p><!--cc3515-->When upgrading to <ph keyref="nm-cc"/> 1.3.1, the rpm package checks for a
+      <p><!--cc3515-->When upgrading to <ph keyref="nm-cc"/> 1.3.2, the rpm package checks for a
           <codeph>serviced</codeph> thinpool. Since delegates do not have a thinpool, the upgrade
         fails. To workaround this issue, prepend <codeph>NOCHECK=1</codeph> before the <codeph>yum
           install</codeph> command. The updated command should read:
-        <codeblock>NOCHECK=1 yum --enablerepo=zenoss-stable install serviced-1.3.1</codeblock></p>
+        <codeblock>NOCHECK=1 yum --enablerepo=zenoss-stable install serviced-1.3.2</codeblock></p>
     </section>
     
   </refbody>
