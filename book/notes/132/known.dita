@@ -59,6 +59,12 @@
             <entry>Missing device-mapper libraries</entry>
             <entry>Open</entry>
           </row>
+          <row>
+            <entry>CC-3255</entry>
+            <entry>Kernel message concerning container lockup that requires a reboot of the
+              host</entry>
+            <entry>Open</entry>
+          </row>
           
         </tbody>
       </tgroup>
