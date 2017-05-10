@@ -1,37 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-   <title>Browser interface overview</title>
+  <title>Browser interface overview</title>
   <chapter keyref="cc-feature-gui-gui">
     <topicref keyref="cc-feature-gui-nav-menubar"/>
-    <!-- <topicref keyref="cc-feature-gui-initial"/> -->
-     
     <topicref keyref="cc-feature-gui-app">
       <topicref keyref="cc-feature-gui-internal-svcs"/>
       <topicref keyref="cc-feature-gui-app-detail">
-        <topicref keyref="cc-feature-gui-app-detail-ip-assign">
-          <!-- <topicref keyref="cc-feature-gui-assign-ip"/> -->
-        </topicref>
-        <topicref keyref="cc-feature-gui-app-detail-config"
-          ><!-- <topicref keyref="cc-feature-gui-app-edit-config"/> --></topicref>
+        <topicref keyref="cc-feature-gui-app-detail-ip-assign"/>
+        <topicref keyref="cc-feature-gui-app-detail-config"/>
         <topicref keyref="cc-feature-gui-app-detail-services"/>
         <topicref keyref="cc-feature-gui-app-detail-schedule"/>
-      </topicref> 
-      <!--  <topicref keyref="cc-feature-gui-app-detail-control"/> -->
-       
-      <!--  <topicref keyref="cc-feature-gui-app-detail-vhosts">-->
-      <!--    <topicref keyref="cc-feature-gui-add-vhost"/>-->
-       </topicref>
-    <!-- <topicref keyref="cc-feature-gui-svc-details"/> -->
-     
-    <topicref keyref="cc-feature-gui-pools">
-      <!-- <topicref keyref="cc-feature-gui-add-pool"/> -->
-     </topicref>
+      </topicref>
+    </topicref>
+    <topicref keyref="cc-feature-gui-pools"/>
     <topicref keyref="cc-feature-gui-hosts">
       <topicref keyref="cc-feature-gui-hosts-details"/>
-      <!-- <topicref keyref="cc-feature-gui-add-host"/> -->
-     </topicref>
+    </topicref>
     <topicref keyref="cc-feature-gui-logs"/>
     <topicref keyref="cc-feature-gui-backup-restore-page"/>
-   </chapter>
+  </chapter>
 </bookmap>

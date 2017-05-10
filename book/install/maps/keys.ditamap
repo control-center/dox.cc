@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/maps</title>
+  <topicgroup>
+    <keydef keys="cc-install-maps-about"
+            href="about.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-maps-cli"
+            href="cli.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-maps-delegate"
+            href="delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-maps-master"
+            href="master.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

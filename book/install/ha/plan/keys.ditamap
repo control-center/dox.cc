@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/ha/plan</title>
+  <topicgroup>
+    <keydef keys="cc-install-ha-plan-fencing"
+            href="fencing.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-options"
+            href="options.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-overview"
+            href="overview.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-plan"
+            href="plan.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-resource"
+            href="resource.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-storage"
+            href="storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-variables"
+            href="variables.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

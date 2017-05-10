@@ -41,6 +41,11 @@
       <dl>
         <dlentry>
           <dt>1320.<keyword keyref="lo-build-date"/></dt>
+          <dd>Update release number (1.3.2)</dd>
+          <dd>Move the step for loading Docker Engine images to the next procedure.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1320.17.100</dt>
           <dd>Initial release (1.3.1).</dd>
         </dlentry>
       </dl>

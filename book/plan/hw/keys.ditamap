@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in plan/hw</title>
+  <topicgroup>
+    <keydef keys="cc-plan-hw-delegate-storage"
+            href="delegate-storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-hw-delegate"
+            href="delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-hw-hw"
+            href="hw.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-hw-master-storage"
+            href="master-storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-plan-hw-master"
+            href="master.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

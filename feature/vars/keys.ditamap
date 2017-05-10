@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in vars</title>
+  <topicgroup>
+    <keydef keys="cc-feature-vars-all"
+            href="all.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-best"
+            href="best.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-browser-all"
+            href="browser-all.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-browser"
+            href="browser.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-debug"
+            href="debug.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-delegate-about"
+            href="delegate-about.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-delegate"
+            href="delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-endpoints"
+            href="endpoints.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-file"
+            href="file.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-http"
+            href="http.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-master"
+            href="master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-mux"
+            href="mux.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-networking"
+            href="networking.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-role"
+            href="role.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-rpc"
+            href="rpc.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-storage"
+            href="storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-tune-master"
+            href="tune-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-tune"
+            href="tune.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-vars-vars"
+            href="vars.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

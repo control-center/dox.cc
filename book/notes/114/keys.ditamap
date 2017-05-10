@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in notes/114</title>
+  <topicgroup>
+    <keydef keys="cc-notes-114-fixed"
+            href="fixed.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-114-self"
+            href="self.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

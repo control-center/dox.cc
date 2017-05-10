@@ -3,10 +3,10 @@
 <bookmap>
    <title>Start/Stop</title>
    <appendix keyref="cc-feature-manage-manage-ha">
-      <topicref keyref="cc-feature-manage-stop-ha">
-         <topicref keyref="cc-feature-manage-stop-ha-master"/>
+      <topicref keyref="cc-feature-manage-ha-stop">
+         <topicref keyref="cc-feature-manage-ha-stop-master"/>
          <topicref keyref="cc-feature-manage-stop-n-delegate"/>
       </topicref>
-      <topicref keyref="cc-feature-manage-start-ha"/>
+      <topicref keyref="cc-feature-manage-ha-start"/>
    </appendix>
 </bookmap>

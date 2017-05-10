@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in notes/back</title>
+  <topicgroup>
+    <keydef keys="cc-notes-back-back"
+            href="back.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-back-errata"
+            href="errata.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-back-limits"
+            href="limits.dita"
+            format="dita"
+    />
+    <keydef keys="cc-notes-back-more-info"
+            href="more-info.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

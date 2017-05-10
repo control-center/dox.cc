@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Notes and workarounds</title>
+  <refbody>
+    <section>
+      <title>Docker Engine configuration on master host (CC-3455)</title>
+      <p><!--cc3451-->Previously, the Docker Engine configuration procedures in the <cite
+          conkeyref="pubs/cite-install"/> and the <cite conkeyref="pubs/cite-upgrade"/> instructed
+        users to set the <codeph>--insecure-registry</codeph> flag in
+          <filepath>/etc/sysconfig/docker</filepath>. This setting is not needed on the master host
+        in a <ph keyref="nm-cc"/> cluster, and required on all delegate hosts.</p>
+    </section> 
+    
+  </refbody>
+  
+</reference>
