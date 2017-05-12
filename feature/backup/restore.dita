@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
-<task id="taskid">
+<task id="taskid9okz2w">
   <title>Restoring from a backup</title>
   <shortdesc>Restore an instance of an application from a backup file on the same system, or restore
     from a backup file to duplicate an instance on a new, similarly configured cluster.</shortdesc>
@@ -35,7 +35,7 @@
         </substeps>
         <info><!--CC-1531-->Because snapshots are loaded to disk, during a restore you are not
             <i>required</i> to stop services while the file is loaded. Though the restore will not
-          succeed,  the snapshot and images are available for you to manually rollback each
+          succeed, the snapshot and images are available for you to manually rollback each
           application.</info>
       </step>
       <step>
