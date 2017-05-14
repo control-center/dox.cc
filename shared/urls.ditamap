@@ -4,190 +4,145 @@
   <title>CC URLs</title>
   <!-- Removing an entry from this file requires a note from your mother -->
   <topicgroup>
-    <keydef keys="url-centos-kernel " 
-      href="http://bugzilla.redhat.com/show_bug.cgi?id=1286500"
-      format="html" scope="external"
-    >
+    <keydef keys="url-centos-kernel " href="http://bugzilla.redhat.com/show_bug.cgi?id=1286500"
+      format="html" scope="external">
       <topicmeta>
         <linktext>http://bugzilla.redhat.com/show_bug.cgi?id=1286500</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-cgroups "
-      href="http://en.wikipedia.org/wiki/Cgroups"
-      format="html" scope="external"
-    >
+    <keydef keys="url-cgroups " href="http://en.wikipedia.org/wiki/Cgroups" format="html"
+      scope="external">
       <topicmeta>
         <linktext>control groups feature of the Linux kernel</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>
   <topicgroup>
-    <keydef keys="url-docker "
-      href="http://docs.docker.com/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-docker " href="http://docs.docker.com/" format="html" scope="external">
       <topicmeta>
         <linktext>Docker</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-docker-17653 "
-      href="http://github.com/docker/docker/issues/17653"
-      format="html" scope="external"
-    >
+    <keydef keys="url-docker-17653 " href="http://github.com/docker/docker/issues/17653"
+      format="html" scope="external">
       <topicmeta>
         <linktext>a Docker issue</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-docker-arch "
-      href="http://docs.docker.com/engine/understanding-docker/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-docker-arch " href="http://docs.docker.com/engine/understanding-docker/"
+      format="html" scope="external">
       <topicmeta>
         <linktext>the architecture description provided by Docker</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-docker-hub "
-      href="http://hub.docker.com/account/signup/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-docker-hub " href="http://hub.docker.com/account/signup/" format="html"
+      scope="external">
       <topicmeta>
         <linktext>Docker Hub</linktext>
       </topicmeta>
     </keydef>
     <keydef keys="url-docker-net-config "
       href="http://docs.docker.com/engine/userguide/networking/default_network/build-bridges/"
-      format="html" scope="external"
-    >
+      format="html" scope="external">
       <topicmeta>
         <linktext>advanced network configuration</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>
   <topicgroup>
-    <keydef keys="url-firewalld "
-      href="http://fedoraproject.org/wiki/FirewallD?rd=FirewallD/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-firewalld " href="http://fedoraproject.org/wiki/FirewallD?rd=FirewallD/"
+      format="html" scope="external">
       <topicmeta>
         <linktext>FirewallD</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-go-profiler "
-      href="http://golang.org/pkg/net/http/pprof/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-go-profiler " href="http://golang.org/pkg/net/http/pprof/" format="html"
+      scope="external">
       <topicmeta>
         <linktext>Go profiler</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-golang-text-template " 
-      href="http://golang.org/pkg/text/template/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-golang-text-template " href="http://golang.org/pkg/text/template/"
+      format="html" scope="external">
       <topicmeta>
         <linktext>Go template package</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-google-logging " 
-      href="http://google-glog.googlecode.com/svn/trunk/doc/glog.html"
-      format="html" scope="external"
-    >
+    <keydef keys="url-google-logging "
+      href="http://google-glog.googlecode.com/svn/trunk/doc/glog.html" format="html"
+      scope="external">
       <topicmeta>
         <linktext>Google Logging</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>
   <topicgroup>
-    <keydef keys="url-kibana " 
-      href="http://www.elasticsearch.org/overview/kibana/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-kibana " href="http://www.elasticsearch.org/overview/kibana/" format="html"
+      scope="external">
       <topicmeta>
         <linktext>the Kibana JavaScript interface</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-leapfile "
-      href="http://zenoss.leapfile.net/fts/drop/custom/portal/Login.jsp"
-      format="html" scope="external"
-    >
+    <keydef keys="url-leapfile " href="http://zenoss.leapfile.net/fts/drop/custom/portal/Login.jsp"
+      format="html" scope="external">
       <topicmeta>
         <linktext>File Portal - Download Zenoss Enterprise Software</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-logstash "
-      href="http://logstash.net/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-logstash " href="http://logstash.net/" format="html" scope="external">
       <topicmeta>
         <linktext>logstash</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>
   <topicgroup>
-    <keydef keys="url-nmap-ncat " 
-      href="http://nmap.org/ncat/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-nmap-ncat " href="http://nmap.org/ncat/" format="html" scope="external">
       <topicmeta>
         <linktext>Nmap Ncat</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-ntp " 
-      href="http://en.wikipedia.org/wiki/Network_Time_Protocol"
-      format="html" scope="external"
-    >
+    <keydef keys="url-ntp " href="http://en.wikipedia.org/wiki/Network_Time_Protocol" format="html"
+      scope="external">
       <topicmeta>
         <linktext>NTP</linktext>
       </topicmeta>
     </keydef>
-    
+
     <keydef keys="url-pacemaker-clusters "
       href="http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/ch04.html"
-      format="html" scope="external"
-    >
+      format="html" scope="external">
       <topicmeta>
         <linktext>Pacemaker documentation</linktext>
       </topicmeta>
     </keydef>
-    
-    <keydef keys="url-rpcbin-bug "
-      href="http://bugzilla.redhat.com/show_bug.cgi?id=1171603"
-      format="html" scope="external"
-    >
+
+    <keydef keys="url-rpcbin-bug " href="http://bugzilla.redhat.com/show_bug.cgi?id=1171603"
+      format="html" scope="external">
       <topicmeta>
         <linktext>an unresolved issue</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-selinux "
-      href="http://selinuxproject.org/page/Main_Page"
-      format="html" scope="external"
-    >
+    <keydef keys="url-selinux " href="http://selinuxproject.org/page/Main_Page" format="html"
+      scope="external">
       <topicmeta>
         <linktext>Security Enhanced Linux</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>
   <topicgroup>
-    <keydef keys="url-xfs "
-      href="http://en.wikipedia.org/wiki/XFS"
-      format="html" scope="external"
-    >
+    <keydef keys="url-xfs " href="http://en.wikipedia.org/wiki/XFS" format="html" scope="external">
       <topicmeta>
         <linktext>XFS</linktext>
       </topicmeta>
     </keydef>
     <keydef keys="url-zk-commands "
-      href="http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_zkCommands"
-      format="html" scope="external"
-    >
+      href="http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_zkCommands" format="html"
+      scope="external">
       <topicmeta>
         <linktext>interactive ZooKeeper commands</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-zookeeper "
-      href="http://zookeeper.apache.org/"
-      format="html" scope="external"
-    >
+    <keydef keys="url-zookeeper " href="http://zookeeper.apache.org/" format="html" scope="external">
       <topicmeta>
         <linktext>Apache ZooKeeper</linktext>
       </topicmeta>
