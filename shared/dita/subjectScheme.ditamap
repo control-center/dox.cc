@@ -15,6 +15,17 @@
         </subjectdef>
     </hasInstance>
     
+    <subjectdef keys="oem">
+        <topicmeta>
+            <navtitle>OEM platforms</navtitle>
+        </topicmeta>
+        <subjectdef keys="ucs">
+            <topicmeta>
+                <navtitle>OEM product</navtitle>
+            </topicmeta>
+        </subjectdef>
+    </subjectdef>
+    
     
     <enumerationdef>
         <attributedef name="audience"/>
@@ -27,6 +38,7 @@
     <enumerationdef>
         <attributedef name="product"/>
         <subjectdef keyref="oss"/>
+        <subjectdef keyref="oem"/>
     </enumerationdef>
     <enumerationdef>
         <attributedef name="props"/>
