@@ -6,9 +6,8 @@
     the log information that <ph keyref="nm-cc"/> collects.</shortdesc>
   <refbody>
     <section>
-      <p>The log information is presented in <xref keyref="url-kibana">the 
-        Kibana JavaScript interface</xref>, which provides a variety of methods
-        for sorting, querying, and analyzing log data.</p>
+      <p>The log information is presented in <xref keyref="url-kibana"/>, which 
+        provides a variety of methods for sorting, querying, and analyzing log data.</p>
     </section>
   </refbody>
 </reference>

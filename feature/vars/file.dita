@@ -514,7 +514,7 @@
           <dt><varname>SERVICED_DEBUG_PORT</varname></dt>
           <dd><b>Default</b>: <codeph>6006</codeph></dd> 
           <dd>The port on which <cmdname>serviced</cmdname> listens for HTTP requests 
-            for the <xref keyref="url-go-profiler">Go profiler</xref>. To stop listening
+            for the <xref keyref="url-go-profiler"/>. To stop listening
             for requests, set the value to <codeph>-1</codeph>.</dd>
         </dlentry>
         

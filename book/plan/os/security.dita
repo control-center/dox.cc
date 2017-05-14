@@ -11,7 +11,7 @@
         After both <ph keyref="nm-cc"/> and an application are installed, you can close unused
         ports.</p>
       <p><ph keyref="nm-cc"/> includes a virtual multiplexer (mux) that performs the following
-        functions: <ul id="ul_t22_1x1_xx">
+        functions: <ul>
           <li>Aggregates the UDP and TCP traffic among the services it manages. The aggregation is
             opaque to services, and mux traffic is encrypted when it travels among containers on
             remote hosts. (Traffic among containers on the same host is not encrypted.) </li>
@@ -45,9 +45,8 @@
           to 1048576. The script does not modify the <filepath>/etc/sysconfig/limits.conf</filepath>
           file. </li>
         
-        <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux">Security
-          Enhanced Linux</xref> in enforcing mode. The installation procedures include steps to
-          set the mode to disabled.</li>
+        <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux"/> in enforcing mode.
+          The installation procedures include steps to set the mode to disabled.</li>
         
         
         <li>The <cmdname>firewalld</cmdname> service can conflict with Docker, and therefore, <ph
