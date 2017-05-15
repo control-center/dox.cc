@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="referenceidm7y5">
+<reference id="referenceid4erhm9">
   <title>Backing up and restoring</title>
+  <!--This has the same content as overview.dita, but with non_ucs info labeled with product=cc so that this info is not included in the ucs builds when dox.cc is incorporated into dox.platform -CG -->
   <shortdesc product="cc">Use <ph keyref="nm-cc"/> to back up applications that <ph keyref="nm-cc"/>
     manages. Having accurate and tested system backups can mitigate problems caused by software or
     hardware issues. </shortdesc>
@@ -35,7 +36,7 @@
         installing software, you can perform a snapshot of the system. If you need to revert back to
         a snapshot, use the rollback feature. You use the CLI to perform snapshot and rollback. </p>
       <p product="cc">With both backup and snapshot, <ph keyref="nm-cc"/>
-        <ul>
+        <ul id="ul_iyk_cq1_jx">
           <li>Creates a tag for the Docker image of each service with metadata about the application
             data.</li>
           <li>Creates a separate snapshot of the LVM thin pool, which stores both application data

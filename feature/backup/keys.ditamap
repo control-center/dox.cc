@@ -11,6 +11,10 @@
             href="best-practice.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-backup-best-practice-ucs"
+            href="best-practice-ucs.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-backup-cli-all"
             href="cli-all.dita"
             format="dita"
@@ -29,6 +33,10 @@
     />
     <keydef keys="cc-feature-backup-overview"
             href="overview.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-backup-overview-ucs"
+            href="overview-ucs.dita"
             format="dita"
     />
     <keydef keys="cc-feature-backup-restore"
