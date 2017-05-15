@@ -3,8 +3,8 @@
 <map>
  <title>Keys in svcdef</title>
   <topicgroup>
-    <keydef keys="cc-feature-svcdef-configFile"
-            href="configFile.dita"
+    <keydef keys="cc-feature-svcdef-configfile"
+            href="configfile.dita"
             format="dita"
     />
     <keydef keys="cc-feature-svcdef-datapoint"
@@ -15,8 +15,8 @@
             href="endpoint.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-svcdef-go-template-bytesToMB"
-            href="go-template-bytesToMB.dita"
+    <keydef keys="cc-feature-svcdef-go-template-bytestomb"
+            href="go-template-bytestomb.dita"
             format="dita"
     />
     <keydef keys="cc-feature-svcdef-go-template-child"
@@ -31,8 +31,8 @@
             href="go-template-parent.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-svcdef-go-template-percentScale"
-            href="go-template-percentScale.dita"
+    <keydef keys="cc-feature-svcdef-go-template-percentscale"
+            href="go-template-percentscale.dita"
             format="dita"
     />
     <keydef keys="cc-feature-svcdef-go-template-plus"
@@ -43,8 +43,8 @@
             href="go-template.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-svcdef-graphConfig"
-            href="graphConfig.dita"
+    <keydef keys="cc-feature-svcdef-graphconfig"
+            href="graphconfig.dita"
             format="dita"
     />
     <keydef keys="cc-feature-svcdef-health"
@@ -59,8 +59,8 @@
             href="metric.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-svcdef-metricConfig"
-            href="metricConfig.dita"
+    <keydef keys="cc-feature-svcdef-metricconfig"
+            href="metricconfig.dita"
             format="dita"
     />
     <keydef keys="cc-feature-svcdef-object"
@@ -79,8 +79,8 @@
             href="template.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-svcdef-thresholdConfig"
-            href="thresholdConfig.dita"
+    <keydef keys="cc-feature-svcdef-thresholdconfig"
+            href="thresholdconfig.dita"
             format="dita"
     />
     <keydef keys="cc-feature-svcdef-volume"

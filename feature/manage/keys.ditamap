@@ -35,8 +35,8 @@
             href="multiple.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-NAT-overview"
-            href="NAT-overview.dita"
+    <keydef keys="cc-feature-manage-nat-overview"
+            href="nat-overview.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-pool-connection-timeout"
