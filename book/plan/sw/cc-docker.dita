@@ -3,13 +3,11 @@
 <concept id="conceptid">
   <title>Docker fundamentals</title>
   <conbody>
-    <p>This section summarizes <xref keyref="url-docker-arch">the architecture description provided
-        by Docker</xref> as customized for <ph keyref="nm-cc"/>. For additional information, refer
-      to the Docker site.</p>
+    <p>This section summarizes <xref keyref="url-docker-arch"/> as customized 
+      for <ph keyref="nm-cc"/>. For additional information, refer to the Docker site.</p>
     
-    <p>Docker provides convenient tools that make use of the <xref keyref="url-cgroups">cgroups
-        feature of the Linux kernel</xref> to develop, distribute, and run applications. Docker
-      internals include images, registries, and containers.</p>
+    <p>Docker provides convenient tools that make use of the <xref keyref="url-cgroups"/> to develop, 
+      distribute, and run applications. Docker internals include images, registries, and containers.</p>
     
     <dl>
       <dlentry>

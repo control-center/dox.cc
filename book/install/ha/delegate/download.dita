@@ -8,7 +8,7 @@
         download and stage or install required software and Docker Engine images.</p>
       
       <p>For improved reliability, two delegate hosts are configured as
-        nodes in an <xref keyref="url-zookeeper">Apache ZooKeeper</xref> ensemble.
+        nodes in an <xref keyref="url-zookeeper"/> ensemble.
         Install the ZooKeeper image on two delegate hosts. </p>
     </section>
   </refbody>

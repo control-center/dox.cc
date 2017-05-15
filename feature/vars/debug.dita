@@ -20,8 +20,8 @@
           </row>
           <row>
             <entry><varname>SERVICED_DEBUG_PORT</varname></entry>
-            <entry>The port on which <cmdname>serviced</cmdname> listens for HTTP requests for the
-                <xref keyref="url-go-profiler">Go profiler</xref>.</entry>
+            <entry>The port on which <cmdname>serviced</cmdname> listens for 
+              HTTP requests for the <xref keyref="url-go-profiler"/>.</entry>
           </row>
           <row>
             <entry><varname>SERVICED_DOCKER_LOG_DRIVER</varname></entry>

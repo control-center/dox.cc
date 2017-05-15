@@ -6,7 +6,7 @@
     <context>Use this procedure to start a ZooKeeper ensemble.
       <p>This procedures uses the <cmdname>nc</cmdname> utility to query ensemble hosts.
         If <cmdname>nc</cmdname> is not available, you can use <cmdname>telnet</cmdname> with 
-        <xref keyref="url-zk-commands">interactive ZooKeeper commands</xref>.</p>
+        <xref keyref="url-zk-commands"/>.</p>
       <p>The window of time for starting a ZooKeeper ensemble is 
         relatively short. The goal of this procedure is to restart
         <ph keyref="nm-cc"/> on each ensemble node at about the 

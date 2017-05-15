@@ -75,9 +75,9 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create variables for adding arguments to the Docker configuration file. The
-              <codeph>--exec-opt</codeph> argument is a workaround for <xref
-                keyref="url-docker-17653">a Docker issue</xref> on RHEL/CentOS 7.x systems.</cmd>
+            <cmd>Create variables for adding arguments to the Docker Engine environment
+              file. The <codeph>--exec-opt</codeph> argument is a workaround 
+              for <xref keyref="url-docker-17653"/> on RHEL/CentOS 7.x systems.</cmd>
             <stepxmp>
               <codeblock>myDriver="--storage-driver devicemapper"
 myLog="--log-level=error"

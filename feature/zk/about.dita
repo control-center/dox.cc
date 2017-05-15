@@ -3,7 +3,7 @@
 <concept id="conceptid">
   <title>ZooKeeper and <ph keyref="nm-cc"/></title>
   <conbody>
-    <p><ph keyref="nm-cc"/> relies on <xref keyref="url-zookeeper">Apache ZooKeeper</xref> to
+    <p><ph keyref="nm-cc"/> relies on <xref keyref="url-zookeeper"/> to
       distribute and manage application services. ZooKeeper maintains the definitions of each 
       service and the list of services assigned to each host. The scheduler, which runs on the
       master host, determines assignments and sends them to the ZooKeeper node that is serving
