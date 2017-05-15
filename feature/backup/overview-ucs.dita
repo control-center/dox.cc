@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="referenceid">
+<reference id="referenceid4erhm9">
   <title>Backing up and restoring</title>
+  <!--This has the same content as overview.dita, but with non_ucs info labeled with product=cc so that this info is not included in the ucs builds when dox.cc is incorporated into dox.platform -CG -->
   <shortdesc product="cc">Use <ph keyref="nm-cc"/> to back up applications that <ph keyref="nm-cc"/>
     manages. Having accurate and tested system backups can mitigate problems caused by software or
     hardware issues. </shortdesc>
@@ -12,7 +13,7 @@
         up as needed when you want to move data from one instance to another or duplicate an
         instance for testing or failover purposes.</p>
       <p>Backups include the current state of the system, the state of all services, configuration
-        information, and application data.  The backup process leverages snapshot functionality.
+        information, and application data. The backup process leverages snapshot functionality.
         Therefore, when a backup is running, you can start and restart services; there is no need to
         shut down the application or Docker containers. The services are only momentarily suspended
         to enable reading the data.</p>
