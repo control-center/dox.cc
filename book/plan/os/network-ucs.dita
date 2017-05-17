@@ -12,14 +12,14 @@
         communicate through this virtual bridge. </p>
       
       <p>Docker can only check directly connected routes, so the subnet it chooses for the virtual
-        bridge might be inappropriate for your environment. To customize the virtual bridge subnet,
-        refer to Docker's <xref keyref="url-docker-net-config"/> article.</p>
+        bridge might be inappropriate for your environment. The <cite conkeyref="pubs/cite-admin"/>
+        includes procedures for configuring a different subnet for <codeph>docker0</codeph>.</p>
       
       <p>The following list highlights potential communication conflicts: <ul>
           <li>If you use a firewall utility, ensure that it does not conflict with Docker. The
             default configurations of firewall utilities such as <xref keyref="url-firewalld"/>
-            include rules that can conflict with Docker, and therefore <ph
-              keyref="nm-cc"/>. The following interactions illustrate the conflicts:<ul>
+            include rules that can conflict with Docker, and therefore <ph keyref="nm-cc"/>. The
+            following interactions illustrate the conflicts:<ul>
               <li>The <cmdname>firewalld</cmdname> daemon removes the DOCKER chain from
                   <cmdname>iptables</cmdname> when it starts or restarts.</li>
               <li>Under <cmdname>systemd</cmdname>, <cmdname>firewalld</cmdname> is started before

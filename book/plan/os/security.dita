@@ -39,18 +39,15 @@
           />.</li>
         <li>Access to the <ph keyref="nm-cc"/> browser interface requires a login account on the <ph
             keyref="nm-cc"/> master host. Pluggable Authentication Modules (PAM) is supported. By
-          default, users must be members of the <codeph>wheel</codeph> group. </li>
+          default, users must be members of the <codeph>wheel</codeph> group. The default
+          group may be changed by setting the <codeph>SERVICED_ADMIN_GROUP</codeph> variable, and the
+          replacement group does not need superuser privileges.</li>
         
         <li>The <cmdname>serviced</cmdname> startup script sets the hard and soft open files limit
           to 1048576. The script does not modify the <filepath>/etc/sysconfig/limits.conf</filepath>
           file. </li>
         
-        <li><ph keyref="nm-cc"/> does not support <xref keyref="url-selinux"/> in enforcing mode.
-          The installation procedures include steps to set the mode to disabled.</li>
-        
-        
-        <li>The <cmdname>firewalld</cmdname> service can conflict with Docker, and therefore, <ph
-            keyref="nm-cc"/> and the application it is managing.</li>
+        <li><ph keyref="nm-cc"/> supports <xref keyref="url-selinux"/>.</li>
       </ul>
     </section>
   </refbody>
