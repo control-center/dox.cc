@@ -3,7 +3,7 @@
 <bookmap>
 <title>Misc</title>
   <chapter keyref="cc-plan-misc-misc">
-    <topicref keyref="cc-plan-misc-package"/>
     <topicref keyref="cc-plan-misc-os-browsers"/>
+    <topicref keyref="cc-plan-misc-package"/>
   </chapter>
 </bookmap>
