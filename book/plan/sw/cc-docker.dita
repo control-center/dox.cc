@@ -23,16 +23,17 @@
       </dlentry>
       <dlentry>
         <dt>Docker containers</dt>
-        <dd>Docker containers have everything needed to run an instance of an application, and are
-          created from images. <ph keyref="nm-cc"/> launches each service instance in its own Docker
+        <dd>Docker containers have everything needed to run a service instance, and are created from
+          images. <ph keyref="nm-cc"/> launches each service instance in its own Docker
           container.</dd>
       </dlentry>
     </dl>
     <dl>
       <dlentry>
         <dt>Docker storage</dt>
-        <dd>Docker and <ph keyref="nm-cc"/> data are stored in an LVM thin pool that is created on
-          one or more block devices or partitions, or LVM volume groups.</dd>
+        <dd>Docker and <ph keyref="nm-cc"/> data are stored in a customized LVM thin pool that is
+          created from one or more block devices or partitions, or from one or more LVM volume
+          groups.</dd>
       </dlentry>
     </dl>
   </conbody>
