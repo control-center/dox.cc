@@ -7,20 +7,12 @@
             href="delegate-auth.dita"
             format="dita"
     />
-    <keydef keys="cc-plan-os-network-ucs"
-            href="network-ucs.dita"
-            format="dita"
-    />
     <keydef keys="cc-plan-os-network"
             href="network.dita"
             format="dita"
     />
     <keydef keys="cc-plan-os-os"
             href="os.dita"
-            format="dita"
-    />
-    <keydef keys="cc-plan-os-security-ucs"
-            href="security-ucs.dita"
             format="dita"
     />
     <keydef keys="cc-plan-os-security"
