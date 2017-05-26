@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Configure ZK</title>
+  <!-- the procedures are different for appliances -->
+  <chapter keyref="cc-feature-zk-zk">
+    <topicref keyref="cc-feature-zk-about"/>
+    <topicref keyref="cc-feature-zk-nodes">
+      <topicref keyref="cc-feature-zk-vars"/>
+      <topicref keyref="cc-feature-zk-example"/>
+     </topicref>
+    <topicref keyref="cc-feature-zk-app-master"/>
+    <topicref keyref="cc-feature-zk-app-delegate1"/>
+    <topicref keyref="cc-feature-zk-app-delegate2"/>
+    <topicref keyref="cc-feature-zk-enable"/>
+    <topicref keyref="cc-feature-zk-app-other"/>
+   </chapter>
+</bookmap>
+

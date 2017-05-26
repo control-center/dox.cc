@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="taskid">
+  <title>Configuring a ZooKeeper ensemble</title>
+  <refbody>
+    <section>
+      <p>This chapter describes how to create a ZooKeeper ensemble (cluster) for a multi-host 
+        <ph keyref="nm-cc"/> deployment that includes a minimum of three hosts. If your
+        deployment includes just one host or two hosts, skip this chapter.</p>
+    </section>
+  </refbody>
+</reference>
