@@ -12,7 +12,7 @@
     <topicref keyref="cc-feature-zk-app-master"/>
     <topicref keyref="cc-feature-zk-app-delegate1"/>
     <topicref keyref="cc-feature-zk-app-delegate2"/>
-    <topicref keyref="cc-feature-zk-enable"/>
+    <topicref keyref="cc-feature-zk-app-enable"/>
     <topicref keyref="cc-feature-zk-app-other"/>
    </chapter>
 </bookmap>

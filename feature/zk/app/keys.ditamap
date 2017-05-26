@@ -11,6 +11,10 @@
             href="delegate2.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-zk-app-enable"
+            href="enable.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-zk-app-master"
             href="master.dita"
             format="dita"
