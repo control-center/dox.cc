@@ -30,8 +30,19 @@
 node2=<varname>Delegate-A</varname>
 node3=<varname>Delegate-B</varname></codeblock>
         </stepxmp>
-        <info>For high-availability deployments, use the 
-          virtual IP address or hostname of the high-availability cluster 
+      </step>
+      
+      <step id="zk-define-ips-ha">
+        <cmd>Define the IP address variables for each node in the ZooKeeper ensemble.</cmd>
+        <stepxmp>Replace <varname>Master</varname> with the IP address or hostname
+          of the <ph keyref="nm-cc"/> master host, and replace 
+          <varname>Delegate-A</varname> and <varname>Delegate-B</varname>
+          with the IP addresses or hostnames of the delegate hosts to include in the ensemble:
+          <codeblock>node1=<varname>Master</varname>
+node2=<varname>Delegate-A</varname>
+node3=<varname>Delegate-B</varname></codeblock>
+        </stepxmp>
+        <info>Use the virtual IP address or hostname of the high-availability cluster 
           as the value for <codeph>node1</codeph>.</info>
       </step>
       
