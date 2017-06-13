@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating delegate hosts</title>
+  <taskbody>
+    <context>The default configuration of delegate hosts sets the value of the
+        <varname>SERVICED_ZK</varname> variable to the master host only. Use this procedure to
+      update the setting to include all of the hosts in the ZooKeeper ensemble. Perform this
+      procedure on each delegate host in a <ph keyref="nm-cc"/> cluster that is not an ensemble
+      node.</context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the delegate 
+          host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-zk-lib/zk-define-ips">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Remove the existing definition of the <varname>SERVICED_ZK</varname> variable, which 
+          specifies only the <ph keyref="nm-cc"/> master host.</cmd>
+        <stepxmp>
+          <codeblock>sed -i.bak '/SERVICED_ZK=/d' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step conkeyref="cc-feature-zk-lib/zk-set-nodes">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Verify the setting.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_ZK' /etc/default/serviced</codeblock>
+        </stepxmp>
+        <stepresult>The following example shows the environment variable for a delegate host that is
+          not a node in the ZooKeeper ensemble:
+          <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181</codeblock>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Restart <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl restart serviced</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

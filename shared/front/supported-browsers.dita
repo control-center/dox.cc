@@ -18,14 +18,21 @@
           </thead>
           <tbody>
             <row>
-              <entry>Windows 7 and 8.1</entry>
+              <entry morerows="1">Windows 7 and 8.1</entry>
               <entry>Internet Explorer 11 (Enterprise mode only; compatibility mode is not
                 supported.)</entry>
             </row>
             <row>
-              <entry morerows="3">Windows 10</entry>
+              <entry>Internet Explorer 10<fn id="ie10" callout="*">Support for Internet Explorer 10 will be withdrawn
+                beginning with the next feature release of <ph keyref="nm-cc"/>.</fn><xref href="#refid/ie10" type="fn"/></entry>
+            </row>
+            <row>
+              <entry morerows="4">Windows 10</entry>
               <entry>Internet Explorer 11 (Enterprise mode only; compatibility mode is not
                 supported.)</entry>
+            </row>
+            <row>
+              <entry>Internet Explorer 10<xref href="#refid/ie10" type="fn"/></entry>
             </row>
             <row>
               <entry>Firefox 50 and later</entry>

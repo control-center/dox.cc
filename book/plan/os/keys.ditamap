@@ -3,6 +3,10 @@
 <map>
  <title>Keys in plan/os</title>
   <topicgroup>
+    <keydef keys="cc-plan-os-delegate-auth"
+            href="delegate-auth.dita"
+            format="dita"
+    />
     <keydef keys="cc-plan-os-network"
             href="network.dita"
             format="dita"

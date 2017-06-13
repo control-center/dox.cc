@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="referenceid">
+<reference id="referenceid5tfz">
   <title>Best practices for backup and restore</title>
   <shortdesc>Review considerations and best practices that apply to application backup and
     restore.</shortdesc>
@@ -22,10 +22,10 @@
           <li>Store backups on a machine other than the <ph keyref="nm-cc"/> master. </li>
           <li>Copy or migrate backups to an off-system location for safekeeping and to help regulate
             storage space usage on the master.</li>
-          <li>Backups that were created using <ph keyref="nm-cc"/> 1.0.x cannot be restored in <ph
-              keyref="nm-cc"/> 1.1.x or later. </li>
-          <li>In <ph keyref="nm-cc"/> 1.2.x and later, you can restore backups that were created
-            using <ph keyref="nm-cc"/> 1.1.x or later.</li>
+          <li product="cc">Backups that were created using <ph keyref="nm-cc"/> 1.0.x cannot be
+            restored in <ph keyref="nm-cc"/> 1.1.x or later. </li>
+          <li product="cc">In <ph keyref="nm-cc"/> 1.2.x and later, you can restore backups that
+            were created using <ph keyref="nm-cc"/> 1.1.x or later.</li>
           <li>You can restore a backup to the system on which it was created or to an alternate
             system. When restoring a backup from one system to an alternate system, ensure that <ul
               id="ul_bj3_css_nx">

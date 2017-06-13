@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Introduction to <ph keyref="nm-cc"/></title>
+  <refbody>
+    <section>
+      <p>This chapter introduces <ph keyref="nm-cc"/>, an open-source application 
+        service orchestrator based on <xref keyref="url-docker"/>.</p>
+      
+      <p><ph keyref="nm-cc"/> is a platform-as-a-service framework that can manage any Docker
+        application, from a simple web application to a multi-tiered stateful application stack. <ph
+          keyref="nm-cc"/> is based on a service-oriented architecture, which enables applications
+        to run as a set of distributed services spanning hosts, datacenters, and geographic
+        regions.</p>
+      
+      
+    </section>
+  </refbody>
+</reference>

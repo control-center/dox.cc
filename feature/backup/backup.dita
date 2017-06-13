@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
-<task id="taskid">
+<task id="taskid1qw3x">
   <title>Backing up using the browser interface</title>
   <shortdesc>Using the browser interface, you can create a backup of your entire system.</shortdesc>
   <taskbody>

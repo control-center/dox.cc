@@ -15,7 +15,6 @@
         </subjectdef>
     </hasInstance>
     
-    
     <enumerationdef>
         <attributedef name="audience"/>
         <subjectdef/>

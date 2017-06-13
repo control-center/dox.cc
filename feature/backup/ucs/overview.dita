@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid4erhm9">
+  <title>Backing up and restoring</title>
+  <!--This has the same content as overview.dita, but with non_ucs info labeled with product=cc so that this info is not included in the ucs builds when dox.cc is incorporated into dox.platform -CG -->
+  <shortdesc product="cc">Use <ph keyref="nm-cc"/> to back up applications that <ph keyref="nm-cc"/>
+    manages. Having accurate and tested system backups can mitigate problems caused by software or
+    hardware issues. </shortdesc>
+  <refbody>
+    <section>
+      <p>Having accurate and tested system backups can mitigate problems caused by software or
+        hardware issues. To have a historical archive, you might back up on a regular schedule. Back
+        up as needed when you want to move data from one instance to another or duplicate an
+        instance for testing or failover purposes.</p>
+      <p>Backups include the current state of the system, the state of all services, configuration
+        information, and application data. The backup process leverages snapshot functionality.
+        Therefore, when a backup is running, you can start and restart services; there is no need to
+        shut down the application or Docker containers. The services are only momentarily suspended
+        to enable reading the data.</p>
+      <p>You can back up and restore applications by using the browser interface or the command-line
+        interface (CLI). Results are comparable; however, the CLI offers an option to exclude
+        subdirectories from a backup.</p>
+      <p>The <ph keyref="nm-cc"/> backup process creates a compressed tar archive file
+          (<filepath>.tgz</filepath>) that can be restored on the same cluster or a similar cluster.
+          <!-- CC_3333 --><ph id="backup-space-est">Before starting a backup, <ph keyref="nm-cc"/>
+          estimates the size of the backup file and compares it to the amount of free space. If
+          storage space is insufficient, <ph keyref="nm-cc"/> does not start a backup.</ph></p>
+      <p>The default directory for backup files is <filepath>/opt/serviced/var/backups</filepath>.
+        The directory can be changed by specifying the <varname>SERVICED_BACKUPS_PATH</varname>
+        environment variable in the <ph keyref="nm-cc"/> configuration file,
+          <filepath>/etc/default/serviced</filepath>.</p>
+      <note>You must perform your backups using the documented procedures below. Do not use the
+        backup and restore functionality provided in your vSphere environment as a substitute to
+        these procedures.</note>
+      <p product="cc">When a full backup is not necessary, such as when you need a checkpoint before
+        installing software, you can perform a snapshot of the system. If you need to revert back to
+        a snapshot, use the rollback feature. You use the CLI to perform snapshot and rollback. </p>
+      <p product="cc">With both backup and snapshot, <ph keyref="nm-cc"/>
+        <ul id="ul_iyk_cq1_jx">
+          <li>Creates a tag for the Docker image of each service with metadata about the application
+            data.</li>
+          <li>Creates a separate snapshot of the LVM thin pool, which stores both application data
+            and snapshots of the application data.</li>
+        </ul>
+      </p>
+      <p product="cc">When you create a backup, <ph keyref="nm-cc"/> also exports the snapshots to
+        an archive file and moves them out of the LVM thin pool. Backups do not affect time-to-live
+        (TTL).</p>
+      <p product="cc">For more information, see <xref keyref="cc-feature-manage-snapshot-rollback"/>
+        and <xref keyref="cc-feature-cli-cli"/>.</p>
+    </section>
+  </refbody>
+</reference>

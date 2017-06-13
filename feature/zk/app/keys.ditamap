@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in zk/app</title>
+  <topicgroup>
+    <keydef keys="cc-feature-zk-app-delegate1"
+            href="delegate1.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-app-delegate2"
+            href="delegate2.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-app-enable"
+            href="enable.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-app-master"
+            href="master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-app-other"
+            href="other.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-app-zk"
+            href="zk.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

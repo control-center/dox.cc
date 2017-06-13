@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Security</title>
+  <refbody>
+    <section>
+      
+      <p>In <ph keyref="nm-platform"/> appliances, the <cmdname>firewalld</cmdname>
+        service is disabled. If desired, you may enable it, and then close unused ports.
+        Likewise, SELinux is disabled and may be enabled.</p>
+      
+      <p>Port information in this section applies only to <ph keyref="nm-cc"/>. See the
+        documentation for your application for additional port requirements.</p>
+      <p>During installation, <ph keyref="nm-cc"/> has no knowledge of the port requirements of the
+        applications it is to manage, so the installation procedure includes disabling the firewall.
+        After both <ph keyref="nm-cc"/> and an application are installed, you can close unused
+        ports.</p>
+      <p><ph keyref="nm-cc"/> includes a virtual multiplexer (mux) that performs the following
+        functions: <ul>
+          <li>Aggregates the UDP and TCP traffic among the services it manages. The aggregation is
+            opaque to services, and mux traffic is encrypted when it travels among containers on
+            remote hosts. (Traffic among containers on the same host is not encrypted.) </li>
+          <li>Along with the distributed file system, enables <ph keyref="nm-cc"/> to quickly deploy
+            services to any pool host. </li>
+          <li>Reduces the number of open ports required on a <ph keyref="nm-cc"/> host to a
+            predictable set.</li>
+        </ul></p>
+      <p>The following table identifies the ports that <ph keyref="nm-cc"/> requires
+        for its operations. All of the ports except 4979 are configurable. All traffic is TCP.</p>
+      
+      <note><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions, and
+        indirectly, NTP, to synchronize clocks among multiple hosts. In the default configuration of
+        <cmdname>ntpd</cmdname>, the firewalls of master and resource pool hosts must support an
+        incoming UDP connection on port 123.</note>
+      
+      <table>
+        <title>Port requirements among <ph keyref="nm-cc"/> hosts</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>Port</entry>
+              <entry>Protocol</entry>
+              <entry>Application</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>22</entry>
+              <entry>TCP</entry>
+              <entry>SSH</entry>
+            </row>
+            <row>
+              <entry>443, 50443</entry>
+              <entry>TCP</entry>
+              <entry>HTTPS</entry>
+            </row>
+            <row>
+              <entry>2049</entry>
+              <entry>TCP</entry>
+              <entry>NFS</entry>
+            </row>
+            <row>
+              <entry>2181</entry>
+              <entry>TCP</entry>
+              <entry>ZooKeeper</entry>
+            </row>
+            <row>
+              <entry>2888, 3888</entry>
+              <entry>TCP</entry>
+              <entry>ZooKeeper (multi-host deployments only)</entry>
+            </row>
+            <row>
+              <entry>4979</entry>
+              <entry>TCP</entry>
+              <entry><ph keyref="nm-cc"/> RPC endpoint</entry>
+            </row>
+            <row>
+              <entry>5000</entry>
+              <entry>TCP</entry>
+              <entry>Docker registry</entry>
+            </row>
+            <row>
+              <entry>5042, 5043</entry>
+              <entry>TCP</entry>
+              <entry>Logstash</entry>
+            </row>
+            <row>
+              <entry>8443</entry>
+              <entry>TCP</entry>
+              <entry>Elasticsearch</entry>
+            </row>
+            <row>
+              <entry>22250</entry>
+              <entry>TCP</entry>
+              <entry><ph keyref="nm-cc"/> virtual multiplexer</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    
+    <section>
+      <title>Additional requirements and considerations</title>
+      <ul>
+        <li>To install <ph keyref="nm-cc"/>, you must log in <ph conkeyref="strings/login-root"
+          />.</li>
+        <li>Access to the <ph keyref="nm-cc"/> browser interface requires a login account on the <ph
+            keyref="nm-cc"/> master host. Pluggable Authentication Modules (PAM) is supported. By
+          default, users must be members of the <codeph>wheel</codeph> group. The default
+          group may be changed by setting the <codeph>SERVICED_ADMIN_GROUP</codeph> variable, and the
+          replacement group does not need superuser privileges. </li>
+        
+        <li>The <cmdname>serviced</cmdname> startup script sets the hard and soft open files limit
+          to 1048576. The script does not modify the <filepath>/etc/sysconfig/limits.conf</filepath>
+          file. </li>
+        
+        <li><ph keyref="nm-cc"/> supports <xref keyref="url-selinux"/>.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

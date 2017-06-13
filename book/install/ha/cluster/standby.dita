@@ -55,8 +55,8 @@
       
       <step>
         <cmd>Configure cluster services to start when the node starts.</cmd>
-        <info>For more information about cluster startup options, refer to the <xref
-            keyref="url-pacemaker-clusters">Pacemaker documentation</xref>.</info>
+        <info>For more information about cluster startup options, refer
+          to the <xref keyref="url-pacemaker-clusters"/>.</info>
         <stepxmp>
           <codeblock>systemctl enable corosync; systemctl enable pacemaker</codeblock>
         </stepxmp>

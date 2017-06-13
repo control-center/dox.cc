@@ -41,7 +41,7 @@
             <row>
               <entry><varname>SERVICED_LOG_ADDRESS</varname></entry>
               <entry><varname>Master-Host</varname><codeph>:5042</codeph></entry>
-              <entry>The <xref keyref="url-logstash">logstash</xref> service.</entry>
+              <entry>The <xref keyref="url-logstash"/> service.</entry>
             </row>
             
             <row>

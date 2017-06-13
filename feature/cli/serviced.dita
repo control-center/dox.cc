@@ -17,7 +17,7 @@
     <section>
       <title>DESCRIPTION</title>
       <p><cmdname>serviced</cmdname> is an open-source, application 
-        service orchestrator based on <xref keyref="url-docker">Docker</xref>.</p>
+        service orchestrator based on <xref keyref="url-docker"/>.</p>
     </section>
     
     <section>
@@ -337,7 +337,7 @@
         <dlentry>
           <dt><synph>--debug-port <var>Port</var></synph></dt>
           <dd>The port on which <cmdname>serviced</cmdname> listens for HTTP requests for the <xref
-              keyref="url-go-profiler">Go profiler</xref>. The default value of
+              keyref="url-go-profiler"/>. The default value of
               <varname>Port</varname> is 6006, unless <varname>SERVICED_DEBUG_PORT</varname> is set
             in the configuration file. To stop listening for requests, set the value to
               <codeph>-1</codeph>. For more information, see the section about configuration file
@@ -521,7 +521,7 @@
         <dlentry>
           <dt><synph>--vmodule</synph></dt>
           <dd>Module-specific logging. For more information, refer to 
-            the <xref keyref="url-google-logging">Google Logging</xref> documentation.</dd>
+            the <xref keyref="url-google-logging"/> documentation.</dd>
         </dlentry>
         <dlentry>
           <dt><synph>--log_backtrace_at <var>File</var><delim>:</delim><var>Line</var></synph></dt>

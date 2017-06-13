@@ -44,18 +44,16 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
       </step>
       
       <step>
-        <cmd>Set the <varname>SERVICED_ISVCS_START</varname> variable, and clean
-          up the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <cmd>Configure <ph keyref="nm-cc"/> to start the ZooKeeper service.</cmd>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ISVCS_START=zookeeper" &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
         <substeps>
           <substep conkeyref="cc-feature-zk-lib/open-file"><cmd/></substep>
-          <substep>
-            <cmd>Locate the line for the <varname>SERVICED_ISVCS_START</varname> variable, 
-              and then make a copy of the line, immediately below the original.</cmd>
-          </substep>
-          <substep conkeyref="cc-feature-zk-lib/uncomment"><cmd/></substep>
-          <substep>
-            <cmd>Delete all but <codeph>zookeeper</codeph> from its list of values.</cmd>
-          </substep>
           
           <substep>
             <cmd>Navigate to the end of the file, and cut the line that contains the
@@ -101,6 +99,17 @@ echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
             <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
               variable declaration, and then paste the cut line immediately below it.</cmd>
           </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ISVCS_START</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_START</varname> variable 
+              declaration, and then paste the cut line immediately below it.</cmd>
+          </substep>
+          
           <substep conkeyref="cc-feature-zk-lib/save"><cmd/></substep>
         </substeps>
       </step>
