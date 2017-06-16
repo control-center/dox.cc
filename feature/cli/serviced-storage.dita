@@ -6,7 +6,7 @@
     storage.</shortdesc>
   <refbody>
     <section>
-      <p>Use this command to create LVM thin pools for Docker Engine and <ph keyref="nm-cc"/>.</p>
+      <p>Use this command to create LVM thin pools for Docker CE and <ph keyref="nm-cc"/>.</p>
     </section>
     <section>
       <title>USAGE</title>

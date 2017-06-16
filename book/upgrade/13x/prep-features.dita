@@ -4,7 +4,13 @@
   <title>New features that affect upgrades</title>
   <refbody>
     <section>
-      <p>This release includes no new features or requirements that affect the upgrade process.</p>
+      <p>This release replaces Docker Engine 1.12.1 with Docker Community Edition (CE) 17.03.1. The
+        upgrade instructions include steps to remove the <cmdname>yum</cmdname> repository
+        description for Docker Engine and replace it with the repository description for Docker
+        CE.</p>
+      <p>In addition, new configuration variables are available in
+          <filepath>/etc/default/serviced</filepath>, for tuning communications between
+        ZooKeeper and remote resource pools. For more information, see <xref keyref="cc-upgrade-11x-vars"/>.</p>
     </section>
   </refbody>
 </reference>

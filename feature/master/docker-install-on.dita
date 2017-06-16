@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Installing Docker Engine with internet access</title>
+  <title>Installing Docker CE with internet access</title>
   <taskbody>
-    <context>Use this procedure to install Docker Engine on 
+    <context>Use this procedure to install Docker CE on 
       a host that has internet access.</context>
     <steps>
       

@@ -26,6 +26,11 @@
               <entry>zenoss/isvcs-zookeeper:v<ph keyref="lo-version-zk"/></entry>
             </row>
             <row>
+              <entry><ph keyref="nm-cc"/> 1.3.2</entry>
+              <entry>zenoss/serviced-isvcs:v56</entry>
+              <entry>zenoss/isvcs-zookeeper:v8</entry>
+            </row>
+            <row>
               <entry><ph keyref="nm-cc"/> 1.3.1</entry>
               <entry>zenoss/serviced-isvcs:v56</entry>
               <entry>zenoss/isvcs-zookeeper:v8</entry>

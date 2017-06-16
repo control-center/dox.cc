@@ -13,7 +13,7 @@
         <dlentry id="HOME">
           <dt><varname>HOME</varname></dt>
           <dd><b>Default</b>: (the value of shell variable <varname>HOME</varname>)</dd> 
-          <dd>The path Docker Engine clients use to locate the <filepath>.docker/config.json</filepath>
+          <dd>The path Docker CE clients use to locate the <filepath>.docker/config.json</filepath>
             authentication file, which contains Docker Hub credentials.</dd>
         </dlentry>
         
@@ -656,7 +656,7 @@
           <dt><varname>SERVICED_DOCKER_DNS</varname></dt>
           <dd><b>Default</b>: (empty)</dd> 
           <dd>The IP address of one or more DNS servers. The value of this variable is
-            injected into each Docker Engine container that <cmdname>serviced</cmdname>
+            injected into each Docker CE container that <cmdname>serviced</cmdname>
             starts. Separate multiple values with the comma character (<codeph>&#44;</codeph>).</dd>
         </dlentry>
         

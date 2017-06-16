@@ -485,18 +485,18 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
       </step>
       
       <step id="docker-install">
-        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>, and then disable accidental upgrades.</cmd>
+        <cmd>Install Docker CE <ph keyref="lo-version-docker"/>, and then disable accidental upgrades.</cmd>
         <substeps>
           <substep>
-            <cmd>Add the Docker repository to the host's repository list.</cmd>
+            <cmd>Add the Docker CE repository to the host's repository list.</cmd>
             <stepxmp>
-              <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker.repo
-[dockerrepo]
-name=Docker Repository
-baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+              <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker-ce.repo
+[docker-ce-stable]
+name=Docker CE Stable - $basearch
+baseurl=https://download.docker.com/linux/centos/7/$basearch/stable
 enabled=1
 gpgcheck=1
-gpgkey=https://yum.dockerproject.org/gpg
+gpgkey=https://download.docker.com/linux/centos/gpg
 EOF</codeblock>
             </stepxmp>
           </substep>
@@ -507,9 +507,9 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install Docker Engine from the remote repository.</cmd>
+            <cmd>Install Docker CE from the remote repository.</cmd>
             <stepxmp>
-              <codeblock>yum install -y docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+              <codeblock>yum install -y docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -519,7 +519,7 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
+            <cmd>Open <filepath>/etc/yum.repos.d/docker-ce.repo</filepath> with
               a text editor.</cmd>
           </substep>
           <substep>
@@ -533,8 +533,7 @@ EOF</codeblock>
       </step>
       
       <step id="docker-install-offline">
-        <cmd>Install Docker Engine
-          <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
+        <cmd>Install Docker CE <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
             <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
@@ -543,10 +542,10 @@ EOF</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Install Docker Engine.</cmd>
+            <cmd>Install Docker CE.</cmd>
             <stepxmp>
               <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
-  docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+  docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -584,7 +583,7 @@ EOF</codeblock>
       
       <step id="docker-svc-def">
         <cmd>Create a <cmdname>systemd</cmdname> drop-in file 
-          for Docker Engine.</cmd>
+          for Docker CE.</cmd>
         <substeps>
           <substep>
             <cmd>Create the override directory.</cmd>
