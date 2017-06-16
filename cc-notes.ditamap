@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="3" modification="2"/> 
+        <vrm version="1" release="3" modification="3"/> 
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -47,6 +47,7 @@
       <mapref href="book/notes/back/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup> <!-- add as needed -->
+      <mapref href="book/notes/133/keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/132/keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/131/keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/130/keys.ditamap" format="ditamap"/>
@@ -55,6 +56,7 @@
       <topicref href="book/notes/front/about.dita"/>
     </preface>
   </frontmatter>
+  <chapter href="book/notes/133/self.ditamap" format="ditamap"/>
   <chapter href="book/notes/132/self.ditamap" format="ditamap"/>
   <chapter href="book/notes/131/self.ditamap" format="ditamap"/>
   <chapter href="book/notes/130/self.ditamap" format="ditamap"/>  
