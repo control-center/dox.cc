@@ -8,9 +8,15 @@
         upgrade instructions include steps to remove the <cmdname>yum</cmdname> repository
         description for Docker Engine and replace it with the repository description for Docker
         CE.</p>
-      <p>In addition, new configuration variables are available in
-          <filepath>/etc/default/serviced</filepath>, for tuning communications between
-        ZooKeeper and remote resource pools. For more information, see <xref keyref="cc-upgrade-11x-vars"/>.</p>
+      <p>In addition, the following new configuration variables are available in
+          <filepath>/etc/default/serviced</filepath>, for tuning TCP/IP communications 
+        between a ZooKeeper ensemble and clients in remote resource pools:
+        <sl>
+          <sli><varname>SERVICED_ZK_CONNECT_TIMEOUT</varname></sli>
+          <sli><varname>SERVICED_ZK_PER_HOST_CONNECT_DELAY</varname></sli>
+          <sli><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname></sli>
+          <sli><varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></sli>
+        </sl>For more information, see <xref keyref="cc-feature-vars-file"/>.</p>
     </section>
   </refbody>
 </reference>
