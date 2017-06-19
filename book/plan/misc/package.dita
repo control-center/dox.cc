@@ -7,7 +7,7 @@
       
       <p><ph keyref="nm-cc"/> is distributed as a Redhat
           (<cmdname>yum</cmdname>/<cmdname>rpm</cmdname>) package. The package is available at
-        public repositories maintained by <ph conkeyref="names/company"/>. The Docker Engine images that
+        public repositories maintained by <ph conkeyref="names/company"/>. The Docker images that
           <ph keyref="nm-cc"/> requires are available at a public <ph conkeyref="names/company"/>
         <xref keyref="url-docker-hub"/> repository. The default installation process
         requires internet access. All repositories can be mirrored, supporting offline
