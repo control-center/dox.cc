@@ -5,12 +5,12 @@
   <refbody>
     <section>
       <title>Docker Engine configuration on master host (CC-3455)</title>
-      <p><draft-comment>Does this content from CC 132 need to remain in relnotes for CC
-          133?</draft-comment><!--cc3451-->Previously, the Docker Engine configuration procedures in
-        the <cite conkeyref="pubs/cite-install"/> and the <cite conkeyref="pubs/cite-upgrade"/>
-        instructed users to set the <codeph>--insecure-registry</codeph> flag in
-          <filepath>/etc/sysconfig/docker</filepath>. This setting is not needed on the master host
-        in a <ph keyref="nm-cc"/> cluster, and required on all delegate hosts.</p>
+      <p><!--From Scott: I think the info under Notes and Workaround should stay for now, too, we can probably drop it at the next feature release.--><!--cc3451-->Previously,
+        the Docker Engine configuration procedures in the <cite conkeyref="pubs/cite-install"/> and
+        the <cite conkeyref="pubs/cite-upgrade"/> instructed users to set the
+          <codeph>--insecure-registry</codeph> flag in <filepath>/etc/sysconfig/docker</filepath>.
+        This setting is not needed on the master host in a <ph keyref="nm-cc"/> cluster, and
+        required on all delegate hosts.</p>
     </section> 
     
   </refbody>

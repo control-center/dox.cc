@@ -16,8 +16,19 @@
         </thead>
         <tbody>
           <row>
-            <entry>CC-3438</entry>
-            <entry>Status icon for hosts is the same whether offline or unauthorized.</entry>
+            <entry>CC-1577</entry>
+            <entry>Application service details graphs may not populate for time periods less than
+              last 12 hours.</entry>
+          </row>
+          <row>
+            <entry>CC-1621</entry>
+            <entry>Deleted application templates may be displayed again after a serviced restart,
+              until the view is refreshed.</entry>
+          </row>
+          <row>
+            <entry>CC-1762</entry>
+            <entry>When localized, some elements of the <ph keyref="nm-cc"/> UI are not translated
+              as expected.</entry>
           </row>
           <row>
             <entry>CC-3511</entry>
@@ -36,26 +47,6 @@
             <entry>When upgrading to <ph keyref="nm-cc"/> 1.3.2, the check for
                 <codeph>serviced</codeph> thinpool reports errors on delegates as if they do not
               have any thinpools.</entry>
-          </row>
-          <row>
-            <entry>CC-3552</entry>
-            <entry>Display version information after upgrade or new installation of <ph
-                keyref="nm-cc"/>. </entry>
-          </row>
-          <row>
-            <entry>CC-3554</entry>
-            <entry>Allow configurable logging of Logrus messages in
-                <codeph>serviced-controller</codeph>.</entry>
-          </row>
-          <row>
-            <entry>CC-3555</entry>
-            <entry>When connections fail, ZooKeeper aggressively attempts to re-establish network
-              connections, which can lead to a flood of SYN packets from remote <ph keyref="nm-cc"/>
-              delegates to their VPN server.</entry>
-          </row>
-          <row>
-            <entry>CC-3556</entry>
-            <entry>Improved log content and easier control of per-package log levels.</entry>
           </row>
           <row>
             <entry>CC-3563</entry>
