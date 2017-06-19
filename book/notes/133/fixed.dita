@@ -31,6 +31,10 @@
               as expected.</entry>
           </row>
           <row>
+            <entry>CC-3073</entry>
+            <entry>Missing device-mapper libraries</entry>
+          </row>
+          <row>
             <entry>CC-3511</entry>
             <entry>RabbitMQ admin web interface links are broken for the /zenoss
               exchanges/queues.</entry>
