@@ -31,8 +31,6 @@
               as expected.</entry>
           </row>
           <row>
-            <entry>CC-3073</entry>
-            <entry>Missing device-mapper libraries</entry>
             <entry>CC-3438</entry>
             <entry>Status icon for hosts is the same whether offline or unauthorized.</entry>
           </row>
