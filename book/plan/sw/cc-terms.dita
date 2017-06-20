@@ -10,7 +10,7 @@
       <dl>
         <dlentry>
           <dt>application</dt>
-          <dd>One or more software services packaged in Docker Engine containers.</dd>
+          <dd>One or more software services packaged in Docker containers.</dd>
         </dlentry>
         <dlentry>
           <dt>cluster</dt>
@@ -22,7 +22,7 @@
             belongs. A system can be configured as delegate or master.</dd>
         </dlentry>
         <dlentry>
-          <dt>Docker Engine</dt>
+          <dt>Docker Community Edition (Docker CE, or just Docker)</dt>
           <dd>An open-source application for building, shipping, and running distributed
             applications. </dd>
         </dlentry>

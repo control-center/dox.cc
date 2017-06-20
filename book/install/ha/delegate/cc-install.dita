@@ -23,7 +23,7 @@
       </step>
       
       <step importance="optional">
-        <cmd>Import the Docker Engine image for ZooKeeper into the local
+        <cmd>Import the Docker image for ZooKeeper into the local
           repository, if necessary.</cmd>
         <info>Delegate hosts that are not ZooKeeper ensemble nodes do not need the image. The image
           file is staged in <filepath>/root</filepath> during a preceding procedure.</info>

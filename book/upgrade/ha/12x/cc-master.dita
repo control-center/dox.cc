@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Updating <ph keyref="nm-cc"/> on the master host</title>
+  <title>Updating <ph keyref="nm-cc"/> on  master hosts</title>
   <taskbody>
-    <context>Use this procedure to update <ph keyref="nm-cc"/> on the
-      master host to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Use this procedure to update <ph keyref="nm-cc"/> on both master hosts to version <ph
+        keyref="lo-version-cc"/>.</context>
     
     <steps>
       <step>

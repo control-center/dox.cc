@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Upgrading 1.3.x to <ph keyref="lo-version-cc"/></title>
+  <title>Upgrading a master host from 1.2.x to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
-      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/> 1.3.x system to
+      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/> 1.2.x master host to
           <ph keyref="lo-version-cc"/>.</p>
       <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
         a deployment that does not have internet access, perform the steps in <xref

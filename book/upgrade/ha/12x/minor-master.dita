@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Upgrading a master host from 1.2.x to <ph keyref="lo-version-cc"/></title>
+  <refbody>
+    <section>
+      <p>Perform the procedures in this chapter to upgrade a <ph keyref="nm-cc"/> 1.2.x master host to
+          <ph keyref="lo-version-cc"/>.</p>
+      <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
+        a deployment that does not have internet access, perform the steps in <xref
+          keyref="cc-feature-offline-offline"/> before performing the procedures in this chapter.</note>
+      <p>Before performing the procedures in this chapter, stop <ph keyref="nm-cc"/> on all
+        hosts in the cluster. <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-maps-stop"/>.</p>
+    </section>
+  </refbody>
+</reference>

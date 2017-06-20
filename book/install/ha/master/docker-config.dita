@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring Docker Engine and loading images</title>
+  <title>Configuring Docker and loading images</title>
   <taskbody>
-    <context>Use this procedure to configure Docker Engine and load images in to the local
+    <context>Use this procedure to configure Docker and load images in to the local
       repository.</context>
     <steps>
       
@@ -34,7 +34,7 @@
       
       <step>
         <cmd>Import the <ph keyref="nm-cc"/> images into the local
-          Docker Engine repository.</cmd>
+          Docker repository.</cmd>
         <info>The images are contained in the self-extracting archive files 
           that are staged in <filepath>/root</filepath>.</info>
         <substeps>
@@ -66,8 +66,8 @@ done</codeblock>
       </step>
 
       <step>
-        <cmd>Stop and disable the Docker Engine service.</cmd>
-        <info>The cluster management software controls the Docker Engine service.</info>
+        <cmd>Stop and disable the Docker service.</cmd>
+        <info>The cluster management software controls the Docker service.</info>
         <stepxmp>
           <codeblock>systemctl stop docker &#38;&#38; systemctl disable docker</codeblock>
         </stepxmp>

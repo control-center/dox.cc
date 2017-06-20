@@ -4,7 +4,7 @@
  
   <!--  CC_3299 --><title>Using <ph keyref="nm-cc"/> with a NAT device</title>
   <refbody>
-    <section id="section_ggr_ccr_dz">
+    <section>
       <p>Network address translation (NAT) enables one device (a router, switch, or firewall) to
         connect a local area network with the internet and outside devices. The NAT device forwards
         traffic to the intended host, and serves as a firewall to systems that are behind the
@@ -16,7 +16,7 @@
         addresses. The NAT device forwards its port to the delegate hosts'
           <apiname>address:rpcport</apiname>.</p>
     </section>
-    <section id="section_ilt_kfr_dz">
+    <section>
       <p>When you add a delegate host by using either <ph keyref="nm-cc"/> interface (browser or
         command-line) you must specify the hostname or IP address and port for the NAT device. After
         you add delegate hosts, you must transfer host keys to the delegate hosts and register
@@ -25,29 +25,31 @@
         device forwards port 22 to the delegate host that you are registering, you can remotely
         register the keys. </p>
       <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:<varname>Host-Port</varname> \
-    <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/> \
-    [–register]</codeblock>
+  <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/> \
+  [–register]</codeblock>
     </section>
-    <section id="section_okz_m2r_dz">If you have two delegates behind the NAT device, change the
+    <section>If you have two delegates behind the NAT device, change the
       port forwarding for port 22 between adding the hosts, or transfer the keys file manually to
       and register from each delegate.<p>When resetting keys, the CLI supports the
           <cmdname>--nat-address</cmdname> argument. If the delegate is behind a NAT device and port
         22 is forwarded to that delegate, you can attempt to register the delegate when resetting
         the key:
         </p><codeblock>serviced key reset <varname>Hostname-Or-IP</varname>:<varname>Host-Port</varname> --register \ 
-    <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/></codeblock><title>Example:
+  <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/></codeblock><title>Example:
         Adding delegate hosts to a resource pool</title><p>The master host is outside the network.
         Delegate hosts delegate1 and delegate2 are behind a NAT router. IP address and port
-        information is as follow:<ul id="ul_x55_krr_dz">
+        information is as follow:<ul>
           <li>NAT router: 192.0.2.0</li>
           <li>Delegate1: 198.51.100.0:4979</li>
           <li>Delegate2: 203.0.113.0:4979</li>
         </ul></p><p>The router forwards port 4979 to delegate1's RPC port (4979):
         <codeblock>serviced host add 198.51.100.0:<b>4979</b> <varname>Resource-Pool</varname> \
-    --nat-address=192.0.2.0:<b>4979</b></codeblock></p><p>The router forwards port 4980 to delegate2's RPC port
+  --nat-address=192.0.2.0:<b>4979</b></codeblock></p>
+      
+      <p>The router forwards port 4980 to delegate2's RPC port
         (4979):<codeblock>serviced host add 203.0.113.0:<b>4979</b> <varname>Resource-Pool</varname> \
-    --nat-address=192.0.2.0:<b>4980</b> </codeblock></p></section>
-    <section id="section_pyj_s2r_dz">
+  --nat-address=192.0.2.0:<b>4980</b> </codeblock></p></section>
+    <section>
       <title>Security considerations for using <ph keyref="nm-cc"/>with a NAT device</title>
       <p>To attach to a service on a delegates behind the NAT device, you must use ssh to access the
         delegate. From the delegate host, run <cmdname>serviced service attach</cmdname>. For

@@ -7,8 +7,16 @@
             href="about.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-zk-delegate1-ha"
+            href="delegate1-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-zk-delegate1"
             href="delegate1.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-zk-delegate2-ha"
+            href="delegate2-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-zk-delegate2"

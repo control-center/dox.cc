@@ -5,8 +5,8 @@
   <refbody>
     <table>
       <tgroup cols="2">
-        <colspec colname="c1" colwidth="2.3*"/>
-        <colspec colname="c2" colwidth="3*"/>
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="1*"/>
         <thead>
           <row>
             <entry>Variable</entry>
@@ -53,8 +53,26 @@
             <entry>A list of hostname aliases for a host; for example, 
               <codeph>localhost</codeph>.</entry>
           </row>
+          <row>
+            <entry><varname>SERVICED_ZK_CONNECT_TIMEOUT</varname></entry>
+            <entry>The number of seconds <ph keyref="nm-cc"/> waits 
+              for a connection to the lead ZooKeeper host.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_ZK_PER_HOST_CONNECT_DELAY</varname></entry>
+            <entry>The number of seconds <ph keyref="nm-cc"/> waits before attempting to 
+              connect to the next host in its round-robin list of ZooKeeper hosts.</entry>
+          </row>
+          <row>
+            <entry><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname>,
+              <varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></entry>
+            <entry>These are used
+              together when <ph keyref="nm-cc"/> is unable to re-establish 
+              a connection with the lead ZooKeeper host.</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
+    
   </refbody>
 </reference>

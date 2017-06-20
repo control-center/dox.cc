@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring delegate host B as a ZooKeeper node</title>
+  <taskbody>
+    <context>Use this procedure to configure the delegate host designated as
+        <varname>Delegate-B</varname> as a ZooKeeper node.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-zk-lib/zk-define-ips-ha">
+        <cmd/>
+      </step>
+
+      <step>
+        <cmd>Set the ID of this node in the ZooKeeper ensemble.</cmd>
+        <stepxmp>
+          <codeblock>echo "SERVICED_ISVCS_ZOOKEEPER_ID=3" &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+
+      <step conkeyref="cc-feature-zk-lib/zk-set-nodes">
+        <cmd/>
+      </step>
+
+      <step>
+        <cmd>Specify the nodes in the ZooKeeper quorum.</cmd>
+        <info>ZooKeeper requires a unique quorum definition for each node in its ensemble. To
+          achieve this, replace the IP address or hostname of delegate host B with
+          <codeph>0.0.0.0</codeph>.</info>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>q1="1@${node1}:2888:3888"
+q2="2@${node2}:2888:3888"
+q3="3@0.0.0.0:2888:3888"
+echo "SERVICED_ISVCS_ZOOKEEPER_QUORUM=${q1},${q2},${q3}" \
+  &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step conkeyref="cc-feature-zk-lib/zk-set-timeout">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Configure <ph keyref="nm-cc"/> to start the ZooKeeper service.</cmd>
+        <stepxmp>You can copy the following text and paste it in your console:
+          <codeblock>echo "SERVICED_ISVCS_START=zookeeper" &#62;&#62; /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Clean up the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep conkeyref="cc-feature-zk-lib/open-file"><cmd/></substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ZK</varname> variable declaration at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the original <varname>SERVICED_ZK</varname> variable declaration,  
+              and then paste the cut line immediately below it.</cmd>
+          </substep>
+          <substep>
+            <cmd>Comment the original <varname>SERVICED_ZK</varname> declaration, which
+              references only the master host.</cmd>
+            <info>Insert the number sign character (<codeph>&#35;</codeph>)
+              immediately in front of the original <varname>SERVICED_ZK</varname> variable.</info>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> variable 
+              declaration, and then paste the cut line immediately below it.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the original <varname>SERVICED_ZK_SESSION_TIMEOUT</varname>
+              variable declaration, and then paste the cut line immediately below it.</cmd>
+          </substep>
+          
+          <substep>
+            <cmd>Navigate to the end of the file, and cut the line that contains the
+              <varname>SERVICED_ISVCS_START</varname> variable declaration
+              at that location.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the original <varname>SERVICED_ISVCS_START</varname> variable 
+              declaration, and then paste the cut line immediately below it.</cmd>
+          </substep>
+          
+          <substep conkeyref="cc-feature-zk-lib/save"><cmd/></substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Verify the ZooKeeper environment variables.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced \
+  | grep -E '(CS_ZO|_ZK|CS_ST)'</codeblock>
+        </stepxmp>
+        <stepresult>The following example shows the environment variables for a delegate host with
+          IP address 198.51.100.137. <note>The value of the
+              <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> variable is formatted to fit the
+            available space. The result of the <cmdname>grep</cmdname> command shows the variable
+            and value on the same line.</note>
+          <codeblock>SERVICED_ZK=198.51.100.135:2181,198.51.100.136:2181,198.51.100.137:2181
+SERVICED_ISVCS_START=zookeeper
+SERVICED_ISVCS_ZOOKEEPER_ID=3
+SERVICED_ISVCS_ZOOKEEPER_QUORUM=1@198.51.100.135:2888:3888,\
+  2@198.51.100.136:2888:3888,3@0.0.0.0:2888:3888
+SERVICED_ZK_SESSION_TIMEOUT=15</codeblock>
+        </stepresult> 
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>
+
+
+
+
+
+
+
+
+
+
+
+

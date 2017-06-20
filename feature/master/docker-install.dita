@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Installing Docker Engine</title>
+  <title>Installing Docker CE</title>
   <refbody>
     <section>
-      <p>Use one of the procedures in this section to install Docker Engine.</p>
+      <p>Use one of the procedures in this section to install Docker CE.</p>
     </section>
   </refbody>
 </reference>

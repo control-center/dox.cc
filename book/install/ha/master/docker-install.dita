@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Installing Docker Engine</title>
+  <title>Installing Docker</title>
   <taskbody>
     
-    <context>Use this procedure to install Docker Engine.</context>
+    <context>Use this procedure to install Docker.</context>
     <steps>
       
       <step>

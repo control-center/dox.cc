@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p>The table in this section associates <ph keyref="nm-cc"/> releases with the
-        tags of the required Docker Engine images for each release. The images provide
+        tags of the required Docker images for each release. The images provide
         the virtual containers of the <ph keyref="nm-cc"/> internal services and
         the ZooKeeper service.</p>
     </section>

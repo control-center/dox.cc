@@ -22,14 +22,15 @@
         </ul></p>
       <p>The following figure identifies the ports that <ph keyref="nm-cc"/> requires. All traffic
         is TCP. Except for port 4979, all ports are configurable.  </p>
-      <p><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions, and indirectly,
-        NTP to synchronize clocks among multiple hosts. In the default configuration of
-          <cmdname>ntpd</cmdname>, the firewalls of master and delegate hosts must support an
-        incoming UDP connection on port 123.</p>
+      
       <fig>
         <title>Port requirements for <ph keyref="nm-cc"/> hosts</title>
         <image keyref="jpg-ports" scale="50"/>
       </fig>
+      <p><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions, and indirectly,
+        NTP to synchronize clocks among multiple hosts. In the default configuration of
+        <cmdname>ntpd</cmdname>, the firewalls of master and delegate hosts must support an
+        incoming UDP connection on port 123.</p>
     </section>
     
     <section>

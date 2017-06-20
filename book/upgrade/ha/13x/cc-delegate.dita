@@ -32,7 +32,8 @@
       <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
-          <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+          <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \ 
+  /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>
       

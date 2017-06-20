@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Identifying installed Docker Engine images</title>
+  <title>Identifying installed Docker images</title>
   <taskbody>
-    <context>Use this procedure to identify the local Docker Engine images for <ph keyref="nm-cc"
+    <context>Use this procedure to identify the local Docker images for <ph keyref="nm-cc"
       /> that are installed on a host.</context>
     <steps>
       <step>
@@ -11,7 +11,7 @@
           host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       <step>
-        <cmd>Display the local Docker Engine images for <ph keyref="nm-cc"/>.</cmd>
+        <cmd>Display the local Docker images for <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
           <codeblock>docker images | awk '/isvcs/ { print $1, " ", $2}'</codeblock>
         </stepxmp>

@@ -20,7 +20,7 @@
   <topicgroup>
     <keydef keys="url-docker " href="http://docs.docker.com/" format="html" scope="external">
       <topicmeta>
-        <linktext>Docker</linktext>
+        <linktext>Docker Community Edition</linktext>
       </topicmeta>
     </keydef>
     <keydef keys="url-docker-17653 " href="http://github.com/docker/docker/issues/17653"

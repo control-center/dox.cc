@@ -7,7 +7,7 @@
       <p>Master host nodes need cluster-management packages and <ph keyref="nm-cc"/> software to
         perform their roles in a high-availability deployment. Use the procedures in the
         following sections to
-        download and stage or install required software and Docker Engine images.</p>
+        download and stage or install required software and Docker images.</p>
       <p>Perform the procedures for each master host node.</p>
     </section>
   </refbody>

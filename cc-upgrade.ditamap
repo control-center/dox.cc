@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="3" modification="2"/>        
+        <vrm version="1" release="3" modification="3"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -78,7 +78,9 @@
     </topicmeta>
     <topicref href="book/upgrade/front/13x.dita"/>
     <chapter href="book/upgrade/13x/prep.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/13x/micro.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/13x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/13x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
   </part>
   
   <part>
@@ -87,7 +89,9 @@
     </topicmeta>
     <topicref href="book/upgrade/front/12x.dita"/>
     <chapter href="book/upgrade/12x/prep.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/12x/micro.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
   </part>
   
   <part>

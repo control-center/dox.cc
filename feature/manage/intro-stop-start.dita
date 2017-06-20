@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Stopping and starting <ph keyref="nm-cc"/> for maintenance</title>
+  <title>Stopping and starting <ph keyref="nm-cc"/></title>
   <refbody>
     <section>
       <p>Before performing maintenance, such as operating system upgrades or applying patches,

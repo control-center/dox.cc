@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Upgrading <ph keyref="nm-cc"/> delegate hosts</title>
-  <refbody>
+  <title>Upgrading delegates from 1.1.x to <ph keyref="lo-version-cc"/></title>
+    <refbody>
     <section>
       <p>Perform the procedures in this chapter to upgrade delegate hosts.</p>
-      <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
-        your deployment without internet access, perform the steps in <xref
-          keyref="cc-feature-offline-offline"/> before performing the procedures in this chapter.</note>
     </section>
   </refbody>
 </reference>

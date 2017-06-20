@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Updating Docker Engine</title>
+  <title>Updating Docker</title>
   <taskbody>
-    <context>Use this procedure to update Docker Engine
+    <context>Use this procedure to update Docker
       to version <ph keyref="lo-version-docker"/>.</context>
     <steps>
       <step>
@@ -11,10 +11,10 @@
       </step>
       
       <step>
-        <cmd>Ensure that Docker Engine updates are disabled.</cmd>
+        <cmd>Ensure that Docker updates are disabled.</cmd>
         <info>During a kernel update, <cmdname>yum</cmdname> stops processing 
           when it finds the <cmdname>serviced</cmdname> dependency on Docker
-          Engine 1.9.0. Docker Engine updates are explicitly enabled and then
+          1.9.0. Docker updates are explicitly enabled and then
           disabled in subsequent steps.</info>
         <substeps>
           <substep>
@@ -68,7 +68,7 @@
       </step>
       
       <step>
-        <cmd>Enable Docker Engine updates.</cmd>
+        <cmd>Enable Docker updates.</cmd>
         <substeps>
           <substep>
             <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
@@ -85,16 +85,16 @@
       </step>
       
       <step>
-        <cmd>Identify the name of the LVM thin pool for Docker Engine.</cmd>
+        <cmd>Identify the name of the LVM thin pool for Docker.</cmd>
         <substeps>
           <substep>
-            <cmd>Start the Docker Engine service.</cmd>
+            <cmd>Start the Docker service.</cmd>
             <stepxmp>
               <codeblock>systemctl start docker</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Display the name of the LVM thin pool for Docker Engine.</cmd>
+            <cmd>Display the name of the LVM thin pool for Docker.</cmd>
             <stepxmp>
               <codeblock>docker info 2>/dev/null | grep 'Pool Name'</codeblock>
             </stepxmp>
@@ -104,7 +104,7 @@
             </stepresult>
           </substep>
           <substep>
-            <cmd>Stop the Docker Engine service.</cmd>
+            <cmd>Stop the Docker service.</cmd>
             <stepxmp>
               <codeblock>systemctl stop docker</codeblock>
             </stepxmp>
@@ -113,7 +113,7 @@
       </step>
 
       <step>
-        <cmd>Back up the Docker Engine environment file.</cmd>
+        <cmd>Back up the Docker environment file.</cmd>
         <stepxmp>
           <codeblock>test -f /etc/sysconfig/docker \
   &#38;&#38; mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
@@ -121,14 +121,14 @@
       </step>
       
       <step>
-        <cmd>Remove Docker Engine 1.9.0 without checking dependencies.</cmd>
+        <cmd>Remove Docker 1.9.0 without checking dependencies.</cmd>
         <stepxmp>
           <codeblock>rpm -e --nodeps docker-engine-1.9.0</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>.</cmd>
+        <cmd>Install Docker <ph keyref="lo-version-docker"/>.</cmd>
         <stepxmp>
           <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
   docker-engine-<ph keyref="lo-version-docker"/></codeblock>
@@ -136,7 +136,7 @@
       </step>
       
       <step>
-        <cmd>Disable unintended Docker Engine updates.</cmd>
+        <cmd>Disable unintended Docker updates.</cmd>
         <substeps>
           <substep>
             <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with a text editor.</cmd>

@@ -7,7 +7,7 @@
       <p>This appendix includes procedures for stopping and starting a high-availability <ph
           keyref="nm-cc"/> deployment.</p>
       <note>The procedures in this appendix assume that <ph keyref="nm-cc"/>
-      is the only source of Docker Engine containers that are run on a host.</note>
+      is the only source of Docker containers that are run on a host.</note>
     </section>
   </refbody>
 </reference>
