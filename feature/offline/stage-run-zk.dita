@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Staging a Docker CE image file on ZooKeeper ensemble nodes</title>
+  <title>Staging a Docker image file on ZooKeeper ensemble nodes</title>
   <taskbody>
     
     <prereq>Before performing this procedure, verify that approximately 170MB of temporary space is
       available on the file system where <filepath>/root</filepath> is located.</prereq>
     
-    <context>Use this procedure to add a Docker CE image file to the <ph keyref="nm-cc"/> delegate hosts
+    <context>Use this procedure to add a Docker image file to the <ph keyref="nm-cc"/> delegate hosts
       that are ZooKeeper ensemble nodes. Delegate hosts that are not ZooKeeper ensemble nodes
       do not need the file. The files are used when the ZooKeeper ensemble is
       configured.</context>

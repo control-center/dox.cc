@@ -13,7 +13,7 @@
         <dlentry id="HOME">
           <dt><varname>HOME</varname></dt>
           <dd><b>Default</b>: (the value of shell variable <varname>HOME</varname>)</dd> 
-          <dd>The path Docker CE clients use to locate the <filepath>.docker/config.json</filepath>
+          <dd>The path Docker clients use to locate the <filepath>.docker/config.json</filepath>
             authentication file, which contains Docker Hub credentials.</dd>
         </dlentry>
         
@@ -63,7 +63,10 @@
           <dd><b>Default</b>: (none)</dd> 
           <dd>The list of endpoints in the <cmdname>serviced</cmdname> ZooKeeper ensemble, 
             separated by the comma character (<codeph>&#44;</codeph>). Each endpoint identifies 
-            an ensemble node.</dd>
+            an ensemble node. Each <ph keyref="nm-cc"/> server and in-container proxy
+            uses <varname>SERVICED_ZK</varname> to create a randomized, round-robin 
+            list, and cycles through the list when it attempts to establish a connection
+            with the lead ZooKeeper host.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
@@ -664,7 +667,7 @@
           <dt><varname>SERVICED_DOCKER_DNS</varname></dt>
           <dd><b>Default</b>: (empty)</dd> 
           <dd>The IP address of one or more DNS servers. The value of this variable is
-            injected into each Docker CE container that <cmdname>serviced</cmdname>
+            injected into each Docker container that <cmdname>serviced</cmdname>
             starts. Separate multiple values with the comma character (<codeph>&#44;</codeph>).</dd>
         </dlentry>
         
@@ -686,47 +689,55 @@
         <dlentry id="SERVICED_ZK_SESSION_TIMEOUT">
           <dt><varname>SERVICED_ZK_SESSION_TIMEOUT</varname></dt>
           <dd><b>Default</b>: <codeph>15</codeph></dd> 
-          <dd>The number of seconds the ZooKeeper leader waits before flushing
+          <dd>The number of seconds the lead ZooKeeper host waits before flushing
             an inactive connection.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK_CONNECT_TIMEOUT">
           <dt><varname>SERVICED_ZK_CONNECT_TIMEOUT</varname></dt>
           <dd><b>Default</b>: <codeph>1</codeph></dd> 
-          <dd>The number of seconds a ZooKeeper client waits for a response
-            before flushing its connection to the ZooKeeper host.</dd>
+          <dd>The number of seconds <ph keyref="nm-cc"/> waits for a connection to the lead ZooKeeper host.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK_PER_HOST_CONNECT_DELAY">
           <dt><varname>SERVICED_ZK_PER_HOST_CONNECT_DELAY</varname></dt>
           <dd><b>Default</b>: <codeph>0</codeph></dd> 
-          <dd>The number of seconds a ZooKeeper client waits before attempting to connect to the
-            next host in the ZooKeeper ensemble. The list of ensemble hosts is defined in
-            <varname>SERVICED_ZK</varname>.</dd>
+          <dd>The number of seconds <ph keyref="nm-cc"/> waits before attempting to connect to the
+            next host in its round-robin list of ZooKeeper hosts. For more information about
+            the round-robin list, see <varname>SERVICED_ZK</varname>.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK_RECONNECT_START_DELAY">
           <dt><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname></dt>
           <dd><b>Default</b>: <codeph>1</codeph></dd> 
-          <dd>The minimum number of seconds a ZooKeeper client waits after failing to connect
-            to any one of the hosts in the ZooKeeper ensemble. When this period expires,
-            the client attempts to connect to the first host in its list of ensemble hosts,
-            and if that attempt fails, continues to the next host in the list. The actual
-            duration of the delay is determined by a randomized algorithm, to stagger
-            network traffic in the event of a non-local failure.
-            The list of ensemble hosts is defined in <varname>SERVICED_ZK</varname>.</dd>
+          <dd>
+            <p><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname> and
+              <varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname> are used
+              together when <ph keyref="nm-cc"/> is unable to re-establish 
+              a connection with the lead ZooKeeper host.</p>
+            
+            <p>To prevent unnecessary spikes in TCP traffic, <ph keyref="nm-cc"/> waits a randomized
+              amount of time that is equal to plus or minus 20% of the value of
+                <varname>SERVICED_ZK_RECONNECT_START_DELAY</varname>. If <ph keyref="nm-cc"/> is
+              unable to reconnect after contacting all of the hosts in its round-robin list of
+              ZooKeeper hosts, the wait time is increased by a randomized value and the process of
+              attempting to reconnect begins again. If the attempts fail again, the process repeats
+              until the wait time reaches the value of
+                <varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname>, and the wait time of subsequent
+              reconnection attempts is capped at <varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname>.
+              Once connection is re-established, the wait time is reset to
+                <varname>SERVICED_ZK_RECONNECT_START_DELAY</varname>.</p>
+            
+            
+            <p>For more information about
+            the round-robin list, see <varname>SERVICED_ZK</varname>.</p>
+          </dd>
         </dlentry>
         
         <dlentry id="SERVICED_ZK_RECONNECT_MAX_DELAY">
           <dt><varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></dt>
           <dd><b>Default</b>: <codeph>1</codeph></dd> 
-          <dd>The maximum number of seconds a ZooKeeper client waits after failing to connect
-            to any one of the hosts in the ZooKeeper ensemble. When this period expires,
-            the client attempts to connect to the first host in its list of ensemble hosts,
-            and if that attempt fails, continues to the next host in the list. The actual
-            duration of the delay is determined by a randomized algorithm, to stagger
-            network traffic in the event of a non-local failure.
-            The list of ensemble hosts is defined in <varname>SERVICED_ZK</varname>.</dd>
+          <dd>See <varname>SERVICED_ZK_RECONNECT_START_DELAY</varname>.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ES_STARTUP_TIMEOUT">

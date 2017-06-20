@@ -68,7 +68,7 @@
               <li>If the result includes <codeph>enforcing</codeph> or 
                 <codeph>permissive</codeph>, SELinux is enabled.</li>
               <li>If the result includes <codeph>disabled</codeph>, SELinux is not enabled.</li>
-            </ul>If desired, perform the remaining substeps to enable SELinux.</info>
+            </ul>If desired, perform the remaining substeps to enable SELinux. Otherwise, proceed to the next step.</info>
           </substep>
           <substep>
             <cmd>Set the operating mode to <codeph>disabled</codeph>.</cmd>
@@ -583,7 +583,7 @@ EOF</codeblock>
       
       <step id="docker-svc-def">
         <cmd>Create a <cmdname>systemd</cmdname> drop-in file 
-          for Docker CE.</cmd>
+          for Docker.</cmd>
         <substeps>
           <substep>
             <cmd>Create the override directory.</cmd>

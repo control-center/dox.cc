@@ -6,8 +6,7 @@
     <section>
       <p>This release replaces Docker Engine 1.12.1 with Docker Community Edition (CE) 17.03.1. The
         upgrade instructions include steps to remove the <cmdname>yum</cmdname> repository
-        description for Docker Engine and replace it with the repository description for Docker
-        CE.</p>
+        description for Docker and replace it with the repository description for Docker Community Edition (Docker CE).</p>
       <p>In addition, the following new configuration variables are available in
           <filepath>/etc/default/serviced</filepath>, for tuning TCP/IP communications 
         between a ZooKeeper ensemble and clients in remote resource pools:

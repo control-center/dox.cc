@@ -34,7 +34,7 @@
           </row>
           <row>
             <entry><varname>SERVICED_DOCKER_DNS</varname></entry>
-            <entry>A list of one or more DNS servers. The list is injected into all Docker CE
+            <entry>A list of one or more DNS servers. The list is injected into all Docker 
               containers.</entry>
           </row>
         </tbody>

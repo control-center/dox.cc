@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring Docker CE</title>
+  <title>Configuring Docker</title>
   <taskbody>
-    <context>Use this procedure to configure Docker CE.</context>
+    <context>Use this procedure to configure Docker.</context>
     <steps>
       
       <step>

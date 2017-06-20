@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
- <title>Micro</title>
-  <chapter keyref="cc-upgrade-13x-micro">
-    <topicref keyref="cc-upgrade-12x-master"/>
+ <title>Delegate</title>
+  <chapter keyref="cc-upgrade-12x-micro">
+    <topicref keyref="cc-upgrade-12x-docker-install"/>
     <topicref keyref="cc-upgrade-12x-delegate"/>
     <topicref keyref="cc-upgrade-12x-zk-image"/>
-    <topicref keyref="cc-upgrade-topics-start-zk"/>
  </chapter>
 </bookmap>
