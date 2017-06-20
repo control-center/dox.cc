@@ -4,7 +4,7 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title>Docker Engine configuration on master host (CC-3455)</title>
+      <title>Docker configuration on master host (CC-3455)</title>
       <p><!--From Scott: I think the info under Notes and Workaround should stay for now, too, we can probably drop it at the next feature release.--><!--cc3451-->Previously,
         the Docker Engine configuration procedures in the <cite conkeyref="pubs/cite-install"/> and
         the <cite conkeyref="pubs/cite-upgrade"/> instructed users to set the
