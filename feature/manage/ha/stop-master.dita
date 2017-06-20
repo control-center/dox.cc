@@ -44,7 +44,7 @@
         <cmd>Ensure that no containers remain in the local repository.</cmd>
         <substeps>
           <substep>
-            <cmd>Start the Docker Engine service.</cmd>
+            <cmd>Start the Docker service.</cmd>
             <stepxmp>
               <codeblock>systemctl start docker</codeblock>
             </stepxmp>
@@ -59,7 +59,7 @@
             </stepresult>
           </substep>
           <substep>
-            <cmd>Stop the Docker Engine service.</cmd>
+            <cmd>Stop the Docker service.</cmd>
             <stepxmp>
               <codeblock>systemctl stop docker</codeblock>
             </stepxmp>
@@ -68,7 +68,7 @@
       </step>
       
       <step>
-        <cmd>To ensure that no containers remain in both Docker Engine repositories, log in to the
+        <cmd>To ensure that no containers remain in both Docker repositories, log in to the
           other master node <ph conkeyref="strings/login-root"/>, and then perform the preceding
           step.</cmd>
       </step>
