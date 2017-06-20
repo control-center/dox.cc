@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Upgrading the <ph keyref="nm-cc"/> master host</title>
+  <title>Upgrading a master host from 1.1.x to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
       <p>Perform the procedures in this chapter to upgrade the master host.</p>

@@ -2,9 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Delegate</title>
-  <chapter keyref="cc-upgrade-12x-micro">
+  <chapter keyref="cc-upgrade-13x-micro-delegate">
     <topicref keyref="cc-upgrade-12x-docker-install"/>
     <topicref keyref="cc-upgrade-12x-delegate"/>
-    <topicref keyref="cc-upgrade-12x-zk-image"/>
  </chapter>
 </bookmap>
