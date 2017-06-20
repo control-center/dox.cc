@@ -18,7 +18,7 @@
         </ul>
         </li>
         
-        <li>Compare the Docker Engine images that accompany this release with the
+        <li>Compare the Docker images that accompany this release with the
         images that accompany the installed release, and determine whether the
         image files need to be downloaded and installed. <ph conkeyref="strings/fmi-int"/>
         <xref keyref="cc-upgrade-paths-images"/>.</li>

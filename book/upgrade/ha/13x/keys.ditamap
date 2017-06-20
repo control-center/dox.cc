@@ -19,12 +19,24 @@
             href="cc-master.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-13x-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-13x-download"
             href="download.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-13x-image"
             href="image.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-micro-delegate"
+            href="micro-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-micro-master"
+            href="micro-master.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-13x-offline"

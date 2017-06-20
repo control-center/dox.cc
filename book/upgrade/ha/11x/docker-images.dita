@@ -49,7 +49,7 @@
       </step>
       
       <step>
-        <cmd>Stop the Docker Engine service.</cmd>
+        <cmd>Stop the Docker service.</cmd>
         <stepxmp>
           <codeblock>systemctl stop docker</codeblock>
         </stepxmp>

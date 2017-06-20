@@ -27,6 +27,14 @@
             href="image.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-12x-minor-delegate"
+            href="minor-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-12x-minor-master"
+            href="minor-master.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-12x-offline"
             href="offline.dita"
             format="dita"
