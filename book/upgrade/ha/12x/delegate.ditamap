@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap >
+ <title>Delegate</title>
+  <chapter keyref="cc-upgrade-ha-12x-minor-delegate">
+    <topicref keyref="cc-upgrade-ha-13x-docker-install"/>
+    <topicref keyref="cc-upgrade-ha-11x-zk-image"/>
+    <topicref keyref="cc-upgrade-ha-12x-cc-delegate"/>
+ </chapter>
+</bookmap>

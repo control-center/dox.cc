@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Pulling the ZooKeeper image for Docker Engine</title>
+  <title>Pulling the ZooKeeper image for Docker</title>
   <taskbody>
     <prereq>To perform this procedure, ZooKeeper ensemble nodes must have internet access.</prereq>
-    <context>Use this procedure to pull the Docker Engine image for the ZooKeeper service from
+    <context>Use this procedure to pull the Docker image for the ZooKeeper service from
       Docker Hub to a ZooKeeper ensemble node. Repeat this procedure on each node in the ZooKeeper
       ensemble.</context>
     <steps>

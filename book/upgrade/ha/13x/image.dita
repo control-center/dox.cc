@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Updating the internal services image on master nodes</title>
   <taskbody>
-    <context>Use this procedure to install a new Docker Engine image for
+    <context>Use this procedure to install a new Docker image for
       <ph keyref="nm-cc"/> internal services on the master nodes. 
     </context>
     <steps>

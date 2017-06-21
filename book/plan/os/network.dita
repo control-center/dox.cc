@@ -54,7 +54,6 @@
       <p><ph keyref="nm-cc"/> relies on Network File System (NFS) for its distributed file system
         implementation. Therefore, hosts in a <ph keyref="nm-cc"/> cluster cannot run a
         general-purpose NFS server, and all hosts require NFS.</p>
-      <p/>
     </section>
   </refbody>
 </reference>

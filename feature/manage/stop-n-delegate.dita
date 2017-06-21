@@ -47,13 +47,13 @@
             </stepresult>
           </substep>
           <substep>
-            <cmd>Stop the NFS and Docker Engine services.</cmd>
+            <cmd>Stop the NFS and Docker services.</cmd>
             <stepxmp>
               <codeblock>systemctl stop nfs &#38;&#38; systemctl stop docker</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Start the NFS and Docker Engine services.</cmd>
+            <cmd>Start the NFS and Docker services.</cmd>
             <stepxmp>
               <codeblock>systemctl start nfs &#38;&#38; systemctl start docker</codeblock>
             </stepxmp>

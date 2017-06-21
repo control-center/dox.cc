@@ -7,13 +7,12 @@
       <p>The following list outlines recommended best practices for
         upgrading <ph keyref="nm-cc"/> deployments:</p>
       <ol>
-        <li>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for 
-          this release and review its contents. The latest information
-          is included in that document.</li>
+        <li>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for this release and review
+          its contents. The latest information is included in that document.</li>
 
-        <li>On delegate hosts, most of the upgrade steps are identical. Use <cmdname>tmux</cmdname>
-          or a similar program to establish sessions on each delegate host and perform the steps at
-          the same time.</li>
+        <li>On delegate hosts, most of the upgrade steps are identical. Use
+            <cmdname>screen</cmdname>, <cmdname>tmux</cmdname> or a similar program to establish
+          sessions on each delegate host and perform the steps at the same time.</li>
 
         <li>Review and verify the settings in delegate host configuration files
           (<filepath>/etc/default/serviced</filepath>) before starting the upgrade.

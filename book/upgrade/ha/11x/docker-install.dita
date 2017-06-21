@@ -1,48 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Updating Docker Engine</title>
+  <title>Updating to Docker CE</title>
   <taskbody>
-    <context>Use this procedure to update Docker Engine
-      to version <ph keyref="lo-version-docker"/>.</context>
+    <context>Use this procedure to update Docker to Docker Community Edition (Docker CE) version <ph
+      keyref="lo-version-docker"/>.</context>
     <steps>
       <step>
         <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>Ensure that Docker Engine updates are disabled.</cmd>
-        <info>During a kernel update, <cmdname>yum</cmdname> stops processing 
-          when it finds the <cmdname>serviced</cmdname> dependency on Docker
-          Engine 1.9.0. Docker Engine updates are explicitly enabled and then
-          disabled in subsequent steps.</info>
-        <substeps>
-          <substep>
-            <cmd>Check the Docker repository file.</cmd>
-            <stepxmp>
-              <codeblock>grep enabled /etc/yum.repos.d/docker.repo</codeblock>
-            </stepxmp>
-            <stepresult>
-              <ul>
-                <li>If the result is <codeph>enabled=0</codeph>,
-                  proceed to the next step.</li>
-                <li>If the result is <codeph>enabled=1</codeph>,
-                  perform the following substeps.</li>
-              </ul>
-              </stepresult>
-          </substep>
-          <substep>
-            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
-              a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Change the value of the <codeph>enabled</codeph> key
-              from <codeph>1</codeph> to <codeph>0</codeph>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Save the file, and then close the text editor.</cmd>
-          </substep>
-        </substeps>
+        <cmd>Remove the Docker repository description file.</cmd>
+        <info>Docker CE uses a different file.</info>
+        <stepxmp>
+          <codeblock>rm -f /etc/yum.repos.d/docker.repo</codeblock>
+        </stepxmp>
       </step>
       
       <step>
@@ -68,33 +41,30 @@
       </step>
       
       <step>
-        <cmd>Enable Docker Engine updates.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with
-              a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Change the value of the <codeph>enabled</codeph> key
-              from <codeph>0</codeph> to <codeph>1</codeph>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Save the file, and then close the text editor.</cmd>
-          </substep>
-        </substeps>
+        <cmd>Install the Docker CE repository description file.</cmd>
+        <stepxmp>
+          <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker-ce.repo
+[docker-ce-stable]
+name=Docker CE Stable - \$basearch
+baseurl=https://download.docker.com/linux/centos/7/\$basearch/stable
+enabled=1
+gpgcheck=1
+gpgkey=https://download.docker.com/linux/centos/gpg
+EOF</codeblock>
+        </stepxmp>
       </step>
       
       <step>
-        <cmd>Identify the name of the LVM thin pool for Docker Engine.</cmd>
+        <cmd>Identify the name of the LVM thin pool for Docker.</cmd>
         <substeps>
           <substep>
-            <cmd>Start the Docker Engine service.</cmd>
+            <cmd>Start the Docker service.</cmd>
             <stepxmp>
               <codeblock>systemctl start docker</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Display the name of the LVM thin pool for Docker Engine.</cmd>
+            <cmd>Display the name of the LVM thin pool for Docker.</cmd>
             <stepxmp>
               <codeblock>docker info 2>/dev/null | grep 'Pool Name'</codeblock>
             </stepxmp>
@@ -104,7 +74,7 @@
             </stepresult>
           </substep>
           <substep>
-            <cmd>Stop the Docker Engine service.</cmd>
+            <cmd>Stop the Docker service.</cmd>
             <stepxmp>
               <codeblock>systemctl stop docker</codeblock>
             </stepxmp>
@@ -113,7 +83,7 @@
       </step>
 
       <step>
-        <cmd>Back up the Docker Engine environment file.</cmd>
+        <cmd>Back up the Docker environment file.</cmd>
         <stepxmp>
           <codeblock>test -f /etc/sysconfig/docker \
   &#38;&#38; mv /etc/sysconfig/docker /etc/sysconfig/docker.bak</codeblock>
@@ -121,25 +91,25 @@
       </step>
       
       <step>
-        <cmd>Remove Docker Engine 1.9.0 without checking dependencies.</cmd>
+        <cmd>Remove Docker 1.9.0 without checking dependencies.</cmd>
         <stepxmp>
           <codeblock>rpm -e --nodeps docker-engine-1.9.0</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Install Docker Engine <ph keyref="lo-version-docker"/>.</cmd>
+        <cmd>Install Docker CE <ph keyref="lo-version-docker"/>.</cmd>
         <stepxmp>
           <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
-  docker-engine-<ph keyref="lo-version-docker"/></codeblock>
+  docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Disable unintended Docker Engine updates.</cmd>
+        <cmd>Disable unintended Docker updates.</cmd>
         <substeps>
           <substep>
-            <cmd>Open <filepath>/etc/yum.repos.d/docker.repo</filepath> with a text editor.</cmd>
+            <cmd>Open <filepath>/etc/yum.repos.d/docker-ce.repo</filepath> with a text editor.</cmd>
           </substep>
           <substep>
             <cmd>Change the value of the <codeph>enabled</codeph> key from <codeph>1</codeph> to

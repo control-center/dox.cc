@@ -80,7 +80,7 @@
           </row>
           <row>
             <entry><varname>SERVICED_DOCKER_DNS</varname></entry>
-            <entry>The Docker Engine DNS configuration for containers.</entry>
+            <entry>The Docker DNS configuration for containers.</entry>
           </row>
           <row>
             <entry><varname>SERVICED_SNAPSHOT_USE_PERCENT</varname></entry>

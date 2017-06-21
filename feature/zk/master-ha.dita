@@ -11,7 +11,7 @@
         <cmd>Log in to a master host node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="cc-feature-zk-lib/zk-define-ips">
+      <step conkeyref="cc-feature-zk-lib/zk-define-ips-ha">
         <cmd/>
       </step>
       

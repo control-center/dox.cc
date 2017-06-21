@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>New features</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> 1.3.3 replaces Docker 1.12.1 with Docker Community Edition (CE)
+        17.03.1. The following new configuration variables are available in
+          <filepath>/etc/default/serviced</filepath> for tuning TCP/IP communications between
+        ZooKeeper ensemble hosts and <ph keyref="nm-cc"/>: <sl>
+          <sli><varname>SERVICED_ZK_CONNECT_TIMEOUT</varname></sli>
+          <sli><varname>SERVICED_ZK_PER_HOST_CONNECT_DELAY</varname></sli>
+          <sli><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname></sli>
+          <sli><varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></sli>
+        </sl>For information about removing the old version of Docker and installing the new, refer
+        to the <cite conkeyref="pubs/cite-upgrade"/>.</p><p>Before upgrading to <ph keyref="nm-cc"/>
+        1.3.3, you <i>must</i> ensure you have sufficient free space in both the thin pool metadata
+        volume and the thin pool data volume. The thin pool metadata volume should be at least 1% of
+        the size of the thin pool data volume (if created by an earlier version of
+          <codeph>serviced-storage</codeph>, it may be smaller). In addition, you must have at least
+        3GB of available space in the thin pool data volume because this is the minimum buffer
+        before an emergency shutdown will commence. If less than 3GB is available, you must
+        provision additional storage or <codeph>serviced</codeph> will fail to start after the
+        upgrade. </p> Refer to the <cite conkeyref="pubs/cite-upgrade"/> for details.</section>
+    
+  </refbody>
+</reference>

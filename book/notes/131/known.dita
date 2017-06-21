@@ -28,19 +28,19 @@
             <entry>CC-1577</entry>
             <entry>Application service details graphs may not populate for time periods less than
               last 12 hours</entry>
-            <entry>Open</entry>
+            <entry>Fixed in 1.3.3</entry>
           </row>
           <row>
             <entry>CC-1621</entry>
             <entry>Deleted application templates may be displayed again after a serviced restart,
               until the view is refreshed</entry>
-            <entry>Open</entry>
+            <entry>Fixed in 1.3.3</entry>
           </row>
           <row>
             <entry>CC-1762</entry>
             <entry>When localized, some elements of the <ph keyref="nm-cc"/> UI are not translated
               as expected</entry>
-            <entry>Open</entry>
+            <entry>Fixed in 1.3.3</entry>
           </row>
           
           <row>

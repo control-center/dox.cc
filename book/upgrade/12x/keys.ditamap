@@ -7,12 +7,20 @@
             href="delegate.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-12x-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-12x-master"
             href="master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-12x-micro"
-            href="micro.dita"
+    <keydef keys="cc-upgrade-12x-minor-delegate"
+            href="minor-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-12x-minor-master"
+            href="minor-master.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-12x-prep-features"
@@ -21,10 +29,6 @@
     />
     <keydef keys="cc-upgrade-12x-prep"
             href="prep.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-12x-zk-image"
-            href="zk-image.dita"
             format="dita"
     />
    </topicgroup>

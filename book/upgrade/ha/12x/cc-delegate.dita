@@ -3,8 +3,8 @@
 <task id="taskid">
   <title>Updating <ph keyref="nm-cc"/> on delegate hosts</title>
   <taskbody>
-    <context>This procedure updates <ph keyref="nm-cc"/> on
-      delegate hosts to version <ph keyref="lo-version-cc"/>.</context>
+    <context>Use this procedure to update <ph keyref="nm-cc"/> on delegate hosts to version <ph
+        keyref="lo-version-cc"/>.</context>
     <context>Perform this procedure on each delegate host in your deployment.</context>
     <steps>
       <step>

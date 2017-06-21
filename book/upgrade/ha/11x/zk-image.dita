@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Updating the ZooKeeper image on ensemble nodes</title>
   <taskbody>
-    <context>Use this procedure to install a new Docker Engine image for
+    <context>Use this procedure to install a new Docker image for
       ZooKeeper into the local repository of delegate hosts that are
       ZooKeeper ensemble nodes.</context>
     <steps>
