@@ -101,7 +101,6 @@
     <chapter href="book/upgrade/ha/12x/prep.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/delegate.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/ha/12x/12x.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/post.ditamap" format="ditamap"/>
   </part>
   
