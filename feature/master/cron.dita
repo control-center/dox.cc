@@ -8,6 +8,13 @@
         is installed, and are started either daily or weekly by <cmdname>anacron</cmdname>.</p>
       <dl>
         <dlentry>
+          <dt><filepath>/etc/cron.hourly/serviced</filepath></dt>
+          <dd>This script invokes <cmdname>logrotate</cmdname> hourly,
+            to manage the <filepath>/var/log/serviced-audit.log</filepath> 
+            and <filepath>/var/log/application-audit.log</filepath> files.</dd>
+          <dd>This script is required on the master host only.</dd>
+        </dlentry>
+        <dlentry>
           <dt><filepath>/etc/cron.daily/serviced</filepath></dt>
           <dd>This script invokes <cmdname>logrotate</cmdname> daily,
             to manage the <filepath>/var/log/serviced.access.log</filepath> 
