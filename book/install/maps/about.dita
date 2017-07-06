@@ -45,7 +45,7 @@
       <dl>
         <dlentry>
           <dt>1320.<keyword keyref="lo-build-date"/></dt>
-          <dd>Modify the <cmdname>yum</cmdname> used to install Docker CE 17.03.1.</dd>
+          <dd>Modify the <cmdname>yum</cmdname> command used to install Docker CE 17.03.1.</dd>
         </dlentry>
         <dlentry>
           <dt>1320.17.171</dt>
