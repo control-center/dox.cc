@@ -106,7 +106,9 @@ EOF</codeblock>
         <cmd>Install Docker CE <ph keyref="lo-version-docker"/>.</cmd>
         <stepxmp><b>With internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install -y docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
+yum install -y --setopt=obsoletes=0 \
+  docker-ce-<ph keyref="lo-version-docker"/>.ce-1.el7.centos \
+  docker-ce-selinux-<ph keyref="lo-version-docker"/>.ce-1.el7.centos</codeblock>
         </stepxmp>
         <stepxmp><b>Without internet access:</b><!-- cc_3377 -->
           <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \

@@ -4,8 +4,8 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title>Docker Engine configuration on master host (CC-3455)</title>
-      <p><!--cc3451-->Previously, the Docker Engine configuration procedures in the <cite
+      <title>Docker configuration on master host (CC-3455)</title>
+      <p><!--cc3451-->Previously, the Docker configuration procedures in the <cite
           conkeyref="pubs/cite-install"/> and the <cite conkeyref="pubs/cite-upgrade"/> instructed
         users to set the <codeph>--insecure-registry</codeph> flag in
           <filepath>/etc/sysconfig/docker</filepath>. This setting is not needed on the master host
