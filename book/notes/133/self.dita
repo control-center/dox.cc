@@ -3,6 +3,14 @@
 <reference id="referenceid">
   <title><ph keyref="nm-cc"/> 1.3.3</title>
   <refbody>
-    <section><p/></section>
+    <section>
+      <note>As of 6 July 2017, the installation and upgrade procedures in the <ph keyref="nm-cc"/>
+        1.3.3 documentation set have been modified to successfully install Docker CE 17.03, which
+        was tested and certified for <ph keyref="nm-cc"/> 1.3.3. A new release of <ph keyref="nm-cc"
+        /> is not necessary to work around the impact of Docker CE 17.06.</note>
+      <note>As of June 29, 2017, a new release of Docker (version 17.06) has negatively impacted our installation
+        process for <ph keyref="nm-cc"/> 1.3.3. A fix to this issue will be released on Monday, July 3, 2017 as 
+        <ph keyref="nm-cc"/> 1.3.4.</note>
+    </section>
   </refbody>
 </reference>

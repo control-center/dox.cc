@@ -509,7 +509,12 @@ EOF</codeblock>
           <substep>
             <cmd>Install Docker CE from the remote repository.</cmd>
             <stepxmp>
-              <codeblock>yum install -y docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
+              <!-- not for 1.3.3 release
+                <codeblock>yum install -y docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
+              -->
+              <codeblock>yum install -y --setopt=obsoletes=0 \
+  docker-ce-17.03.1.ce-1.el7.centos \
+  docker-ce-selinux-17.03.1.ce-1.el7.centos</codeblock>
             </stepxmp>
           </substep>
           <substep>
