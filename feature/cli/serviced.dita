@@ -244,22 +244,20 @@
             file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt> --storage-opts<synph>
-              <var>Option</var>
+          <dt><synph>--storage-opts <var>Option</var>
               <delim>[</delim>--storage-opts <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>Storage arguments to initialize the filesystem.</dd>
         </dlentry>
         <dlentry>
-          <dt>--isvcs-start<synph><var> Option</var>
-              <delim>[--isvcs-start option</delim>
-              <var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dt><synph>--isvcs-start <var>Option</var>
+            <delim>[</delim>--isvcs-start <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>Enables one or more internal services to run on a delegate host. Currently, only
               <codeph>zookeeper</codeph> is supported. If <varname>SERVICED_ISVCS_START</varname> is
             set in the configuration file, its value is used. For more information, see the section
             about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--isvcs-zk-id <synph><var> Indentifier</var></synph>
+          <dt><synph>--isvcs-zk-id <var> Indentifier</var></synph>
           </dt>
           <dd>The unique identifier (a positive integer) of a ZooKeeper ensemble node. If
               <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> is set in the configuration file, its
@@ -267,16 +265,15 @@
             environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--isvcs-zk-quorum <synph><var> Option</var>
-            </synph>[--isvcs-zk-quorum <synph><var>
-                Option</var><synph><delim>]</delim>&#8230;</synph></synph></dt>
+          <dt><synph>--isvcs-zk-quorum <var>Option</var>
+            <delim>[</delim>--isvcs-zk-quorum <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>The list of nodes in a ZooKeeper ensemble. If
               <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname> is set in the configuration file,
             its value is used. For more information, see the section about configuration file
             environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--tls-ciphers <synph><var>Option</var>
+          <dt><synph>--tls-ciphers <var>Option</var>
               <delim>[</delim>--tls-ciphers <var>Option</var><delim>]</delim>&#8230;</synph>
           </dt>
           <dd>The list TLS ciphers that <cmdname>serviced</cmdname> accepts for HTTP traffic. If
@@ -285,7 +282,7 @@
             variables.</dd>
         </dlentry>
         <dlentry>
-          <dt> --tls-min-version <synph><var>Version</var></synph></dt>
+          <dt><synph>--tls-min-version <var>Version</var></synph></dt>
           <dd>The minimum version of TLS that <cmdname>serviced</cmdname> accepts for HTTP traffic.
             Valid values include the default, <codeph>VersionTLS11</codeph>, and
               <codeph>VersionTLS12</codeph>. If  <varname>SERVICED_TLS_MIN_VERSION</varname> is set
@@ -364,7 +361,7 @@
           attempts to connect to the RPC endpoint on the master host. </dd>
         </dlentry>
         <dlentry>
-          <dt>--rpc-cert-verify <synph><var>Value</var></synph></dt>
+          <dt><synph>--rpc-cert-verify <var>Value</var></synph></dt>
           <dd>Determines whether <cmdname>serviced</cmdname> is enabled to perform TLS certificate
             verification for RPC connections. The default value is <filepath>false</filepath>
             (disabled) unless <varname>SERVICED_RPC_CERT_VERIFY</varname> is set in the
@@ -372,22 +369,22 @@
             environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--rpc-disable-tls <synph><var>Value</var></synph></dt>
+          <dt><synph>--rpc-disable-tls <var>Value</var></synph></dt>
           <dd>Determines whether <cmdname>serviced</cmdname> enabled to encrypt RPC traffic with
             TLS. The default value is <filepath>false</filepath> (disabled) unless
               <varname>SERVICED_RPC_DISABLE_TLS</varname> is set in the configuration file. For more
             information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--rpc-tls-ciphers <synph><var>Option</var>
-              <delim>[</delim>--rpc-tls-ciphers<var>Option</var><delim>]</delim>&#8230;</synph></dt>
+          <dt><synph>--rpc-tls-ciphers <var>Option</var>
+              <delim>[</delim>--rpc-tls-ciphers <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>The list of TLS ciphers <cmdname>serviced</cmdname> prefers for RPC connections. If
               <varname>SERVICED_RPC_TLS_CIPHERS</varname> is set in the configuration file, its
             value is used. For more information, see the section about configuration file
             environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--rpc-tls-min-version <synph><var>Version</var></synph></dt>
+          <dt><synph>--rpc-tls-min-version <var>Version</var></synph></dt>
           <dd>The minimum version of TLS <cmdname>serviced</cmdname> accepts for RPC connections.
             Valid values include the default, <filepath>VersionTLS11</filepath>, and
               <filepath>VersionTLS12</filepath>. The default value is <codeph>VersionTLS10</codeph>
@@ -396,14 +393,14 @@
             variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--snapshot-ttl <synph><var>Duration</var></synph></dt>
+          <dt><synph>--snapshot-ttl <var>Duration</var></synph></dt>
           <dd>The number of hours an application data snapshot is retained before removal. The
             default value is 12 unless <varname>SERVICED_SNAPSHOT_TTL</varname> is set in the
             configuration file. For more information, see the section about configuration file
             environment variables. </dd>
         </dlentry>
         <dlentry>
-          <dt>--snapshot-space-percent <synph><var>Value</var></synph></dt>
+          <dt><synph>--snapshot-space-percent <var>Value</var></synph></dt>
           <dd>The amount of free space in the thin pool, expressed as a percentage the total size.
             This value is used to determine whether the thin pool can hold a new snapshot. The
             default value is 20 unless <varname>SERVICED_SNAPSHOT_USE_PERCENT</varname> is set in
@@ -411,12 +408,12 @@
             environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt> --controller-binary <synph><var>Path</var></synph></dt>
+          <dt><synph>--controller-binary <var>Path</var></synph></dt>
           <dd>The path to the container controller binary. The default is
               <filepath>/opt/serviced/bin/serviced-controller</filepath>.</dd>
         </dlentry>
         <dlentry>
-          <dt>--log-driver <synph><var>file</var></synph></dt>
+          <dt><synph>--log-driver <var>file</var></synph></dt>
           <dd>The log driver for all Docker container logs, including containers for <ph
               keyref="nm-cc"/> internal services.</dd>
         </dlentry>
@@ -443,14 +440,14 @@
             file environment variables. </dd>
         </dlentry>
         <dlentry>
-          <dt>--zk-session-timeout <synph><var>Duration</var></synph></dt>
+          <dt><synph>--zk-session-timeout <var>Duration</var></synph></dt>
           <dd>The number of seconds the ZooKeeper leader waits before flushing an inactive
             connection. The default value is 15 unless
               <varname>SERVICED_ZK_SESSION_TIMEOUT</varname> is set in the configuration file. For
             more information, see the section about configuration file environment variables. </dd>
         </dlentry>
         <dlentry>
-          <dt>--auth-token-expiry</dt>
+          <dt><synph>--auth-token-expiry</synph></dt>
           <dd>The expiration time, in seconds, of delegate authentication tokens. The default value
             is 3600 (one hour) unless <varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname> is set in
             the configuration file. For more information, see the section about configuration file
