@@ -16,30 +16,29 @@
     </section>
     <section>
       <title>USAGE</title>
-      <codeblock>serviced backup [command options] [arguments...]</codeblock>
+      <codeblock>serviced backup [arguments...]</codeblock>
     </section>
     <section>
       <title>OPTIONS</title>
       <dl>
         <dlentry>
-          <dt>--exclude '--exclude option --exclude option'</dt>
-          <dd>Subdirectory of the tenant volumes to exclude from a backup. </dd>
+          <dt><synph>--exclude <var>Path</var>
+            <delim>[</delim>--exclude <var>Path</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>One or more tenant volume subdirectory paths to exclude from the backup.</dd>
         </dlentry>
         <dlentry>
-          <dt>--check</dt>
+          <dt><synph>--check</synph></dt>
           <dd>Estimate the backup file size and check available storage space, but do not start the
             backup. </dd>
         </dlentry>
         <dlentry>
-          <dt>--force</dt>
+          <dt><synph>--force</synph></dt>
           <dd>Attempt to perform a backup even if the check for sufficient storage space failed. Use
             this override option with caution. If the backup exhausts storage space on the device,
             you must restart <cmdname>serviced</cmdname>.</dd>
         </dlentry>
-      </dl>
-      <dl>
         <dlentry>
-          <dt>--help, -h</dt>
+          <dt><synph><delim>[</delim>--help<delim>|</delim>--h<delim>]</delim></synph></dt>
           <dd>Show the help for an option.</dd>
         </dlentry>
       </dl>
