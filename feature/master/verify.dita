@@ -7,24 +7,27 @@
       system of a host are sufficient to serve as a <ph keyref="nm-cc"/> master host.</context>
     <steps>
       <step>
-        <cmd>Log in to the candidate host 
-          <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the candidate host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/verify-64">
-        <cmd></cmd>
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-root-space">
+        <cmd/>
       </step>
 
       <step conkeyref="cc-feature-lib-tasks/update-os">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-cpu-count">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-cpu-aes">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-memory-master">
@@ -32,19 +35,19 @@
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-hostid-master">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-name-resolution">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/localhost-entry">
-        <cmd></cmd>
+        <cmd/>
       </step>
 
       <step conkeyref="cc-feature-lib-tasks/update-kernel">
-        <cmd></cmd>
+        <cmd/>
       </step>
       
     </steps>

@@ -6,9 +6,16 @@
     <section>
       <p>The scripts in the following list are installed when <ph keyref="nm-cc"/>
         is installed, and are started either daily or weekly by <cmdname>anacron</cmdname>.</p>
-      <p>Of these scripts, only the first is required on delegate hosts. The others
-      can be removed.</p>
+      <p>Of these scripts, only the first is required on delegate hosts. The others should be
+        removed.</p>
       <dl>
+        <dlentry>
+          <dt><filepath>/etc/cron.hourly/serviced</filepath></dt>
+          <dd>This script invokes <cmdname>logrotate</cmdname> hourly,
+            to manage the <filepath>/var/log/serviced-audit.log</filepath> 
+            and <filepath>/var/log/application-audit.log</filepath> files.</dd>
+          <dd>This script should be removed from delegate hosts.</dd>
+        </dlentry>
         <dlentry>
           <dt><filepath>/etc/cron.daily/serviced</filepath></dt>
           <dd>This script invokes <cmdname>logrotate</cmdname> daily,
@@ -18,11 +25,11 @@
         </dlentry>
         <dlentry>
           <dt><filepath>/etc/cron.weekly/serviced-fstrim</filepath></dt>
-          <dd>This script can be removed from delegate hosts.</dd>
+          <dd>This script should be removed from delegate hosts.</dd>
         </dlentry>
         <dlentry>
           <dt><filepath>/etc/cron.weekly/serviced-zenossdbpack</filepath></dt>
-          <dd>This script can be removed from delegate hosts.</dd>
+          <dd>This script should be removed from delegate hosts.</dd>
         </dlentry>
       </dl>
     </section>
