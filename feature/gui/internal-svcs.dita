@@ -4,7 +4,6 @@
   <title><uicontrol>Internal Services</uicontrol> details</title>
   <refbody>
     <section>
-      <!--<image scale="50" keyref="png-xf-app-internal-svcs"/>-->
       <p>The <uicontrol>Internal Services</uicontrol> page provides summary information about the
         services upon which <ph keyref="nm-cc"/> relies. To view graph data associated with a
         service, click on its name.</p>

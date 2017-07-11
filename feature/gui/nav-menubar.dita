@@ -6,8 +6,8 @@
     <p>The menu bar at the top of the <ph keyref="nm-cc"/> browser interface provides access to
       functional areas of the application, user and application information, and documentation. </p>
     <p>
-      <fig id="fig_z1t_gss_zr">
-        <image id="image_otz_5xs_zr" keyref="png-menubar" scale="50"/>
+      <fig>
+        <image keyref="png-menubar" scale="50"/>
       </fig>
     </p>
   </conbody>

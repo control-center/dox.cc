@@ -4,7 +4,6 @@
   <title>Application details</title>
   <refbody>
     <section>
-      <!--<image scale="50" keyref="png-xf-app-detail"/>-->
       <p>The application details page includes controls for and information about the application. </p>
       <p>For the <ph conkeyref="names/company"/> application, you can view service logs, edit
         services, edit variables, and start or stop the application. Details include public
@@ -16,8 +15,7 @@
       <p>The <uicontrol>Instances</uicontrol> area lists information about each instance of the
         application. You can search for an instance, access the host, view logs, and restart an
         instance.</p>
-      <p>Graphs visually represent the following information about the application: <ul
-          id="ul_k2g_5xp_hz">
+      <p>Graphs visually represent the following information about the application: <ul>
           <li>CPU usage by the system and users</li>
           <li>Memory usage (total RSS and cache)</li>
           <li>DFS usage</li>
