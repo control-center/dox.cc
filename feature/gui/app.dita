@@ -15,7 +15,7 @@
       <p>In the <uicontrol>Application Templates</uicontrol> area, you can search for and add or
         delete an application template.</p><p>The graphs area shows thin pool usage information. You
         can change range, aggregator, and refresh settings. For more information about thin pool
-        requirements, see <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
+        requirements, see <xref keyref="cc-feature-storage-thinpool-minimums"/>.</p>
     </section>
   </refbody>
 </reference>

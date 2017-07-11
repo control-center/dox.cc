@@ -5,7 +5,7 @@
   <taskbody>
     <context>Use this procedure to increase the size of a tenant volume in a <ph keyref="nm-cc"/>
       thin pool. <ph conkeyref="strings/fmi-int"/>
-      <xref keyref="cc-feature-manage-thinpool-minimums"/>. </context>
+      <xref keyref="cc-feature-storage-thinpool-minimums"/>. </context>
     
     <steps>
       <step>

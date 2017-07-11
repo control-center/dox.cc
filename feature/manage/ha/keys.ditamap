@@ -15,9 +15,5 @@
             href="stop.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-ha-thinpool-examine"
-            href="thinpool-examine.dita"
-            format="dita"
-    />
    </topicgroup>
 </map>

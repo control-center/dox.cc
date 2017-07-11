@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-   <title>CLI reference</title>
+   <title>CLI</title>
    <chapter keyref="cc-feature-cli-cli">
       <topicref keyref="cc-feature-cli-invoking-serviced"/>
       <topicref keyref="cc-feature-cli-serviced"/>

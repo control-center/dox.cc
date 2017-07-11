@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
-<task id="taskid"><!-- CC_3199 -->
+<task id="taskid">
   <title>Changing rolling restart</title>
   <shortdesc>Use this procedure to stop all instances of a service before restarting, instead of
     performing a rolling restart.</shortdesc>

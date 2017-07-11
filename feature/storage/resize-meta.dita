@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Adding space to the data area of a <ph keyref="nm-cc"/> thin pool</title>
+  <title>Adding space to the metadata area of a <ph keyref="nm-cc"/> thin pool</title>
   <taskbody>
-    <context>Use this procedure to increase the amount of space in the data 
+    <context>Use this procedure to increase the amount of space in the metadata 
       area of a <ph keyref="nm-cc"/> thin pool. <ph conkeyref="strings/fmi-int"/>
-      <xref keyref="cc-feature-manage-thinpool-minimums"/>. </context>
+      <xref keyref="cc-feature-storage-thinpool-minimums"/>. </context>
     
     <steps>
       <step>
@@ -22,22 +22,21 @@
       </step>
       
       <step>
-        <cmd>Add space to the data storage area 
+        <cmd>Add space to the metadata storage area 
           of the <cmdname>serviced</cmdname> thin pool.</cmd>
         <stepxmp>In the following command:
           <ul>
-            <li>Replace <varname>Total-Size</varname> with the sum of the existing device size plus
-              the space to add to the device, in gigabytes. Include the units identifier,
-                <codeph>G</codeph>.</li>
+            <li>Replace <varname>Size</varname> with the amount of space 
+              to add (in megabytes) and the units identifier (<codeph>M</codeph>).</li>
             <li>Replace <varname>Volume-Group</varname> with the 
               name of the LVM volume group identified in the previous step.</li>
             <li>Replace <varname>Logical-Volume</varname> with the name of the logical volume
               identified in the previous step.</li>
           </ul>
-          <codeblock>lvextend -L+<varname>Total-Size</varname>G <varname>Volume-Group</varname>/<varname>Logical-Volume</varname></codeblock>
+          <codeblock>lvextend -L+<varname>Size</varname>M <varname>Volume-Group</varname>/<varname>Logical-Volume</varname>_tmeta</codeblock>
         </stepxmp>
       </step>
-
+      
     </steps>
   </taskbody>
 </task>

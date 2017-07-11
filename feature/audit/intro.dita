@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Audit logging</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> performs audit logging.</p>
+      
+    </section>
+  </refbody>
+</reference>

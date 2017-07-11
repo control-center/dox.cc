@@ -10,15 +10,15 @@
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+      <step conkeyref="cc-feature-state-stop-1/stop-app">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-cc">
+      <step conkeyref="cc-feature-state-stop-1/stop-cc">
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-containers">
+      <step conkeyref="cc-feature-state-stop-1/stop-containers">
         <cmd></cmd>
       </step>
       

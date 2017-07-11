@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
-<concept id="conceptid"><!-- CC_3199 -->
+<concept id="conceptid">
   <title>Rolling restart of services </title>
   <shortdesc>To reduce or eliminate downtime for services with multiple instances, <ph
       keyref="nm-cc"/> restarts instances of the service one at a time.</shortdesc>

@@ -21,8 +21,8 @@
           <li>DFS usage</li>
           <li>Network usage</li>
           <li>Open connection information</li>
-        </ul>For more information, see <xref keyref="cc-feature-manage-emer-sdown-overview"/> and
-          <xref keyref="cc-feature-manage-rolling-restart-overview"/>.</p>
+        </ul>For more information, see <xref keyref="cc-feature-state-emergency-shutdown"/> and
+          <xref keyref="cc-feature-restart-overview"/>.</p>
     </section>
   </refbody>
 </reference>

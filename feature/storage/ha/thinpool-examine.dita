@@ -7,7 +7,7 @@
        <p>Beginning with release 1.3.0, <ph keyref="nm-cc"/> initiates an emergency shutdown when
         the minimum required amounts of free space are not available in the
           <cmdname>serviced</cmdname> thin pool or tenant volumes. <ph conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-feature-manage-thinpool-minimums"/>.</p>
+        <xref keyref="cc-feature-storage-thinpool-minimums"/>.</p>
 
       <p>Use this procedure to display the amount of free space in a <ph keyref="nm-cc"/> thin pool
         and tenant volumes, to determine how much space is available in the LVM volume group that
@@ -63,7 +63,7 @@
           <choice>If the amount of free space in the volume group is not sufficient to increase 
             one or both of the storage areas of the <cmdname>serviced</cmdname> thin pool
             to their required minimums, add physical or logical storage to the volume group.
-            For more information, refer to your operating system documentation.</choice>
+            For more information, see <xref keyref="cc-upgrade-ha-resize-data"/>.</choice>
           <choice>If the amount of free space in the volume group is sufficient to increase 
             one or both of the storage areas of the <cmdname>serviced</cmdname> thin pool
             to their required minimums, proceed to the next step</choice>
@@ -74,12 +74,12 @@
         <cmd>Increase the free space in one or both areas of
           the <cmdname>serviced</cmdname> thin pool.</cmd>
         <choices>
-          <choice>To increase the amount of space in the metadata 
-            area, proceed to <xref keyref="cc-feature-manage-resize-meta"/>.</choice>
-          <choice>To increase the amount of space in the data 
-            area, proceed to <xref keyref="cc-feature-manage-resize-data"/>.</choice>
+          <choice>To increase the amount of space in the metadata area,
+            proceed to <xref keyref="cc-feature-storage-resize-meta"/>.</choice>
+          <choice>To increase the amount of space in the data area,
+            proceed to <xref keyref="cc-upgrade-ha-resize-data"/>.</choice>
           <choice>To increase the size of a tenant volume, which relies on the data area of the thin
-            pool, proceed to <xref keyref="cc-feature-manage-resize-tenant-vd"/>.</choice>
+            pool, proceed to <xref keyref="cc-feature-storage-resize-tenant-vd"/>.</choice>
         </choices>
       </step>
     </steps>
