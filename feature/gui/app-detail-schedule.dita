@@ -4,7 +4,7 @@
   <title><uicontrol>Scheduled Tasks</uicontrol> table</title>
   <refbody>
     <section>
-      <image scale="50" keyref="png-xf-app-detail-schedule"/>
+      <image scale="50" keyref="png-schedule"/>
     </section>
   </refbody>
 </reference>

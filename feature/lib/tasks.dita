@@ -242,16 +242,16 @@
       <step id="check-name-resolution">
         <cmd>Verify that name resolution works on this host.</cmd>
         <stepxmp>
-          <codeblock>df -h /</codeblock>
+          <codeblock>hostname -i</codeblock>
         </stepxmp>
-        <stepresult>If the result does not include , add an entry
+        <stepresult>If the result is not a valid IPv4 address, add an entry
         for the host to the network nameserver, or to <filepath>/etc/hosts</filepath>.</stepresult>
       </step>
       
       <step id="check-root-space">
         <cmd>Verify that the size of the root filesystem is adequate.</cmd>
         <stepxmp>
-          <codeblock>hostname -i</codeblock>
+          <codeblock>df -h /</codeblock>
         </stepxmp>
         <stepresult>If the result does not include a minimum of 10GB of available space,
           stop this procedure and select a different host.</stepresult>

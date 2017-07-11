@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>CC images</title>
+   <topicgroup>
+    <keydef keys="png-menubar"
+            href="menubar.png"
+            format="png"
+    />
+    <keydef keys="svg-volstats"
+            href="volstats.svg"
+            format="svg"
+    />
+    <keydef keys="png-schedule"
+            href="schedule.png"
+            format="png"
+    />
+    <keydef keys="png-cfdisk1"
+            href="cfdisk1.png"
+            format="png"
+    />
+    <keydef keys="png-cfdisk2"
+            href="cfdisk2.png"
+            format="png"
+    />
+    <keydef keys="jpg-ports"
+            href="ports.jpg"
+            format="jpg"
+    />
+   </topicgroup>
+</map>
