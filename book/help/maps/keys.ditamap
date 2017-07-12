@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in help/maps</title>
+  <topicgroup>
+    <keydef keys="cc-help-maps-admin"
+            href="admin.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-maps-cli"
+            href="cli.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

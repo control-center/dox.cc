@@ -14,7 +14,7 @@
           space in the <ph keyref="nm-cc"/> thin pool for application data. 
           <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
             resize it. <ph conkeyref="strings/fmi-int"/>
-            <xref keyref="cc-feature-manage-thinpool-minimums"/>.</note></li>
+            <xref keyref="cc-feature-storage-thinpool-minimums"/>.</note></li>
         <li>This release replaces Docker 1.12.1 with Docker Community Edition (CE) 17.03.1. The
           upgrade instructions include steps to remove the <cmdname>yum</cmdname> repository
           description for Docker and replace it with the repository description for Docker CE.</li>

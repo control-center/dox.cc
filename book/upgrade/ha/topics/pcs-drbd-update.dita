@@ -115,7 +115,7 @@
       
       <step>
         <cmd>Start the high-availability cluster, and then start applications.</cmd>
-        <info><ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-manage-ha-start"/>.</info>
+        <info><ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-state-ha-start"/>.</info>
       </step>
     </steps>
   </taskbody>

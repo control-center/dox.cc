@@ -3,18 +3,6 @@
 <map>
  <title>Keys in manage</title>
   <topicgroup>
-    <keydef keys="cc-feature-manage-admin"
-            href="admin.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-manage-ha"
-            href="manage-ha.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-manage"
-            href="manage.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-manage-multiple"
             href="multiple.dita"
             format="dita"

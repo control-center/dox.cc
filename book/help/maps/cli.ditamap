@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>CLI</title>
-   <chapter keyref="cc-feature-cli-cli">
+   <chapter keyref="cc-help-maps-cli">
       <topicref keyref="cc-feature-cli-invoking-serviced"/>
       <topicref keyref="cc-feature-cli-serviced"/>
       <topicref keyref="cc-feature-cli-serviced-backup"/>
@@ -16,6 +16,6 @@
       <topicref keyref="cc-feature-cli-serviced-service"/>
       <topicref keyref="cc-feature-cli-serviced-snapshot"/>
       <topicref keyref="cc-feature-cli-serviced-storage"/>
-      <topicref keys="serviced-vars" keyref="cc-feature-vars-file"/>
+      <topicref keyref="cc-feature-vars-file"/>
    </chapter>
 </bookmap>

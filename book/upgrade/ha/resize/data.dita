@@ -6,7 +6,7 @@
     <section>
       <p>Use the procedures in this section to increase the amount of space in the data 
         area of a <ph keyref="nm-cc"/> thin pool. For more information about required minimums,
-        see <xref keyref="cc-feature-manage-thinpool-minimums"/>. Perform the 
+        see <xref keyref="cc-feature-storage-thinpool-minimums"/>. Perform the 
         procedures in this section in order.</p>
       
       <note>Before proceeding, use the <ph keyref="nm-cc"/> backup feature to perform a complete backup.

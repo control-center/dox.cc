@@ -15,6 +15,10 @@
             href="intro.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-state-manage"
+            href="manage.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-state-start-1"
             href="start-1.dita"
             format="dita"

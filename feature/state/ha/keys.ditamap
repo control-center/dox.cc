@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in manage/ha</title>
+ <title>Keys in state/ha</title>
   <topicgroup>
-    <keydef keys="cc-feature-manage-ha-start"
+    <keydef keys="cc-feature-state-ha-manage"
+            href="manage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-ha-start"
             href="start.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-ha-stop-master"
+    <keydef keys="cc-feature-state-ha-stop-master"
             href="stop-master.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-ha-stop"
+    <keydef keys="cc-feature-state-ha-stop"
             href="stop.dita"
             format="dita"
     />

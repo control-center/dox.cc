@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <title>Browser</title>
+  <chapter keyref="cc-help-gui-gui">
+    <topicref keyref="cc-help-gui-nav-menubar"/>
+    <topicref keyref="cc-help-gui-app">
+      <topicref keyref="cc-help-gui-internal-svcs"/>
+      <topicref keyref="cc-help-gui-app-detail">
+        <topicref keyref="cc-help-gui-app-detail-ip-assign"/>
+        <topicref keyref="cc-help-gui-app-detail-config"/>
+        <topicref keyref="cc-help-gui-app-detail-services"/>
+        <topicref keyref="cc-help-gui-app-detail-schedule"/>
+      </topicref>
+    </topicref>
+    <topicref keyref="cc-help-gui-pools"/>
+    <topicref keyref="cc-help-gui-hosts">
+      <topicref keyref="cc-help-gui-hosts-details"/>
+    </topicref>
+    <topicref keyref="cc-help-gui-logs"/>
+    <topicref keyref="cc-help-gui-backup-restore-page"/>
+  </chapter>
+</bookmap>

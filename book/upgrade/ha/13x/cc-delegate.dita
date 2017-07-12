@@ -72,6 +72,6 @@
     </steps>
     <postreq>When all delegate hosts are updated, start the cluster. 
       <ph conkeyref="strings/fmi-int"/> 
-      <xref keyref="cc-feature-manage-manage-ha"/>.</postreq>
+      <xref keyref="cc-feature-state-ha-manage"/>.</postreq>
   </taskbody>
 </task>

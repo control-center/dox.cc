@@ -20,7 +20,7 @@
           current node, for use in a subsequent step.</stepresult>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+      <step conkeyref="cc-feature-state-stop-1/stop-app">
         <cmd></cmd>
       </step>
       

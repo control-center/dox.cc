@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in gui</title>
+ <title>Keys in help/gui</title>
   <topicgroup>
-    <keydef keys="cc-feature-gui-app-detail-config"
+    <keydef keys="cc-help-gui-app-detail-config"
             href="app-detail-config.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-app-detail-ip-assign"
+    <keydef keys="cc-help-gui-app-detail-ip-assign"
             href="app-detail-ip-assign.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-app-detail-schedule"
+    <keydef keys="cc-help-gui-app-detail-schedule"
             href="app-detail-schedule.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-app-detail-services"
+    <keydef keys="cc-help-gui-app-detail-services"
             href="app-detail-services.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-app-detail"
+    <keydef keys="cc-help-gui-app-detail"
             href="app-detail.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-app"
+    <keydef keys="cc-help-gui-app"
             href="app.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-backup-restore-page"
+    <keydef keys="cc-help-gui-backup-restore-page"
             href="backup-restore-page.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-gui"
+    <keydef keys="cc-help-gui-gui"
             href="gui.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-hosts-details"
+    <keydef keys="cc-help-gui-hosts-details"
             href="hosts-details.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-hosts"
+    <keydef keys="cc-help-gui-hosts"
             href="hosts.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-internal-svcs"
+    <keydef keys="cc-help-gui-internal-svcs"
             href="internal-svcs.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-logs"
+    <keydef keys="cc-help-gui-logs"
             href="logs.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-nav-menubar"
+    <keydef keys="cc-help-gui-nav-menubar"
             href="nav-menubar.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-gui-pools"
+    <keydef keys="cc-help-gui-pools"
             href="pools.dita"
             format="dita"
     />

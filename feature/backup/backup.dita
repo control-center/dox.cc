@@ -13,19 +13,19 @@
       </step>
       <step>
         <cmd>Click <uicontrol>Create Backup</uicontrol>. </cmd>
-        <info><!-- CC_3333 --><ph keyref="nm-cc"/> estimates the size of the backup file and
+        <info><ph keyref="nm-cc"/> estimates the size of the backup file and
           displays the amount of free space. </info>
       </step>
       <step>
         <cmd>Depending on available storage space, proceed as follows:</cmd>
-        <choices id="choices_sn1_h1p_hz">
+        <choices>
           <choice>If storage space is adequate, click <uicontrol>Create Backup</uicontrol>.</choice>
-          <choice><ph id="backup-space-insufficient">If storage space is insufficient, take action
-              to increase available space, and then try the backup again.</ph></choice>
+          <choice>If storage space is insufficient, take action
+            to increase available space, and then try the backup again.</choice>
         </choices>
       </step>
     </steps>
-    <result id="result_kql_fqt_qx"><ph id="backup-success">After a successful backup, the system
-        displays the name of the backup file.</ph></result>
+    <result>After a successful backup, the system
+      displays the name of the backup file.</result>
   </taskbody>
 </task>

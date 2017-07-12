@@ -11,7 +11,7 @@
           in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
 
-      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+      <step conkeyref="cc-feature-state-stop-1/stop-app">
         <cmd/>
       </step>
 

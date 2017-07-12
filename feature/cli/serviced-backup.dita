@@ -10,9 +10,12 @@
     <section>
       <p>You can back up the entire system or exclude certain directories, such as a directory that
         contains application performance data. </p>
-      <p><ph conkeyref="cc-feature-backup-overview/backup-space-est"/>
-        <ph conkeyref="cc-feature-backup-cli/exit-code-1"/>
-        <ph conkeyref="cc-feature-backup-backup/backup-space-insufficient"/></p>
+      <p>Before starting a backup, <ph keyref="nm-cc"/>
+        estimates the size of the backup file and compares it to the amount of free space. If
+        storage space is insufficient, <ph keyref="nm-cc"/> does not start a backup.
+        Exit code 1 indicates insufficient space.
+        If storage space is insufficient, take action
+        to increase available space, and then try the backup again.</p>
     </section>
     <section>
       <title>USAGE</title>

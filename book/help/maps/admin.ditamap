@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Admin</title>
-   <chapter keyref="cc-feature-manage-admin">
+   <chapter keyref="cc-help-maps-admin">
       <topicref keyref="cc-feature-storage-thinpool-minimums">
          <topicref keyref="cc-feature-storage-thinpool-examine"/>
          <topicref keyref="cc-feature-storage-resize-meta"/>

@@ -3,10 +3,6 @@
 <map>
  <title>Keys in cli</title>
   <topicgroup>
-    <keydef keys="cc-feature-cli-cli"
-            href="cli.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-cli-invoking-serviced"
             href="invoking-serviced.dita"
             format="dita"

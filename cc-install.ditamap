@@ -47,7 +47,6 @@
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/backup/keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
       <mapref href="feature/config/keys.ditamap" format="ditamap"/>
       <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
@@ -56,6 +55,8 @@
       <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
       <mapref href="feature/offline/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
       <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -73,7 +74,7 @@
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
 
   <appendices>
-    <appendix href="feature/manage/manage.ditamap" format="ditamap"/>
+    <appendix href="feature/state/manage.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
     <appendix href="feature/offline/offline.ditamap" format="ditamap"/>

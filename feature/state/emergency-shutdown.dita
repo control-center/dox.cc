@@ -46,18 +46,3 @@
       </ol></p>
   </conbody>
 </concept>
-<!-- Graceful/emergency shutdown feature undocumented info and notes from QA:
- 1) An internal-only tool is implemented to evaluate threshold parameters - not customer facing. 
-  2) This feature implemented a service start up sequence.  Both the shutdown sequence and startup sequence values are specified in the 
-  service definition of each service.  A value of 0 indicates it will start up/shut down last.  Services with a value of 1 will start/stop first, 
-2, second and so on.  StartLevel ensures that the startup sequence occurs in an order that makes certain services available sooner during startup.
-Shutdown/Start up order precedence:
-1 - shuts down/starts up first
-2 - shuts down/starts up all services second - these services will not initiate shutdown/startup until all level 1 services are shutdown/startup
-3 - shuts down/starts up all services third - these services will not initiate shutdown/startup until all level 1 services are shutdown/startup
-numbering may go on and is accounted for accordingly.
-0 - these services are the very last to be shutdown/startup.
-
-NOTE: Setting a shutdown/startup value to a parent that does not have a running service (ie: opentsdb) will not cascade the shutdown level to its 
-children. So if you assign 1 to opentsdb but leave writer and reader at 0, writer and reader will shutdown/startup with the last grouping of services. Where 
-as, setting 1 to Zenoss.resmgr, since it is a running service, all children will shutdown/startup all at once (first)n.   -->
