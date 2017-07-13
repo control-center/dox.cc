@@ -4,7 +4,26 @@
   <title>Audit logging</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> performs audit logging.</p>
+      <p>The <cmdname>serviced</cmdname> service writes messages to an audit log file on the master
+        host when the following types of operations or events occur in the <ph keyref="nm-cc"/> cluster:<ul>
+          <li>authentication success or failure, and logouts</li>
+          <li>access control failures</li>
+          <li>security policy changes</li>
+          <li>configuration changes</li>
+          <li>data deletions</li>
+          <li>starting, stopping, and restarting services</li>
+        </ul>The messages record the time, user identity, and information about the operation or
+        event in plain text.</p>
+        
+      <p>The default location of the <cmdname>serviced</cmdname> audit log file
+        is <filepath>/var/log/serviced</filepath>,
+          which can be changed by setting the <varname>SERVICED_LOG_DIR</varname> variable 
+          in <filepath>/etc/default/serviced</filepath>. The log file name 
+          is <filepath>serviced-audit.log</filepath>.</p>
+      
+      <p><ph keyref="nm-cc"/> supports application audit logging for applications that are
+        configured for
+      audit logging directory </p>
       
     </section>
   </refbody>

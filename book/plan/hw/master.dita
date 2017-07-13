@@ -3,22 +3,22 @@
 <reference id="referenceid">
   <title>Master host resources</title>
   <refbody>
-    <section id="section_avp_1sq_wx">
+    <section>
       <p> You can create a single-host or multi-host deployment of <ph keyref="nm-cc"/>.<note>An
           under-resourced master host cannot function properly. Deploy <ph keyref="nm-cc"/> and the
           application it manages on a master host that meets the application's minimum
           requirements.</note></p>
     </section>
-    <section id="section_dxs_t1r_wx">
+    <section>
       <title>Multi-host deployments</title>
       <p>Best results are achieved in production deployments that include one <ph keyref="nm-cc"/>
         master host and two or more delegate hosts. In this configuration, the master host runs in
         its own, separate resource pool, and runs only <ph keyref="nm-cc"/> internal services.
         Delegate hosts run application services. The following table lists minimum resource
         requirements for the master host. Delegate hosts have additional requirements.</p>
-      <table id="table_hmj_md1_xx">
+      <table>
         <tgroup cols="2">
-          <colspec colname="newCol1" colnum="1" colwidth="1*"/>
+          <colspec colname="c0" colnum="1" colwidth="1*"/>
           <colspec colname="c1" colnum="2" colwidth="1.0*"/>
           <thead>
             <row>
@@ -28,7 +28,7 @@
           </thead>
           <tbody>
             <row>
-              <entry><b>CPU cores</b><ul id="ul_uj2_sd1_xx">
+              <entry><b>CPU cores</b><ul>
                   <li>64-bit only</li>
                   <li>real or virtual</li>
                   <li>must support Advanced Encryption Standard (AES)</li>
@@ -47,7 +47,7 @@
         </tgroup>
       </table>
     </section>
-    <section id="section_tbq_hsq_wx">
+    <section>
       <title>Single-host deployments</title>
       <p>In a single-host deployment, the <ph keyref="nm-cc"/> master host runs all <ph
           keyref="nm-cc"/> internal services and all application services. The following table lists
@@ -58,8 +58,8 @@
       <p>
         <table>
           <tgroup cols="2">
-            <colspec colname="newCol1" colnum="1" colwidth="1*"/>
-            <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+            <colspec colname="c0" colnum="1" colwidth="1*"/>
+            <colspec colname="c1" colnum="2" colwidth="1*"/>
             <thead>
               <row>
                 <entry>Resource</entry>

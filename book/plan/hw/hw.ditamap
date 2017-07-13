@@ -3,9 +3,11 @@
 <bookmap>
 <title>Hardware</title>
   <chapter keyref="cc-plan-hw-hw">
-    <topicref keyref="cc-plan-hw-master"/>
-    <topicref keyref="cc-plan-hw-delegate"/>
-    <topicref keyref="cc-plan-hw-master-storage"/>
-    <topicref keyref="cc-plan-hw-delegate-storage"/>
+    <topicref keyref="cc-plan-hw-master">
+      <topicref keyref="cc-plan-hw-master-storage"/>
+    </topicref>
+    <topicref keyref="cc-plan-hw-delegate">
+      <topicref keyref="cc-plan-hw-delegate-storage"/>
+    </topicref>
   </chapter>
 </bookmap>
