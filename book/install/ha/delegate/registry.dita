@@ -66,6 +66,10 @@
         </substeps>
       </step>
       
+      <step>
+        <cmd>Restart the Docker service.</cmd>
+        <stepxmp><codeblock>systemctl restart docker</codeblock></stepxmp>
+      </step>
     </steps>
   </taskbody>
 </task>
