@@ -10,8 +10,7 @@
           <li>access control failures</li>
           <li>security policy changes</li>
           <li>configuration changes</li>
-          <li>data deletions</li>
-          <li>starting, stopping, and restarting services</li>
+          <li>starting, stopping, and restarting <cmdname>serviced</cmdname></li>
         </ul>The messages record the time, user identity, and information about the operation or
         event in plain text.</p>
         
