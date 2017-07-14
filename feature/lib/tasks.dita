@@ -671,17 +671,6 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the master host.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
-                master host:</p>
-              <codeblock>masterHost="<varname>Master-Host</varname>"</codeblock>
-              <p>The value of this variable must match the value of
-                the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
-                in <filepath>/etc/default/serviced</filepath>.</p>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Create variables for adding arguments to the Docker configuration file. The
                 <codeph>--exec-opt</codeph> argument is a workaround for <xref
                 keyref="url-docker-17653"/> on RHEL/CentOS 7.x systems.</cmd>
@@ -690,14 +679,13 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myMount="--storage-opt dm.mountopt=discard"
-myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=$masterHost:5000"</codeblock>
+myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Add the arguments to the Docker configuration file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag $myReg'"' \
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>
@@ -748,6 +736,7 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
               delimits the declaration of <varname>OPTIONS</varname>.</note>
             </info>
           </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
           <substep>
             <cmd>Restart the Docker service.</cmd>
             <stepxmp><codeblock>systemctl restart docker </codeblock></stepxmp>

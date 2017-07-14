@@ -27,5 +27,9 @@
             href="prep.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-delegate-registry"
+            href="registry.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>

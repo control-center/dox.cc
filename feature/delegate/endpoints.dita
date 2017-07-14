@@ -8,7 +8,6 @@
         coordination, it is not a <ph keyref="nm-cc"/> internal service. The instructions for
         setting the ZooKeeper endpoint are included in the next chapter.</p>
       <p>The following configuration variables identify the internal services endpoints:<dl>
-        <dlentry conkeyref="cc-feature-vars-file/SERVICED_DOCKER_REGISTRY"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_ENDPOINT"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOG_ADDRESS"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOGSTASH_ES"><dt/><dd/></dlentry>
@@ -31,8 +30,8 @@
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
           <substep>
-            <cmd>Replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or
-            hostname of the master host.</cmd>
+            <cmd>Replace <codeph>localhost</codeph> or <codeph>{{SERVICED_MASTER_IP}}</codeph> 
+              with the IP address or hostname of the master host.</cmd>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>
