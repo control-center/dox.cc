@@ -56,32 +56,7 @@
         </substeps>
       </step>
 
-      <step id="kill-selinux" importance="optional">
-        <cmd>Disable Security-Enhanced Linux (SELinux), if desired.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Determine whether SELinux is installed.</cmd>
-            <stepxmp>
-              <codeblock>test -f /etc/selinux/config &#38;&#38; grep '&#94;SELINUX=' /etc/selinux/config</codeblock>
-            </stepxmp>
-            <info>If the preceding commands return a result, SELinux is installed. <ul>
-              <li>If the result includes <codeph>enforcing</codeph> or 
-                <codeph>permissive</codeph>, SELinux is enabled.</li>
-              <li>If the result includes <codeph>disabled</codeph>, SELinux is not enabled.</li>
-            </ul>If desired, perform the remaining substeps to enable SELinux. Otherwise, proceed to the next step.</info>
-          </substep>
-          <substep>
-            <cmd>Set the operating mode to <codeph>disabled</codeph>.</cmd>
-            <stepxmp>Open <filepath>/etc/selinux/config</filepath> in a text editor, and change the
-              value of the <varname>SELINUX</varname> variable to
-              <codeph>disabled</codeph>.</stepxmp>
-          </substep>
-          <substep>
-            <cmd>Confirm the new setting.</cmd>
-            <stepxmp><codeblock>grep '&#94;SELINUX=' /etc/selinux/config</codeblock></stepxmp>
-          </substep>
-        </substeps>
-      </step>
+      
       
       <step id="docker-hub">
         <cmd>Authenticate to the Docker Hub repository.</cmd>

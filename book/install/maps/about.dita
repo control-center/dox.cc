@@ -59,7 +59,7 @@
           <dd>Update release number (1.3.3).</dd>
           <dd>Add support for Docker CE 17.03.1.</dd>
           <dd>Add ZooKeeper variables for tuning TCP/IP communications with resource pools.</dd>
-          <dd>Modify procedures to reflect support for SELinux in enforcing mode.</dd>
+          <dd>Remove step for disabling SELinux.</dd>
         </dlentry>
         <dlentry>
           <dt>1320.17.122</dt>

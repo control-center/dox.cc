@@ -19,10 +19,6 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
-        <cmd></cmd>
-      </step>
-      
       <step conkeyref="cc-feature-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>
