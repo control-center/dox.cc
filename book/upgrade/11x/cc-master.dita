@@ -33,10 +33,10 @@
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
         <stepxmp><b>With internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+yum --enablerepo=zenoss-stable install serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
         <stepxmp><b>Without internet access:</b>
-          <!-- cc_3377 --><codeblock>yum install -y --enablerepo=zenoss-mirror \
+          <!-- cc_3377 --><codeblock>yum install --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>

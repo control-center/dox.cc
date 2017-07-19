@@ -38,7 +38,7 @@
           <substep>
             <cmd>Install the <codeph>yum-utils</codeph> package.</cmd>
             <stepxmp>
-              <codeblock>yum install -y yum-utils</codeblock>
+              <codeblock>yum install yum-utils</codeblock>
             </stepxmp>
           </substep>
         </substeps>

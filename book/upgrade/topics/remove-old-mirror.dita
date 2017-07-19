@@ -20,7 +20,7 @@
       <step>
         <cmd>Remove the existing mirror:</cmd>
         <stepxmp>
-          <codeblock>yum remove -y <varname>Old-Mirror</varname></codeblock>
+          <codeblock>yum remove <varname>Old-Mirror</varname></codeblock>
         </stepxmp>
       </step>
 

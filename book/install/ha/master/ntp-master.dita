@@ -20,7 +20,7 @@
       <step>
         <cmd>Install the NTP package.</cmd>
         <stepxmp>
-          <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y ntp</codeblock>
+          <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install ntp</codeblock>
         </stepxmp>
       </step>
       

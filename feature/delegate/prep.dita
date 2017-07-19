@@ -43,7 +43,7 @@
           <substep>
             <cmd>Install the package.</cmd>
             <stepxmp>
-              <codeblock>yum install -y ntp</codeblock>
+              <codeblock>yum install ntp</codeblock>
             </stepxmp>
           </substep>
           <substep>

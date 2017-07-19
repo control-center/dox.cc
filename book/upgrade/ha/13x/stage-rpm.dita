@@ -29,7 +29,7 @@
             <cmd>Remove the mirror.</cmd>
             <stepxmp>Replace <varname>Old-Mirror</varname> with the name of the
               <ph conkeyref="names/company"/> repository mirror returned in the previous substep:
-              <codeblock>yum remove -y <varname>Old-Mirror</varname></codeblock>
+              <codeblock>yum remove <varname>Old-Mirror</varname></codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -38,7 +38,7 @@
       <step>
         <cmd>Install the repository mirror.</cmd>
         <stepxmp>
-          <codeblock>yum install -y /tmp/yum-mirror-*.rpm</codeblock>
+          <codeblock>yum install /tmp/yum-mirror-*.rpm</codeblock>
         </stepxmp>
         <stepresult>The <cmdname>yum</cmdname> command copies the contents 
           of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
