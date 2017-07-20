@@ -15,6 +15,7 @@
       <li>Storage monitoring and emergency shutdown of services to minimize the risk of data
         corruption</li>
       <li>Rolling restart of services to reduce downtime of multi-instance services</li>
+      <li>Audit logging, including support for application audit logging</li>
     </ul>
    </conbody>
 </concept>

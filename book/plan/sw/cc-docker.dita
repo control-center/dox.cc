@@ -31,7 +31,7 @@
     <dl>
       <dlentry>
         <dt>Docker storage</dt>
-        <dd>Docker and <ph keyref="nm-cc"/> data are stored in a customized LVM thin pool that is
+        <dd>Docker and <ph keyref="nm-cc"/> data are stored in customized LVM thin pools that are
           created from one or more block devices or partitions, or from one or more LVM volume
           groups.</dd>
       </dlentry>

@@ -417,7 +417,13 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <info>By default, RHEL/CentOS systems store log data only in memory or in a ring buffer in
           the <filepath>/run/log/journal</filepath> directory. By performing this step, log data
           persists and can be saved indefinitely, if you implement log file rotation practices. For
-          more information, refer to your operating system documentation.</info>
+          more information, refer to your operating system documentation.
+          <note>The following commands are safe when performed during
+            an installation, before Docker or <ph keyref="nm-cc"/>
+            are installed or running. To enable persistent log files
+            after installation, stop <ph keyref="nm-cc"/>, stop
+            Docker, and then enter the following commands.</note>
+        </info>
         <stepxmp>
           <codeblock>mkdir -p /var/log/journal &#38;&#38; systemctl restart systemd-journald</codeblock>
         </stepxmp>

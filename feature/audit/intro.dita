@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Audit logging</title>
+  <title><ph keyref="nm-cc"/> audit logging</title>
   <refbody>
     <section>
       <p>The <cmdname>serviced</cmdname> service writes messages to an audit log file on the master
-        host when the following types of operations or events occur in the <ph keyref="nm-cc"/> cluster:<ul>
-          <li>authentication success or failure, and logouts</li>
-          <li>access control failures</li>
-          <li>security policy changes</li>
-          <li>configuration changes</li>
-          <li>starting, stopping, and restarting <cmdname>serviced</cmdname></li>
-        </ul>The messages record the time, user identity, and information about the operation or
-        event in plain text.</p>
+        host when configuration changes occur in the <ph keyref="nm-cc"/> cluster. The messages record 
+        the time, user identity, and information about the change in plain text.</p>
         
-      <p>The default location of the <cmdname>serviced</cmdname> audit log file
-        is <filepath>/var/log/serviced</filepath>,
-          which can be changed by setting the <varname>SERVICED_LOG_DIR</varname> variable 
-          in <filepath>/etc/default/serviced</filepath>. The log file name 
-          is <filepath>serviced-audit.log</filepath>.</p>
+      <p>The default location of the <cmdname>serviced</cmdname> audit log file is
+          <filepath>/var/log/serviced</filepath>. The location is determined by the 
+          <varname>SERVICED_LOG_PATH</varname> variable in
+          <filepath>/etc/default/serviced</filepath>. The log file name is
+          <filepath>serviced-audit.log</filepath>.</p>
       
-      <p><ph keyref="nm-cc"/> supports application audit logging for applications that are
-        configured for
-      audit logging directory </p>
+      <p>The <cmdname>serviced</cmdname> audit log directory contains one or two additional files:<ul>
+          <li><filepath>serviced.access.log</filepath> records HTTP/S requests and is always
+            present.</li>
+          <li><filepath>application-audit.log</filepath> records application audit messages, and is
+            present only if an application is configured to write audit messages through <ph
+              keyref="nm-cc"/>. (<ph keyref="nm-rm"/> is configured for audit logging through <ph
+              keyref="nm-cc"/>, <ph keyref="nm-core"/> is not.)</li>
+        </ul></p>
+      
+      <p>The files in the <cmdname>serviced</cmdname> audit log directory are managed by
+        <cmdname>logrotate</cmdname>. The <cmdname>serviced</cmdname> RPM installation process
+        installs <cmdname>logrotate</cmdname>, if necessary, and creates
+        <filepath>/etc/cron.hourly/serviced</filepath>. Then, the <cmdname>anacron</cmdname>
+        service invokes <cmdname>logrotate</cmdname> every hour. The operations that
+        <cmdname>logrotate</cmdname> performs on <cmdname>serviced</cmdname> audit log files are
+        specified in <filepath>/opt/serviced/etc/logrotate.conf</filepath>. The default
+        configuration rotates, compresses, and removes files as necessary to ensure that the logs
+        occupy no more than 10GB of storage. To store larger volumes of log files: <ul>
+          <li>Modify the <cmdname>logrotate</cmdname> configuration file, and then mount the
+            <cmdname>serviced</cmdname> audit log directory on a larger local or remote file
+            system.</li>
+          <li>Forward the log files to a log management application.</li>
+          <li>Copy the files to a larger local or remote file system.</li>
+        </ul></p>
       
     </section>
   </refbody>
