@@ -110,6 +110,7 @@
     <appendix href="book/upgrade/maps/thins.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
     <appendix href="feature/offline/offline-upgrade.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
