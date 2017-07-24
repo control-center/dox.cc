@@ -3,7 +3,6 @@
 <bookmap >
  <title>Delegate</title>
   <chapter keyref="cc-upgrade-maps-delegate">
-    <topicref keyref="cc-feature-master-device-naming"/>
     <topicref keyref="cc-upgrade-11x-docker-install"/>
     <topicref keyref="cc-upgrade-11x-docker-config"/>
     <topicref keyref="cc-upgrade-11x-cc-delegate"/>

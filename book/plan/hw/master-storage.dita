@@ -66,8 +66,9 @@
           <dd>Mount point: <filepath>/var/log/serviced</filepath></dd>
           <dd>Resource: One or more block devices or partitions, one or more LVM physical volumes,
             or a remote file server that is compatible with Linux.</dd>
-          <dd>Preparation: Depends on configuration. Typically, additional space is allocated
-            for the root filesystem.</dd>
+          <dd>Preparation: Depends on configuration. Typically, additional space is allocated for
+            the root filesystem. For more information about audit logging, refer to the 
+          <cite conkeyref="pubs/cite-ref"/>.</dd>
         </dlentry>
         
         <dlentry>

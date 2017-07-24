@@ -5,7 +5,6 @@
   <chapter keyref="cc-install-maps-delegate">
     <topicref keyref="cc-feature-delegate-verify"/>
     <topicref keyref="cc-feature-delegate-storage"/>
-    <topicref keyref="cc-feature-master-device-naming"/>
     <topicref keyref="cc-feature-delegate-prep"/>
     <topicref keyref="cc-feature-master-docker-install">
       <topicref keyref="cc-feature-master-docker-install-on"/>

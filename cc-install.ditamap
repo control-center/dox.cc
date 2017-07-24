@@ -65,7 +65,7 @@
     </booklists>
     <topicref href="book/install/maps/about.dita"/>
   </frontmatter>
-
+  <chapter href="feature/offline/offline.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
   <chapter href="feature/config/master.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
@@ -77,7 +77,6 @@
     <appendix href="feature/state/manage.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
-    <appendix href="feature/offline/offline.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
   </appendices>
 

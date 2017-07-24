@@ -102,7 +102,8 @@
           <substep>
             <cmd>Identify filesystems mounted from the master host.</cmd>
             <stepxmp>
-              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts</codeblock>
+              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs'</codeblock>
             </stepxmp>
             <stepresult>
               <ul>
@@ -114,7 +115,8 @@
           <substep>
             <cmd>Force the filesystems to dismount.</cmd>
             <stepxmp>
-              <codeblock>for FS in $(awk '/serviced/ { print $2 }' &#60; /proc/mounts)
+              <codeblock>for FS in $(awk '/serviced/ { print $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs')
 do
   umount -f $FS
 done</codeblock>
@@ -123,7 +125,8 @@ done</codeblock>
           <substep>
             <cmd>Identify filesystems mounted from the master host.</cmd>
             <stepxmp>
-              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts</codeblock>
+              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs'</codeblock>
             </stepxmp>
             <stepresult>
               <ul>
@@ -135,7 +138,8 @@ done</codeblock>
           <substep>
             <cmd>Perform a lazy dismount.</cmd>
             <stepxmp>
-              <codeblock>for FS in $(awk '/serviced/ { print $2 }' &#60; /proc/mounts)
+              <codeblock>for FS in $(awk '/serviced/ { print $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs')
 do
   umount -f -l $FS
 done</codeblock>
@@ -148,9 +152,10 @@ done</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Determine whether any filesystems remain mounted.</cmd>
+            <cmd>Determine whether any filesystems remain mounted from the master host.</cmd>
             <stepxmp>
-              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts</codeblock>
+              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs'</codeblock>
             </stepxmp>
             <stepresult>
               <ul>
