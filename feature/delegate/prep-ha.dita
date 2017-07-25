@@ -56,10 +56,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
         </substeps>
       </step>
       
-      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
-        <cmd></cmd>
-      </step>
-      
       <step>
         <cmd>Reboot the host.</cmd>
         <stepxmp>

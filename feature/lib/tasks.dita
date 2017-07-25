@@ -834,7 +834,7 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install \
+              <codeblock>yum install --disablerepo=\* --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>

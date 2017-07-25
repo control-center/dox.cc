@@ -69,6 +69,7 @@
       <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
       <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/zk/ha/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
       <toc/>
@@ -85,7 +86,6 @@
   <chapter href="book/install/ha/maps/auth.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/install-delegate.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/config-delegate.ditamap" format="ditamap"/>
-  <!-- items in zk are commented for RM/Core; check before building -->
   <chapter href="feature/zk/zk-ha.ditamap" format="ditamap"/>
   
   <appendices>
