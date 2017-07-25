@@ -3,9 +3,7 @@
 <task id="taskid">
   <title>Preparing a delegate host</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: If you 
-      are creating a deployment without internet access, 
-      perform the steps in <xref keyref="cc-feature-offline-offline"/>,
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro"/>,
       before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS
@@ -17,10 +15,6 @@
       </step>
 
       <step conkeyref="cc-feature-lib-tasks/journal">
-        <cmd></cmd>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
         <cmd></cmd>
       </step>
       
@@ -63,10 +57,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
-        <cmd></cmd>
       </step>
       
       <step>

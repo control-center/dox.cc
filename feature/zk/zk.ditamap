@@ -11,10 +11,7 @@
     <topicref keyref="cc-feature-zk-master"/>
     <topicref keyref="cc-feature-zk-delegate1"/>
     <topicref keyref="cc-feature-zk-delegate2"/>
-    <topicref keyref="cc-feature-zk-image">
-      <topicref keyref="cc-feature-zk-image-pull"/>
-      <topicref keyref="cc-feature-zk-image-import"/>
-    </topicref>
+    <topicref keyref="cc-feature-zk-image-import"/>
     <topicref keyref="cc-feature-zk-enable"/>
     <topicref keyref="cc-feature-zk-other"/>
    </chapter>
