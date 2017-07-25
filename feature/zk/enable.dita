@@ -47,23 +47,34 @@
             </stepxmp>
           </substep>
           <substep>
+            <cmd>Define IP address variables for each node in the ZooKeeper ensemble.</cmd>
+            <stepxmp>Replace <varname>Master</varname> with the IP address or hostname of the <ph
+                keyref="nm-cc"/> master host, and replace <varname>Delegate-A</varname> and
+                <varname>Delegate-B</varname> with the IP addresses or hostnames of the delegate
+              hosts in the ensemble:
+              <codeblock>node1=<varname>Master</varname>
+node2=<varname>Delegate-A</varname>
+node3=<varname>Delegate-B</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
             <cmd>Query the master host and identify its role in the ensemble.</cmd>
-            <stepxmp>Replace <varname>Master</varname> with the hostname or IP address of the master host:
-              <codeblock>{ echo stats; sleep 1; } | nc <varname>Master</varname> 2181 | grep Mode</codeblock>
+            <stepxmp>
+              <codeblock>{ echo stats; sleep 1; } | nc $node1 2181 | grep Mode</codeblock>
             </stepxmp>
             <stepresult>The result includes <codeph>leader</codeph> or
               <codeph>follower</codeph>.</stepresult>
           </substep>
           <substep>
             <cmd>Query delegate host A and identify its role in the ensemble.</cmd>
-            <stepxmp>Replace <varname>Delegate-A</varname> with the hostname or IP address of delegate host A:
-              <codeblock>{ echo stats; sleep 1; } | nc <varname>Delegate-A</varname> 2181 | grep Mode</codeblock>
+            <stepxmp>
+              <codeblock>{ echo stats; sleep 1; } | nc $node2 2181 | grep Mode</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Query delegate host B and identify its role in the ensemble.</cmd>
-            <stepxmp>Replace <varname>Delegate-B</varname> with the hostname or IP address of delegate host B:
-              <codeblock>{ echo stats; sleep 1; } | nc <varname>Delegate-B</varname> 2181 | grep Mode</codeblock>
+            <stepxmp>
+              <codeblock>{ echo stats; sleep 1; } | nc $node3 2181 | grep Mode</codeblock>
             </stepxmp>
           </substep>
           <substep>

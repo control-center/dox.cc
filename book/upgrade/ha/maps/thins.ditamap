@@ -2,9 +2,9 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
  <title>Thin pool resize</title>
-  <appendix keyref="cc-feature-manage-thinpool-minimums">
-    <topicref keyref="cc-feature-manage-ha-thinpool-examine"/>
-    <topicref keyref="cc-feature-manage-resize-meta"/>
+  <appendix keyref="cc-feature-storage-thinpool-minimums">
+    <topicref keyref="cc-feature-storage-ha-thinpool-examine"/>
+    <topicref keyref="cc-feature-storage-resize-meta"/>
     <topicref keyref="cc-upgrade-ha-resize-data">
       <topicref keyref="cc-upgrade-ha-resize-identify"/>
       <topicref keyref="cc-upgrade-ha-resize-stop"/>
@@ -15,6 +15,6 @@
         <topicref keyref="cc-upgrade-ha-resize-start-primary"/>
       </topicref>
     </topicref>
-    <topicref keyref="cc-feature-manage-resize-tenant-vd"/>
+    <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
   </appendix>
 </bookmap>

@@ -4,8 +4,39 @@
   <title>Master host storage areas</title>
   <refbody>
     <section>
-      <p>The <ph keyref="nm-cc"/> master host requires the following, separate storage areas:</p>
+      <p>A <ph keyref="nm-cc"/> master host requires the following storage areas:</p>
       <dl>
+        <dlentry>
+          <dt>Root</dt>
+          <dd>Size: Depends on configuration</dd>
+          <dd>Type: XFS file system (typically)</dd>
+          <dd>Mount point: <filepath>/</filepath></dd>
+          <dd>Resource: One or more block devices or partitions,
+            or one or more LVM physical volumes.</dd>
+          <dd>Preparation: None. The file system is created when the operating system is installed.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>Temporary</dt>
+          <dd>Size: 10GB</dd>
+          <dd>Type: XFS file system (typically)</dd>
+          <dd>Mount point: <filepath>/tmp</filepath></dd>
+          <dd>Resource: One or more block devices or partitions,
+            or one or more LVM physical volumes.</dd>
+          <dd>Preparation: Depends on configuration. Typically, additional space is allocated
+            for the root filesystem, but a separate real or logical partition may be used.</dd>
+        </dlentry>
+        
+        <dlentry>
+          <dt>Swap</dt>
+          <dd>Size: 12GB to 16GB</dd>
+          <dd>Type: swap</dd>
+          <dd>Mount point: None</dd>
+          <dd>Resource: One or more block devices or partitions,
+            one or more LVM physical volumes, or a special file on the root filesystem.</dd>
+          <dd>Preparation: Depends on configuration.</dd>
+        </dlentry>
+        
         <dlentry>
           <dt>Docker data</dt>
           <dd>Size: 50GB</dd>
@@ -13,8 +44,8 @@
           <dd>Mount point: None</dd>
           <dd>Resource: One or more block devices or partitions,
             or one or more LVM physical volumes.</dd>
-          <dd>Preparation: None required; the installation procedures include
-            steps for using <cmdname>serviced-storage</cmdname> to create the thin pool.</dd>
+          <dd>Preparation: None. The installation procedures include steps for creating the thin
+            pool.</dd>
         </dlentry>
         
         <dlentry>
@@ -29,6 +60,18 @@
         </dlentry>
         
         <dlentry>
+          <dt><ph keyref="nm-cc"/> audit logging</dt>
+          <dd>Size: 10GB (default)</dd>
+          <dd>Type: XFS file system</dd>
+          <dd>Mount point: <filepath>/var/log/serviced</filepath></dd>
+          <dd>Resource: One or more block devices or partitions, one or more LVM physical volumes,
+            or a remote file server that is compatible with Linux.</dd>
+          <dd>Preparation: Depends on configuration. Typically, additional space is allocated for
+            the root filesystem. For more information about audit logging, refer to the 
+          <cite conkeyref="pubs/cite-ref"/>.</dd>
+        </dlentry>
+        
+        <dlentry>
           <dt>Application data</dt>
           <dd>Size: 200GB suggested. The size should be twice as large as the base device,
           which determines the size of tenant virtual devices.</dd>
@@ -36,8 +79,8 @@
           <dd>Mount point: None</dd>
           <dd>Resource: One or more block devices or partitions,
             or one or more LVM physical volumes.</dd>
-          <dd>Preparation: None. The installation procedures include steps for using
-              <cmdname>serviced-storage</cmdname> to create the thin pool.</dd>
+          <dd>Preparation: None. The installation procedures include steps for creating the thin
+            pool.</dd>
         </dlentry>
         
         <dlentry>
@@ -55,8 +98,6 @@
             mounting the resource.</dd>
         </dlentry>        
       </dl>
-      <p>In addition, the master host requires a dedicated swap area, and a root filesystem with a
-        minimum of 10GB of free space in <filepath>/tmp</filepath>.</p>
     </section>
   </refbody>
 </reference>

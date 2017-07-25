@@ -5,7 +5,7 @@
   <shortdesc>The <cmdname>serviced service</cmdname> command lets you manage an application's
     individual services.</shortdesc>
   <refbody>
-    <section><!-- CC_3097 -->
+    <section>
       <p>Use this command to perform administrative actions on a specific service or view service status information.</p>
     </section>
     <section>
@@ -22,19 +22,18 @@
         <dlentry>
           <dt>status</dt>
           <dd>Display the status of deployed services.</dd>
-          <!-- cc_3097: emergency stopped -->
           <dd>The status <codeph>emergency-stopped</codeph> indicates that <ph keyref="nm-cc"/>
             performed an emergency shutdown of the service due to low storage. Before you can
             restart the service, resolve the space issue, and then use  the
               <cmdname>clear-emergency</cmdname> command (listed below) to remove the
             emergency-shutdown flags. For more information, see <xref
-              keyref="cc-feature-manage-emer-sdown-overview"/>.</dd>
+              keyref="cc-feature-state-emergency-shutdown"/>.</dd>
         </dlentry>
         <dlentry>
           <dt>add</dt>
           <dd>Add a service.</dd>
         </dlentry>
-        <dlentry><!--CC_3107-->
+        <dlentry>
           <dt>clear-emergency</dt>
           <dd>Reset the emergency-shutdown flag for a service that was shut down due to a
             low-storage condition. </dd>
@@ -56,12 +55,11 @@
           <dd>Assign an IP address to service endpoints that require an explicit IP address.</dd>
         </dlentry>
         <dlentry>
-          <dt>start</dt> <!-- CC_3201 -->
+          <dt>start</dt> 
           <dd>Start one or more services. </dd>
         </dlentry>
         <dlentry>
           <dt>restart</dt>
-          <!-- CC_3201 -->
           <dd>Restart one or more services. </dd>
         </dlentry>
         <dlentry>
@@ -126,7 +124,6 @@
         </dlentry>
       </dl>
     </section>
-    <!--CC_2792-->
     <section>
       <title>serviced service [start | stop]</title>
       <p>By default, <ph keyref="nm-cc"/> schedules services in the background to start, and stop. The asynchronous scheduling improves the speed of these operations, especially in
@@ -145,7 +142,6 @@
           </dlentry>
         </dl></p>
     </section>
-    <!--CC_2792, CC_3199_rebalance-->
     <section>
       <title>serviced service restart</title>
       <p>By default, <ph keyref="nm-cc"/> schedules services in the background to restart to improve the speed of the operation, especially in
@@ -156,7 +152,6 @@
       <codeblock>serviced service restart [<varname>commandOptions</varname>] \ 
     {<varname>ServiceID</varname> | <varname>instanceID</varname>}</codeblock>
       <p>Command option: <dl>
-<!-- CC_344 -->
         <dlentry>
             <dt>--auto-launch</dt>
             <dd>Recursively schedules child services.</dd>

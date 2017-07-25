@@ -3,10 +3,10 @@
 <bookmap>
    <title>Stop</title>
    <appendix keyref="cc-upgrade-maps-stop">
-      <topicref keyref="cc-feature-manage-stop-1"/>
-      <topicref keyref="cc-feature-manage-stop-n">
-         <topicref keyref="cc-feature-manage-stop-n-master"/>
-         <topicref keyref="cc-feature-manage-stop-n-delegate"/>
+      <topicref keyref="cc-feature-state-stop-1"/>
+      <topicref keyref="cc-feature-state-stop-n">
+         <topicref keyref="cc-feature-state-stop-n-master"/>
+         <topicref keyref="cc-feature-state-stop-n-delegate"/>
       </topicref>
    </appendix>
 </bookmap>

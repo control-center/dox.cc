@@ -12,6 +12,22 @@
       </topicmeta>
     </keydef> 
 
+    <keydef keys="nm-core">
+      <topicmeta>
+        <keywords>
+          <keyword>Zenoss Core</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef> 
+
+    <keydef keys="nm-rm">
+      <topicmeta>
+        <keywords>
+          <keyword>Zenoss Resource Manager</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef> 
+
   </topicgroup>
 </map>
 

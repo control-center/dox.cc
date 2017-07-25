@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding space to a tenant volume</title>
+  <taskbody>
+    <context>Use this procedure to increase the size of a tenant volume in a <ph keyref="nm-cc"/>
+      thin pool. <ph conkeyref="strings/fmi-int"/>
+      <xref keyref="cc-feature-storage-thinpool-minimums"/>. </context>
+    
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the tenant device to resize.</cmd>
+        <stepxmp>
+          <codeblock>serviced volume status</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Display the device mapper name of the <cmdname>serviced</cmdname> thin pool.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED_DM_THINPOOLDEV' /etc/default/serviced \
+  | sed -e 's/.*=//'</codeblock>
+        </stepxmp>
+        <info>Typically, the name is <codeph>/dev/mapper/serviced-serviced--pool</codeph>.</info>
+      </step>
+      
+      <step>
+        <cmd>Increase the size of the tenant device.</cmd>
+        <stepxmp>In the following command: <ul>
+            <li>Replace <varname>Device-Mapper-Name</varname> with the device mapper name of the
+              thin pool.</li>
+            <li>Replace <varname>Tenant-ID</varname> with the identifier of the tenant
+              device.</li>
+            <li>Replace <varname>Total-Size</varname> with the sum of the existing device size plus
+              the space to add to the device, in gigabytes. Include the units identifier,
+                <codeph>G</codeph>.</li>
+          </ul>
+          <codeblock>serviced-storage resize -d /opt/serviced/var/volumes \
+  -o dm.thinpooldev=<varname>Device-Mapper-Name</varname> <varname>Tenant-ID</varname> <varname>Total-Size</varname>G</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

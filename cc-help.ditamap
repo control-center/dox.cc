@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="3" modification="3"/>
+        <vrm version="1" release="4" modification="0"/>
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -43,10 +43,18 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="book/help/gui/keys.ditamap" format="ditamap"/>
+      <mapref href="book/help/maps/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/audit/keys.ditamap" format="ditamap"/>
       <mapref href="feature/backup/keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/gui/keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/nat/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/restart/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
@@ -55,9 +63,9 @@
     <topicref href="book/help/front/about.dita"/>
   </frontmatter>
   
-  <chapter href="feature/gui/gui.ditamap" format="ditamap"/>
-  <chapter href="feature/cli/cli.ditamap" format="ditamap"/>
-  <chapter href="feature/manage/admin.ditamap" format="ditamap"/>
+  <chapter href="book/help/gui/gui.ditamap" format="ditamap"/>
+  <chapter href="book/help/maps/cli.ditamap" format="ditamap"/>
+  <chapter href="book/help/maps/admin.ditamap" format="ditamap"/>
 
   <backmatter>
     <booklists>

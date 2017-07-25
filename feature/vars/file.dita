@@ -254,6 +254,13 @@
           <dd>The location of <cmdname>serviced</cmdname> backup files.</dd> 
         </dlentry>
         
+        <dlentry id="SERVICED_LOG_PATH">
+          <dt><varname>SERVICED_LOG_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/var/log/serviced</filepath></dd>
+          <dd>The location of <cmdname>serviced</cmdname> audit log files. 
+          Non-audit (operations) messages are written to <cmdname>journald</cmdname>.</dd> 
+        </dlentry>
+        
         <dlentry id="SERVICED_KEY_FILE">
           <dt><varname>SERVICED_KEY_FILE</varname></dt>
           <dd><b>Default</b>: <filepath>$TMPDIR/zenoss_key.[0-9]+</filepath></dd> 

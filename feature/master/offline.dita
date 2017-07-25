@@ -3,18 +3,13 @@
 <task id="taskid">
   <title>Optional: Configuring offline use</title>
   <taskbody>
-    <context>
-      <p><b><ph conkeyref="names/company"/> customers</b>: If you 
-      are creating a deployment without internet access, 
-      perform this procedure.</p>
-      
-      <p>Use this procedure to configure a host to operate without internet access. The 
+    <context>Use this procedure to configure a host to operate without internet access. The 
       following configuration variable informs <cmdname>serviced</cmdname> that internet 
       access is not available: 
       <dl>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_OUTBOUND_IP"><dt/><dd/></dlentry>
       </dl>
-      </p>
+      
       <p>Perform these steps:</p>
       </context>
     <steps>

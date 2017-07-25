@@ -38,7 +38,7 @@
         </dlentry>
         <dlentry>
           <dt><synph>--out <var>Path</var></synph></dt>
-          <dd>The location for the output file.</dd>
+          <dd>The location for the output file. The default is the current directory.</dd>
         </dlentry>
         <dlentry>
           <dt><synph><delim>[</delim>--debug<delim>|</delim>--d<delim>]</delim></synph></dt>

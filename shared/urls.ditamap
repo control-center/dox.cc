@@ -153,4 +153,11 @@
       </topicmeta>
     </keydef>
   </topicgroup>
+  <topicgroup>
+    <keydef keys="url-zenoss-community " href="http://community.zenoss.com/home" format="html" scope="external">
+      <topicmeta>
+        <linktext>Zenoss Community</linktext>
+      </topicmeta>
+    </keydef>
+  </topicgroup>
 </map>

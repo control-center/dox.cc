@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Application details</title>
+  <refbody>
+    <section>
+      <p>The application details page includes controls for and information about the application. </p>
+      <p>For the <ph conkeyref="names/company"/> application, you can view service logs, edit
+        services, edit variables, and start or stop the application. Details include public
+        endpoints, IP assignments, configuration files, services associated with the application,
+        and instances of the application.</p>
+      <p>In the <uicontrol>Public Endpoints</uicontrol> area, you can search for and add public
+        endpoints. The table lists public endpoint information for the services that are associated
+        with the application. You can start, stop, and delete service public endpoints. </p>
+      <p>The <uicontrol>Instances</uicontrol> area lists information about each instance of the
+        application. You can search for an instance, access the host, view logs, and restart an
+        instance.</p>
+      <p>Graphs visually represent the following information about the application: <ul>
+          <li>CPU usage by the system and users</li>
+          <li>Memory usage (total RSS and cache)</li>
+          <li>DFS usage</li>
+          <li>Network usage</li>
+          <li>Open connection information</li>
+        </ul>For more information, see <xref keyref="cc-feature-state-emergency-shutdown"/> and
+          <xref keyref="cc-feature-restart-overview"/>.</p>
+    </section>
+  </refbody>
+</reference>
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
 <topic id="strings">
-  <title>...as (root|zenoss|...)</title>
+  <title>Various strings of text</title>
   <body>
     <p><ph id="login-root">as <codeph>root</codeph>, or as a user with superuser privileges</ph></p>
     <p><ph id="login-serviced">as a user with <cmdname>serviced</cmdname> CLI privileges</ph></p>

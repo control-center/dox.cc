@@ -31,10 +31,6 @@
             href="cron.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-master-device-naming"
-            href="device-naming.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-master-docker-config"
             href="docker-config.dita"
             format="dita"

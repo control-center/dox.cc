@@ -17,7 +17,7 @@
           space in the <ph keyref="nm-cc"/> thin pool for application data. 
           <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
           resize it. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-manage-thinpool-minimums"/>.</note></li>
+          <xref keyref="cc-feature-storage-thinpool-minimums"/>.</note></li>
         <li>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
           keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
           /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two

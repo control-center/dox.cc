@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in restart</title>
+  <topicgroup>
+    <keydef keys="cc-feature-restart-modify"
+            href="modify.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-restart-overview"
+            href="overview.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in help/gui</title>
+  <topicgroup>
+    <keydef keys="cc-help-gui-app-detail-config"
+            href="app-detail-config.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-app-detail-ip-assign"
+            href="app-detail-ip-assign.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-app-detail-schedule"
+            href="app-detail-schedule.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-app-detail-services"
+            href="app-detail-services.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-app-detail"
+            href="app-detail.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-app"
+            href="app.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-backup-restore-page"
+            href="backup-restore-page.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-gui"
+            href="gui.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-hosts-details"
+            href="hosts-details.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-hosts"
+            href="hosts.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-internal-svcs"
+            href="internal-svcs.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-logs"
+            href="logs.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-nav-menubar"
+            href="nav-menubar.dita"
+            format="dita"
+    />
+    <keydef keys="cc-help-gui-pools"
+            href="pools.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

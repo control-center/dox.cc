@@ -3,12 +3,8 @@
 <task id="taskid">
   <title>Preparing the master host operating system</title>
   <taskbody>
-    <prereq>
-      <note><b><ph conkeyref="names/company"/> customers</b>: If you 
-        are creating a deployment without internet access, 
-        perform the steps in <xref keyref="cc-feature-offline-offline"/>,
-        before performing this procedure.</note>
-    </prereq>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro"/>,
+        before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS  
       host as a <ph keyref="nm-cc"/> master host.</context>
@@ -17,10 +13,6 @@
       <step>
         <cmd>Log in to the candidate master host 
           <ph conkeyref="strings/login-root"/>.</cmd>
-      </step>
-
-      <step conkeyref="cc-feature-lib-tasks/firewall">
-        <cmd/>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/journal">
@@ -42,7 +34,7 @@
           <substep>
             <cmd>Install the package.</cmd>
             <stepxmp>
-              <codeblock>yum install -y ntp</codeblock>
+              <codeblock>yum install ntp</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -66,10 +58,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
-        <cmd></cmd>
       </step>
       
       <step>

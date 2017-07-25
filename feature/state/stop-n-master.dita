@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping a master host (multi-host deployment)</title>
+  <taskbody>
+    <context>Use this procedure to stop the <ph keyref="nm-cc"/> 
+      service (<cmdname>serviced</cmdname>) on the master host in a multi-host deployment.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-state-stop-1/stop-app">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-state-stop-1/stop-cc">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-state-stop-1/stop-containers">
+        <cmd></cmd>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

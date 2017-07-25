@@ -40,7 +40,7 @@
             <info>The following commands require internet access or a local mirror of operating
               system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -106,13 +106,13 @@ EOF</codeblock>
         <cmd>Install Docker CE <ph keyref="lo-version-docker"/>.</cmd>
         <stepxmp><b>With internet access:</b>
           <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum install -y --setopt=obsoletes=0 \
+yum install --setopt=obsoletes=0 \
   docker-ce-<ph keyref="lo-version-docker"/>.ce-1.el7.centos \
   docker-ce-selinux-<ph keyref="lo-version-docker"/>.ce-1.el7.centos</codeblock>
 
         </stepxmp>
         <stepxmp><b>Without internet access:</b><!-- cc_3377 -->
-          <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
+          <codeblock>yum install --disablerepo=\* --enablerepo=zenoss-mirror \
   docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
         </stepxmp>
       </step>
