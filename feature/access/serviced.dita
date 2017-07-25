@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring a regular group as the <ph keyref="nm-cc"/> administrative group</title>
+  <title>Configuring a regular group as the <ph keyref="nm-cc"/> browser interface access group</title>
   <taskbody>
-    <context>Use this procedure to change the default administrative group of <ph keyref="nm-cc"/>
+    <context>Use this procedure to change the default browser interface access group of <ph keyref="nm-cc"/>
       from <codeph>wheel</codeph> to a non-system group. 
       <p>The following <ph keyref="nm-cc"/> variables are used in this procedure:
         <dl>
@@ -21,10 +21,18 @@
       
       <step>
         <cmd>Create a variable for the group to designate as the administrative group.</cmd>
-        <info>In this example, the group is <codeph>serviced</codeph>. You may
-          create and use a different group.</info>
+        <info>In this example, the group is <codeph>ccuser</codeph>. You may
+          choose a different group, or choose the <cmdname>serviced</cmdname> group.
+        (Choosing the serviced group allows all browser interface users to use the CLI.)</info>
         <stepxmp>
-          <codeblock>myGROUP=serviced</codeblock>
+          <codeblock>myGROUP=ccuser</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create a new group, if necessary.</cmd>
+        <stepxmp>
+          <codeblock>groupadd $GROUP</codeblock>
         </stepxmp>
       </step>
       

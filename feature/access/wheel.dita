@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Adding users to the default administrative group</title>
+  <title>Adding users to the default browser interface access group</title>
   <taskbody>
-    <context>Use this procedure to add users to the default administrative group of <ph
-        keyref="nm-cc"/>, <codeph>wheel</codeph>. Performing this procedure enables users to gain
-      access to the <ph keyref="nm-cc"/> browser interface. <note>Perform this procedure or the next
+    <context>Use this procedure to add users to the default browser interface access group of <ph
+        keyref="nm-cc"/>, <codeph>wheel</codeph>. <note>Perform this procedure or the next
         procedure, but not both.</note>
     </context>
     <steps>
@@ -14,7 +13,7 @@
       </step>
       
       <step>
-        <cmd>Add a user to the system group.</cmd>
+        <cmd>Add a user to the <codeph>wheel</codeph> group.</cmd>
         <stepxmp>
           <p>Replace <varname>User</varname> with the name of a login account on the master
             host.</p>

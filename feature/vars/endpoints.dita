@@ -5,10 +5,7 @@
   <refbody>
     <section>
       <p>The variables in the following table must be set identically on all <ph keyref="nm-cc"/>
-        delegate hosts. On the master host, the default values of these variables do not need to be
-        changed, unless the Docker registry is hosted on a system other than the master. In that
-        case, <varname>SERVICED_DOCKER_REGISTRY</varname> must be set explicitly on the master host,
-        too. </p>
+        delegate hosts.</p>
       <p>The <varname>SERVICED_AUTH_TOKEN_EXPIRATION</varname> variable affects RPC, mux,
         and internal services endpoint traffic.</p>
       <table>
@@ -26,7 +23,7 @@
           <tbody>
             <row>
               <entry><varname>SERVICED_DOCKER_REGISTRY</varname></entry>
-              <entry><varname>Master-Host</varname><codeph>:5000</codeph></entry>
+              <entry>(varies)</entry>
               <entry>The local Docker registry for <ph keyref="nm-cc"/>
                 internal services images and application images.</entry>
             </row>

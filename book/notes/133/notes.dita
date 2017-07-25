@@ -5,12 +5,10 @@
   <refbody>
     <section>
       <title>Docker configuration on master host (CC-3455)</title>
-      <p><!--From Scott: I think the info under Notes and Workaround should stay for now, too, we can probably drop it at the next feature release.--><!--cc3451-->Previously,
-        the Docker configuration procedures in the <cite conkeyref="pubs/cite-install"/> and
-        the <cite conkeyref="pubs/cite-upgrade"/> instructed users to set the
-          <codeph>--insecure-registry</codeph> flag in <filepath>/etc/sysconfig/docker</filepath>.
-        This setting is not needed on the master host in a <ph keyref="nm-cc"/> cluster, and
-        required on all delegate hosts.</p>
+      <p>Previously, the Docker configuration procedures in the installation and upgrade guides instructed users to set the
+          <codeph>--insecure-registry</codeph> flag in <filepath>/etc/sysconfig/docker</filepath>
+        only on delegate hosts. Actually, this setting is required on all cluster hosts when the local Docker registry endpoint is not
+        <codeph>localhost:5000</codeph>. The guides have been updated with the correct information.</p>
     </section> 
     
   </refbody>
