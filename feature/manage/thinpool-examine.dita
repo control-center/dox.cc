@@ -28,7 +28,7 @@
         <info>
           <fig>
             <title>Example output with highlighted values</title>
-            <image keyref="svg-volstats"/>
+            <image scale="90" keyref="svg-volstats"/>
           </fig>
           
         </info>

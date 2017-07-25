@@ -223,6 +223,15 @@
         for the host to the network nameserver, or to <filepath>/etc/hosts</filepath>.</stepresult>
       </step>
       
+      <step id="check-root-space">
+        <cmd>Verify that the size of the root filesystem is adequate.</cmd>
+        <stepxmp>
+          <codeblock>df -h /</codeblock>
+        </stepxmp>
+        <stepresult>If the result does not include a minimum of 10GB of available space,
+          stop this procedure and select a different host.</stepresult>
+      </step>
+      
       <step id="check-hostid-master">
         <cmd>Ensure the host has a persistent numeric ID.</cmd>
         <info>Skip this step if you are installing a single-host deployment.</info>

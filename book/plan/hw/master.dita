@@ -4,9 +4,9 @@
   <title>Master host resources</title>
   <refbody>
     <section id="section_avp_1sq_wx">
-      <p> You can deploy <ph keyref="nm-cc"/> with multiple hosts or a single host.<note>An
-          under-resourced master host cannot function properly. Ensure that you deploy <ph
-            keyref="nm-cc"/> and applications on a master host that meets the application's minimum
+      <p> You can create a single-host or multi-host deployment of <ph keyref="nm-cc"/>.<note>An
+          under-resourced master host cannot function properly. Deploy <ph keyref="nm-cc"/> and the
+          application it manages on a master host that meets the application's minimum
           requirements.</note></p>
     </section>
     <section id="section_dxs_t1r_wx">

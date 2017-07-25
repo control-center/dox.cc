@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="3" modification="3"/>        
+        <vrm version="1" release="4" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -33,7 +33,7 @@
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
       <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
       <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
-      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+      <mapref href="images/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="shared/build.ditamap" format="ditamap"/>

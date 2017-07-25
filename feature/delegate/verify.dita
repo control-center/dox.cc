@@ -16,6 +16,10 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="cc-feature-lib-tasks/check-root-space">
+        <cmd/>
+      </step>
+      
       <step conkeyref="cc-feature-lib-tasks/update-os">
         <cmd></cmd>
       </step>
