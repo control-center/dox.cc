@@ -59,6 +59,10 @@
             href="prep.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-master-registry"
+            href="registry.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-master-role"
             href="role.dita"
             format="dita"

@@ -5,6 +5,7 @@
   <chapter keyref="cc-upgrade-maps-delegate">
     <topicref keyref="cc-upgrade-11x-docker-install"/>
     <topicref keyref="cc-upgrade-11x-docker-config"/>
+    <topicref keyref="cc-feature-delegate-registry"/>
     <topicref keyref="cc-upgrade-11x-cc-delegate"/>
     <topicref keyref="cc-upgrade-11x-zk-image"/>
  </chapter>

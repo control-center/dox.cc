@@ -71,14 +71,12 @@
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
           <dt><varname>SERVICED_DOCKER_REGISTRY</varname></dt>
-          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:5000</codeph></dd> 
-          <dd>The endpoint of the <cmdname>serviced</cmdname> Docker registry host. On delegate
-            hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or hostname
-            of the registry host, which by default is the <cmdname>serviced</cmdname> master host.
-            On the master host, this variable is ignored.</dd>
-          <dd>The value used to replace <codeph>{{SERVICED_MASTER_IP}}</codeph> in this
-            variable must match the value of the <codeph>--insecure-registry</codeph> flag in 
-            the <filepath>/etc/sysconfig/docker</filepath> file.</dd>
+          <dd><b>Default</b>: <codeph>localhost:5000</codeph></dd> 
+          <dd>The endpoint of the local Docker registry, which <cmdname>serviced</cmdname>
+            uses to store internal services and application images.</dd>
+          <dd>If the default value is changed, the host's Docker configuration file must 
+            include the <codeph>--insecure-registry</codeph> flag with the same value
+            as this variable.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_OUTBOUND_IP">

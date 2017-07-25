@@ -29,6 +29,10 @@
             <sli><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname></sli>
             <sli><varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></sli>
           </sl>For more information, see <xref keyref="cc-feature-vars-file"/>.</li>
+        <li>The <ph keyref="nm-cc"/> RPM package includes a script that adds the <codeph>serviced</codeph>
+          user group to a host, if necessary. Users must be members of the <codeph>serviced</codeph>
+          group to use the command-line interface. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-access-access"/>.</li>
         <li>The minimum kernel version for <ph keyref="nm-cc"/> hosts is
           <codeph>3.10.0-327.36.2</codeph>. For optimal results, the most recent kernel is recommended.
           To prevent dependency issues, updating the kernel or operating system is a step

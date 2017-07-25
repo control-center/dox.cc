@@ -46,7 +46,7 @@
           same time, so that each node can participate in electing
           the leader.</info>
         <stepxmp>
-          <codeblock>systemctl start serviced</codeblock>
+          <codeblock>systemctl daemon-reload &#38;&#38; systemctl start serviced</codeblock>
         </stepxmp>
       </step>
       

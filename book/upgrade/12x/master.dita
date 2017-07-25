@@ -108,7 +108,7 @@ yum --enablerepo=zenoss-stable install serviced-<ph keyref="lo-version-cc"/></co
           continue to the next procedure.</li>
         <li>If you are upgrading a single-host deployment, 
           start <ph keyref="nm-cc"/>.
-        <codeblock>systemctl start serviced</codeblock></li>
+          <codeblock>systemctl daemon-reload &#38;&#38; systemctl start serviced</codeblock></li>
       </ul>
     </postreq>
   </taskbody>
