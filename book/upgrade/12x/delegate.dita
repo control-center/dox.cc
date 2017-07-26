@@ -30,12 +30,16 @@
       </step>
       
       <step>
-        <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp><b>With internet access:</b>
-          <codeblock>yum clean all &#38;&#38; yum makecache fast
-yum --enablerepo=zenoss-stable install serviced-<ph keyref="lo-version-cc"/></codeblock>
+        <cmd>Remove the <ph conkeyref="names/company"/> repository description files.</cmd>
+        <info>Upgrades no longer require external repositories.</info>
+        <stepxmp>
+          <codeblock>rm -f /etc/yum.repos.d/zenoss-*.repo</codeblock>
         </stepxmp>
-        <stepxmp><b>Without internet access:</b><!-- cc_3377 -->
+      </step>
+      
+      <step>
+        <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
           <codeblock>yum install --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
         </stepxmp>

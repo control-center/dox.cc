@@ -72,7 +72,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
-  
+  <chapter href="feature/offline/offline-upgrade.ditamap" format="ditamap"/>
   <part>
     <topicmeta>
       <navtitle>Part I: Upgrading 1.3.0 to <ph keyref="lo-version-cc"/></navtitle>
@@ -112,7 +112,6 @@
     <appendix href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
-    <appendix href="feature/offline/offline-upgrade.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
