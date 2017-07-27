@@ -15,8 +15,8 @@
             href="download.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-download-intro"
-            href="intro.dita"
+    <keydef keys="cc-feature-download-install"
+            href="install.dita"
             format="dita"
     />
     <keydef keys="cc-feature-download-pcs-drbd-download"
@@ -25,6 +25,10 @@
     />
     <keydef keys="cc-feature-download-stage-rpm-ha"
             href="stage-rpm-ha.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-rpm-upgrade"
+            href="stage-rpm-upgrade.dita"
             format="dita"
     />
     <keydef keys="cc-feature-download-stage-rpm"
@@ -37,6 +41,10 @@
     />
     <keydef keys="cc-feature-download-stage-run"
             href="stage-run.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-upgrade"
+            href="upgrade.dita"
             format="dita"
     />
    </topicgroup>

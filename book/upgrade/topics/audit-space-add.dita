@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding local or remote storage for audit logging</title>
+  <taskbody>
+    <context>Use this procedure to add , if necessary.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the amount of space available for <filepath>/var/log</filepath>.</cmd>
+        <info>The <filepath>/var/log/serviced</filepath> directory does not exist until
+          <cmdname>serviced</cmdname> is upgraded.</info>
+        <stepxmp>
+          <codeblock>df -h /var/log</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the filesystem on which <filepath>/var/log</filepath> is mounted 
+            does not have 10GB of available space, proceed to the next step.</choice>
+          <choice>If the filesystem on which <filepath>/var/log</filepath> is mounted has
+            10GB of available space, perform the following substep.</choice>
+        </choices>
+        <substeps>
+          <substep>
+            <cmd>Display the amount of space available for <filepath>/tmp</filepath>.</cmd>
+            <info>Docker requires 10GB of storage for temporary files, and
+              <filepath>/tmp</filepath> may be mounted on the same
+              filesystem as <filepath>/var/log</filepath>.</info>
+            <stepxmp>
+              <codeblock>df -h /tmp</codeblock>
+            </stepxmp>
+            <info>
+              <ul>
+                <li>If the filesystem on which <filepath>/tmp</filepath> is mounted 
+                  does not have 10GB of available space, proceed to the next step.</li>
+                <li>If the filesystem on which <filepath>/tmp</filepath> is mounted has
+                  10GB of available space, stop. The master host has sufficient storage 
+                  space for audit logging.</li>
+              </ul>
+            </info>
+          </substep>
+        </substeps> 
+      </step>
+      
+      <step>
+        <cmd>Display the amount of space available for <filepath>/var/log</filepath>
+          and <filepath>/tmp</filepath>.</cmd>
+        <info>The <filepath>/var/log/serviced</filepath> directory does not exist until
+          <cmdname>serviced</cmdname> is upgraded. Docker requires 10GB of storage for
+          temporary files, and <filepath>/tmp</filepath> may be mounted on the same 
+          filesystem as <filepath>/var/log</filepath>.</info>
+        <stepxmp>
+          <codeblock>df -h /var/log /tmp</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If <filepath>/var/log</filepath> and <filepath>/tmp</filepath> 
+            are mounted on the same filesystem and the filesystem has 20GB of 
+            available space, the master host has sufficient storage space for
+            audit logging.</choice>
+          <choice>If <filepath>/var/log</filepath> and <filepath>/tmp</filepath> 
+            are mounted on different filesystems and each filesystem has 10GB of 
+            available space, the master host has sufficient storage space for
+            audit logging.</choice>
+        </choices>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

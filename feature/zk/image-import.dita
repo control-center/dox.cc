@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Importing the ZooKeeper image for Docker</title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro"/> before performing this procedure.</prereq>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/> before performing this procedure.</prereq>
     <context>Use this procedure to import the Docker image
       for the ZooKeeper service from a ZooKeeper image file. Repeat this procedure 
       on each node in the ZooKeeper ensemble.</context>

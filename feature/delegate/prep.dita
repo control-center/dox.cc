@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Preparing a delegate host</title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro"/>,
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/>,
       before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS
@@ -57,13 +57,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step>
-        <cmd>Reboot the host.</cmd>
-        <stepxmp>
-          <codeblock>reboot</codeblock>
-        </stepxmp>
       </step>
       
     </steps>

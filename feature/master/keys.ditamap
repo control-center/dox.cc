@@ -15,18 +15,6 @@
             href="add.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-master-cc-install-off"
-            href="cc-install-off.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-cc-install-on"
-            href="cc-install-on.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-cc-install"
-            href="cc-install.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-master-cron"
             href="cron.dita"
             format="dita"
@@ -37,18 +25,6 @@
     />
     <keydef keys="cc-feature-master-docker-images"
             href="docker-images.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-docker-install-off"
-            href="docker-install-off.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-docker-install-on"
-            href="docker-install-on.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-docker-install"
-            href="docker-install.dita"
             format="dita"
     />
     <keydef keys="cc-feature-master-offline"

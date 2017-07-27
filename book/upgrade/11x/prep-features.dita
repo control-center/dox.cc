@@ -11,6 +11,19 @@
         to prepare to use this release. For more information, refer to the documentation
         for your application.</note>
       <ul>
+        <li>The upgrade (and install) process now supports only local repositories and packages.
+          The required software is available for download from <ph conkeyref="names/company"/>.
+          <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-download-upgrade"/>. </li>
+        
+        <li>This release includes a new feature, <cmdname>serviced</cmdname> and application audit
+          logging. <b>By default, audit logging requires 10GB of storage on the master host.</b> The
+          upgrade process includes a procedure for adding space to the master host, if necessary.
+          For more information about audit logging, refer to the <cite conkeyref="pubs/cite-ref"
+          />.</li>
+        
+        <li>A new configuration variable, <varname>SERVICED_LOG_PATH</varname>,
+          sets the location for audit logs. The default location is <filepath>/var/log/serviced</filepath>.</li>
+        
         <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
           shutdown</i> of applications and services while sufficient resources remain to take
           action to avoid data loss. Support for this feature requires specific minimum amounts of
