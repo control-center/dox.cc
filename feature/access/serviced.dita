@@ -32,7 +32,7 @@
       <step>
         <cmd>Create a new group, if necessary.</cmd>
         <stepxmp>
-          <codeblock>groupadd $GROUP</codeblock>
+          <codeblock>groupadd $myGROUP</codeblock>
         </stepxmp>
       </step>
       

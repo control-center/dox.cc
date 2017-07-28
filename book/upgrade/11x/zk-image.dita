@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Updating the ZooKeeper image on ensemble nodes</title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-upgrade"/> before performing this procedure.</prereq>
     <context>Use this procedure to install a new Docker image for
       ZooKeeper on ZooKeeper ensemble nodes.</context>
     <steps>

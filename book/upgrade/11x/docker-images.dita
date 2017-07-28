@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Loading image files</title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-upgrade"/> before performing this procedure.</prereq>
     <context>Use this procedure to load images into the local Docker registry.</context>
     <steps>
       
@@ -23,8 +23,8 @@
         <stepxmp>
           <codeblock>for image in install-*.run
 do
-echo -n "$image: "
-eval ./$image
+  echo -n "$image: "
+  ./$image
 done</codeblock>
         </stepxmp>
         <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>

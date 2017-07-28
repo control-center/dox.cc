@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>After</title>
-  <chapter keyref="cc-upgrade-maps-post">
+  <chapter keyref="cc-upgrade-11x-post">
     <topicref keyref="cc-upgrade-11x-pool-permissions"/>
     <topicref keyref="cc-feature-manage-pool-connection-timeout"/>
     <topicref keyref="cc-upgrade-topics-remove-images"/>

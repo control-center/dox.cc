@@ -4,10 +4,9 @@
   <title>Setting internal services endpoints</title>
   <taskbody>
     <context>Use this procedure to configure a delegate host with the endpoints of the <ph
-        keyref="nm-cc"/> internal services. <p>Although <ph keyref="nm-cc"/> relies on ZooKeeper for
-        coordination, it is not a <ph keyref="nm-cc"/> internal service. The instructions for
-        setting the ZooKeeper endpoint are included in the next chapter.</p>
+        keyref="nm-cc"/> internal services.
       <p>The following configuration variables identify the internal services endpoints:<dl>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_ZK"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_ENDPOINT"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOG_ADDRESS"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOGSTASH_ES"><dt/><dd/></dlentry>

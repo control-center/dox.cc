@@ -3,12 +3,8 @@
 <map>
  <title>Keys in upgrade/topics</title>
   <topicgroup>
-    <keydef keys="cc-upgrade-topics-audit-space-add"
-            href="audit-space-add.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-topics-audit-space-check"
-            href="audit-space-check.dita"
+    <keydef keys="cc-upgrade-topics-audit-space"
+            href="audit-space.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-topics-best-practices"

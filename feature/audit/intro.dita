@@ -32,9 +32,9 @@
           <filepath>/opt/serviced/etc/logrotate.conf</filepath>. The default configuration rotates,
         compresses, and removes files as necessary to ensure that the logs occupy no more than 10GB
         of storage. To store larger volumes of log files: <ul>
-          <li>Modify the <cmdname>logrotate</cmdname> configuration file, and then mount the
-              <cmdname>serviced</cmdname> audit log directory on a larger local or remote file
-            system.</li>
+          <li>Mount the <cmdname>serviced</cmdname> audit log directory on a larger local 
+            or remote file system.</li>
+          <li>Modify the <cmdname>logrotate</cmdname> configuration file.</li>
           <li>Forward the log files to a log management application.</li>
           <li>Use a <cmdname>cron</cmdname> job to copy the files to a larger local or remote file system.</li>
         </ul></p>

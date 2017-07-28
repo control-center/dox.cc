@@ -4,7 +4,13 @@
   <title>Upgrading delegates from 1.1.x to <ph keyref="lo-version-cc"/></title>
     <refbody>
     <section>
-      <p>Perform the procedures in this chapter to upgrade delegate hosts.</p>
+      <p>Use this chapter to upgrade <ph keyref="nm-cc"/> 1.1.x delegate hosts to <ph
+        keyref="lo-version-cc"/>. Before performing the procedures in this chapter: <ul>
+          <li>Download required software. See <xref keyref="cc-feature-download-upgrade"/>.</li>
+          <li>Stop <ph keyref="nm-cc"/> on all hosts in the cluster. See <xref
+            keyref="cc-upgrade-maps-stop"/>.</li>
+        </ul>
+      </p>
     </section>
   </refbody>
 </reference>

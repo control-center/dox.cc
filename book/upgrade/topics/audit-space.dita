@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Identifying storage for audit logging</title>
+  <taskbody>
+    <context>The default configuration of <ph keyref="nm-cc"/> audit logging requires 10GB of
+      storage in <filepath>/var/log/serviced</filepath> on the master host. Use this procedure to
+      determine whether sufficient space is available.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Display the amount of space available for <filepath>/var/log</filepath>.</cmd>
+        <info>The <filepath>/var/log/serviced</filepath> directory does not exist until
+          <ph keyref="nm-cc"/> is upgraded.</info>
+        <stepxmp>
+          <codeblock>df -h /var/log</codeblock>
+        </stepxmp>
+        <stepresult>Typically, <filepath>/var/log</filepath> is mounted on the root
+          filesystem, <filepath>/</filepath>.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Display the amount of space available for <filepath>/tmp</filepath>.</cmd>
+        <info>Docker requires 10GB of storage for temporary files, and the
+          <cite conkeyref="pubs/cite-install"/> includes instructions to link
+          the Docker temporary directory to <filepath>/tmp</filepath>.</info>
+        <stepxmp>
+          <codeblock>df -h /tmp</codeblock>
+        </stepxmp>
+        <stepresult>Like <filepath>/var/log</filepath>, <filepath>/tmp</filepath>
+          is typically mounted on the root filesystem, <filepath>/</filepath>.</stepresult>
+      </step>
+    </steps>
+    <postreq>If <filepath>/var/log</filepath> and <filepath>/tmp</filepath>
+        each have 10GB of available storage, for a combined total of 20GB,
+        then the master host has sufficient space for audit logging. Otherwise,
+        you must choose one of the following alternatives:
+      <ul>
+        <li>After upgrading <ph keyref="nm-cc"/>, mount the <cmdname>serviced</cmdname> audit
+          log directory on a larger local or remote file system, modify the settings in the
+          <filepath>/opt/serviced/etc/logrotate.conf</filepath> configuration file.</li>
+        <li>Use a <cmdname>cron</cmdname> job to copy the files to a larger local or remote file system.</li>
+        <li>Forward the log files to a log management application.</li>
+      </ul>
+    </postreq>
+  </taskbody>
+</task>
