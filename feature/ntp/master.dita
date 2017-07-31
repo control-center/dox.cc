@@ -43,11 +43,11 @@ broadcastdelay 0.008
 restrict 127.0.0.1
 
 # Grant access to client hosts
-restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
+restrict <varname>Address-Range</varname> mask <varname>Netmask</varname> nomodify notrap</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Replace <codeph>ADDRESS_RANGE</codeph> with the range of IPv4 network addresses
+            <cmd>Replace <varname>Address-Range</varname> with the range of IPv4 network addresses
               that are allowed to query this NTP server.</cmd>
             <stepxmp>
               <p>For example, the following IP addresses are assigned to the hosts in an <ph
@@ -58,12 +58,12 @@ restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
                   <sli><codeph>203.0.113.13</codeph></sli>
                 </sl>
               </p>
-              <p>For the preceding addresses, the value for <codeph>ADDRESS_RANGE</codeph> is
+              <p>For the preceding addresses, the value for <varname>Address-Range</varname> is
                   <codeph>203.0.113.0</codeph>.</p>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Replace <codeph>NETMASK</codeph> with the IPv4 network mask 
+            <cmd>Replace <varname>Netmask</varname> with the IPv4 network mask 
               that corresponds with the address range.</cmd>
             <stepxmp>For example, a valid network mask for <codeph>203.0.113.0</codeph> is
                 <codeph>255.255.255.0</codeph>.</stepxmp>

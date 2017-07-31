@@ -39,6 +39,10 @@
             href="pool-permissions.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-11x-post"
+            href="post.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-11x-prep-features"
             href="prep-features.dita"
             format="dita"

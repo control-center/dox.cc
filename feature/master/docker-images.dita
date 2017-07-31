@@ -4,7 +4,7 @@
   <title>Loading image files</title>
   <taskbody>
     <prereq>Perform the steps in <xref
-      keyref="cc-feature-download-intro"/> before performing this procedure.</prereq>
+      keyref="cc-feature-download-install"/> before performing this procedure.</prereq>
     <context>Use this procedure to load images into the local Docker registry on a host.</context>
     <steps>
       

@@ -50,9 +50,9 @@
           with the version of RHEL/CentOS installed on all of the hosts
           in your <ph keyref="nm-cc"/> cluster.
           <sl>
-            <sli><codeph>yum-mirror-centos7.centos7.1-<varname>Version</varname>.x86_64.rpm</codeph></sli>
-            <sli><codeph>yum-mirror-centos7.centos7.2-<varname>Version</varname>.x86_64.rpm</codeph></sli>
-            <sli><codeph>yum-mirror-centos7.centos7.3-<varname>Version</varname>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.centos7.1-1503-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.centos7.2-1511-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.centos7.3-1611-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
           </sl>
         </info>
       </step>

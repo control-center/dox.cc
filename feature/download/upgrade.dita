@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="taskid">
-  <title>Preparing to install</title>
+  <title>Downloading and staging required files</title>
   <refbody>
     <section>
       <p>This chapter describes how to download and install or stage <ph keyref="nm-cc"/> software
         and its operating system dependencies. The procedures in this chapter are required to
-        perform an installation.</p>
+        perform an upgrade.</p>
       
       <p>The following table identifies where to perform each procedure in this chapter.</p>
       <table>

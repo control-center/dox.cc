@@ -5,9 +5,8 @@
   <taskbody>
     <context>The default configuration of delegate hosts sets the value of the
         <varname>SERVICED_ZK</varname> variable to the master host only. Use this procedure to
-      update the setting to include all of the hosts in the ZooKeeper ensemble. Perform this
-      procedure on each delegate host in a <ph keyref="nm-cc"/> cluster that is not an ensemble
-      node.</context>
+      update the setting to include all of the hosts in the ZooKeeper ensemble. <b>Perform this
+        procedure on each delegate host that is not a ZooKeeper ensemble node.</b></context>
     
     <steps>
       <step>

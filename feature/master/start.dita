@@ -32,7 +32,7 @@
         <stepresult>
           
           <p>The <cmdname>serviced</cmdname> daemon tags
-            images in the local registry and starts its internal services. The <ph keyref="nm-cc"/>
+            images in the local Docker registry and starts its internal services. The <ph keyref="nm-cc"/>
             browser and command-line interfaces are unavailable for about 3 minutes. </p>
           <p>When the message <codeph>Host Master successfully started</codeph> is displayed, <ph
               keyref="nm-cc"/> is ready for the next procedure.</p>

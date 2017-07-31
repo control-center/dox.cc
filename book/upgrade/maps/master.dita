@@ -4,12 +4,13 @@
   <title>Upgrading a master host from 1.1.x to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
-      <p>Perform the procedures in this chapter to upgrade the master host.</p>
-      <note><b><ph conkeyref="names/company"/> customers</b>: If you are upgrading
-        your deployment without internet access, perform the steps in <xref
-          keyref="cc-feature-offline-offline"/> before performing the procedures in this chapter.</note>
-      <p>Before performing the procedures in this chapter, stop <ph keyref="nm-cc"/> on all
-        hosts in the cluster. <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-maps-stop"/>.</p>
+      <p>Use this chapter to upgrade a <ph keyref="nm-cc"/> 1.1.x master host to <ph
+        keyref="lo-version-cc"/>. Before performing the procedures in this chapter: <ul>
+          <li>Download required software. See <xref keyref="cc-feature-download-upgrade"/>.</li>
+          <li>Stop <ph keyref="nm-cc"/> on all hosts in the cluster. See <xref
+            keyref="cc-upgrade-maps-stop"/>.</li>
+        </ul>
+      </p>
     </section>
   </refbody>
 </reference>

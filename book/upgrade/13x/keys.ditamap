@@ -19,6 +19,10 @@
             href="micro-master.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-13x-post"
+            href="post.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-13x-prep-features"
             href="prep-features.dita"
             format="dita"

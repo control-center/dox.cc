@@ -7,24 +7,12 @@
             href="about.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-zk-delegate1-ha"
-            href="delegate1-ha.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-zk-delegate1"
             href="delegate1.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-zk-delegate2-ha"
-            href="delegate2-ha.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-zk-delegate2"
             href="delegate2.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-zk-enable-ha"
-            href="enable-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-zk-enable"
@@ -51,16 +39,8 @@
             href="lib.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-zk-master-ha"
-            href="master-ha.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-zk-master"
             href="master.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-zk-nodes-ha"
-            href="nodes-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-zk-nodes"

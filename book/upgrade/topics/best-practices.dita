@@ -23,9 +23,8 @@
           avoid mistakes and anticipate needs; nevertheless, the instructions may be incorrect or
           inadequate for some requirements or environments.</li>
         
-        <li><b><ph conkeyref="names/company"/> customers:</b> Download and stage files for offline
-          upgrades, if necessary. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-offline-offline"/>.</li>
+        <li>Download and stage the required files for your upgrade. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-download-upgrade"/>.</li>
       </ol>
       
     </section>

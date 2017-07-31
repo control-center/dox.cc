@@ -531,12 +531,6 @@ EOF</codeblock>
         <cmd>Install Docker CE <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
-            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
-            <stepxmp>
-              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Install Docker CE.</cmd>
             <stepxmp>
               <codeblock>yum install --disablerepo=\* --enablerepo=zenoss-mirror \
@@ -801,12 +795,6 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
         <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
-            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
-            <stepxmp>
-              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
               <codeblock>yum install --disablerepo=\* --enablerepo=zenoss-mirror \
@@ -834,7 +822,7 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install \
+              <codeblock>yum install --disablerepo=\* --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>

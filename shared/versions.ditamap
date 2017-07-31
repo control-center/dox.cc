@@ -35,7 +35,7 @@
     <keydef keys="lo-version-ra">
       <topicmeta> <!-- Pacemaker resource agents -->
         <keywords>
-          <keyword>1.0.0</keyword>
+          <keyword>1.1.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>

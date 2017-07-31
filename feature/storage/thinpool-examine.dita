@@ -6,8 +6,7 @@
     <context>    
        <p>Beginning with release 1.3.0, <ph keyref="nm-cc"/> initiates an emergency shutdown when
         the minimum required amounts of free space are not available in the
-          <cmdname>serviced</cmdname> thin pool or tenant volumes. <ph conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-feature-storage-thinpool-minimums"/>.</p>
+          <cmdname>serviced</cmdname> thin pool or tenant volumes.</p>
 
       <p>Use this procedure to display the amount of free space in a <ph keyref="nm-cc"/> thin pool
         and tenant volumes, to determine how much space is available in the LVM volume group that

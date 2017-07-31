@@ -24,19 +24,19 @@
         </ul></p>
       
       <p>The files in the <cmdname>serviced</cmdname> audit log directory are managed by
-        <cmdname>logrotate</cmdname>. The <cmdname>serviced</cmdname> RPM installation process
+          <cmdname>logrotate</cmdname>. The <cmdname>serviced</cmdname> RPM installation process
         installs <cmdname>logrotate</cmdname>, if necessary, and creates
-        <filepath>/etc/cron.hourly/serviced</filepath>. Then, the <cmdname>anacron</cmdname>
+          <filepath>/etc/cron.hourly/serviced</filepath>. Then, the <cmdname>anacron</cmdname>
         service invokes <cmdname>logrotate</cmdname> every hour. The operations that
-        <cmdname>logrotate</cmdname> performs on <cmdname>serviced</cmdname> audit log files are
-        specified in <filepath>/opt/serviced/etc/logrotate.conf</filepath>. The default
-        configuration rotates, compresses, and removes files as necessary to ensure that the logs
-        occupy no more than 10GB of storage. To store larger volumes of log files: <ul>
-          <li>Modify the <cmdname>logrotate</cmdname> configuration file, and then mount the
-            <cmdname>serviced</cmdname> audit log directory on a larger local or remote file
-            system.</li>
+          <cmdname>logrotate</cmdname> performs on audit log files are specified in
+          <filepath>/opt/serviced/etc/logrotate.conf</filepath>. The default configuration rotates,
+        compresses, and removes files as necessary to ensure that the logs occupy no more than 10GB
+        of storage. To store larger volumes of log files: <ul>
+          <li>Mount the <cmdname>serviced</cmdname> audit log directory on a larger local 
+            or remote file system.</li>
+          <li>Modify the <cmdname>logrotate</cmdname> configuration file.</li>
           <li>Forward the log files to a log management application.</li>
-          <li>Copy the files to a larger local or remote file system.</li>
+          <li>Use a <cmdname>cron</cmdname> job to copy the files to a larger local or remote file system.</li>
         </ul></p>
       
     </section>

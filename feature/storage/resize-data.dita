@@ -4,8 +4,7 @@
   <title>Adding space to the data area of a <ph keyref="nm-cc"/> thin pool</title>
   <taskbody>
     <context>Use this procedure to increase the amount of space in the data 
-      area of a <ph keyref="nm-cc"/> thin pool. <ph conkeyref="strings/fmi-int"/>
-      <xref keyref="cc-feature-storage-thinpool-minimums"/>. </context>
+      area of a <ph keyref="nm-cc"/> thin pool.</context>
     
     <steps>
       <step>
