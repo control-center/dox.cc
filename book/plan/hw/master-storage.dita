@@ -17,14 +17,16 @@
         </dlentry>
         
         <dlentry>
-          <dt>Temporary</dt>
+          <dt>Docker temporary</dt>
           <dd>Size: 10GB</dd>
           <dd>Type: XFS file system (typically)</dd>
           <dd>Mount point: <filepath>/tmp</filepath></dd>
           <dd>Resource: One or more block devices or partitions,
             or one or more LVM physical volumes.</dd>
-          <dd>Preparation: Depends on configuration. Typically, additional space is allocated
-            for the root filesystem, but a separate real or logical partition may be used.</dd>
+          <dd>Preparation: Depends on configuration. Typically, additional space is allocated for
+            the root filesystem, but a separate real or logical partition may be used. The
+            <cite conkeyref="pubs/cite-install"/> includes instructions to link
+            the Docker temporary directory to <filepath>/tmp</filepath>.</dd>
         </dlentry>
         
         <dlentry>
@@ -67,8 +69,8 @@
           <dd>Resource: One or more block devices or partitions, one or more LVM physical volumes,
             or a remote file server that is compatible with Linux.</dd>
           <dd>Preparation: Depends on configuration. Typically, additional space is allocated for
-            the root filesystem. For more information about audit logging, refer to the 
-          <cite conkeyref="pubs/cite-ref"/>.</dd>
+            the root filesystem. For more information about audit logging, refer to the <cite
+              conkeyref="pubs/cite-ref"/>.</dd>
         </dlentry>
         
         <dlentry>
