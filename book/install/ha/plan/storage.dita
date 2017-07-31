@@ -28,9 +28,19 @@
               <entry>Local, high-performance storage.</entry>
             </row>
             <row>
+              <entry>Docker temporary storage</entry>
+              <entry>10GB (required)</entry>
+              <entry>Local or remote, XFS-compatible storage.</entry>
+            </row>
+            <row>
               <entry><ph keyref="nm-cc"/> internal services data</entry>
               <entry>50GB (required)</entry>
               <entry>Local, high-performance storage formatted as an XFS filesystem.</entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> audit logging</entry>
+              <entry>10GB (configurable)</entry>
+              <entry>Local or remote, XFS-compatible storage.</entry>
             </row>
             <row>
               <entry>Application data</entry>
