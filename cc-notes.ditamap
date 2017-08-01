@@ -50,7 +50,9 @@
       <mapref href="book/notes/140/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <preface>
-      <topicref href="book/notes/front/about.dita"/>
+      <topicref href="book/notes/front/about.dita">
+        <topicref href="feature/lib/release-dates.dita"/>
+      </topicref>
     </preface>
   </frontmatter>
   <chapter href="book/notes/140/self.ditamap" format="ditamap"/>  
