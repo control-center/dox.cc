@@ -76,6 +76,13 @@
   docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
         </stepxmp>
       </step>
+      
+      <step>
+        <cmd>Start the Docker service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start docker</codeblock>
+        </stepxmp>
+      </step>
 
     </steps>
   </taskbody>

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title><ph keyref="nm-cc"/> 1.2.0</title>
+  <title>Notes and workarounds</title>
   <refbody>
-    <section><p/></section>
+    <section>
+      <title>Changes to support audit logging (CC-3488)</title>
+      <p>Previously, the </p>
+    </section> 
+    
   </refbody>
+  
 </reference>

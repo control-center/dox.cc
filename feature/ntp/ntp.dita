@@ -19,6 +19,8 @@
     the firewall. For more information, refer to the VMware documentation for your 
     version of vSphere.</note>
     
+    <p>The procedures in this appendix assume that <ph keyref="nm-cc"/> is not installed.
+    If it is installed, stop the <cmdname>serviced</cmdname> service before performing configuring NTP.</p>
   </conbody>
 </concept>
 

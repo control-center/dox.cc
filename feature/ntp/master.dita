@@ -75,11 +75,6 @@ restrict <varname>Address-Range</varname> mask <varname>Netmask</varname> nomodi
       </step>
       
       <step>
-        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp><codeblock>systemctl stop serviced</codeblock></stepxmp>
-      </step>
-      
-      <step>
         <cmd>Enable and start the NTP daemon.</cmd>
         <substeps>
           <substep>
@@ -103,11 +98,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             <stepxmp><codeblock>systemctl start ntpd</codeblock></stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step>
-        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp><codeblock>systemctl start serviced</codeblock></stepxmp>
       </step>
     </steps>
   </taskbody>

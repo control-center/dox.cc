@@ -105,6 +105,15 @@
           </choice>
         </choices>
       </step>
+      
+      <step>
+        <cmd>Update the log file management configuration file, if necessary.</cmd>
+        <info>The default configuration of the <filepath>/opt/serviced/etc/logrotate.conf</filepath>
+          file now uses file size rather than file age to determine when to rotate logs. 
+          If you customized <filepath>/opt/serviced/etc/logrotate.conf</filepath> for 
+            your environment, your customizations are saved in <filepath>/opt/serviced/etc/logrotate.conf.bak</filepath>.
+            Compare the new and old versions, and update the new one as desired.</info>
+      </step>
     </steps>
     <postreq>
       <ul>

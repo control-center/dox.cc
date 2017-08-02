@@ -4,8 +4,18 @@
   <title>New features</title>
   <refbody>
     <section>
-      <title>Audit logging</title>
-      <p></p>
+      <p>This release includes a new feature, <cmdname>serviced</cmdname> and application audit
+        logging. 
+        <ul>
+          <li><ph keyref="nm-cc"/> writes messages to an audit log file on the master
+            host when configuration changes occur in the <ph keyref="nm-cc"/> cluster. The messages record 
+            the time, user identity, and information about the change in plain text.</li>
+          <li>Also, <ph keyref="nm-cc"/>  records application audit messages, if an application
+            is configured to write audit messages through <ph keyref="nm-cc"/>. (<ph keyref="nm-rm"/> 
+            is configured for audit logging through <ph keyref="nm-cc"/>, <ph keyref="nm-core"/> is not.)</li>
+        </ul><b>By default, audit logging requires 10GB of storage on the master host.</b> The
+        upgrade process includes a procedure for adding space to the master host, if necessary.
+        For more information about audit logging, refer to the <cite conkeyref="pubs/cite-ref"/>.</p>
     </section>
   </refbody>
 </reference>
