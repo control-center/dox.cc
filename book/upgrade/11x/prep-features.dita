@@ -68,7 +68,8 @@
           the scheduler waits for a disconnected delegate host to rejoin its pool before moving the
           services scheduled for the delegate to a different host in the pool. This feature is
           useful for remote resource pools that are connected through a high-latency, wide-area
-          network.</li>
+          network. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-manage-pool-connection-timeout"/>. </li>
         <li>Among other changes since version 1.9.0, Docker <ph keyref="lo-version-docker"/>
           includes a new storage subsystem. The initial startup takes a little longer, as the old
           layout is replaced with the new layout.</li>
