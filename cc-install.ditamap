@@ -55,7 +55,7 @@
       <mapref href="feature/master/keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
-      
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
       <mapref href="feature/state/keys.ditamap" format="ditamap"/>
       <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
@@ -71,7 +71,6 @@
   <chapter href="feature/config/master.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
   <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
-  <!-- items in zk are commented for RM/Core; check before building -->
   <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
 
   <appendices>
@@ -79,6 +78,7 @@
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
   </appendices>
 
 </bookmap>

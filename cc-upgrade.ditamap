@@ -61,6 +61,7 @@
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/master/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
       <mapref href="feature/state/keys.ditamap" format="ditamap"/>
       <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
@@ -115,6 +116,7 @@
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>
