@@ -14,11 +14,11 @@
         <cmd/>
       </step>
       
-      <step conkeyref="cc-feature-lib-tasks/check-root-space">
+      <step conkeyref="cc-feature-lib-tasks/check-space">
         <cmd/>
       </step>
-
-      <step conkeyref="cc-feature-lib-tasks/update-os">
+      
+      <step conkeyref="cc-feature-lib-tasks/check-memory-master">
         <cmd/>
       </step>
       
@@ -30,7 +30,7 @@
         <cmd/>
       </step>
       
-      <step conkeyref="cc-feature-lib-tasks/check-memory-master">
+      <step conkeyref="cc-feature-lib-tasks/update-os">
         <cmd/>
       </step>
       
