@@ -25,49 +25,49 @@
               <entry>1</entry>
               <entry>Root (<filepath>/</filepath>)</entry>
               <entry>2-10GB (required)</entry>
-              <entry>Local, high-performance storage (XFS).</entry>
+              <entry>Local, high-performance storage (XFS)</entry>
             </row>
             <row>
               <entry>2</entry>
               <entry>Swap</entry>
               <entry>12-16GB (required)</entry>
-              <entry>Local, high-performance storage.</entry>
+              <entry>Local, high-performance storage</entry>
             </row>
             <row>
               <entry>3</entry>
               <entry>Docker temporary</entry>
               <entry>10GB (required)</entry>
-              <entry>Local, high-performance storage (XFS).</entry>
+              <entry>Local, high-performance storage (XFS)</entry>
             </row>
             <row>
               <entry>4</entry>
               <entry><ph keyref="nm-cc"/> audit logging</entry>
               <entry>10GB (configurable)</entry>
-              <entry>Local or remote, XFS-compatible storage.</entry>
+              <entry>Remote, XFS-compatible storage</entry>
             </row>
             <row>
               <entry>5</entry>
               <entry>Docker data</entry>
               <entry>50GB (required)</entry>
-              <entry>Local, high-performance storage.</entry>
+              <entry>Local, high-performance storage</entry>
             </row>
             <row>
               <entry>6</entry>
               <entry><ph keyref="nm-cc"/> internal services data</entry>
               <entry>50GB (required)</entry>
-              <entry>Local, high-performance storage (XFS).</entry>
+              <entry>Local, high-performance storage (XFS)</entry>
             </row>
             <row>
               <entry>7</entry>
               <entry>Application data</entry>
               <entry>200GB (suggested)</entry>
-              <entry>Local, high-performance storage.</entry>
+              <entry>Local, high-performance storage</entry>
             </row>
             <row>
               <entry>8</entry>
               <entry>Application metadata</entry>
               <entry>1GB (required)</entry>
-              <entry>Local, high-performance storage (XFS).</entry>
+              <entry>Local, high-performance storage (XFS)</entry>
             </row>
             <row>
               <entry>9</entry>
@@ -79,13 +79,13 @@
         </tgroup>
       </table>
 
-      <p>Areas 1-4 can be combined in a single filesystem when the operating system is installed.
+      <p>Areas 1-3 can be combined in a single filesystem when the operating system is installed.
         Areas 5-8 must be separate real or virtual devices. This guide includes procedures for
         preparing areas 5-8.</p>
       
-      <p>The suggested minimum sizes for application data and application data backups should be
-        replaced with sizes that meet your application requirements. To calculate the appropriate
-        sizes for these storage areas, use the following guidelines:</p>
+      <p>The suggested minimum sizes for application data (7) and application data backups (9)
+        should be replaced with sizes that meet your application requirements. To calculate the
+        appropriate sizes for these storage areas, use the following guidelines:</p>
       <ul>
         <li>Application data storage includes space for both data and snapshots. The default base
           size for data is 100GB, and the recommended space for snapshots is 100% of the base size.
@@ -97,8 +97,8 @@
       <p>The suggested minimum size for application data backups is 150GB. For improved reliability
         and performance, <ph conkeyref="names/company"/> strongly recommends using shared remote
         storage or network-attached storage for application data backups. This guide does not
-        include instructions for mounting remote storage, but does include a step for creating the
-        mount point.</p>
+        include instructions for mounting remote storage, but does include a step for creating mount
+        points.</p>
       
     </section>
   </refbody>
