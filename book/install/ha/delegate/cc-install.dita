@@ -37,7 +37,7 @@
           <substep>
             <cmd>Extract the image.</cmd>
             <stepxmp>
-              <codeblock>./install-zenoss-isvcs-zookeeper:v*.run</codeblock>
+              <codeblock>./install-zenoss-isvcs-zookeeper-v*.run</codeblock>
             </stepxmp>
             <info>Image extraction begins when you press <b>y</b>.</info>
           </substep>

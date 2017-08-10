@@ -36,7 +36,7 @@
       <step>
         <cmd>Extract the ZooKeeper image.</cmd>
         <stepxmp>
-          <codeblock>./install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeblock>
+          <codeblock>./install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeblock>
         </stepxmp>
         <info>At the prompt, press <b>y</b>.</info>
       </step>
@@ -44,7 +44,7 @@
       <step importance="optional">
         <cmd>Delete the archive file, if desired.</cmd>
         <stepxmp>
-          <codeblock>rm -i ./install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeblock>
+          <codeblock>rm -i ./install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeblock>
         </stepxmp>
       </step>
       
