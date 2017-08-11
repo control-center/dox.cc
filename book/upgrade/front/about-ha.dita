@@ -43,6 +43,12 @@
       <dl>
         <dlentry>
           <dt>1302.<keyword keyref="lo-build-date"/></dt>
+          <dd>Add a new storage requirement, for audit logs.</dd>
+          <dd>Remove the <codeph>-y</codeph> parameter from 
+            all <cmdname>yum</cmdname> command invocations.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1302.17.206</dt>
           <dd>Update the <varname>SERVICED_DOCKER_REGISTRY</varname>
             configuration steps to ensure the correct value is set.</dd>
         </dlentry>
