@@ -23,7 +23,7 @@
           <substep>
             <cmd>Search for the existing repository mirror.</cmd>
             <stepxmp>
-              <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}'</codeblock>
+              <codeblock>yum list --disablerepo=\* | awk '/^yum-mirror/ { print $1}'</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -57,7 +57,8 @@
       <step>
         <cmd>Copy the Pacemaker resource agents RPM file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>cp /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm \
+  /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       

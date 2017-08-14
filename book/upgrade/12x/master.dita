@@ -30,10 +30,10 @@
       </step>
       
       <step>
-        <cmd>Remove the <ph conkeyref="names/company"/> repository description files.</cmd>
+        <cmd>Remove the external <ph conkeyref="names/company"/> repository package.</cmd>
         <info>Upgrades no longer require external repositories.</info>
         <stepxmp>
-          <codeblock>rm -f /etc/yum.repos.d/zenoss-*.repo</codeblock>
+          <codeblock>yum remove zenoss-repo-1-1.x86_64</codeblock>
         </stepxmp>
       </step>
       
@@ -104,6 +104,15 @@
               keyref="cc-upgrade-11x-vars"/>.</p>
           </choice>
         </choices>
+      </step>
+      
+      <step>
+        <cmd>Update the log file management configuration file, if necessary.</cmd>
+        <info>The default configuration of the <filepath>/opt/serviced/etc/logrotate.conf</filepath>
+          file now uses file size rather than file age to determine when to rotate logs. 
+          If you customized <filepath>/opt/serviced/etc/logrotate.conf</filepath> for 
+            your environment, your customizations are saved in <filepath>/opt/serviced/etc/logrotate.conf.bak</filepath>.
+            Compare the new and old versions, and update the new one as desired.</info>
       </step>
     </steps>
     <postreq>

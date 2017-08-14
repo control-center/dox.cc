@@ -26,7 +26,7 @@
           <substep>
             <cmd>Install the packages.</cmd>
             <stepxmp>
-              <codeblock>yum --disablerepo=\* install ./downloads/*.rpm</codeblock>
+              <codeblock>yum install ./downloads/*.rpm</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -38,7 +38,7 @@
           interface for managing arbitrary resources in a cluster. <ph conkeyref="names/company"/> 
           provides a Pacemaker resource agent to manage the <ph keyref="nm-cc"/> master host.</info>
         <stepxmp>
-          <codeblock>yum install --disablerepo=\* \
+          <codeblock>yum install \
   /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>

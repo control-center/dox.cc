@@ -31,8 +31,8 @@
         <cmd>Download the self-installing Docker image files.</cmd>
         <info>
           <sl>
-            <sli><codeph>install-zenoss-serviced-isvcs:v<ph keyref="lo-version-isvcs"/>.run</codeph></sli>
-            <sli><codeph>install-zenoss-isvcs-zookeeper:v<ph keyref="lo-version-zk"/>.run</codeph></sli>
+            <sli><codeph>install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeph></sli>
+            <sli><codeph>install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeph></sli>
           </sl>
         </info>
       </step>

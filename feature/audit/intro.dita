@@ -14,7 +14,7 @@
           <filepath>/etc/default/serviced</filepath>. The log file name is
           <filepath>serviced-audit.log</filepath>.</p>
       
-      <p>The <cmdname>serviced</cmdname> audit log directory contains one or two additional files:<ul>
+      <p>The <cmdname>serviced</cmdname> audit log directory contains additional files:<ul>
           <li><filepath>serviced.access.log</filepath> records HTTP/S requests and is always
             present.</li>
           <li><filepath>application-audit.log</filepath> records application audit messages, and is
@@ -31,12 +31,14 @@
           <cmdname>logrotate</cmdname> performs on audit log files are specified in
           <filepath>/opt/serviced/etc/logrotate.conf</filepath>. The default configuration rotates,
         compresses, and removes files as necessary to ensure that the logs occupy no more than 10GB
-        of storage. To store larger volumes of log files: <ul>
-          <li>Mount the <cmdname>serviced</cmdname> audit log directory on a larger local 
-            or remote file system.</li>
+        of storage. To store larger volumes of log files, choose one or more of the following
+        options: <ul>
+          <li>Mount the <cmdname>serviced</cmdname> audit log directory on a larger local or remote
+            file system.</li>
           <li>Modify the <cmdname>logrotate</cmdname> configuration file.</li>
           <li>Forward the log files to a log management application.</li>
-          <li>Use a <cmdname>cron</cmdname> job to copy the files to a larger local or remote file system.</li>
+          <li>Use a <cmdname>cron</cmdname> job to copy the files to a larger local or remote file
+            system.</li>
         </ul></p>
       
     </section>

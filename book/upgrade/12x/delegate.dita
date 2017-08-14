@@ -30,10 +30,10 @@
       </step>
       
       <step>
-        <cmd>Remove the <ph conkeyref="names/company"/> repository description files.</cmd>
+        <cmd>Remove the external <ph conkeyref="names/company"/> repository package.</cmd>
         <info>Upgrades no longer require external repositories.</info>
         <stepxmp>
-          <codeblock>rm -f /etc/yum.repos.d/zenoss-*.repo</codeblock>
+          <codeblock>yum remove zenoss-repo-1-1.x86_64</codeblock>
         </stepxmp>
       </step>
       

@@ -11,9 +11,19 @@
         to prepare to use this release. For more information, refer to the documentation
         for your application.</note>
       <ul>
-        <li>The upgrade (and install) process now supports only local repositories and packages.
-          The required software is available for download from <ph conkeyref="names/company"/>.
-          <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-download-upgrade"/>. </li>
+        <li>The upgrade (and install) process now requires downloading packages from
+          <ph conkeyref="names/company"/> manually. The required software and images
+          are no longer available from the online <ph conkeyref="names/company"/> 
+          repository or Docker Hub. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-download-upgrade"/>.
+          <p>The packages to download include a <codeph>yum</codeph> repository mirror that
+            contains the required dependencies of Docker CE and <ph keyref="nm-cc"/>. An 
+            operating system or kernel upgrade can install newer versions of the dependencies
+            included in the mirror, and when you attempt to upgrade Docker CE or
+            <ph keyref="nm-cc"/>, <cmdname>yum</cmdname> will stop when it finds
+            the newer versions. A new appendix in this document includes workarounds for
+            the most common dependency conflicts.</p>
+        </li>
         
         <li>This release includes a new feature, <cmdname>serviced</cmdname> and application audit
           logging. <b>By default, audit logging requires 10GB of storage on the master host.</b> The
@@ -31,9 +41,7 @@
           <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
             resize it. <ph conkeyref="strings/fmi-int"/>
             <xref keyref="cc-feature-storage-thinpool-minimums"/>.</note></li>
-        <li>This release replaces Docker 1.12.1 with Docker Community Edition (CE) 17.03.1. The
-          upgrade instructions include steps to remove the <cmdname>yum</cmdname> repository
-          description for Docker and replace it with the repository description for Docker CE.</li>
+        <li>This release replaces Docker 1.9.0 with Docker Community Edition (CE) 17.03.1.</li>
         <li>The following new configuration variables are available in
             <filepath>/etc/default/serviced</filepath>, for tuning TCP/IP communications between
           ZooKeeper ensemble hosts and <ph keyref="nm-cc"/>: <sl>
@@ -70,7 +78,8 @@
           the scheduler waits for a disconnected delegate host to rejoin its pool before moving the
           services scheduled for the delegate to a different host in the pool. This feature is
           useful for remote resource pools that are connected through a high-latency, wide-area
-          network.</li>
+          network. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-manage-pool-connection-timeout"/>. </li>
         <li>Among other changes since version 1.9.0, Docker <ph keyref="lo-version-docker"/>
           includes a new storage subsystem. The initial startup takes a little longer, as the old
           layout is replaced with the new layout.</li>

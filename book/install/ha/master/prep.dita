@@ -69,6 +69,16 @@ echo "<varname>Secondary-Public-IP</varname> <varname>Secondary-Public-Name</var
       </step>
       
       <step>
+        <cmd>Create a mount point for <ph keyref="nm-cc"/> audit logs.</cmd>
+        <info>The default mount point is <filepath>/var/log/serviced</filepath>.
+          You can change the default by editing the <varname>SERVICED_LOG_PATH</varname>
+          variable in the <ph keyref="nm-cc"/> configuration file.</info>
+        <stepxmp>
+          <codeblock>mkdir -p /var/log/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
         <cmd>Remove file system signatures from the
           required storage areas.</cmd>
         <stepxmp>

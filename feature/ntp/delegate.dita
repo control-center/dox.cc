@@ -55,12 +55,7 @@ driftfile /var/lib/ntp/drift</codeblock>
           </substep>
         </substeps>
       </step>
-      
-      <step>
-        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp><codeblock>systemctl stop serviced</codeblock></stepxmp>
-      </step>
-      
+
       <step>
         <cmd>Synchronize the clock with the master server.</cmd>
         <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
@@ -90,11 +85,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             <stepxmp><codeblock>systemctl start ntpd</codeblock></stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step>
-        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
-        <stepxmp><codeblock>systemctl start serviced</codeblock></stepxmp>
       </step>
     </steps>
   </taskbody>

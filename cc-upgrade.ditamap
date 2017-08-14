@@ -61,6 +61,7 @@
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/master/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
       <mapref href="feature/state/keys.ditamap" format="ditamap"/>
       <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
@@ -79,6 +80,7 @@
     </topicmeta>
     <topicref href="book/upgrade/front/13x.dita"/>
     <chapter href="book/upgrade/13x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/13x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/13x/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
@@ -91,6 +93,7 @@
     </topicmeta>
     <topicref href="book/upgrade/front/12x.dita"/>
     <chapter href="book/upgrade/12x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/12x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/12x/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
@@ -103,6 +106,7 @@
     </topicmeta>
     <topicref href="book/upgrade/front/11x.dita"/>
     <chapter href="book/upgrade/11x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
@@ -111,10 +115,10 @@
   
   <appendices>
     <appendix href="book/upgrade/maps/thins.ditamap" format="ditamap"/>
-    <appendix href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>

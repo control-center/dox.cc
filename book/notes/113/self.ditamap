@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
-<bookmap>
- <title>113</title>
- <chapter keyref="cc-notes-113-self">
-   <topicref keyref="cc-notes-113-fixed"/> 
-   <topicref keyref="cc-notes-113-notes"/>
- </chapter>
-</bookmap>

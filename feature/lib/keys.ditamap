@@ -7,6 +7,10 @@
             href="install-software.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-lib-release-dates"
+            href="release-dates.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-lib-tasks"
             href="tasks.dita"
             format="dita"

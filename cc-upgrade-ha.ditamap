@@ -91,6 +91,7 @@
     </topicmeta>
     <topicref href="book/upgrade/ha/front/13x.dita"/>
     <chapter href="book/upgrade/ha/13x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/13x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/13x/delegate.ditamap" format="ditamap"/>
   </part>
@@ -101,6 +102,7 @@
     </topicmeta>
     <topicref href="book/upgrade/ha/front/12x.dita"/>
     <chapter href="book/upgrade/ha/12x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/post.ditamap" format="ditamap"/>
@@ -112,6 +114,7 @@
     </topicmeta>
     <topicref href="book/upgrade/ha/front/11x.dita"/>
     <chapter href="book/upgrade/ha/11x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/start.ditamap" format="ditamap"/>
@@ -120,7 +123,6 @@
   
   <appendices>
     <appendix href="book/upgrade/ha/maps/thins.ditamap" format="ditamap"/>
-    <appendix href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/agent/agent.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/state/ha/manage.ditamap" format="ditamap"/>

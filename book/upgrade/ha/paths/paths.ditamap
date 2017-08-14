@@ -3,7 +3,7 @@
 <bookmap >
  <title>Paths</title>
  <chapter keyref="cc-upgrade-paths-paths">
-   <topicref keyref="cc-upgrade-paths-dates"/>
+   <topicref keyref="cc-feature-lib-release-dates"/>
    <topicref keyref="cc-upgrade-paths-documented"/>
  </chapter>
 </bookmap>

@@ -72,8 +72,15 @@
       <step>
         <cmd>Install Docker CE <ph keyref="lo-version-docker"/>.</cmd>
         <stepxmp>
-          <codeblock>yum install --disablerepo=\* --enablerepo=zenoss-mirror \
+          <codeblock>yum install --enablerepo=zenoss-mirror \
   docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Start the Docker service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start docker</codeblock>
         </stepxmp>
       </step>
 

@@ -113,10 +113,10 @@ common {
       after-sb-0pri discard-zero-changes;               
       after-sb-1pri discard-secondary;
    }
-   on <varname>Primary-Public-IP</varname> {
+   on <varname>Primary-Public-Name</varname> {
       address <varname>Primary-Private-IP</varname>:7789;
    }
-   on <varname>Secondary-Public-IP</varname> {
+   on <varname>Secondary-Public-Name</varname> {
       address <varname>Secondary-Private-IP</varname>:7789;
    }
 }</codeblock>
@@ -150,10 +150,10 @@ common {
       after-sb-0pri discard-zero-changes;               
       after-sb-1pri discard-secondary;
    }
-   on <varname>Primary-Public-IP</varname> {
+   on <varname>Primary-Public-Name</varname> {
       address <varname>Primary-Public-IP</varname>:7789;
    }
-   on <varname>Secondary-Public-IP</varname> {
+   on <varname>Secondary-Public-Name</varname> {
       address <varname>Secondary-Public-IP</varname>:7789;
    }
 }</codeblock>

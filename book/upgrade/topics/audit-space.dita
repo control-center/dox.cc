@@ -12,7 +12,7 @@
       </step>
       
       <step>
-        <cmd>Display the amount of space available for <filepath>/var/log</filepath>.</cmd>
+        <cmd>Display the amount of space available in <filepath>/var/log</filepath>.</cmd>
         <info>The <filepath>/var/log/serviced</filepath> directory does not exist until
           <ph keyref="nm-cc"/> is upgraded.</info>
         <stepxmp>
@@ -23,10 +23,10 @@
       </step>
       
       <step>
-        <cmd>Display the amount of space available for <filepath>/tmp</filepath>.</cmd>
-        <info>Docker requires 10GB of storage for temporary files, and the
-          <cite conkeyref="pubs/cite-install"/> includes instructions to link
-          the Docker temporary directory to <filepath>/tmp</filepath>.</info>
+        <cmd>Display the amount of space available in <filepath>/tmp</filepath>.</cmd>
+        <info>Docker requires 10GB of storage for temporary files, and the <cite
+            conkeyref="pubs/cite-install"/> includes instructions to link the Docker temporary
+          directory to <filepath>/tmp</filepath>.</info>
         <stepxmp>
           <codeblock>df -h /tmp</codeblock>
         </stepxmp>

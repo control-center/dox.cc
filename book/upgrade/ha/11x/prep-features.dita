@@ -24,7 +24,12 @@
           database services. The services requires additional RAM and CPU resources. For more
           information about the amount of RAM and CPU resources to add to master host nodes, please
           contact your <ph conkeyref="names/company"/> representative.</li>
-        <li>This release replaces Docker 1.12.1 with Docker Community Edition (CE) 17.03.1.</li>
+        
+        <li>Add a remote storage location for audit logs. The default location is
+          <filepath>/var/log/serviced</filepath>, and the default amount of space required is 10GB.</li>
+        <li>The Pacemaker resource agents are changed so that a master host does not fail over when
+          <ph keyref="nm-cc"/> is unresponsive or its health checks are failing.</li>
+        <li>This release replaces Docker 1.9.0 with Docker Community Edition (CE) 17.03.1.</li>
         <li>The following new configuration variables are available in
           <filepath>/etc/default/serviced</filepath>, for tuning TCP/IP communications between
           ZooKeeper ensemble hosts and <ph keyref="nm-cc"/>: <sl>
