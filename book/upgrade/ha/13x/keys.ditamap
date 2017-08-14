@@ -23,6 +23,14 @@
             href="docker-install.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-13x-docker-kernel-libs"
+            href="docker-kernel-libs.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-docker-kernel"
+            href="docker-kernel.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-13x-download"
             href="download.dita"
             format="dita"

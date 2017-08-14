@@ -8,9 +8,20 @@
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
       <ul>
-        <li>The upgrade (and install) process now supports only local repositories and packages.
-          The required software is available for download from <ph conkeyref="names/company"/>.
-          <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-download-upgrade"/>. </li>
+        <li>The upgrade (and install) process now requires downloading packages from
+          <ph conkeyref="names/company"/> manually. The required software and images
+          are no longer available from the online <ph conkeyref="names/company"/> 
+          repository or Docker Hub. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-download-upgrade"/>.
+        
+          <p>The packages to download include a <codeph>yum</codeph> repository mirror that
+            contains the required dependencies of Docker CE and <ph keyref="nm-cc"/>. An 
+            operating system or kernel upgrade can install newer versions of the dependencies
+            included in the mirror, and when you attempt to upgrade Docker CE or
+            <ph keyref="nm-cc"/>, <cmdname>yum</cmdname> will stop when it finds
+            the newer versions. A new appendix in this document includes workarounds for
+            the most common dependency conflicts.</p>
+        </li>
         
         <li>This release includes a new feature, <cmdname>serviced</cmdname> and application audit
           logging. <b>By default, audit logging requires 10GB of storage on the master host.</b> The

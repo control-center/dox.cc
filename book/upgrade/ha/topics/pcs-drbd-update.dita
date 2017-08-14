@@ -50,7 +50,7 @@
           <substep>
             <cmd>Install the packages.</cmd>
             <stepxmp>
-              <codeblock>yum --disablerepo=\* install ./downloads/*.rpm</codeblock>
+              <codeblock>yum install ./downloads/*.rpm</codeblock>
             </stepxmp>
           </substep>
         </substeps>

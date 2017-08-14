@@ -5,12 +5,8 @@
   <refbody>
     <section>
       <p>Use this chapter to upgrade <ph keyref="nm-cc"/> 1.3.x delegate hosts to <ph
-        keyref="lo-version-cc"/>. Before performing the procedures in this chapter: <ul>
-          <li>Download required software. See <xref keyref="cc-feature-download-upgrade"/>.</li>
-          <li>Stop <ph keyref="nm-cc"/> on all hosts in the cluster. See <xref
-            keyref="cc-upgrade-maps-stop"/>.</li>
-        </ul>
-      </p>
+        keyref="lo-version-cc"/>. Before performing the procedures in this chapter,
+        download required software. See <xref keyref="cc-feature-download-upgrade"/>.</p>
     </section>
   </refbody>
 </reference>
