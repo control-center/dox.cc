@@ -35,5 +35,9 @@
             href="restore.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-backup-tenant-device-states"
+            href="tenant-device-states.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>
