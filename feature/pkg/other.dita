@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Resolving other dependency conflicts</title>
+  <taskbody>
+    <context>Use this procedure to resolve dependency issues in which the installed versions of
+      one or more dependencies are newer than the versions included in the <ph
+        conkeyref="names/company"/> mirror. The following example shows a typical
+      <cmdname>yum</cmdname> error of this type: <codeblock>Error: Package: policycoreutils-python-2.5-9.el7.x86_64 (zenoss-mirror)
+Requires: policycoreutils = 2.5-9.el7
+Installed: policycoreutils-2.5-11.el7_3.x86_64 (@updates)</codeblock>
+      <p>Follow these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Install the older package.</cmd>
+        <stepxmp>Replace <varname>Package-Name</varname> with the name
+          of the package displayed in the error message:
+          <codeblock>rpm -Uvh --oldpackage <varname>Package-Name</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Clean all <cmdname>yum</cmdname> caches.</cmd>
+        <stepxmp>
+          <codeblock>yum clean all</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+    <postreq>Return to the procedure you were performing
+      before turning to this appendix and retry the <cmdname>yum</cmdname> install
+      command that failed previously.</postreq>
+  </taskbody>
+</task>

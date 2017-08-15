@@ -76,6 +76,7 @@
   <appendices>
     <appendix href="feature/state/manage.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
     <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
     <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
