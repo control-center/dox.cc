@@ -19,7 +19,14 @@
       </ul>
       </p>
     </section> 
-    
+
+    <section>
+      <title>Some service logs may be temporarily unavailable (CC-3725)</title>
+      <p>Resource pools with numeric names can cause Elasticsearch parsing errors
+        in versions of <ph keyref="nm-cc"/> before release 1.4.0. This release includes
+      a fix for numeric names, but the errors continue for one day after an upgrade,
+      until the correction propagates.</p>
+    </section>
   </refbody>
   
 </reference>
