@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha/offline</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-ha-offline-download"
+            href="download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-offline-offline"
+            href="offline.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-offline-stage-agent"
+            href="stage-agent.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-offline-stage-rpm"
+            href="stage-rpm.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-offline-stage-run-zk"
+            href="stage-run-zk.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-offline-stage-run"
+            href="stage-run.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="taskid">
+  <title>Downloading and staging required files</title>
+  <refbody>
+    <section>
+      <p>This chapter describes how to download and install or stage <ph keyref="nm-cc"/> software
+        and its operating system dependencies. The procedures in this chapter are required to
+        perform an upgrade.</p>
+      
+      <p>The following table identifies where to perform each procedure in this chapter.</p>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="6*"/>
+          <colspec colname="c2" colwidth="5*"/>
+          <thead>
+            <row>
+              <entry>Procedure</entry>
+              <entry>Where to perform</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><xref keyref="cc-upgrade-ha-offline-download"/></entry>
+              <entry>A workstation with internet access</entry>
+            </row>
+            <row>
+              <entry><xref keyref="cc-upgrade-ha-offline-stage-rpm"/></entry>
+              <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
+            </row>
+            <row>
+              <entry><xref keyref="cc-upgrade-ha-offline-stage-run"/></entry>
+              <entry>The master host</entry>
+            </row>
+            <row>
+              <entry><xref keyref="cc-upgrade-ha-offline-stage-run-zk"/></entry>
+              <entry>Delegate hosts that are ZooKeeper ensemble nodes</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </refbody>
+</reference>
