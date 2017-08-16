@@ -81,8 +81,8 @@
   
   <chapter href="book/install/ha/plan/plan.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/master/master.ditamap" format="ditamap"/>
-  <chapter href="book/install/ha/maps/config-master.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/drbd/drbd.ditamap" format="ditamap"/>
+  <chapter href="book/install/ha/maps/config-master.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/cluster/cluster.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/verify/verify.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/auth.ditamap" format="ditamap"/>

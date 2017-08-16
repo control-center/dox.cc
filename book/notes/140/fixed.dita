@@ -21,11 +21,6 @@
               <ph keyref="nm-cc"/> device in Zenoss</entry>
           </row>
           <row>
-            <entry>CC-3733</entry>
-            <entry>Logs of several services are not available in Kibana due to logstash parse
-              errors. See <xref keyref="cc-notes-140-notes/CC-3733"/>.</entry>
-          </row>
-          <row>
             <entry>CC-3681</entry>
             <entry><cmdname>zenossdbpack</cmdname> <cmdname>cron</cmdname> job is installed
               with each <cmdname>serviced</cmdname> instance</entry>
@@ -33,23 +28,6 @@
           <row>
             <entry>CC-3615</entry>
             <entry>Unable to add or remove IP asssignments</entry>
-          </row>
-          <row>
-            <entry>CC-3595</entry>
-            <entry>Do not restart logstash on configuration change</entry>
-          </row>
-          <row>
-            <entry>CC-3591</entry>
-            <entry><ph keyref="nm-cc"/> writes service audit messages to flat files</entry>
-          </row>
-          <row>
-            <entry>CC-3590</entry>
-            <entry>Move <ph keyref="nm-cc"/> access log. See <xref keyref="cc-notes-140-notes/CC-3590"/>.</entry>
-          </row>
-          <row>
-            <entry>CC-3589</entry>
-            <entry><ph keyref="nm-cc"/> installs <cmdname>logrotate</cmdname> configuration
-              for application audit logs. See <xref keyref="cc-notes-140-notes/CC-3590"/>.</entry>
           </row>
           <row>
             <entry>CC-3573</entry>
@@ -65,10 +43,6 @@
             <entry>Logging library aggressively tries to reconnect over network when disconnected</entry>
           </row>
           <row>
-            <entry>CC-3543</entry>
-            <entry><ph keyref="nm-cc"/> device: No data being shown in graphs</entry>
-          </row>
-          <row>
             <entry>CC-3536</entry>
             <entry><ph keyref="nm-cc"/> should not start services if it hasn't exported the correct tenant device</entry>
           </row>
@@ -82,17 +56,9 @@
             <entry><ph keyref="nm-cc"/> reports incorrect value for some metrics in graphs</entry>
           </row>
           <row>
-            <entry>CC-3512</entry>
-            <entry>Error in PREIN scriptlet in rpm package <cmdname>serviced</cmdname></entry>
-          </row>
-          <row>
             <entry>CC-3510</entry>
             <entry>RabbitMQ admin web interface gives 404s on links under the 
               /zenoss exchanges/queues because of the preceding slash</entry>
-          </row>
-          <row>
-            <entry>CC-3502</entry>
-            <entry>Cleaning orphans can cause failures in an HA environment</entry>
           </row>
           <row>
             <entry>CC-3478</entry>
@@ -103,20 +69,8 @@
             <entry>Ambiguous host status icons</entry>
           </row>
           <row>
-            <entry>CC-3425</entry>
-            <entry>Panic shutting down <cmdname>serviced</cmdname> during snapshot</entry>
-          </row>
-          <row>
             <entry>CC-3409</entry>
             <entry>ControlPlaneClient.queryServices(name) no longer filters results</entry>
-          </row>
-          <row>
-            <entry>CC-3408</entry>
-            <entry>Leverage the best effort query feature in opentsdb</entry>
-          </row>
-          <row>
-            <entry>CC-3399</entry>
-            <entry>Audit log not visible in Kibana</entry>
           </row>
           <row>
             <entry>CC-3361</entry>
@@ -127,33 +81,12 @@
             <entry><ph keyref="nm-cc"/> unaware of changes to interface name</entry>
           </row>
           <row>
-            <entry>CC-3343</entry>
-            <entry>Remove Docker version check from <ph keyref="nm-cc"/></entry>
-          </row>
-          <row>
-            <entry>CC-3341</entry>
-            <entry>Rollback to snapshot does not start services using <codeph>--force-restart</codeph> option</entry>
-          </row>
-          <row>
-            <entry>CC-3338</entry>
-            <entry>Services that are emergency stopped can still be stopped</entry>
-          </row>
-          <row>
-            <entry>CC-3328</entry>
-            <entry>A flare message should be displayed if someone clicks start/restart
-              button for a group of services that are in emergency state</entry>
-          </row>
-          <row>
             <entry>CC-3322</entry>
             <entry>Loosen time sync requirement</entry>
           </row>
           <row>
             <entry>CC-3316</entry>
             <entry>Backup fails when remote collector is unavailable</entry>
-          </row>
-          <row>
-            <entry>CC-3315</entry>
-            <entry>After deleting a host with running services, you are not able to stop/restart services</entry>
           </row>
           <row>
             <entry>CC-3268</entry>
