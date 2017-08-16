@@ -3,8 +3,8 @@
 <reference id="referenceid">
   <title>Notes and workarounds</title>
   <refbody>
-    <section>
-      <title>Changes to support audit logging (CC-3488)</title>
+    <section id="CC-3590">
+      <title>Changes to support audit logging (CC-3590)</title>
       <p>The following changes support the new audit logging feature:
       <ul>
         <li>The <filepath>/var/log/serviced.access.log</filepath> file, which records HTTP/S
@@ -20,12 +20,20 @@
       </p>
     </section> 
 
-    <section>
-      <title>Some service logs may be temporarily unavailable (CC-3725)</title>
+    <section id="CC-3733">
+      <title>Some service logs may be temporarily unavailable (CC-3733)</title>
       <p>Resource pools with numeric names can cause Elasticsearch parsing errors
         in versions of <ph keyref="nm-cc"/> before release 1.4.0. This release includes
       a fix for numeric names, but the errors continue for one day after an upgrade,
       until the correction propagates.</p>
+    </section>
+    
+    <section id="CC-3764">
+      <title>Actions performed in shells are not included in audit logs (CC-3764)</title>
+      <p>When you invoke <codeph>serviced service shell</codeph> to run a script
+        in an application container, actions the script performs that should be 
+        included in audit logs are not included. The workaround is to use 
+        <codeph>serviced service attach</codeph>.</p>
     </section>
   </refbody>
   

@@ -27,7 +27,7 @@
           <dt><synph>--docker-registry
             <var>Master-Hostname</var><delim>:</delim>5000</synph></dt>
           <dd>The local Docker registry to use. For more information, see
-              <varname>SERVICED_DOCKER_REGISTRY</varname>  in the section about  configuration file
+              <varname>SERVICED_DOCKER_REGISTRY</varname> in the section about configuration file
             environment variables.</dd>
         </dlentry>
         <dlentry>

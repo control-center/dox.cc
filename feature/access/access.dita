@@ -22,8 +22,13 @@
         same users by choosing the <cmdname>serviced</cmdname> group as the browser interface
         access group.</note>
       
-      <p>Pluggable Authentication Modules (PAM) is supported and recommended for enabling
-        access to both the browser interface and the command-line interface.</p>
+      <p>Pluggable Authentication Modules (PAM) is supported and recommended for enabling access to
+        both the browser interface and the command-line interface. However, the PAM configuration
+        must include the <cmdname>sudo</cmdname> service. <ph keyref="nm-cc"/> relies on the host's
+          <cmdname>sudo</cmdname> configuration, and if no configuration is present, PAM defaults to
+        the configuration for <codeph>other</codeph>, which is typically too restrictive for <ph
+          keyref="nm-cc"/> users. For more information about configuring PAM, refer to your
+        operating system documentation.</p>
       
     </section>
   </refbody>

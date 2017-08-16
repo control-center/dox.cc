@@ -26,6 +26,13 @@
               <codeblock>serviced pool add <varname>Resource-Pool</varname></codeblock>
             </stepxmp>
           </substep>
+          <substep importance="optional">
+            <cmd>Set permissions on the new resource pool, if desired.</cmd>
+            <stepxmp>Replace <varname>Resource-Pool</varname> with the name of the new resource
+              pool:
+              <codeblock>serviced pool set-permission --dfs=true --admin=true <varname>Resource-Pool</varname></codeblock>
+            </stepxmp>
+          </substep>
         </substeps>
       </step>
 

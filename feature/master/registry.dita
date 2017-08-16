@@ -35,6 +35,8 @@
           <substep>
             <cmd>Replace <codeph>localhost:5000</codeph> with the endpoint of the local Docker
               registry.</cmd>
+            <info>Use the IP address or fully-qualified domain name of the host and the
+            port number.</info>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>
