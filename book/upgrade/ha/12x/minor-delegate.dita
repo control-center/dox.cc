@@ -5,7 +5,8 @@
   <refbody>
     <section>
       <p>Perform the procedures in this chapter to upgrade <ph keyref="nm-cc"/> 1.2.x delegate hosts to
-          <ph keyref="lo-version-cc"/>.</p>
+        <ph keyref="lo-version-cc"/>. First, download and stage the required files. 
+        <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-download-upgrade"/>.</p>
     </section>
   </refbody>
 </reference>

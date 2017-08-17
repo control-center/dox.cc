@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Identifying storage for audit logging</title>
+  <title>Adding storage for audit logging</title>
   <taskbody>
     <context>The default configuration of <ph keyref="nm-cc"/> audit logging requires 10GB of
-      storage in <filepath>/var/log/serviced</filepath> on master host nodes. For
-      high-availability deployments, <ph conkeyref="names/company"/> recommends mounting 
-      remote storage at <filepath>/var/log/serviced</filepath>. Use this procedure to 
-      create the mount point.</context>
+      storage in <filepath>/var/log/serviced</filepath> on master host nodes. For high-availability
+      deployments, <ph conkeyref="names/company"/> recommends mounting remote storage instead of
+      adding local storage to master nodes. Use this procedure to create the mount point.</context>
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>

@@ -7,11 +7,11 @@
       <p>This release includes new features and new requirements that affect the upgrade process.
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
-      <note><ph conkeyref="names/company"/> applications may require additional steps
-        to prepare to use this release. For more information, refer to the documentation
-        for your application.</note>
+      <note><ph keyref="nm-rm"/> may require additional steps
+        to prepare to use this release. For more information, refer to 
+        <ph keyref="nm-rm"/> documentation.</note>
       <ul>
-        <li>A remote storage location is now required for audit logs. The default location is
+        <li>A new remote storage location is now required for audit logs. The default mount point is
           <filepath>/var/log/serviced</filepath>, and the default amount of space required is
           10GB. The master node upgrade process includes a procedure for ensuring that a remote
           storage location is configured.</li>

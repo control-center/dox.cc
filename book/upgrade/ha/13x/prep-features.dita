@@ -8,7 +8,7 @@
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
       <ul>
-        <li>A remote storage location is now required for audit logs. The default location is
+        <li>A new remote storage location is now required for audit logs. The default mount point is
             <filepath>/var/log/serviced</filepath>, and the default amount of space required is
           10GB. The master node upgrade process includes a procedure for ensuring that a remote
           storage location is configured.</li>
