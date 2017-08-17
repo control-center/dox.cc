@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Identifying storage for audit logging</title>
+  <taskbody>
+    <context>The default configuration of <ph keyref="nm-cc"/> audit logging requires 10GB of
+      storage in <filepath>/var/log/serviced</filepath> on master host nodes. For
+      high-availability deployments, <ph conkeyref="names/company"/> recommends mounting 
+      remote storage at <filepath>/var/log/serviced</filepath>. Use this procedure to 
+      create the mount point.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Create a mount point for audit logs.</cmd>
+        <info>The default location for <cmdname>serviced</cmdname> audit logs is
+          <filepath>/var/log/serviced</filepath>. The location is determined by the 
+          <varname>SERVICED_LOG_PATH</varname> variable in
+          <filepath>/etc/default/serviced</filepath>.</info>
+        <stepxmp>
+          <codeblock>mkdir -p /var/log/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Mount a remote filesystem at <filepath>/var/log/serviced</filepath>.</cmd>
+        <info>For more information about mounting a remote filesystem, refer to your
+        operating system documentation.</info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -35,6 +35,8 @@
           <codeblock>yum install --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
+        <stepresult>If <cmdname>yum</cmdname> returns an error due to dependency issues, see
+          <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
       </step>
       
       <step>

@@ -44,9 +44,9 @@
     </topicgroup>
     <topicgroup>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/11x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics/keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -58,7 +58,7 @@
       <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/maps/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/ha/offline/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/download/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/paths/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/resize/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/topics/keys.ditamap" format="ditamap"/>
@@ -67,6 +67,7 @@
       <mapref href="feature/access/keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
       <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
@@ -86,7 +87,6 @@
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/ha/offline/offline.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
@@ -94,9 +94,11 @@
     </topicmeta>
     <topicref href="book/upgrade/ha/front/13x.dita"/>
     <chapter href="book/upgrade/ha/13x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/download/upgrade.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/13x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/13x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/post.ditamap" format="ditamap"/>
   </part>
   
   <part>
@@ -105,6 +107,7 @@
     </topicmeta>
     <topicref href="book/upgrade/ha/front/12x.dita"/>
     <chapter href="book/upgrade/ha/12x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/download/upgrade.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/12x/delegate.ditamap" format="ditamap"/>
@@ -117,6 +120,7 @@
     </topicmeta>
     <topicref href="book/upgrade/ha/front/11x.dita"/>
     <chapter href="book/upgrade/ha/11x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/download/upgrade.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/delegate.ditamap" format="ditamap"/>

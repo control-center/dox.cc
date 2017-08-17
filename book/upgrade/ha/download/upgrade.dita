@@ -21,19 +21,19 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-offline-download"/></entry>
+              <entry><xref keyref="cc-upgrade-ha-download-upgrade"/></entry>
               <entry>A workstation with internet access</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-offline-stage-rpm"/></entry>
+              <entry><xref keyref="cc-upgrade-ha-download-stage-rpm"/></entry>
               <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-offline-stage-run"/></entry>
+              <entry><xref keyref="cc-upgrade-ha-download-stage-run"/></entry>
               <entry>The master host</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-offline-stage-run-zk"/></entry>
+              <entry><xref keyref="cc-upgrade-ha-download-stage-run-zk"/></entry>
               <entry>Delegate hosts that are ZooKeeper ensemble nodes</entry>
             </row>
           </tbody>
