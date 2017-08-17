@@ -33,7 +33,7 @@
               registry.</cmd>
             <info>If the master host is configured with an alternative local Docker registry, use
               the same endpoint here. Otherwise, just replace <codeph>localhost</codeph> with the IP
-              address or hostname of the <ph keyref="nm-cc"/> master host.</info>
+              address or fully-qualified domain name of the <ph keyref="nm-cc"/> master host.</info>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>

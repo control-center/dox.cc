@@ -5,6 +5,7 @@
   <chapter keyref="cc-upgrade-12x-minor-master">
     <topicref keyref="cc-upgrade-topics-audit-space"/>
     <topicref keyref="cc-upgrade-12x-docker-install"/>
+    <topicref keyref="cc-upgrade-11x-docker-images"/>
     <topicref keyref="cc-upgrade-12x-master"/>
  </chapter>
 </bookmap>

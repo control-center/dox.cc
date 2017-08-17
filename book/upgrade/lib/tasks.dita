@@ -210,9 +210,9 @@ EOF</codeblock>
             <info>The variable specifies the host and port at which the local Docker
               registry is available.</info>
             <stepxmp>
-              <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or 
+              <p>Replace <varname>Hostname-Or-IP</varname> with the fully-qualified domain name or 
                 IP address of the <ph keyref="nm-cc"/> master host:</p>
-              <codeblock>SERVICED_DOCKER_REGISTRY=<varname>Hostname-Or-IP</varname>:5000</codeblock>
+              <codeblock>SERVICED_DOCKER_REGISTRY=<varname>FQDN-Or-IP</varname>:5000</codeblock>
             </stepxmp>
           </substep>
           <substep>

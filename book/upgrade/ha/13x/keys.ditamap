@@ -23,18 +23,6 @@
             href="docker-install.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-13x-docker-kernel-libs"
-            href="docker-kernel-libs.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-docker-kernel"
-            href="docker-kernel.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-download"
-            href="download.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-13x-image"
             href="image.dita"
             format="dita"
@@ -47,10 +35,6 @@
             href="micro-master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-13x-offline"
-            href="offline.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-13x-post"
             href="post.dita"
             format="dita"
@@ -61,18 +45,6 @@
     />
     <keydef keys="cc-upgrade-ha-13x-prep"
             href="prep.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-stage-agent"
-            href="stage-agent.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-stage-rpm"
-            href="stage-rpm.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-stage-run"
-            href="stage-run.dita"
             format="dita"
     />
    </topicgroup>

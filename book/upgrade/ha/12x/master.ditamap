@@ -3,9 +3,10 @@
 <bookmap >
  <title>Master</title>
   <chapter keyref="cc-upgrade-ha-12x-minor-master">
+    <topicref keyref="cc-upgrade-ha-topics-audit-space"/>
     <topicref keyref="cc-upgrade-ha-13x-docker-install"/>
-    <topicref keyref="cc-upgrade-ha-12x-image"/>
-    <topicref keyref="cc-upgrade-ha-12x-cc-master"/>
+    <topicref keyref="cc-upgrade-ha-11x-docker-images"/>
     <topicref keyref="cc-upgrade-ha-12x-agent"/>
+    <topicref keyref="cc-upgrade-ha-12x-cc-master"/>
  </chapter>
 </bookmap>

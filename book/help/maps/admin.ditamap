@@ -25,6 +25,7 @@
             <topicref keyref="cc-feature-backup-cli-exclude-multiple"/>
          </topicref>
          <topicref keyref="cc-feature-backup-restore"/>
+         <topicref keyref="cc-feature-backup-tenant-device-states"/>
       </topicref>
       
       <topicref keyref="cc-feature-storage-snapshot-rollback">

@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Loading image files</title>
   <taskbody>
-    <context>Use this procedure to load images into the local repository.</context>
+    <context>Use this procedure to load images into the local registry.</context>
     <steps>
       
       <step>

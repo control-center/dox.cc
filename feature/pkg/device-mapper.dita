@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Resolving device mapper dependency conflicts</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>An RHEL/CentOS system with internet access and the same operating system release and
+          kernel as the <ph keyref="nm-cc"/> hosts in your deployment.</li>
+        <li>A secure network copy program.</li>
+      </ul>
+    </prereq>
+    <context>Use this procedure to resolve dependency issues in which the installed versions of
+      device mapper libraries are newer than the versions included in the <ph
+        conkeyref="names/company"/> mirror. The following example shows a typical
+        <cmdname>yum</cmdname> error of this type: <codeblock>Error: Package: 7:device-mapper-event-1.02.107-5.el7.x86_64 (zenoss-mirror)
+Requires: device-mapper = 7:1.02.107-5.el7
+Installed: 7:device-mapper-1.02.107-5.el7_2.5.x86_64 (@updates)
+device-mapper = 7:1.02.107-5.el7_2.5</codeblock>
+      <p>Follow these steps:</p>
+    </context>
+    
+    <steps>
+      <step>
+        <cmd>Display the version number of the installed device mapper package.</cmd>
+        <stepxmp>
+          <codeblock>rpm -q device-mapper | cut -d - -f 3-</codeblock>
+        </stepxmp>
+        <stepresult>Example result:
+          <codeblock>1.02.135-1.el7_3.1.x86_64</codeblock>
+          <p>Record the version number for subsequent use.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Log in to a compatible host that is connected to 
+          the internet <ph conkeyref="strings/login-root"/>.</cmd>
+        <info>The host must have the same operating system (RHEL or CentOS) and release installed
+          as the <ph keyref="nm-cc"/> hosts in your deployment.</info>
+      </step>
+      
+      <step>
+        <cmd>Install <cmdname>yum</cmdname> utilities, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine whether the <cmdname>yum</cmdname> utilities package is installed.</cmd>
+            <stepxmp>
+              <codeblock>rpm -qa | grep yum-utils</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the command returns a result, the package is installed. Proceed to the next step.</li>
+                <li>If the command does not return a result, the package is not installed. Perform the following substep.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Install the <codeph>yum-utils</codeph> package.</cmd>
+            <stepxmp>
+              <codeblock>yum install yum-utils</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Download the required dependencies, and then create a 
+          <cmdname>tar</cmdname> archive of the files.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Create a variable for the dependency version to download.</cmd>
+            <stepxmp>Replace <varname>Device-Mapper-Version</varname> with the
+              version number displayed in a previous step:
+              <codeblock>myVersion=<varname>Device-Mapper-Version</varname></codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a temporary directory for the dependencies.</cmd>
+            <stepxmp>
+              <codeblock>mkdir /tmp/downloads</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Download the dependencies to the temporary directory.</cmd>
+            <stepxmp>
+              <codeblock>yum install --downloadonly --downloaddir=/tmp/downloads \
+  device-mapper-event-$myVersion</codeblock>
+            </stepxmp>
+            <stepresult>The <cmdname>yum</cmdname> command downloads two package files.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Create a <cmdname>tar</cmdname> archive of the temporary directory.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp &#38;&#38; tar czf ./downloads.tgz ./downloads</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Use a secure copy program to copy the archive file to 
+          the <filepath>/tmp</filepath> directory of the <ph keyref="nm-cc"/> 
+          host or hosts that need the dependencies.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Install the device mapper dependencies.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Extract the packages from the <cmdname>tar</cmdname> archive.</cmd>
+            <stepxmp>
+              <codeblock>cd /tmp &#38;&#38; tar xzf ./downloads.tgz</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the dependencies.</cmd>
+            <stepxmp>
+              <codeblock>yum install $(ls /tmp/downloads/*.rpm)</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+    <postreq>Return to the procedure you were performing
+      before turning to this appendix and retry the <cmdname>yum</cmdname> install
+      command that failed previously.</postreq>
+  </taskbody>
+</task>

@@ -76,7 +76,10 @@
             uses to store internal services and application images.</dd>
           <dd>If the default value is changed, the host's Docker configuration file must 
             include the <codeph>--insecure-registry</codeph> flag with the same value
-            as this variable.</dd>
+            as this variable. </dd>
+          <dd>The safest replacement for <codeph>localhost</codeph> is the IPv4 address
+            of the registry host. Otherwise, the fully-qualified domain name of the
+            host must be specified.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_OUTBOUND_IP">

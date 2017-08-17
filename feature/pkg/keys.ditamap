@@ -3,6 +3,14 @@
 <map>
  <title>Keys in pkg</title>
   <topicgroup>
+    <keydef keys="cc-feature-pkg-device-mapper"
+            href="device-mapper.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-pkg-other"
+            href="other.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-pkg-pkg"
             href="pkg.dita"
             format="dita"
