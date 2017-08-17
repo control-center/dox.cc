@@ -21,34 +21,6 @@
       <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
         <cmd/>
       </step>
-      
-      <step importance="optional">
-        <cmd>Import the Docker image for ZooKeeper into the local
-          repository, if necessary.</cmd>
-        <info>Delegate hosts that are not ZooKeeper ensemble nodes do not need the image. The image
-          file is staged in <filepath>/root</filepath> during a preceding procedure.</info>
-        <substeps>
-          <substep>
-            <cmd>Change directory to <filepath>/root</filepath>.</cmd>
-            <stepxmp>
-              <codeblock>cd /root</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Extract the image.</cmd>
-            <stepxmp>
-              <codeblock>./install-zenoss-isvcs-zookeeper-v*.run</codeblock>
-            </stepxmp>
-            <info>Image extraction begins when you press <b>y</b>.</info>
-          </substep>
-          <substep importance="optional">
-            <cmd>Delete the image file, if desired.</cmd>
-            <stepxmp>
-              <codeblock>rm -i ./install-zenoss-*.run</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
 
     </steps>
   </taskbody>

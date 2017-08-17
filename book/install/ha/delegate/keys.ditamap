@@ -19,6 +19,10 @@
             href="download.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-delegate-image-import"
+            href="image-import.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-delegate-ntp"
             href="ntp.dita"
             format="dita"
