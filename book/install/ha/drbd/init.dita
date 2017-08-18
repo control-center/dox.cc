@@ -69,6 +69,15 @@ mkfs.xfs /dev/drbd1</codeblock>
       </step>
       
       <step>
+        <cmd>Identify the size of the thin pool for application data.</cmd>
+        <info>The size is required to set an accurate value for the
+          <varname>SERVICED_DM_BASESIZE</varname> variable.</info>
+        <stepxmp>
+          <codeblock>lvs --options=lv_name,lv_size | grep serviced-pool</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
         <cmd>Configure <ph keyref="nm-cc"/> storage variables.</cmd>
         <substeps>
           <substep conkeyref="cc-feature-lib-tasks/open-file">
@@ -93,6 +102,19 @@ mkfs.xfs /dev/drbd1</codeblock>
               data.</cmd>
             <stepxmp>
               <codeblock>SERVICED_DM_THINPOOLDEV=/dev/mapper/serviced-serviced--pool</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Locate the line for the <varname>SERVICED_DM_BASESIZE</varname> variable, and 
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value, if necessary.</cmd>
+            <stepxmp>Replace <varname>Fifty-Percent</varname> with the value that is less than or
+              equal to 50% of the size of the thin pool for application data.
+              Include the symbol for gigabytes, <codeph>G</codeph>:
+              <codeblock>SERVICED_DM_BASESIZE=<varname>Fifty-Percent</varname>G</codeblock>
             </stepxmp>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/save">
