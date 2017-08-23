@@ -3,8 +3,11 @@
 <task id="taskid">
   <title>Updating to Docker CE</title>
   <taskbody>
-    <context>Use this procedure to update Docker to Docker Community Edition (Docker CE) version <ph
-        keyref="lo-version-docker"/>.</context>
+    <context>Use this procedure to update Docker to Docker Community Edition (Docker CE) 
+      version <ph keyref="lo-version-docker"/>.
+      <note>If you are upgrading <ph keyref="nm-cc"/> 1.3.3, skip this procedure.
+        Docker CE <ph keyref="lo-version-docker"/> is already installed.</note>
+    </context>
     <steps>
       <step>
         <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>

@@ -4,7 +4,7 @@
    <title>Download</title>
    <chapter keyref="cc-upgrade-ha-download-upgrade">
       <topicref keyref="cc-upgrade-ha-download-download"/>
-      <topicref keyref="cc-upgrade-ha-download-stage-rpm"/>
+      <topicref keyref="cc-feature-download-stage-rpm"/>
       <topicref keyref="cc-upgrade-ha-download-stage-agent"/>
       <topicref keyref="cc-upgrade-ha-download-stage-run"/>
       <topicref keyref="cc-upgrade-ha-download-stage-run-zk"/>

@@ -19,6 +19,10 @@
             href="cc-master.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-13x-docker-images"
+            href="docker-images.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-13x-docker-install"
             href="docker-install.dita"
             format="dita"
@@ -45,6 +49,10 @@
     />
     <keydef keys="cc-upgrade-ha-13x-prep"
             href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-13x-zk-image"
+            href="zk-image.dita"
             format="dita"
     />
    </topicgroup>

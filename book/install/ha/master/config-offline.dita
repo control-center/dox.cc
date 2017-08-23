@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Configuring offline use</title>
+  <title>Configuring the cluster virtual IP address</title>
   <taskbody>
-    <context>Use this procedure to configure master host nodes to send their responses 
-      to the virtual IP address of the high-availability cluster. The 
-      following configuration variable specifies the IP address: 
-      <dl>
-        <dlentry conkeyref="cc-feature-vars-file/SERVICED_OUTBOUND_IP"><dt/><dd/></dlentry>
+    <context>Use this procedure to configure a host with the IPv4 address of  
+      the high-availability cluster (<varname>HA-Virtual-IP</varname>). The following
+      configuration variable specifies the address: <dl>
+        <dlentry conkeyref="cc-feature-vars-file/SERVICED_OUTBOUND_IP">
+          <dt/>
+          <dd/>
+        </dlentry>
       </dl>
       <p>Perform these steps:</p>
-      </context>
+    </context>
     <steps>
       <step>
         <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>

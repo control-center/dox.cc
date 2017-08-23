@@ -85,16 +85,22 @@
         <dlentry id="SERVICED_OUTBOUND_IP">
           <dt><varname>SERVICED_OUTBOUND_IP</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
-          <dd>The default startup routines of <cmdname>serviced</cmdname> include
-            attempting to ping <codeph>google.com</codeph>. When a value is set
-            for this variable, <cmdname>serviced</cmdname> does not attempt the
-            ping and assumes it does not have internet access.</dd>
-          <dd>Use this variable to specify the IP address of a network interface
-            other than the default, or to prevent <cmdname>serviced</cmdname>
-            from assuming it has internet access.</dd>
-          <dd><note>Setting the Docker <varname>HTTP_PROXY</varname> or <varname>HTTPS_PROXY</varname> environment
+          <dd>The IPv4 address that delegates use to connect to the master host. When no address is
+            specified, <cmdname>serviced</cmdname> attempts to discover its public IP address by
+            pinging <codeph>google.com</codeph>.</dd>
+          
+          <dd>This variable must be set on all <ph keyref="nm-cc"/> hosts in either of the following scenarios:
+            <ul>
+              <li><ph keyref="nm-cc"/> is deployed behind a firewall and <codeph>google.com</codeph>
+                is not reachable. Set the value to the IPv4 address of the master host.</li>
+              <li><ph keyref="nm-cc"/> is deployed in a high-availability cluster. Set the value to
+                the virtual IPv4 address of the high-availability cluster
+                  (<varname>HA-Virtual-IP</varname>).</li>
+            </ul>
+            <note>Setting the Docker <varname>HTTP_PROXY</varname> or <varname>HTTPS_PROXY</varname> environment
               variables prevents access to the IP address defined with this variable. To enable
-              access, unset the Docker variables, and then reboot the host.</note></dd>
+              access, unset the Docker variables, and then reboot the host.</note>
+          </dd>
         </dlentry>
         
         <dlentry id="SERVICED_STATIC_IPS">
