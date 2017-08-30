@@ -45,16 +45,16 @@
       </step>
       
       <step>
-        <cmd>Copy the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>
+        <cmd>Move the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-<ph keyref="lo-version-cc"/>-1.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>mv /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       
       <step importance="optional">
-        <cmd>Delete the RPM files.</cmd>
+        <cmd>Delete the mirror package file, if desired.</cmd>
         <stepxmp>
-          <codeblock>rm /tmp/yum-mirror-*.rpm /tmp/serviced-*.rpm</codeblock>
+          <codeblock>rm /tmp/yum-mirror-*.rpm</codeblock>
         </stepxmp>
       </step>
 
