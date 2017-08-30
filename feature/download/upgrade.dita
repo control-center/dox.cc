@@ -25,7 +25,7 @@
               <entry>A workstation with internet access</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-feature-download-stage-rpm"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-rpm-upgrade"/></entry>
               <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
             </row>
             <row>

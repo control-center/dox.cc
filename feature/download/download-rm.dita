@@ -49,8 +49,7 @@
       <step>
         <cmd>Download a RHEL/CentOS repository mirror file.</cmd>
         <info>The download site provides a repository mirror file for each supported release of
-          RHEL/CentOS. Each file contains the <ph keyref="nm-cc"/> package and its
-          dependencies.</info>
+          RHEL/CentOS. Each file contains the <ph keyref="nm-cc"/> dependencies.</info>
         <info>To download the correct repository mirror file,
           match the operating system release number in the file name 
           with the version of RHEL/CentOS installed on all of the hosts

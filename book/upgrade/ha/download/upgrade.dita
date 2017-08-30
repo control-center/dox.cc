@@ -25,12 +25,16 @@
               <entry>A workstation with internet access</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-download-stage-rpm"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-rpm"/></entry>
               <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
             </row>
             <row>
+              <entry><xref keyref="cc-upgrade-ha-download-stage-agent"/></entry>
+              <entry>Both master host nodes</entry>
+            </row>
+            <row>
               <entry><xref keyref="cc-upgrade-ha-download-stage-run"/></entry>
-              <entry>The master host</entry>
+              <entry>Both master host nodes</entry>
             </row>
             <row>
               <entry><xref keyref="cc-upgrade-ha-download-stage-run-zk"/></entry>
