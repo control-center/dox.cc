@@ -46,7 +46,8 @@
         <info>During this startup, <cmdname>serviced</cmdname> invokes <codeph>docker pull</codeph>
           to retrieve its updated images.</info>
         <stepxmp>
-          <codeblock>systemctl start serviced &#38;&#38; journalctl -u serviced -f -o cat</codeblock>
+          <codeblock>systemctl daemon-reload &#38;&#38; systemctl start serviced \
+  &#38;&#38; journalctl -u serviced -f -o cat</codeblock>
         </stepxmp>
         <stepresult>Do not proceed to the next step until the following message is displayed:
           <codeblock>Host Agent successfully started</codeblock>

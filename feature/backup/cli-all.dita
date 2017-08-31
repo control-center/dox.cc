@@ -14,7 +14,8 @@
         <info>
           <codeblock>serviced backup /opt/serviced/var/backups</codeblock>
         </info>
-        <stepresult><ph conkeyref="cc-feature-backup-backup/backup-success"/>
+        <stepresult>After a successful backup, the system
+          displays the name of the backup file.
           <p>Example result:</p><p>
             <codeblock>backup-2017-03-07-203717.tgz</codeblock>
           </p></stepresult>

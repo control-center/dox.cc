@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><uicontrol>Configuration Files</uicontrol></title>
+  <refbody>
+    <section>
+      <p>The <uicontrol>Configuration Files</uicontrol> table lists any configuration files that are
+        associated with the application. You can search for and edit configuration files.</p>
+      <p>To edit a configuration file, click <uicontrol>Edit</uicontrol> in the
+          <uicontrol>Actions</uicontrol> column. Changes are not shared with other instances. For
+        more information about the files, see the configuration documentation for your application. </p>
+    </section>
+  </refbody>
+</reference>
+

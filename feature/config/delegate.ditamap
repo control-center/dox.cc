@@ -6,6 +6,7 @@
     <topicref keyref="cc-feature-delegate-cron"/>
     <topicref keyref="cc-feature-access-cli"/>
     <topicref keyref="cc-feature-delegate-role"/>
+    <topicref keyref="cc-feature-delegate-registry"/>
     <topicref keyref="cc-feature-delegate-endpoints"/>
     <topicref keyref="cc-feature-master-offline"/>
     <topicref keyref="cc-feature-vars-delegate-about">

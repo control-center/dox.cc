@@ -11,6 +11,7 @@
     </topicref>
     <topicref keyref="cc-feature-master-storage-config"/>
     <topicref keyref="cc-feature-master-role"/>
+    <topicref keyref="cc-feature-master-registry"/>
     <topicref keyref="cc-feature-master-offline"/>
     <topicref keyref="cc-feature-vars-master">
       <topicref keyref="cc-feature-vars-best"/>

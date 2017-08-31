@@ -20,7 +20,9 @@
       <step>
         <cmd>On both nodes, install the latest version of the resource agents package.</cmd>
         <stepxmp>
-          <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
+          <codeblock>myPath=/opt/zenoss-repo-mirror
+yum install \
+  $myPath/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>      
     </steps>

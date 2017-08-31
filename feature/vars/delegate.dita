@@ -17,6 +17,10 @@
           </thead>
           <tbody>
             <row>
+              <entry><varname>SERVICED_ZK</varname></entry>
+              <entry>The list of hosts in the ZooKeeper ensemble.</entry>
+            </row>
+            <row>
               <entry><varname>SERVICED_STATS_PERIOD</varname></entry>
               <entry>The frequency at which delegates gather metrics to send to 
                 the master host.</entry>

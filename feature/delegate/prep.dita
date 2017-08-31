@@ -3,9 +3,7 @@
 <task id="taskid">
   <title>Preparing a delegate host</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: If you 
-      are creating a deployment without internet access, 
-      perform the steps in <xref keyref="cc-feature-offline-offline"/>,
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/>,
       before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS
@@ -15,19 +13,11 @@
         <cmd>Log in to the candidate delegate host
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/firewall">
-        <cmd></cmd>
-      </step>
-      
+
       <step conkeyref="cc-feature-lib-tasks/journal">
         <cmd></cmd>
       </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
-        <cmd></cmd>
-      </step>
-      
+
       <step conkeyref="cc-feature-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>
@@ -43,7 +33,7 @@
           <substep>
             <cmd>Install the package.</cmd>
             <stepxmp>
-              <codeblock>yum install -y ntp</codeblock>
+              <codeblock>yum install ntp</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -67,17 +57,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
-        <cmd></cmd>
-      </step>
-      
-      <step>
-        <cmd>Reboot the host.</cmd>
-        <stepxmp>
-          <codeblock>reboot</codeblock>
-        </stepxmp>
       </step>
       
     </steps>

@@ -55,6 +55,10 @@
             href="prep.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-master-registry"
+            href="registry.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-master-stage"
             href="stage.dita"
             format="dita"

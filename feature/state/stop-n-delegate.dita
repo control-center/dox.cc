@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping a delegate host</title>
+  <taskbody>
+    <context>Use this procedure to stop the <ph keyref="nm-cc"/> service
+        (<cmdname>serviced</cmdname>) on a delegate host in a multi-host deployment. Repeat this
+      procedure on each delegate host in your deployment.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Stop the <ph keyref="nm-cc"/> service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="stop-containers">
+        <cmd>Ensure that no containers remain in the local repository.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the identifiers of all containers, running and exited.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the command returns no result, proceed to the next step.</li>
+                <li>If the command returns a result, perform the following substeps.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Remove all remaining containers.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the remove command completes, proceed to the next step.</li>
+                <li>If the remove command does not complete, the most likely cause is an NFS
+                  conflict. Perform the following substeps.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Stop the NFS and Docker services.</cmd>
+            <stepxmp>
+              <codeblock>systemctl stop nfs &#38;&#38; systemctl stop docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Start the NFS and Docker services.</cmd>
+            <stepxmp>
+              <codeblock>systemctl start nfs &#38;&#38; systemctl start docker</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Repeat the attempt to remove all remaining containers.</cmd>
+            <stepxmp>
+              <codeblock>docker ps -qa | xargs --no-run-if-empty docker rm -fv</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the remove command completes, proceed to the next step.</li>
+                <li>If the remove command does not complete, perform the remaining substeps.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reboot the host.</cmd>
+            <stepxmp>
+              <codeblock>reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="stop-nfs">
+        <cmd>Dismount all filesystems mounted from the <ph keyref="nm-cc"/> master host.</cmd>
+        <info>This step ensures no stale mounts remain when the storage on the
+          master host is replaced.</info>
+        <substeps>
+          <substep>
+            <cmd>Identify filesystems mounted from the master host.</cmd>
+            <stepxmp>
+              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs'</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the preceding command returns no result, stop. This procedure is complete.</li>
+                <li>If the preceding command returns a result, perform the following substeps.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Force the filesystems to dismount.</cmd>
+            <stepxmp>
+              <codeblock>for FS in $(awk '/serviced/ { print $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs')
+do
+  umount -f $FS
+done</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Identify filesystems mounted from the master host.</cmd>
+            <stepxmp>
+              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs'</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the preceding command returns no result, stop. This procedure is complete.</li>
+                <li>If the preceding command returns a result, perform the following substeps.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Perform a lazy dismount.</cmd>
+            <stepxmp>
+              <codeblock>for FS in $(awk '/serviced/ { print $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs')
+do
+  umount -f -l $FS
+done</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Restart the NFS service.</cmd>
+            <stepxmp>
+              <codeblock>systemctl restart nfs</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Determine whether any filesystems remain mounted from the master host.</cmd>
+            <stepxmp>
+              <codeblock>awk '/serviced/ { print $1, $2 }' &#60; /proc/mounts \
+  | grep -v '/opt/serviced/var/isvcs'</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the preceding command returns no result, stop. This procedure is complete.</li>
+                <li>If the preceding command returns a result, perform the remaining substeps.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reboot the host.</cmd>
+            <stepxmp>
+              <codeblock>reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable the automatic startup of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

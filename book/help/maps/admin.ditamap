@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Admin</title>
+   <chapter keyref="cc-help-maps-admin">
+      <topicref keyref="cc-feature-storage-thinpool-minimums">
+         <topicref keyref="cc-feature-storage-thinpool-examine"/>
+         <topicref keyref="cc-feature-storage-resize-meta"/>
+         <topicref keyref="cc-feature-storage-resize-data"/>
+         <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+      </topicref>
+      
+      <topicref keyref="cc-feature-state-emergency-shutdown">
+         <topicref keyref="cc-feature-state-emergency-clear"/>
+      </topicref>
+      
+      <topicref keyref="cc-feature-nat-overview"/>
+      
+      <topicref keyref="cc-feature-backup-overview">
+         <topicref keyref="cc-feature-backup-best-practice"/>
+         <topicref keyref="cc-feature-backup-backup"/>
+         <topicref keyref="cc-feature-backup-cli">
+            <topicref keyref="cc-feature-backup-cli-all"/>
+            <topicref keyref="cc-feature-backup-cli-exclude-one"/>
+            <topicref keyref="cc-feature-backup-cli-exclude-multiple"/>
+         </topicref>
+         <topicref keyref="cc-feature-backup-restore"/>
+         <topicref keyref="cc-feature-backup-tenant-device-states"/>
+      </topicref>
+      
+      <topicref keyref="cc-feature-storage-snapshot-rollback">
+         <topicref keyref="cc-feature-storage-snapshot"/>
+         <topicref keyref="cc-feature-storage-rollback"/>
+      </topicref>
+      
+      <topicref keyref="cc-feature-state-intro">
+         <topicref keyref="cc-feature-state-stop-1"/>
+         <topicref keyref="cc-feature-state-start-1"/>
+         <topicref keyref="cc-feature-state-stop-n">
+            <topicref keyref="cc-feature-state-stop-n-master"/>
+            <topicref keyref="cc-feature-state-stop-n-delegate"/>
+         </topicref>
+         <topicref keyref="cc-feature-state-start-n"/>
+      </topicref>
+      
+      <topicref keyref="cc-feature-restart-overview">
+         <topicref keyref="cc-feature-restart-modify"/>   
+      </topicref>
+      
+      <topicref keyref="cc-feature-audit-intro"/>
+         
+   </chapter>
+</bookmap>

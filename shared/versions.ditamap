@@ -7,7 +7,7 @@
     <keydef keys="lo-version-cc">
       <topicmeta>
         <keywords>
-          <keyword>1.3.3</keyword>
+          <keyword>1.4.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>
@@ -21,21 +21,21 @@
     <keydef keys="lo-version-isvcs">
       <topicmeta>
         <keywords>
-          <keyword>56</keyword>
+          <keyword>60</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-zk">
       <topicmeta> <!-- ZooKeeper image -->
         <keywords>
-          <keyword>8</keyword>
+          <keyword>10</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-ra">
       <topicmeta> <!-- Pacemaker resource agents -->
         <keywords>
-          <keyword>1.0.0</keyword>
+          <keyword>1.1.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>

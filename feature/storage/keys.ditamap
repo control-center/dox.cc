@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in storage</title>
+  <topicgroup>
+    <keydef keys="cc-feature-storage-resize-data"
+            href="resize-data.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-resize-meta"
+            href="resize-meta.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-resize-tenant-vd"
+            href="resize-tenant-vd.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-rollback"
+            href="rollback.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-snapshot-rollback"
+            href="snapshot-rollback.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-snapshot"
+            href="snapshot.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-thinpool-examine"
+            href="thinpool-examine.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-storage-thinpool-minimums"
+            href="thinpool-minimums.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

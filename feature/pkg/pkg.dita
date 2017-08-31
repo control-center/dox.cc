@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Resolving package dependency conflicts</title>
+  <refbody>
+    <section>
+      <p>This appendix includes procedures for resolving common Docker CE and 
+        <ph keyref="nm-cc"/> dependency conflicts.</p>
+    </section>
+  </refbody>
+</reference>

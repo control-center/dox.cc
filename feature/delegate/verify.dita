@@ -16,6 +16,14 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="cc-feature-lib-tasks/check-space-delegate">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/check-memory-delegate">
+        <cmd></cmd>
+      </step>
+      
       <step conkeyref="cc-feature-lib-tasks/update-os">
         <cmd></cmd>
       </step>
@@ -25,10 +33,6 @@
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-cpu-aes">
-        <cmd></cmd>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/check-memory-pool">
         <cmd></cmd>
       </step>
       

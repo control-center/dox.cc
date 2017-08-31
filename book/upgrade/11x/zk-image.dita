@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Updating the ZooKeeper image on ensemble nodes that do not have internet access</title>
+  <title>Updating the ZooKeeper image on ensemble nodes</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-upgrade"/> before performing this procedure.</prereq>
     <context>Use this procedure to install a new Docker image for
-      ZooKeeper on ZooKeeper ensemble nodes that do not have internet access. 
-      <ph keyref="nm-cc"/> pulls the required image from Docker Hub on
-      ZooKeeper ensemble nodes that have internet access.
-    <p>Perform the following steps:</p>
-    </context>
+      ZooKeeper on ZooKeeper ensemble nodes.</context>
     <steps>
       
       <step>
@@ -41,7 +36,7 @@
       <step>
         <cmd>Extract the ZooKeeper image.</cmd>
         <stepxmp>
-          <codeblock>./install-zenoss-isvcs-zookeeper:v*.run</codeblock>
+          <codeblock>./install-zenoss-isvcs-zookeeper-v*.run</codeblock>
         </stepxmp>
         <info>Image extraction begins when you press the <b>y</b> key.</info>
       </step>
@@ -49,12 +44,13 @@
       <step importance="optional">
         <cmd>Delete the archive file.</cmd>
         <stepxmp>
-          <codeblock>rm -i ./install-zenoss-isvcs-zookeeper:v*.run</codeblock>
+          <codeblock>rm -i ./install-zenoss-isvcs-zookeeper-v*.run</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Repeat the preceding four steps on each ZooKeeper node in the ensemble.</cmd>
+        <cmd>Repeat the preceding four steps on each delegate that
+          is a node in the ZooKeeper ensemble.</cmd>
       </step>
     </steps>
   </taskbody>

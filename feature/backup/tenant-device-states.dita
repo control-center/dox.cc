@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Tenant device states</title>
+  <refbody>
+    <section>
+      <p>In some circumstances, probably after a restore, <cmdname>serviced</cmdname> 
+        switches tenant devices but is unable to remove the previous device from the
+        NFS export mount. When <cmdname>serviced</cmdname> is in this state, the master host
+        and the delegates are using different devices, and the two devices quickly get
+      out of sync.</p>
+      <p>To prevent errors, <cmdname>serviced</cmdname> does not start services when
+      the tenant mount and export mount are backed by different devices, and
+          the services are assigned to a resource pool that has DFS access permissions.
+          When tenant mount and export mount are backed by different devices, and
+          services are assigned to a resource pool that does not have DFS access
+          permissions, or when the tenant mount and export mount are backed by the same
+          device, <cmdname>serviced</cmdname> does start services.</p>
+    </section>
+  </refbody>
+</reference>

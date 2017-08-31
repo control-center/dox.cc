@@ -9,6 +9,11 @@
       <ol>
         <li>Download a copy of the <cite conkeyref="pubs/cite-notes"/> for this release and review
           its contents. The latest information is included in that document.</li>
+        
+        <li>Compare the Docker images that accompany this release with the images that accompany the
+          installed release, and determine whether the image files need to be downloaded and
+          installed. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-upgrade-paths-images"/>.</li>
 
         <li>On delegate hosts, most of the upgrade steps are identical. Use
             <cmdname>screen</cmdname>, <cmdname>tmux</cmdname> or a similar program to establish
@@ -23,9 +28,8 @@
           avoid mistakes and anticipate needs; nevertheless, the instructions may be incorrect or
           inadequate for some requirements or environments.</li>
         
-        <li><b><ph conkeyref="names/company"/> customers:</b> Download and stage files for offline
-          upgrades, if necessary. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-offline-offline"/>.</li>
+        <li>Download and stage the required files for your upgrade. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-download-upgrade"/>.</li>
       </ol>
       
     </section>

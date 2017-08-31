@@ -10,16 +10,8 @@
         <cmd>Log in to the candidate delegate host
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/firewall">
-        <cmd></cmd>
-      </step>
-      
+
       <step conkeyref="cc-feature-lib-tasks/journal">
-        <cmd></cmd>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
         <cmd></cmd>
       </step>
       
@@ -38,7 +30,7 @@
           <substep>
             <cmd>Install the package.</cmd>
             <stepxmp>
-              <codeblock>yum install -y ntp</codeblock>
+              <codeblock>yum install ntp</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -62,10 +54,6 @@ chmod +x /etc/rc.d/rc.local</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-      </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/zenoss-repo">
-        <cmd></cmd>
       </step>
       
       <step>

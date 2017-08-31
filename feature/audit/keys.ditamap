@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in audit</title>
+  <topicgroup>
+    <keydef keys="cc-feature-audit-intro"
+            href="intro.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

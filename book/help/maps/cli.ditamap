@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>CLI</title>
+   <chapter keyref="cc-help-maps-cli">
+      <topicref keyref="cc-feature-cli-invoking-serviced"/>
+      <topicref keyref="cc-feature-cli-serviced"/>
+      <topicref keyref="cc-feature-cli-serviced-backup"/>
+      <topicref keyref="cc-feature-cli-serviced-docker"/>
+      <topicref keyref="cc-feature-cli-serviced-host"/>
+      <topicref keyref="cc-feature-cli-serviced-key"/>
+      <topicref keyref="cc-feature-cli-serviced-log-export"/>
+      <topicref keyref="cc-feature-cli-serviced-pool"/>
+      <topicref keyref="cc-feature-cli-serviced-restore"/>
+      <topicref keyref="cc-feature-cli-script"/>
+      <topicref keyref="cc-feature-cli-serviced-service"/>
+      <topicref keyref="cc-feature-cli-serviced-snapshot"/>
+      <topicref keyref="cc-feature-cli-serviced-storage"/>
+      <topicref keyref="cc-feature-vars-file"/>
+   </chapter>
+</bookmap>

@@ -3,40 +3,8 @@
 <map>
  <title>Keys in manage</title>
   <topicgroup>
-    <keydef keys="cc-feature-manage-admin"
-            href="admin.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-change-rolling-restart"
-            href="change-rolling-restart.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-clear-emerg"
-            href="clear-emerg.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-emer-sdown-overview"
-            href="emer-sdown-overview.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-intro-stop-start"
-            href="intro-stop-start.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-manage-ha"
-            href="manage-ha.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-manage"
-            href="manage.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-manage-multiple"
             href="multiple.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-NAT-overview"
-            href="NAT-overview.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-pool-connection-timeout"
@@ -49,66 +17,6 @@
     />
     <keydef keys="cc-feature-manage-remove-orphan-snaps"
             href="remove-orphan-snaps.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-resize-data"
-            href="resize-data.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-resize-meta"
-            href="resize-meta.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-resize-tenant-vd"
-            href="resize-tenant-vd.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-rollback"
-            href="rollback.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-rolling-restart-overview"
-            href="rolling-restart-overview.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-snapshot-rollback"
-            href="snapshot-rollback.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-snapshot"
-            href="snapshot.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-start-1"
-            href="start-1.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-start-n"
-            href="start-n.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-1"
-            href="stop-1.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-n-delegate"
-            href="stop-n-delegate.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-n-master"
-            href="stop-n-master.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-stop-n"
-            href="stop-n.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-thinpool-examine"
-            href="thinpool-examine.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-thinpool-minimums"
-            href="thinpool-minimums.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-update-opentsdb-ttl"

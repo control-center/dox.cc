@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><uicontrol>IP Assignments</uicontrol></title>
+  <refbody>
+    <section>
+      <p>The <uicontrol>IP Assignments</uicontrol> area lists the services that have external
+        (public) IP addresses. You can change the external IP address for a service.</p>
+    </section>
+  </refbody>
+</reference>

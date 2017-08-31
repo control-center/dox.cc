@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Fixed issues</title>
+  <refbody>
+    <table>
+      <title>Release 1.4.0</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="5*"/>
+        <thead>
+          <row>
+            <entry>ID</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>CC-3739</entry>
+            <entry>CPU Usage graph shows different values on <ph keyref="nm-cc"/> and 
+              <ph keyref="nm-cc"/> device in Zenoss</entry>
+          </row>
+          <row>
+            <entry>CC-3681</entry>
+            <entry><cmdname>zenossdbpack</cmdname> <cmdname>cron</cmdname> job is installed
+              with each <cmdname>serviced</cmdname> instance</entry>
+          </row>
+          <row>
+            <entry>CC-3615</entry>
+            <entry>Unable to add or remove IP asssignments</entry>
+          </row>
+          <row>
+            <entry>CC-3573</entry>
+            <entry><ph keyref="nm-cc"/> 1.3.2 Kibana doesn't have <cmdname>zeneventserver</cmdname> 
+              or <cmdname>zencatalogservice</cmdname> logs since upgrade</entry>
+          </row>
+          <row>
+            <entry>CC-3564</entry>
+            <entry><ph keyref="nm-cc"/> spams logs if it's unable to bind a virtual IP to a host</entry>
+          </row>
+          <row>
+            <entry>CC-3562</entry>
+            <entry>Logging library aggressively tries to reconnect over network when disconnected</entry>
+          </row>
+          <row>
+            <entry>CC-3536</entry>
+            <entry><ph keyref="nm-cc"/> should not start services if it hasn't exported the correct tenant device</entry>
+          </row>
+          <row>
+            <entry>CC-3522</entry>
+            <entry>Base device size cannot be smaller than grows every time 
+              <varname>SERVICED_DM_BASESIZE</varname> is commented out</entry>
+          </row>
+          <row>
+            <entry>CC-3517</entry>
+            <entry><ph keyref="nm-cc"/> reports incorrect value for some metrics in graphs</entry>
+          </row>
+          <row>
+            <entry>CC-3510</entry>
+            <entry>RabbitMQ admin web interface gives 404s on links under the 
+              /zenoss exchanges/queues because of the preceding slash</entry>
+          </row>
+          <row>
+            <entry>CC-3478</entry>
+            <entry>Failed backups should not leave tagged snapshots around</entry>
+          </row>
+          <row>
+            <entry>CC-3436</entry>
+            <entry>Ambiguous host status icons</entry>
+          </row>
+          <row>
+            <entry>CC-3409</entry>
+            <entry>ControlPlaneClient.queryServices(name) no longer filters results</entry>
+          </row>
+          <row>
+            <entry>CC-3361</entry>
+            <entry>After restoring backup, some IP assignments were missing</entry>
+          </row>
+          <row>
+            <entry>CC-3346</entry>
+            <entry><ph keyref="nm-cc"/> unaware of changes to interface name</entry>
+          </row>
+          <row>
+            <entry>CC-3322</entry>
+            <entry>Loosen time sync requirement</entry>
+          </row>
+          <row>
+            <entry>CC-3316</entry>
+            <entry>Backup fails when remote collector is unavailable</entry>
+          </row>
+          <row>
+            <entry>CC-3268</entry>
+            <entry>Delegate authentication is too sensitive to time drift</entry>
+          </row>
+          <row>
+            <entry>CC-3189</entry>
+            <entry>Restore fails if backup has resource pools with VIPs that do not exist in target <ph keyref="nm-cc"/></entry>
+          </row>
+          <row>
+            <entry>CC-3174</entry>
+            <entry>Multiline log parsing does not work</entry>
+          </row>
+          <row>
+            <entry>CC-3120</entry>
+            <entry>Public endpoints with "Other, secure (TLS)" option will make it a link</entry>
+          </row>
+          <row>
+            <entry>CC-2998</entry>
+            <entry>Kibana's search input is overridden by autocomplete suggestions [Chrome only]</entry>
+          </row>
+          <row>
+            <entry>CC-2810</entry>
+            <entry>Graphs are showing on services pages that don't have graphs</entry>
+          </row>
+          <row>
+            <entry>CC-1623</entry>
+            <entry>serviced-resource-agents RPM missing from mirror package</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

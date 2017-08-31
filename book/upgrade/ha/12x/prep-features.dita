@@ -7,17 +7,24 @@
       <p>This release includes new features and new requirements that affect the upgrade process.
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
-      <note><ph conkeyref="names/company"/> applications may require additional steps
-        to prepare to use this release. For more information, refer to the documentation
-        for your application.</note>
+      <note><ph keyref="nm-rm"/> may require additional steps
+        to prepare to use this release. For more information, refer to 
+        <ph keyref="nm-rm"/> documentation.</note>
       <ul>
+        <li>A new remote storage location is now required for audit logs. The default mount point is
+          <filepath>/var/log/serviced</filepath>, and the default amount of space required is
+          10GB. The master node upgrade process includes a procedure for ensuring that a remote
+          storage location is configured.</li>
+        <li>The Pacemaker resource agents are changed so that a master host does not fail over when
+          <ph keyref="nm-cc"/> is unresponsive or its health checks are failing.</li>
+        
         <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
             shutdown</i> of applications and services while sufficient resources remain to take
           action to avoid data loss. Support for this feature requires specific minimum amounts of
           space in the <ph keyref="nm-cc"/> thin pool for application data. 
           <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
           resize it. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-manage-thinpool-minimums"/>.</note></li>
+          <xref keyref="cc-feature-storage-thinpool-minimums"/>.</note></li>
         <li>Previously, <ph conkeyref="names/company"/> recommended using the master host nodes for <ph
           keyref="nm-cc"/> services only. Starting with this release, <ph conkeyref="names/company"
           /> recommends using the master host nodes for <ph keyref="nm-cc"/> services and for two
@@ -33,6 +40,10 @@
             <sli><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname></sli>
             <sli><varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></sli>
           </sl>For more information, see <xref keyref="cc-feature-vars-file"/>.</li>
+        <li>The <ph keyref="nm-cc"/> RPM package includes a script that adds the <codeph>serviced</codeph>
+          user group to a host, if necessary. Users must be members of the <codeph>serviced</codeph>
+          group to use the command-line interface. <ph conkeyref="strings/fmi-int"/>
+          <xref keyref="cc-feature-access-access"/>.</li>
       </ul>
       <p>For more information about this release, refer to the <cite conkeyref="pubs/cite-notes"
         />.</p>

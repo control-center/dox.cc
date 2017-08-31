@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Download</title>
+    <appendix keyref="cc-feature-download-install">
+       <topicref keyref="cc-feature-download-download">
+          <topicref keyref="cc-feature-download-download-rm"/>
+          <topicref keyref="cc-feature-download-download-core"/>
+       </topicref>
+       <topicref keyref="cc-feature-download-stage-rpm"/>
+       <topicref keyref="cc-feature-download-stage-run"/>
+       <topicref keyref="cc-feature-download-stage-run-zk"/>
+   </appendix>
+</bookmap>

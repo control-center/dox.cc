@@ -3,7 +3,7 @@
 <bookmap>
    <title>Stop</title>
    <chapter keyref="cc-upgrade-ha-maps-stop">
-      <topicref keyref="cc-feature-manage-ha-stop-master"/>
-      <topicref keyref="cc-feature-manage-stop-n-delegate"/>
+      <topicref keyref="cc-feature-state-ha-stop-master"/>
+      <topicref keyref="cc-feature-state-stop-n-delegate"/>
    </chapter>
 </bookmap>

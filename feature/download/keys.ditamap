@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in download</title>
+  <topicgroup>
+    <keydef keys="cc-feature-download-download-core"
+            href="download-core.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-download-rm"
+            href="download-rm.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-download"
+            href="download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-install"
+            href="install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-pcs-drbd-download"
+            href="pcs-drbd-download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-rpm-ha"
+            href="stage-rpm-ha.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-rpm-upgrade"
+            href="stage-rpm-upgrade.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-rpm"
+            href="stage-rpm.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-run-zk"
+            href="stage-run-zk.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-run"
+            href="stage-run.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-upgrade"
+            href="upgrade.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

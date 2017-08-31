@@ -21,9 +21,9 @@
         subdirectories from a backup.</p>
       <p>The <ph keyref="nm-cc"/> backup process creates a compressed tar archive file
           (<filepath>.tgz</filepath>) that can be restored on the same cluster or a similar cluster.
-          <!-- CC_3333 --><ph id="backup-space-est">Before starting a backup, <ph keyref="nm-cc"/>
+          Before starting a backup, <ph keyref="nm-cc"/>
           estimates the size of the backup file and compares it to the amount of free space. If
-          storage space is insufficient, <ph keyref="nm-cc"/> does not start a backup.</ph></p>
+          storage space is insufficient, <ph keyref="nm-cc"/> does not start a backup.</p>
       <p>The default directory for backup files is <filepath>/opt/serviced/var/backups</filepath>.
         The directory can be changed by specifying the <varname>SERVICED_BACKUPS_PATH</varname>
         environment variable in the <ph keyref="nm-cc"/> configuration file,
@@ -45,8 +45,8 @@
       <p product="cc">When you create a backup, <ph keyref="nm-cc"/> also exports the snapshots to
         an archive file and moves them out of the LVM thin pool. Backups do not affect time-to-live
         (TTL).</p>
-      <p product="cc">For more information, see <xref keyref="cc-feature-manage-snapshot-rollback"/>
-        and <xref keyref="cc-feature-cli-cli"/>.</p>
+      <p product="cc">For more information, see <xref keyref="cc-feature-storage-snapshot-rollback"/>
+        and <xref keyref="cc-help-maps-cli"/>.</p>
     </section>
   </refbody>
 </reference>

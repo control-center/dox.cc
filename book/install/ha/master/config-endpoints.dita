@@ -8,7 +8,6 @@
        variables specify the endpoints:
       <dl>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_ZK"><dt/><dd/></dlentry>
-        <dlentry conkeyref="cc-feature-vars-file/SERVICED_DOCKER_REGISTRY"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_ENDPOINT"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOG_ADDRESS"><dt/><dd/></dlentry>
         <dlentry conkeyref="cc-feature-vars-file/SERVICED_LOGSTASH_ES"><dt/><dd/></dlentry>
@@ -27,12 +26,13 @@
         <substeps>
           <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
           <substep>
-            <cmd>Globally replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
+            <cmd>For each endpoint variable, locate the line that sets the variable,
+              and then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Replace <codeph>&#123;&#123;SERVICED_MASTER_IP&#125;&#125;</codeph> with
               the virtual IP address of the high-availability cluster (<varname>HA-Virtual-IP</varname>).</cmd>
-            <info>
-              <note>Remove the number sign character (&#35;) from the beginning of each variable
-                declaration that includes the IP address.</note>
-            </info>
           </substep>
           <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
         </substeps>

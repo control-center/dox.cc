@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing Docker CE and <ph keyref="nm-cc"/></title>
+  <taskbody>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/> before performing this procedure.</prereq>
+    <context>Use this procedure to install Docker CE and <ph keyref="nm-cc"/> on a host.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/docker-install-offline">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/install-serviced-offline">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/serviced-cfg-backup">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
+        <cmd/>
+      </step>
+    </steps>
+  </taskbody>
+</task>

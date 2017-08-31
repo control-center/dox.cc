@@ -23,6 +23,11 @@
         <linktext>Docker Community Edition</linktext>
       </topicmeta>
     </keydef>
+    <keydef keys="url-docker-docs " href="http://docs.docker.com/" format="html" scope="external">
+      <topicmeta>
+        <linktext>Docker documentation</linktext>
+      </topicmeta>
+    </keydef>
     <keydef keys="url-docker-17653 " href="http://github.com/docker/docker/issues/17653"
       format="html" scope="external">
       <topicmeta>
@@ -145,6 +150,13 @@
     <keydef keys="url-zookeeper " href="http://zookeeper.apache.org/" format="html" scope="external">
       <topicmeta>
         <linktext>Apache ZooKeeper</linktext>
+      </topicmeta>
+    </keydef>
+  </topicgroup>
+  <topicgroup>
+    <keydef keys="url-zenoss-community " href="http://community.zenoss.com/home" format="html" scope="external">
+      <topicmeta>
+        <linktext>Zenoss Community</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>

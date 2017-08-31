@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Optional: Loading image files</title>
+  <title>Loading image files</title>
   <taskbody>
-    <prereq><b><ph conkeyref="names/company"/> customers</b>: Perform the steps in <xref
-      keyref="cc-feature-offline-offline"/> before performing this procedure.</prereq>
-    <context>Use this procedure to load images into the local repository
-      on a host that does not have internet access.</context>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-upgrade"/> before performing this procedure.</prereq>
+    <context>Use this procedure to load images into the local Docker registry.</context>
     <steps>
       
       <step>
@@ -25,8 +23,8 @@
         <stepxmp>
           <codeblock>for image in install-*.run
 do
-echo -n "$image: "
-eval ./$image
+  echo -n "$image: "
+  ./$image
 done</codeblock>
         </stepxmp>
         <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>

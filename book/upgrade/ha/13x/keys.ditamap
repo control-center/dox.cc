@@ -19,12 +19,12 @@
             href="cc-master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-13x-docker-install"
-            href="docker-install.dita"
+    <keydef keys="cc-upgrade-ha-13x-docker-images"
+            href="docker-images.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-13x-download"
-            href="download.dita"
+    <keydef keys="cc-upgrade-ha-13x-docker-install"
+            href="docker-install.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-13x-image"
@@ -39,10 +39,6 @@
             href="micro-master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-13x-offline"
-            href="offline.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-13x-post"
             href="post.dita"
             format="dita"
@@ -55,16 +51,8 @@
             href="prep.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-13x-stage-agent"
-            href="stage-agent.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-stage-rpm"
-            href="stage-rpm.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-stage-run"
-            href="stage-run.dita"
+    <keydef keys="cc-upgrade-ha-13x-zk-image"
+            href="zk-image.dita"
             format="dita"
     />
    </topicgroup>

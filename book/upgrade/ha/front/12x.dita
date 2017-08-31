@@ -4,7 +4,7 @@
   <title>Scope</title>
   <refbody>
     <section>
-      <p>The chapters in this part provide instructions for performing a minor upgrade of a
+      <p>The chapters in this part provide instructions for performing an upgrade of a
         high-availability deployment of <ph keyref="nm-cc"/>, from version 1.2.x to <ph
           keyref="lo-version-cc"/>.</p>
       

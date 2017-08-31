@@ -19,9 +19,21 @@
       
       <step>
         <cmd>Create a new resource pool named <codeph>master</codeph>.</cmd>
-        <stepxmp>
-          <codeblock>serviced pool add master</codeblock>
-        </stepxmp>
+        <substeps>
+          <substep>
+            <cmd>Create the pool.</cmd>
+            <stepxmp>
+              <codeblock>serviced pool add master</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Set permissions on the pool.</cmd>
+            <stepxmp>
+              <codeblock>serviced pool set-permission --dfs=true --admin=true master</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        
       </step>
 
       <step importance="optional">
@@ -29,11 +41,29 @@
         <info>At least one additional resource pools is recommended. Many users find it useful to have
           pool names such as <codeph>infrastructure</codeph> and
               <codeph>collector-<varname>n</varname></codeph> for groups of delegate hosts.</info>
-        <stepxmp>
-          <p>Replace <varname>Pool-Name</varname> with the name of the pool to create:</p>
-          <codeblock>serviced pool add <varname>Pool-Name</varname></codeblock>
-          <p>Repeat the preceding command as desired.</p>
-        </stepxmp>
+        <substeps>
+          <substep>
+            <cmd>Display the names of the existing resource pools.</cmd>
+            <stepxmp>
+              <codeblock>serviced pool list</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create a new resource pool.</cmd>
+            <stepxmp>Replace <varname>Resource-Pool</varname> with the name of a new resource pool:
+              <codeblock>serviced pool add <varname>Resource-Pool</varname></codeblock>
+              <p>Repeat the preceding command as desired.</p>
+            </stepxmp>
+          </substep>
+          <substep importance="optional">
+            <cmd>Set permissions on new resource pools, if desired.</cmd>
+            <stepxmp>Replace <varname>Resource-Pool</varname> with the name of the new resource
+              pool:
+              <codeblock>serviced pool set-permission --dfs=true --admin=true <varname>Resource-Pool</varname></codeblock>
+              <p>Repeat the preceding command as desired.</p>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
     </steps>

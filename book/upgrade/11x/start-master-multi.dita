@@ -1,5 +1,4 @@
-<?xml version
-="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
   <title>Starting and registering the master host (multi-host deployment)</title>
@@ -103,7 +102,8 @@
           <substep>
             <cmd>Restart the service.</cmd>
             <stepxmp>
-              <codeblock>systemctl stop serviced &#38;&#38; systemctl start serviced</codeblock>
+              <codeblock>systemctl daemon-reload &#38;&#38; systemctl start serviced \
+  &#38;&#38; journalctl -u serviced -f -o cat</codeblock>
             </stepxmp>
           </substep>
         </substeps>

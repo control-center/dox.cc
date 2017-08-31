@@ -12,7 +12,7 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+      <step conkeyref="cc-feature-state-stop-1/stop-app">
         <cmd></cmd>
       </step>
       
@@ -26,7 +26,7 @@
       <step>
         <cmd>Stop <cmdname>serviced</cmdname> on all delegate hosts.</cmd>
         <info><ph conkeyref="strings/fmi-int"/> 
-          <xref keyref="cc-feature-manage-stop-n-delegate"/>.</info>
+          <xref keyref="cc-feature-state-stop-n-delegate"/>.</info>
       </step>
       
       <step>

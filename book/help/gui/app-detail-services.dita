@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><uicontrol>Services</uicontrol></title>
+  <refbody>
+    <section>
+      <p>The <uicontrol>Services</uicontrol> table contains a nested list of services and
+        subservices that are associated with an application. <ul>
+          <li>To expand or collapse the list of subservices, click the arrow beside a service name.
+            Services at the same level are peers. An indented service is a subservice of the
+            preceding service. </li>
+          <li>To access a service details page, click a service name.</li>
+          <li>The <uicontrol>Status</uicontrol> column shows the start or stop status of a service.
+            The top level status in the CC UI for an application is actually just the status of the
+            health checks for the NginX service. It is NOT a roll up off all the health checks of
+            the system nor is it a true indicator of the ability to log into the application. Please
+            document that to see the true health of a system one needs to look at the health checks
+            for the underlying services. Also, this becomes easier once we have the CC status
+            screens (future release feature).<p/></li>
+          <li>The <uicontrol>Health</uicontrol> column indicates health-check results for started
+            services. If multiple instances are running, the number is noted. Hover the mouse over
+            the icon for additional details.  </li>
+          <li>The <uicontrol>Actions</uicontrol> column contains the controls for starting and
+            stopping a service. Stop applies to all instances of the service and discards the
+            containers in which the instances were running. Start creates new containers for the
+            required number of instances. Action controls for the entire application are in the
+            upper right corner of the window. </li>
+        </ul></p>
+    </section>
+  </refbody>
+</reference>

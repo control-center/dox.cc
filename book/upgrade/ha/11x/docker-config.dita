@@ -64,10 +64,9 @@ EOF</codeblock>
           <substep>
             <cmd>Create a variable for the master host.</cmd>
             <stepxmp>
-              <p>Replace <varname>Master</varname> with 
-                the virtual hostname (<varname>HA-Virtual-Name</varname>)
-                or IPv4 address (<varname>HA-Virtual-IP</varname>)
-                of the high-availability cluster:</p>
+              <p>Replace <varname>Master</varname> with the fully-qualified domain name
+                  (<varname>HA-Virtual-Name</varname>) or IPv4 address
+                  (<varname>HA-Virtual-IP</varname>) of the high-availability cluster:</p>
               <codeblock>myCluster="<varname>Master</varname>"</codeblock>
               <p>The value of this variable must match the value of
                 the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 

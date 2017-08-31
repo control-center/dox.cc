@@ -15,24 +15,8 @@
             href="add.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-master-cc-install-off"
-            href="cc-install-off.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-cc-install-on"
-            href="cc-install-on.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-cc-install"
-            href="cc-install.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-master-cron"
             href="cron.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-device-naming"
-            href="device-naming.dita"
             format="dita"
     />
     <keydef keys="cc-feature-master-docker-config"
@@ -43,24 +27,16 @@
             href="docker-images.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-master-docker-install-off"
-            href="docker-install-off.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-docker-install-on"
-            href="docker-install-on.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-docker-install"
-            href="docker-install.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-master-offline"
             href="offline.dita"
             format="dita"
     />
     <keydef keys="cc-feature-master-prep"
             href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-master-registry"
+            href="registry.dita"
             format="dita"
     />
     <keydef keys="cc-feature-master-role"

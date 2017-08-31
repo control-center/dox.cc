@@ -15,18 +15,6 @@
             href="add.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-delegate-cc-install-off"
-            href="cc-install-off.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-delegate-cc-install-on"
-            href="cc-install-on.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-delegate-cc-install"
-            href="cc-install.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-delegate-cron"
             href="cron.dita"
             format="dita"
@@ -57,6 +45,10 @@
     />
     <keydef keys="cc-feature-delegate-prep"
             href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-delegate-registry"
+            href="registry.dita"
             format="dita"
     />
     <keydef keys="cc-feature-delegate-role"

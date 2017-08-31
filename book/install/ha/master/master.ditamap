@@ -4,7 +4,6 @@
   <title>Install master</title>
   <chapter keyref="cc-install-ha-master-master">
     <topicref keyref="cc-install-ha-master-verify"/>
-    <topicref keyref="cc-feature-master-device-naming"/>
     <topicref keyref="cc-install-ha-master-prep"/>
     <topicref keyref="cc-install-ha-master-download">
       <topicref keyref="cc-feature-offline-download"/>

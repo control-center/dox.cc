@@ -3,8 +3,11 @@
 <task id="taskid">
   <title>Updating to Docker CE</title>
   <taskbody>
-    <context>Use this procedure to update Docker to Docker Community Edition (Docker CE) version <ph
-        keyref="lo-version-docker"/>.</context>
+    <context>Use this procedure to update Docker to Docker Community Edition (Docker CE) 
+      version <ph keyref="lo-version-docker"/>.
+      <note>If you are upgrading <ph keyref="nm-cc"/> 1.3.3, skip this procedure.
+        Docker CE <ph keyref="lo-version-docker"/> is already installed.</note>
+    </context>
     <steps>
       <step>
         <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
@@ -12,7 +15,7 @@
       
       <step>
         <cmd>Remove the Docker repository description file.</cmd>
-        <info>Docker CE uses a different file.</info>
+        <info>Upgrades no longer require external repositories.</info>
         <stepxmp>
           <codeblock>rm -f /etc/yum.repos.d/docker.repo</codeblock>
         </stepxmp>
@@ -40,7 +43,7 @@
             <info>The following commands require internet access or a local mirror of operating
               system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -56,51 +59,47 @@
       </step>
       
       <step>
-        <cmd>Install the Docker CE repository description file.</cmd>
+        <cmd>Stop the Docker service.</cmd>
         <stepxmp>
-          <codeblock>cat &#60;&#60;EOF &#62; /etc/yum.repos.d/docker-ce.repo
-[docker-ce-stable]
-name=Docker CE Stable - \$basearch
-baseurl=https://download.docker.com/linux/centos/7/\$basearch/stable
-enabled=1
-gpgcheck=1
-gpgkey=https://download.docker.com/linux/centos/gpg
-EOF</codeblock>
+          <codeblock>systemctl stop docker</codeblock>
         </stepxmp>
       </step>
       
       <step>
-        <cmd>Remove Docker 1.12.1 without checking dependencies.</cmd>
-        <stepxmp>
-          <codeblock>rpm -e --nodeps docker-engine-1.12.1</codeblock>
-        </stepxmp>
+        <cmd>Remove Docker 1.12.1.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Remove without checking dependencies.</cmd>
+            <stepxmp>
+              <codeblock>rpm -e --nodeps docker-engine-1.12.1</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> databases.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>
         <cmd>Install Docker CE <ph keyref="lo-version-docker"/>.</cmd>
-        
         <stepxmp>
-          <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
-  docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
+          <codeblock>yum install --enablerepo=zenoss-mirror docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
         </stepxmp>
+        <stepresult>If <cmdname>yum</cmdname> returns an error due to dependency issues, see
+          <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
       </step>
       
       <step>
-        <cmd>Disable unintended Docker CE updates.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Open <filepath>/etc/yum.repos.d/docker-ce.repo</filepath> with a text editor.</cmd>
-          </substep>
-          <substep>
-            <cmd>Change the value of the <codeph>enabled</codeph> key from <codeph>1</codeph> to
-                <codeph>0</codeph>.</cmd>
-          </substep>
-          <substep>
-            <cmd>Save the file, and then close the text editor.</cmd>
-          </substep>
-        </substeps>
+        <cmd>Start the Docker service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start docker</codeblock>
+        </stepxmp>
       </step>
-
+      
+     
     </steps>
   </taskbody>
 </task>

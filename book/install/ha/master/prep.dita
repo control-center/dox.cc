@@ -14,17 +14,13 @@
       </step>
 
       <step conkeyref="cc-feature-lib-tasks/firewall">
-        <cmd/>
+        <cmd></cmd>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/journal">
         <cmd></cmd>
       </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/kill-selinux">
-        <cmd></cmd>
-      </step>
-      
+
       <step conkeyref="cc-feature-lib-tasks/dnsmasq">
         <cmd></cmd>
       </step>
@@ -73,6 +69,16 @@ echo "<varname>Secondary-Public-IP</varname> <varname>Secondary-Public-Name</var
           variable in the <ph keyref="nm-cc"/> configuration file.</info>
         <stepxmp>
           <codeblock>mkdir -p /opt/serviced/var/isvcs</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Create a mount point for <ph keyref="nm-cc"/> audit logs.</cmd>
+        <info>The default mount point is <filepath>/var/log/serviced</filepath>.
+          You can change the default by editing the <varname>SERVICED_LOG_PATH</varname>
+          variable in the <ph keyref="nm-cc"/> configuration file.</info>
+        <stepxmp>
+          <codeblock>mkdir -p /var/log/serviced</codeblock>
         </stepxmp>
       </step>
       

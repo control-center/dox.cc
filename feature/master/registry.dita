@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Optional: Changing the local Docker registry endpoint</title>
+  <taskbody>
+    <context>Use this procedure to configure the master host with the endpoint of an alternative
+      local Docker registry. <ph keyref="nm-cc"/> includes a local Docker registry, but you may use
+      an existing registry in your environment, if desired. For more information about configuring a
+      local Docker registry, please refer to <xref keyref="url-docker-docs"/>. <note>Changing the
+        local Docker registry endpoint is rare. Perform this procedure only if you are sure it is
+        necessary and the alternative local Docker registry is already available in your
+        environment.</note>
+      <p>The following configuration variable identifies the local Docker registry endpoint:<dl>
+          <dlentry conkeyref="cc-feature-vars-file/SERVICED_DOCKER_REGISTRY">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+      <p>Perform these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Edit the <ph keyref="nm-cc"/> configuration file.</cmd>
+        <substeps>
+          <substep conkeyref="cc-feature-lib-tasks/open-file"><cmd/></substep>
+          <substep>
+            <cmd>Locate the line for the <varname>SERVICED_DOCKER_REGISTRY</varname> variable, and 
+              then make a copy of the line, immediately below the original.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Replace <codeph>localhost:5000</codeph> with the endpoint of the local Docker
+              registry.</cmd>
+            <info>Use the IP address or fully-qualified domain name of the host and the
+            port number.</info>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Verify the settings.</cmd>
+        <stepxmp>
+          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Add the insecure registry flag to the Docker configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/sysconfig/docker</filepath> in a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Add the following flag to the end of the <varname>OPTIONS</varname>
+              declaration.</cmd>
+            <stepxmp>
+              <p>Replace <varname>Registry-Endpoint</varname> with the same value used for the
+                  <varname>SERVICED_DOCKER_REGISTRY</varname> variable:</p>
+              <codeblock>--insecure-registry=<varname>Registry-Endpoint</varname></codeblock>
+            </stepxmp>
+            <info>
+              <note>Use a space character (<codeph>&#32;</codeph>) to separate flags, and make sure
+                the double quote character (<codeph>&#34;</codeph>) delimits the declaration of
+                  <varname>OPTIONS</varname>.</note>
+            </info>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Restart the Docker service.</cmd>
+        <stepxmp><codeblock>systemctl restart docker</codeblock></stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

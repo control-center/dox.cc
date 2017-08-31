@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid"><!-- CC_3107 -->
+  <title>Emergency shutdown of services</title>
+  <shortdesc><ph keyref="nm-cc"/> monitors each service's short-term storage usage trends and
+    current usage levels. When <ph keyref="nm-cc"/> predicts that a service is about to exhaust
+    storage space, it initiates an automatic emergency shutdown of the service. By shutting down
+    while enough space is available to perform recovery operations, <ph keyref="nm-cc"/> minimizes
+    the risk of data corruption. </shortdesc>
+  <conbody>
+    <!-- CC_3301 -->
+    <p>Emergency shutdown is performed for services that are in a resource pool that has DFS access.
+      Services that are in pools that do not have DFS permissions and do not write to the DFS
+      continue running.</p>
+    <p><ph keyref="nm-cc"/> displays thin pool and DFS information in the following graphs in the
+      browser interface: <ul>
+        <li>On the <uicontrol>Applications</uicontrol> tab, the <uicontrol>Thin Pool
+            Usage</uicontrol> graph shows used and available bytes for the thin pool. </li>
+        <li>On the <uicontrol>Applications</uicontrol> page for each service, the <uicontrol>DFS
+            Usage</uicontrol> graph shows used and available bytes for the DFS.</li>
+      </ul>
+    </p>
+    <p>By comparing usage to the available storage and the amount of space that must be reserved,
+        <ph keyref="nm-cc"/> determines when a service must be shut down before filling the thin
+      pool or DFS, and initiates the emergency shutdown. The browser interface identifies services
+      in the emergency shutdown state, as does issuing the <cmdname>serviced service
+        status</cmdname> command in the command line. </p>
+    <!-- ZEN_23921 --><p>To minimize data loss, <ph keyref="nm-cc"/> shuts down services in the following order:
+      databases; services that cannot be recovered; indices and services that are difficult to
+      recover; any other services. Services in emergency shutdown status cannot be restarted until
+      the underlying cause of the shutdown is resolved.</p>
+    <p>To resolve an emergency shutdown:<ol>
+        <li>Examine the service that was shut down to determine why it was using excessive storage
+          and correct the issue. For example:<ul>
+            <li>If an application was writing a large amount of performance data to the tenant
+              device, add space to the device. See <xref keyref="cc-feature-storage-thinpool-minimums"/>.</li>
+            <li>If too many snapshots are stored on the device, delete those that you no longer
+              need. See <xref keyref="cc-feature-storage-snapshot-rollback"/>.</li>
+            <li>If a usage anomaly might have occurred, wait for usage levels to return to
+              normal.</li>
+          </ul>
+        </li>
+        <li>Clear the emergency shutdown flags.</li>
+        <li>Start the service by using the browser interface or command line interface. <ph
+            keyref="nm-cc"/> starts services in the reverse order of shutdown.</li>
+      </ol></p>
+  </conbody>
+</concept>

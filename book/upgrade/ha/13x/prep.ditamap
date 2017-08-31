@@ -5,9 +5,5 @@
   <chapter keyref="cc-upgrade-ha-13x-prep">
     <topicref keyref="cc-upgrade-ha-13x-prep-features"/>
     <topicref keyref="cc-upgrade-ha-topics-best-practices"/>
-    <topicref keyref="cc-upgrade-ha-13x-offline">
-      <topicref keyref="cc-upgrade-ha-13x-download"/>
-      <topicref keyref="cc-upgrade-ha-13x-stage-rpm"/>
-    </topicref>
  </chapter>
 </bookmap>

@@ -71,29 +71,36 @@
         
         <dlentry id="SERVICED_DOCKER_REGISTRY">
           <dt><varname>SERVICED_DOCKER_REGISTRY</varname></dt>
-          <dd><b>Default</b>: <codeph>{{SERVICED_MASTER_IP}}:5000</codeph></dd> 
-          <dd>The endpoint of the <cmdname>serviced</cmdname> Docker registry host. On delegate
-            hosts, replace <codeph>{{SERVICED_MASTER_IP}}</codeph> with the IP address or hostname
-            of the registry host, which by default is the <cmdname>serviced</cmdname> master host.
-            On the master host, this variable is ignored.</dd>
-          <dd>The value used to replace <codeph>{{SERVICED_MASTER_IP}}</codeph> in this
-            variable must match the value of the <codeph>--insecure-registry</codeph> flag in 
-            the <filepath>/etc/sysconfig/docker</filepath> file.</dd>
+          <dd><b>Default</b>: <codeph>localhost:5000</codeph></dd> 
+          <dd>The endpoint of the local Docker registry, which <cmdname>serviced</cmdname>
+            uses to store internal services and application images.</dd>
+          <dd>If the default value is changed, the host's Docker configuration file must 
+            include the <codeph>--insecure-registry</codeph> flag with the same value
+            as this variable. </dd>
+          <dd>The safest replacement for <codeph>localhost</codeph> is the IPv4 address
+            of the registry host. Otherwise, the fully-qualified domain name of the
+            host must be specified.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_OUTBOUND_IP">
           <dt><varname>SERVICED_OUTBOUND_IP</varname></dt>
           <dd><b>Default</b>: (none)</dd> 
-          <dd>The default startup routines of <cmdname>serviced</cmdname> include
-            attempting to ping <codeph>google.com</codeph>. When a value is set
-            for this variable, <cmdname>serviced</cmdname> does not attempt the
-            ping and assumes it does not have internet access.</dd>
-          <dd>Use this variable to specify the IP address of a network interface
-            other than the default, or to prevent <cmdname>serviced</cmdname>
-            from assuming it has internet access.</dd>
-          <dd><note>Setting the Docker <varname>HTTP_PROXY</varname> or <varname>HTTPS_PROXY</varname> environment
+          <dd>The IPv4 address that delegates use to connect to the master host. When no address is
+            specified, <cmdname>serviced</cmdname> attempts to discover its public IP address by
+            pinging <codeph>google.com</codeph>.</dd>
+          
+          <dd>This variable must be set on all <ph keyref="nm-cc"/> hosts in either of the following scenarios:
+            <ul>
+              <li><ph keyref="nm-cc"/> is deployed behind a firewall and <codeph>google.com</codeph>
+                is not reachable. Set the value to the IPv4 address of the master host.</li>
+              <li><ph keyref="nm-cc"/> is deployed in a high-availability cluster. Set the value to
+                the virtual IPv4 address of the high-availability cluster
+                  (<varname>HA-Virtual-IP</varname>).</li>
+            </ul>
+            <note>Setting the Docker <varname>HTTP_PROXY</varname> or <varname>HTTPS_PROXY</varname> environment
               variables prevents access to the IP address defined with this variable. To enable
-              access, unset the Docker variables, and then reboot the host.</note></dd>
+              access, unset the Docker variables, and then reboot the host.</note>
+          </dd>
         </dlentry>
         
         <dlentry id="SERVICED_STATIC_IPS">
@@ -254,6 +261,13 @@
           <dt><varname>SERVICED_BACKUPS_PATH</varname></dt>
           <dd><b>Default</b>: <filepath>/opt/serviced/var/backups</filepath></dd>
           <dd>The location of <cmdname>serviced</cmdname> backup files.</dd> 
+        </dlentry>
+        
+        <dlentry id="SERVICED_LOG_PATH">
+          <dt><varname>SERVICED_LOG_PATH</varname></dt>
+          <dd><b>Default</b>: <filepath>/var/log/serviced</filepath></dd>
+          <dd>The location of <cmdname>serviced</cmdname> audit log files. 
+          Non-audit (operations) messages are written to <cmdname>journald</cmdname>.</dd> 
         </dlentry>
         
         <dlentry id="SERVICED_KEY_FILE">

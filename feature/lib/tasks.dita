@@ -56,32 +56,7 @@
         </substeps>
       </step>
 
-      <step id="kill-selinux" importance="optional">
-        <cmd>Disable Security-Enhanced Linux (SELinux), if desired.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Determine whether SELinux is installed.</cmd>
-            <stepxmp>
-              <codeblock>test -f /etc/selinux/config &#38;&#38; grep '&#94;SELINUX=' /etc/selinux/config</codeblock>
-            </stepxmp>
-            <info>If the preceding commands return a result, SELinux is installed. <ul>
-              <li>If the result includes <codeph>enforcing</codeph> or 
-                <codeph>permissive</codeph>, SELinux is enabled.</li>
-              <li>If the result includes <codeph>disabled</codeph>, SELinux is not enabled.</li>
-            </ul>If desired, perform the remaining substeps to enable SELinux. Otherwise, proceed to the next step.</info>
-          </substep>
-          <substep>
-            <cmd>Set the operating mode to <codeph>disabled</codeph>.</cmd>
-            <stepxmp>Open <filepath>/etc/selinux/config</filepath> in a text editor, and change the
-              value of the <varname>SELINUX</varname> variable to
-              <codeph>disabled</codeph>.</stepxmp>
-          </substep>
-          <substep>
-            <cmd>Confirm the new setting.</cmd>
-            <stepxmp><codeblock>grep '&#94;SELINUX=' /etc/selinux/config</codeblock></stepxmp>
-          </substep>
-        </substeps>
-      </step>
+      
       
       <step id="docker-hub">
         <cmd>Authenticate to the Docker Hub repository.</cmd>
@@ -248,6 +223,88 @@
         for the host to the network nameserver, or to <filepath>/etc/hosts</filepath>.</stepresult>
       </step>
       
+      <step id="check-space">
+        <cmd>Verify that the host has adequate storage space for 
+          Docker temporary files and audit logging.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the amount of space available in <filepath>/tmp</filepath>.</cmd>
+            <info>Docker requires 10GB of storage for temporary files, and the installation
+              process includes instructions to link the Docker temporary
+              directory to <filepath>/tmp</filepath>.</info>
+            <stepxmp>
+              <codeblock>df -h /tmp</codeblock>
+            </stepxmp>
+            <stepresult>Typically, <filepath>/tmp</filepath> is mounted on the root
+              filesystem, <filepath>/</filepath>.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Display the amount of space available in <filepath>/var/log</filepath>.</cmd>
+            <info>By default, <ph keyref="nm-cc"/> requires 10GB of space for
+            audit logging in <filepath>/var/log</filepath>. The amount of space required for
+              audit logs, and their location, is configurable. <ph conkeyref="strings/fmi-ext"/>
+              <cite conkeyref="pubs/cite-ref"/>.</info>
+            <stepxmp>
+              <codeblock>df -h /var/log</codeblock>
+            </stepxmp>
+            <stepresult>Like <filepath>/tmp</filepath>, <filepath>/var/log</filepath>
+              is typically mounted on the root filesystem, <filepath>/</filepath>.</stepresult>
+          </substep>
+        </substeps>
+        <stepresult>If the result does not include a minimum of 10GB of space for 
+          Docker temporary files and 10GB for audit logging,
+          stop this procedure and select a different host.</stepresult>
+      </step>
+      
+      <step id="check-space-delegate">
+        <cmd>Verify that the host has adequate storage space on the root filesystem.</cmd>
+        <stepxmp>
+          <codeblock>df -h /</codeblock>
+        </stepxmp>
+        <stepresult>If the result does not include a minimum of 35GB of available space,
+          stop this procedure and select a different host.</stepresult>
+      </step>
+      
+      <step id="check-memory-master">
+        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the available memory.</cmd>
+            <stepxmp>
+              <codeblock>free -h</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available memory and swap space with the 
+              amount required for a master host in your deployment.</cmd>
+            <info><ph conkeyref="strings/fmi-ext"/>
+              <cite conkeyref="pubs/cite-plan"/>.</info>
+          </substep>
+        </substeps>
+        <stepresult>If the result does not meet minimum requirements,
+          stop this procedure and select a different host.</stepresult>
+      </step>
+      
+      <step id="check-memory-delegate">
+        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the available memory.</cmd>
+            <stepxmp>
+              <codeblock>free -h</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available memory with the amount required for a delegate host in your
+              deployment.</cmd>
+            <info><ph conkeyref="strings/fmi-ext"/>
+              <cite conkeyref="pubs/cite-plan"/>.</info>
+          </substep>
+        </substeps>
+        <stepresult>If the result does not meet minimum requirements,
+          stop this procedure and select a different host.</stepresult>
+      </step>
+      
       <step id="check-hostid-master">
         <cmd>Ensure the host has a persistent numeric ID.</cmd>
         <info>Skip this step if you are installing a single-host deployment.</info>
@@ -268,46 +325,13 @@
         </stepxmp>
         <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
       </step>
-
-      
-      <step id="check-memory-master">
-        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Display the available memory.</cmd>
-            <stepxmp>
-              <codeblock>free -h</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Compare the available memory with the 
-              amount required for a master host in your deployment.</cmd>
-            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
-          </substep>
-        </substeps>
-      </step>
      
-      <step id="check-memory-pool">
-        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Display the available memory.</cmd>
-            <stepxmp>
-              <codeblock>free -h</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Compare the available memory with the amount required for a delegate host in your
-              deployment.</cmd>
-            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
-          </substep>
-        </substeps>
-      </step>
+      
       
       <step id="firewall">
         <cmd>Disable the firewall, if necessary.</cmd>
         <info>This step is required for installation but not for deployment. For more information,
-        refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
         <substeps>
           <substep>
             <cmd>Determine whether the <cmdname>firewalld</cmdname> service is enabled.</cmd>
@@ -367,7 +391,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -396,7 +420,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             <cmd>Update the kernel, and then restart the host.</cmd>
             <info>The following commands require internet access.</info>
             <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -408,7 +432,13 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <info>By default, RHEL/CentOS systems store log data only in memory or in a ring buffer in
           the <filepath>/run/log/journal</filepath> directory. By performing this step, log data
           persists and can be saved indefinitely, if you implement log file rotation practices. For
-          more information, refer to your operating system documentation.</info>
+          more information, refer to your operating system documentation.
+          <note>The following commands are safe when performed during
+            an installation, before Docker or <ph keyref="nm-cc"/>
+            are installed or running. To enable persistent log files
+            after installation, stop <ph keyref="nm-cc"/>, stop
+            Docker, and then enter the following commands.</note>
+        </info>
         <stepxmp>
           <codeblock>mkdir -p /var/log/journal &#38;&#38; systemctl restart systemd-journald</codeblock>
         </stepxmp>
@@ -470,7 +500,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
         <info>The utility is used to verify ZooKeeper ensemble configurations.
         <b>If you are installing a single-host deployment, skip this step</b>.</info>
         <stepxmp>
-          <codeblock>yum install -y nmap-ncat</codeblock>
+          <codeblock>yum install nmap-ncat</codeblock>
         </stepxmp>
       </step>
       
@@ -480,7 +510,7 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             only on the two delegate hosts that are designated for use in the ZooKeeper
           ensemble</b>.</info>
         <stepxmp>
-          <codeblock>yum install -y nmap-ncat</codeblock>
+          <codeblock>yum install nmap-ncat</codeblock>
         </stepxmp>
       </step>
       
@@ -512,7 +542,7 @@ EOF</codeblock>
               <!-- not for 1.3.3 release
                 <codeblock>yum install -y docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
               -->
-              <codeblock>yum install -y --setopt=obsoletes=0 \
+              <codeblock>yum install --setopt=obsoletes=0 \
   docker-ce-17.03.1.ce-1.el7.centos \
   docker-ce-selinux-17.03.1.ce-1.el7.centos</codeblock>
             </stepxmp>
@@ -541,17 +571,12 @@ EOF</codeblock>
         <cmd>Install Docker CE <ph keyref="lo-version-docker"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
-            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
-            <stepxmp>
-              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Install Docker CE.</cmd>
             <stepxmp>
-              <codeblock>yum install -y --disablerepo=\* --enablerepo=zenoss-mirror \
-  docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
+              <codeblock>yum install --enablerepo=zenoss-mirror docker-ce-<ph keyref="lo-version-docker"/>.ce</codeblock>
             </stepxmp>
+            <stepresult>If <cmdname>yum</cmdname> returns an error due to dependency issues, see
+              <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
           </substep>
           <substep>
             <cmd>Enable automatic startup.</cmd>
@@ -671,17 +696,6 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Create a variable for the master host.</cmd>
-            <stepxmp>
-              <p>Replace <varname>Master-Host</varname> with the hostname or IPv4 address of the
-                master host:</p>
-              <codeblock>masterHost="<varname>Master-Host</varname>"</codeblock>
-              <p>The value of this variable must match the value of
-                the <varname>SERVICED_DOCKER_REGISTRY</varname> variable 
-                in <filepath>/etc/default/serviced</filepath>.</p>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Create variables for adding arguments to the Docker configuration file. The
                 <codeph>--exec-opt</codeph> argument is a workaround for <xref
                 keyref="url-docker-17653"/> on RHEL/CentOS 7.x systems.</cmd>
@@ -690,14 +704,13 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
 myLog="--log-level=error"
 myFix="--exec-opt native.cgroupdriver=cgroupfs"
 myMount="--storage-opt dm.mountopt=discard"
-myFlag="--storage-opt dm.thinpooldev=$myPool"
-myReg="--insecure-registry=$masterHost:5000"</codeblock>
+myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Add the arguments to the Docker configuration file.</cmd>
             <stepxmp>
-              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag $myReg'"' \
+              <codeblock>echo 'OPTIONS="'$myLog $myDriver $myFix $myMount $myFlag'"' \
   &#62;&#62; /etc/sysconfig/docker</codeblock>
             </stepxmp>
           </substep>
@@ -748,6 +761,7 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
               delimits the declaration of <varname>OPTIONS</varname>.</note>
             </info>
           </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
           <substep>
             <cmd>Restart the Docker service.</cmd>
             <stepxmp><codeblock>systemctl restart docker </codeblock></stepxmp>
@@ -788,7 +802,7 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/> from the remote repository.</cmd>
             <stepxmp>
-              <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+              <codeblock>yum --enablerepo=zenoss-stable install serviced-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -822,17 +836,13 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
         <cmd>Install <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> from the local repository mirror.</cmd>
         <substeps>
           <substep>
-            <cmd>Clean the <cmdname>yum</cmdname> cache and update repository metadata.</cmd>
-            <stepxmp>
-              <codeblock>yum clean all &#38;&#38; yum makecache fast</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
+              <codeblock>yum install --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
+            <stepresult>If <cmdname>yum</cmdname> returns an error due to dependency issues, see
+              <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
           </substep>
           <substep>
             <cmd>Enable automatic startup.</cmd>
@@ -855,7 +865,7 @@ myReg="--insecure-registry=$masterHost:5000"</codeblock>
           <substep>
             <cmd>Install <ph keyref="nm-cc"/>.</cmd>
             <stepxmp>
-              <codeblock>yum --disablerepo=\* --enablerepo=zenoss-mirror install -y \
+              <codeblock>yum install --enablerepo=zenoss-mirror \
   /opt/zenoss-repo-mirror/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>

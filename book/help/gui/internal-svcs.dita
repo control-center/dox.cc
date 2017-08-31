@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><uicontrol>Internal Services</uicontrol> details</title>
+  <refbody>
+    <section>
+      <p>The <uicontrol>Internal Services</uicontrol> page provides summary information about the
+        services upon which <ph keyref="nm-cc"/> relies. To view graph data associated with a
+        service, click on its name.</p>
+    </section>
+  </refbody>
+</reference>
+

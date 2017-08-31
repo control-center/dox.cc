@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="3" modification="3"/>        
+        <vrm version="1" release="4" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -33,7 +33,7 @@
       <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
       <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
       <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
-      <mapref href="images/keydefs-images.ditamap" format="ditamap"/>
+      <mapref href="images/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="shared/build.ditamap" format="ditamap"/>
@@ -55,18 +55,23 @@
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/backup/keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
       <mapref href="feature/config/keys.ditamap" format="ditamap"/>
       <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/manage/ha/keys.ditamap" format="ditamap"/>
       <mapref href="feature/master/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
       <mapref href="feature/offline/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/ha/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/ha/keys.ditamap" format="ditamap"/>
       <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
       <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/zk/ha/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
       <toc/>
@@ -76,19 +81,19 @@
   
   <chapter href="book/install/ha/plan/plan.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/master/master.ditamap" format="ditamap"/>
-  <chapter href="book/install/ha/maps/config-master.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/drbd/drbd.ditamap" format="ditamap"/>
+  <chapter href="book/install/ha/maps/config-master.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/cluster/cluster.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/verify/verify.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/auth.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/install-delegate.ditamap" format="ditamap"/>
   <chapter href="book/install/ha/maps/config-delegate.ditamap" format="ditamap"/>
-  <!-- items in zk are commented for RM/Core; check before building -->
   <chapter href="feature/zk/zk-ha.ditamap" format="ditamap"/>
   
   <appendices>
-    <appendix href="feature/manage/manage-ha.ditamap" format="ditamap"/>
+    <appendix href="feature/state/ha/manage.ditamap" format="ditamap"/>
     <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
   </appendices>
 

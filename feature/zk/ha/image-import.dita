@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Importing the ZooKeeper image for Docker</title>
+  <taskbody>
+    <prereq>Perform the steps in <xref keyref="cc-feature-offline-stage-run-zk"/> before performing this procedure.</prereq>
+    <context>Use this procedure to import the Docker image
+      for the ZooKeeper service from a ZooKeeper image file. Repeat this procedure 
+      on each node in the ZooKeeper ensemble.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the ZooKeeper ensemble node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>cd /root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Extract the ZooKeeper image.</cmd>
+        <stepxmp>
+          <codeblock>./install-zenoss-isvcs-zookeeper-v*.run</codeblock>
+        </stepxmp>
+        <info>Image extraction begins when you press the <b>y</b> key.</info>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Delete the archive file, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm -i ./install-zenoss-isvcs-zookeeper-v*.run</codeblock>
+        </stepxmp>
+      </step>     
+    </steps>
+  </taskbody>
+</task>

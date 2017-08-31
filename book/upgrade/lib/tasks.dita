@@ -25,7 +25,7 @@
           <substep>
             <cmd>Upgrade the operating system.</cmd>
             <stepxmp>
-              <codeblock>yum clean all &#38;&#38; yum update -y</codeblock>
+              <codeblock>yum clean all &#38;&#38; yum update</codeblock>
             </stepxmp>
           </substep>
           <substep>
@@ -105,10 +105,10 @@
             <info>The following commands require internet access 
               or a local mirror of operating system packages.</info>
             <stepxmp><b>Update only the kernel</b>:
-              <codeblock>yum makecache fast &#38;&#38; yum update -y kernel &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
             <stepxmp><b>Update the operating system, including the kernel</b>:
-              <codeblock>yum makecache fast &#38;&#38; yum update -y &#38;&#38; reboot</codeblock>
+              <codeblock>yum makecache fast &#38;&#38; yum update &#38;&#38; reboot</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -150,7 +150,7 @@ EOF</codeblock>
         <info><ph keyref="nm-cc"/> includes a utility that simplifies the process of creating a
           device mapper thin pool.</info>
         <stepxmp>
-          <codeblock>yum --enablerepo=zenoss-stable install -y serviced-<ph keyref="lo-version-cc"/></codeblock>
+          <codeblock>yum --enablerepo=zenoss-stable install serviced-<ph keyref="lo-version-cc"/></codeblock>
         </stepxmp>
         <stepresult>The installation preserves the existing version 
           of the <cmdname>serviced</cmdname> configuration
@@ -210,9 +210,9 @@ EOF</codeblock>
             <info>The variable specifies the host and port at which the local Docker
               registry is available.</info>
             <stepxmp>
-              <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or 
+              <p>Replace <varname>Hostname-Or-IP</varname> with the fully-qualified domain name or 
                 IP address of the <ph keyref="nm-cc"/> master host:</p>
-              <codeblock>SERVICED_DOCKER_REGISTRY=<varname>Hostname-Or-IP</varname>:5000</codeblock>
+              <codeblock>SERVICED_DOCKER_REGISTRY=<varname>FQDN-Or-IP</varname>:5000</codeblock>
             </stepxmp>
           </substep>
           <substep>

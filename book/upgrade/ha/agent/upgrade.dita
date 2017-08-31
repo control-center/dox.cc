@@ -11,7 +11,7 @@
           in to the <ph keyref="nm-cc"/> master node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
 
-      <step conkeyref="cc-feature-manage-stop-1/stop-app">
+      <step conkeyref="cc-feature-state-stop-1/stop-app">
         <cmd/>
       </step>
 
@@ -31,7 +31,7 @@
         <cmd>On both nodes, install the latest version of the resource agents package.</cmd>
         <stepxmp>For example, if the package file is located in the
             <filepath>/opt/zenoss-repo-mirror</filepath> directory:
-          <codeblock>yum install -y /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.rpm</codeblock>
+          <codeblock>yum install /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
         </stepxmp>
       </step>
 

@@ -27,8 +27,24 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-lib-tasks/check-memory-master">
-        <cmd/>
+      <step>
+        <cmd>Determine whether the available memory and swap is sufficient.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display the available memory.</cmd>
+            <stepxmp>
+              <codeblock>free -h</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Compare the available memory and swap space with the 
+              amount required for a master host in your deployment.</cmd>
+            <info><ph conkeyref="strings/fmi-int"/>
+              <xref keyref="cc-install-ha-plan-storage"/>.</info>
+          </substep>
+        </substeps>
+        <stepresult>If the result does not meet minimum requirements,
+          stop this procedure and select a different host.</stepresult>
       </step>
       
       <step conkeyref="cc-feature-lib-tasks/check-hostid-master">

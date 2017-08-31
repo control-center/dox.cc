@@ -4,8 +4,9 @@
   <title>Upgrading delegates from 1.2.x to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
-      <p>Perform the procedures in this chapter to upgrade <ph keyref="nm-cc"/> 1.2.x delegate hosts to
-          <ph keyref="lo-version-cc"/>.</p>
+      <p>Use this chapter to upgrade <ph keyref="nm-cc"/> 1.2.x delegate hosts to <ph
+        keyref="lo-version-cc"/>. Before performing the procedures in this chapter,
+        download required software. See <xref keyref="cc-feature-download-upgrade"/>.</p>
     </section>
   </refbody>
 </reference>

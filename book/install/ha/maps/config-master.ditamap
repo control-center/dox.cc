@@ -9,10 +9,10 @@
       <topicref keyref="cc-feature-access-serviced"/>
       <topicref keyref="cc-feature-access-cli"/>
     </topicref>
-    <topicref keyref="cc-feature-master-storage-config"/>
     <topicref keyref="cc-feature-master-role"/>
-    <topicref keyref="cc-install-ha-master-config-offline"/>
+    <topicref keyref="cc-install-ha-master-registry"/>
     <topicref keyref="cc-install-ha-master-config-endpoints"/>
+    <topicref keyref="cc-install-ha-master-config-offline"/>
     <topicref keyref="cc-feature-vars-master">
       <topicref keyref="cc-feature-vars-best"/>
       <topicref keyref="cc-feature-vars-rpc"/>

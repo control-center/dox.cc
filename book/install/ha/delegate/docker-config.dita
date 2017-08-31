@@ -31,6 +31,5 @@
         <cmd/>
       </step>
     </steps>
-    <postreq>Proceed to the next chapter and configure the host.</postreq>
   </taskbody>
 </task>

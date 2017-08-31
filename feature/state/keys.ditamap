@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in state</title>
+  <topicgroup>
+    <keydef keys="cc-feature-state-emergency-clear"
+            href="emergency-clear.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-emergency-shutdown"
+            href="emergency-shutdown.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-intro"
+            href="intro.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-manage"
+            href="manage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-start-1"
+            href="start-1.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-start-n"
+            href="start-n.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-stop-1"
+            href="stop-1.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-stop-n-delegate"
+            href="stop-n-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-stop-n-master"
+            href="stop-n-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-state-stop-n"
+            href="stop-n.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
