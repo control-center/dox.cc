@@ -43,6 +43,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="book/plan/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/hw/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/misc/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/os/keys.ditamap" format="ditamap"/>
@@ -53,7 +54,13 @@
     <booklists>
       <toc/>
     </booklists>
-      <topicref href="book/plan/lib/about.dita"/>
+    <topicref keyref="cc-plan-front-about">
+      <topicref keyref="supported-browsers"/>
+      <topicref keyref="related-pubs">
+        <topicref keyref="cc-plan-front-info"/>
+      </topicref>
+      <topicref keyref="cc-plan-front-history"/>
+    </topicref>
   </frontmatter>
   
   <chapter href="book/plan/sw/sw.ditamap" format="ditamap"/>

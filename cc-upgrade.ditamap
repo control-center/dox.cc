@@ -70,11 +70,11 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-upgrade-front-about">
-      <topicref keyref="browsers"/>
+      <topicref keyref="supported-browsers"/>
       <topicref keyref="related-pubs">
         <topicref keyref="cc-upgrade-front-info"/>
       </topicref>
-      <topicref keyref="cc-upgrade-front-history-cc"/>
+      <topicref keyref="cc-upgrade-front-history"/>
     </topicref>
   </frontmatter>
   

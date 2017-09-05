@@ -15,20 +15,12 @@
             href="13x.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-front-about-ha"
-            href="about-ha.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-front-about"
             href="about.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-front-about_ha"
-            href="about_ha.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-front-history-cc"
-            href="history-cc.dita"
+    <keydef keys="cc-upgrade-front-history"
+            href="history.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-front-info"

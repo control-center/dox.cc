@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
 <topic id="topicid">
-  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <title>Documentation feedback</title>
   <body>
-    
-    <section id="cc">
-      <title>Documentation feedback</title>
+    <section>
       <p>To provide feedback about this document, or to report an error or omission, please send an
         email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
-        title and part number, and as much information as possible about the context of your
-        feedback. The part number appears at the end of the list of trademarks, at the front of this
-        guide.</p>
+        title (<cite conkeyref="pubs/cite-ref"/>) and part number (1340.<keyword
+          keyref="lo-build-date"/>) and as much information as possible about the context of your
+        feedback.</p>
     </section>
         
   </body>

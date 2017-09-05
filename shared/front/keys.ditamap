@@ -3,20 +3,12 @@
 <map>
         <title>Shared topics</title>
         <topicgroup>
-                <keydef keys="browsers"
-                        href="browsers.dita"
-                        format="dita"
-                />
                 <keydef keys="supported-browsers"
-                        href="supported-browsers.dita"
+                        href="browsers.dita"
                         format="dita"
                 />
                 <keydef keys="related-pubs"
                         href="related-pubs.dita"
-                        format="dita"
-                />
-                <keydef keys="more-info"
-                        href="more-info.dita"
                         format="dita"
                 />
         </topicgroup>

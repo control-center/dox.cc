@@ -1,45 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
-<reference id="concept_zbv_qgy_nl0">
- <title>About this guide</title>
+<reference id="concept_zbv">
+  <title>Change history</title>
  <refbody>
-   <section>
-   <p>The <cite conkeyref="pubs/cite-upgrade-ha"/> provides detailed instructions for upgrading
-     a high-availability deployment of <ph keyref="nm-cc"/>. To perform the procedures in this
-     guide, users must be able to download packages from the <ph conkeyref="names/company"/>
-     portal site, which is available only to <ph conkeyref="names/company"/> customers.</p>
-   </section>
-   
-   <section conkeyref="related-pubs/cc"/>
-   <section conkeyref="more-info/cc"/>
-   
-   <section>
-     <title>Supported clients and browsers</title>
-     <p>The following table identifies the supported combinations of client operating systems and
-       web browsers.</p>
-     <table>
-       <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
-         <tbody>
-           <row>
-             <entry></entry>
-           </row>
-         </tbody>
-       </tgroup>
-     </table>
-   </section>
-   
-   
     <section>
-      <title>Change history</title>
       <p>The following list associates document part numbers and the important 
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
-      
-      <!-- Use the lo-build-date variable through finals. Then, replace it with
-           the published build number and use the variable only in the version
-           in development. 
-        -->
       <dl>
         <dlentry>
           <dt>1302.<keyword keyref="lo-build-date"/></dt>

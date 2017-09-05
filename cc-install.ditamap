@@ -66,11 +66,11 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-install-front-about">
-      <topicref keyref="browsers"/>
+      <topicref keyref="supported-browsers"/>
       <topicref keyref="related-pubs">
         <topicref keyref="cc-install-front-info"/>
       </topicref>
-      <topicref keyref="cc-install-front-history-cc"/>
+      <topicref keyref="cc-install-front-history"/>
     </topicref>
   </frontmatter>
   <chapter href="feature/download/offline.ditamap" format="ditamap"/>

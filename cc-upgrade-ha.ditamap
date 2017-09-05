@@ -83,7 +83,13 @@
     <booklists>
       <toc/>
     </booklists>
-    <topicref href="book/upgrade/front/about-ha.dita"/>
+    <topicref keyref="cc-upgrade-ha-front-about">
+      <topicref keyref="supported-browsers"/>
+      <topicref keyref="related-pubs">
+        <topicref keyref="cc-upgrade-ha-front-info"/>
+      </topicref>
+      <topicref keyref="cc-upgrade-ha-front-history"/>
+    </topicref>
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
