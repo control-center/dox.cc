@@ -27,5 +27,13 @@
             href="about_ha.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-front-history-cc"
+            href="history-cc.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-front-info"
+            href="info.dita"
+            format="dita"
+    />
    </topicgroup>
 </map>
