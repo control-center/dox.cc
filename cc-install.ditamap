@@ -43,6 +43,7 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
+      <mapref href="book/install/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
@@ -64,7 +65,13 @@
     <booklists>
       <toc/>
     </booklists>
-    <topicref href="book/install/maps/about.dita"/>
+    <topicref keyref="cc-install-front-about">
+      <topicref keyref="browsers"/>
+      <topicref keyref="related-pubs">
+        <topicref keyref="cc-install-front-info"/>
+      </topicref>
+      <topicref keyref="cc-install-front-history-cc"/>
+    </topicref>
   </frontmatter>
   <chapter href="feature/download/offline.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>

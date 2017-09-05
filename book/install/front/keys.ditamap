@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/front</title>
+  <topicgroup>
+    <keydef keys="cc-install-front-about"
+            href="about.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-front-history-cc"
+            href="history-cc.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-front-info"
+            href="info.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
