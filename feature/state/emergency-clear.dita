@@ -14,7 +14,7 @@
       <step>
         <cmd>Check services for the emergency shutdown flag: </cmd>
         <info>
-          <codeblock>for s in $(serviced service list --show-fields ServiceID); \
+          <codeblock>for s in $(serviced service list --show-fields ServiceID | grep -v ServiceID); \
   do serviced service list $s | grep EmergencyShutdown\"; done</codeblock>
           <p>"True" indicates an emergency shutdown.</p>
         </info>
