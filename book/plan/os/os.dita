@@ -8,11 +8,11 @@
         versions of the Linux kernel included in these releases, and all subsequent updates, are
         supported. However, for best performance, keep the kernel up-to-date.</p>
         <ul>
-          <li>Red Hat Enterprise Linux (RHEL) 7.1 or later (7.3 is preferred)</li>
-          <li>CentOS 7.1 or later (7.3 is preferred)</li>
+          <li>Red Hat Enterprise Linux (RHEL) 7.2, 7.3, or 7.4</li>
+          <li>CentOS 7.2, 7.3, or 7.4</li>
         </ul>
 
-      <p>The RHEL/CentOS 7.x distributions provide a variety of server configurations. <ph
+      <p>The RHEL/CentOS 7 distributions provide a variety of server configurations. <ph
           keyref="nm-cc"/> is tested on operating system platforms that are installed and configured
         with standard options. Docker and <ph keyref="nm-cc"/> are tested on and support the Minimal
         Install configuration when the NFS and Network Time Protocol (NTP) packages are also
