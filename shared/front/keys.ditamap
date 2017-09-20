@@ -4,11 +4,15 @@
         <title>Shared topics</title>
         <topicgroup>
                 <keydef keys="supported-browsers"
-                        href="browsers.dita"
+                        href="supported-browsers.dita"
                         format="dita"
                 />
                 <keydef keys="related-pubs"
                         href="related-pubs.dita"
+                        format="dita"
+                />
+                <keydef keys="more-info"
+                        href="more-info.dita"
                         format="dita"
                 />
         </topicgroup>

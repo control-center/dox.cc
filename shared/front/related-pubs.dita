@@ -1,60 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
 <topic id="topicid">
-  <title>Related publications</title>
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
   <body> 
-    <table>
-      <tgroup cols="2">
-        <colspec colname="c1" colwidth="2*"/>
-        <colspec colname="c2" colwidth="3*"/>
-        <thead>
-          <row>
-            <entry>Title</entry>
-            <entry>Description </entry>
-          </row>
-        </thead>
-        <tbody>
-          <row>
-            <entry><cite conkeyref="pubs/cite-notes"/></entry>
-            <entry>Describes known issues, fixed issues, and late-breaking
-              information not included in other publications.</entry>
-          </row>
-          <row>
-            <entry><cite conkeyref="pubs/cite-plan"/></entry>
-            <entry>Provides both general and specific information about
-              preparing to deploy a <ph keyref="nm-cc"/> cluster.</entry>
-          </row>
-          <row>
-            <entry><cite conkeyref="pubs/cite-install"/></entry>
-            <entry>Provides detailed procedures for installing
-              and configuring a <ph keyref="nm-cc"/> cluster.</entry>
-          </row>
-          <row>
-            <entry><cite conkeyref="pubs/cite-install-ha"/></entry>
-            <entry>Provides detailed procedures for installing
-              and configuring <ph keyref="nm-cc"/> in a 
-              high-availability deployment.</entry>
-          </row>
-          <row>
-            <entry><cite conkeyref="pubs/cite-ref"/></entry>
-            <entry>Provides information and procedures for managing
-              <ph keyref="nm-cc"/>. This information is also available
-              as online help in the <ph keyref="nm-cc"/> browser interface.</entry>
-          </row>
-          <row>
-            <entry><cite conkeyref="pubs/cite-upgrade"/></entry>
-            <entry>Provides detailed procedures for updating
-              a <ph keyref="nm-cc"/> deployment to the 
-              latest release.</entry>
-          </row>
-          <row>
-            <entry><cite conkeyref="pubs/cite-upgrade-ha"/></entry>
-            <entry>Provides detailed procedures for updating
-              a high-availability deployment of <ph keyref="nm-cc"/>
-              to the latest release.</entry>
-          </row>
-        </tbody>
-      </tgroup>
-    </table>
+    <section id="cc">
+      <title>Related publications</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Title</entry>
+              <entry>Description </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><cite conkeyref="pubs/cite-notes"/></entry>
+              <entry>Describes known issues, fixed issues, and late-breaking
+                information not included in other publications.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-plan"/></entry>
+              <entry>Provides both general and specific information about
+                preparing to deploy a <ph keyref="nm-cc"/> cluster.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-install"/></entry>
+              <entry>Provides detailed procedures for installing
+                and configuring a <ph keyref="nm-cc"/> cluster.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-install-ha"/></entry>
+              <entry>Provides detailed procedures for installing
+                and configuring <ph keyref="nm-cc"/> in a 
+                high-availability deployment.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-ref"/></entry>
+              <entry>Provides information and procedures for managing
+                <ph keyref="nm-cc"/>. This information is also available
+                as online help in the <ph keyref="nm-cc"/> browser interface.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-upgrade"/></entry>
+              <entry>Provides detailed procedures for updating
+                a <ph keyref="nm-cc"/> deployment to the 
+                latest release.</entry>
+            </row>
+            <row>
+              <entry><cite conkeyref="pubs/cite-upgrade-ha"/></entry>
+              <entry>Provides detailed procedures for updating
+                a high-availability deployment of <ph keyref="nm-cc"/>
+                to the latest release.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
   </body>
 </topic>
