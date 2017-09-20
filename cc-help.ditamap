@@ -63,9 +63,7 @@
     </booklists>
     <topicref keyref="cc-help-front-about">
       <topicref keyref="supported-browsers"/>
-      <topicref keyref="related-pubs">
-        <topicref keyref="cc-help-front-info"/>
-      </topicref>
+      <topicref keyref="cc-help-front-info"/>
       <topicref keyref="cc-help-front-history"/>
     </topicref>
   </frontmatter>
