@@ -16,10 +16,15 @@
       <dl>
         <dlentry>
           <dt>1300.<keyword keyref="lo-build-date"/></dt>
-          <dd>Correct a previous modification for configuring Docker. 
-            The <codeph>--insecure-registry</codeph> flag must be set when
-            the value of <varname>SERVICED_DOCKER_REGISTRY</varname>
-            is not <codeph>localhost:5000</codeph>.</dd>
+          <dd>Update release number (1.4.1).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1300.17.229</dt>
+          <dd>Update release number (1.4.0).</dd>
+          <dd>Correct a previous modification for configuring Docker. The
+              <codeph>--insecure-registry</codeph> flag must be set when the value of
+              <varname>SERVICED_DOCKER_REGISTRY</varname> is not
+            <codeph>localhost:5000</codeph>.</dd>
         </dlentry>
         <dlentry>
           <dt>1300.17.187</dt>

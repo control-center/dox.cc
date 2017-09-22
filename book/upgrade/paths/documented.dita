@@ -3,9 +3,9 @@
 <reference id="upgrades">
   <title>Upgrade paths included in this document</title>
   <refbody>
-    <section id="section_uc4_1hc_hbb">
-      <title>Release 1.4.x upgrades</title>
-      <table id="table_dkeke8">
+    <section>
+      <title>Release 1.3.x and 1.4.0 upgrades</title>
+      <table id="micro-13x">
         <tgroup cols="2">
           <colspec colname="c1" colwidth="1*"/>
           <colspec colname="c2" colwidth="1*"/>
@@ -21,23 +21,6 @@
               <entry><ph keyref="nm-cc"/>
                 <ph keyref="lo-version-cc"/></entry>
             </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-    <section>
-      <title>Release 1.3.x upgrades</title>
-      <table id="micro-13x">
-        <tgroup cols="2">
-          <colspec colname="c1" colwidth="1*"/>
-          <colspec colname="c2" colwidth="1*"/>
-          <thead>
-            <row>
-              <entry>From </entry>
-              <entry>To </entry>
-            </row>
-          </thead>
-          <tbody>
             <row>
               <entry><ph keyref="nm-cc"/> 1.3.3</entry>
               <entry><ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/></entry>
