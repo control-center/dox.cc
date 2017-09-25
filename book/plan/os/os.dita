@@ -25,7 +25,7 @@
         time server in your environment.</p>
       
       <note>Because <ph keyref="nm-cc"/> relies on the system clock, while an application is
-        running, do not pause a virtual machine that belongs to a cluster.</note>
+        running, do not pause a virtual machine that is running <ph keyref="nm-cc"/>.</note>
     </section>
   </refbody>
 </reference>
