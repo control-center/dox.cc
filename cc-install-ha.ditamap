@@ -79,9 +79,7 @@
     </booklists>
     <topicref keyref="cc-install-ha-front-about">
       <topicref keyref="supported-browsers"/>
-      <topicref keyref="related-pubs">
-        <topicref keyref="cc-install-ha-front-info"/>
-      </topicref>
+      <topicref keyref="cc-install-ha-front-info"/>
       <topicref keyref="cc-install-ha-front-history"/>
     </topicref>
   </frontmatter>
