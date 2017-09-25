@@ -71,7 +71,6 @@
     <booklists>
       <glossarylist>
         <topicref keyref="gl-cc-application"/>
-        <topicref keyref="gl-cc-cluster"/>
         <topicref keyref="gl-cc-delegate-host"/>
         <topicref keyref="gl-cc-master-host"/>
         <topicref keyref="gl-cc-resource-pool"/>
