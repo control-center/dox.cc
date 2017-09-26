@@ -5,8 +5,8 @@
   <refbody>
     <section>
       <p><cite conkeyref="pubs/cite-install-ha"/> provides detailed procedures
-        for installing and configuring a <ph keyref="nm-cc"/> cluster in a
-        high-availability deployment.</p>
+        for installing and configuring a <ph keyref="nm-cc"/> in a
+        high-availability cluster.</p>
     </section>
     
     <section conkeyref="related-pubs/cc"/>

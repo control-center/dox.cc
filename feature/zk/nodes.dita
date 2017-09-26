@@ -11,7 +11,7 @@
 
       <p>The most important temporary variables specify the IP address or hostname of each host in
         the ZooKeeper ensemble. The following table identifies these important variables, the names
-        and values of which must be identical on every <ph keyref="nm-cc"/> cluster host.</p>
+        and values of which must be identical on every <ph keyref="nm-cc"/> host.</p>
       
       <table>
         <tgroup cols="3">

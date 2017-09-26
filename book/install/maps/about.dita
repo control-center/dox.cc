@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures for installing and
-        configuring a <ph keyref="nm-cc"/> cluster. Before using this guide, carefully review the
+        configuring a <ph keyref="nm-cc"/> deployment. Before using this guide, carefully review the
           <cite conkeyref="pubs/cite-plan"/>.</p>
       
       <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
