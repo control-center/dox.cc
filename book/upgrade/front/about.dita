@@ -113,7 +113,7 @@
             RPM file (<ph conkeyref="names/company"/> customers only).</dd>
           <dd>Add a procedure for updating ZooKeeper images on offline nodes
             (<ph conkeyref="names/company"/> customers only).</dd>
-          <dd>Clarify the procedures for stopping a cluster.</dd>
+          <dd>Clarify the procedures for stopping a <ph keyref="nm-cc"/> deployment.</dd>
           <dd>Update release number (1.2.1).</dd>
         </dlentry>
         

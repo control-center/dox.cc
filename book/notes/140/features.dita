@@ -8,7 +8,7 @@
         logging. 
         <ul>
           <li><ph keyref="nm-cc"/> writes messages to an audit log file on the master
-            host when configuration changes occur in the <ph keyref="nm-cc"/> cluster. The messages record 
+            host when configuration changes occur in the <ph keyref="nm-cc"/> deployment. The messages record 
             the time, user identity, and information about the change in plain text.</li>
           <li>Also, <ph keyref="nm-cc"/>  records application audit messages, if an application
             is configured to write audit messages through <ph keyref="nm-cc"/>. (<ph keyref="nm-rm"/> 
