@@ -24,12 +24,12 @@
             <row>
               <entry><cite conkeyref="pubs/cite-plan"/></entry>
               <entry>Provides both general and specific information about
-                preparing to deploy a <ph keyref="nm-cc"/> cluster.</entry>
+                preparing to deploy <ph keyref="nm-cc"/>.</entry>
             </row>
             <row>
               <entry><cite conkeyref="pubs/cite-install"/></entry>
               <entry>Provides detailed procedures for installing
-                and configuring a <ph keyref="nm-cc"/> cluster.</entry>
+                and configuring <ph keyref="nm-cc"/>.</entry>
             </row>
             <row>
               <entry><cite conkeyref="pubs/cite-install-ha"/></entry>

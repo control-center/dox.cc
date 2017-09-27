@@ -69,7 +69,7 @@
         <cmd>Obtain the host ID of the master host.</cmd>
         <substeps>
           <substep>
-            <cmd>Display the host IDs of all cluster hosts.</cmd>
+            <cmd>Display the host IDs of all <ph keyref="nm-cc"/> hosts.</cmd>
             <stepxmp>
               <codeblock>serviced host list | cut -c-85</codeblock>
             </stepxmp>

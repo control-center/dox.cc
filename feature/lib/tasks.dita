@@ -160,7 +160,7 @@
           <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the delegate
             host to add:</p>
           <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
-          <p>If you enter a hostname, all hosts in your <ph keyref="nm-cc"/> cluster must be able to
+          <p>If you enter a hostname, all <ph keyref="nm-cc"/> hosts must be able to
             resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
             a nameserver on your network.</p>
         </stepxmp>
@@ -308,22 +308,22 @@
       <step id="check-hostid-master">
         <cmd>Ensure the host has a persistent numeric ID.</cmd>
         <info>Skip this step if you are installing a single-host deployment.</info>
-        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
+        <info>Each <ph keyref="nm-cc"/> host must have a unique host ID,
           and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
           <codeblock>test -f /etc/hostid || genhostid ; hostid</codeblock>
         </stepxmp>
-        <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
+        <stepresult>Record the ID for comparison with other <ph keyref="nm-cc"/> hosts.</stepresult>
       </step>
       
       <step id="check-hostid">
         <cmd>Ensure the host has a persistent numeric ID.</cmd>
-        <info>Each host in a <ph keyref="nm-cc"/> cluster must have a unique host ID,
+        <info>Each <ph keyref="nm-cc"/> host must have a unique host ID,
           and the ID must be persistent (not change when the host reboots).</info>
         <stepxmp>
           <codeblock>test -f /etc/hostid || genhostid ; hostid</codeblock>
         </stepxmp>
-        <stepresult>Record the ID for comparison with other hosts in the cluster.</stepresult>
+        <stepresult>Record the ID for comparison with other <ph keyref="nm-cc"/> hosts.</stepresult>
       </step>
      
       

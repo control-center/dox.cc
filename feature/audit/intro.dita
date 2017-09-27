@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p>The <cmdname>serviced</cmdname> service writes messages to an audit log file on the master
-        host when configuration changes occur in the <ph keyref="nm-cc"/> cluster. The messages record 
+        host when configuration changes occur on <ph keyref="nm-cc"/> hosts. The messages record 
         the time, user identity, and information about the change in plain text.</p>
         
       <p>The default location of the <cmdname>serviced</cmdname> audit log file is

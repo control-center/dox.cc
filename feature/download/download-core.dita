@@ -47,8 +47,7 @@
           RHEL/CentOS. Each file contains the <ph keyref="nm-cc"/> dependencies.</info>
         <info>To download the correct repository mirror file,
           match the operating system release number in the file name 
-          with the version of RHEL/CentOS installed on all of the hosts
-          in your <ph keyref="nm-cc"/> cluster.
+          with the version of RHEL/CentOS installed on all <ph keyref="nm-cc"/> hosts.
           <sl>
             <sli><codeph>yum-mirror-centos7.centos7.1-1503-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
             <sli><codeph>yum-mirror-centos7.centos7.2-1511-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
@@ -58,7 +57,7 @@
       </step>
 
       <step>
-        <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> cluster hosts.</cmd>
+        <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> hosts.</cmd>
         <info>
           <ul>
             <li>Copy all files to the master host.</li>

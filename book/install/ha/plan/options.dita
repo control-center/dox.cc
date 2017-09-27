@@ -6,9 +6,9 @@
     <p>The recommended deployment architecture requires two identical dual-NIC machines for optimal
       disk synchronization and network responsiveness. However, you can deploy an HA cluster with
       single-NIC servers if two identical dual-NIC machines are not available.</p>
-    <section id="section_l3k_pjl_wx">
+    <section>
       <title>Requirements for two identical dual-NIC servers</title>
-      <ul id="ul_rlp_rjl_wx">
+      <ul>
         <li>Master hosts: In a separate resource pool, you need two identical hosts in the role of
             <ph keyref="nm-cc"/> master host; one host serves as the primary node and the other as
           the secondary node.</li>
@@ -26,11 +26,11 @@
           HA cluster.</li>
       </ul>
     </section>
-    <section id="section_idg_4jl_wx">
+    <section>
       <title>Requirements for two single-NIC servers</title>
-      <ul id="ul_hpl_2tk_wx">
+      <ul>
         <li>Master host: Configure two hosts for the <ph keyref="nm-cc"/> master host in an
-          active/passive cluster.<ul id="ul_wpc_1kl_wx">
+          active/passive cluster.<ul>
             <li>Use the two hosts only to run <ph keyref="nm-cc"/>. Do not use them to run
               application services.</li>
             <li>For primary and secondary nodes that contain only one network-interface card (NIC),
