@@ -5,6 +5,7 @@
   <refbody>
     
     <section>
+      <!--For reference, you can check the values of the tags at the following location in the code: https://github.com/control-center/serviced/blob/<version>/isvcs/isvc.go#L32-L35-->
       <title>Release 1.4</title>
       <table id="images14">
         <tgroup cols="3">
@@ -24,6 +25,11 @@
                 <ph keyref="lo-version-cc"/></entry>
               <entry>zenoss/serviced-isvcs:v<ph keyref="lo-version-isvcs"/></entry>
               <entry>zenoss/isvcs-zookeeper:v<ph keyref="lo-version-zk"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.4.0</entry>
+              <entry>zenoss/serviced-isvcs:v60</entry>
+              <entry>zenoss/isvcs-zookeeper:v10</entry>
             </row>
           </tbody>
         </tgroup>

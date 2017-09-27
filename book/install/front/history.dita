@@ -1,38 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="concept">
-  <title>About this guide</title>
+  <title>Change history</title>
   <refbody>
     <section>
-      <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures for installing and
-        configuring a <ph keyref="nm-cc"/> deployment. Before using this guide, carefully review the
-          <cite conkeyref="pubs/cite-plan"/>.</p>
-      
-      <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
-        installing a high-availability deployment. For additional information, please contact your
-        <ph conkeyref="names/company"/> representative.</p>
-    </section>
-    
-    <section conkeyref="related-pubs/cc"/>
-    <section conkeyref="more-info/cc"/>
-    
-    <section>
-      <title>Supported clients and browsers</title>
-      <p>The following table identifies the supported combinations of client operating systems and
-        web browsers.</p>
-      <table>
-        <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
-          <tbody>
-            <row>
-              <entry></entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-    
-    <section>
-      <title>Change history</title>
       <p>The following list associates document part numbers and the important 
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
@@ -45,10 +16,14 @@
       <dl>
         <dlentry>
           <dt>1320.<keyword keyref="lo-build-date"/></dt>
-          <dd>Correct a previous modification for configuring Docker. 
-            The <codeph>--insecure-registry</codeph> flag must be set when
-            the value of <varname>SERVICED_DOCKER_REGISTRY</varname>
-            is not <codeph>localhost:5000</codeph>.</dd>
+          <dd>Update release number (1.4.1).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1320.17.242</dt>
+          <dd>Correct a previous modification for configuring Docker. The
+              <codeph>--insecure-registry</codeph> flag must be set when the value of
+              <varname>SERVICED_DOCKER_REGISTRY</varname> is not
+            <codeph>localhost:5000</codeph>.</dd>
         </dlentry>
         <dlentry>
           <dt>1320.17.187</dt>

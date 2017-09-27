@@ -48,7 +48,8 @@
       <step>
         <cmd>Copy the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-<ph keyref="lo-version-cc"/>-1.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>cp /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm \
+  /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       

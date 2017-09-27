@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:topic" "topic.dtd">
+<topic id="topicid">
+  <title>Documentation feedback</title>
+  <body>
+    <section>
+      <p>To provide feedback about this document, or to report an error or omission, please send an
+        email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
+        title (<cite conkeyref="pubs/cite-upgrade"/>) and
+        part number (1300.<keyword keyref="lo-build-date"/>) and as much information as
+        possible about the context of your feedback.</p>
+    </section>
+        
+  </body>
+</topic>
