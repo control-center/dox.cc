@@ -3,10 +3,6 @@
 <map>
  <title>Keys in install/ha/maps</title>
   <topicgroup>
-    <keydef keys="cc-install-ha-maps-about"
-            href="about.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-maps-auth"
             href="auth.dita"
             format="dita"

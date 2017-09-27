@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="4" modification="0"/>        
+        <vrm product="cc" version="1" release="4" modification="1"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -46,6 +46,7 @@
       <mapref href="book/install/ha/cluster/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/delegate/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/drbd/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/master/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/plan/keys.ditamap" format="ditamap"/>
@@ -76,7 +77,11 @@
     <booklists>
       <toc/>
     </booklists>
-      <topicref href="book/install/ha/maps/about.dita"/>
+    <topicref keyref="cc-install-ha-front-about">
+      <topicref keyref="supported-browsers"/>
+      <topicref keyref="cc-install-ha-front-info"/>
+      <topicref keyref="cc-install-ha-front-history"/>
+    </topicref>
   </frontmatter>
   
   <chapter href="book/install/ha/plan/plan.ditamap" format="ditamap"/>

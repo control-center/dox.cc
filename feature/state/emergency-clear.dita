@@ -14,8 +14,9 @@
       <step>
         <cmd>Check services for the emergency shutdown flag: </cmd>
         <info>
-          <codeblock>for s in $(serviced service list --show-fields ServiceID); \
-  do serviced service list $s | grep EmergencyShutdown\"; done</codeblock>
+          <codeblock>for s in $(serviced service list --show-fields ServiceID \
+  | grep -v ServiceID); do serviced service list $s \
+  | grep EmergencyShutdown\"; done</codeblock>
           <p>"True" indicates an emergency shutdown.</p>
         </info>
       </step>
@@ -31,8 +32,9 @@
       <step>
         <cmd>Check services for the emergency shutdown flag: </cmd>
         <info>
-          <codeblock>for s in $(serviced service list --show-fields ServiceID); \
-  do serviced service list $s | grep EmergencyShutdown\"; done</codeblock>
+          <codeblock>for s in $(serviced service list --show-fields ServiceID \
+  | grep -v ServiceID); do serviced service list $s \
+  | grep EmergencyShutdown\"; done</codeblock>
           <p>"False" indicates that the flags have been cleared.</p>
         </info>
       </step>

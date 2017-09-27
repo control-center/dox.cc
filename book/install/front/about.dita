@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="concept">
+  <title>About this guide</title>
+  <refbody>
+    <section>
+      <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures for installing and
+        configuring a <ph keyref="nm-cc"/> cluster. Before using this guide, carefully review the
+          <cite conkeyref="pubs/cite-plan"/>.</p>
+      
+      <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
+        installing a high-availability deployment.  <ph conkeyref="strings/fmi-ext"/>
+        <cite conkeyref="pubs/cite-install-ha"/>.</p>
+    </section>
+  </refbody>
+</reference>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in help/front</title>
+ <title>Keys in install/ha/front</title>
   <topicgroup>
-    <keydef keys="cc-help-front-about"
+    <keydef keys="cc-install-ha-front-about"
             href="about.dita"
             format="dita"
     />
-    <keydef keys="cc-help-front-history"
+    <keydef keys="cc-install-ha-front-history"
             href="history.dita"
             format="dita"
     />
-    <keydef keys="cc-help-front-info"
+    <keydef keys="cc-install-ha-front-info"
             href="info.dita"
             format="dita"
     />

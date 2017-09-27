@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="concept">
-  <title>About this guide</title>
+  <title>Change history</title>
   <refbody>
     <section>
-      <p><cite conkeyref="pubs/cite-install-ha"/> provides detailed procedures
-        for installing and configuring a <ph keyref="nm-cc"/> cluster in a
-        high-availability deployment.</p>
-    </section>
-    
-    <section conkeyref="related-pubs/cc"/>
-    <section conkeyref="more-info/cc"/>
-    
-    <section>
-      <title>Supported clients and browsers</title>
-      <p>The following table identifies the supported combinations of client operating systems and
-        web browsers.</p>
-      <table>
-        <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
-          <tbody>
-            <row>
-              <entry></entry>
-            </row>
-          </tbody>
-        </tgroup>
-      </table>
-    </section>
-    
-    <section>
-      <title>Change history</title>
       <p>The following list associates document part numbers and the important 
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
@@ -41,13 +16,17 @@
       <dl>
         <dlentry>
           <dt>1322.<keyword keyref="lo-build-date"/></dt>
+          <dd>Update release number (1.4.1).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1322.17.242</dt>
           <dd>Add a new storage requirement, for audit logs. <ph conkeyref="strings/fmi-int"/>
             <xref keyref="cc-install-ha-plan-storage"/>.</dd>
           <dd>Change the <codeph>on</codeph> stanza in the DRBD configuration file
               (<filepath>/etc/drbd.d/global_common.conf</filepath>) to use hostnames instead of IP
             addresses.</dd>
-          <dd>Remove the <codeph>-y</codeph> parameter from 
-            all <cmdname>yum</cmdname> command invocations.</dd>
+          <dd>Remove the <codeph>-y</codeph> parameter from all <cmdname>yum</cmdname> command
+            invocations.</dd>
         </dlentry>
         <dlentry>
           <dt>1322.17.206</dt>

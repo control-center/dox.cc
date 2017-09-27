@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm version="1" release="4" modification="0"/>        
+        <vrm product="cc" version="1" release="4" modification="1"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -83,7 +83,11 @@
     <booklists>
       <toc/>
     </booklists>
-    <topicref href="book/upgrade/front/about-ha.dita"/>
+    <topicref keyref="cc-upgrade-ha-front-about">
+      <topicref keyref="supported-browsers"/>
+      <topicref keyref="cc-upgrade-ha-front-info"/>
+      <topicref keyref="cc-upgrade-ha-front-history"/>
+    </topicref>
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
@@ -91,7 +95,7 @@
   
   <part>
     <topicmeta>
-      <navtitle>Upgrading 1.3.x to <ph keyref="lo-version-cc"/></navtitle>
+      <navtitle>Upgrading 1.3.x or 1.4.0 to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/ha/front/13x.dita"/>
     <chapter href="book/upgrade/ha/13x/prep.ditamap" format="ditamap"/>
