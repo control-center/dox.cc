@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-ref"/></mainbooktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-install"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="0"/>
+        <vrm product="cc" version="1" release="4" modification="1"/>
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1340.<keyword keyref="lo-build-date"/></bookpartno>
+      <bookpartno>1320.<keyword keyref="lo-build-date"/></bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -43,49 +43,47 @@
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="book/help/gui/keys.ditamap" format="ditamap"/>
-      <mapref href="book/help/front/keys.ditamap" format="ditamap"/>
-      <mapref href="book/help/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="feature/audit/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/backup/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/access/keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/config/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/nat/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/restart/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/master/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
       <mapref href="feature/state/keys.ditamap" format="ditamap"/>
       <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
       <toc/>
     </booklists>
-    <topicref keyref="cc-help-front-about">
+    <topicref keyref="cc-install-front-about">
       <topicref keyref="supported-browsers"/>
-      <topicref keyref="cc-help-front-info"/>
-      <topicref keyref="cc-help-front-history"/>
+      <topicref keyref="cc-install-front-info"/>
+      <topicref keyref="cc-install-front-history"/>
     </topicref>
   </frontmatter>
-  
-  <chapter href="book/help/gui/gui.ditamap" format="ditamap"/>
-  <chapter href="book/help/maps/cli.ditamap" format="ditamap"/>
-  <chapter href="book/help/maps/admin.ditamap" format="ditamap"/>
+  <chapter href="feature/download/offline.ditamap" format="ditamap"/>
+  <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
+  <chapter href="feature/config/master.ditamap" format="ditamap"/>
+  <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
+  <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
+  <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
 
-  <backmatter>
-    <booklists>
-      <glossarylist>
-        <topicref keyref="gl-cc-application"/>
-        <topicref keyref="gl-cc-delegate-host"/>
-        <topicref keyref="gl-cc-master-host"/>
-        <topicref keyref="gl-cc-resource-pool"/>
-        <topicref keyref="gl-cc-service"/>
-        <topicref keyref="gl-service-definition"/>
-        <topicref keyref="gl-service-template"/>
-        <topicref keyref="gl-cc-serviced"/>
-        <topicref keyref="gl-cc-tenant"/>
-      </glossarylist>
-    </booklists>
-  </backmatter>
+  <appendices>
+    <appendix href="feature/state/manage.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
+    <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
+  </appendices>
 
 </bookmap>

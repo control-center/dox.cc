@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-notes"/></mainbooktitle>
+    <mainbooktitle><ph conkeyref="pubs/ph-plan"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,11 +11,11 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="0"/> 
+        <vrm product="cc" version="1" release="4" modification="1"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1310.<keyword keyref="lo-build-date"/></bookpartno>
+      <bookpartno>1330.<keyword keyref="lo-build-date"/></bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -42,21 +42,30 @@
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup> <!-- never need changing -->
-      <mapref href="book/notes/front/keys.ditamap" format="ditamap"/>
-      <mapref href="book/notes/back/keys.ditamap" format="ditamap"/>
+    <topicgroup>
+      <mapref href="book/plan/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/hw/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/misc/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/os/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="book/plan/sw/keys.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup> <!-- add as needed -->
-      <mapref href="book/notes/141/keys.ditamap" format="ditamap"/>
-      <mapref href="book/notes/140/keys.ditamap" format="ditamap"/>
-    </topicgroup>
-    <preface>
-      <topicref href="book/notes/front/about.dita">
-        <topicref href="feature/lib/release-dates.dita"/>
-      </topicref>
-    </preface>
+    
+    <booklists>
+      <toc/>
+    </booklists>
+    <topicref keyref="cc-plan-front-about">
+      <topicref keyref="supported-browsers"/>
+      <topicref keyref="cc-plan-front-info"/>
+      <topicref keyref="cc-plan-front-history"/>
+    </topicref>
   </frontmatter>
-  <chapter href="book/notes/141/self.ditamap" format="ditamap"/>
-  <chapter href="book/notes/140/self.ditamap" format="ditamap"/>  
-  <appendix href="book/notes/back/back.ditamap" format="ditamap"/>
+  
+  <chapter href="book/plan/sw/sw.ditamap" format="ditamap"/>
+  <chapter href="book/plan/hw/hw.ditamap" format="ditamap"/>
+  <chapter href="book/plan/os/os.ditamap" format="ditamap"/>
+  <chapter href="book/plan/misc/misc.ditamap" format="ditamap"/>
+ 
+  <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
+  
 </bookmap>
