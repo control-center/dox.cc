@@ -11,10 +11,6 @@
             href="volstats.svg"
             format="svg"
     />
-    <keydef keys="png-schedule"
-            href="schedule.png"
-            format="png"
-    />
     <keydef keys="png-cfdisk1"
             href="cfdisk1.png"
             format="png"

@@ -10,7 +10,6 @@
         <topicref keyref="cc-help-gui-app-detail-ip-assign"/>
         <topicref keyref="cc-help-gui-app-detail-config"/>
         <topicref keyref="cc-help-gui-app-detail-services"/>
-        <topicref keyref="cc-help-gui-app-detail-schedule"/>
       </topicref>
     </topicref>
     <topicref keyref="cc-help-gui-pools"/>
