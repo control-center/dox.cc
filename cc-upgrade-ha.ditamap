@@ -85,7 +85,9 @@
     </booklists>
     <topicref keyref="cc-upgrade-ha-front-about">
       <topicref keyref="supported-browsers"/>
-      <topicref keyref="cc-upgrade-ha-front-info"/>
+      <topicref keyref="related-pubs">
+        <topicref keyref="cc-upgrade-ha-front-info"/>
+      </topicref>
       <topicref keyref="cc-upgrade-ha-front-history"/>
     </topicref>
   </frontmatter>

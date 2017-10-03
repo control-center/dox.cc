@@ -10,7 +10,8 @@
         that are documented in this part.</p>
       <table conkeyref="cc-upgrade-paths-documented/micro-14x">
         <tgroup cols="2"><tbody><row><entry/></row></tbody></tgroup>
-      </table><table conkeyref="cc-upgrade-paths-documented/micro-13x">
+      </table>
+      <table conkeyref="cc-upgrade-paths-documented/micro-13x">
         <tgroup cols="2"><tbody><row><entry/></row></tbody></tgroup>
       </table>
     </section>

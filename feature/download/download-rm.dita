@@ -54,9 +54,9 @@
           match the operating system release number in the file name 
           with the version of RHEL/CentOS installed on all <ph keyref="nm-cc"/> hosts.
           <sl>
-            <sli><codeph>yum-mirror-centos7.centos7.1-1503-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
-            <sli><codeph>yum-mirror-centos7.centos7.2-1511-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
-            <sli><codeph>yum-mirror-centos7.centos7.3-1611-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.2-1511-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.3-1611-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.4-1708-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
           </sl>
         </info>
       </step>
