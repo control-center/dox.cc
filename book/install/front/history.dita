@@ -16,6 +16,11 @@
       <dl>
         <dlentry>
           <dt>1320.<keyword keyref="lo-build-date"/></dt>
+          <dd>Update release number (1.5.0).</dd>
+          <dd>Replace Docker CE 17.03.1 with 17.09.0.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1320.17.268</dt>
           <dd>Update release number (1.4.1).</dd>
         </dlentry>
         <dlentry>
