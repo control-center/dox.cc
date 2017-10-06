@@ -12,7 +12,7 @@
         for your application.</note>
       <ul>
         <li>Support for RHEL/CentOS 7.4 is added; support for RHEL/CentOS 7.1 is withdrawn.
-          The upgrade process includes a procedure for updating the operating system.</li>
+          The upgrade process includes a step for updating the operating system.</li>
         <li>The upgrade (and install) process now requires downloading packages from
           <ph conkeyref="names/company"/> manually. The required software and images
           are no longer available from the online <ph conkeyref="names/company"/> 

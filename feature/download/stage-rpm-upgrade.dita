@@ -4,9 +4,7 @@
   <title>Installing the repository mirror</title>
   <taskbody>
     <context>Use this procedure to install the <ph conkeyref="names/company"/> repository mirror on
-      a <ph keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
-        keyref="nm-cc"/> hosts.</context>
-    <context id="context_frw_x4w_cz"/>
+      a <ph keyref="nm-cc"/> host. Repeat this procedure on each host in your deployment.</context>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
