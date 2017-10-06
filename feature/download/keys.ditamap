@@ -3,14 +3,6 @@
 <map>
  <title>Keys in download</title>
   <topicgroup>
-    <keydef keys="cc-feature-download-download-core"
-            href="download-core.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-download-download-rm"
-            href="download-rm.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-download-download"
             href="download.dita"
             format="dita"

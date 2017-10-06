@@ -3,10 +3,7 @@
 <bookmap>
    <title>Download</title>
     <chapter keyref="cc-feature-download-upgrade">
-       <topicref keyref="cc-feature-download-download">
-          <topicref keyref="cc-feature-download-download-rm"/>
-          <topicref keyref="cc-feature-download-download-core"/>
-       </topicref>
+       <topicref keyref="cc-feature-download-download"/>
        <topicref keyref="cc-feature-download-stage-rpm-upgrade"/>
        <topicref keyref="cc-feature-download-stage-run"/>
        <topicref keyref="cc-feature-download-stage-run-zk"/>
