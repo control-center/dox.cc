@@ -109,7 +109,7 @@
           <substep>
             <cmd>Remove without checking dependencies.</cmd>
             <stepxmp><b><ph keyref="nm-cc"/> 1.3.0, 1.3.1, or 1.3.2:</b>
-              <codeblock>rpm -e --nodeps docker-engine-1.12.1</codeblock>
+              <codeblock>rpm -e --nodeps docker-engine</codeblock>
             </stepxmp>
             <stepxmp><b><ph keyref="nm-cc"/> 1.3.3:</b>
               <codeblock>rpm -e --nodeps docker-ce</codeblock>
