@@ -56,7 +56,9 @@
     </booklists>
     <topicref keyref="cc-plan-front-about">
       <topicref keyref="supported-browsers"/>
-      <topicref keyref="cc-plan-front-info"/>
+      <topicref keyref="related-pubs">
+        <topicref keyref="cc-plan-front-info"/>
+      </topicref>
       <topicref keyref="cc-plan-front-history"/>
     </topicref>
   </frontmatter>
