@@ -74,7 +74,7 @@
       </topicmeta>
     </keydef>
     <keydef keys="url-google-logging "
-      href="http://google-glog.googlecode.com/svn/trunk/doc/glog.html" format="html"
+      href="http://github.com/google/glog" format="html"
       scope="external">
       <topicmeta>
         <linktext>Google Logging</linktext>

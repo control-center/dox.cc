@@ -39,7 +39,6 @@ SERVICED_DOCKER_REGISTRY=<varname>HA-Virtual-IP</varname>:5000
 SERVICED_ENDPOINT=<varname>HA-Virtual-IP</varname>:4979
 SERVICED_FS_TYPE=devicemapper
 SERVICED_LOG_ADDRESS=<varname>HA-Virtual-IP</varname>:5042
-SERVICED_LOGSTASH_ES=<varname>HA-Virtual-IP</varname>:9100
 SERVICED_MASTER=1
 SERVICED_OUTBOUND_IP=<varname>HA-Virtual-IP</varname>
 SERVICED_STATS_PORT=<varname>HA-Virtual-IP</varname>:8443
