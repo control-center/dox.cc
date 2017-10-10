@@ -32,13 +32,12 @@
         </dlentry>
         <dlentry>
           <dt><filepath>/etc/cron.d/cron_zenossdbpack</filepath></dt>
-          <dd>This script allows administrators to configure
-            the weekday and time of day to invoke <cmdname>/opt/serviced/bin/serviced-zenossdbpack</cmdname>,
+          <dd>This script invokes <cmdname>/opt/serviced/bin/serviced-zenossdbpack</cmdname>,
             the database maintenance script for a <ph conkeyref="names/company"/>
-            application. If the application is not installed or is offline, the command fails.</dd>
-          <dd>This script is required on the master host only. The default configuration of
-            <filepath>/etc/cron.d/cron_zenossdbpack</filepath> invokes the maintenance
-            script every Sunday at midnight.</dd>
+            application, every Sunday at midnight. If the application is not installed or is offline,
+            the command fails. You can change the day of the week and time of day when the
+            maintenance script is invoked by editing <filepath>/etc/cron.d/cron_zenossdbpack</filepath>.</dd>
+          <dd>This script is required on the master host only.</dd>
         </dlentry>
       </dl>
     </section>

@@ -28,7 +28,7 @@
           <dd>This script should be removed from delegate hosts.</dd>
         </dlentry>
         <dlentry>
-          <dt><filepath>/etc/cron.weekly/serviced-zenossdbpack</filepath></dt>
+          <dt><filepath>/etc/cron.d/cron_zenossdbpack</filepath></dt>
           <dd>This script should be removed from delegate hosts.</dd>
         </dlentry>
       </dl>
