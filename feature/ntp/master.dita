@@ -25,7 +25,7 @@
       </step>
       
       <step>
-        <cmd>Edit the NTP configuration file./</cmd>
+        <cmd>Edit the NTP configuration file.</cmd>
         <substeps>
           <substep>
             <cmd>Open <filepath>/etc/ntp.conf</filepath> with a text editor.</cmd>
