@@ -13,7 +13,8 @@
       </step>
       
       <step>
-        <cmd>Move the RPM files to <filepath>/tmp</filepath>.</cmd>
+        <cmd>Move the RPM files and the <ph conkeyref="names/company"/> GPG key
+          to <filepath>/tmp</filepath>.</cmd>
       </step>
       
       <step importance="optional">
@@ -44,6 +45,40 @@
         <stepresult>The <cmdname>yum</cmdname> command copies the contents 
           of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
       </step>
+      
+      <!-- CC-3928
+      <step importance="optional">
+        <cmd>Install the <ph conkeyref="names/company"/> GPG key, if desired.</cmd>
+        <info>You can use the <ph conkeyref="names/company"/> GPG key to verify the
+          RPM files and the <cmdname>yum</cmdname> metadata of the repository mirror.</info>
+        <substeps>
+          <substep>
+            <cmd>Move the <ph conkeyref="names/company"/>
+              GPG key to the mirror directory.
+              <filepath>/opt/zenoss-mirror/RPM-GPG-KEY-Zenoss</filepath>.</cmd>
+            <stepxmp>
+              <codeblock>mv /tmp/RPM-GPG-KEY-Zenoss /opt/zenoss-mirror/RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Edit the repository mirror configuration file
+              (<filepath>/etc/yum.repos.d/zenoss-mirror.repo</filepath>) as follows:</cmd>
+            <info>
+              <ul>
+                <li><codeph>repo_gpgcheck=1</codeph></li>
+                <li><codeph>gpgkey=file:///opt/zenoss-mirror/RPM-GPG-KEY-Zenoss</codeph></li>
+              </ul>
+            </info>
+          </substep>
+          <substep>
+            <cmd>Update the <cmdname>yum</cmdname> cache.</cmd>
+            <stepxmp>
+              <codeblock>yum makecache fast</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+       -->
       
       <step>
         <cmd>Copy the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>

@@ -3,6 +3,10 @@
 <map>
  <title>Keys in lib</title>
   <topicgroup>
+    <keydef keys="cc-feature-lib-install-software-delegate"
+            href="install-software-delegate.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-lib-install-software"
             href="install-software.dita"
             format="dita"

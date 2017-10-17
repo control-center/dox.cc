@@ -6,7 +6,7 @@
     <topicref keyref="cc-feature-delegate-verify"/>
     <topicref keyref="cc-feature-delegate-storage"/>
     <topicref keyref="cc-feature-delegate-prep"/>
-    <topicref keyref="cc-feature-lib-install-software"/>
+    <topicref keyref="cc-feature-lib-install-software-delegate"/>
     <topicref keyref="cc-feature-delegate-docker-config"/>
   </chapter>
 </bookmap>

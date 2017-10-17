@@ -159,5 +159,13 @@
         <linktext>Zenoss Community</linktext>
       </topicmeta>
     </keydef>
+    <keydef
+      keys="url-pgpkeys "
+      href="https://support.zenoss.com/hc/en-us/articles/115004685766"
+      format="html" scope="external">
+      <topicmeta>
+        <linktext>public key</linktext>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
