@@ -66,7 +66,7 @@
       
       <step>
         <cmd>Download the RHEL/CentOS repository mirror file for your deployment.</cmd>
-        <info>The download site provides a repository mirror file for each supported release of
+        <info>The download site provides a repository mirror file for each tested release of
           RHEL/CentOS. Each mirror file contains the release-specific packages that <ph keyref="nm-cc"/> requires.</info>
         <info>
           <sl>
@@ -75,7 +75,7 @@
             <sli><codeph>yum-mirror-centos7.4-1708-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
           </sl>
         </info>
-        <info>If the installed release is unsupported, download the mirror file for the release to which you
+        <info>If the installed release is untested, download the mirror file for the release to which you
         will upgrade the hosts in your deployment.</info>
       </step>
       

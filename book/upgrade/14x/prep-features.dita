@@ -8,7 +8,7 @@
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
       <ul>
-        <li>Support for RHEL/CentOS 7.4 is added; support for RHEL/CentOS 7.1 is withdrawn.
+        <li>RHEL/CentOS 7.4 is added; RHEL/CentOS 7.1 is withdrawn.
         The upgrade process includes a step for updating the operating system.</li>
         <li>This release replaces Docker Community Edition (CE) 17.03.1 with Docker CE 17.09.0.</li>
       </ul>

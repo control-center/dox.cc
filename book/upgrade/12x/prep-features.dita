@@ -8,7 +8,7 @@
         The following list provides an overview of the changes that are addressed during this
         upgrade.</p>
       <ul>
-        <li>Support for RHEL/CentOS 7.4 is added; support for RHEL/CentOS 7.1 is withdrawn.
+        <li>RHEL/CentOS 7.4 is added; RHEL/CentOS 7.1 is withdrawn.
           The upgrade process includes a step for updating the operating system.</li>
         <li>The upgrade (and install) process now requires downloading packages from
           <ph conkeyref="names/company"/> manually. The required software and images
@@ -36,7 +36,7 @@
         
         <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
           shutdown</i> of applications and services while sufficient resources remain to take
-          action to avoid data loss. Support for this feature requires specific minimum amounts of
+          action to avoid data loss. This feature requires specific minimum amounts of
           space in the <ph keyref="nm-cc"/> thin pool for application data. 
           <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
             resize it. <ph conkeyref="strings/fmi-int"/>

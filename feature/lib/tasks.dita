@@ -362,7 +362,8 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
       </step>
 
       <step id="update-os">
-        <cmd>Determine whether the installed operating system release is supported.</cmd>
+        <cmd>Determine whether the installed operating system release is one of the
+          releases that has been tested with <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
           <codeblock>cat /etc/redhat-release</codeblock>
         </stepxmp>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
-  <title>Supported operating systems and browsers</title>
+  <title>Tested operating systems and browsers</title>
   <refbody>
     <section id="cc">
-      <p>The following table identifies the supported combinations of client operating systems and
+      <p>The following table identifies the tested combinations of client operating systems and
         web browsers.</p>
       <table>
         <tgroup id="cc-tgroup" cols="2">
@@ -13,14 +13,14 @@
           <thead>
             <row>
               <entry>Client OS</entry>
-              <entry>Supported Browsers</entry>
+              <entry>Tested Browsers</entry>
             </row>
           </thead>
           <tbody>
             <row>
               <entry>Windows 7 and 8.1</entry>
               <entry>Internet Explorer 11<fn id="ie11" callout="*">Enterprise mode only; compatibility mode is not
-                supported.</fn><xref href="#refid/ie11" type="fn"/></entry>
+                tested.</fn><xref href="#refid/ie11" type="fn"/></entry>
             </row>
             <row>
               <entry morerows="3">Windows 10</entry>

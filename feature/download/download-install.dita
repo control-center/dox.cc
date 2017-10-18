@@ -55,7 +55,7 @@
         <info>Enter the following command on each <ph keyref="nm-cc"/> host in your
           deployment, if necessary. All <ph keyref="nm-cc"/> hosts should be running 
           the same operating system release and kernel. For more information about
-          the supported operating systems and kernels, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          the tested operating systems and kernels, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
         <stepxmp>
           <codeblock>cat /etc/redhat-release</codeblock>
         </stepxmp>
@@ -63,7 +63,7 @@
       
       <step>
         <cmd>Download the RHEL/CentOS repository mirror file for your deployment.</cmd>
-        <info>The download site provides a repository mirror file for each supported release of
+        <info>The download site provides a repository mirror file for each tested release of
           RHEL/CentOS. Each mirror file contains the release-specific packages that <ph keyref="nm-cc"/> requires.</info>
         <info>
           <sl>
@@ -74,10 +74,6 @@
         </info>
       </step>
       
-      <!-- CC-3928
-        
-        FIX THE "BEGIN PGP" AND "END PGP" STRINGS IN THE awk COMMAND!!!!
-        
       <step importance="optional">
         <cmd>Download the <ph conkeyref="names/company"/> GNU Privacy Guard (GPG) key, if desired.</cmd>
         <info>You can use the <ph conkeyref="names/company"/> GPG key to verify the RPM file and the
@@ -86,31 +82,40 @@
           <substep>
             <cmd>Download the key.</cmd>
             <stepxmp>
-              <codeblock>curl -L -o /tmp/RPM-GPG-KEY-Zenoss.html \
+              <codeblock>curl -L -o /tmp/tmp.html \
   'http://keys.gnupg.net/pks/lookup?op=get&#38;search=0xED0A5FD2AA5A1AD7'</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Extract the key, if the download succeeded.</cmd>
+            <cmd>Determine whether the download succeeded.</cmd>
             <stepxmp>
-              <codeblock>grep -Ecq 'BEGIN PGP' /tmp/RPM-GPG-KEY-Zenoss.html \
-  &#38;&#38; awk '/- - - - -BEGIN PGP.*$/,/- - - - -END PGP.*$/' \
-  /tmp/RPM-GPG-KEY-Zenoss.html > ./RPM-GPG-KEY-Zenoss</codeblock>
+              <codeblock>grep -Ec '^\-\-\-\-\-BEGIN PGP' /tmp/tmp.html</codeblock>
             </stepxmp>
-            <stepresult>If <filepath>./RPM-GPG-KEY-Zenoss</filepath> is not 
-              present, repeat the previous two substeps.</stepresult>
+            <stepresult>
+              <ul>
+                <li>If the result is <codeph>0</codeph>, return to the previous substep.</li>
+                <li>If the result is <codeph>1</codeph>, proceed to the next substep.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Extract the key.</cmd>
+            <stepxmp>
+              <codeblock>awk '/^-----BEGIN PGP.*$/,/^-----END PGP.*$/' \
+  /tmp/tmp.html > ./RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
           </substep>
         </substeps>
       </step>
-       -->
+      
       
       <step>
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> hosts.</cmd>
         <info>
           <ul>
             <li>Copy all files to the master host.</li>
-            <li>Copy the RHEL/CentOS RPM file, the the <ph keyref="nm-cc"/> RPM file,
-              and the <ph conkeyref="names/company"/> GPG key to all delegate hosts.</li>
+            <li>Copy the RHEL/CentOS RPM file, the <ph keyref="nm-cc"/> RPM file, and the <ph
+                conkeyref="names/company"/> GPG key file to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper to delegate hosts that are ZooKeeper
               ensemble nodes.</li>
           </ul>

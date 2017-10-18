@@ -17,12 +17,12 @@
         of the <codeph>serviced</codeph> group. The <codeph>serviced</codeph> group is created
         when the <ph keyref="nm-cc"/> RPM package is installed.</p>
       
-      <note><ph keyref="nm-cc"/> supports using two different groups to control access to 
+      <note>You can use two different groups to control access to 
         the browser interface and the CLI. You can enable access to both interfaces for the
         same users by choosing the <cmdname>serviced</cmdname> group as the browser interface
         access group.</note>
       
-      <p>Pluggable Authentication Modules (PAM) is supported and recommended for enabling access to
+      <p>Pluggable Authentication Modules (PAM) has been tested and is recommended for enabling access to
         both the browser interface and the command-line interface. However, the PAM configuration
         must include the <cmdname>sudo</cmdname> service. <ph keyref="nm-cc"/> relies on the host's
           <cmdname>sudo</cmdname> configuration, and if no configuration is present, PAM defaults to

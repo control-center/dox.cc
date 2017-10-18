@@ -39,7 +39,7 @@
         <li>To install <ph keyref="nm-cc"/>, you must log in <ph conkeyref="strings/login-root"
           />.</li>
         <li>Access to the <ph keyref="nm-cc"/> browser interface requires a login account on the <ph
-            keyref="nm-cc"/> master host. Pluggable Authentication Modules (PAM) is supported. By
+            keyref="nm-cc"/> master host. Pluggable Authentication Modules (PAM) is tested. By
           default, users must be members of the <codeph>wheel</codeph> group. The default
           group may be changed by setting the <codeph>SERVICED_ADMIN_GROUP</codeph> variable, and the
           replacement group does not need superuser privileges.</li>
@@ -48,7 +48,7 @@
           to 1048576. The script does not modify the <filepath>/etc/sysconfig/limits.conf</filepath>
           file. </li>
         
-        <li><ph keyref="nm-cc"/> supports <xref keyref="url-selinux"/>.</li>
+        <li><ph keyref="nm-cc"/> has been tested with <xref keyref="url-selinux"/> enabled.</li>
       </ul>
     </section>
   </refbody>
