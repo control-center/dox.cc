@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha/14x</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-ha-14x-13x"
+            href="13x.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-agent"
+            href="agent.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-cc-delegate"
+            href="cc-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-cc-master"
+            href="cc-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-docker-images"
+            href="docker-images.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-image"
+            href="image.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-micro-delegate"
+            href="micro-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-micro-master"
+            href="micro-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-post"
+            href="post.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-prep-features"
+            href="prep-features.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-prep"
+            href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-14x-zk-image"
+            href="zk-image.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

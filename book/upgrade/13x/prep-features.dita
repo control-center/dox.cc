@@ -12,7 +12,11 @@
           The upgrade process includes a step for updating the operating system.</li>
         <li>On RHEL/CentOS 7.4, there may be a file locking defect in NFS 4.1. To
           avoid the issue, delegate hosts are configured to use NFS 4.0.</li>
-        
+        <li>The <cmdname>serviced-zenossdbpack</cmdname> maintenance
+          script is moved from <filepath>/etc/cron.weekly</filepath> to
+          <filepath>/opt/serviced/bin</filepath> and a new <cmdname>cron</cmdname> job,
+          <filepath>/etc/cron.d/cron_zenossdbpack</filepath>, is installed to
+          invoke the maintenance script. By default, the script runs every Sunday at midnight.</li>
         <li>The upgrade (and install) process now requires downloading packages from
           <ph conkeyref="names/company"/> manually. The required software and images
           are no longer available from the online <ph conkeyref="names/company"/> 

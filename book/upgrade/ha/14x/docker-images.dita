@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Loading image files</title>
+  <taskbody>
+    <context>Use this procedure to load images into the local registry.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>If you are upgrading <ph keyref="nm-cc"/> 1.3.3 or 1.4.x, start the Docker
+          service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      
+      <step>
+        <cmd>Change directory to <filepath>/root</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>cd /root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Extract the internal services image.</cmd>
+        <stepxmp>
+          <codeblock>./install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeblock>
+        </stepxmp>
+        <info>At the prompt, press <b>y</b>.</info>
+      </step>
+      
+      <step>
+        <cmd>Extract the ZooKeeper image.</cmd>
+        <stepxmp>
+          <codeblock>./install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeblock>
+        </stepxmp>
+        <info>At the prompt, press <b>y</b>.</info>
+      </step>
+      
+      <step>
+        <cmd>List the images in the registry.</cmd>
+        <stepxmp>
+          <codeblock>docker images</codeblock>
+        </stepxmp>
+        <stepresult>The result should show one image for each archive file.</stepresult>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Delete the archive files, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm -i ./install-*.run</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Stop the Docker service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>
