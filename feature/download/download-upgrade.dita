@@ -22,17 +22,13 @@
     </context>
     <steps>
       <step>
-        <cmd>In a web browser, navigate to the download site.</cmd>
+        <cmd>In a web browser, navigate to the download site, and then log in.</cmd>
         <info>
           <sl>
             <sli><b><ph keyref="nm-rm"/> users:</b> <xref keyref="url-leapfile"/></sli>
             <sli><b><ph keyref="nm-core"/> users:</b> <xref keyref="url-zenoss-community"/></sli>
           </sl>
         </info>
-      </step>
-      
-      <step>
-        <cmd>Log in with the account provided by <ph conkeyref="names/support"/>.</cmd>
       </step>
       
       <step>
@@ -79,12 +75,47 @@
         will upgrade the hosts in your deployment.</info>
       </step>
       
+      <step importance="optional">
+        <cmd>Download the <ph conkeyref="names/company"/> GNU Privacy Guard (GPG) key, if desired.</cmd>
+        <info>You can use the <ph conkeyref="names/company"/> GPG key to verify the RPM file and the
+          <cmdname>yum</cmdname> metadata of the repository mirror.</info>
+        <substeps>
+          <substep>
+            <cmd>Download the key.</cmd>
+            <stepxmp>
+              <codeblock>curl -L -o /tmp/tmp.html \
+  'http://keys.gnupg.net/pks/lookup?op=get&#38;search=0xED0A5FD2AA5A1AD7'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Determine whether the download succeeded.</cmd>
+            <stepxmp>
+              <codeblock>grep -Ec '^\-\-\-\-\-BEGIN PGP' /tmp/tmp.html</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the result is <codeph>0</codeph>, return to the previous substep.</li>
+                <li>If the result is <codeph>1</codeph>, proceed to the next substep.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Extract the key.</cmd>
+            <stepxmp>
+              <codeblock>awk '/^-----BEGIN PGP.*$/,/^-----END PGP.*$/' \
+  /tmp/tmp.html > ./RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
       <step>
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> hosts.</cmd>
         <info>
           <ul>
             <li>Copy all files to the master host.</li>
-            <li>Copy the RHEL/CentOS RPM file and the <ph keyref="nm-cc"/> RPM file to all delegate hosts.</li>
+            <li>Copy the RHEL/CentOS RPM file, the <ph keyref="nm-cc"/> RPM file, and the <ph
+              conkeyref="names/company"/> GPG key file to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper to delegate hosts that are ZooKeeper
               ensemble nodes.</li>
           </ul>

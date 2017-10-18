@@ -41,26 +41,6 @@
           </substep>
         </substeps>
       </step>
-      
-      <step importance="optional">
-        <cmd>Remove the existing repository mirror, if necessary.</cmd>
-        <info>This step is not necessary during installations, only upgrades.</info>
-        <substeps>
-          <substep>
-            <cmd>Search for the existing repository mirror.</cmd>
-            <stepxmp>
-              <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}'</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Remove the mirror.</cmd>
-            <stepxmp>Replace <varname>Old-Mirror</varname> with the name of the
-              <ph conkeyref="names/company"/> repository mirror returned in the previous substep:
-              <codeblock>yum remove <varname>Old-Mirror</varname></codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
             
       <step>
         <cmd>Install the repository mirror.</cmd>
@@ -111,9 +91,9 @@ Is this ok [y/N]:</codeblock>
       </step>
 
       <step>
-        <cmd>Copy the <ph keyref="nm-cc"/> package file to the mirror directory.</cmd>
+        <cmd>Move the <ph keyref="nm-cc"/> package file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>mv /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       

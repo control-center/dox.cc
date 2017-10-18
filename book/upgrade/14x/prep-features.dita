@@ -10,6 +10,8 @@
       <ul>
         <li>RHEL/CentOS 7.4 is added; RHEL/CentOS 7.1 is withdrawn.
         The upgrade process includes a step for updating the operating system.</li>
+        <li>On RHEL/CentOS 7.4, there may be a file locking defect in NFS 4.1. To
+        avoid the issue, delegate hosts are configured to use NFS 4.0.</li>
         <li>This release replaces Docker Community Edition (CE) 17.03.1 with Docker CE 17.09.0.</li>
       </ul>
       <p>For more information about this release, refer
