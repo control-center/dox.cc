@@ -819,39 +819,7 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
             </stepxmp>
           </substep>
         </substeps>
-      </step>
-
-      
-      <step id="nfs-workaround">
-        <cmd>Add a drop-in file for the NFS service.</cmd>
-        <info>This step is a workaround for an <xref keyref="url-rpcbin-bug"/>.</info>
-        <substeps>
-          <substep>
-            <cmd>Create a directory for the drop-in file.</cmd>
-              <stepxmp>
-                <codeblock>mkdir -p /etc/systemd/system/nfs-server.service.d</codeblock>
-              </stepxmp>    
-          </substep>
-          <substep>
-            <cmd>Create the drop-in file.</cmd>
-            <stepxmp>
-              <codeblock>cat &#60;&#60;EOF &#62; /etc/systemd/system/nfs-server.service.d/nfs-server.conf
-[Unit]
-Requires= 
-Requires= network.target proc-fs-nfsd.mount rpcbind.service
-Requires= nfs-mountd.service
-EOF</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
-            <stepxmp>
-              <codeblock>systemctl daemon-reload</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-      
+      </step>      
     </steps>
   </taskbody>
 </task>
