@@ -19,6 +19,10 @@
             href="cc-master.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-12x-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-12x-image"
             href="image.dita"
             format="dita"

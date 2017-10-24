@@ -79,6 +79,46 @@ common {
         </substeps>
         
       </step>
+      
+      <step importance="optional">
+        <cmd>On both nodes, add SELinux policies for DRBD, if necessary.</cmd>
+        <info>Perform this step only if you are using SELinux in enforcing mode.</info>
+        <!-- Cribbed from https://selinuxproject.org/page/Audit2allowRecipe -->
+        <substeps>
+          <substep>
+            <cmd>Determine whether DRBD security failures are present in the audit log.</cmd>
+            <stepxmp>
+              <codeblock>grep drbd /var/log/audit/audit.log</codeblock>
+            </stepxmp>
+            <stepresult>If the command returns results similar to the following example,
+            continue with the remaining substeps.
+              <codeblock>type=AVC msg=audit(1316737884.896:27): avc:  denied  { module_request } for  pid=1253 comm="drbdsetup" kmod="hmac(sha1)" scontext=system_u:system_r:drbd_t:s0 tcontext=system_u:system_r:kernel_t:s0 tclass=system</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Determine whether <cmdname>auditd</cmdname> is running.</cmd>
+            <stepxmp>
+              <codeblock>ps -ef | grep auditd | grep -v grep</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Create policies based on the security failures in the log file.</cmd>
+            <stepxmp>If <cmdname>auditd</cmdname> is running, enter the following command:
+              <codeblock>grep drbd /var/log/audit/audit.log | audit2allow -a -l -M localdrbd</codeblock>
+            </stepxmp>
+            <stepxmp>If <cmdname>auditd</cmdname> is not running, enter the following command:
+              <codeblock>grep drbd /var/log/audit/audit.log | audit2allow -d -l -M localdrbd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Make the new policy active.</cmd>
+            <stepxmp>
+              <codeblock>semodule -i localdrbd.pp</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
       <step>
         <cmd>On both nodes, create a resource definition for <ph keyref="nm-cc"/>.</cmd>
         <substeps>

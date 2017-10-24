@@ -10,7 +10,13 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1302.<keyword keyref="lo-build-date"/></dt>
+          <dt>1302.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dd>Add chapters for updating 1.4.x deployments.</dd>
+          <dd>Add step for updating RHEL/CentOS to 7.4, if necessary.</dd>
+          <dd>Add steps for a delegate host workaround of an NFS issue on RHEL/CentOS 7.4.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1302.17.268</dt>
           <dd>Update release number (1.4.1).</dd>
         </dlentry>
         <dlentry>

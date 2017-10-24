@@ -27,6 +27,10 @@
             href="resource.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-plan-selinux"
+            href="selinux.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-plan-storage"
             href="storage.dita"
             format="dita"
