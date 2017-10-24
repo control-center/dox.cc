@@ -219,7 +219,27 @@ EOF</codeblock>
             <cmd>Save the file and close the text editor.</cmd>
           </substep>
         </substeps>
-      </step>      
+      </step>  
+      
+      <step id="remove-nfs-workaround">
+        <cmd>Remove a previous workaround for an NFS <codeph>rpcbind</codeph> issue.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Remove the NFS service drop-in file, if it exists.</cmd>
+            <stepxmp>
+              <codeblock>test -f /etc/systemd/system/nfs-server.service.d/nfs-server.conf \
+  &#38;&#38; rm -f /etc/systemd/system/nfs-server.service.d/nfs-server.conf</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Reload the <cmdname>systemd</cmdname> manager configuration.</cmd>
+            <stepxmp>
+              <codeblock>systemctl daemon-reload</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+        
+      </step>
     </steps>
   </taskbody>
 </task>

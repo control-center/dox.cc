@@ -45,7 +45,8 @@
     <topicgroup>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/11x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics/keys.ditamap" format="ditamap"/>

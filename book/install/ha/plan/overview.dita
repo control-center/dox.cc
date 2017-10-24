@@ -7,7 +7,7 @@
       caused by the failure of hardware components or operating system services in a <ph
         keyref="nm-cc"/> master host. </p>
     <p>A high-availability cluster can be configured in a variety of ways, including the
-        following:<ul id="ul_awg_3h1_xx">
+        following:<ul>
         <li>Active-Active, non geo-diverse</li>
         <li>Active-Passive, geo-diverse</li>
         <li>Active-Passive, non geo-diverse (works with <ph keyref="nm-cc"/>)</li>

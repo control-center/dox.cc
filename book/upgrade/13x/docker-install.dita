@@ -139,6 +139,10 @@
           <codeblock>systemctl start docker</codeblock>
         </stepxmp>
       </step>
+      
+      <step conkeyref="cc-upgrade-lib-tasks/remove-nfs-workaround">
+        <cmd/>
+      </step>
 
     </steps>
   </taskbody>

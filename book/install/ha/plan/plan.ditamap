@@ -8,6 +8,7 @@
     <topicref keyref="cc-install-ha-plan-fencing"/>
     <topicref keyref="cc-install-ha-plan-storage"/>
     <topicref keyref="cc-install-ha-plan-resource"/>
+    <topicref keyref="cc-install-ha-plan-ports"/>
     <topicref keyref="cc-install-ha-plan-variables"/>
    </chapter>
 </bookmap>

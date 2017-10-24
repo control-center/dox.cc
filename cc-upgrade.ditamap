@@ -47,6 +47,7 @@
       <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/13x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/14x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>

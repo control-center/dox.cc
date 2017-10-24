@@ -16,7 +16,6 @@
           enables real-time writes for disk synchronization between the active and passive
           nodes, and no contention with application traffic. However, it is possible to use DRBD
           with a single NIC.</li>
-        <li>The default port number for DRBD traffic is 7789.</li>
         <li>All volumes should synchronize and failover together. This is accomplished
           by creating a single resource definition.</li>
         
