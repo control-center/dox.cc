@@ -43,26 +43,26 @@
             
             <row>
               <entry morerows="1">Macintosh OS/X 10.9</entry>
-              <entry>Firefox 30 and above</entry>
+              <entry>Firefox 30 and later</entry>
             </row>
             <row>
-              <entry>Chrome 36 and above</entry>
+              <entry>Chrome 36 and later</entry>
             </row>
             
             <row>
               <entry morerows="1">Ubuntu 14.04 LTS</entry>
-              <entry>Firefox 30 and above</entry>
+              <entry>Firefox 30 and later</entry>
             </row>
             <row>
-              <entry>Chrome 37 and above</entry>
+              <entry>Chrome 37 and later</entry>
             </row>
             
             <row>
               <entry morerows="1">Red Hat Enterprise Linux 6.5, CentOS 6.5</entry>
-              <entry>Firefox 30 and above</entry>
+              <entry>Firefox 30 and later</entry>
             </row>
             <row>
-              <entry>Chrome 37 and above</entry>
+              <entry>Chrome 37 and later</entry>
             </row>
           </tbody>
         </tgroup>
