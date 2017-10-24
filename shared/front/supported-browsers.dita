@@ -23,7 +23,7 @@
                 tested.</fn><xref href="#refid/ie11" type="fn"/></entry>
             </row>
             <row>
-              <entry morerows="3">Windows 10</entry>
+              <entry morerows="2">Windows 10</entry>
               <entry>Internet Explorer 11<xref href="#refid/ie11" type="fn"/></entry>
             </row>
             <row>
@@ -31,9 +31,6 @@
             </row>
             <row>
               <entry>Chrome 54 and later</entry>
-            </row>
-            <row>
-              <entry>Microsoft Edge</entry>
             </row>
             
             <row>
