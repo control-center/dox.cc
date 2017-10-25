@@ -72,7 +72,7 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-upgrade-front-about">
-      <topicref keyref="supported-browsers"/>
+      <topicref keyref="tested-browsers"/>
       <topicref keyref="related-pubs">
         <topicref keyref="cc-upgrade-front-info"/>
       </topicref>

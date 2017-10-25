@@ -8,7 +8,7 @@
       <p>The following table identifies the tested combinations of client operating systems and
         web browsers.</p>
       <table>
-        <tgroup conkeyref="supported-browsers/cc-tgroup" cols="2">
+        <tgroup conkeyref="tested-browsers/cc-tgroup" cols="2">
           <tbody>
             <row>
               <entry/>
