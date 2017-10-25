@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
-  <title>Tested operating systems and browsers</title>
+  <title>Tested clients and browsers</title>
   <refbody>
     <section id="cc">
       <p>The following table identifies the tested combinations of client operating systems and
@@ -13,7 +13,7 @@
           <thead>
             <row>
               <entry>Client OS</entry>
-              <entry>Tested Browsers</entry>
+              <entry>Tested browsers</entry>
             </row>
           </thead>
           <tbody>
