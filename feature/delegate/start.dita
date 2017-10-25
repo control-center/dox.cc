@@ -10,11 +10,8 @@
         <cmd>Log in to the delegate host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <step>
-        <cmd>Verify the configuration settings.</cmd>
-        <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
-        </stepxmp>
+      <step conkeyref="cc-feature-lib-step/verify-cfg-settings">
+        <cmd/>
       </step>
       
       <step>
