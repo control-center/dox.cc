@@ -83,7 +83,7 @@
             <cmd>Download the key.</cmd>
             <stepxmp>
               <codeblock>curl -L -o /tmp/tmp.html \
-  'http://keys.gnupg.net/pks/lookup?op=get&#38;search=0xED0A5FD2AA5A1AD7'</codeblock>
+'http://keys.gnupg.net/pks/lookup?op=get&#38;search=0xED0A5FD2AA5A1AD7'</codeblock>
             </stepxmp>
           </substep>
           <substep>
