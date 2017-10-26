@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="refid">
-  <title>Tested clients and browsers</title>
+  <title>Supported clients and browsers</title>
   <refbody>
     <section id="cc">
-      <p>The following table identifies the tested combinations of client operating systems and
+      <p>The following table identifies the supported combinations of client operating systems and
         web browsers.</p>
       <table>
         <tgroup id="cc-tgroup" cols="2">
@@ -23,26 +23,26 @@
                 tested.</fn><xref href="#refid/ie11" type="fn"/></entry>
             </row>
             <row>
-              <entry>Firefox 56</entry>
+              <entry>Firefox 56 and later</entry>
             </row>
             <row>
-              <entry>Chrome 61</entry>
+              <entry>Chrome 61 and later</entry>
             </row>
             
             <row>
               <entry morerows="1">macOS 10.12.3, 10.13</entry>
-              <entry>Firefox 56</entry>
+              <entry>Firefox 56 and later</entry>
             </row>
             <row>
-              <entry>Chrome 61</entry>
+              <entry>Chrome 61 and later</entry>
             </row>
             
             <row>
               <entry morerows="1">Ubuntu 14.04 LTS</entry>
-              <entry>Firefox 56</entry>
+              <entry>Firefox 56 and later</entry>
             </row>
             <row>
-              <entry>Chrome 61</entry>
+              <entry>Chrome 61 and later</entry>
             </row>
             
           </tbody>
