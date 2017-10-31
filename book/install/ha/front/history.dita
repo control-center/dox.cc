@@ -20,6 +20,8 @@
           <dd>Add the specific port numbers required for DRBD to the Planning chapter.</dd>
           <dd>Add a step for configuring SELinux policies to the DRBD chapter.</dd>
           <dd>Remove a duplicate NTP configuration step from the delegate installation procedure.</dd>
+          <dd>Remove the configuration of <varname>SERVICED_OUTBOUND_IP</varname> from
+          the delegate host configuration chapter.</dd>
         </dlentry>
         <dlentry>
           <dt>1322.17.268</dt>

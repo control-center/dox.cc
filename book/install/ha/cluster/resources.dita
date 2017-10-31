@@ -163,9 +163,9 @@
             <info>During normal operations, <ph keyref="nm-cc"/> occasionally stops and 
               restarts NFS, which could be misinterpreted by Pacemaker and trigger
               an unwanted failover.</info>
-            <stepxmp>
-              <codeblock>pcs resource op remove nfs monitor interval=60s
-pcs resource op add nfs monitor interval=0s</codeblock>
+            <stepxmp><!-- Add timeout=100 per CC-3948 -->
+              <codeblock>pcs resource op remove nfs monitor interval=60s timeout=100
+pcs resource op add nfs monitor interval=0s timeout=100</codeblock>
             </stepxmp>
           </substep>
           <substep>
