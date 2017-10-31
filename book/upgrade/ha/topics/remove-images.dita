@@ -23,9 +23,9 @@
       
       <step>
         <!-- CC-3945 -->
-        <cmd>Stop Docker.</cmd>
+        <cmd>Start Docker.</cmd>
         <stepxmp>
-          <codeblock>systemctl stop docker</codeblock>
+          <codeblock>systemctl start docker</codeblock>
         </stepxmp>
       </step>
       
@@ -55,9 +55,9 @@ zenoss/isvcs-zookeeper         v<ph keyref="lo-version-zk"/>       0ff3b3117fb8<
       
       <step>
         <!-- CC-3945 -->
-        <cmd>Start Docker.</cmd>
+        <cmd>Stop Docker.</cmd>
         <stepxmp>
-          <codeblock>systemctl start docker</codeblock>
+          <codeblock>systemctl stop docker</codeblock>
         </stepxmp>
       </step>
       
