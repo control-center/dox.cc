@@ -10,5 +10,11 @@
             conkeyref="names/company"/> key. For information about enabling verification of the offline
           mirror, refer to the <cite conkeyref="pubs/cite-install"/>.</li>
       </ul></section>
+    <section>
+      <title/>
+      <p><draft-comment>what are new features? </draft-comment>possibly: </p>
+      <p>CC-3928 GPG signed yum mirrors</p>
+      <p>CC-3499 audit log messages to flat file</p>
+    </section>
   </refbody>
 </reference>
