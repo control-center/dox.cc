@@ -3,9 +3,13 @@
 <reference id="referenceid">
   <title>Known issues</title>
   <refbody>
-    
+    <section>
+      <p>
+        <draft-comment>any others? </draft-comment>
+      </p>
+    </section>
     <table>
-      <title>Release 1.4.1</title>
+      <title>Release 1.5.0</title>
       <tgroup cols="3">
         <colspec colname="c1" colwidth="1*"/>
         <colspec colname="c2" colwidth="5*"/>
@@ -20,11 +24,10 @@
         <tbody>
           <row>
             <entry>CC-3764</entry>
-            <entry>Actions performed in shells are not included in audit logs. 
-              See <xref keyref="cc-notes-140-notes/CC-3764"/>.</entry>
+            <entry>Actions performed in shells are not included in audit logs. See <xref
+                keyref="cc-notes-140-notes/CC-3764"/>.</entry>
             <entry>Open</entry>
           </row>
-          
         </tbody>
       </tgroup>
     </table>

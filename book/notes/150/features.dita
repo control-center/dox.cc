@@ -4,5 +4,11 @@
   <title>New features</title>
   <refbody>
     <section>There are no new features in this maintenance release.</section>
+    <section>
+      <title/>
+      <p><draft-comment>what are new features? </draft-comment>possibly: </p>
+      <p>CC-3928 GPG signed yum mirrors</p>
+      <p>CC-3499 audit log messages to flat file</p>
+    </section>
   </refbody>
 </reference>

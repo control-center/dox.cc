@@ -3,6 +3,13 @@
 <reference id="referenceid">
   <title>Notes and workarounds</title>
   <refbody>
+    <section>
+      <title/>
+      <p>
+        <draft-comment>Do the following issues need to be brought forward from the previous version? any
+          others to add? </draft-comment>
+      </p>
+    </section>
     <section id="CC-3590">
       <title>Changes to support audit logging (CC-3590)</title>
       <p>The following changes support the new audit logging feature:
