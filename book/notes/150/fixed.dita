@@ -3,9 +3,6 @@
 <reference id="referenceid">
   <title>Fixed issues</title>
   <refbody>
-    <section>
-      <p><draft-comment>what was fixed? </draft-comment>possibly: </p>
-    </section>
     <table>
       <title>Release 1.5.0</title>
       <tgroup cols="2">
@@ -19,8 +16,8 @@
         </thead>
         <tbody>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3174</entry>
+            <entry>Multiline log parsing does not work.</entry>
           </row>
           <row>
             <entry>CC-3597</entry>
