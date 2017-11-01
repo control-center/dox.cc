@@ -3,12 +3,13 @@
 <reference id="referenceid">
   <title>New features</title>
   <refbody>
-    <section>There are no new features in this maintenance release.</section>
-    <section>
-      <title/>
-      <p><draft-comment>what are new features? </draft-comment>possibly: </p>
-      <p>CC-3928 GPG signed yum mirrors</p>
-      <p>CC-3499 audit log messages to flat file</p>
-    </section>
+    <section>This version of <ph keyref="nm-cc"/> provides the following enhancements:<p><draft-comment>the
+          following are based on a review of the fixed tickets for CC. are they accurate? What other features
+          should be included?</draft-comment><draft-comment>CC-3928</draft-comment><ph
+          conkeyref="names/company"/> offline yum mirrors are now GPG signed with the <ph
+          conkeyref="names/company"/> key. For information about enabling verification of the offline mirror,
+        refer to the <cite conkeyref="pubs/cite-install"/>.</p><p><draft-comment>CC-3499</draft-comment><ph
+          keyref="nm-rm"/> now directs all audit log messages to a flat file, as well as to Kibana. For more
+        information, refer to the <cite conkeyref="pubs/cite-ref"/>.</p></section>
   </refbody>
 </reference>

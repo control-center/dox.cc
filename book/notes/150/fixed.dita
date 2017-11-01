@@ -3,9 +3,6 @@
 <reference id="referenceid">
   <title>Fixed issues</title>
   <refbody>
-    <section>
-      <p><draft-comment>what was fixed? </draft-comment>possibly: </p>
-    </section>
     <table>
       <title>Release 1.5.0</title>
       <tgroup cols="2">
@@ -19,24 +16,57 @@
         </thead>
         <tbody>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3174</entry>
+            <entry>Multiline log parsing does not work.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3597</entry>
+            <entry>Unable to reinstall Service Impact if it was previously uninstalled.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3644</entry>
+            <entry><ph keyref="nm-cc"/> 1.3.3 offline upgrade fails due to missing package in
+              yum-mirror.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3675</entry>
+            <entry>Option or requirement to clean up backup snapshots after restore.</entry>
           </row>
           <row>
-            <entry/>
-            <entry/>
+            <entry>CC-3691</entry>
+            <entry>RabbitMQ multiline logs are split into several log messages.</entry>
+          </row>
+          <row>
+            <entry>CC-3728</entry>
+            <entry>Tenant container ports are exposed via host interfaces.</entry>
+          </row>
+          <row>
+            <entry>CC-3741</entry>
+            <entry>Using <cmdname>crontab.weekly</cmdname> too imprecise for
+              <filepath>zenossDBpack</filepath>.</entry>
+          </row>
+          <row>
+            <entry>CC-3751</entry>
+            <entry>Run <cmdname>serviced-storage check</cmdname> command without <cmdname>thinpool</cmdname>
+              option might delete the devicemapper metadata.</entry>
+          </row>
+          <row>
+            <entry>CC-3755</entry>
+            <entry>"Put failed" version conflict error for host sometimes spams master logs.</entry>
+          </row>
+          <row>
+            <entry>CC-3866</entry>
+            <entry>Clicking <uicontrol>Instance Log</uicontrol> on zeneventserver causes Kibana error
+                <msgph>maxClauseCount is set to 1024</msgph>.</entry>
+          </row>
+          <row>
+            <entry>CC-3879</entry>
+            <entry>HBase RegionServer Operation Counts graph does not plot the request rate.</entry>
+          </row>
+          <row>
+            <entry>CC-3921</entry>
+            <entry>Serviced log contains warning messages that delegate hosts are part of the ZooKeeper
+              quorum.</entry>
           </row>
         </tbody>
       </tgroup>
