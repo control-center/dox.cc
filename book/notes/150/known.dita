@@ -3,11 +3,6 @@
 <reference id="referenceid">
   <title>Known issues</title>
   <refbody>
-    <section>
-      <p>
-        <draft-comment>any others? </draft-comment>
-      </p>
-    </section>
     <table>
       <title>Release 1.5.0</title>
       <tgroup cols="3">

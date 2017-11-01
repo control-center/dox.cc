@@ -4,35 +4,11 @@
   <title>Notes and workarounds</title>
   <refbody>
     <section>
-      <title/>
-      <p>
-        <draft-comment>Do the following issues need to be brought forward from the previous version? any
-          others to add? </draft-comment>
-      </p>
-    </section>
-    <section id="CC-3590">
-      <title>Changes to support audit logging (CC-3590)</title>
-      <p>The following changes support the new audit logging feature:
-      <ul>
-        <li>The <filepath>/var/log/serviced.access.log</filepath> file, which records HTTP/S
-            requests, is moved to <filepath>/var/log/serviced/serviced.access.log</filepath>. The
-            rules governing its retention are now based on size rather than age.</li>
-        <li>The <filepath>/var/log/serviced</filepath> directory is the configurable default
-            location for all <ph keyref="nm-cc"/> audit logs. The ownership and privileges of the
-            directory are consistent with similar directories in <filepath>/var/log</filepath>. </li>
-        <li>The <cmdname>logrotate</cmdname> utility runs hourly instead of daily 
-          (<filepath>/etc/cron.daily/serviced</filepath> is moved to
-              <filepath>/etc/cron.hourly/serviced</filepath>).</li>
-      </ul>
-      </p>
-    </section>
-    
-    <section id="CC-3764">
-      <title>Actions performed in shells are not included in audit logs (CC-3764)</title>
-      <p>When you invoke <codeph>serviced service shell</codeph> to run a script
-        in an application container, actions the script performs that should be 
-        included in audit logs are not included. The workaround is to use 
-        <codeph>serviced service attach</codeph>.</p>
+      <!--CC3924-->
+      <title>NFS client 4.1 is not supported</title>
+      <p>If your are using the RHEL 7.4 operating system, you must configure NFS 4.0 on delegate hosts. A file
+        locking defect might exist in NFS 4.1 with RHEL/CentOS 7.4. For more information, refer to topic
+        "Configuring NFS 4.0" in the <ph keyref="nm-cc"/> installation or upgrade guide.</p>
     </section>
   </refbody>
   
