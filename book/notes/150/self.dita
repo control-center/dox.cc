@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title><ph keyref="nm-cc"/> 1.5.0</title>
+  <refbody>
+    <section>
+      <title/>
+      <p>
+        <draft-comment> Does the following info need to remain?<p>Anything else?</p></draft-comment>
+      </p>
+    </section>
+    <section>
+      <p>Beginning with version 1.4.0, Docker images for <ph keyref="nm-cc"/> are no longer available on
+        Docker Hub. The images are included in self-installing archive files that are available for download
+        from <ph conkeyref="names/company"/>. Likewise, the RPM packages that are required for installations
+        and upgrades are no longer available from <ph conkeyref="names/company"/> repositories on the
+        internet, and must be downloaded. However, the Docker images and RPM packages for previous releases
+        are still available from Docker Hub and <ph conkeyref="names/company"/> repositories, respectively,
+        and will be available in those locations for as long as <ph conkeyref="names/company"/> supports the
+        releases.</p>
+    </section>
+  </refbody>
+</reference>
