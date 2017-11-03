@@ -6,9 +6,9 @@
     <section>
       <!--CC3924-->
       <title>NFS client 4.1 is not supported</title>
-      <p>If your are using the RHEL 7.4 operating system, you must configure NFS 4.0 on delegate hosts. A file
+      <p>If you are using the RHEL 7.4 operating system, you must configure NFS 4.0 on delegate hosts. A file
         locking defect might exist in NFS 4.1 with RHEL/CentOS 7.4. For more information, refer to topic
-        "Configuring NFS 4.0" in the <ph keyref="nm-cc"/> installation or upgrade guide.</p>
+        "Configuring NFS 4.0" in the <ph keyref="nm-cc"/> installation guide or upgrade guide.</p>
     </section>
   </refbody>
   
