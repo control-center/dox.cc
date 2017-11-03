@@ -107,7 +107,7 @@
           <dt><synph>--mux-tls-ciphers <synph><var>Option</var>
                 <delim>[</delim>--mux-tls-ciphers
               <var>Option</var><delim>]</delim>&#8230;</synph></synph></dt>
-          <dd>The list TLS ciphers <cmdname>serviced</cmdname> supports for mux traffic. The default
+          <dd>The list TLS ciphers <cmdname>serviced</cmdname> can use for mux traffic. The default
             may be set in by <varname>SERVICED_MUX_TLS_CIPHERS</varname> in the configuration file.
             For more information, see the section about configuration file environment
             variables.</dd>
@@ -252,7 +252,7 @@
           <dt><synph>--isvcs-start <var>Option</var>
             <delim>[</delim>--isvcs-start <var>Option</var><delim>]</delim>&#8230;</synph></dt>
           <dd>Enables one or more internal services to run on a delegate host. Currently, only
-              <codeph>zookeeper</codeph> is supported. If <varname>SERVICED_ISVCS_START</varname> is
+              <codeph>zookeeper</codeph> has been tested. If <varname>SERVICED_ISVCS_START</varname> is
             set in the configuration file, its value is used. For more information, see the section
             about configuration file environment variables.</dd>
         </dlentry>

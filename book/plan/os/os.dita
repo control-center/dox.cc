@@ -4,19 +4,19 @@
   <title>Operating system requirements</title>
   <refbody>
     <section>
-      <p><ph keyref="nm-cc"/> supports the 64-bit version of the following Linux distributions. All
-        versions of the Linux kernel included in these releases, and all subsequent updates, are
-        supported. However, for best performance, keep the kernel up-to-date.</p>
+      <p><ph keyref="nm-cc"/> has tested the 64-bit version of the following Linux distributions:
         <ul>
           <li>Red Hat Enterprise Linux (RHEL) 7.2, 7.3, or 7.4</li>
           <li>CentOS 7.2, 7.3, or 7.4</li>
         </ul>
+      </p>
+      <p>Kernel versions <codeph>3.10.0-327.22.2.el7.x86_64</codeph> and higher are tested.
+        For best performance, keep the kernel up-to-date.</p>
 
       <p>The RHEL/CentOS 7 distributions provide a variety of server configurations. <ph
           keyref="nm-cc"/> is tested on operating system platforms that are installed and configured
-        with standard options. Docker and <ph keyref="nm-cc"/> are tested on and support the Minimal
-        Install configuration when the NFS and Network Time Protocol (NTP) packages are also
-        installed.</p>
+        with standard options. Docker and <ph keyref="nm-cc"/> are tested on the Minimal
+        Install configuration with the NFS and Network Time Protocol (NTP) packages installed.</p>
       
       <p><ph keyref="nm-cc"/> relies on the system clock to synchronize its actions. The
         installation procedures include steps to add the NTP daemon to all hosts. By default, the

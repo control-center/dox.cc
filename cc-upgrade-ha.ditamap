@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="4" modification="1"/>        
+        <vrm product="cc" version="1" release="5" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -45,7 +45,8 @@
     <topicgroup>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/11x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics/keys.ditamap" format="ditamap"/>
@@ -54,6 +55,7 @@
       <mapref href="book/upgrade/ha/11x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/13x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/14x/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
@@ -84,8 +86,10 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-upgrade-ha-front-about">
-      <topicref keyref="supported-browsers"/>
-      <topicref keyref="cc-upgrade-ha-front-info"/>
+      <topicref keyref="tested-browsers"/>
+      <topicref keyref="related-pubs">
+        <topicref keyref="cc-upgrade-ha-front-info"/>
+      </topicref>
       <topicref keyref="cc-upgrade-ha-front-history"/>
     </topicref>
   </frontmatter>
@@ -95,7 +99,19 @@
   
   <part>
     <topicmeta>
-      <navtitle>Upgrading 1.3.x or 1.4.0 to <ph keyref="lo-version-cc"/></navtitle>
+      <navtitle>Upgrading 1.4.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/ha/front/14x.dita"/>
+    <chapter href="book/upgrade/ha/14x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/14x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/14x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/post.ditamap" format="ditamap"/>
+  </part>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Upgrading 1.3.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/ha/front/13x.dita"/>
     <chapter href="book/upgrade/ha/13x/prep.ditamap" format="ditamap"/>

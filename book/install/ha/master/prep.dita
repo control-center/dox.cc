@@ -12,10 +12,6 @@
         <cmd>Log in to the candidate master host 
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-
-      <step conkeyref="cc-feature-lib-tasks/firewall">
-        <cmd></cmd>
-      </step>
       
       <step conkeyref="cc-feature-lib-tasks/journal">
         <cmd></cmd>

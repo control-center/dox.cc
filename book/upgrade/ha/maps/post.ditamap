@@ -5,7 +5,7 @@
   <chapter keyref="cc-upgrade-11x-post">
     <topicref keyref="cc-upgrade-11x-pool-permissions"/>
     <topicref keyref="cc-feature-manage-pool-connection-timeout"/>
-    <topicref keyref="cc-upgrade-topics-remove-images"/>
+    <topicref keyref="cc-upgrade-ha-topics-remove-images"/>
     <topicref keyref="cc-feature-manage-remove-orphan-snaps"/>
     <topicref keyref="cc-feature-manage-update-opentsdb-ttl"/>
     <topicref keyref="cc-upgrade-11x-cron">

@@ -7,7 +7,7 @@
       <p>Like master hosts, <ph keyref="nm-cc"/> delegate hosts require high-performance, persistent
         storage. Storage can be local or remote.<ul>
           <li>For local storage, solid-state disk (SSD) devices are recommended.</li>
-          <li>For remote storage, storage-area network (SAN) systems are supported. High-performance
+          <li>For remote storage, storage-area network (SAN) systems have been tested. High-performance
             SAN systems are recommended, as is assigning separate logical unit numbers (LUNs) for
             each mounted path.</li>
         </ul></p>

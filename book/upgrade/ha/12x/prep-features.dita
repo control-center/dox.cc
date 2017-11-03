@@ -11,6 +11,16 @@
         to prepare to use this release. For more information, refer to 
         <ph keyref="nm-rm"/> documentation.</note>
       <ul>
+        <li>RHEL/CentOS 7.4 is added; RHEL/CentOS 7.1 is withdrawn.
+          The upgrade process includes a step for updating the operating system.</li>
+        <li>On RHEL/CentOS 7.4, there may be a file locking defect in NFS 4.1. To
+          avoid the issue, delegate hosts are configured to use NFS 4.0.</li>
+        <li>The <cmdname>serviced-zenossdbpack</cmdname> maintenance
+          script is moved from <filepath>/etc/cron.weekly</filepath> to
+          <filepath>/opt/serviced/bin</filepath> and a new <cmdname>cron</cmdname> job,
+          <filepath>/etc/cron.d/cron_zenossdbpack</filepath>, is installed to
+          invoke the maintenance script. By default, the script runs every Sunday at midnight.</li>
+        
         <li>A new remote storage location is now required for audit logs. The default mount point is
           <filepath>/var/log/serviced</filepath>, and the default amount of space required is
           10GB. The master node upgrade process includes a procedure for ensuring that a remote
@@ -20,7 +30,7 @@
         
         <li>When storage becomes critically low, <ph keyref="nm-cc"/> initiates an <i>emergency
             shutdown</i> of applications and services while sufficient resources remain to take
-          action to avoid data loss. Support for this feature requires specific minimum amounts of
+          action to avoid data loss. This feature requires specific minimum amounts of
           space in the <ph keyref="nm-cc"/> thin pool for application data. 
           <note>Before upgrading, determine whether the thin pool is adequate and if necessary,
           resize it. <ph conkeyref="strings/fmi-int"/>
@@ -31,7 +41,7 @@
           database services. The services requires additional RAM and CPU resources. For more
           information about the amount of RAM and CPU resources to add to master host nodes, please
           contact your <ph conkeyref="names/company"/> representative.</li>
-        <li>This release replaces Docker 1.12.1 with Docker Community Edition (CE) 17.03.1.</li>
+        <li>This release replaces Docker 1.12.1 with Docker Community Edition (CE) 17.09.0.</li>
         <li>The following new configuration variables are available in
           <filepath>/etc/default/serviced</filepath>, for tuning TCP/IP communications between
           ZooKeeper ensemble hosts and <ph keyref="nm-cc"/>: <sl>

@@ -56,13 +56,5 @@
             href="cc-zookeeper.dita"
             format="dita"
     />
-    <keydef keys="gl-service-definition"
-            href="service-definition.dita"
-            format="dita"
-    />
-    <keydef keys="gl-service-template"
-            href="service-template.dita"
-            format="dita"
-    />
   </topicgroup>
 </map>

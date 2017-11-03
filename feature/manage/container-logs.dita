@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Rotating container log files</title>
+  <refbody>
+    <section>
+      <p>When a <ph keyref="nm-cc"/> internal service has to stop unexpectedly, it writes the last
+        1000 lines of its log data to a file named
+          <filepath>/tmp/<varname>Docker-ID</varname>.container.log</filepath>. Over time, the log
+        files could fill the <filepath>/tmp</filepath> area. <ph conkeyref="names/company"/>
+        recommends implementing a log file rotation strategy to avoid filling
+          <filepath>/tmp</filepath>.</p>
+    </section>
+  </refbody>
+</reference>

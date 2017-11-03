@@ -185,16 +185,18 @@
         <dlentry id="SERVICED_UI_PORT">
           <dt><varname>SERVICED_UI_PORT</varname></dt>
           <dd><b>Default</b>: <codeph>:443</codeph></dd> 
-          <dd>The port on which the HTTP server listens for requests. The
-            value may be expressed as follows:
-            <ul>
-              <li><varname>IP-Address</varname>:<varname>Port-Number</varname></li>
-              <li>:<varname>Port-Number</varname></li>
-              <li><varname>Port-Number</varname></li>
-            </ul>
+          <dd>The port on which the <cmdname>serviced</cmdname> HTTP server listens for  
+            requests for its internal services and for tenant services. The value may be
+            expressed as follows:
+            <sl>
+              <sli><varname>IP-Address</varname>:<varname>Port-Number</varname></sli>
+              <sli>:<varname>Port-Number</varname></sli>
+              <sli><varname>Port-Number</varname></sli>
+            </sl>
+            <p>Tenant applications can specify alternative ports with the port public
+              endpoint feature.</p>
           </dd>
-          <dd>All <ph keyref="nm-cc"/> hosts must have the same value 
-          for this variable.</dd>
+          <dd>The value of this variable must be identical on all <ph keyref="nm-cc"/> hosts in a deployment.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_POLL_FREQUENCY">
@@ -628,7 +630,7 @@
           <dt><varname>SERVICED_ISVCS_START</varname></dt>
           <dd><b>Default</b>: (none) </dd> 
           <dd>Enables one or more internal services to run on a delegate host.
-          Currently, only <codeph>zookeeper</codeph> is supported.</dd>
+          Currently, only <codeph>zookeeper</codeph> has been tested.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_ZOOKEEPER_ID">

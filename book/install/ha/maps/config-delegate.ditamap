@@ -8,7 +8,6 @@
     <topicref keyref="cc-feature-delegate-role"/>
     <topicref keyref="cc-install-ha-delegate-registry"/>
     <topicref keyref="cc-install-ha-master-config-endpoints"/>
-    <topicref keyref="cc-install-ha-master-config-offline"/>
     <topicref keyref="cc-feature-vars-delegate-about">
       <topicref keyref="cc-feature-vars-delegate"/>
       <topicref keyref="cc-feature-vars-rpc"/>

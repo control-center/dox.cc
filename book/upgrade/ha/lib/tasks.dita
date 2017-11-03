@@ -191,7 +191,7 @@ EOF</codeblock>
           <substep>
             <cmd>Identify the customized variables in the pre-upgrade configuration file.</cmd>
             <stepxmp>
-              <codeblock>grep -E '^\b*SERVICED' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
+              <codeblock>grep -E '^\b*[A-Z_]+' serviced.pre-<ph keyref="lo-version-cc"/></codeblock>
             </stepxmp>
           </substep>
           <substep>

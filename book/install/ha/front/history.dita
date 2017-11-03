@@ -15,7 +15,16 @@
         -->
       <dl>
         <dlentry>
-          <dt>1322.<keyword keyref="lo-build-date"/></dt>
+          <dt>1322.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dd>Add RHEL/CentOS 7.4; remove RHEL/CentOS 7.1.</dd>
+          <dd>Add the specific port numbers required for DRBD to the Planning chapter.</dd>
+          <dd>Add a step for configuring SELinux policies to the DRBD chapter.</dd>
+          <dd>Remove a duplicate NTP configuration step from the delegate installation procedure.</dd>
+          <dd>Remove the configuration of <varname>SERVICED_OUTBOUND_IP</varname> from
+          the delegate host configuration chapter.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1322.17.268</dt>
           <dd>Update release number (1.4.1).</dd>
         </dlentry>
         <dlentry>

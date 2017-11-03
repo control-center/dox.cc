@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating Docker</title>
+  <taskbody>
+    <context>Use this procedure to update Docker to version <ph keyref="lo-version-docker"/>.</context>
+    <steps>
+      <step>
+        <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Remove the Docker repository description file, if present.</cmd>
+        <info>Upgrades no longer require external repositories.</info>
+        <stepxmp>
+          <codeblock>rm -f /etc/yum.repos.d/docker.repo</codeblock>
+        </stepxmp>
+      </step>
+  
+      <step>
+        <cmd>Update the operating system, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which release is installed.</cmd>
+            <stepxmp>
+              <codeblock>cat /etc/redhat-release</codeblock>
+            </stepxmp>
+            <stepresult>
+            <ul>
+              <li>If the result is <codeph>7.2</codeph>, <codeph>7.3</codeph>, or
+                    <codeph>7.4</codeph>, proceed to the next step.</li>
+              <li>If the result is <codeph>7.1</codeph>, perform the remaining substeps.</li>
+            </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable automatic start of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Update the operating system, and then restart the host.</cmd>
+            <info>The following commands require internet access or a local mirror of operating
+              system packages.</info>
+            <stepxmp>
+              <codeblock>yum makecache fast &#38;&#38; yum update &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable automatic start of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Update the Linux kernel, if necessary.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Determine which kernel version is installed.</cmd>
+            <stepxmp>
+              <codeblock>uname -r</codeblock>
+            </stepxmp>
+            <stepresult>If the result is lower than <codeph>3.10.0-327.22.2.el7.x86_64</codeph>,
+              perform the following substeps.</stepresult>
+          </substep>
+          <substep>
+            <cmd>Disable automatic start of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl disable serviced</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Update the kernel, and then restart the host.</cmd>
+            <info>The following commands require internet access or a local mirror of operating
+              system packages.</info>
+            <stepxmp>
+              <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Enable automatic start of <cmdname>serviced</cmdname>.</cmd>
+            <stepxmp>
+              <codeblock>systemctl enable serviced</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+
+      <step>
+        <cmd>Stop the Docker service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Remove Docker 17.03.1.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Remove without checking dependencies.</cmd>
+            <stepxmp><!-- Need to verify this command -->
+              <codeblock>rpm -e --nodeps docker-ce</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Clean the <cmdname>yum</cmdname> databases.</cmd>
+            <stepxmp>
+              <codeblock>yum clean all</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Install Docker CE <ph keyref="lo-version-docker"/>.</cmd>
+        <stepxmp>
+          <codeblock>yum install --enablerepo=zenoss-mirror docker-ce</codeblock>
+        </stepxmp>
+        <stepresult>If <cmdname>yum</cmdname> returns an error due to dependency issues, see
+        <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Start the Docker service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step conkeyref="cc-upgrade-lib-tasks/remove-nfs-workaround">
+        <cmd/>
+      </step>
+
+    </steps>
+  </taskbody>
+</task>

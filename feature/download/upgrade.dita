@@ -21,7 +21,7 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="cc-feature-download-download"/></entry>
+              <entry><xref keyref="cc-feature-download-download-upgrade"/></entry>
               <entry>A workstation with internet access</entry>
             </row>
             <row>
@@ -30,7 +30,7 @@
             </row>
             <row>
               <entry><xref keyref="cc-feature-download-stage-run"/></entry>
-              <entry>The master host</entry>
+              <entry>The <ph keyref="nm-cc"/> master host</entry>
             </row>
             <row>
               <entry><xref keyref="cc-feature-download-stage-run-zk"/></entry>

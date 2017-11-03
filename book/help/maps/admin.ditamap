@@ -48,6 +48,8 @@
       </topicref>
       
       <topicref keyref="cc-feature-audit-intro"/>
+      
+      <topicref keyref="cc-feature-manage-container-logs"/>
          
    </chapter>
 </bookmap>

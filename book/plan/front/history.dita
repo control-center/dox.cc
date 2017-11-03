@@ -15,7 +15,15 @@
         -->
      <dl>
        <dlentry>
-         <dt>1330.<keyword keyref="lo-build-date"/></dt>
+         <dt>1330.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+         <dd>Remove RHEL/CentOS 7.1, add 7.4.</dd>
+       </dlentry>
+       <dlentry>
+         <dt>1330.17.278 (1.4.1)</dt>
+         <dd>Update the tested operating system and kernel descriptions.</dd>
+       </dlentry>
+       <dlentry>
+         <dt>1330.17.268 (1.4.1)</dt>
          <dd>Add this document history section.</dd>
        </dlentry>
      </dl>

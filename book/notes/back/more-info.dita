@@ -3,7 +3,6 @@
 <reference id="referenceid">
   <title>Additional information</title>
   <refbody>
-    <section conkeyref="related-pubs/cc"/>
     <section conkeyref="more-info/cc"/>    
   </refbody>
 </reference>
