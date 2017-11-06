@@ -55,7 +55,7 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-plan-front-about">
-      <topicref keyref="supported-browsers"/>
+      <topicref keyref="tested-browsers"/>
       <topicref keyref="cc-plan-front-info"/>
       <topicref keyref="cc-plan-front-history"/>
     </topicref>
