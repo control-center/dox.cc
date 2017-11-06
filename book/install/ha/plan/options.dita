@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
 <concept id="conceptid">
-  <title>HA cluster configuration options</title>
+  <title>High-availability cluster configuration options</title>
   <conbody>
     <p>The recommended deployment architecture requires two identical dual-NIC machines for optimal
-      disk synchronization and network responsiveness. However, you can deploy an HA cluster with
-      single-NIC servers if two identical dual-NIC machines are not available.</p>
-    <section id="section_l3k_pjl_wx">
+      disk synchronization and network responsiveness. However, you can deploy a high-availability
+      cluster with single-NIC servers if two identical dual-NIC machines are not available.</p>
+    <section>
       <title>Requirements for two identical dual-NIC servers</title>
-      <ul id="ul_rlp_rjl_wx">
+      <ul>
         <li>Master hosts: In a separate resource pool, you need two identical hosts in the role of
             <ph keyref="nm-cc"/> master host; one host serves as the primary node and the other as
           the secondary node.</li>
-        <li>Provide two NICs on the HA cluster primary node and two on the secondary node. On each
+        <li>Provide two NICs on the cluster primary node and two on the secondary node. On each
           node, dedicate one NIC to<ul>
             <li>network traffic that is required for disk synchronization via DRBD.</li>
             <li><ph keyref="nm-cc"/> and application traffic.</li>
           </ul><p>Route traffic for each NIC through separate subnets.</p></li>
         <li>Delegate hosts: You need <varname>N</varname>+1 identical hosts to serve as delegate
           hosts, where <varname>N</varname> is the number of hosts needed to satisfy the performance
-          and scalability requirements of the tenant. They do not need to be members of the HA
-          cluster because, if a host becomes unavailable, <ph keyref="nm-cc"/> restarts their
-          services on other hosts.</li>
+          and scalability requirements of the tenant. They do not need to be members of the cluster
+          because, if a host becomes unavailable, <ph keyref="nm-cc"/> restarts their services on
+          other hosts.</li>
         <li>Deploy application services on dedicated <ph keyref="nm-cc"/> delegate hosts outside the
-          HA cluster.</li>
+          cluster.</li>
       </ul>
     </section>
-    <section id="section_idg_4jl_wx">
+    <section>
       <title>Requirements for two single-NIC servers</title>
-      <ul id="ul_hpl_2tk_wx">
+      <ul>
         <li>Master host: Configure two hosts for the <ph keyref="nm-cc"/> master host in an
-          active/passive cluster.<ul id="ul_wpc_1kl_wx">
+          active/passive cluster.<ul>
             <li>Use the two hosts only to run <ph keyref="nm-cc"/>. Do not use them to run
               application services.</li>
             <li>For primary and secondary nodes that contain only one network-interface card (NIC),

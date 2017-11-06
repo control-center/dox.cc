@@ -5,7 +5,7 @@
   <conbody>
     <p><ph keyref="nm-cc"/> requires a common time source. The following procedure
       configures a private master <xref keyref="url-ntp"/> server to synchronize
-      the system clocks of all hosts in a <ph keyref="nm-cc"/> cluster.</p>
+      the system clocks of all <ph keyref="nm-cc"/> hosts.</p>
 
     <note>VMware vSphere guest systems can synchronize their system clocks with the
     host system. If that feature is enabled, it must be disabled to configure a private

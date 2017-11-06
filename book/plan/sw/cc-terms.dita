@@ -13,10 +13,6 @@
           <dd>One or more software services packaged in Docker containers.</dd>
         </dlentry>
         <dlentry>
-          <dt>cluster</dt>
-          <dd>The collection of hosts in one or more <ph keyref="nm-cc"/> resource pools.</dd>
-        </dlentry>
-        <dlentry>
           <dt>delegate host</dt>
           <dd>A host that runs the application services scheduled for the resource pool to which it
             belongs. A system can be configured as delegate or master.</dd>
@@ -48,7 +44,7 @@
           <dd>The host that runs the application services scheduler, the Docker registry, the
             distributed file system, and other internal services, including the HTTP server for the
               <ph keyref="nm-cc"/> browser interface and application browser interface. A system can
-            be configured as delegate or master. Only one system in a <ph keyref="nm-cc"/> cluster
+            be configured as delegate or master. Only one <ph keyref="nm-cc"/> host
             can be the master.</dd>
         </dlentry>
         <dlentry>

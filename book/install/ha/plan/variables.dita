@@ -24,7 +24,7 @@
           </thead>
           <tbody>
             <row>
-              <entry>Public IP address of master node (static; known to all machines in the <ph keyref="nm-cc"/> cluster)</entry>
+              <entry>Public IP address of master node (static; known to all <ph keyref="nm-cc"/> machines)</entry>
               <entry><varname>Primary-Public-IP</varname></entry>
               <entry><varname>Secondary-Public-IP</varname></entry>
             </row>
