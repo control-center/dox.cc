@@ -23,14 +23,6 @@
             href="docker-config.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-delegate-docker-install"
-            href="docker-install.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-delegate-docker"
-            href="docker.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-delegate-endpoints"
             href="endpoints.dita"
             format="dita"
