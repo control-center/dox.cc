@@ -3,6 +3,6 @@
 <bookmap >
  <title>After</title>
   <chapter keyref="cc-upgrade-ha-13x-post">
-    <topicref keyref="cc-upgrade-ha-topics-remove-images"/>
+    <topicref keyref="cc-upgrade-topics-remove-images"/>
  </chapter>
 </bookmap>

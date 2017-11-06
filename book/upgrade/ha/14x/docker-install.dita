@@ -16,7 +16,7 @@
           <codeblock>rm -f /etc/yum.repos.d/docker.repo</codeblock>
         </stepxmp>
       </step>
-      
+  
       <step>
         <cmd>Update the operating system, if necessary.</cmd>
         <substeps>
@@ -26,11 +26,11 @@
               <codeblock>cat /etc/redhat-release</codeblock>
             </stepxmp>
             <stepresult>
-              <ul>
-                <li>If the result is <codeph>7.2</codeph>, <codeph>7.3</codeph>, or 
-                  <codeph>7.4</codeph>, proceed to the next step.</li>
-                <li>If the result is <codeph>7.1</codeph>, perform the remaining substeps.</li>
-              </ul>
+            <ul>
+              <li>If the result is <codeph>7.2</codeph>, <codeph>7.3</codeph>, or
+                    <codeph>7.4</codeph>, proceed to the next step.</li>
+              <li>If the result is <codeph>7.1</codeph>, perform the remaining substeps.</li>
+            </ul>
             </stepresult>
           </substep>
           <substep>
@@ -95,7 +95,7 @@
           </substep>
         </substeps>
       </step>
-      
+
       <step>
         <cmd>Stop the Docker service.</cmd>
         <stepxmp>
@@ -104,14 +104,11 @@
       </step>
       
       <step>
-        <cmd>Remove Docker.</cmd>
+        <cmd>Remove Docker 17.03.1.</cmd>
         <substeps>
           <substep>
             <cmd>Remove without checking dependencies.</cmd>
-            <stepxmp><b><ph keyref="nm-cc"/> 1.3.0, 1.3.1, or 1.3.2:</b>
-              <codeblock>rpm -e --nodeps docker-engine</codeblock>
-            </stepxmp>
-            <stepxmp><b><ph keyref="nm-cc"/> 1.3.3:</b>
+            <stepxmp><!-- Need to verify this command -->
               <codeblock>rpm -e --nodeps docker-ce</codeblock>
             </stepxmp>
           </substep>
@@ -130,7 +127,7 @@
           <codeblock>yum install --enablerepo=zenoss-mirror docker-ce</codeblock>
         </stepxmp>
         <stepresult>If <cmdname>yum</cmdname> returns an error due to dependency issues, see
-          <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
+        <xref keyref="cc-feature-pkg-pkg"/> for potential resolutions.</stepresult>
       </step>
       
       <step>
@@ -143,7 +140,7 @@
       <step conkeyref="cc-upgrade-lib-tasks/remove-nfs-workaround">
         <cmd/>
       </step>
-      
+
     </steps>
   </taskbody>
 </task>

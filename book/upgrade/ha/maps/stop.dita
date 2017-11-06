@@ -8,7 +8,7 @@
         deployment.</p>
       <note>The procedures in this chapter assume that <ph keyref="nm-cc"/>
         is the only source of Docker containers that are run
-        on <ph keyref="nm-cc"/> cluster hosts.</note>
+        on <ph keyref="nm-cc"/> hosts.</note>
       <p>Perform the procedures in this chapter in order.</p>
     </section>
   </refbody>

@@ -4,7 +4,7 @@
   <title>Staging the <ph keyref="nm-cc"/> package file</title>
   <taskbody>
     <context>Use this procedure to stage the <ph keyref="nm-cc"/>
-      RPM file on <ph keyref="nm-cc"/> cluster hosts.</context>
+      RPM file on <ph keyref="nm-cc"/> hosts.</context>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>

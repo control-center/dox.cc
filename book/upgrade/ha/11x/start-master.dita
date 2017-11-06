@@ -19,7 +19,7 @@
       <step>
         <cmd>On both nodes, verify the settings in the <cmdname>serviced</cmdname> configuration file.</cmd>
         <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced | sort</codeblock>
+          <codeblock>grep -E '^\b*[A-Z_]+' /etc/default/serviced | sort</codeblock>
         </stepxmp>
         <info>The settings must be identical on both hosts.</info>
       </step>
