@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Notes and workarounds</title>
+  <refbody>
+    <section>
+      <!--CC3924-->
+      <title>NFS client 4.1 is not supported</title>
+      <p>If you are using the RHEL 7.4 operating system, you must configure NFS 4.0 on delegate hosts. A file
+        locking defect might exist in NFS 4.1 with RHEL/CentOS 7.4. For more information, refer to topic
+        "Configuring NFS 4.0" in the <ph keyref="nm-cc"/> installation guide or upgrade guide.</p>
+    </section>
+  </refbody>
+  
+</reference>
