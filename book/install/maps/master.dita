@@ -6,8 +6,7 @@
     <section>
       <p>This chapter describes how to install <ph keyref="nm-cc"/> on a Red Hat Enterprise
         Linux (RHEL) or CentOS host. The candidate host must have the
-        CPU, RAM, and storage resources required to serve as the master host in a 
-        <ph keyref="nm-cc"/> cluster.</p>
+        CPU, RAM, and storage resources required to serve as the <ph keyref="nm-cc"/> master host.</p>
       <p>For more information about master host requirements, refer to the
           <cite conkeyref="pubs/cite-plan"/>. </p>
     </section>

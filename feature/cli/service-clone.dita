@@ -2,10 +2,7 @@
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
   <title><cmdname>serviced service clone</cmdname></title>
-  <shortdesc>Creates a clone of an existing service. <draft-comment author="smillion">Per Summer,
-      endpoints are ports that are exposed by the service amd used for communications to and from
-      other services. Do we define endpoints anywhere in this doc or
-    elsewhere?</draft-comment></shortdesc>
+  <shortdesc>Creates a clone of an existing service. </shortdesc>
   <refbody>
     <section>
       <title>USAGE</title>
@@ -17,8 +14,6 @@
     </section>
     <section>
       <title>SYNTAX</title>
-      <draft-comment author="smillion">This is the what the command help says for Description. Which
-        one should go here? </draft-comment>
       <p><codeph>serviced service clone <varname>--suffix</varname> { SERVICEID | SERVICENAME |
           [POOL/]...PARENTNAME.../SERVICENAME }</codeph></p>
     </section>

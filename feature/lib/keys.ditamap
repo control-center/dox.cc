@@ -11,6 +11,10 @@
             href="release-dates.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-lib-step"
+            href="step.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-lib-tasks"
             href="tasks.dita"
             format="dita"

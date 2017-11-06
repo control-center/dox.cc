@@ -10,9 +10,8 @@
     <context>
       <p>Use this procedure to configure a delegate hosts to synchronize its clocks with the NTP server on
         the <ph keyref="nm-cc"/> master host. Perform this procedure only if the hosts do not have
-        internet access. Repeat this procedure on each delegate host in your <ph keyref="nm-cc"/> 
-        cluster.</p>
-      <note>On VMware vSphere guests, before performing this procedure,disable time synchronization
+        internet access. Repeat this procedure on each <ph keyref="nm-cc"/> delegate host.</p>
+      <note>On VMware vSphere guests, before performing this procedure, disable time synchronization
         between guest and host operating systems.</note>
     </context>
     
@@ -55,6 +54,13 @@ driftfile /var/lib/ntp/drift</codeblock>
           </substep>
         </substeps>
       </step>
+      
+      <step>
+        <cmd>Stop <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop serviced</codeblock>
+        </stepxmp>
+      </step>
 
       <step>
         <cmd>Synchronize the clock with the master server.</cmd>
@@ -86,6 +92,14 @@ chmod +x /etc/rc.d/rc.local</codeblock>
           </substep>
         </substeps>
       </step>
+      
+      <step>
+        <cmd>Start <ph keyref="nm-cc"/>.</cmd>
+        <stepxmp>
+          <codeblock>systemctl start serviced</codeblock>
+        </stepxmp>
+      </step>
+      
     </steps>
   </taskbody>
 </task>

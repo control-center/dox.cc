@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p>The variables in the following table must be set identically on all 
-        <ph keyref="nm-cc"/> cluster hosts, except:
+        <ph keyref="nm-cc"/> hosts, except:
         <ul>
           <li><varname>SERVICED_RPC_PORT</varname>, set only on the master</li>
           <li><varname>SERVICED_MAX_RPC_CLIENTS</varname>, set only on delegates</li>

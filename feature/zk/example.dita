@@ -6,7 +6,7 @@
     <section>
       <p>This example shows the ZooKeeper variables in the
           <filepath>/etc/default/serviced</filepath> configuration file of each host in a 4-node
-          <ph keyref="nm-cc"/> cluster. For convenience, the relevant settings for each node or host
+          <ph keyref="nm-cc"/> deployment. For convenience, the relevant settings for each node or host
         are also included in subsequent procedures.</p>
       
       <note>The value of the <varname>SERVICED_ISVCS_ZOOKEEPER_QUORUM</varname>

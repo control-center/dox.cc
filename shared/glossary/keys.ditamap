@@ -8,10 +8,6 @@
             href="cc-application.dita"
             format="dita"
     />
-    <keydef keys="gl-cc-cluster"
-            href="cc-cluster.dita"
-            format="dita"
-    />
     <keydef keys="gl-cc-delegate-host"
             href="cc-delegate-host.dita"
             format="dita"

@@ -74,7 +74,7 @@
       </topicmeta>
     </keydef>
     <keydef keys="url-google-logging "
-      href="http://google-glog.googlecode.com/svn/trunk/doc/glog.html" format="html"
+      href="http://github.com/google/glog" format="html"
       scope="external">
       <topicmeta>
         <linktext>Google Logging</linktext>
@@ -157,6 +157,14 @@
     <keydef keys="url-zenoss-community " href="http://community.zenoss.com/home" format="html" scope="external">
       <topicmeta>
         <linktext>Zenoss Community</linktext>
+      </topicmeta>
+    </keydef>
+    <keydef
+      keys="url-pgpkeys "
+      href="https://support.zenoss.com/hc/en-us/articles/115004685766"
+      format="html" scope="external">
+      <topicmeta>
+        <linktext>public key</linktext>
       </topicmeta>
     </keydef>
   </topicgroup>

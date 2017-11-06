@@ -39,7 +39,7 @@
           <dd>Only one <cmdname>serviced</cmdname> instance can be the master; all other instances
             must be delegates. The default value assigns the master role. To assign the delegate
             role, set the value to <codeph>0</codeph> (false). This variable must be explicitly set 
-            on all <ph keyref="nm-cc"/> cluster hosts. </dd>
+            on all <ph keyref="nm-cc"/> hosts. </dd>
         </dlentry>
         
         <dlentry id="SERVICED_MASTER_IP">
@@ -179,22 +179,24 @@
           provide strong security for relatively low processing overhead.</dd>
           <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
             an RPC connection, so both daemons use the first cipher in the list. To
-            use a different cipher, put it first in the list, on all cluster hosts.</dd>
+            use a different cipher, put it first in the list, on all <ph keyref="nm-cc"/> hosts.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_PORT">
           <dt><varname>SERVICED_UI_PORT</varname></dt>
           <dd><b>Default</b>: <codeph>:443</codeph></dd> 
-          <dd>The port on which the HTTP server listens for requests. The
-            value may be expressed as follows:
-            <ul>
-              <li><varname>IP-Address</varname>:<varname>Port-Number</varname></li>
-              <li>:<varname>Port-Number</varname></li>
-              <li><varname>Port-Number</varname></li>
-            </ul>
+          <dd>The port on which the <cmdname>serviced</cmdname> HTTP server listens for  
+            requests for its internal services and for tenant services. The value may be
+            expressed as follows:
+            <sl>
+              <sli><varname>IP-Address</varname>:<varname>Port-Number</varname></sli>
+              <sli>:<varname>Port-Number</varname></sli>
+              <sli><varname>Port-Number</varname></sli>
+            </sl>
+            <p>Tenant applications can specify alternative ports with the port public
+              endpoint feature.</p>
           </dd>
-          <dd>All <ph keyref="nm-cc"/> cluster hosts must have the same value 
-          for this variable.</dd>
+          <dd>The value of this variable must be identical on all <ph keyref="nm-cc"/> hosts in a deployment.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_UI_POLL_FREQUENCY">
@@ -242,7 +244,7 @@
             provide strong security for relatively low processing overhead.</dd>
           <dd>An instance of <cmdname>serviced</cmdname> is on both ends of 
             a mux connection, so both daemons use the first cipher in the list. To
-            use a different cipher, put it first in the list, on all cluster hosts.</dd>
+            use a different cipher, put it first in the list, on all <ph keyref="nm-cc"/> hosts.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_PATH">
@@ -462,7 +464,7 @@
           <dt><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></dt>
           <dd><b>Default</b>: <codeph>10.3.0.0/16</codeph></dd> 
           <dd>The private subnet for containers that use virtual IP addresses on a host.
-            This value may be unique on each cluster host, if necessary.</dd>
+            This value may be unique on each <ph keyref="nm-cc"/> host, if necessary.</dd>
           <dd>RFC 1918 restricts private networks to the 10.0/24, 172.16/20, and 192.168/16
             address spaces. However, <cmdname>serviced</cmdname> accepts any valid IPv4
             address space.</dd>
@@ -628,7 +630,7 @@
           <dt><varname>SERVICED_ISVCS_START</varname></dt>
           <dd><b>Default</b>: (none) </dd> 
           <dd>Enables one or more internal services to run on a delegate host.
-          Currently, only <codeph>zookeeper</codeph> is supported.</dd>
+          Currently, only <codeph>zookeeper</codeph> has been tested.</dd>
         </dlentry>
         
         <dlentry id="SERVICED_ISVCS_ZOOKEEPER_ID">
