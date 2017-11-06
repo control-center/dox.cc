@@ -3,7 +3,13 @@
 <reference id="referenceid">
   <title>Additional information</title>
   <refbody>
-    <section conkeyref="related-pubs/cc"/>
-    <section conkeyref="more-info/cc"/>    
+    <section>
+      <title>Documentation feedback</title>
+      <p>To provide feedback about this document, or to report an error or omission, please send an
+        email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
+        title and part number, and as much information as possible about the context of your
+        feedback. The part number appears at the end of the list of trademarks, at the front of this
+        guide.</p>
+    </section>
   </refbody>
 </reference>
