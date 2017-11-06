@@ -7,10 +7,10 @@
     <section>
       <p>The hosts details page displays information about a specific machine that is assigned to a
         resource pool.</p>
-      <p>You can edit the host name and RAM limit, and reset the host's authentication keys and
-        generate a new key pair. When you reset keys, services that are running on the host cannot
-        connect until you register the new keys by using the <cmdname>serviced host
-          register</cmdname> command.</p>
+      <p>You can edit the host's RAM limit, and reset the host's authentication keys and generate a
+        new key pair. When you reset keys, services that are running on the host cannot connect
+        until you register the new keys by using the <cmdname>serviced host register</cmdname>
+        command.</p>
       <p>The graphs show dynamic information about the host's CPU usage, memory usage (total for
         Docker containers and all services that are running on the system), load average, and other
         details. You can filter the information that is displayed in a graph. For example, in the
