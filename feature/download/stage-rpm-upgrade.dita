@@ -16,31 +16,6 @@
       </step>
       
       <step importance="optional">
-        <cmd>Install the <ph conkeyref="names/company"/> GPG key, and then test the package files,
-          if desired.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Install the key.</cmd>
-            <stepxmp>
-              <codeblock>rpm --import /tmp/RPM-GPG-KEY-Zenoss</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Test the repository mirror package file.</cmd>
-            <stepxmp>
-              <codeblock>rpm -K /tmp/yum-mirror-*.rpm</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
-            <stepxmp>
-              <codeblock>rpm -K /tmp/serviced-*.rpm</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-      
-      <step importance="optional">
         <cmd>Remove the existing repository mirror, if necessary.</cmd>
         <substeps>
           <substep>
@@ -69,8 +44,8 @@
       </step>
       
       <step importance="optional">
-        <cmd>Update the configuration file of the <ph conkeyref="names/company"/> 
-          repository mirror to enable GPG key verification, if desired.</cmd>
+        <cmd>Install the <ph conkeyref="names/company"/> GPG key, and then test the package files,
+          if desired.</cmd>
         <substeps>
           <substep>
             <cmd>Move the <ph conkeyref="names/company"/>
@@ -79,6 +54,31 @@
               <codeblock>mv /tmp/RPM-GPG-KEY-Zenoss /opt/zenoss-repo-mirror</codeblock>
             </stepxmp>
           </substep>
+          <substep>
+            <cmd>Install the key.</cmd>
+            <stepxmp>
+              <codeblock>rpm --import /opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Test the repository mirror package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/yum-mirror-*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/serviced-*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step importance="optional">
+        <cmd>Update the configuration file of the <ph conkeyref="names/company"/> 
+          repository mirror to enable GPG key verification, if desired.</cmd>
+        <substeps>
           <substep>
             <cmd>Open the repository mirror configuration file
               (<filepath>/etc/yum.repos.d/zenoss-mirror.repo</filepath>)

@@ -37,6 +37,7 @@
         </stepxmp>
       </step>
       
+      
       <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
