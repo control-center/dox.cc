@@ -8,14 +8,6 @@
       <step>
         <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
-      
-      <step>
-        <cmd>Remove the Docker repository description file, if present.</cmd>
-        <info>Upgrades no longer require external repositories.</info>
-        <stepxmp>
-          <codeblock>rm -f /etc/yum.repos.d/docker.repo</codeblock>
-        </stepxmp>
-      </step>
   
       <step>
         <cmd>Update the operating system, if necessary.</cmd>
@@ -108,7 +100,7 @@
         <substeps>
           <substep>
             <cmd>Remove without checking dependencies.</cmd>
-            <stepxmp><!-- Need to verify this command -->
+            <stepxmp>
               <codeblock>rpm -e --nodeps docker-ce</codeblock>
             </stepxmp>
           </substep>
