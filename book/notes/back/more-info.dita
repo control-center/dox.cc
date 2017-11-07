@@ -7,9 +7,9 @@
       <title>Documentation feedback</title>
       <p>To provide feedback about this document, or to report an error or omission, please send an
         email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
-        title and part number, and as much information as possible about the context of your
-        feedback. The part number appears at the end of the list of trademarks, at the front of this
-        guide.</p>
+        title (<cite conkeyref="pubs/cite-notes"/>) and part number (1910.<keyword
+          keyref="lo-build-date"/>) and as much information as possible about the context of your
+        feedback.</p>
     </section>
   </refbody>
 </reference>
