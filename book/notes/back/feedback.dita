@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Documentation feedback</title>
+  <refbody>
+    <section>
+      <p>To provide feedback about this document, or to report an error or omission, please send an
+        email to <codeph>docs@controlcenter.io</codeph>. In the email, please include the document
+        title (<cite conkeyref="pubs/cite-notes"/>) and part number (1310.<keyword
+          keyref="lo-build-date"/>) and as much information as possible about the context of your
+        feedback.</p>
+    </section>
+  </refbody>
+</reference>

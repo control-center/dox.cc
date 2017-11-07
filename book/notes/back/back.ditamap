@@ -3,9 +3,8 @@
 <bookmap>
  <title>Backmatter</title>
  <chapter keyref="cc-notes-back-back">
-  <topicref keyref="supported-browsers"/>
-  <!-- <topicref keyref="cc-notes-back-limits"/> -->
-  <!-- <topicref keyref="cc-notes-back-errata"/> -->
-  <topicref keyref="cc-notes-back-more-info"/>
+  <topicref keyref="tested-browsers"/>
+  <topicref keyref="related-pubs"/>
+  <topicref keyref="cc-notes-back-feedback"/>
  </chapter>
 </bookmap>

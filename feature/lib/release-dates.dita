@@ -16,6 +16,10 @@
         </thead>
         <tbody>
           <row>
+            <entry><ph keyref="nm-cc"/> 1.4.2</entry>
+            <entry>?? Nov 2017</entry>
+          </row>
+          <row>
             <entry><ph keyref="nm-cc"/> 1.4.1</entry>
             <entry>25 Sep 2017</entry>
           </row>
