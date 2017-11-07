@@ -15,7 +15,7 @@
         -->
       <dl>
         <dlentry>
-          <dt>1300.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dt>1900.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
           <dd>Add chapters for updating 1.4.x deployments.</dd>
           <dd>Add step for updating RHEL/CentOS to 7.4, if necessary.</dd>
           <dd>Add steps for a delegate host workaround of an NFS issue on RHEL/CentOS 7.4.</dd>

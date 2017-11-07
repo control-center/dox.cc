@@ -8,14 +8,9 @@
        changes to this guide since the previous release. Some of the changes 
        involve features or content, but others do not. For information about 
        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
-     
-     <!-- Use the lo-build-date variable through finals. Then, replace it with
-           the published build number and use the variable only in the version
-           in development. 
-        -->
      <dl>
        <dlentry>
-         <dt>1340.<keyword keyref="lo-build-date"/></dt>
+         <dt>1940.<keyword keyref="lo-build-date"/></dt>
          <dd>Add this document history section.</dd>
        </dlentry>
      </dl>

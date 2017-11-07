@@ -15,7 +15,7 @@
         -->
      <dl>
        <dlentry>
-         <dt>1330.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+         <dt>1930.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
          <dd>Remove RHEL/CentOS 7.1, add 7.4.</dd>
        </dlentry>
        <dlentry>

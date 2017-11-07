@@ -15,7 +15,7 @@
         -->
       <dl>
         <dlentry>
-          <dt>1322.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dt>1922.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
           <dd>Add RHEL/CentOS 7.4; remove RHEL/CentOS 7.1.</dd>
           <dd>Add the specific port numbers required for DRBD to the Planning chapter.</dd>
           <dd>Add a step for configuring SELinux policies to the DRBD chapter.</dd>
