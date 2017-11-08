@@ -3,6 +3,10 @@
 <map>
  <title>Keys in manage</title>
   <topicgroup>
+    <keydef keys="cc-feature-manage-container-logs"
+            href="container-logs.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-manage-multiple"
             href="multiple.dita"
             format="dita"

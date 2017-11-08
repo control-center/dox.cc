@@ -4,7 +4,7 @@
   <title>Interface access and packaging</title>
   <refbody>
     <section>
-      <p>This chapter  specifies the supported clients for its browser interface and describes how
+      <p>This chapter specifies the supported clients for its browser interface and describes how
           <ph keyref="nm-cc"/> is packaged and distributed.</p>
     </section>
   </refbody>

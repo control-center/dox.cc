@@ -8,10 +8,6 @@
             href="cc-application.dita"
             format="dita"
     />
-    <keydef keys="gl-cc-cluster"
-            href="cc-cluster.dita"
-            format="dita"
-    />
     <keydef keys="gl-cc-delegate-host"
             href="cc-delegate-host.dita"
             format="dita"
@@ -58,14 +54,6 @@
     />
     <keydef keys="gl-cc-zookeeper"
             href="cc-zookeeper.dita"
-            format="dita"
-    />
-    <keydef keys="gl-service-definition"
-            href="service-definition.dita"
-            format="dita"
-    />
-    <keydef keys="gl-service-template"
-            href="service-template.dita"
             format="dita"
     />
   </topicgroup>

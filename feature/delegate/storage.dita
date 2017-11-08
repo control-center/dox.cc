@@ -8,7 +8,7 @@
         <ph keyref="nm-cc"/> delegate hosts. For more information, refer to the
         <cite conkeyref="pubs/cite-plan"/>.</p>
       
-      <p><ph keyref="nm-cc"/> cluster hosts need either unformatted block storage devices or partitions,
+      <p><ph keyref="nm-cc"/> hosts need either unformatted block storage devices or partitions,
         or free space in one or more LVM volume groups.</p>
       <ul>
         <li>Enter the following command to display information about block storage:

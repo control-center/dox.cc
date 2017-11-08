@@ -58,11 +58,8 @@
       </step>
       
       
-      <step>
-        <cmd>Display the settings of the reference configuration file.</cmd>
-        <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced-pre-<ph keyref="lo-version-cc"/></codeblock>
-        </stepxmp>
+      <step conkeyref="cc-feature-lib-step/display-ref-settings">
+        <cmd/>
       </step>
       
       <step>

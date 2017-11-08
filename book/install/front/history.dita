@@ -8,14 +8,14 @@
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
-      
-      <!-- Use the lo-build-date variable through finals. Then, replace it with
-           the published build number and use the variable only in the version
-           in development. 
-        -->
       <dl>
         <dlentry>
-          <dt>1320.<keyword keyref="lo-build-date"/></dt>
+          <dt>1320.<keyword keyref="lo-build-date"/> (1.4.2)</dt>
+          <dd>Replace Docker CE 17.03.1 with 17.09.0.</dd>
+          <dd>Replace RHEL/CentOS 7.1 with 7.4.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1320.17.268</dt>
           <dd>Update release number (1.4.1).</dd>
         </dlentry>
         <dlentry>

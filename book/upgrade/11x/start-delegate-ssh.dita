@@ -34,11 +34,8 @@
         </choices>
       </step>
       
-      <step>
-        <cmd>Verify the settings in the <cmdname>serviced</cmdname> configuration file.</cmd>
-        <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
-        </stepxmp>
+      <step conkeyref="cc-feature-lib-step/verify-cfg-settings">
+        <cmd/>
       </step>
       
       <step>
@@ -66,7 +63,7 @@
         <cmd>Obtain the host ID of the delegate host started previously.</cmd>
         <substeps>
           <substep>
-            <cmd>Display the host IDs of all cluster hosts.</cmd>
+            <cmd>Display the host IDs of all <ph keyref="nm-cc"/> hosts.</cmd>
             <stepxmp>
               <codeblock>serviced host list | cut -c-85</codeblock>
             </stepxmp>

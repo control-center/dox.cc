@@ -7,8 +7,16 @@
             href="install-software.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-lib-nfs40"
+            href="nfs40.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-lib-release-dates"
             href="release-dates.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-lib-step"
+            href="step.dita"
             format="dita"
     />
     <keydef keys="cc-feature-lib-tasks"

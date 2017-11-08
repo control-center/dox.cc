@@ -19,8 +19,16 @@
             href="plan.dita"
             format="dita"
     />
+    <keydef keys="cc-install-ha-plan-ports"
+            href="ports.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-ha-plan-resource"
             href="resource.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-ha-plan-selinux"
+            href="selinux.dita"
             format="dita"
     />
     <keydef keys="cc-install-ha-plan-storage"

@@ -6,7 +6,7 @@
     <section>
       <p>The variables in the following table are set only on the master host, except
         the <varname>SERVICED_UI_PORT</varname> variable, which must be set identically
-        on all cluster hosts.</p>
+        on all <ph keyref="nm-cc"/> hosts.</p>
       
       <p>By default, <cmdname>serviced</cmdname> uses TLS to encrypt all HTTP traffic. The
           <varname>SERVICED_KEY_FILE</varname> and <varname>SERVICED_CERT_FILE</varname> variables

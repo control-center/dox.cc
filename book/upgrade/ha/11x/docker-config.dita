@@ -107,6 +107,10 @@ myReg="--insecure-registry=$myCluster:5000"</codeblock>
         <cmd/>
       </step>
       
+      <step conkeyref="cc-upgrade-lib-tasks/remove-nfs-workaround">
+        <cmd/>
+      </step>
+      
       <step>
         <cmd>Compare the previous version of the Docker environment file
         with the new version, and add any customizations for your deployment to the new version.</cmd>

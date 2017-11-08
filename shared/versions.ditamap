@@ -7,14 +7,14 @@
     <keydef keys="lo-version-cc">
       <topicmeta>
         <keywords>
-          <keyword>1.4.1</keyword>
+          <keyword>1.4.2</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-docker">
       <topicmeta>
         <keywords>
-          <keyword>17.03.1</keyword>
+          <keyword>17.09.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>

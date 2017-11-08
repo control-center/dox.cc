@@ -21,16 +21,16 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="cc-feature-download-download"/></entry>
+              <entry><xref keyref="cc-feature-download-download-install"/></entry>
               <entry>A workstation with internet access</entry>
             </row>
             <row>
               <entry><xref keyref="cc-feature-download-stage-rpm"/></entry>
-              <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
+              <entry>All <ph keyref="nm-cc"/> hosts</entry>
             </row>
             <row>
               <entry><xref keyref="cc-feature-download-stage-run"/></entry>
-              <entry>The master host</entry>
+              <entry>The <ph keyref="nm-cc"/> master host</entry>
             </row>
             <row>
               <entry><xref keyref="cc-feature-download-stage-run-zk"/></entry>

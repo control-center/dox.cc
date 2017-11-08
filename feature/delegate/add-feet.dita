@@ -43,7 +43,7 @@
           <p conkeyref="cc-feature-cli-serviced-host/NAT"/>
         </stepxmp>
         <stepxmp>
-          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname> \
+          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 <varname>Resource-Pool</varname> \
     <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/></codeblock>
         </stepxmp>
         <stepresult>The command creates a unique key bundle file in the local

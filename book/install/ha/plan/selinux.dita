@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Configuring SELinux</title>
+  <refbody>
+    <section>
+      <p><ph keyref="nm-cc"/> is tested with SELinux in enforcing mode. However, the 
+        default configuration of SELinux prevents DRBD from operating correctly. This
+      guide includes an optional procedure for creating policies that permit DRBD 
+      when SELinux is used in enforcing mode.</p>
+    </section>
+  </refbody>
+</reference>

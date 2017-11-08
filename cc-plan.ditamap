@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="4" modification="1"/>        
+        <vrm product="cc" version="1" release="4" modification="2"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -55,7 +55,7 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-plan-front-about">
-      <topicref keyref="supported-browsers"/>
+      <topicref keyref="tested-browsers"/>
       <topicref keyref="cc-plan-front-info"/>
       <topicref keyref="cc-plan-front-history"/>
     </topicref>

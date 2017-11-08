@@ -26,6 +26,20 @@
           see <xref keyref="cc-install-ha-drbd-config"/>.</stepresult>
       </step>
       
+      <step><!-- Added per CC-3949 -->
+        <cmd>On both nodes, start DRBD.</cmd>
+        <stepxmp>
+          <codeblock>drbdadm up all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step><!-- Added per CC-3949 -->
+        <cmd>On the primary node, start the synchronization.</cmd>
+        <stepxmp>
+          <codeblock>drbdadm primary --force serviced-dfs</codeblock>
+        </stepxmp>
+      </step>
+      
       <step>
         <cmd>On the primary node, display the synchronization status of mirrored storage areas.</cmd>
         <stepxmp>

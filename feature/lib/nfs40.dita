@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Configuring NFS 4.0</title>
+  <taskbody>
+    <context>Use this procedure to configure NFS 4.0 on delegate 
+      hosts if the operating system release is 7.4. 
+      There may be a file locking defect in NFS 4.1 with RHEL/CentOS 7.4.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Determine which release is installed.</cmd>
+        <stepxmp>
+          <codeblock>cat /etc/redhat-release</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the result includes <codeph>7.4</codeph>, perform the remaining
+            steps of this procedure.</choice>
+          <choice>If the result includes <codeph>7.2</codeph> or <codeph>7.3</codeph>, 
+            continue to the next procedure.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Change the NFS configuration file.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open <filepath>/etc/nfsmount.conf</filepath> with a text editor.</cmd>
+          </substep>
+          <substep>
+            <cmd>Locate the <codeph>Defaultvers</codeph> directive.</cmd>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep>
+            <cmd>Change the value from <codeph>4</codeph> to <codeph>4.0</codeph>.</cmd>
+            <stepxmp>The line should appear as follows: <codeblock>Defaultvers=4.0</codeblock>
+            </stepxmp>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Restart the NFS server.</cmd>
+        <stepxmp>
+          <codeblock>systemctl restart nfs-server</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

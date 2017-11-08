@@ -52,8 +52,8 @@
           <li>Return a unique result from the <cmdname>hostid</cmdname> command.</li>
         </ul></p>
       <p><ph keyref="nm-cc"/> relies on Network File System (NFS) for its distributed file system
-        implementation. Therefore, hosts in a <ph keyref="nm-cc"/> cluster cannot run a
-        general-purpose NFS server, and all hosts require NFS.</p>
+        implementation. Therefore, <ph keyref="nm-cc"/> hosts cannot run a
+        general-purpose NFS server, and all <ph keyref="nm-cc"/> hosts require NFS.</p>
     </section>
   </refbody>
 </reference>

@@ -11,12 +11,12 @@
             href="errata.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-back-limits"
-            href="limits.dita"
+    <keydef keys="cc-notes-back-feedback"
+            href="feedback.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-back-more-info"
-            href="more-info.dita"
+    <keydef keys="cc-notes-back-limits"
+            href="limits.dita"
             format="dita"
     />
    </topicgroup>

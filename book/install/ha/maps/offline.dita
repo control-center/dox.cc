@@ -27,7 +27,7 @@
             </row>
             <row>
               <entry><xref keyref="cc-feature-offline-stage-rpm"/></entry>
-              <entry>All <ph keyref="nm-cc"/> cluster hosts</entry>
+              <entry>All <ph keyref="nm-cc"/> hosts</entry>
             </row>
             <row>
               <entry><xref keyref="cc-feature-offline-stage-run"/></entry>

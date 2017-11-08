@@ -15,6 +15,7 @@
     <topicref keyref="cc-install-ha-master-docker-install"/>
     <topicref keyref="cc-install-ha-delegate-cc-install"/>
     <topicref keyref="cc-install-ha-delegate-docker-config"/>
+    <topicref keyref="cc-feature-lib-nfs40"/>
     <topicref keyref="cc-install-ha-delegate-image-import"/>
    </chapter>
 </bookmap>

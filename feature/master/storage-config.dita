@@ -51,11 +51,8 @@
         </substeps>
       </step>
       
-      <step>
-        <cmd>Verify the settings.</cmd>
-        <stepxmp>
-          <codeblock>grep -E '^\b*SERVICED' /etc/default/serviced</codeblock>
-        </stepxmp>
+      <step conkeyref="cc-feature-lib-step/verify-cfg-settings">
+        <cmd/>
       </step>
     </steps>
   </taskbody>

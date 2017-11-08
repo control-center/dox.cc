@@ -51,7 +51,7 @@
           command does not prompt you to add the delegate to the list of known hosts or to provide
           the password of the remote user account.</info>
         <info id="host-or-ip">Use the hostname or IP address to identify a <ph keyref="nm-cc"/>
-          cluster host. If you use a hostname, all hosts in the cluster must be able to resolve it,
+          host. If you use a hostname, all <ph keyref="nm-cc"/> hosts must be able to resolve it,
           either through an entry in <filepath>/etc/hosts</filepath> or through a nameserver on the
           network. In the following example, replace <varname>Hostname-Or-IP</varname> with the
           hostname or IP address of a delegate host, and replace <varname>Resource-Pool</varname>

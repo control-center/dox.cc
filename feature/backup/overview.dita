@@ -20,7 +20,7 @@
         interface (CLI). Results are comparable; however, the CLI offers an option to exclude
         subdirectories from a backup.</p>
       <p>The <ph keyref="nm-cc"/> backup process creates a compressed tar archive file
-          (<filepath>.tgz</filepath>) that can be restored on the same cluster or a similar cluster.
+        (<filepath>.tgz</filepath>) that can be restored on the same deployment or a similar deployment.
           Before starting a backup, <ph keyref="nm-cc"/>
           estimates the size of the backup file and compares it to the amount of free space. If
           storage space is insufficient, <ph keyref="nm-cc"/> does not start a backup.</p>

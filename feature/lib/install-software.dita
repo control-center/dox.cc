@@ -21,10 +21,6 @@
       <step conkeyref="cc-feature-lib-tasks/serviced-cfg-backup">
         <cmd/>
       </step>
-      
-      <step conkeyref="cc-feature-lib-tasks/nfs-workaround">
-        <cmd/>
-      </step>
     </steps>
   </taskbody>
 </task>

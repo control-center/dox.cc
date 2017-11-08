@@ -11,10 +11,6 @@
             href="app-detail-ip-assign.dita"
             format="dita"
     />
-    <keydef keys="cc-help-gui-app-detail-schedule"
-            href="app-detail-schedule.dita"
-            format="dita"
-    />
     <keydef keys="cc-help-gui-app-detail-services"
             href="app-detail-services.dita"
             format="dita"

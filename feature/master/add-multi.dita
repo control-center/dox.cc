@@ -30,7 +30,7 @@
         <stepxmp>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the
           <ph keyref="nm-cc"/> master host:
           <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 master</codeblock>
-          <p>If you use a hostname, all of the hosts in your <ph keyref="nm-cc"/> cluster must be able to
+          <p>If you use a hostname, all <ph keyref="nm-cc"/> hosts must be able to
             resolve the name, either through an entry in <filepath>/etc/hosts</filepath> or through
             a nameserver on the network.</p>
         </stepxmp>

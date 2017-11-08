@@ -4,14 +4,14 @@
   <title>Fencing recommendations</title>
   <shortdesc>Fencing is an automated means of isolating a node that appears to be malfunctioning,
     used to protect the integrity of the DRBD volumes. In a <i>test</i> deployment of a <ph
-      keyref="nm-cc"/> HA cluster, fencing is not necessary. However, on <i>production</i> HA
-    clusters, fencing is a critical consideration. </shortdesc>
+      keyref="nm-cc"/> high-availability cluster, fencing is not necessary. However, on
+      <i>production</i> clusters, fencing is a critical consideration. </shortdesc>
   <conbody>
     <p>Work with your IT department to implement the best fencing solution for your infrastructure.
       Employ a technique that ensures that a failed node in the cluster is completely stopped to
       avoid application conflicts or conflicts with the cluster management software. </p>
-    <p>When fencing is employed in the HA cluster, use two NICs per node. </p>
-    <p>Before you configure and enable fencing in your production environment:<ul id="ul_hp5_1pl_wx">
+    <p>When fencing is employed in the high-availability cluster, use two NICs per node. </p>
+    <p>Before you configure and enable fencing in your production environment:<ul>
         <li>Ensure that all components are deployed.</li>
         <li>Verify operation of the application that <ph keyref="nm-cc"/> is managing.</li>
         <li>In a controlled scenario, confirm basic cluster failover.<p>If a fencing method is not

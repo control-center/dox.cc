@@ -55,8 +55,7 @@ restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
             <cmd>Replace <codeph>ADDRESS_RANGE</codeph> with the range of IPv4 network addresses
               that are allowed to query this NTP server.</cmd>
             <stepxmp>
-              <p>For example, the following IP addresses are assigned to the hosts in an <ph
-                  keyref="nm-cc"/> cluster: <sl>
+              <p>For example, the following IP addresses are assigned to <ph keyref="nm-cc"/> hosts: <sl>
                   <sli><codeph>203.0.113.10</codeph></sli>
                   <sli><codeph>203.0.113.11</codeph></sli>
                   <sli><codeph>203.0.113.12</codeph></sli>
