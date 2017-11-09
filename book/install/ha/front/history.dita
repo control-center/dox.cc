@@ -15,7 +15,7 @@
         -->
       <dl>
         <dlentry>
-          <dt>1322.<keyword keyref="lo-build-date"/> (1.4.2)</dt>
+          <dt>1322.17.313 (1.4.2)</dt>
           <dd>Replace Docker CE 17.03.1 with 17.09.0.</dd>
           <dd>Add RHEL/CentOS 7.4; remove RHEL/CentOS 7.1.</dd>
           <dd>Add the specific port numbers required for DRBD to the Planning chapter.</dd>

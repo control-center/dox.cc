@@ -5,7 +5,7 @@
  <chapter keyref="cc-notes-142-self">
    <topicref keyref="cc-notes-142-features"/> 
    <topicref keyref="cc-notes-142-fixed"/> 
-   <topicref keyref="cc-notes-142-known"/>
-   <!-- <topicref keyref="cc-notes-142-notes"/> -->
+   <!-- <topicref keyref="cc-notes-142-known"/>
+   <topicref keyref="cc-notes-142-notes"/> -->
  </chapter>
 </bookmap>

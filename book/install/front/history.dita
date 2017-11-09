@@ -10,7 +10,7 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1320.<keyword keyref="lo-build-date"/> (1.4.2)</dt>
+          <dt>1320.17.313 (1.4.2)</dt>
           <dd>Replace Docker CE 17.03.1 with 17.09.0.</dd>
           <dd>Replace RHEL/CentOS 7.1 with 7.4.</dd>
         </dlentry>

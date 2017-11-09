@@ -16,8 +16,8 @@
         </thead>
         <tbody>
           <row>
-            <entry>CC-XXXX</entry>
-            <entry></entry>
+            <entry>CC-3918</entry>
+            <entry>Use Docker 17.09.</entry>
           </row>
         </tbody>
       </tgroup>
