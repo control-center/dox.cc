@@ -15,7 +15,7 @@
         -->
      <dl>
        <dlentry>
-         <dt>1340.<keyword keyref="lo-build-date"/> (1.4.2)</dt>
+         <dt>1340.17.313 (1.4.2)</dt>
          <dd>Add information about rotating container logs.</dd>
        </dlentry>
        <dlentry>

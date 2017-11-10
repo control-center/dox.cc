@@ -10,7 +10,7 @@
        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
      <dl>
        <dlentry>
-         <dt>1330.<keyword keyref="lo-build-date"/> (1.4.2)</dt>
+         <dt>1330.17.313 (1.4.2)</dt>
          <dd>Remove <i>cluster</i> from the glossary.</dd>
        </dlentry>
        <dlentry>
