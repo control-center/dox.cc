@@ -6,7 +6,7 @@
     <section>
       <p>Perform the procedures in this chapter to upgrade both <ph keyref="nm-cc"/> 1.2.x master hosts to
         <ph keyref="lo-version-cc"/>. First, download and stage the required files. 
-        <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-maps-download"/>.</p>
+        <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-feature-download-intro-upgrade-ha"/>.</p>
     </section>
   </refbody>
 </reference>

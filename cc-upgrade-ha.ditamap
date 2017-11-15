@@ -93,7 +93,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/ha/maps/download.ditamap" format="ditamap"/>
+  <chapter href="feature/download/upgrade-ha.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>

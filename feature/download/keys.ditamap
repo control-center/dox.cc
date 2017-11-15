@@ -15,6 +15,10 @@
             href="intro-install.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-download-intro-upgrade-ha"
+            href="intro-upgrade-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-download-intro-upgrade"
             href="intro-upgrade.dita"
             format="dita"

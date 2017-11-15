@@ -7,7 +7,7 @@
       <p>Perform the procedures in this chapter to upgrade <ph keyref="nm-cc"/> 1.4.x delegate hosts
         to <ph keyref="lo-version-cc"/>. First, download and stage the required files. <ph
           conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-upgrade-ha-maps-download"/>.</p>
+        <xref keyref="cc-feature-download-intro-upgrade-ha"/>.</p>
     </section>
   </refbody>
 </reference>

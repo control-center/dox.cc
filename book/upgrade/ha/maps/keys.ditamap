@@ -7,10 +7,6 @@
             href="delegate.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-maps-download"
-            href="download.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-maps-master"
             href="master.dita"
             format="dita"
