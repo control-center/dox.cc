@@ -27,8 +27,8 @@
             href="lib.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-download-pcs-drbd-download"
-            href="pcs-drbd-download.dita"
+    <keydef keys="cc-feature-download-pcs-drbd"
+            href="pcs-drbd.dita"
             format="dita"
     />
     <keydef keys="cc-feature-download-stage-agent"

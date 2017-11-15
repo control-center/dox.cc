@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading and staging <ph keyref="nm-cc"/> software</title>
+  <title>Downloading and staging cluster software</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>

@@ -44,6 +44,11 @@
         </info>
       </step>
       
+      <step id="navigate-log-in-ha">
+        <cmd>In a web browser, navigate to the download site, and then log in.</cmd>
+        <info>The download site is <xref keyref="url-leapfile"/></info>
+      </step>
+      
       <step id="download-cc-images">
         <cmd>Download the self-installing Docker image files.</cmd>
         <info>
@@ -129,7 +134,7 @@
         </substeps>
       </step>
       
-      <!-- for installing the mirror -->
+      <!-- the remainin steps are for installing the mirror -->
       <step id="install-mirror">
         <cmd>Install the repository mirror.</cmd>
         <stepxmp>
@@ -166,7 +171,45 @@
           <substep>
             <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
             <stepxmp>
-              <codeblock>rpm -K /tmp/serviced-*.rpm</codeblock>
+              <codeblock>rpm -K /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="install-gpg-key-ha" importance="optional">
+        <cmd>Install the <ph conkeyref="names/company"/> GPG key, and then test the package files,
+          if desired.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Move the <ph conkeyref="names/company"/>
+              GPG key to the mirror directory.</cmd>
+            <stepxmp>
+              <codeblock>mv /tmp/RPM-GPG-KEY-Zenoss /opt/zenoss-repo-mirror</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the key.</cmd>
+            <stepxmp>
+              <codeblock>rpm --import /opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Test the repository mirror package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/yum-mirror-*.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Test the Pacemaker resource agents for <ph keyref="nm-cc"/> package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>
         </substeps>

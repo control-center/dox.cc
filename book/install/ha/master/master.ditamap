@@ -9,7 +9,7 @@
       <topicref keyref="cc-feature-download-install-ha"/>
       <topicref keyref="cc-feature-download-stage-rpm-ha"/>
       <topicref keyref="cc-feature-download-stage-run"/>
-      <topicref keyref="cc-feature-download-pcs-drbd-download"/>
+      <topicref keyref="cc-feature-download-pcs-drbd"/>
     </topicref>
     <topicref keyref="cc-install-ha-master-ntp">
       <topicref keyref="cc-install-ha-master-ntp-master"/>

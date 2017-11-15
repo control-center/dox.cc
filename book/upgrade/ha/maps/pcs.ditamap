@@ -3,7 +3,7 @@
 <bookmap >
  <title>PCS DRBD</title>
   <appendix keyref="cc-upgrade-ha-maps-pcs">
-    <topicref keyref="cc-feature-download-pcs-drbd-download"/>
+    <topicref keyref="cc-feature-download-pcs-drbd"/>
     <topicref keyref="cc-upgrade-ha-topics-pcs-drbd-update"/>
   </appendix>
 </bookmap>

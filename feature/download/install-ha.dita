@@ -6,7 +6,7 @@
     <prereq conkeyref="cc-feature-download-lib/download-prereq-ha"/>
     <context conkeyref="cc-feature-download-lib/download-context"/>
     <steps>
-      <step conkeyref="cc-feature-download-lib/navigate-log-in">
+      <step conkeyref="cc-feature-download-lib/navigate-log-in-ha">
         <cmd></cmd>
       </step>
       
