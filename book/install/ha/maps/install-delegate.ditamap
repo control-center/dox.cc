@@ -6,7 +6,7 @@
     <topicref keyref="cc-feature-delegate-verify"/>
     <topicref keyref="cc-feature-delegate-storage"/>
     <topicref keyref="cc-install-ha-delegate-download">
-      <topicref keyref="cc-feature-download-download-install-ha"/>
+      <topicref keyref="cc-feature-download-install-ha"/>
       <topicref keyref="cc-feature-download-stage-rpm"/>
       <topicref keyref="cc-feature-download-stage-run-zk"/>
     </topicref>

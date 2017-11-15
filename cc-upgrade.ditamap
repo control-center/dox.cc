@@ -81,7 +81,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
-  <chapter href="feature/download/offline-upgrade.ditamap" format="ditamap"/>
+  <chapter href="feature/download/upgrade.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>

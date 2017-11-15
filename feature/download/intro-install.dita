@@ -6,7 +6,7 @@
     <section>
       <p>This chapter describes how to download and install or stage <ph keyref="nm-cc"/> software
         and its operating system dependencies. The procedures in this chapter are required to
-        perform an upgrade.</p>
+        perform an installation.</p>
       
       <p>The following table identifies where to perform each procedure in this chapter.</p>
       <table>
@@ -21,20 +21,16 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="cc-feature-download-upgrade-ha"/></entry>
+              <entry><xref keyref="cc-feature-download-install"/></entry>
               <entry>A workstation with internet access</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-feature-download-stage-rpm-upgrade"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-rpm"/></entry>
               <entry>All <ph keyref="nm-cc"/> hosts</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-feature-download-stage-agent"/></entry>
-              <entry>Both master host nodes</entry>
-            </row>
-            <row>
               <entry><xref keyref="cc-feature-download-stage-run"/></entry>
-              <entry>Both master host nodes</entry>
+              <entry>The <ph keyref="nm-cc"/> master host</entry>
             </row>
             <row>
               <entry><xref keyref="cc-feature-download-stage-run-zk"/></entry>

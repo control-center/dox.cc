@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Preparing the master host operating system</title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/>,
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro-install"/>,
         before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS  

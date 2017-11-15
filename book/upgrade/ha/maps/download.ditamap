@@ -3,7 +3,7 @@
 <bookmap>
    <title>Download</title>
    <chapter keyref="cc-upgrade-ha-maps-download">
-      <topicref keyref="cc-feature-download-download-upgrade-ha"/>
+      <topicref keyref="cc-feature-download-upgrade-ha"/>
       <topicref keyref="cc-feature-download-stage-rpm-upgrade"/>
       <topicref keyref="cc-feature-download-stage-agent"/>
       <topicref keyref="cc-feature-download-stage-run"/>
