@@ -111,7 +111,7 @@ Is this ok [y/N]:</codeblock>
       <step>
         <cmd>Move the <ph keyref="nm-cc"/> package file to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>Move /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
+          <codeblock>mv /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       
