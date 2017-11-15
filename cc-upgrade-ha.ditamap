@@ -60,7 +60,6 @@
       <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/maps/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/ha/download/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/paths/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/resize/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/topics/keys.ditamap" format="ditamap"/>
@@ -94,7 +93,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/ha/download/upgrade.ditamap" format="ditamap"/>
+  <chapter href="book/upgrade/ha/maps/download.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
