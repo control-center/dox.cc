@@ -21,23 +21,23 @@
           </thead>
           <tbody>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-download-download"/></entry>
+              <entry><xref keyref="cc-feature-download-download-upgrade-ha"/></entry>
               <entry>A workstation with internet access</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-feature-download-stage-rpm"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-rpm-upgrade"/></entry>
               <entry>All <ph keyref="nm-cc"/> hosts</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-download-stage-agent"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-agent"/></entry>
               <entry>Both master host nodes</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-download-stage-run"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-run"/></entry>
               <entry>Both master host nodes</entry>
             </row>
             <row>
-              <entry><xref keyref="cc-upgrade-ha-download-stage-run-zk"/></entry>
+              <entry><xref keyref="cc-feature-download-stage-run-zk"/></entry>
               <entry>Delegate hosts that are ZooKeeper ensemble nodes</entry>
             </row>
           </tbody>

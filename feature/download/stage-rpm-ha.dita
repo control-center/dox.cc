@@ -6,65 +6,42 @@
     <context>Use this procedure to install the <ph conkeyref="names/company"/> repository mirror on
       a <ph keyref="nm-cc"/> host. The mirror contains packages that are required on all <ph
         keyref="nm-cc"/> hosts.</context>
-    <context id="context_frw_x4w_cz"/>
     <steps>
       <step>
         <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
-        <cmd>Move the RPM files to <filepath>/tmp</filepath>.</cmd>
+        <cmd>Move the RPM files and the <ph conkeyref="names/company"/> GPG key
+          file to <filepath>/tmp</filepath>.</cmd>
       </step>
       
-      <step importance="optional">
-        <cmd>Remove the existing repository mirror, if necessary.</cmd>
-        <info>This step is not necessary during installations, only upgrades.</info>
-        <substeps>
-          <substep>
-            <cmd>Search for the existing repository mirror.</cmd>
-            <stepxmp>
-              <codeblock>yum list --disablerepo=* | awk '/^yum-mirror/ { print $1}'</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Remove the mirror.</cmd>
-            <stepxmp>Replace <varname>Old-Mirror</varname> with the name of the
-              <ph conkeyref="names/company"/> repository mirror returned in the previous substep:
-              <codeblock>yum remove <varname>Old-Mirror</varname></codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+      <step conkeyref="cc-feature-download-lib/install-mirror">
+        <cmd></cmd>
       </step>
-            
-      <step>
-        <cmd>Install the repository mirror.</cmd>
-        <stepxmp>
-          <codeblock>yum install /tmp/yum-mirror-*.rpm</codeblock>
-        </stepxmp>
-        <stepresult>The <cmdname>yum</cmdname> command copies the contents 
-          of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
+      
+      <step conkeyref="cc-feature-download-lib/install-gpg-key">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/update-repo-config">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/move-cc-rpm">
+        <cmd></cmd>
       </step>
       
       <step>
-        <cmd>Copy the <ph keyref="nm-cc"/> RPM file to the mirror directory.</cmd>
+        <cmd>Move the Pacemaker resource agents for <ph keyref="nm-cc"/> to the mirror directory.</cmd>
         <stepxmp>
-          <codeblock>cp /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step>
-        <cmd>Copy the Pacemaker resource agents for <ph keyref="nm-cc"/> to the mirror directory.</cmd>
-        <stepxmp>
-          <codeblock>cp /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm \
+          <codeblock>mv /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm \
   /opt/zenoss-repo-mirror</codeblock>
         </stepxmp>
       </step>
       
-      <step importance="optional">
-        <cmd>Delete the RPM files.</cmd>
-        <stepxmp>
-          <codeblock>rm /tmp/yum-mirror-*.rpm /tmp/serviced-*.rpm</codeblock>
-        </stepxmp>
+      <step conkeyref="cc-feature-download-lib/delete-mirror-rpm">
+        <cmd></cmd>
       </step>
 
     </steps>

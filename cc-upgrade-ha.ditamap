@@ -79,7 +79,6 @@
       <mapref href="feature/storage/ha/keys.ditamap" format="ditamap"/>
       <mapref href="feature/master/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/offline/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
@@ -154,7 +153,7 @@
     <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/maps/pcs.ditamap" format="ditamap"/>
-    <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
+    <!-- <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/> -->
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>
   

@@ -27,10 +27,6 @@
             href="ntp.dita"
             format="dita"
     />
-    <keydef keys="cc-install-ha-delegate-prep"
-            href="prep.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-delegate-registry"
             href="registry.dita"
             format="dita"

@@ -6,10 +6,10 @@
     <topicref keyref="cc-install-ha-master-verify"/>
     <topicref keyref="cc-install-ha-master-prep"/>
     <topicref keyref="cc-install-ha-master-download">
-      <topicref keyref="cc-feature-offline-download"/>
-      <topicref keyref="cc-feature-offline-stage-rpm-ha"/>
-      <topicref keyref="cc-feature-offline-stage-run"/>
-      <topicref keyref="cc-feature-offline-pcs-drbd-download"/>
+      <topicref keyref="cc-feature-download-download-install-ha"/>
+      <topicref keyref="cc-feature-download-stage-rpm-ha"/>
+      <topicref keyref="cc-feature-download-stage-run"/>
+      <topicref keyref="cc-feature-download-pcs-drbd-download"/>
     </topicref>
     <topicref keyref="cc-install-ha-master-ntp">
       <topicref keyref="cc-install-ha-master-ntp-master"/>

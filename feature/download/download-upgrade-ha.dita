@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Downloading <ph keyref="nm-cc"/> files</title>
   <taskbody>
-    <prereq conkeyref="cc-feature-download-lib/download-prereq"/>
+    <prereq conkeyref="cc-feature-download-lib/download-prereq-ha"/>
     <context conkeyref="cc-feature-download-lib/download-context"/>
     <steps>
       <step conkeyref="cc-feature-download-lib/navigate-log-in">
@@ -26,6 +26,10 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="cc-feature-download-lib/download-ra-rpm">
+        <cmd></cmd>
+      </step>
+      
       <step conkeyref="cc-feature-download-lib/download-zenoss-key">
         <cmd></cmd>
       </step>
@@ -34,7 +38,7 @@
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> hosts.</cmd>
         <info>
           <ul>
-            <li>Copy all files to the master host.</li>
+            <li>Copy all files to both master nodes.</li>
             <li>Copy the RHEL/CentOS RPM file, the <ph keyref="nm-cc"/> RPM file, and the <ph
               conkeyref="names/company"/> GPG key file to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper to delegate hosts that are ZooKeeper

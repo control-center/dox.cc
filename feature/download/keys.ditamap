@@ -3,8 +3,16 @@
 <map>
  <title>Keys in download</title>
   <topicgroup>
+    <keydef keys="cc-feature-download-download-install-ha"
+            href="download-install-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-download-download-install"
             href="download-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-download-upgrade-ha"
+            href="download-upgrade-ha.dita"
             format="dita"
     />
     <keydef keys="cc-feature-download-download-upgrade"
@@ -15,8 +23,16 @@
             href="install.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-download-lib"
+            href="lib.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-download-pcs-drbd-download"
             href="pcs-drbd-download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-feature-download-stage-agent"
+            href="stage-agent.dita"
             format="dita"
     />
     <keydef keys="cc-feature-download-stage-rpm-ha"
