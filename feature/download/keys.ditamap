@@ -11,6 +11,10 @@
             href="install.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-download-intro-install-ha"
+            href="intro-install-ha.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-download-intro-install"
             href="intro-install.dita"
             format="dita"

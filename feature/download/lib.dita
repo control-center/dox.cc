@@ -167,49 +167,14 @@
             <stepxmp>
               <codeblock>rpm -K /tmp/yum-mirror-*.rpm</codeblock>
             </stepxmp>
+            <stepresult>On success, the result includes the file name and the following information:
+              <codeblock>(sha1) dsa sha1 md5 gpg OK</codeblock>
+            </stepresult>
           </substep>
           <substep>
             <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
             <stepxmp>
               <codeblock>rpm -K /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
-      </step>
-      
-      <step id="install-gpg-key-ha" importance="optional">
-        <cmd>Install the <ph conkeyref="names/company"/> GPG key, and then test the package files,
-          if desired.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Move the <ph conkeyref="names/company"/>
-              GPG key to the mirror directory.</cmd>
-            <stepxmp>
-              <codeblock>mv /tmp/RPM-GPG-KEY-Zenoss /opt/zenoss-repo-mirror</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Install the key.</cmd>
-            <stepxmp>
-              <codeblock>rpm --import /opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Test the repository mirror package file.</cmd>
-            <stepxmp>
-              <codeblock>rpm -K /tmp/yum-mirror-*.rpm</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
-            <stepxmp>
-              <codeblock>rpm -K /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Test the Pacemaker resource agents for <ph keyref="nm-cc"/> package file.</cmd>
-            <stepxmp>
-              <codeblock>rpm -K /tmp/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
             </stepxmp>
           </substep>
         </substeps>

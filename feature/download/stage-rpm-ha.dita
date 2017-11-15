@@ -20,7 +20,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-download-lib/install-gpg-key-ha">
+      <step conkeyref="cc-feature-download-lib/install-gpg-key">
         <cmd></cmd>
       </step>
       
