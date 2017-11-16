@@ -4,10 +4,13 @@
    <title>Admin</title>
    <chapter keyref="cc-help-maps-admin">
       <topicref keyref="cc-feature-storage-thinpool-minimums">
-         <topicref keyref="cc-feature-storage-thinpool-examine"/>
-         <topicref keyref="cc-feature-storage-resize-meta"/>
-         <topicref keyref="cc-feature-storage-resize-data"/>
-         <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+         <topicref keyref="cc-feature-storage-thinpool-examine">
+           <topicref keyref="cc-feature-storage-resize-meta"/>
+           <topicref keyref="cc-feature-storage-resize-data"/>
+         </topicref>
+         <topicref keyref="cc-feature-storage-resize-tenant">
+            <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+         </topicref>
       </topicref>
       
       <topicref keyref="cc-feature-state-emergency-shutdown">

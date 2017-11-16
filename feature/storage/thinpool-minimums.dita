@@ -6,7 +6,8 @@
     <p><ph keyref="nm-cc"/> uses an LVM thin pool to store tenant (application) data. LVM thin pools
       include separate storage areas for data and for metadata. For each tenant it manages, <ph
         keyref="nm-cc"/> maintains a separate virtual device (a volume) in the data storage area of
-      its LVM thin pool.</p>
+      its LVM thin pool. Also, <ph keyref="nm-cc"/> creates virtual devices in the data storage area
+      for snapshots of tenant data.</p>
     
     <p>To ensure consistency, <ph keyref="nm-cc"/> requires the following, minimum amount of free
       space in its thin pool: <ul>
