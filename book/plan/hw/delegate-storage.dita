@@ -14,12 +14,17 @@
 
       <p>The following storage configuration is recommended for delegate hosts:
         <ul>
-          <li>root filesystem with a minimum of 35GB of storage, formatted with XFS</li>
+          <li>root filesystem with a minimum of 30GB of storage, formatted with XFS</li>
           <li>dedicated swap area</li>
           <li>one or more block devices or partitions, or one or more LVM physical volumes, with a
             total of 50GB of space. The installation procedures include steps for using
               <cmdname>serviced-storage</cmdname> to create an LVM thin pool for Docker data.</li>
         </ul></p>
+      <p>The following example shows the disk configuration of a <ph keyref="nm-cc"/> delegate host.</p>
+      <fig>
+        <title>Example delegate host with 4 disks</title>
+        <image keyref="svg-disks-delegate" scale="40"/>
+      </fig>
     </section>
   </refbody>
 </reference>
