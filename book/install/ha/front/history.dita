@@ -15,6 +15,10 @@
         -->
       <dl>
         <dlentry>
+          <dt>1322.17.331 (1.4.2)</dt>
+          <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>
+        </dlentry>
+        <dlentry>
           <dt>1322.17.313 (1.4.2)</dt>
           <dd>Replace Docker CE 17.03.1 with 17.09.0.</dd>
           <dd>Add RHEL/CentOS 7.4; remove RHEL/CentOS 7.1.</dd>

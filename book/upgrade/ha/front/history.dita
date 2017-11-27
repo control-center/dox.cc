@@ -10,6 +10,10 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
+          <dt>1302.17.331 (1.4.2)</dt>
+          <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>
+        </dlentry>
+        <dlentry>
           <dt>1302.17.313 (1.4.2)</dt>
           <dd>Add chapters for updating 1.4.x deployments.</dd>
           <dd>Add step for updating RHEL/CentOS to 7.4, if necessary.</dd>
