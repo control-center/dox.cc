@@ -12,6 +12,8 @@
         the Docker images and RPM packages for previous releases are still available from Docker Hub
         and <ph conkeyref="names/company"/> repositories, respectively, and will be available in
         those locations for as long as <ph conkeyref="names/company"/> supports the releases.</p>
+      <p>Beginning 1 December 2017, downloads for <ph keyref="nm-rm"/> customers are available 
+        on <xref keyref="url-leapfile"/>.</p>
     </section>
   </refbody>
 </reference>
