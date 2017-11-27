@@ -15,7 +15,7 @@
       for <ph keyref="nm-cc"/>, and to download its package file, if necessary.</context>
     <steps>
       <step>
-        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile"/> site.</cmd>
+        <cmd>In a web browser, navigate to <xref keyref="url-leapfile"/>.</cmd>
       </step>
       
       <step>

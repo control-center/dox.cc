@@ -16,6 +16,11 @@
      <dl>
        <dlentry>
          <dt>1930.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+         <dd>Add a description of ZooKeeper.</dd>
+         <dd>Add example <cmdname>lsblk</cmdname> output from installed master and delegate hosts.</dd>
+       </dlentry>
+       <dlentry>
+         <dt>1930.17.311 (1.5.0)</dt>
          <dd>Remove RHEL/CentOS 7.1, add 7.4.</dd>
        </dlentry>
        <dlentry>

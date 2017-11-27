@@ -51,7 +51,10 @@
       <mapref href="book/plan/sw/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
-      <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
+      <keydef keys="cc-feature-zk-about"
+        href="feature/zk/about.dita"
+        format="dita"
+      />
     </topicgroup>
     
     <booklists>

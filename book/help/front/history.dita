@@ -10,7 +10,12 @@
        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
      <dl>
        <dlentry>
-         <dt>1940.<keyword keyref="lo-build-date"/></dt>
+         <dt>1940.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+         <dd>Add options to the DFS resize section
+           (<xref keyref="cc-feature-storage-thinpool-minimums"/>).</dd>
+       </dlentry>
+       <dlentry>
+         <dt>1940.17.311 (1.5.0)</dt>
          <dd>Add this document history section.</dd>
        </dlentry>
      </dl>

@@ -8,7 +8,7 @@
       <ul>
         <li>A workstation with internet access.</li>
         <li><b><ph keyref="nm-rm"/> users:</b> Permission to download files 
-          from the <xref keyref="url-leapfile"/> site. Customers can request
+          from <xref keyref="url-leapfile"/>. Customers can request
           permission by filing a ticket at <ph conkeyref="names/support-site"/>.</li>
         <li><b><ph keyref="nm-core"/> users:</b> An account on 
           the <xref keyref="url-zenoss-community"/> site.</li>
@@ -19,7 +19,7 @@
     <prereq id="download-prereq-ha">To perform this procedure, you need:
       <ul>
         <li>A workstation with internet access.</li>
-        <li>Permission to download files from the <xref keyref="url-leapfile"/> site. Customers can request
+        <li>Permission to download files from <xref keyref="url-leapfile"/>. Customers can request
           permission by filing a ticket at <ph conkeyref="names/support-site"/>.</li>
         <li>A secure network copy program.</li>
       </ul>
@@ -46,7 +46,7 @@
       
       <step id="navigate-log-in-ha">
         <cmd>In a web browser, navigate to the download site, and then log in.</cmd>
-        <info>The download site is <xref keyref="url-leapfile"/></info>
+        <info>The download site is <xref keyref="url-leapfile"/>.</info>
       </step>
       
       <step id="download-cc-images">

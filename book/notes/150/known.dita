@@ -37,7 +37,7 @@
           <row>
             <entry>CC-3764</entry>
             <entry>Actions performed in shells are not included in audit logs. See <xref
-                keyref="cc-notes-140-notes/CC-3764"/>.</entry>
+                keyref="cc-notes-150-notes/CC-3764"/>.</entry>
             <entry>Open</entry>
           </row>
         </tbody>
