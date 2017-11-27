@@ -16,6 +16,11 @@
       <dl>
         <dlentry>
           <dt>1920.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>
+          <dd>Add steps for importing the <ph conkeyref="names/company"/> GPG key.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1920.17.311 (1.5.0)</dt>
           <dd>Replace Docker CE 17.03.1 with 17.09.0.</dd>
           <dd>Replace RHEL/CentOS 7.1 with 7.4.</dd>
         </dlentry>
