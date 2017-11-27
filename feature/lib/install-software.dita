@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Installing Docker CE and <ph keyref="nm-cc"/></title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/> before performing this procedure.</prereq>
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro-install"/> before performing this procedure.</prereq>
     <context>Use this procedure to install Docker CE and <ph keyref="nm-cc"/> on a host.</context>
     <steps>
       <step>

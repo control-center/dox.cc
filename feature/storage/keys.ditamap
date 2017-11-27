@@ -15,6 +15,10 @@
             href="resize-tenant-vd.dita"
             format="dita"
     />
+    <keydef keys="cc-feature-storage-resize-tenant"
+            href="resize-tenant.dita"
+            format="dita"
+    />
     <keydef keys="cc-feature-storage-rollback"
             href="rollback.dita"
             format="dita"

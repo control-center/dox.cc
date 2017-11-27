@@ -6,7 +6,7 @@
     <section>
       <p>Use this chapter to upgrade <ph keyref="nm-cc"/> 1.2.x delegate hosts to <ph
         keyref="lo-version-cc"/>. Before performing the procedures in this chapter,
-        download required software. See <xref keyref="cc-feature-download-upgrade"/>.</p>
+        download required software. See <xref keyref="cc-feature-download-intro-upgrade"/>.</p>
     </section>
   </refbody>
 </reference>

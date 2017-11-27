@@ -29,7 +29,7 @@
           inadequate for some requirements or environments.</li>
         
         <li>Download and stage the required files for your upgrade. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-download-upgrade"/>.</li>
+          <xref keyref="cc-feature-download-intro-upgrade"/>.</li>
       </ol>
       
     </section>

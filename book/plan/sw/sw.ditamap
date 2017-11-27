@@ -6,6 +6,7 @@
     <topicref keyref="cc-plan-sw-cc"/>
     <topicref keyref="cc-plan-sw-cc-terms"/>
     <topicref keyref="cc-plan-sw-cc-docker"/>
+    <topicref keyref="cc-feature-zk-about"/>
     <topicref keyref="cc-plan-sw-data-storage"/>
   </chapter>
 </bookmap>

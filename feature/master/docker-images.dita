@@ -3,13 +3,11 @@
 <task id="taskid">
   <title>Loading image files</title>
   <taskbody>
-    <prereq>Perform the steps in <xref
-      keyref="cc-feature-download-install"/> before performing this procedure.</prereq>
     <context>Use this procedure to load images into the local Docker registry on a host.</context>
     <steps>
       
       <step>
-        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
       <step>
@@ -20,17 +18,14 @@
       </step>
       
       <step>
-        <cmd>Extract the images.</cmd>
+        <cmd>Load the images.</cmd>
         <stepxmp>
-          <codeblock>for image in install-*.run
+          <codeblock>for image in install-zenoss-*.run
 do
-echo -n "$image: "
-./$image
+  /bin/echo -en "\nLoading $image..."
+  yes | ./$image
 done</codeblock>
         </stepxmp>
-        <info>Image extraction begins when you press the <b>y</b> key. If you press the <b>y</b>
-          key and then <b>Return</b> key, the current image is extracted, but the next one is
-          not.</info>
       </step>
       
       <step>
@@ -44,7 +39,7 @@ done</codeblock>
       <step importance="optional">
         <cmd>Delete the archive files, if desired.</cmd>
         <stepxmp>
-          <codeblock>rm -i ./install-*.run</codeblock>
+          <codeblock>rm -i ./install-zenoss-*.run</codeblock>
         </stepxmp>
       </step>
       

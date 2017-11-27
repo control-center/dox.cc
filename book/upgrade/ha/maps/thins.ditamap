@@ -3,18 +3,21 @@
 <bookmap>
  <title>Thin pool resize</title>
   <appendix keyref="cc-feature-storage-thinpool-minimums">
-    <topicref keyref="cc-feature-storage-ha-thinpool-examine"/>
-    <topicref keyref="cc-feature-storage-resize-meta"/>
-    <topicref keyref="cc-upgrade-ha-resize-data">
-      <topicref keyref="cc-upgrade-ha-resize-identify"/>
-      <topicref keyref="cc-upgrade-ha-resize-stop"/>
-      <topicref keyref="cc-upgrade-ha-resize-partition"/>
-      <topicref keyref="cc-upgrade-ha-resize-start"/>
-      <topicref keyref="cc-upgrade-ha-resize-verify">
-        <topicref keyref="cc-upgrade-ha-resize-start-secondary"/>
-        <topicref keyref="cc-upgrade-ha-resize-start-primary"/>
+    <topicref keyref="cc-feature-storage-ha-thinpool-examine">
+      <topicref keyref="cc-feature-storage-resize-meta"/>
+      <topicref keyref="cc-upgrade-ha-resize-data">
+        <topicref keyref="cc-upgrade-ha-resize-identify"/>
+        <topicref keyref="cc-upgrade-ha-resize-stop"/>
+        <topicref keyref="cc-upgrade-ha-resize-partition"/>
+        <topicref keyref="cc-upgrade-ha-resize-start"/>
+        <topicref keyref="cc-upgrade-ha-resize-verify">
+          <topicref keyref="cc-upgrade-ha-resize-start-secondary"/>
+          <topicref keyref="cc-upgrade-ha-resize-start-primary"/>
+        </topicref>
       </topicref>
     </topicref>
-    <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+    <topicref keyref="cc-feature-storage-resize-tenant">
+      <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+    </topicref>
   </appendix>
 </bookmap>

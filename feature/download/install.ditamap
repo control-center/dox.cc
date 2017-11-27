@@ -2,10 +2,10 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Download</title>
-    <chapter keyref="cc-feature-download-upgrade">
-       <topicref keyref="cc-feature-download-download-upgrade"/>
-       <topicref keyref="cc-feature-download-stage-rpm-upgrade"/>
+    <appendix keyref="cc-feature-download-intro-install">
+       <topicref keyref="cc-feature-download-install"/>
+       <topicref keyref="cc-feature-download-stage-rpm"/>
        <topicref keyref="cc-feature-download-stage-run"/>
        <topicref keyref="cc-feature-download-stage-run-zk"/>
-   </chapter>
+   </appendix>
 </bookmap>

@@ -73,7 +73,7 @@
       <topicref keyref="cc-install-front-history"/>
     </topicref>
   </frontmatter>
-  <chapter href="feature/download/offline.ditamap" format="ditamap"/>
+  <chapter href="feature/download/install.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
   <chapter href="feature/config/master.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>

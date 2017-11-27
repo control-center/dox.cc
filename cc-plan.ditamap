@@ -50,6 +50,9 @@
       <mapref href="book/plan/storage/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/sw/keys.ditamap" format="ditamap"/>
     </topicgroup>
+    <topicgroup>
+      <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
+    </topicgroup>
     
     <booklists>
       <toc/>

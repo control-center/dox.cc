@@ -88,10 +88,10 @@
         <linktext>the Kibana JavaScript interface</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-leapfile " href="http://zenoss.leapfile.net/fts/drop/custom/portal/Login.jsp"
+    <keydef keys="url-leapfile " href="https://delivery.zenoss.com"
       format="html" scope="external">
       <topicmeta>
-        <linktext>File Portal - Download Zenoss Enterprise Software</linktext>
+        <linktext>delivery.zenoss.com</linktext>
       </topicmeta>
     </keydef>
     <keydef keys="url-logstash " href="http://logstash.net/" format="html" scope="external">
