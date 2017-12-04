@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-plan"/></mainbooktitle>
+    <mainbooktitle><ph product="cc" conkeyref="pubs/ph-plan"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1930.<keyword keyref="lo-build-date"/></bookpartno>  
+      <bookpartno product="cc">1930.<keyword keyref="lo-build-date"/></bookpartno>  
     </bookid>
     <bookrights>
       <copyrfirst>
