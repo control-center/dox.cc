@@ -15,6 +15,10 @@
             href="known.dita"
             format="dita"
     />
+    <keydef keys="cc-notes-150-notes-4018"
+            href="notes-4018.dita"
+            format="dita"
+    />
     <keydef keys="cc-notes-150-notes"
             href="notes.dita"
             format="dita"

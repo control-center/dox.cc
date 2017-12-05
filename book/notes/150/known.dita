@@ -40,6 +40,11 @@
                 keyref="cc-notes-150-notes/CC-3764"/>.</entry>
             <entry>Open</entry>
           </row>
+          <row>
+            <entry>CC-4018</entry>
+            <entry>Upgrades may encounter an LVM error. See <xref keyref="cc-notes-150-notes-4018"/>.</entry>
+            <entry>Open</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
