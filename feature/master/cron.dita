@@ -38,7 +38,10 @@
             is not installed or is offline, the command fails. You can change the day of the week and 
             time of day when the maintenance script is invoked by editing
             <filepath>/etc/cron.d/cron_zenossdbpack</filepath>.</dd>
-          <dd>This script is required on the master host only.</dd>
+          <dd>This script is required on one host in the resource pool in which the 
+            <ph conkeyref="names/company"/> database services run. 
+            <ph conkeyref="strings/fmi-ext"/> configuration guide for your 
+            <ph conkeyref="names/company"/> application.</dd>
         </dlentry>
       </dl>
     </section>
