@@ -17,6 +17,7 @@
         <dlentry>
           <dt>1920.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
           <dd>Specify Docker version in <cmdname>yum install</cmdname> command.</dd>
+          <dd>Reinstate steps to disable firewall.</dd>
         </dlentry>
         <dlentry>
           <dt>1920.17.331 (1.5.0)</dt>
