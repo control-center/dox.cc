@@ -11,6 +11,10 @@
       <dl>
         <dlentry>
           <dt>1902.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dd>Specify Docker version in <cmdname>yum install</cmdname> command.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1902.17.331 (1.5.0)</dt>
           <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>
           <dd>Add steps for importing the <ph conkeyref="names/company"/> GPG key.</dd>
           <dd>Add options to the DFS resize section
