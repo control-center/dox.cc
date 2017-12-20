@@ -29,7 +29,10 @@
         </dlentry>
         <dlentry>
           <dt><filepath>/etc/cron.d/cron_zenossdbpack</filepath></dt>
-          <dd>This script should be removed from delegate hosts.</dd>
+          <dd>This script is required on one host in the resource pool in which the 
+            <ph conkeyref="names/company"/> database services run. 
+            <ph conkeyref="strings/fmi-ext"/> configuration guide for your 
+            <ph conkeyref="names/company"/> application.</dd>
         </dlentry>
       </dl>
     </section>
