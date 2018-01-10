@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-upgrade"/></mainbooktitle>
+    <mainbooktitle><ph product="cc" conkeyref="pubs/ph-upgrade"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1300.<keyword keyref="lo-build-date"/></bookpartno>
+      <bookpartno product="cc">1900.<keyword keyref="lo-build-date"/></bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -81,7 +81,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
-  <chapter href="feature/offline/offline-upgrade.ditamap" format="ditamap"/>
+  <chapter href="feature/download/upgrade.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>

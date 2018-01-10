@@ -3,6 +3,14 @@
 <map>
  <title>CC images</title>
    <topicgroup>
+    <keydef keys="svg-disks-delegate"
+            href="disks-delegate.svg"
+            format="svg"
+    />
+    <keydef keys="svg-disks-master"
+            href="disks-master.svg"
+            format="svg"
+    />
     <keydef keys="png-menubar"
             href="menubar.png"
             format="png"

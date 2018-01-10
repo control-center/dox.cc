@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-install"/></mainbooktitle>
+    <mainbooktitle><ph product="cc" conkeyref="pubs/ph-install"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1320.<keyword keyref="lo-build-date"/></bookpartno>
+      <bookpartno product="cc">1920.<keyword keyref="lo-build-date"/></bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -73,7 +73,7 @@
       <topicref keyref="cc-install-front-history"/>
     </topicref>
   </frontmatter>
-  <chapter href="feature/download/offline.ditamap" format="ditamap"/>
+  <chapter href="feature/download/install.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
   <chapter href="feature/config/master.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>

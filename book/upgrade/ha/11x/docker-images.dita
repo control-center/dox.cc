@@ -18,19 +18,14 @@
       </step>
       
       <step>
-        <cmd>Extract the internal services image.</cmd>
+        <cmd>Load the images.</cmd>
         <stepxmp>
-          <codeblock>./install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeblock>
+          <codeblock>for image in install-zenoss-*.run
+do
+  /bin/echo -en "\nLoading $image..."
+  yes | ./$image
+done</codeblock>
         </stepxmp>
-        <info>At the prompt, press <b>y</b>.</info>
-      </step>
-      
-      <step>
-        <cmd>Extract the ZooKeeper image.</cmd>
-        <stepxmp>
-          <codeblock>./install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeblock>
-        </stepxmp>
-        <info>At the prompt, press <b>y</b>.</info>
       </step>
       
       <step>
@@ -44,7 +39,7 @@
       <step importance="optional">
         <cmd>Delete the archive files, if desired.</cmd>
         <stepxmp>
-          <codeblock>rm -i ./install-*.run</codeblock>
+          <codeblock>rm -i ./install-zenoss-*.run</codeblock>
         </stepxmp>
       </step>
       

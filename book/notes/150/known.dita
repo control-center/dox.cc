@@ -18,9 +18,31 @@
         </thead>
         <tbody>
           <row>
+            <entry>CC-2330</entry>
+            <entry>Services in IP Assignments retain "unknown" host status after deleting assigned
+              host.</entry>
+            <entry>Open</entry>
+          </row>
+          <row>
+            <entry>CC-2860</entry>
+            <entry>Using special characters on the application details form opens window. </entry>
+            <entry>Open</entry>
+          </row>
+          <row>
+            <entry>CC-3092</entry>
+            <entry>Restoring a version 1.1.x backup onto a version 1.2.x system leaves pools without
+              permissions.</entry>
+            <entry>Open</entry>
+          </row>
+          <row>
             <entry>CC-3764</entry>
             <entry>Actions performed in shells are not included in audit logs. See <xref
-                keyref="cc-notes-140-notes/CC-3764"/>.</entry>
+                keyref="cc-notes-150-notes/CC-3764"/>.</entry>
+            <entry>Open</entry>
+          </row>
+          <row>
+            <entry>CC-4018</entry>
+            <entry>Upgrades may encounter an LVM error. See <xref keyref="cc-notes-150-notes-4018"/>.</entry>
             <entry>Open</entry>
           </row>
         </tbody>

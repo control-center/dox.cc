@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle><ph conkeyref="pubs/ph-upgrade-ha"/></mainbooktitle>
+    <mainbooktitle><ph product="cc" conkeyref="pubs/ph-upgrade-ha"/></mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno>1302.<keyword keyref="lo-build-date"/></bookpartno>
+      <bookpartno product="cc">1902.<keyword keyref="lo-build-date"/></bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -60,7 +60,6 @@
       <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/maps/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/ha/download/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/paths/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/resize/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/topics/keys.ditamap" format="ditamap"/>
@@ -79,7 +78,6 @@
       <mapref href="feature/storage/ha/keys.ditamap" format="ditamap"/>
       <mapref href="feature/master/keys.ditamap" format="ditamap"/>
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
-      <mapref href="feature/offline/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <booklists>
@@ -95,7 +93,7 @@
   </frontmatter>
   
   <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
-  <chapter href="book/upgrade/ha/download/upgrade.ditamap" format="ditamap"/>
+  <chapter href="feature/download/upgrade-ha.ditamap" format="ditamap"/>
   
   <part>
     <topicmeta>
@@ -154,7 +152,7 @@
     <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/maps/pcs.ditamap" format="ditamap"/>
-    <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
+    <!-- <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/> -->
     <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
   </appendices>
   

@@ -3,7 +3,7 @@
 <task id="taskid">
   <title>Preparing a delegate host</title>
   <taskbody>
-    <prereq>Perform the steps in <xref keyref="cc-feature-download-install"/>,
+    <prereq>Perform the steps in <xref keyref="cc-feature-download-intro-install"/>,
       before performing this procedure.</prereq>
 
     <context>Use this procedure to prepare a RHEL/CentOS
@@ -12,6 +12,10 @@
       <step>
         <cmd>Log in to the candidate delegate host
           <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-lib-tasks/firewall">
+        <cmd></cmd>
       </step>
 
       <step conkeyref="cc-feature-lib-tasks/journal">

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading <ph keyref="nm-cc"/> files</title>
+  <taskbody>
+    <prereq conkeyref="cc-feature-download-lib/download-prereq-ha"/>
+    <context conkeyref="cc-feature-download-lib/download-context"/>
+    <steps>
+      <step conkeyref="cc-feature-download-lib/navigate-log-in-ha">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/download-cc-images">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/download-cc-rpm">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/identify-os-release">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/download-mirror-rpm">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/download-ra-rpm">
+        <cmd></cmd>
+      </step>
+      
+      <step conkeyref="cc-feature-download-lib/download-zenoss-key">
+        <cmd></cmd>
+      </step>
+
+      <step>
+        <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> hosts.</cmd>
+        <info>
+          <ul>
+            <li>Copy all files to both master nodes.</li>
+            <li>Copy the RHEL/CentOS RPM file, the <ph keyref="nm-cc"/> RPM file, and the <ph
+                conkeyref="names/company"/> GPG key file to all delegate hosts.</li>
+            <li>Copy the Docker image file for ZooKeeper to delegate hosts that are ZooKeeper
+              ensemble nodes.</li>
+          </ul>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

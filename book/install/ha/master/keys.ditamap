@@ -59,10 +59,6 @@
             href="registry.dita"
             format="dita"
     />
-    <keydef keys="cc-install-ha-master-stage"
-            href="stage.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-master-storage-backups"
             href="storage-backups.dita"
             format="dita"

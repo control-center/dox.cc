@@ -37,10 +37,6 @@
             <entry>RabbitMQ multiline logs are split into several log messages.</entry>
           </row>
           <row>
-            <entry>CC-3728</entry>
-            <entry>Tenant container ports are exposed via host interfaces.</entry>
-          </row>
-          <row>
             <entry>CC-3741</entry>
             <entry>Using <cmdname>crontab.weekly</cmdname> too imprecise for
               <filepath>zenossDBpack</filepath>.</entry>

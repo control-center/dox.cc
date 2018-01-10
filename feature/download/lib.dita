@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>DO NOT INCLUDE THIS TOPIC WHOLESALE</title>
+  <taskbody>
+    
+    <prereq id="download-prereq">To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li><b><ph keyref="nm-rm"/> users:</b> Permission to download files 
+          from <xref keyref="url-leapfile"/>. Customers can request
+          permission by filing a ticket at <ph conkeyref="names/support-site"/>.</li>
+        <li><b><ph keyref="nm-core"/> users:</b> An account on 
+          the <xref keyref="url-zenoss-community"/> site.</li>
+        <li>A secure network copy program.</li>
+      </ul>
+    </prereq>
+    
+    <prereq id="download-prereq-ha">To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>Permission to download files from <xref keyref="url-leapfile"/>. Customers can request
+          permission by filing a ticket at <ph conkeyref="names/support-site"/>.</li>
+        <li>A secure network copy program.</li>
+      </ul>
+    </prereq>
+    
+    <context id="download-context">Use this procedure to
+      <ul>
+        <li>download the required files to a workstation</li>
+        <li>copy the files to the hosts that need them</li>
+      </ul>
+      <p>Perform these steps:</p>
+    </context>
+    
+    <steps>
+      <step id="navigate-log-in">
+        <cmd>In a web browser, navigate to the download site, and then log in.</cmd>
+        <info>
+          <sl>
+            <sli><b><ph keyref="nm-rm"/> users:</b> <xref keyref="url-leapfile"/></sli>
+            <sli><b><ph keyref="nm-core"/> users:</b> <xref keyref="url-zenoss-community"/></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step id="navigate-log-in-ha">
+        <cmd>In a web browser, navigate to the download site, and then log in.</cmd>
+        <info>The download site is <xref keyref="url-leapfile"/>.</info>
+      </step>
+      
+      <step id="download-cc-images">
+        <cmd>Download the self-installing Docker image files.</cmd>
+        <info>
+          <sl>
+            <sli><codeph>install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeph></sli>
+            <sli><codeph>install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step id="download-cc-rpm">
+        <cmd>Download the <ph keyref="nm-cc"/> RPM file.</cmd>
+        <info>
+          <sl>
+            <sli><codeph>serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step id="identify-os-release">
+        <cmd>Identify the operating system release on <ph keyref="nm-cc"/> hosts.</cmd>
+        <info>Enter the following command on each <ph keyref="nm-cc"/> host in your
+          deployment, if necessary. All <ph keyref="nm-cc"/> hosts should be running 
+          the same operating system release and kernel.</info>
+        <stepxmp>
+          <codeblock>cat /etc/redhat-release</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="download-mirror-rpm">
+        <cmd>Download the RHEL/CentOS repository mirror file for your deployment.</cmd>
+        <info>The download site provides a repository mirror file for each tested release of
+          RHEL/CentOS. Each mirror file contains the release-specific packages that <ph keyref="nm-cc"/> requires.</info>
+        <info>
+          <sl>
+            <sli><codeph>yum-mirror-centos7.2-1511-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.3-1611-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.4-1708-serviced-<ph keyref="lo-version-cc"/>.x86_64.rpm</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step id="download-ra-rpm">
+        <cmd>Download the Pacemaker resource agents for <ph keyref="nm-cc"/>.</cmd>
+        <info>
+          <sl>
+            <sli><codeph>serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step id="download-zenoss-key" importance="optional">
+        <cmd>Download the <ph conkeyref="names/company"/> GNU Privacy Guard (GPG) key, if desired.</cmd>
+        <info>You can use the <ph conkeyref="names/company"/> GPG key to verify <ph conkeyref="names/company"/>
+          RPM files and the <cmdname>yum</cmdname> metadata of the repository mirror.</info>
+        <substeps>
+          <substep>
+            <cmd>Download the key.</cmd>
+            <stepxmp>
+              <codeblock>curl --location -o /tmp/tmp.html \
+'http://keys.gnupg.net/pks/lookup?op=get&#38;search=0xED0A5FD2AA5A1AD7'</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Determine whether the download succeeded.</cmd>
+            <stepxmp>
+              <codeblock>grep -Ec '^\-\-\-\-\-BEGIN PGP' /tmp/tmp.html</codeblock>
+            </stepxmp>
+            <stepresult>
+              <ul>
+                <li>If the result is <codeph>0</codeph>, return to the previous substep.</li>
+                <li>If the result is <codeph>1</codeph>, proceed to the next substep.</li>
+              </ul>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Extract the key.</cmd>
+            <stepxmp>
+              <codeblock>awk '/^-----BEGIN PGP.*$/,/^-----END PGP.*$/' \
+  /tmp/tmp.html > ./RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <!-- the remainin steps are for installing the mirror -->
+      <step id="install-mirror">
+        <cmd>Install the repository mirror.</cmd>
+        <stepxmp>
+          <codeblock>yum install /tmp/yum-mirror-*.rpm</codeblock>
+        </stepxmp>
+        <stepresult>The <cmdname>yum</cmdname> command copies the contents 
+          of the RPM file to <filepath>/opt/zenoss-repo-mirror</filepath>.</stepresult>
+      </step>
+      
+      
+      <step id="install-gpg-key" importance="optional">
+        <cmd>Install the <ph conkeyref="names/company"/> GPG key, and then test the package files,
+          if desired.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Move the <ph conkeyref="names/company"/>
+              GPG key to the mirror directory.</cmd>
+            <stepxmp>
+              <codeblock>mv /tmp/RPM-GPG-KEY-Zenoss /opt/zenoss-repo-mirror</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the key.</cmd>
+            <stepxmp>
+              <codeblock>rpm --import /opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Test the repository mirror package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/yum-mirror-*.rpm</codeblock>
+            </stepxmp>
+            <stepresult>On success, the result includes the file name and the following information:
+              <codeblock>(sha1) dsa sha1 md5 gpg OK</codeblock>
+            </stepresult>
+          </substep>
+          <substep>
+            <cmd>Test the <ph keyref="nm-cc"/> package file.</cmd>
+            <stepxmp>
+              <codeblock>rpm -K /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="update-repo-config" importance="optional">
+        <cmd>Update the configuration file of the <ph conkeyref="names/company"/> 
+          repository mirror to enable GPG key verification, if desired.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Open the repository mirror configuration file
+              (<filepath>/etc/yum.repos.d/zenoss-mirror.repo</filepath>)
+            with a text editor, and then add the following lines
+            to the end of the file.</cmd>
+            <stepxmp>
+              <codeblock>repo_gpgcheck=1
+gpgkey=file:///opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss</codeblock>
+            </stepxmp>
+          </substep>
+          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+          <substep>
+            <cmd>Update the <cmdname>yum</cmdname> metadata cache.</cmd>
+            <stepxmp>
+              <codeblock>yum makecache fast</codeblock>
+            </stepxmp>
+            <stepresult>The cache update process includes the following prompt: 
+              <codeblock>Retrieving key from file:///opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss
+Importing GPG key 0xAA5A1AD7:
+ Userid     : "Zenoss, Inc. &#60;dev@zenoss.com>"
+ Fingerprint: f31f fd84 6a23 b3d5 981d a728 ed0a 5fd2 aa5a 1ad7
+ From       : /opt/zenoss-repo-mirror/RPM-GPG-KEY-Zenoss
+Is this ok [y/N]:</codeblock>
+              <p>Enter <userinput>y</userinput>.</p>
+            </stepresult>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step id="move-cc-rpm">
+        <cmd>Move the <ph keyref="nm-cc"/> package file to the mirror directory.</cmd>
+        <stepxmp>
+          <codeblock>mv /tmp/serviced-<ph keyref="lo-version-cc"/>-1.x86_64.rpm /opt/zenoss-repo-mirror</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step id="delete-mirror-rpm" importance="optional">
+        <cmd>Delete the mirror package file, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm /tmp/yum-mirror-*.rpm</codeblock>
+        </stepxmp>
+      </step>
+      
+    </steps>
+  </taskbody>
+</task>

@@ -100,6 +100,11 @@
             mounting the resource.</dd>
         </dlentry>        
       </dl>
+      <p>The following example shows the disk configuration of a <ph keyref="nm-cc"/> master host.</p>
+      <fig>
+        <title>Example master host with 7 disks</title>
+        <image keyref="svg-disks-master" scale="40"/>
+      </fig>
     </section>
   </refbody>
 </reference>

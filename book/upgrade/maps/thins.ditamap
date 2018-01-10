@@ -3,9 +3,12 @@
 <bookmap>
  <title>Thin pool resize</title>
   <appendix keyref="cc-feature-storage-thinpool-minimums">
-    <topicref keyref="cc-feature-storage-thinpool-examine"/>
-    <topicref keyref="cc-feature-storage-resize-meta"/>
-    <topicref keyref="cc-feature-storage-resize-data"/>
-    <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+    <topicref keyref="cc-feature-storage-thinpool-examine">
+      <topicref keyref="cc-feature-storage-resize-meta"/>
+      <topicref keyref="cc-feature-storage-resize-data"/>
+    </topicref>
+    <topicref keyref="cc-feature-storage-resize-tenant">
+      <topicref keyref="cc-feature-storage-resize-tenant-vd"/>
+    </topicref>
   </appendix>
 </bookmap>

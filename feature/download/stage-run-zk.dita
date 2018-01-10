@@ -7,10 +7,9 @@
     <prereq>Before performing this procedure, verify that approximately 170MB of temporary space is
       available on the file system where <filepath>/root</filepath> is located.</prereq>
     
-    <context>Use this procedure to add a Docker image file to the <ph keyref="nm-cc"/> delegate hosts
-      that are ZooKeeper ensemble nodes. Delegate hosts that are not ZooKeeper ensemble nodes
-      do not need the file. The files are used when the ZooKeeper ensemble is
-      configured.</context>
+    <context>Use this procedure to add a Docker image file to the <ph keyref="nm-cc"/> delegate
+      hosts that are ZooKeeper ensemble nodes. Delegate hosts that are not ZooKeeper ensemble nodes
+      do not need the file. </context>
     
     
     <steps>

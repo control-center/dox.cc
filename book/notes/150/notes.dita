@@ -10,6 +10,13 @@
         locking defect might exist in NFS 4.1 with RHEL/CentOS 7.4. For more information, refer to topic
         "Configuring NFS 4.0" in the <ph keyref="nm-cc"/> installation guide or upgrade guide.</p>
     </section>
+    
+    <section id="CC-3764">
+      <title>Actions performed in shells are not included in audit logs (CC-3764)</title>
+      <p>When you invoke <codeph>serviced service shell</codeph> to run a script
+        in an application container, actions the script performs that should be 
+        included in audit logs are not included. The workaround is to use 
+        <codeph>serviced service attach</codeph>.</p>
+    </section>
   </refbody>
-  
 </reference>

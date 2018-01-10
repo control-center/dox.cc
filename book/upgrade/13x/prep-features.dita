@@ -21,7 +21,7 @@
           <ph conkeyref="names/company"/> manually. The required software and images
           are no longer available from the online <ph conkeyref="names/company"/> 
           repository or Docker Hub. <ph conkeyref="strings/fmi-int"/>
-          <xref keyref="cc-feature-download-upgrade"/>. 
+          <xref keyref="cc-feature-download-intro-upgrade"/>. 
           <p>The packages to download include a <codeph>yum</codeph> repository mirror that
             contains the required dependencies of Docker CE and <ph keyref="nm-cc"/>. An 
             operating system or kernel upgrade can install newer versions of the dependencies

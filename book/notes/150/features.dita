@@ -4,17 +4,10 @@
   <title>New features</title>
   <refbody>
     <section>This version of <ph keyref="nm-cc"/> provides the following enhancements:<ul>
-        <li><!--CC3528-->You can now search for log messages in Kibana by the path of the log file and the
-          type.</li>
+        <li>You can now search for log messages in Kibana by the path of the log file and the type.</li>
         <li><ph conkeyref="names/company"/> offline yum mirrors are now GPG signed with the <ph
             conkeyref="names/company"/> key. For information about enabling verification of the offline
           mirror, refer to the <cite conkeyref="pubs/cite-install"/>.</li>
       </ul></section>
-    <section>
-      <title/>
-      <p><draft-comment>what are new features? </draft-comment>possibly: </p>
-      <p>CC-3928 GPG signed yum mirrors</p>
-      <p>CC-3499 audit log messages to flat file</p>
-    </section>
   </refbody>
 </reference>

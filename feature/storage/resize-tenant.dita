@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>About adding space to a tenant volume</title>
+  <refbody>
+    <section>
+      <p>The LVM thin pool for application data can be used to store multiple tenant volumes and
+        multiple snapshots of tenant data. 
+        <ul>
+          <li>If you added space to the thin pool to create a new tenant volume, see
+            <xref keyref="cc-feature-cli-serviced-storage"/>.</li>
+          <li>If you added space to the thin pool to provide 
+            additional storage for snapshots, then the tenant volume does not need to be resized.</li>
+          <li>If you added space to the thin pool because the tenant devices were oversubscribed,
+            then the tenant volume does not need to be resized. A tenant volume is oversubscribed
+          when its size at creation exceeded the amount of space available in the thin pool.</li>
+        </ul>
+      </p>
+    </section>
+  </refbody>
+</reference>

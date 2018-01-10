@@ -27,10 +27,6 @@
             href="docker-config.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-11x-docker-images"
-            href="docker-images.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-11x-docker-install"
             href="docker-install.dita"
             format="dita"

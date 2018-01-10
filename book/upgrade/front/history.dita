@@ -8,14 +8,20 @@
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
-      
-      <!-- Use the lo-build-date variable through finals. Then, replace it with
-           the published build number and use the variable only in the version
-           in development. 
-        -->
       <dl>
         <dlentry>
-          <dt>1300.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dt>1900.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dd>Specify Docker version in <cmdname>yum install</cmdname> command.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1900.17.331 (1.5.0)</dt>
+          <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>
+          <dd>Add steps for importing the <ph conkeyref="names/company"/> GPG key.</dd>
+          <dd>Add options to the DFS resize section
+            (<xref keyref="cc-feature-storage-thinpool-minimums"/>).</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1900.17.311 (1.5.0)</dt>
           <dd>Add chapters for updating 1.4.x deployments.</dd>
           <dd>Add step for updating RHEL/CentOS to 7.4, if necessary.</dd>
           <dd>Add steps for a delegate host workaround of an NFS issue on RHEL/CentOS 7.4.</dd>
