@@ -8,14 +8,14 @@
         changes to this guide since the previous release. Some of the changes 
         involve features or content, but others do not. For information about 
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
-      
-      <!-- Use the lo-build-date variable through finals. Then, replace it with
-           the published build number and use the variable only in the version
-           in development. 
-        -->
       <dl>
         <dlentry>
           <dt>1922.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dd>Specify Docker version in <cmdname>yum install</cmdname> command.</dd>
+          <dd>Reinstate steps to disable firewall.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1922.17.331 (1.5.0)</dt>
           <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>
           <dd>Add steps for importing the <ph conkeyref="names/company"/> GPG key.</dd>
         </dlentry>
