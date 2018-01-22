@@ -4,7 +4,7 @@
    <title>Download</title>
     <appendix keyref="cc-feature-download-intro-upgrade">
        <topicref keyref="cc-feature-download-upgrade"/>
-        <topicref keyref="cc-feature-download-stage-rpm"/>
+        <topicref keyref="cc-feature-download-stage-rpm-upgrade"/>
        <topicref keyref="cc-feature-download-stage-run"/>
        <topicref keyref="cc-feature-download-stage-run-zk"/>
    </appendix>
