@@ -47,7 +47,6 @@
       <mapref href="book/plan/hw/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/misc/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/os/keys.ditamap" format="ditamap"/>
-      <mapref href="book/plan/storage/keys.ditamap" format="ditamap"/>
       <mapref href="book/plan/sw/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
@@ -74,6 +73,4 @@
   <chapter href="book/plan/os/os.ditamap" format="ditamap"/>
   <chapter href="book/plan/misc/misc.ditamap" format="ditamap"/>
  
-  <appendix href="book/plan/storage/storage.ditamap" format="ditamap"/>
-  
 </bookmap>

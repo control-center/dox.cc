@@ -19,7 +19,7 @@
             <stepxmp>
               <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
               <p>For more information about the output of the <cmdname>lsblk</cmdname> command,
-                see <xref keyref="cc-plan-storage-discover"/>.</p>
+                see <xref keyref="cc-feature-linux-storage-discover"/>.</p>
             </stepxmp>
           </substep>
           <substep>
