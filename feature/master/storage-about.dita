@@ -27,11 +27,11 @@
         same device.</note>
       </li>
     </ul>
-    <p>For storage sizing information, refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+    <p>For storage sizing information, refer to the <ph conkeyref="pubs/ph-plan"/>.</p>
     
     <p>For LVM thin pools, no formatting is required&#8212;simply create primary
       partitions, which are configured in subsequent procedures. For more information, 
-      refer to the <cite conkeyref="pubs/cite-plan"/>.</p>
+      refer to the <ph conkeyref="pubs/ph-plan"/>.</p>
     
     <p>To create the required storage, perform the following procedures.</p>   
     

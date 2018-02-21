@@ -178,7 +178,7 @@
           <substep>
             <cmd>Compare the available resources with the 
               requirements for a <ph keyref="nm-cc"/> master host.</cmd>
-            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+            <info>For more information, refer to the <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
       </step>
@@ -209,7 +209,7 @@
             <cmd>Compare the available storage with the 
               amount required for a delegate host 
               in your deployment.</cmd>
-            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+            <info>For more information, refer to the <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
       </step>
@@ -278,7 +278,7 @@
             <cmd>Compare the available memory and swap space with the 
               amount required for a master host in your deployment.</cmd>
             <info><ph conkeyref="strings/fmi-ext"/>
-              <cite conkeyref="pubs/cite-plan"/>.</info>
+              <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
         <stepresult>If the result does not meet minimum requirements,
@@ -298,7 +298,7 @@
             <cmd>Compare the available memory with the amount required for a delegate host in your
               deployment.</cmd>
             <info><ph conkeyref="strings/fmi-ext"/>
-              <cite conkeyref="pubs/cite-plan"/>.</info>
+              <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
         <stepresult>If the result does not meet minimum requirements,
@@ -331,7 +331,7 @@
       <step id="firewall">
         <cmd>Disable the firewall, if necessary.</cmd>
         <info>This step is required for installation but not for deployment. For more information,
-          refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          refer to the <ph conkeyref="pubs/ph-plan"/>.</info>
         <substeps>
           <substep>
             <cmd>Determine whether the <cmdname>firewalld</cmdname> service is enabled.</cmd>

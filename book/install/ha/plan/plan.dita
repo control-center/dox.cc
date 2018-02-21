@@ -7,7 +7,7 @@
       <p>This chapter provides information about planning a high-availability
         deployment of <ph keyref="nm-cc"/>, and about preparing to create a
         high-availability deployment. Before proceeding, please read the
-        <cite conkeyref="pubs/cite-plan"/>.</p>
+        <cite conkeyref="pubs/cite-rm-plan"/>.</p>
 
       <p>For optimal results, review the contents of this guide 
         thoroughly before performing an installation.</p>

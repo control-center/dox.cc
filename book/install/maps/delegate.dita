@@ -8,7 +8,7 @@
       CPU, RAM, and storage resources required to serve as a <ph keyref="nm-cc"/> delegate host.</p>
     
     <p>For more information about delegate host requirements, 
-      refer to the <cite conkeyref="pubs/cite-plan"/>. </p>
+      refer to the <ph conkeyref="pubs/ph-plan"/>. </p>
 
     <note>If you are installing a single-host deployment, skip this chapter.</note>
 
