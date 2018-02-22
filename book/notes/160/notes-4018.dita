@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Editing the master host LVM configuration file (CC-4018)</title>
+  <taskbody>
+    <context>The default configuration of LVM is to display sizes as human-readable values.
+    When the master host is updated, a script in the RPM package checks the size of the
+    thin pool for application data, and the value returned by the <cmdname>lvs</cmdname>
+    command may cause a type error. If the error occurs, perform the following
+    steps.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the master host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Open <filepath>/etc/lvm/lvm.conf</filepath> with a text editor.</cmd>
+      </step>
+      <step>
+        <cmd>Locate the <codeph>global/units</codeph> configuration option.</cmd>
+      </step>
+      <step>
+        <cmd>Change the <codeph>units</codeph> declaration to match the following example.</cmd>
+        <stepxmp>
+          <codeblock>units = "h"</codeblock>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Save the file, and then close the text editor.</cmd>
+      </step>
+      <step>
+        <cmd>Repeat the <cmdname>yum install</cmdname> command.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

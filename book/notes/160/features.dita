@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>New features</title>
+  <refbody>
+    <section>
+      <p>This version of <ph keyref="nm-cc"/> provides the following enhancements:
+        <ul>
+          <li>A new feature, <codeph>RAMThreshold</codeph>, is added to service 
+            management. When a service reaches 90% of its <codeph>RAMCommitment</codeph> value,
+            it is restarted. This feature is designed to prevent Zope instances
+          from consuming all of the available memory.</li>
+      </ul>
+      </p>
+    </section>
+  </refbody>
+</reference>
