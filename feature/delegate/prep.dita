@@ -35,29 +35,28 @@
         </info>
         <substeps>
           <substep>
-            <cmd>Install the package.</cmd>
+            <cmd>Stop and disable <cmdname>chronyd</cmdname>, if present.</cmd>
             <stepxmp>
-              <codeblock>yum install ntp</codeblock>
+              <codeblock>test "$(systemctl is-active chronyd)" = "active" \
+                &#38;&#38; systemctl stop chronyd &#38;&#38; systemctl disable chronyd</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Install the NTP package.</cmd>
+            <stepxmp>
+              <codeblock>yum makecache fast &#38;&#38; yum install ntp</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Set the system time.</cmd>
-            <stepxmp><codeblock>ntpd -gq</codeblock></stepxmp>
-          </substep>
-          <substep>
-            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
             <stepxmp>
-              <codeblock>systemctl enable ntpd</codeblock>
+              <codeblock>ntpd -gq</codeblock>
             </stepxmp>
           </substep>
           <substep>
-            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
-            <info>Currently, an unresolved issue associated with NTP
-              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot. 
-              The following commands provide a workaround to ensure that it does. </info>
+            <cmd>Enable and start the <cmdname>ntpd</cmdname> service.</cmd>
             <stepxmp>
-              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
-chmod +x /etc/rc.d/rc.local</codeblock>
+              <codeblock>systemctl enable ntpd &#38;&#38; systemctl start ntpd</codeblock>
             </stepxmp>
           </substep>
         </substeps>
