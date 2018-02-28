@@ -20,6 +20,10 @@
             <entry>Multiline log parsing does not work.</entry>
           </row>
           <row>
+            <entry>CC-3278</entry>
+            <entry><ph keyref="nm-rm"/> or <ph keyref="nm-core"/> container ports are mapped to host interfaces on random ports.</entry>
+          </row>
+          <row>
             <entry>CC-3597</entry>
             <entry>Unable to reinstall Service Impact if it was previously uninstalled.</entry>
           </row>
