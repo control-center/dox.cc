@@ -17,6 +17,14 @@
         <cmd>Log in to the master host node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
+      <substep>
+        <cmd>Stop and disable <cmdname>chronyd</cmdname>, if present.</cmd>
+        <stepxmp>
+          <codeblock>test "$(systemctl is-active chronyd)" = "active" \
+  &#38;&#38; systemctl stop chronyd &#38;&#38; systemctl disable chronyd</codeblock>
+        </stepxmp>
+      </substep>
+      
       <step>
         <cmd>Install the NTP package.</cmd>
         <stepxmp>
@@ -78,31 +86,12 @@ restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
         </substeps>
       </step>
 
-      <step>
-        <cmd>Enable and start the NTP daemon.</cmd>
-        <substeps>
-          <substep>
-            <cmd>Enable the <cmdname>ntpd</cmdname> daemon.</cmd>
-            <stepxmp>
-              <codeblock>systemctl enable ntpd</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Configure <cmdname>ntpd</cmdname> to start when the system starts.</cmd>
-            <info>Currently, an unresolved issue associated with NTP
-              prevents <cmdname>ntpd</cmdname> from restarting correctly after a reboot, 
-              and the following commands provide a workaround to ensure that it does. </info>
-            <stepxmp>
-              <codeblock>echo "systemctl start ntpd" >> /etc/rc.d/rc.local
-chmod +x /etc/rc.d/rc.local</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Start <cmdname>ntpd</cmdname>.</cmd>
-            <stepxmp><codeblock>systemctl start ntpd</codeblock></stepxmp>
-          </substep>
-        </substeps>
-      </step>
+      <substep>
+        <cmd>Enable and start the <cmdname>ntpd</cmdname> service.</cmd>
+        <stepxmp>
+          <codeblock>systemctl enable ntpd &#38;&#38; systemctl start ntpd</codeblock>
+        </stepxmp>
+      </substep>
     </steps>
   </taskbody>
 </task>
