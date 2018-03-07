@@ -17,8 +17,9 @@
         </thead>
         <tbody>
           <row>
-            <entry>CC-????</entry>
-            <entry></entry>
+            <entry>CC-4039</entry>
+            <entry><cmdname>rpcbind</cmdname> fails to start when IPv6 is disabled. 
+            <ph conkeyref="strings/fmi-int"/> </entry>
             <entry>Open</entry>
           </row>
         </tbody>
