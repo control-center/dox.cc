@@ -6,10 +6,14 @@
     <section>
       <p>This version of <ph keyref="nm-cc"/> provides the following enhancements:
         <ul>
-          <li>A new feature, <codeph>RAMThreshold</codeph>, is added to service 
-            management. When a service reaches 90% of its <codeph>RAMCommitment</codeph> value,
-            it is restarted. This feature is designed to prevent Zope instances
-          from consuming all of the available memory.</li>
+          <li>A new feature is available for managing application services. You can define a
+            threshold of RAM that will trigger a restart of all instances of a service, one at a
+            time. For example, if a service is configured to use 400mB of RAM and its
+            restart threshold is 90%, each instance of that service will be restarted when the
+            service consumes 360mB. This feature is available for any service and it designed
+            to prevent Zope instances from consuming all of the available memory. However,
+          you must configure the Zope service with a non-zero restart threshold value to
+          enable the feature.</li>
       </ul>
       </p>
     </section>
