@@ -8,6 +8,10 @@
        <topicref keyref="cc-install-verify-vhw"/>
        <topicref keyref="cc-install-verify-vsw"/>
        <topicref keyref="cc-install-verify-vnw"/>
-       <topicref keyref="cc-install-verify-vst"/>
+       <topicref keyref="cc-install-verify-storage">
+          <topicref keyref="cc-install-verify-vst"/>
+          <topicref keyref="cc-feature-master-storage-backups"/>
+          <topicref keyref="cc-feature-master-storage-isvcs"/>
+       </topicref>
    </chapter>
 </bookmap>

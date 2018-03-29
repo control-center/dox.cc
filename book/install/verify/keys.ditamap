@@ -11,6 +11,10 @@
             href="run.dita"
             format="dita"
     />
+    <keydef keys="cc-install-verify-storage"
+            href="storage.dita"
+            format="dita"
+    />
     <keydef keys="cc-install-verify-verify"
             href="verify.dita"
             format="dita"

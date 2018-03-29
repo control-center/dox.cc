@@ -15,6 +15,10 @@
           <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
+      <step conkeyref="cc-feature-lib-tasks/check-hostid-master">
+        <cmd/>
+      </step>
+      
       <step conkeyref="cc-feature-lib-tasks/firewall">
         <cmd></cmd>
       </step>

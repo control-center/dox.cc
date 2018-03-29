@@ -3,8 +3,64 @@
 <reference id="referenceid">
   <title>Storage (VST) errors</title>
   <refbody>
-    <section>
-      <p/>
-    </section>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="4*"/>
+        <colspec colname="c3" colwidth="4*"/>
+        <thead>
+          <row>
+            <entry>Error</entry>
+            <entry>Issue</entry>
+            <entry>Solution</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><b>VST01</b></entry>
+            <entry>The amount of available swap space is less than the required minimum.</entry>
+            <entry>Add space to the swap device or partition.</entry>
+          </row>
+          <row>
+            <entry><b>VST02</b></entry>
+            <entry>Swap is not mounted on a block device or partition.</entry>
+            <entry>Add a separate device or partition for swap.</entry>
+          </row>
+          <row>
+            <entry><b>VST03</b></entry>
+            <entry>Master hosts only: The following paths do not exist:
+              <sl>
+                <sli><filepath>/opt/serviced/var/backups</filepath></sli>
+                <sli><filepath>/opt/serviced/var/isvcs</filepath></sli>
+              </sl>
+            </entry>
+            <entry>Perform the following procedures:<sl>
+              <sli><xref keyref="cc-feature-master-storage-backups"/></sli>
+              <sli><xref keyref="cc-feature-master-storage-isvcs"/></sli>
+            </sl>
+            </entry>
+          </row>
+          <row>
+            <entry><b>VST04</b></entry>
+            <entry>One or more required mount points do not have the required minimum space. This
+              test does not examine space for thin pools.</entry>
+            <entry>Add storage as recommended in <xref keyref="cc-install-verify-storage"/>.</entry>
+          </row>
+          <row>
+            <entry><b>VST05</b></entry>
+            <entry>One or more required mount points are mounted on the same device or partition.</entry>
+            <entry>Add devices or partitions for each required mount point.</entry>
+          </row>
+          <row>
+            <entry><b>VST06</b></entry>
+            <entry>The amount of space available on unused block storage devices is not enough
+            for the host's specified role.</entry>
+            <entry>On master hosts, separate devices or partitions are required for Docker data and
+            for application data. On delegate or collector hosts, a separate device is required
+            for Docker data. For more information, see <xref keyref="cc-install-verify-storage"/>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
   </refbody>
 </reference>

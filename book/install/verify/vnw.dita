@@ -18,20 +18,22 @@
         <tbody>
           <row>
             <entry><b>VNW01</b></entry>
-            <entry>The hostname resolves to loopback only (127.0.0.1) or does 
-              not resolve to a recognizable IPv4 address.</entry>
+            <entry>The hostname resolves to 127.0.0.1 only or does not resolve to a recognizable
+              IPv4 address.</entry>
             <entry>Add an entry for the host to the network nameserver, 
               or to <filepath>/etc/hosts</filepath>.</entry>
           </row>
           <row>
             <entry><b>VNW02</b></entry>
-            <entry>The <filepath>/etc/hosts</filepath> file does not include an entry for loopback.</entry>
+            <entry>The <filepath>/etc/hosts</filepath> file does not include an entry for
+              127.0.0.1.</entry>
             <entry>Add an entry to <filepath>/etc/hosts</filepath> that 
               maps 127.0.0.1 to <codeph>localhost</codeph>.</entry>
           </row>
           <row>
             <entry><b>VNW03</b></entry>
-            <entry>The <filepath>/etc/hosts</filepath> file does not map <codeph>localhost</codeph> to 127.0.0.1.</entry>
+            <entry>The <filepath>/etc/hosts</filepath> file does not include an entry that maps
+                <codeph>localhost</codeph> to 127.0.0.1.</entry>
             <entry>Add an entry to <filepath>/etc/hosts</filepath> that 
               maps 127.0.0.1 to <codeph>localhost</codeph>.</entry>
           </row>
