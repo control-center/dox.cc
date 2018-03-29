@@ -11,7 +11,9 @@
       <dl>
         <dlentry>
           <dt>1920.<keyword keyref="lo-build-date"/> (1.6.0)</dt>
-          <dd>.</dd>
+          <dd>A new first chapter is added, for candidate host verification. The
+            chapter describes how to use a script to verify host resources. Subsequent
+            chapters are simplified.</dd>
         </dlentry>
         <dlentry>
           <dt>1920.17.349 (1.5.0)</dt>
