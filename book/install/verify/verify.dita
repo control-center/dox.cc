@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="taskid">
+  <title>Verifying hosts</title>
+  <conbody>
+    <p>This chapter describes how to use the <cmdname>zenoss-installer</cmdname> script 
+      to verify hosts for their roles in a <ph keyref="nm-cc"/> deployment.</p>
+  </conbody>
+</concept>
+
+

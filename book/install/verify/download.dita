@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading the zenoss-installer script</title>
+  <taskbody>
+    <prereq conkeyref="cc-feature-download-lib/download-prereq"/>
+    <context>Use this procedure to download the <cmdname>zenoss-installer</cmdname> script.</context>
+    <steps>
+      <step conkeyref="cc-feature-download-lib/navigate-log-in">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Download the <cmdname>zenoss-installer</cmdname> script.</cmd>
+      </step>
+
+      <step>
+        <cmd>Use a secure copy program to copy the script to
+          <ph keyref="nm-cc"/> candidate hosts.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

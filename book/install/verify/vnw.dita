@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Network configuration (VNW) errors</title>
+  <refbody>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="4*"/>
+        <colspec colname="c3" colwidth="4*"/>
+        <thead>
+          <row>
+            <entry>Error</entry>
+            <entry>Issue</entry>
+            <entry>Solution</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><b>VNW01</b></entry>
+            <entry>The hostname resolves to loopback only (127.0.0.1) or does 
+              not resolve to a recognizable IPv4 address.</entry>
+            <entry>Add an entry for the host to the network nameserver, 
+              or to <filepath>/etc/hosts</filepath>.</entry>
+          </row>
+          <row>
+            <entry><b>VNW02</b></entry>
+            <entry>The <filepath>/etc/hosts</filepath> file does not include an entry for loopback.</entry>
+            <entry>Add an entry to <filepath>/etc/hosts</filepath> that 
+              maps 127.0.0.1 to <codeph>localhost</codeph>.</entry>
+          </row>
+          <row>
+            <entry><b>VNW03</b></entry>
+            <entry>The <filepath>/etc/hosts</filepath> file does not map <codeph>localhost</codeph> to 127.0.0.1.</entry>
+            <entry>Add an entry to <filepath>/etc/hosts</filepath> that 
+              maps 127.0.0.1 to <codeph>localhost</codeph>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

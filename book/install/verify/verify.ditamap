@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+   <title>Verify</title>
+    <chapter keyref="cc-install-verify-verify">
+       <topicref keyref="cc-install-verify-download"/>
+       <topicref keyref="cc-install-verify-run"/>
+       <topicref keyref="cc-install-verify-vhw"/>
+       <topicref keyref="cc-install-verify-vsw"/>
+       <topicref keyref="cc-install-verify-vnw"/>
+       <topicref keyref="cc-install-verify-vst"/>
+   </chapter>
+</bookmap>
