@@ -3,11 +3,12 @@
 <task id="taskid">
   <title>Setting the connection timeout of a resource pool</title>
   <taskbody>
-    <context>Use this procedure to set the length of time
-      the scheduler waits for a disconnected delegate host to rejoin its pool before moving 
-      the services scheduled for the delegate to a different host in the pool. This feature
-      is useful for remote resource pools that are connected through a high-latency, wide-area
-      network.</context>
+    <context>Use this procedure to set the length of time the services scheduler waits for a
+      disconnected delegate host to reconnect before moving its services to a different host in the
+      resource pool. This affects all multi-host resource pools. <ph conkeyref="names/company"/>
+      recommends using a minimum value of 15 seconds for all multi-host pools. For resource pools
+      that are connected through high-latency, wide-area networks, <ph conkeyref="names/company"/>
+      recommends values greater than 15 seconds.</context>
     <steps>
       <step>
         <cmd>Log in to the master host <ph conkeyref="strings/login-serviced"/>.</cmd>
