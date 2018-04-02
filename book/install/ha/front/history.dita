@@ -10,10 +10,17 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1922.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+          <dt>1922.<keyword keyref="lo-build-date"/> (1.6.0)</dt>
+          
+          <dd>Add a section about setting the connection timeout on resource pools
+            to the end of the delegate configuration chapter.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>1922.17.349 (1.5.0)</dt>
           <dd>Specify Docker version in <cmdname>yum install</cmdname> command.</dd>
           <dd>Reinstate steps to disable firewall.</dd>
         </dlentry>
+        
         <dlentry>
           <dt>1922.17.331 (1.5.0)</dt>
           <dd>Replace Leapfile.net with delivery.zenoss.com.</dd>

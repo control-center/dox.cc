@@ -17,13 +17,13 @@
         <cmd>Log in to the master host node <ph conkeyref="strings/login-root"/>.</cmd>
       </step>
       
-      <substep>
+      <step>
         <cmd>Stop and disable <cmdname>chronyd</cmdname>, if present.</cmd>
         <stepxmp>
           <codeblock>test "$(systemctl is-active chronyd)" = "active" \
   &#38;&#38; systemctl stop chronyd &#38;&#38; systemctl disable chronyd</codeblock>
         </stepxmp>
-      </substep>
+      </step>
       
       <step>
         <cmd>Install the NTP package.</cmd>
