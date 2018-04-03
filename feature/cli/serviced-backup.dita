@@ -18,7 +18,7 @@
     </section>
     <section>
       <title>USAGE</title>
-      <codeblock>serviced backup [arguments...]</codeblock>
+      <codeblock>serviced backup [arguments...] <varname>Backup-Path</varname></codeblock>
     </section>
     <section>
       <title>OPTIONS</title>
@@ -55,6 +55,12 @@
           <dd>Show the help for an option.</dd>
         </dlentry>
       </dl>
+    </section>
+    <section>
+      <title>EXAMPLE</title>
+      <p>Create a backup without HBase or the Solr index:</p>
+      <codeblock>serviced backup --exclude hbase-* \
+  --exclude zencatalogservice /opt/serviced/var/backups/</codeblock>
     </section>
   </refbody>
 </reference>
