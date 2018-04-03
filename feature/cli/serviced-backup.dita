@@ -6,7 +6,6 @@
     the system, the state of all services, and application data to a compressed tar archive file
       (<filepath>.tgz</filepath>). </shortdesc>
   <refbody>
-    <!--CC_3333-->
     <section>
       <p>You can back up the entire system or exclude certain directories, such as a directory that
         contains application performance data. </p>
@@ -25,9 +24,20 @@
       <title>OPTIONS</title>
       <dl>
         <dlentry>
-          <dt><synph>--exclude <var>Path</var>
-            <delim>[</delim>--exclude <var>Path</var><delim>]</delim>&#8230;</synph></dt>
-          <dd>One or more tenant volume subdirectory paths to exclude from the backup.</dd>
+          <dt><synph>--exclude <var>Item</var>
+            <delim>[</delim>--exclude <var>Item</var><delim>]</delim>&#8230;</synph></dt>
+          <dd>One or more tenant volume items to exclude from the backup. The following list
+            identifies valid values for <varname>Item</varname>:
+          <ul>
+            <li><codeph>etl-analytics</codeph></li>
+            <li><codeph>hbase-*</codeph></li>
+            <li><codeph>mariadb-events</codeph></li>
+            <li><codeph>rabbitmq</codeph></li>
+            <li><codeph>zeneventserver</codeph></li>
+            <li><codeph>var-zenpacks</codeph></li>
+            <li><codeph>zenjobs</codeph></li>
+            <li><codeph>zencatalogservice</codeph></li>
+          </ul></dd>
         </dlentry>
         <dlentry>
           <dt><synph>--check</synph></dt>
