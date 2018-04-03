@@ -10,7 +10,7 @@
         new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
       <dl>
         <dlentry>
-          <dt>1902.<keyword keyref="lo-build-date"/> (1.6.0)</dt>
+          <dt>1902.<keyword keyref="lo-build-date"/> (1.5.1)</dt>
           <dd>Add procedure for setting the connection timeout to resource
               pools to the post-upgrade chapter of each upgrade path.</dd>
         </dlentry>
