@@ -30,8 +30,8 @@
             <entry><b>VHW03</b></entry>
             <entry>One or more the CPU cores does not support the AES instruction set, which
               speeds encryption and decryption processing.</entry>
-            <entry>If the candidate host is a virtual machine, the managing hypervisor may be configured 
-              in Hyper-V compatibility mode. Check the setting and disable it, if possible, or select a
+            <entry>If the candidate host is a virtual machine, the managing hypervisor may be
+              configured in Hyper-V compatibility mode. Check the setting and disable it or select a
               different host.</entry>
           </row>
           <row>

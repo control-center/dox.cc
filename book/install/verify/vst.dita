@@ -28,16 +28,16 @@
           </row>
           <row>
             <entry><b>VST03</b></entry>
-            <entry>Master hosts only: The following paths do not exist:
-              <sl>
-                <sli><filepath>/opt/serviced/var/backups</filepath></sli>
-                <sli><filepath>/opt/serviced/var/isvcs</filepath></sli>
-              </sl>
+            <entry>(Master hosts only) One or both of the following paths do not exist:
+              <ul>
+                <li><filepath>/opt/serviced/var/backups</filepath></li>
+                <li><filepath>/opt/serviced/var/isvcs</filepath></li>
+              </ul>
             </entry>
-            <entry>Perform the following procedures:<sl>
-              <sli><xref keyref="cc-feature-master-storage-backups"/></sli>
-              <sli><xref keyref="cc-feature-master-storage-isvcs"/></sli>
-            </sl>
+            <entry>Perform one or both of the following procedures:<ul>
+              <li><xref keyref="cc-feature-master-storage-backups"/></li>
+              <li><xref keyref="cc-feature-master-storage-isvcs"/></li>
+            </ul>
             </entry>
           </row>
           <row>
@@ -54,10 +54,10 @@
           <row>
             <entry><b>VST06</b></entry>
             <entry>The amount of space available on unused block storage devices is not enough
-            for the host's specified role.</entry>
-            <entry>On master hosts, separate devices or partitions are required for Docker data and
-            for application data. On delegate or collector hosts, a separate device is required
-            for Docker data. For more information, see <xref keyref="cc-install-verify-storage"/>.</entry>
+            for the thin pools the specified role requires.</entry>
+            <entry>On master hosts, separate devices or partitions are required for thin pools for Docker data and
+            application data. On delegate or collector hosts, a separate device is required
+            for the Docker data thin pool. For more information, see <xref keyref="cc-install-verify-storage"/>.</entry>
           </row>
         </tbody>
       </tgroup>

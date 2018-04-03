@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="referenceid">
-  <title>Recommended storage practices</title>
+  <title>Recommended storage layout</title>
   <refbody>
     <section>
       <p>The tests of available block storage are based on best practice recommendations 
@@ -17,25 +17,28 @@
         <li>Application data storage includes space for both data and snapshots. The default base
           size for data is 100GB, and the recommended space for snapshots is 100% of the base size.
           Adding the two yields the suggested minimum size of 200GB.</li>
-        <li>For application data backups, the recommended space is 150% of the base size for
+        <li>For application data backups, the recommended minimum space is 150% of the base size for
           data.</li>
       </ul>
       </p>
+      <note>For large environments, the space for application data backups should be much greater.
+        Individual backup files can be 50GB to 100GB each, or more.</note>
       
     </section>
     <section>
       <title><ph keyref="nm-cc"/> master host storage</title>
-      <p>A <ph keyref="nm-cc"/> master host should have a total of 7 separate block storage devices or 
-        partitions. The following table identifies the purpose and size of each. </p>
+      <p>A <ph keyref="nm-cc"/> master host should have a total of 7 separate block storage devices
+        or partitions. The following table identifies the purpose and recommended minimum size of
+        each. </p>
       <table>
         <tgroup cols="3">
           <colspec colname="c1" colwidth="1*"/>
-          <colspec colname="c2" colwidth="8*"/>
-          <colspec colname="c3" colwidth="6*"/>
+          <colspec colname="c2" colwidth="12*"/>
+          <colspec colname="c3" colwidth="3*"/>
           <thead>
             <row>
               <entry namest="c1" nameend="c2">Purpose</entry>
-              <entry>Size</entry>
+              <entry>Minimum size</entry>
             </row>
           </thead>
           <tbody>
@@ -61,7 +64,7 @@
             </row>
             <row>
               <entry>5</entry>
-              <entry><ph keyref="nm-cc"/> internal services data</entry>
+              <entry><ph keyref="nm-cc"/> internal services data (<filepath>/opt/serviced/var/isvcs</filepath>)</entry>
               <entry>50GB</entry>
             </row>
             <row>
@@ -71,7 +74,7 @@
             </row>
             <row>
               <entry>7</entry>
-              <entry>Application data backups</entry>
+              <entry>Application data backups (<filepath>/opt/serviced/var/backups</filepath>)</entry>
               <entry>150GB</entry>
             </row>
           </tbody>
@@ -81,18 +84,18 @@
     
       <section>
         <title><ph keyref="nm-cc"/> delegate host storage</title>
-        <p>A <ph keyref="nm-cc"/> delegate or collector host should have
-          a total of 4 separate block storage devices or partitions. The following table identifies the
-          purpose and size of each.</p>
+        <p>A <ph keyref="nm-cc"/> delegate or collector host should have a total of 4 separate block
+        storage devices or partitions. The following table identifies the purpose and recommended
+        minimum size of each.</p>
         <table>
           <tgroup cols="3">
             <colspec colname="c1" colwidth="1*"/>
-            <colspec colname="c2" colwidth="8*"/>
-            <colspec colname="c3" colwidth="6*"/>
+            <colspec colname="c2" colwidth="12*"/>
+            <colspec colname="c3" colwidth="3*"/>
             <thead>
               <row>
                 <entry namest="c1" nameend="c2">Purpose</entry>
-                <entry>Size</entry>
+                <entry>Minimum size</entry>
               </row>
             </thead>
             <tbody>
