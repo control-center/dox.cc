@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Updating the Pacemaker resource agents</title>
+  <taskbody>
+    <context>Use this procedure to update the Pacemaker resource agents for <ph keyref="nm-cc"
+    />.</context>
+    <steps>
+      
+      <step>
+        <cmd>Log in to a master host node
+          <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate terminal session, log in to the other 
+          master host node <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+
+      <step>
+        <cmd>On both nodes, install the latest version of the resource agents package.</cmd>
+        <stepxmp>
+          <codeblock>yum install /opt/zenoss-repo-mirror/serviced-resource-agents-<ph keyref="lo-version-ra"/>-1.x86_64.rpm</codeblock>
+        </stepxmp>
+      </step>      
+    </steps>
+  </taskbody>
+</task>

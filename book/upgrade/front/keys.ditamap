@@ -19,6 +19,10 @@
             href="14x.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-front-15x"
+            href="15x.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-front-about"
             href="about.dita"
             format="dita"

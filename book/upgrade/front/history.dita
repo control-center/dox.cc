@@ -11,6 +11,7 @@
       <dl>
         <dlentry>
           <dt>1900.<keyword keyref="lo-build-date"/> (1.5.1)</dt>
+          <dd>Add chapters for updating 1.5.0 deployments.</dd>
           <dd>Add procedure for setting the connection timeout to resource
               pools to the post-upgrade chapter of each upgrade path.</dd>
         </dlentry>
