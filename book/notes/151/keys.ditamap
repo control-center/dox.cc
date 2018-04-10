@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
 <map>
- <title>Keys in notes/160</title>
+ <title>Keys in notes/151</title>
   <topicgroup>
-    <keydef keys="cc-notes-160-features"
+    <keydef keys="cc-notes-151-features"
             href="features.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-160-fixed"
+    <keydef keys="cc-notes-151-fixed"
             href="fixed.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-160-known"
+    <keydef keys="cc-notes-151-known"
             href="known.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-160-notes-4018"
+    <keydef keys="cc-notes-151-notes-4018"
             href="notes-4018.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-160-notes"
+    <keydef keys="cc-notes-151-notes"
             href="notes.dita"
             format="dita"
     />
-    <keydef keys="cc-notes-160-self"
+    <keydef keys="cc-notes-151-self"
             href="self.dita"
             format="dita"
     />

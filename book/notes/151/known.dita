@@ -19,7 +19,7 @@
           <row>
             <entry>CC-4039</entry>
             <entry><cmdname>rpcbind</cmdname> fails to start when IPv6 is disabled. 
-            <ph conkeyref="strings/fmi-int"/> </entry>
+              <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-notes-151-notes"/>.</entry>
             <entry>Open</entry>
           </row>
         </tbody>
