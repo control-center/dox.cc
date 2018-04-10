@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/15x</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-15x-delegate"
+            href="delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-master"
+            href="master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-micro-delegate"
+            href="micro-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-micro-master"
+            href="micro-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-post"
+            href="post.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-prep-features"
+            href="prep-features.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-15x-prep"
+            href="prep.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>
