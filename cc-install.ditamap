@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="0"/>
+        <vrm product="cc" version="1" release="5" modification="1"/>
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -45,6 +45,7 @@
     <topicgroup>
       <mapref href="book/install/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/verify/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>
       <mapref href="feature/access/keys.ditamap" format="ditamap"/>
@@ -73,6 +74,8 @@
       <topicref keyref="cc-install-front-history"/>
     </topicref>
   </frontmatter>
+  
+  <chapter href="book/install/verify/verify.ditamap" format="ditamap"/>
   <chapter href="feature/download/install.ditamap" format="ditamap"/>
   <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
   <chapter href="feature/config/master.ditamap" format="ditamap"/>

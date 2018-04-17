@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap >
+ <title>Before</title>
+  <chapter keyref="cc-upgrade-15x-prep">
+    <topicref keyref="cc-upgrade-15x-prep-features"/>
+    <topicref keyref="cc-upgrade-topics-best-practices"/>
+  </chapter>
+</bookmap>

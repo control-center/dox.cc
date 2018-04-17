@@ -6,8 +6,7 @@
     <section>
       <p>This section provides a quick reference for the minimum storage requirements of a <ph
           keyref="nm-cc"/> master host. These requirements are in addition to the storage required
-        for the host's operating system. For more information, refer to the <cite
-          conkeyref="pubs/cite-plan"/>.</p>
+        for the host's operating system. For more information, refer to the <ph conkeyref="pubs/ph-plan"/>.</p>
       
       <p><ph keyref="nm-cc"/> hosts need either unformatted block storage devices or partitions,
       or free space in one or more LVM volume groups.</p>

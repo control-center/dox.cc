@@ -3,11 +3,6 @@
 <bookmap>
   <title>Install master</title>
   <chapter keyref="cc-install-maps-master">
-    <topicref keyref="cc-feature-master-verify"/>
-    <topicref keyref="cc-feature-master-storage">
-      <topicref keyref="cc-feature-master-storage-isvcs"/>
-      <topicref keyref="cc-feature-master-storage-backups"/>
-    </topicref>
     <topicref keyref="cc-feature-master-prep"/>
     <topicref keyref="cc-feature-lib-install-software"/>
     <topicref keyref="cc-feature-master-docker-config"/>

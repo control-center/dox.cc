@@ -27,5 +27,6 @@
       <topicref keyref="cc-feature-delegate-add-ssh"/>
       <topicref keyref="cc-feature-delegate-add-feet"/>
     </topicref>
+    <topicref keyref="cc-feature-manage-pool-connection-timeout"/>
    </chapter>
 </bookmap>

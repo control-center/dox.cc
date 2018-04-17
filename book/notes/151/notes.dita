@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Notes and workarounds</title>
+  <refbody>
+    <section>
+      <title>CC-4039: rpcbind fails to start when IPv6 is disabled</title>
+      <p>Disabling IPv6 can prevent the NFS server from restarting, due to <xref keyref="url-ipv6-rpcbind"/>. 
+        <ph conkeyref="names/company"/> recommends leaving IPv6 enabled on the 
+        <ph keyref="nm-cc"/> master host.</p>
+    </section>
+  </refbody>
+</reference>

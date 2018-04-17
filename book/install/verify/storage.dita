@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Recommended storage layout</title>
+  <refbody>
+    <section>
+      <p>The tests of available block storage are based on best practice recommendations 
+        for master hosts and delegate or collector hosts.  Enter the following command to 
+        display information about available block storage:
+        <codeblock>lsblk -ap --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+      </p>
+      
+      <p>The suggested minimum sizes for application data and application data backups should be
+        replaced with sizes that meet your application requirements. To calculate the appropriate
+        sizes for these storage areas, use the following guidelines:
+      <ul>
+        <li>Application data storage includes space for both data and snapshots. The default base
+          size for data is 100GB, and the recommended space for snapshots is 100% of the base size.
+          Adding the two yields the suggested minimum size of 200GB.</li>
+        <li>For application data backups, the recommended minimum space is 150% of the base size for
+          data.</li>
+      </ul>
+      </p>
+      <note>For large environments, the space for application data backups should be much greater.
+        Individual backup files can be 50GB to 100GB each, or more.</note>
+      
+    </section>
+    <section>
+      <title><ph keyref="nm-cc"/> master host storage</title>
+      <p>A <ph keyref="nm-cc"/> master host should have a total of 7 separate block storage devices
+        or partitions. The following table identifies the purpose and recommended minimum size of
+        each. </p>
+      <table>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="12*"/>
+          <colspec colname="c3" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry namest="c1" nameend="c2">Purpose</entry>
+              <entry>Minimum size</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>1</entry>
+              <entry>Root (<filepath>/</filepath>)</entry>
+              <entry>30GB</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>Swap</entry>
+              <entry>16GB</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>Temporary (<filepath>/tmp</filepath>)</entry>
+              <entry>16GB</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>Docker data</entry>
+              <entry>50GB </entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry><ph keyref="nm-cc"/> internal services data (<filepath>/opt/serviced/var/isvcs</filepath>)</entry>
+              <entry>50GB</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>Application data</entry>
+              <entry>200GB</entry>
+            </row>
+            <row>
+              <entry>7</entry>
+              <entry>Application data backups (<filepath>/opt/serviced/var/backups</filepath>)</entry>
+              <entry>150GB</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    
+      <section>
+        <title><ph keyref="nm-cc"/> delegate host storage</title>
+        <p>A <ph keyref="nm-cc"/> delegate or collector host should have a total of 4 separate block
+        storage devices or partitions. The following table identifies the purpose and recommended
+        minimum size of each.</p>
+        <table>
+          <tgroup cols="3">
+            <colspec colname="c1" colwidth="1*"/>
+            <colspec colname="c2" colwidth="12*"/>
+            <colspec colname="c3" colwidth="3*"/>
+            <thead>
+              <row>
+                <entry namest="c1" nameend="c2">Purpose</entry>
+                <entry>Minimum size</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>1</entry>
+                <entry>Root (<filepath>/</filepath>)</entry>
+                <entry>30GB</entry>
+              </row>
+              <row>
+                <entry>2</entry>
+                <entry>Swap</entry>
+                <entry>16GB</entry>
+              </row>
+              <row>
+                <entry>3</entry>
+                <entry>Temporary (<filepath>/tmp</filepath>)</entry>
+                <entry>16GB</entry>
+              </row>
+              <row>
+                <entry>4</entry>
+                <entry>Docker data</entry>
+                <entry>50GB </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </section>
+  </refbody>
+</reference>

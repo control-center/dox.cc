@@ -14,12 +14,6 @@
           <dd>This script is required on the master host only.</dd>
         </dlentry>
         <dlentry>
-          <dt><filepath>/etc/cron.daily/serviced</filepath></dt>
-          <dd>This script invokes <cmdname>logrotate</cmdname> daily, to manage the
-              <filepath>/var/log/serviced.access.log</filepath> file.</dd>
-          <dd>This script is required on the master host and on all delegate hosts.</dd>
-        </dlentry>
-        <dlentry>
           <dt><filepath>/etc/cron.weekly/serviced-fstrim</filepath></dt>
           <dd>This script invokes <cmdname>fstrim</cmdname> weekly, to reclaim unused blocks in the
             application data thin pool. </dd>

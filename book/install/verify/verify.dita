@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="taskid">
+  <title>Verifying hosts</title>
+  <conbody>
+    <p>This chapter describes how to use the <cmdname>zenoss-installer</cmdname> script 
+      to verify hosts for their roles in a <ph keyref="nm-cc"/> deployment. In addition,
+    this chapter includes procedures for preparing required filesystems on the master host.</p>
+    
+    <p>The <codeph>verify</codeph> action of the <cmdname>zenoss-installer</cmdname> script performs
+      read-only tests of the compute, memory, operating system, and storage resources of a host. The
+      <codeph>verify</codeph> action is intended for iterative use&#8212;run the script, correct an 
+      error, and then run the script again. You can perform the <codeph>verify</codeph> action as 
+      many times as you wish without affecting the host.</p>
+    
+    <p>The <cmdname>zenoss-installer</cmdname> is updated regularly. Please download the latest
+      version before creating a new deployment of <ph keyref="nm-cc"/>. The script is not needed on
+        <ph keyref="nm-rm"/> or <ph keyref="nm-core"/> virtual appliances.</p>
+  </conbody>
+</concept>
+
+

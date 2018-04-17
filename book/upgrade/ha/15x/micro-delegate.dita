@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>Upgrading delegates from 1.5.0 to <ph keyref="lo-version-cc"/></title>
+  <refbody>
+    <section>
+      <p>Perform the procedures in this chapter to upgrade <ph keyref="nm-cc"/> 1.5.0 delegate hosts
+        to <ph keyref="lo-version-cc"/>. First, download and stage the required files. <ph
+          conkeyref="strings/fmi-int"/>
+        <xref keyref="cc-feature-download-intro-upgrade-ha"/>.</p>
+      <note>The Docker image files for <ph keyref="nm-cc"/> are unchanged for this release. You only 
+        need to download and install the new <cmdname>serviced</cmdname> RPM package and the
+        operating system mirror package.</note>
+    </section>
+  </refbody>
+</reference>

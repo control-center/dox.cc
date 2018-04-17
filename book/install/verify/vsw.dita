@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Software (VSW) errors</title>
+  <refbody>
+    <table>
+      <tgroup cols="3">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="4*"/>
+        <colspec colname="c3" colwidth="4*"/>
+        <thead>
+          <row>
+            <entry>Error</entry>
+            <entry>Issue</entry>
+            <entry>Solution</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><b>VSW01</b></entry>
+            <entry><ph keyref="nm-cc"/> supports only the <codeph>x86_64</codeph> kernel architecture.</entry>
+            <entry>Upgrade the operating system or select a different host.</entry>
+          </row>
+          <row>
+            <entry><b>VSW02</b></entry>
+            <entry>The installed kernel version is less than the required minimum version.</entry>
+            <entry>Upgrade the kernel or select a different host.</entry>
+          </row>
+          <row>
+            <entry><b>VSW03</b></entry>
+            <entry>The installed kernel patch is less than the required minimum patch.</entry>
+            <entry>Upgrade the kernel or select a different host.</entry>
+          </row>
+          <row>
+            <entry><b>VSW04</b></entry>
+            <entry>The installed operating system is not RHEL or CentOS.</entry>
+            <entry>Install a supported operating system or select a different host.</entry>
+          </row>
+          <row>
+            <entry><b>VSW05</b></entry>
+            <entry>The installed operating system release is not supported.</entry>
+            <entry>Upgrade the operating system or select a different host.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>
