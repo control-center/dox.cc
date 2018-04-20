@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="0"/>
+        <vrm product="cc" version="1" release="5" modification="1"/>
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -19,7 +19,7 @@
     </bookid>
     <bookrights>
       <copyrfirst>
-        <year>2017</year>
+        <year>2018</year>
       </copyrfirst>
       <bookowner>
         <organization>Zenoss, Inc., 11305 Four Points Drive, Bldg 1 - Suite 300, Austin, Texas
@@ -51,6 +51,7 @@
       <mapref href="feature/audit/keys.ditamap" format="ditamap"/>
       <mapref href="feature/backup/keys.ditamap" format="ditamap"/>
       <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/linux-storage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
       <mapref href="feature/nat/keys.ditamap" format="ditamap"/>
       <mapref href="feature/restart/keys.ditamap" format="ditamap"/>
@@ -73,6 +74,8 @@
   <chapter href="book/help/gui/gui.ditamap" format="ditamap"/>
   <chapter href="book/help/maps/cli.ditamap" format="ditamap"/>
   <chapter href="book/help/maps/admin.ditamap" format="ditamap"/>
+  
+  <appendix href="feature/linux-storage/storage.ditamap" format="ditamap"/>
 
   <backmatter>
     <booklists>

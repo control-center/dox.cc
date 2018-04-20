@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="0"/>        
+        <vrm product="cc" version="1" release="5" modification="1"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -19,7 +19,7 @@
     </bookid>
     <bookrights>
       <copyrfirst>
-        <year>2017</year>
+        <year>2018</year>
       </copyrfirst>
       <bookowner>
         <organization>Zenoss, Inc., 11305 Four Points Drive, 

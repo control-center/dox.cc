@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="0"/>        
+        <vrm product="cc" version="1" release="5" modification="1"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -19,7 +19,7 @@
     </bookid>
     <bookrights>
       <copyrfirst>
-        <year>2017</year>
+        <year>2018</year>
       </copyrfirst>
       <bookowner>
         <organization>Zenoss, Inc., 11305 Four Points Drive, 
@@ -47,6 +47,7 @@
       <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/13x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/14x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/15x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
@@ -82,6 +83,19 @@
   
   <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
   <chapter href="feature/download/upgrade.ditamap" format="ditamap"/>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Upgrading 1.5.0 to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/15x.dita"/>
+    <chapter href="book/upgrade/15x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/15x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/15x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/15x/post.ditamap" format="ditamap"/>
+  </part>
   
   <part>
     <topicmeta>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Adding storage to an existing thin pool</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need at least one unused primary partition on the target host.</prereq>
+    <context>Perform this procedure to add unused space to an existing device mapper thin pool.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Identify the primary partition or partitions to add to a thin pool,
+          and record the total size.</cmd>
+        <substeps>
+          <substep>
+            <cmd>Display information about block devices on the host.</cmd>
+            <stepxmp>
+              <codeblock>lsblk --output=NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT</codeblock>
+              <p>For more information about the output of the <cmdname>lsblk</cmdname> command,
+                see <xref keyref="cc-feature-linux-storage-discover"/>.</p>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Record the total size of the primary partition or partitions to add.</cmd>
+            <info>The total size is required for the last step.</info>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Create a physical volume on each target primary partition, if necessary.</cmd>
+        <info>Repeat the following substeps for each primary partition to include in the volume
+          group for the target thin pool.</info>
+        <substeps>
+          
+          <substep>
+            <cmd>Determine whether a physical volume is present.</cmd>
+            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
+              <codeblock>pvs <varname>Device</varname></codeblock>
+            </stepxmp>
+            <stepxmp>Replace <varname>Device</varname> with the path of a primary partition:
+              <codeblock>pvs <varname>Device</varname></codeblock>
+            </stepxmp>
+            <stepresult>If the result includes <systemoutput>Failed to find physical
+              volume</systemoutput>, perform the next substep.</stepresult>
+          </substep>
+          
+          <substep>
+            <cmd>Create a physical volume.</cmd>
+            <stepxmp>Replace <varname>Device</varname> with the path of a device or partition:
+              <codeblock>pvcreate <varname>Device</varname></codeblock>
+            </stepxmp>
+            
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Extend the volume group of the application data thin pool.</cmd>
+        <stepxmp>Replace <varname>PhysicalVolumes</varname> 
+          with the names of one or more physical volumes:
+          <codeblock>vgextend serviced <varname>PhysicalVolumes</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Extend the application data thin pool with the updated volume group.</cmd>
+        
+        <stepxmp>Replace <varname>SIZE</varname> 
+          with the total size (including the units) of the physical volumes that
+          you added to the <codeph>serviced</codeph> volume group:
+          <codeblock>lvextend -L+<varname>SIZE</varname> serviced/servicedpool</codeblock>
+          <codeblock>lvextend -L+<varname>SIZE</varname> serviced/serviced-pool</codeblock>
+        </stepxmp>
+        <stepresult>The <cmdname>lvextend</cmdname> command automatically extends both 
+          the data and metadata areas of the thin pool.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

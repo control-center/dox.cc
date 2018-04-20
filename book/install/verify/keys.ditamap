@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in install/verify</title>
+  <topicgroup>
+    <keydef keys="cc-install-verify-download"
+            href="download.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-run"
+            href="run.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-storage"
+            href="storage.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-verify"
+            href="verify.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-vhw"
+            href="vhw.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-vnw"
+            href="vnw.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-vst"
+            href="vst.dita"
+            format="dita"
+    />
+    <keydef keys="cc-install-verify-vsw"
+            href="vsw.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

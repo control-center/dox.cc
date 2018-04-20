@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Fixed issues</title>
+  <refbody>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="4.26*"/>
+        <thead>
+          <row>
+            <entry>ID</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>CC-3367</entry>
+            <entry>The login page does not display the <ph keyref="nm-cc"/> version.</entry>
+          </row>
+          <row>
+            <entry>CC-3766</entry>
+            <entry>Error message about locking services does not include enough information to trace the cause.</entry>
+          </row>
+          <row>
+            <entry>CC-3893</entry>
+            <entry>The <codeph>logstash</codeph> filebeat agent does not release file handles and container fills and crashes.</entry>
+          </row>
+          <row>
+            <entry>CC-3909</entry>
+            <entry>Upgrade process reports aborting but continues to completion when thin pool metadata size is too small.</entry>
+          </row>
+          <row>
+            <entry>CC-3926</entry>
+            <entry>Missing container not detected when a service is down.</entry>
+          </row>
+          <row>
+            <entry>CC-3964</entry>
+            <entry>Users who are members of more than 99 groups are unable to log in to browser interface.</entry>
+          </row>
+          <row>
+            <entry>CC-3997</entry>
+            <entry>Pre-upgrade script fails to parse output of <cmdname>lvs</cmdname> command.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

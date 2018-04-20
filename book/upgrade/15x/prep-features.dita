@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>New features that affect upgrades</title>
+  <refbody>
+    <section>
+      <p>This release includes no new features or requirements that affect the upgrade process.</p>
+      <note>The Docker image files for <ph keyref="nm-cc"/> are unchanged for this release. You only 
+      need to download and install the new <cmdname>serviced</cmdname> RPM package and the
+        operating system mirror package.</note>
+      <p>For more information about this release, refer
+        to the <cite conkeyref="pubs/cite-notes"/>.</p>
+    </section>
+  </refbody>
+</reference>

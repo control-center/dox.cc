@@ -21,11 +21,6 @@
                 information not included in other publications.</entry>
             </row>
             <row>
-              <entry><cite conkeyref="pubs/cite-plan"/></entry>
-              <entry>Provides both general and specific information about
-                preparing to deploy <ph keyref="nm-cc"/>.</entry>
-            </row>
-            <row>
               <entry><cite conkeyref="pubs/cite-install"/></entry>
               <entry>Provides detailed procedures for installing
                 and configuring <ph keyref="nm-cc"/>.</entry>

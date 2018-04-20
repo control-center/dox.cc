@@ -10,7 +10,11 @@
        new or changed features, refer to the <cite conkeyref="pubs/cite-notes"/>.</p>
      <dl>
        <dlentry>
-         <dt>1940.<keyword keyref="lo-build-date"/> (1.5.0)</dt>
+         <dt>1940.<keyword keyref="lo-build-date"/> (1.5.1)</dt>
+         <dd>Add details to <xref keyref="cc-feature-cli-serviced-backup"/>.</dd>
+       </dlentry>
+       <dlentry>
+         <dt>1940.17.331 (1.5.0)</dt>
          <dd>Add options to the DFS resize section
            (<xref keyref="cc-feature-storage-thinpool-minimums"/>).</dd>
        </dlentry>

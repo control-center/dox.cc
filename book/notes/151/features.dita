@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>New features</title>
+  <refbody>
+    <section>
+      <p>This release includes no new features.</p>
+    </section>
+  </refbody>
+</reference>

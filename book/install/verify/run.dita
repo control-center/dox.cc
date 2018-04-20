@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Verifying candidate host resources</title>
+  <taskbody>
+    <context>Use this procedure to run the <cmdname>zenoss-installer</cmdname> script
+      on a candidate host.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Add execute permissions to the script.</cmd>
+        <info>The following example assumes the script is located in <filepath>/tmp</filepath>;
+          adjust the path, if necessary.</info>
+        <stepxmp>
+          <codeblock>chmod +x /tmp/zenoss-installer</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Run the script with the arguments that match the role
+          the host will play in your <ph keyref="nm-cc"/> deployment.</cmd>
+        <info>
+          <table>
+            <tgroup cols="3">
+              <colspec colname="c1" colwidth="1*"/>
+              <colspec colname="c2" colwidth="1.25*"/>
+              <colspec colname="c3" colwidth="6*"/>
+              <thead>
+                <row>
+                  <entry>Role</entry>
+                  <entry>Deployment</entry>
+                  <entry>Invocation</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Master</entry>
+                  <entry>Single-host</entry>
+                  <entry><codeph>zenoss-installer -a verify -d single -r master</codeph></entry>
+                </row>
+                <row>
+                  <entry>Master</entry>
+                  <entry>Multi-host</entry>
+                  <entry><codeph>zenoss-installer -a verify -d multi -r master</codeph></entry>
+                </row>
+                <row>
+                  <entry>Delegate</entry>
+                  <entry>Multi-host</entry>
+                  <entry><codeph>zenoss-installer -a verify -r delegate</codeph></entry>
+                </row>
+                <row>
+                  <entry>Collector</entry>
+                  <entry>Multi-host</entry>
+                  <entry><codeph>zenoss-installer -a verify -r collector</codeph></entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </info>
+      </step>
+    </steps>
+    <postreq>If the script displays error messages, refer to the remaining sections
+    in this chapter for more information about how to correct the errors.</postreq>
+  </taskbody>
+</task>

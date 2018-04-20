@@ -142,13 +142,9 @@
         <cmd>Create an LVM thin pool for Docker data.</cmd>
         <info>For more information about the <cmdname>serviced-storage</cmdname> command,
         see <xref keyref="cc-feature-cli-serviced-storage"/>.</info>
-        <stepxmp><b>To use an entire block device or partition</b> for the thin pool, replace
+        <stepxmp>To use an entire block device or partition for the thin pool, replace
             <varname>Device-Path</varname> with the device path:
           <codeblock>serviced-storage create-thin-pool docker <varname>Device-Path</varname></codeblock>
-        </stepxmp>
-        <stepxmp><b>To use 50GB of an LVM volume group</b> for the thin pool, replace
-            <varname>Volume-Group</varname> with the name of an LVM volume group:
-          <codeblock>serviced-storage create-thin-pool --size=50G docker <varname>Volume-Group</varname></codeblock>
         </stepxmp>
         <stepresult>On success, the result is the device mapper name of the thin pool,
           which always starts with <codeph>/dev/mapper</codeph>.</stepresult>
@@ -172,13 +168,13 @@
           <substep>
             <cmd>Display the total number of CPU cores.</cmd>
             <stepxmp>
-              <codeblock>cat /proc/cpuinfo | grep -Ec '^core id'</codeblock>
+              <codeblock>grep -Ec '^core id' /proc/cpuinfo</codeblock>
             </stepxmp>
           </substep>
           <substep>
             <cmd>Compare the available resources with the 
               requirements for a <ph keyref="nm-cc"/> master host.</cmd>
-            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+            <info>For more information, refer to the <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
       </step>
@@ -186,7 +182,7 @@
       <step id="check-cpu-aes">
         <cmd>Determine whether the CPU resources support the AES instruction set.</cmd>
         <stepxmp>
-          <codeblock>cat /proc/cpuinfo | grep -Ec '^flags.*aes'</codeblock>
+          <codeblock>grep -Ec '^flags.*aes' /proc/cpuinfo</codeblock>
         </stepxmp>
         <stepresult>For optimal performance, the result of the preceding commands
           must match the total number of CPU resources available on the host. If the
@@ -209,7 +205,7 @@
             <cmd>Compare the available storage with the 
               amount required for a delegate host 
               in your deployment.</cmd>
-            <info>For more information, refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+            <info>For more information, refer to the <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
       </step>
@@ -240,9 +236,9 @@
           </substep>
           <substep>
             <cmd>Display the amount of space available in <filepath>/var/log</filepath>.</cmd>
-            <info>By default, <ph keyref="nm-cc"/> requires 10GB of space for
-            audit logging in <filepath>/var/log</filepath>. The amount of space required for
-              audit logs, and their location, is configurable. <ph conkeyref="strings/fmi-ext"/>
+            <info>By default, <ph keyref="nm-cc"/> requires 10GB of space for audit logging in
+                <filepath>/var/log</filepath>. The amount of space required for audit logs, and
+              their location, is configurable. <ph conkeyref="strings/fmi-ext"/>
               <cite conkeyref="pubs/cite-ref"/>.</info>
             <stepxmp>
               <codeblock>df -h /var/log</codeblock>
@@ -278,7 +274,7 @@
             <cmd>Compare the available memory and swap space with the 
               amount required for a master host in your deployment.</cmd>
             <info><ph conkeyref="strings/fmi-ext"/>
-              <cite conkeyref="pubs/cite-plan"/>.</info>
+              <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
         <stepresult>If the result does not meet minimum requirements,
@@ -298,7 +294,7 @@
             <cmd>Compare the available memory with the amount required for a delegate host in your
               deployment.</cmd>
             <info><ph conkeyref="strings/fmi-ext"/>
-              <cite conkeyref="pubs/cite-plan"/>.</info>
+              <ph conkeyref="pubs/ph-plan"/>.</info>
           </substep>
         </substeps>
         <stepresult>If the result does not meet minimum requirements,
@@ -331,7 +327,7 @@
       <step id="firewall">
         <cmd>Disable the firewall, if necessary.</cmd>
         <info>This step is required for installation but not for deployment. For more information,
-          refer to the <cite conkeyref="pubs/cite-plan"/>.</info>
+          refer to the <ph conkeyref="pubs/ph-plan"/>.</info>
         <substeps>
           <substep>
             <cmd>Determine whether the <cmdname>firewalld</cmdname> service is enabled.</cmd>
@@ -462,12 +458,16 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
             <cmd>Locate the line that starts with <codeph>#domain-needed</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#bogus-priv</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
           </substep>
-          <substep conkeyref="cc-feature-lib-tasks/uncomment"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/uncomment">
+            <cmd/>
+          </substep>
           <substep>
             <cmd>Locate the line that starts with <codeph>#local=/localnet/</codeph>, 
               and then make a copy of the line, immediately below the original.</cmd>
@@ -485,7 +485,9 @@ rm '/etc/systemd/system/basic.target.wants/firewalld.service'</codeblock>
               and then remove the number sign character (<codeph>&#35;</codeph>)
               from the beginning of the line.</cmd>
           </substep>
-          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save">
+            <cmd/>
+          </substep>
           <substep>
             <cmd>Restart the <cmdname>dnsmasq</cmdname> service.</cmd>
             <stepxmp>
@@ -710,7 +712,9 @@ myFlag="--storage-opt dm.thinpooldev=$myPool"</codeblock>
               delimits the declaration of <varname>OPTIONS</varname>.</note>
             </info>
           </substep>
-          <substep conkeyref="cc-feature-lib-tasks/save"><cmd/></substep>
+          <substep conkeyref="cc-feature-lib-tasks/save">
+            <cmd/>
+          </substep>
           <substep>
             <cmd>Restart the Docker service.</cmd>
             <stepxmp><codeblock>systemctl restart docker </codeblock></stepxmp>

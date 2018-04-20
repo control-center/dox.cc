@@ -3,6 +3,7 @@
 <bookmap >
  <title>After</title>
   <chapter keyref="cc-upgrade-13x-post">
+    <topicref keyref="cc-feature-manage-pool-connection-timeout"/>
     <topicref keyref="cc-upgrade-topics-remove-images"/>
   </chapter>
 </bookmap>
