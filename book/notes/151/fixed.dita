@@ -42,6 +42,10 @@
             <entry>CC-3997</entry>
             <entry>Pre-upgrade script fails to parse output of <cmdname>lvs</cmdname> command.</entry>
           </row>
+          <row>
+            <entry>CC-4082</entry>
+            <entry>Log messages do not include the current resource pool timeout value.</entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
