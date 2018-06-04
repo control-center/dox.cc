@@ -86,12 +86,12 @@ restrict ADDRESS_RANGE mask NETMASK nomodify notrap</codeblock>
         </substeps>
       </step>
 
-      <substep>
+      <step>
         <cmd>Enable and start the <cmdname>ntpd</cmdname> service.</cmd>
         <stepxmp>
           <codeblock>systemctl enable ntpd &#38;&#38; systemctl start ntpd</codeblock>
         </stepxmp>
-      </substep>
+      </step>
     </steps>
   </taskbody>
 </task>

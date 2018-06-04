@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
+<bookmap>
+  <booktitle>
+    <mainbooktitle>All the books</mainbooktitle>
+  </booktitle>
+  <bookmeta>
+    <publisherinformation>
+      <organization>Zenoss, Inc.</organization>
+    </publisherinformation>
+    <prodinfo>
+      <prodname>Control Center</prodname>
+      <vrmlist>
+        <vrm product="cc" version="1" release="6" modification="0"/>
+      </vrmlist>
+    </prodinfo>
+    <bookrights>
+      <copyrfirst>
+        <year>2018</year>
+      </copyrfirst>
+      <bookowner>
+        <organization>Zenoss, Inc., 11305 Four Points Drive, Bldg 1 - Suite 300, Austin, Texas
+          78726, U.S.A.</organization>
+      </bookowner>
+    </bookrights>
+    <data conkeyref="data/zentm"/>
+  </bookmeta>
+  <frontmatter>
+    <topicgroup>
+      <mapref href="shared/dita/keys-vars.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/keywords.ditamap" format="ditamap"/>
+      <mapref href="shared/dita/subjectScheme.ditamap" format="ditamap"/>
+      <mapref href="images/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="shared/build.ditamap" format="ditamap"/>
+      <mapref href="shared/front/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/glossary/keys.ditamap" format="ditamap"/>
+      <mapref href="shared/urls.ditamap" format="ditamap"/>
+      <mapref href="shared/versions.ditamap" format="ditamap"/>
+    </topicgroup>
+    
+    <!-- install -->
+    <topicgroup>
+      <mapref href="book/install/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/verify/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/access/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/config/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/master/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    
+    <!-- install HA -->
+    <topicgroup>
+      <mapref href="book/install/ha/cluster/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/drbd/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/master/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/plan/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/ha/verify/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/access/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/config/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/master/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/ha/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/ha/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/zk/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/zk/ha/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    
+    <!-- upgrade -->
+    <topicgroup>
+      <mapref href="book/upgrade/11x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/13x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/14x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/15x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/topics/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/access/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/master/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    
+    <!-- upgrade HA -->
+    <topicgroup>
+      <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/11x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/topics/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="book/upgrade/ha/11x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/12x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/13x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/14x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/15x/keys.ditamap" format="ditamap"/>
+      <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/maps/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/paths/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/resize/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/topics/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/access/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/delegate/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/download/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/lib/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/pkg/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/ha/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/ha/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/master/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    
+    <!-- reference -->
+    <topicgroup>
+      <mapref href="book/help/gui/keys.ditamap" format="ditamap"/>
+      <mapref href="book/help/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/help/maps/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    <topicgroup>
+      <mapref href="feature/audit/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/backup/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/cli/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/linux-storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/manage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/nat/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/restart/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/state/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/storage/keys.ditamap" format="ditamap"/>
+      <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
+    </topicgroup>
+    
+    <topicref keyref="tested-browsers"/>
+  </frontmatter>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Install</navtitle>
+    </topicmeta>
+    <chapter href="book/install/verify/verify.ditamap" format="ditamap"/>
+    <chapter href="feature/download/install.ditamap" format="ditamap"/>
+    <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
+    <chapter href="feature/config/master.ditamap" format="ditamap"/>
+    <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
+    <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
+    <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
+  </part>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Install HA</navtitle>
+    </topicmeta>
+    <chapter href="book/install/ha/plan/plan.ditamap" format="ditamap"/>
+    <chapter href="feature/download/install-ha.ditamap" format="ditamap"/>
+    
+    <chapter href="book/install/ha/master/master.ditamap" format="ditamap"/>
+    <chapter href="book/install/ha/drbd/drbd.ditamap" format="ditamap"/>
+    <chapter href="book/install/ha/maps/config-master.ditamap" format="ditamap"/>
+    <chapter href="book/install/ha/cluster/cluster.ditamap" format="ditamap"/>
+    <chapter href="book/install/ha/verify/verify.ditamap" format="ditamap"/>
+    <chapter href="book/install/ha/maps/auth.ditamap" format="ditamap"/>
+    
+    <chapter href="book/install/ha/maps/install-delegate.ditamap" format="ditamap"/>
+    <chapter href="book/install/ha/maps/config-delegate.ditamap" format="ditamap"/>
+    <chapter href="feature/zk/zk-ha.ditamap" format="ditamap"/>
+  </part>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade regular</navtitle>
+    </topicmeta>
+    <chapter href="book/upgrade/paths/paths.ditamap" format="ditamap"/>
+    <chapter href="feature/download/upgrade.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade regular 1.5.0 to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/15x.dita"/>
+    <chapter href="book/upgrade/15x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/15x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/15x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/15x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade regular 1.4.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/14x.dita"/>
+    <chapter href="book/upgrade/14x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/14x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/14x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/14x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade regular 1.3.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/13x.dita"/>
+    <chapter href="book/upgrade/13x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/13x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/13x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/13x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade regular 1.2.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/12x.dita"/>
+    <chapter href="book/upgrade/12x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/12x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade regular 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/front/11x.dita"/>
+    <chapter href="book/upgrade/11x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/maps/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/11x/post.ditamap" format="ditamap"/>
+  </part>
+  
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade HA</navtitle>
+    </topicmeta>
+    <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
+    <chapter href="feature/download/upgrade-ha.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade HA 1.5.0 to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/ha/front/15x.dita"/>
+    <chapter href="book/upgrade/ha/15x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/15x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/15x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade HA 1.4.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/ha/front/14x.dita"/>
+    <chapter href="book/upgrade/ha/14x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/14x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/14x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade HA 1.3.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/ha/front/13x.dita"/>
+    <chapter href="book/upgrade/ha/13x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/13x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade HA 1.2.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/ha/front/12x.dita"/>
+    <chapter href="book/upgrade/ha/12x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/12x/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/12x/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/12x/post.ditamap" format="ditamap"/>
+  </part>
+  <part>
+    <topicmeta>
+      <navtitle>Upgrade HA 1.1.x to <ph keyref="lo-version-cc"/></navtitle>
+    </topicmeta>
+    <topicref href="book/upgrade/ha/front/11x.dita"/>
+    <chapter href="book/upgrade/ha/11x/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/start.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/post.ditamap" format="ditamap"/>
+  </part>
+ 
+  <part>
+    <topicmeta>
+      <navtitle>Reference</navtitle>
+    </topicmeta>
+    <chapter href="book/help/gui/gui.ditamap" format="ditamap"/>
+    <chapter href="book/help/maps/cli.ditamap" format="ditamap"/>
+    <chapter href="book/help/maps/admin.ditamap" format="ditamap"/>
+  </part>
+  
+  <appendices>
+    <!-- install -->
+    <appendix href="feature/state/manage.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
+    <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
+    
+    <!-- install HA -->
+    <appendix href="feature/state/ha/manage.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
+    <appendix href="feature/vars/vars.ditamap" format="ditamap"/>
+    
+    <!-- upgrade -->
+    <appendix href="book/upgrade/maps/thins.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
+    <appendix href="feature/ntp/ntp.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/maps/images.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
+    
+    <!-- upgrade HA -->
+    <appendix href="book/upgrade/ha/maps/thins.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/ha/agent/agent.ditamap" format="ditamap"/>
+    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
+    <appendix href="feature/state/ha/manage.ditamap" format="ditamap"/>
+    <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/maps/access.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/ha/maps/pcs.ditamap" format="ditamap"/>
+    <appendix href="book/upgrade/maps/vars.ditamap" format="ditamap"/>
+    
+    <!-- reference -->
+    <appendix href="feature/linux-storage/storage.ditamap" format="ditamap"/>
+  </appendices>
+  
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref keyref="gl-cc-application"/>
+        <topicref keyref="gl-cc-delegate-host"/>
+        <topicref keyref="gl-cc-master-host"/>
+        <topicref keyref="gl-cc-resource-pool"/>
+        <topicref keyref="gl-cc-service"/>
+        <topicref keyref="gl-service-definition"/>
+        <topicref keyref="gl-service-template"/>
+        <topicref keyref="gl-cc-serviced"/>
+        <topicref keyref="gl-cc-tenant"/>
+      </glossarylist>
+    </booklists>
+  </backmatter>
+
+</bookmap>
