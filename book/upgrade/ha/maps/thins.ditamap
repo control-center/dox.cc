@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
- <title>Thin pool resize</title>
+ <title>Thin pool resize HA</title>
   <appendix keyref="cc-feature-storage-thinpool-minimums">
     <topicref keyref="cc-feature-storage-ha-thinpool-examine">
       <topicref keyref="cc-feature-storage-resize-meta"/>
