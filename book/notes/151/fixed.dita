@@ -35,6 +35,15 @@
             <entry>Missing container not detected when a service is down.</entry>
           </row>
           <row>
+            <entry>CC-3937</entry>
+            <entry><ph keyref="nm-cc"/> does not export the same graph data it displays in its browser interface.</entry>
+          </row>
+          <row>
+            <entry>CC-3959</entry>
+            <entry>Setting a non-default value for <varname>SERVICED_UI_PORT</varname> breaks compatibility 
+              with <ph keyref="nm-rm"/>.</entry>
+          </row>
+          <row>
             <entry>CC-3964</entry>
             <entry>Users who are members of more than 99 groups are unable to log in to browser interface.</entry>
           </row>
@@ -43,8 +52,16 @@
             <entry>Pre-upgrade script fails to parse output of <cmdname>lvs</cmdname> command.</entry>
           </row>
           <row>
+            <entry>CC-4000</entry>
+            <entry>The permissions on OpenTSDB files on the <ph keyref="nm-cc"/> master host are too open.</entry>
+          </row>
+          <row>
             <entry>CC-4082</entry>
             <entry>Log messages do not include the current resource pool timeout value.</entry>
+          </row>
+          <row>
+            <entry>CC-4100</entry>
+            <entry>Add restart thresholds. For more information, see <xref keyref="cc-notes-151-features"/>.</entry>
           </row>
         </tbody>
       </tgroup>
