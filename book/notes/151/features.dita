@@ -4,7 +4,13 @@
   <title>New features</title>
   <refbody>
     <section>
-      <p>This release includes no new features.</p>
+      <title>Configurable service restart thresholds</title>
+      <p>(CC-4100) Restart thresholds are available to manage services. In the <ph keyref="nm-cc"/>
+        browser interface, you can edit the service to specify a value in the new field <uicontrol>Restart when memory usage
+          exceeds % of requested RAM</uicontrol>. When your threshold is reached, the service restarts
+        automatically.</p>
+      <p>For more information about how this feature can be used, refer to the <ph keyref="nm-rm"/>
+        6.2.0 release notes.</p>
     </section>
   </refbody>
 </reference>
