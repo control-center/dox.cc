@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <booktitle>
-    <mainbooktitle>All the books</mainbooktitle>
+    <mainbooktitle>CC: All The Things</mainbooktitle>
   </booktitle>
   <bookmeta>
     <publisherinformation>
@@ -11,9 +11,12 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="6" modification="0"/>
+        <vrm product="cc" version="6" release="6" modification="6"/>
       </vrmlist>
     </prodinfo>
+    <bookid>
+      <bookpartno product="cc">666.<keyword keyref="lo-build-date"/></bookpartno>
+    </bookid>
     <bookrights>
       <copyrfirst>
         <year>2018</year>
