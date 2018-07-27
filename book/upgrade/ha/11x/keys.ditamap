@@ -11,14 +11,6 @@
             href="cc-master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-11x-cron"
-            href="cron.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-dnsmasq"
-            href="dnsmasq.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-11x-docker-config-master"
             href="docker-config-master.dita"
             format="dita"
@@ -35,14 +27,6 @@
             href="docker-install.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-11x-pool-permissions"
-            href="pool-permissions.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-post"
-            href="post.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-11x-prep-features"
             href="prep-features.dita"
             format="dita"
@@ -51,32 +35,8 @@
             href="prep.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-11x-start-delegate-local"
-            href="start-delegate-local.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-start-delegate-ssh"
-            href="start-delegate-ssh.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-start-delegate"
-            href="start-delegate.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-11x-start-master"
             href="start-master.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-vars-new"
-            href="vars-new.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-vars-old"
-            href="vars-old.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-11x-vars"
-            href="vars.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-11x-zk-image"

@@ -15,10 +15,6 @@
             href="cron.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-11x-dnsmasq"
-            href="dnsmasq.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-11x-docker-config-master"
             href="docker-config-master.dita"
             format="dita"

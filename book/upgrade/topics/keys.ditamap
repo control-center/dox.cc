@@ -15,10 +15,6 @@
             href="remove-images.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-topics-remove-old-mirror"
-            href="remove-old-mirror.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-topics-start-zk"
             href="start-zk.dita"
             format="dita"

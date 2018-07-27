@@ -47,10 +47,6 @@
             href="start.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-master-storage-about"
-            href="storage-about.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-master-storage-backups"
             href="storage-backups.dita"
             format="dita"
@@ -65,14 +61,6 @@
     />
     <keydef keys="cc-feature-master-storage-isvcs"
             href="storage-isvcs.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-storage"
-            href="storage.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-master-verify"
-            href="verify.dita"
             format="dita"
     />
    </topicgroup>

@@ -15,10 +15,6 @@
             href="docker-config.dita"
             format="dita"
     />
-    <keydef keys="cc-install-ha-delegate-download"
-            href="download.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-delegate-image-import"
             href="image-import.dita"
             format="dita"

@@ -19,9 +19,5 @@
             href="swap.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-linux-storage-thin-extend"
-            href="thin-extend.dita"
-            format="dita"
-    />
    </topicgroup>
 </map>

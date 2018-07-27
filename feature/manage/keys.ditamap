@@ -7,16 +7,8 @@
             href="container-logs.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-manage-multiple"
-            href="multiple.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-manage-pool-connection-timeout"
             href="pool-connection-timeout.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-manage-remove-images"
-            href="remove-images.dita"
             format="dita"
     />
     <keydef keys="cc-feature-manage-remove-orphan-snaps"

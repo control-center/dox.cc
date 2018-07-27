@@ -27,10 +27,6 @@
             href="endpoints.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-delegate-isvcs"
-            href="isvcs.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-delegate-prep-ha"
             href="prep-ha.dita"
             format="dita"

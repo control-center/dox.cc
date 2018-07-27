@@ -19,13 +19,5 @@
             href="remove-images.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-topics-resize"
-            href="resize.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-topics-start-zk"
-            href="start-zk.dita"
-            format="dita"
-    />
    </topicgroup>
 </map>

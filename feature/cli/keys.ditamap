@@ -11,10 +11,6 @@
             href="script.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-cli-service-clone"
-            href="service-clone.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-cli-serviced-backup"
             href="serviced-backup.dita"
             format="dita"

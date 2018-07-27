@@ -7,10 +7,6 @@
             href="delegate.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-15x-docker-install"
-            href="docker-install.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-15x-master"
             href="master.dita"
             format="dita"

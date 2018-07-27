@@ -3,20 +3,8 @@
 <map>
  <title>Keys in upgrade/ha/13x</title>
   <topicgroup>
-    <keydef keys="cc-upgrade-ha-13x-13x"
-            href="13x.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-agent"
-            href="agent.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-13x-cc-delegate"
             href="cc-delegate.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-cc-master"
-            href="cc-master.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-13x-docker-images"
@@ -25,10 +13,6 @@
     />
     <keydef keys="cc-upgrade-ha-13x-docker-install"
             href="docker-install.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-13x-image"
-            href="image.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-13x-micro-delegate"

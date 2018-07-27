@@ -23,10 +23,6 @@
             href="docker-install.dita"
             format="dita"
     />
-    <keydef keys="cc-install-ha-master-download"
-            href="download.dita"
-            format="dita"
-    />
     <keydef keys="cc-install-ha-master-lib"
             href="lib.dita"
             format="dita"
@@ -57,14 +53,6 @@
     />
     <keydef keys="cc-install-ha-master-registry"
             href="registry.dita"
-            format="dita"
-    />
-    <keydef keys="cc-install-ha-master-storage-backups"
-            href="storage-backups.dita"
-            format="dita"
-    />
-    <keydef keys="cc-install-ha-master-storage-create"
-            href="storage-create.dita"
             format="dita"
     />
     <keydef keys="cc-install-ha-master-verify"

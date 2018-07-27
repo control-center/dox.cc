@@ -15,20 +15,12 @@
             href="pcs.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-ha-maps-post"
-            href="post.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-ha-maps-start"
             href="start.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-ha-maps-stop"
             href="stop.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-ha-maps-vars"
-            href="vars.dita"
             format="dita"
     />
    </topicgroup>

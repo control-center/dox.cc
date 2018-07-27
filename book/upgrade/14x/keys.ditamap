@@ -3,16 +3,8 @@
 <map>
  <title>Keys in upgrade/14x</title>
   <topicgroup>
-    <keydef keys="cc-upgrade-14x-delegate"
-            href="delegate.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-14x-docker-install"
             href="docker-install.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-14x-master"
-            href="master.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-14x-micro-delegate"

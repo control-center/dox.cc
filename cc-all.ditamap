@@ -45,7 +45,6 @@
     
     <!-- install -->
     <topicgroup>
-      <mapref href="book/install/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/verify/keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -71,7 +70,6 @@
       <mapref href="book/install/ha/cluster/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/delegate/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/drbd/keys.ditamap" format="ditamap"/>
-      <mapref href="book/install/ha/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/master/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/ha/plan/keys.ditamap" format="ditamap"/>
@@ -106,9 +104,9 @@
       <mapref href="book/upgrade/13x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/14x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/15x/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/topics/keys.ditamap" format="ditamap"/>
@@ -131,8 +129,7 @@
     <!-- upgrade HA -->
     <topicgroup>
       <mapref href="book/upgrade/front/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/lib/keys.ditamap" format="ditamap"/> 
+      <mapref href="book/upgrade/paths/keys.ditamap" format="ditamap"/> 
       <mapref href="book/upgrade/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/12x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/11x/keys.ditamap" format="ditamap"/>
@@ -148,7 +145,6 @@
       <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/maps/keys.ditamap" format="ditamap"/>
-      <mapref href="book/upgrade/ha/paths/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/resize/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/topics/keys.ditamap" format="ditamap"/>
     </topicgroup>
@@ -172,7 +168,6 @@
     <!-- reference -->
     <topicgroup>
       <mapref href="book/help/gui/keys.ditamap" format="ditamap"/>
-      <mapref href="book/help/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/help/maps/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <topicgroup>

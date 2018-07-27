@@ -15,20 +15,12 @@
             href="master.dita"
             format="dita"
     />
-    <keydef keys="cc-upgrade-maps-prep"
-            href="prep.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-maps-start"
             href="start.dita"
             format="dita"
     />
     <keydef keys="cc-upgrade-maps-stop"
             href="stop.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-maps-vars"
-            href="vars.dita"
             format="dita"
     />
    </topicgroup>

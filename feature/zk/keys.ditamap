@@ -27,14 +27,6 @@
             href="image-import.dita"
             format="dita"
     />
-    <keydef keys="cc-feature-zk-image-pull"
-            href="image-pull.dita"
-            format="dita"
-    />
-    <keydef keys="cc-feature-zk-image"
-            href="image.dita"
-            format="dita"
-    />
     <keydef keys="cc-feature-zk-lib"
             href="lib.dita"
             format="dita"
