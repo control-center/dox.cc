@@ -3,9 +3,14 @@
 <concept id="taskid">
   <title><ph keyref="nm-cc"/> configuration variables</title>
   <conbody>
-    <p>This appendix includes recommended best practices for editing
-      the <codeph>serviced</codeph> configuration file, and descriptions
-      of the variables in the file.</p>
+    <p>This chapter includes the following major sections:</p>
+    <ul>
+      <li><xref keyref="cc-feature-vars-best"/></li>
+      <li><xref keyref="cc-feature-vars-master"/></li>
+      <li><xref keyref="cc-feature-vars-delegate-about"/></li>
+      <li><xref keyref="cc-feature-vars-all"/></li>
+      <li><xref keyref="cc-feature-vars-file"/></li>
+    </ul>
   </conbody>
 </concept>
 

@@ -16,6 +16,5 @@
       <topicref keyref="cc-feature-cli-serviced-service"/>
       <topicref keyref="cc-feature-cli-serviced-snapshot"/>
       <topicref keyref="cc-feature-cli-serviced-storage"/>
-      <topicref keyref="cc-feature-vars-file"/>
    </chapter>
 </bookmap>

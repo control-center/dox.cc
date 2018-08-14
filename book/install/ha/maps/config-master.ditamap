@@ -13,19 +13,5 @@
     <topicref keyref="cc-install-ha-master-registry"/>
     <topicref keyref="cc-install-ha-master-config-endpoints"/>
     <topicref keyref="cc-install-ha-master-config-offline"/>
-    <topicref keyref="cc-feature-vars-master">
-      <topicref keyref="cc-feature-vars-best"/>
-      <topicref keyref="cc-feature-vars-rpc"/>
-      <topicref keyref="cc-feature-vars-mux"/>
-      <topicref keyref="cc-feature-vars-http"/>
-      <topicref keyref="cc-feature-vars-browser"/>
-      <topicref keyref="cc-feature-vars-tune-master"/>
-    </topicref>
-    <topicref keyref="cc-feature-vars-all">
-      <topicref keyref="cc-feature-vars-browser-all"/>
-      <topicref keyref="cc-feature-vars-networking"/>
-      <topicref keyref="cc-feature-vars-debug"/>
-      <topicref keyref="cc-feature-vars-tune"/>
-    </topicref>
    </chapter>
 </bookmap>
