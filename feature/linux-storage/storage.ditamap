@@ -3,9 +3,9 @@
   PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <title>Storage</title>
-   <appendix keyref="cc-feature-linux-storage-storage">
+   <chapter keyref="cc-feature-linux-storage-storage">
      <topicref keyref="cc-feature-linux-storage-discover"/>
      <topicref keyref="cc-feature-linux-storage-partition"/>
      <topicref keyref="cc-feature-linux-storage-swap"/>
-   </appendix>
+   </chapter>
 </bookmap>

@@ -2,8 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Pkg conflicts</title>
-   <appendix keyref="cc-feature-pkg-pkg">
+   <chapter keyref="cc-feature-pkg-pkg">
       <topicref keyref="cc-feature-pkg-device-mapper"/>
       <topicref keyref="cc-feature-pkg-other"/>
-   </appendix>
+   </chapter>
 </bookmap>

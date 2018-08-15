@@ -2,9 +2,9 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
   <title>Access</title>
-  <appendix keyref="cc-feature-access-access">
+  <chapter keyref="cc-feature-access-access">
     <topicref keyref="cc-feature-access-wheel"/>
     <topicref keyref="cc-feature-access-serviced"/>
     <topicref keyref="cc-feature-access-cli"/>
-   </appendix>
+   </chapter>
 </bookmap>

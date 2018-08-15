@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
-   <title>Start/Stop HA</title>
+   <title>HA Start/Stop</title>
    <appendix keyref="cc-feature-state-ha-manage">
       <topicref keyref="cc-feature-state-ha-stop">
          <topicref keyref="cc-feature-state-ha-stop-master"/>

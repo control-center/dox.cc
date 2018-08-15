@@ -2,8 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap>
    <title>Private NTP</title>
-    <appendix keyref="cc-feature-ntp-ntp">
+   <chapter keyref="cc-feature-ntp-ntp">
        <topicref keyref="cc-feature-ntp-master"/>
        <topicref keyref="cc-feature-ntp-delegate"/>
-   </appendix>
+   </chapter>
 </bookmap>

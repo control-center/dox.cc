@@ -30,40 +30,8 @@
         <cmd></cmd>
       </step>
       
-      <step>
-        <cmd>Install and configure the NTP package.</cmd>
-        <info>
-          <note>This procedure assumes the host has internet access. 
-            To install and configure NTP on a host that does not have 
-            internet access, see <xref keyref="cc-feature-ntp-ntp"/>.</note>
-        </info>
-        <substeps>
-          <substep>
-            <cmd>Stop and disable <cmdname>chronyd</cmdname>, if present.</cmd>
-            <stepxmp>
-              <codeblock>test "$(systemctl is-active chronyd)" = "active" \
-                &#38;&#38; systemctl stop chronyd &#38;&#38; systemctl disable chronyd</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Install the NTP package.</cmd>
-            <stepxmp>
-              <codeblock>yum makecache fast &#38;&#38; yum install ntp</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Set the system time.</cmd>
-            <stepxmp>
-              <codeblock>ntpd -gq</codeblock>
-            </stepxmp>
-          </substep>
-          <substep>
-            <cmd>Enable and start the <cmdname>ntpd</cmdname> service.</cmd>
-            <stepxmp>
-              <codeblock>systemctl enable ntpd &#38;&#38; systemctl start ntpd</codeblock>
-            </stepxmp>
-          </substep>
-        </substeps>
+      <step conkeyref="cc-feature-lib-tasks/ntp-chrony">
+        <cmd></cmd>
       </step>
       
     </steps>

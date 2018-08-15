@@ -3,9 +3,9 @@
 <concept id="taskid">
   <title>Configuring a private master NTP server</title>
   <conbody>
-    <p><ph keyref="nm-cc"/> requires a common time source. The procedures in this appendix 
-      configure a private master <xref keyref="url-ntp"/> server to synchronize
-      the system clocks of all <ph keyref="nm-cc"/> hosts.</p>
+    <p><ph keyref="nm-cc"/> requires a common time source. The procedures in this chapter configure
+      a private master <xref keyref="url-ntp"/> server to synchronize the system clocks of all <ph
+        keyref="nm-cc"/> hosts.</p>
       
     <p>A private master server is only required when a multi-host deployment does not 
       have internet access and no time synchronization servers are available behind the

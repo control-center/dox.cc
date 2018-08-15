@@ -4,8 +4,8 @@
   <title>Resolving package dependency conflicts</title>
   <refbody>
     <section>
-      <p>This appendix includes procedures for resolving common Docker CE and 
-        <ph keyref="nm-cc"/> dependency conflicts.</p>
+      <p>This chapter includes procedures for resolving Docker CE and <ph keyref="nm-cc"/>
+        dependency conflicts that may occur during installation.</p>
     </section>
   </refbody>
 </reference>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
- <title>PCS DRBD</title>
+ <title>HA PCS DRBD</title>
   <appendix keyref="cc-upgrade-ha-maps-pcs">
     <topicref keyref="cc-feature-download-pcs-drbd"/>
     <topicref keyref="cc-upgrade-ha-topics-pcs-drbd-update"/>

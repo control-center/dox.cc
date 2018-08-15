@@ -4,10 +4,10 @@
   <title>Starting and stopping <ph keyref="nm-cc"/> deployments</title>
   <refbody>
     <section>
-      <p>This appendix includes procedures for stopping and starting both 
-        single-host and multi-host <ph keyref="nm-cc"/> deployments.</p>
-      <note>The procedures in this appendix assume that <ph keyref="nm-cc"/>
-      is the only source of Docker containers that are run on a host.</note>
+      <p>This chapter includes procedures for stopping and starting both single-host and multi-host
+          <ph keyref="nm-cc"/> deployments.</p>
+      <note>The procedures in this chapter assume that <ph keyref="nm-cc"/> is the only source of
+        Docker containers that are run on a host.</note>
     </section>
   </refbody>
 </reference>
