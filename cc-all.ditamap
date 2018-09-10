@@ -188,19 +188,6 @@
   
   <part>
     <topicmeta>
-      <navtitle>Install</navtitle>
-    </topicmeta>
-    <chapter href="book/install/verify/verify.ditamap" format="ditamap"/>
-    <chapter href="feature/download/install.ditamap" format="ditamap"/>
-    <chapter href="book/install/maps/master.ditamap" format="ditamap"/>
-    <chapter href="feature/config/master.ditamap" format="ditamap"/>
-    <chapter href="book/install/maps/delegate.ditamap" format="ditamap"/>
-    <chapter href="feature/config/delegate.ditamap" format="ditamap"/>
-    <chapter href="feature/zk/zk.ditamap" format="ditamap"/>
-  </part>
-  
-  <part>
-    <topicmeta>
       <navtitle>Install HA</navtitle>
     </topicmeta>
     <chapter href="book/install/ha/plan/plan.ditamap" format="ditamap"/>
@@ -348,23 +335,6 @@
     <chapter href="book/upgrade/ha/maps/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/start.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/maps/post.ditamap" format="ditamap"/>
-  </part>
- 
-  <part>
-    <topicmeta>
-      <navtitle>Reference</navtitle>
-    </topicmeta>
-    <chapter href="book/help/gui/gui.ditamap" format="ditamap"/>
-    <chapter href="book/help/maps/cli.ditamap" format="ditamap"/>
-    <chapter href="book/help/maps/admin.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/access.ditamap" format="ditamap"/>
-    <chapter href="feature/state/manage.ditamap" format="ditamap"/>
-    <chapter href="feature/vars/vars.ditamap" format="ditamap"/>
-    <chapter href="feature/ntp/ntp.ditamap" format="ditamap"/>
-    <chapter href="feature/pkg/pkg.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/maps/thins.ditamap" format="ditamap"/>
-    <chapter href="feature/linux-storage/storage.ditamap" format="ditamap"/>
-    
   </part>
   
   <appendices>

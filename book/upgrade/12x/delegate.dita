@@ -30,14 +30,6 @@
       </step>
       
       <step>
-        <cmd>Remove the external <ph conkeyref="names/company"/> repository package.</cmd>
-        <info>Upgrades no longer require external repositories.</info>
-        <stepxmp>
-          <codeblock>yum remove zenoss-repo-1-1.x86_64</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step>
         <cmd>Install the new version of <ph keyref="nm-cc"/>.</cmd>
         <stepxmp>
           <codeblock>yum install --enablerepo=zenoss-mirror \

@@ -11,6 +11,10 @@
             href="best-practices.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-topics-binary"
+            href="binary.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-topics-remove-images"
             href="remove-images.dita"
             format="dita"

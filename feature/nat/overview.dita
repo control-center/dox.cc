@@ -26,7 +26,7 @@
         register the keys. </p>
       <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:<varname>Host-Port</varname> \
   <ph conkeyref="cc-feature-cli-serviced-host/nat-address-port"/> \
-  [–register]</codeblock>
+  [-–register]</codeblock>
     </section>
     <section>If you have two delegates behind the NAT device, change the
       port forwarding for port 22 between adding the hosts, or transfer the keys file manually to

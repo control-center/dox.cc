@@ -125,28 +125,28 @@
           <dd>This option has been deprecated.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>volumes-path <var>Path</var></synph></dt>
+          <dt><synph>--volumes-path <var>Path</var></synph></dt>
           <dd>The location of <cmdname>serviced</cmdname> application data. The default path is
               <filepath>/opt/serviced/var/volumes</filepath> unless the value of the
               <varname>SERVICED_VOLUMES_PATH</varname> is set in the configuration file. For more
             information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>isvcs-path <var>Path</var></synph></dt>
+          <dt><synph>--isvcs-path <var>Path</var></synph></dt>
           <dd>The location of <cmdname>serviced</cmdname> internal services data. The default path
             is <filepath>/opt/serviced/var/isvcs</filepath> unless the value of the
               <varname>SERVICED_ISVCS_PATH</varname> is set in the configuration file. For more
             information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>backups-path <var>Path</var></synph></dt>
+          <dt><synph>--backups-path <var>Path</var></synph></dt>
           <dd>The location of <cmdname>serviced</cmdname> backup files. The default path is
               <filepath>/opt/serviced/var/backups</filepath> unless the value of the
               <varname>SERVICED_BACKUPS_PATH</varname> is set in the configuration file. For more
             information, see the section about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>etc-path <var>Path</var></synph></dt>
+          <dt><synph>--etc-path <var>Path</var></synph></dt>
           <dd>The location of <cmdname>serviced</cmdname> configuration files. The default path is
               <filepath>/opt/serviced/etc</filepath>.</dd>
         </dlentry>        
@@ -257,7 +257,7 @@
             about configuration file environment variables.</dd>
         </dlentry>
         <dlentry>
-          <dt><synph>--isvcs-zk-id <var> Indentifier</var></synph>
+          <dt><synph>--isvcs-zk-id <var> Identifier</var></synph>
           </dt>
           <dd>The unique identifier (a positive integer) of a ZooKeeper ensemble node. If
               <varname>SERVICED_ISVCS_ZOOKEEPER_ID</varname> is set in the configuration file, its
@@ -433,7 +433,7 @@
             variables.</dd>
         </dlentry>
         <dlentry>
-          <dt>--storage-stats-update-interval <synph><var>Duration</var></synph></dt>
+          <dt><synph>--storage-stats-update-interval <var>Duration</var></synph></dt>
           <dd>The frequency in seconds that the thin pool usage is analyzed. The default value is
             300 (five minutes) unless <varname>SERVICED_STORAGE_STATS_UPDATE_INTERVAL</varname> is
             set in the configuration file. For more information, see the section about configuration

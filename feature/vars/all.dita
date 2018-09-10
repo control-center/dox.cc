@@ -8,5 +8,197 @@
         configuration variables that apply to all <ph keyref="nm-cc"/> hosts. 
         Set these variables as required for your environment or applications.</p>
     </section>
+    <section>
+      <title>Role variable</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2.3*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>SERVICED_MASTER</varname></entry>
+              <entry>Assigns the role of a <cmdname>serviced</cmdname> instance, either master or delegate.
+                The master runs the application services scheduler and other internal services.
+                Delegates run the application services assigned to the resource pool to which
+                they belong.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Browser interface variable (all hosts)</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2.3*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>SERVICED_UI_PORT</varname></entry>
+              <entry>The port on which the HTTP server listens for requests.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Networking variables</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2.3*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>SERVICED_STATIC_IPS</varname></entry>
+              <entry>A list of one or more static IP addresses for IP assignment.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_OUTBOUND_IP</varname></entry>
+              <entry>The IP address of the network interface for <cmdname>serviced</cmdname> to use.
+                When this variable is not set, <cmdname>serviced</cmdname> uses the IP address of the
+                default network interface and assumes it has internet access. To prevent
+                <cmdname>serviced</cmdname> from assuming it has internet access, set this
+                variable.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_VIRTUAL_ADDRESS_SUBNET</varname></entry>
+              <entry>The private network for containers that use virtual IP addresses. The default is
+                <codeph>10.3.0.0/16</codeph>, and the network can be unique on each host. A
+                <codeph>/29</codeph> network is sufficient.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_DOCKER_DNS</varname></entry>
+              <entry>A list of one or more DNS servers. The list is injected into all Docker 
+                containers.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Debugging variables</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2.3*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>SERVICED_LOG_LEVEL</varname></entry>
+              <entry>The log level <cmdname>serviced</cmdname> uses when writing to the system log.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_DEBUG_PORT</varname></entry>
+              <entry>The port on which <cmdname>serviced</cmdname> listens for 
+                HTTP requests for the <xref keyref="url-go-profiler"/>.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_DOCKER_LOG_DRIVER</varname></entry>
+              <entry>The log driver for all Docker container logs.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_DOCKER_LOG_CONFIG</varname></entry>
+              <entry>Docker <codeph>--log-opt</codeph> options.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Tuning variables (all <ph keyref="nm-cc"/> hosts)</title>
+      <table>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Variable</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><varname>GOMAXPROCS</varname></entry>
+              <entry>The maximum number of CPU cores that <cmdname>serviced</cmdname> uses.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_MAX_CONTAINER_AGE</varname></entry>
+              <entry>The number of seconds <cmdname>serviced</cmdname>
+                waits before removing a stopped container.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_ISVCS_ENV_[0-9]+</varname></entry>
+              <entry>Startup arguments to pass to specific internal services.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_SERVICE_MIGRATION_TAG</varname></entry>
+              <entry>Overrides the default value for the service migration image.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_OPTS</varname></entry>
+              <entry>Startup arguments for <cmdname>serviced</cmdname>.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_CONTROLLER_BINARY</varname></entry>
+              <entry>The path of the <cmdname>serviced-controller</cmdname> binary.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_HOME</varname></entry>
+              <entry>The path of the home directory for <cmdname>serviced</cmdname>.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_ETC_PATH</varname></entry>
+              <entry>The path of the directory for <cmdname>serviced</cmdname>
+                configuration files.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_VHOST_ALIASES</varname></entry>
+              <entry>A list of hostname aliases for a host; for example, 
+                <codeph>localhost</codeph>.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_ZK_CONNECT_TIMEOUT</varname></entry>
+              <entry>The number of seconds <ph keyref="nm-cc"/> waits 
+                for a connection to the lead ZooKeeper host.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_ZK_PER_HOST_CONNECT_DELAY</varname></entry>
+              <entry>The number of seconds <ph keyref="nm-cc"/> waits before attempting to 
+                connect to the next host in its round-robin list of ZooKeeper hosts.</entry>
+            </row>
+            <row>
+              <entry><varname>SERVICED_ZK_RECONNECT_START_DELAY</varname>,
+                <varname>SERVICED_ZK_RECONNECT_MAX_DELAY</varname></entry>
+              <entry>These are used
+                together when <ph keyref="nm-cc"/> is unable to re-establish 
+                a connection with the lead ZooKeeper host.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
   </refbody>
 </reference>

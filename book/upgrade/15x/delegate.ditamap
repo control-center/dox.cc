@@ -3,6 +3,6 @@
 <bookmap >
  <title>Delegate</title>
   <chapter keyref="cc-upgrade-15x-micro-delegate">
-    <topicref keyref="cc-upgrade-15x-delegate"/>
+    <topicref keyref="cc-upgrade-topics-binary"/>
  </chapter>
 </bookmap>

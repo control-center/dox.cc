@@ -3,6 +3,6 @@
 <bookmap >
  <title>Master</title>
   <chapter keyref="cc-upgrade-15x-micro-master">
-    <topicref keyref="cc-upgrade-15x-master"/>
+    <topicref keyref="cc-upgrade-topics-binary"/>
  </chapter>
 </bookmap>

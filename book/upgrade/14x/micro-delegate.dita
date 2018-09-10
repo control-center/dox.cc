@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
 <reference id="conceptid">
-  <title>Upgrading delegates from 1.4.x to <ph keyref="lo-version-cc"/></title>
+  <title>Upgrading delegates from 1.4.1 to <ph keyref="lo-version-cc"/></title>
   <refbody>
     <section>
-      <p>Use this chapter to upgrade <ph keyref="nm-cc"/> 1.4.x delegate hosts to <ph
+      <p>Use this chapter to upgrade <ph keyref="nm-cc"/> 1.4.1 delegate hosts to <ph
           keyref="lo-version-cc"/>. Before performing the procedures in this chapter, download
         required software. See <xref keyref="cc-feature-download-intro-upgrade"/>.</p>
     </section>

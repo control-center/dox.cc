@@ -7,9 +7,7 @@
       <p>Use this chapter to upgrade a <ph keyref="nm-cc"/> 1.5.0 master host to <ph
           keyref="lo-version-cc"/>. Before performing the procedures in this chapter, download
         required software. See <xref keyref="cc-feature-download-intro-upgrade"/>.</p>
-      <note>The Docker image files for <ph keyref="nm-cc"/> are unchanged for this release. You only 
-        need to download and install the new <cmdname>serviced</cmdname> RPM package and the
-        operating system mirror package.</note>
+      
     </section>
   </refbody>
 </reference>
