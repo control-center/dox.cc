@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Notes and workarounds</title>
+  <refbody>
+    <section>
+      <title>Updating to release 1.6.2</title>
+      <p>The Docker images for <ph keyref="nm-cc"/> (<codeph>zenoss/serviced-isvcs</codeph> 
+        and <codeph>zenoss/isvcs-zookeeper</codeph>) are unchanged from release 1.5.1. Only the
+      <cmdname>serviced</cmdname> binary is changed. To update, just download and install the 
+        <cmdname>serviced</cmdname> RPM package, <filepath>serviced-1.6.2-1.x86_64.rpm</filepath>.</p>
+    </section>
+  </refbody>
+</reference>
