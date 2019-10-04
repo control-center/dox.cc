@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="1"/>
+        <vrm product="cc" version="1" release="6" modification="3"/>
       </vrmlist>
     </prodinfo>
     <bookid>
