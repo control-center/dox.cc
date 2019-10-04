@@ -6,6 +6,8 @@
    <section>
      <p><cite conkeyref="pubs/cite-ref"/> provides information and procedures for managing <ph
           keyref="nm-cc"/>.</p>
+     <note>This guide is for use by <ph keyref="nm-core"/> users who are deploying
+       <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> only.</note>
    </section>   
  </refbody>
 </reference>

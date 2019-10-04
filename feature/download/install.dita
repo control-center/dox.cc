@@ -3,11 +3,17 @@
 <task id="taskid">
   <title>Downloading <ph keyref="nm-cc"/> files</title>
   <taskbody>
-    <prereq conkeyref="cc-feature-download-lib/download-prereq"/>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>An account on the <xref keyref="url-zenoss-community"/> site.</li>
+        <li>A secure network copy program.</li>
+      </ul>
+    </prereq>
     <context conkeyref="cc-feature-download-lib/download-context"/>
     <steps>
-      <step conkeyref="cc-feature-download-lib/navigate-log-in">
-        <cmd></cmd>
+      <step>
+        <cmd>In a web browser, navigate to <xref keyref="url-zenoss-community"/>, and then log in.</cmd>
       </step>
       
       <step conkeyref="cc-feature-download-lib/download-cc-images">

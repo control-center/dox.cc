@@ -7,10 +7,8 @@
       <p><cite conkeyref="pubs/cite-install"/> provides detailed procedures for installing and
         configuring a <ph keyref="nm-cc"/> deployment. Before using this guide, carefully review the
           <ph conkeyref="pubs/ph-plan"/>.</p>
-      
-      <p><b><ph conkeyref="names/company"/> customers:</b> This guide does not include procedures for
-        installing a high-availability deployment.  <ph conkeyref="strings/fmi-ext"/>
-        <cite conkeyref="pubs/cite-install-ha"/>.</p>
+      <note>This guide is for use by <ph keyref="nm-core"/> users who are deploying
+        <ph keyref="nm-cc"/> <ph keyref="lo-version-cc"/> only.</note>
     </section>
   </refbody>
 </reference>

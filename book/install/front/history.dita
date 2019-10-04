@@ -14,7 +14,7 @@
           <dd>Update release number.</dd>
         </dlentry>
         <dlentry>
-          <dt>1920.<keyword keyref="lo-build-date"/> (1.5.1)</dt>
+          <dt>1920.18.158 (1.5.1)</dt>
           <dd>A new first chapter is added, about host verification. The
             chapter describes how to use a script to verify resources. Subsequent
             chapters are simplified.</dd>

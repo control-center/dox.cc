@@ -25,12 +25,7 @@
               <entry>Provides detailed procedures for installing
                 and configuring <ph keyref="nm-cc"/>.</entry>
             </row>
-            <row>
-              <entry><cite conkeyref="pubs/cite-install-ha"/></entry>
-              <entry>Provides detailed procedures for installing
-                and configuring <ph keyref="nm-cc"/> in a 
-                high-availability deployment.</entry>
-            </row>
+            
             <row>
               <entry><cite conkeyref="pubs/cite-ref"/></entry>
               <entry>Provides information and procedures for managing
@@ -43,12 +38,7 @@
                 a <ph keyref="nm-cc"/> deployment to the 
                 latest release.</entry>
             </row>
-            <row>
-              <entry><cite conkeyref="pubs/cite-upgrade-ha"/></entry>
-              <entry>Provides detailed procedures for updating
-                a high-availability deployment of <ph keyref="nm-cc"/>
-                to the latest release.</entry>
-            </row>
+            
           </tbody>
         </tgroup>
       </table>
