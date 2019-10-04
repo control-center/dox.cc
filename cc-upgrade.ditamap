@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="1"/>        
+        <vrm product="cc" version="1" release="6" modification="3"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -86,7 +86,7 @@
   
   <part>
     <topicmeta>
-      <navtitle>Upgrading 1.5.0 to <ph keyref="lo-version-cc"/></navtitle>
+      <navtitle>Upgrading 1.5.x to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/front/15x.dita"/>
     <chapter href="book/upgrade/15x/prep.ditamap" format="ditamap"/>

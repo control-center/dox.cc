@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>New features</title>
+  <refbody>
+    <section>
+      <title>Automatic restart when a service fails 3 health checks in a row</title>
+      <p>(CC-3559) This feature ensures deadlocked services are restarted after 3 
+        failed health checks (2.5 minutes). Zope services in particular benefit from this update.</p>
+    </section>
+  </refbody>
+</reference>

@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="1" release="5" modification="1"/> 
+        <vrm product="cc" version="1" release="6" modification="3"/>
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -22,8 +22,8 @@
         <year>2018</year>
       </copyrfirst>
       <bookowner>
-        <organization>Zenoss, Inc., 11305 Four Points Drive, 
-          Bldg 1 - Suite 300, Austin, Texas 78726, U.S.A.</organization>        
+        <organization>Zenoss, Inc., 11305 Four Points Drive, Bldg 1 - Suite 300, Austin, Texas
+          78726, U.S.A.</organization>
       </bookowner>
     </bookrights>
     <data conkeyref="data/zentm"/>
@@ -42,13 +42,14 @@
       <mapref href="shared/urls.ditamap" format="ditamap"/>
       <mapref href="shared/versions.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup> <!-- never need changing -->
+    <topicgroup>
+      <!-- never need changing -->
       <mapref href="book/notes/front/keys.ditamap" format="ditamap"/>
       <mapref href="book/notes/back/keys.ditamap" format="ditamap"/>
     </topicgroup>
-    <topicgroup> <!-- add as needed -->
-      <mapref href="book/notes/151/keys.ditamap" format="ditamap"/>
-      <mapref href="book/notes/150/keys.ditamap" format="ditamap"/>
+    <topicgroup>
+      <!-- add as needed -->
+      <mapref href="book/notes/163/keys.ditamap" format="ditamap"/>
     </topicgroup>
     <preface>
       <topicref href="book/notes/front/about.dita">
@@ -56,7 +57,6 @@
       </topicref>
     </preface>
   </frontmatter>
-  <chapter href="book/notes/151/self.ditamap" format="ditamap"/>
-  <chapter href="book/notes/150/self.ditamap" format="ditamap"/>
+  <chapter href="book/notes/163/self.ditamap" format="ditamap"/>
   <appendix href="book/notes/back/back.ditamap" format="ditamap"/>
 </bookmap>

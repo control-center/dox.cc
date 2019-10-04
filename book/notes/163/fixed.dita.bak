@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>Fixed issues</title>
+  <refbody>
+    <table>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="4.26*"/>
+        <thead>
+          <row>
+            <entry>ID</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row><entry>CC-4170</entry><entry>Health checks for the API proxy leak connections.</entry></row>
+          <row><entry>CC-4162</entry><entry>The ZooKeeper client library panics when it receives a large message.</entry></row>
+          <row><entry>CC-4119</entry><entry>Memory leak caused by the time.After function.</entry></row>
+          <row><entry>CC-4105</entry><entry>No authentication or authorization is enforced when a server attempts to join a ZooKeeper quorum.</entry></row>
+          <row><entry>CC-3559</entry><entry>Health check does not initiate restart of deadlocked service.</entry></row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>
