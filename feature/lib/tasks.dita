@@ -155,7 +155,7 @@
         <stepxmp>
           <p>Replace <varname>Hostname-Or-IP</varname> with the hostname or IP address of the delegate
             host to add:</p>
-          <codeblock>serviced host add <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
+          <codeblock>serviced host add --register <varname>Hostname-Or-IP</varname>:4979 default</codeblock>
           <p>If you enter a hostname, all <ph keyref="nm-cc"/> hosts must be able to
             resolve the name, either through an entry in <filepath>/etc/hosts</filepath>, or through
             a nameserver on your network.</p>
