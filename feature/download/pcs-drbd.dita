@@ -69,7 +69,7 @@
             <cmd>Add the repository to the download host.</cmd>
             <stepxmp>
               <codeblock>rpm -Uvh \
-  http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</codeblock>
+  https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm</codeblock>
             </stepxmp>
           </substep>
           <substep>
