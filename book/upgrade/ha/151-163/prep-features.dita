@@ -12,15 +12,8 @@
         The upgrade process includes a step for updating the operating system.</li>
         <li>On RHEL/CentOS 7.4, there may be a file locking defect in NFS 4.1. To
         avoid the issue, delegate hosts are configured to use NFS 4.0.</li>
-        <li>The <cmdname>serviced-zenossdbpack</cmdname> maintenance
-          script is moved from <filepath>/etc/cron.weekly</filepath> to
-          <filepath>/opt/serviced/bin</filepath> and a new <cmdname>cron</cmdname> job,
-          <filepath>/etc/cron.d/cron_zenossdbpack</filepath>, is installed to
-          invoke the maintenance script. By default, the script runs every Sunday at midnight.</li>
-        <li>This release replaces Docker Community Edition (CE) 17.03.1 with Docker CE 17.09.0.</li>
+        <li>This release replaces Docker Community Edition (CE) 17.09.0 with Docker CE 18.09.6.</li>
       </ul>
-      <p>For more information about this release, refer
-        to the <cite conkeyref="pubs/cite-notes"/>.</p>
     </section>
   </refbody>
 </reference>

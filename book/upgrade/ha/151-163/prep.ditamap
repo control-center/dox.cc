@@ -2,8 +2,8 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Before</title>
-  <chapter keyref="cc-upgrade-ha-14x-prep">
-    <topicref keyref="cc-upgrade-ha-14x-prep-features"/>
+  <chapter keyref="cc-upgrade-ha-151-163-prep">
+    <topicref keyref="cc-upgrade-ha-151-163-prep-features"/>
     <topicref keyref="cc-upgrade-ha-topics-best-practices"/>
  </chapter>
 </bookmap>
