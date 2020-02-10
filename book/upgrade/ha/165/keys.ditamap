@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha/165</title>
+  <topicgroup>
+    <keydef keys="cc-upgrade-ha-165-13x"
+            href="13x.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-agent"
+            href="agent.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-cc-delegate"
+            href="cc-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-cc-master"
+            href="cc-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-docker-images"
+            href="docker-images.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-docker-install"
+            href="docker-install.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-image"
+            href="image.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-micro-delegate"
+            href="micro-delegate.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-micro-master"
+            href="micro-master.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-post"
+            href="post.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-prep-features"
+            href="prep-features.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-prep"
+            href="prep.dita"
+            format="dita"
+    />
+    <keydef keys="cc-upgrade-ha-165-zk-image"
+            href="zk-image.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

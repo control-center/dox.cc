@@ -3,22 +3,6 @@
 <map>
  <title>Keys in upgrade/front</title>
   <topicgroup>
-    <keydef keys="cc-upgrade-front-11x"
-            href="11x.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-front-12x"
-            href="12x.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-front-13x"
-            href="13x.dita"
-            format="dita"
-    />
-    <keydef keys="cc-upgrade-front-14x"
-            href="14x.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-front-15x"
             href="15x.dita"
             format="dita"

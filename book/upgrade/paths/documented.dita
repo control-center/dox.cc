@@ -49,11 +49,6 @@
               <entry><ph keyref="nm-cc"/>
                 <ph keyref="lo-version-cc"/></entry>
             </row>
-            <row>
-              <entry><ph keyref="nm-cc"/> 1.5.0</entry>
-              <entry><ph keyref="nm-cc"/>
-                <ph keyref="lo-version-cc"/></entry>
-            </row>
           </tbody>
         </tgroup>
       </table>
