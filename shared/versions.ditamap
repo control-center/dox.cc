@@ -21,14 +21,14 @@
     <keydef keys="lo-version-isvcs">
       <topicmeta>
         <keywords>
-          <keyword>61</keyword>
+          <keyword>63</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-zk">
       <topicmeta> <!-- ZooKeeper image -->
         <keywords>
-          <keyword>10</keyword>
+          <keyword>11</keyword>
         </keywords>
       </topicmeta>
     </keydef>

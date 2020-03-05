@@ -9,8 +9,8 @@
   <refbody>
     <section>
       
-      <title>Release 1.5</title>
-      <table id="images15">
+      <title>Release 1.7</title>
+      <table id="images17">
         <tgroup cols="3">
           <colspec colname="c1" colwidth="1*"/>
           <colspec colname="c2" colwidth="1*"/>
@@ -28,6 +28,63 @@
                 <ph keyref="lo-version-cc"/></entry>
               <entry>zenoss/serviced-isvcs:v<ph keyref="lo-version-isvcs"/></entry>
               <entry>zenoss/isvcs-zookeeper:v<ph keyref="lo-version-zk"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    
+    <section>
+      
+      <title>Release 1.6</title>
+      <table id="images16">
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Release</entry>
+              <entry>Internal services image tag</entry>
+              <entry>ZooKeeper image tag</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.6.5</entry>
+              <entry>zenoss/serviced-isvcs:v63</entry>
+              <entry>zenoss/isvcs-zookeeper:v11</entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.6.3</entry>
+              <entry>zenoss/serviced-isvcs:v61</entry>
+              <entry>zenoss/isvcs-zookeeper:v11</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    
+    <section>
+      
+      <title>Release 1.5</title>
+      <table id="images15">
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Release</entry>
+              <entry>Internal services image tag</entry>
+              <entry>ZooKeeper image tag</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.5.1</entry>
+              <entry>zenoss/serviced-isvcs:v61</entry>
+              <entry>zenoss/isvcs-zookeeper:v10</entry>
             </row>
             <row>
               <entry><ph keyref="nm-cc"/> 1.5.0</entry>
