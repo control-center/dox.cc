@@ -15,10 +15,6 @@
             href="clear-heartbeat.dita"
             format="dita"
     />
-    <keydef keys="base-upgrade-ha-current"
-            href="current.dita"
-            format="dita"
-    />
     <keydef keys="base-upgrade-ha-download-install"
             href="download-install.dita"
             format="dita"

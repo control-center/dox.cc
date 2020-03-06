@@ -7,12 +7,8 @@
       <p>The following list outlines recommended best practices for upgrading high-availability <ph
           keyref="nm-cc"/> deployments:</p>
       <ol>
-        <li>Upgrade only what needs upgrading. For example, you can update some components
-          independently. For more information, see the following appendices:
-        <ul>
-          <li><xref keyref="cc-upgrade-ha-agent-agent"/></li>
-          <li><xref keyref="cc-upgrade-ha-maps-pcs"/></li>
-        </ul>
+        <li>Upgrade only what needs upgrading. For example, you can update DRBD/Corosync
+          independently. For more information, see the <xref keyref="cc-upgrade-ha-maps-pcs"/> appendix.
         </li>
         
         <li>Compare the Docker images that accompany this release with the

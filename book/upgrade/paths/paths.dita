@@ -4,9 +4,83 @@
   <title>Documented upgrade paths</title>
   <refbody>
     <section>
-      <p>This chapter includes the dates of <ph keyref="nm-cc"/> releases
-        and the <ph keyref="nm-cc"/> and <ph keyref="nm-rm"/> upgrade paths
-        that are documented in this guide.</p>
+      <table>
+        <title><ph keyref="nm-cc"/> upgrade paths</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>From </entry>
+              <entry>To </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.6.5</entry>
+              <entry><ph keyref="nm-cc"/>
+                <ph keyref="lo-version-cc"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.6.3</entry>
+              <entry><ph keyref="nm-cc"/>
+                <ph keyref="lo-version-cc"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-cc"/> 1.5.1</entry>
+              <entry><ph keyref="nm-cc"/>
+                <ph keyref="lo-version-cc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>For information about updating earlier releases of <ph keyref="nm-cc"/>,
+        please refer to a previous version of the <ph keyref="nm-cc"/> Upgrade
+        Guide for High-Availability Deployments.</p>
+    </section>
+    <section>
+      <table>
+        <title><ph keyref="nm-rm"/> upgrade paths</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>From </entry>
+              <entry>To </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.4.1</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.4.0</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.3.2</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.2.1</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.2.0</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>For information about updating earlier releases of <ph keyref="nm-rm"/>,
+        please refer to the <ph keyref="nm-rm"/> Upgrade Guide for release 6.2.1.</p>
     </section>
   </refbody>
 </reference>

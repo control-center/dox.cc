@@ -6,7 +6,7 @@
    <section>
      <p>The chapters in this part describe how to upgrade high-availability
        deployments of <ph keyref="nm-rm"/>. The procedures in this part are valid for 
-       all of the upgrade paths listed in <xref keyref="base-upgrade-ha-current"/>.</p>
+       all of the upgrade paths listed in <xref keyref="cc-upgrade-paths-paths"/>.</p>
      <p>This part does not include information about updating <ph keyref="nm-cc"/>.
        For more information, see one of the preceding parts of this document.</p>
    </section>

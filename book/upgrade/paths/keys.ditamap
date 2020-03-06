@@ -3,10 +3,6 @@
 <map>
  <title>Keys in upgrade/paths</title>
   <topicgroup>
-    <keydef keys="cc-upgrade-paths-documented"
-            href="documented.dita"
-            format="dita"
-    />
     <keydef keys="cc-upgrade-paths-images-id"
             href="images-id.dita"
             format="dita"

@@ -15,7 +15,7 @@
       </vrmlist>
     </prodinfo>
     <bookid>
-      <bookpartno product="cc">1902.<keyword keyref="lo-build-date"/></bookpartno>
+      <bookpartno product="cc">1950.<keyword keyref="lo-build-date"/></bookpartno>
     </bookid>
     <bookrights>
       <copyrfirst>
@@ -88,12 +88,12 @@
       <toc/>
     </booklists>
     <topicref keyref="cc-upgrade-ha-front-about">
+      <topicref keyref="cc-upgrade-paths-paths"/>
       <topicref keyref="cc-upgrade-ha-front-info"/>
       <topicref keyref="cc-upgrade-ha-front-history"/>
     </topicref>
   </frontmatter>
   
-  <chapter href="book/upgrade/ha/paths/paths.ditamap" format="ditamap"/>
   <chapter href="feature/download/upgrade-ha.ditamap" format="ditamap"/>
   
   <part>

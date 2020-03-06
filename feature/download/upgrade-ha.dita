@@ -26,10 +26,6 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-download-lib/download-ra-rpm">
-        <cmd></cmd>
-      </step>
-      
       <step conkeyref="cc-feature-download-lib/download-zenoss-key">
         <cmd></cmd>
       </step>
