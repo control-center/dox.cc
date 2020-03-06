@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conceptid">
+  <title>After upgrading a high-availability deployment</title>
+  <refbody>
+    <section>
+      <p>After <ph keyref="nm-rm"/> is upgraded, perform the procedures in this
+          chapter.</p>
+    </section>
+  </refbody>
+</reference>

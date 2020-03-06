@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Stopping <ph keyref="nm-rm"/></title>
+  <taskbody>
+    <context>Use this procedure to stop <ph keyref="nm-rm"/> in a high-availability
+      <ph keyref="nm-cc"/> deployment.</context>
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the <ph keyref="nm-cc"/> master node as a user with <cmdname>serviced</cmdname> CLI privileges.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Check the status of <ph keyref="nm-rm"/>.</cmd>
+        <stepxmp>
+          <codeblock>serviced service status --show-fields 'Name,ServiceID,Status'</codeblock>
+        </stepxmp>
+        <choices>
+          <choice>If the status of all services is <codeph>stopped</codeph>, this procedure is complete. Continue to
+            the next procedure.</choice>
+          <choice>If the status is <codeph>running</codeph>, perform the remaining steps.</choice>
+        </choices>
+      </step>
+      
+      <step>
+        <cmd>Stop <ph keyref="nm-rm"/>.</cmd>
+        <stepxmp>
+          <codeblock>serviced service stop Zenoss.resmgr</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Check the status of <ph keyref="nm-rm"/>.</cmd>
+        <stepxmp>
+          <codeblock>serviced service status --show-fields 'Name,ServiceID,Status'</codeblock>
+        </stepxmp>
+        <info>Repeat the command until the status of all services is <codeph>stopped</codeph>.</info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

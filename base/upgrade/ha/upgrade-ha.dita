@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Importing <ph keyref="nm-rm"/> image files</title>
+  <taskbody>
+    <context>Use this procedure to import <ph keyref="nm-rm"/> image
+      from self-installing archive files.</context>
+
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the <ph keyref="nm-cc"/> master node as a user with <cmdname>serviced</cmdname> CLI privileges.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In a separate terminal session, log in to the 
+          other master host as <codeph>root</codeph>, or as a user with superuser privileges.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, copy or move the archive files to <filepath>/root</filepath>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, add execute permission to the files.</cmd>
+        <stepxmp>
+          <codeblock>chmod +x /root/*.run</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, change directory to <filepath>/root</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>cd /root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the secondary node, start Docker. </cmd>
+        <stepxmp>
+          <codeblock>systemctl start docker</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, import the images.</cmd>
+        <stepxmp>
+          <codeblock>for image in install-zenoss-*.run
+do
+  /bin/echo -en "\nLoading $image..."
+  yes | ./$image
+done</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, list the images in the registry.</cmd>
+        <stepxmp>
+          <codeblock>docker images</codeblock>
+        </stepxmp>
+        <stepresult>The result should include one image for each archive file.</stepresult>
+      </step>
+      
+      <step importance="optional">
+        <cmd>On both nodes, delete the archive files, if desired.</cmd>
+        <stepxmp>
+          <codeblock>rm -i ./install-*.run</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On both nodes, copy the upgrade scripts from the new <ph keyref="nm-rm"/> image to
+            <filepath>/root/6.5.x</filepath>.</cmd>
+        <stepxmp>
+          <codeblock>docker run -it --rm -v /root:/mnt/root \
+  zenoss/resmgr_6.5:<ph keyref="lo-platform-image"/> rsync -a /root/6.5.x /mnt/root</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>On the secondary node, stop Docker.</cmd>
+        <stepxmp>
+          <codeblock>systemctl stop docker</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

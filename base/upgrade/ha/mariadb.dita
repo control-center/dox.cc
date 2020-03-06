@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Moving MariaDB services into the master resource pool</title>
+  <taskbody>
+    <prereq>To perform this procedure, both <ph keyref="nm-cc"/> master host nodes must
+      have sufficient RAM and CPU resources for <ph keyref="nm-cc"/> services and
+      for the MariaDB services. For more information about the amount of RAM and CPU
+      resources that are required, please contact your <ph conkeyref="names/company"/> 
+      representative.</prereq>
+    <context>Use this procedure to move the <uicontrol>mariadb-model</uicontrol> and
+      <uicontrol>mariadb-events</uicontrol> services to the <uicontrol>master</uicontrol> 
+      resource pool. If the services are already in the <uicontrol>master</uicontrol> 
+      resource pool, skip this procedure.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> browser interface.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In the <uicontrol>Applications</uicontrol> table, 
+          click <uicontrol>Zenoss.resmgr</uicontrol>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Scroll down to the <uicontrol>Services</uicontrol> table, 
+          and then expand the <uicontrol>Infrastructure</uicontrol> entry.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In the <uicontrol>Service</uicontrol> column 
+          of the <uicontrol>Services</uicontrol> table,
+          click <uicontrol>mariadb-events</uicontrol>.</cmd>
+        <info>
+          <fig>
+            <image keyref="png-mariadb-events" scale="50"/>
+          </fig>
+        </info>
+      </step>
+      
+      <step>
+        <cmd>On the <uicontrol>mariadb-events</uicontrol> page,
+          click <uicontrol>Edit Service</uicontrol>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In the <uicontrol>Edit Service</uicontrol> dialog box, 
+          select <uicontrol>master</uicontrol> from the 
+          list in the <uicontrol>Resource Pool ID</uicontrol> field.</cmd>
+      </step>
+      
+      <step>
+        <cmd>At the bottom of the <uicontrol>Edit Service</uicontrol> dialog box,
+          click <uicontrol>Save Changes</uicontrol>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>On the <uicontrol>mariadb-events</uicontrol> page,
+          click <uicontrol>Restart</uicontrol>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Repeat steps 3-8 for the <uicontrol>mariadb-model</uicontrol> service.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:concept" "concept.dtd">
+<concept id="conceptid">
+  <title>Upgrading <ph keyref="nm-rm"/></title>
+  <conbody>
+    <p>This chapter contains the
+      procedures for upgrading a high-availability deployment of <ph keyref="nm-rm"/>. Before
+      starting the procedures in this chapter, complete the procedures in <xref
+        keyref="base-upgrade-ha-before"/>. </p>
+    
+    <note>Before performing an upgrade or installing a ZenPack, <ph conkeyref="names/company"/>
+      strongly recommends that you check the integrity of <ph keyref="nm-rm"/> databases. For
+      more information, refer to the <xref keyref="url-zenoss-toolbox"/> documentation.</note>
+  </conbody>
+</concept>

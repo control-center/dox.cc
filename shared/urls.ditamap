@@ -169,5 +169,12 @@
         <linktext>an <codeph>rpcbind</codeph> issue</linktext>
       </topicmeta>
     </keydef>
+    <keydef keys="url-zenoss-toolbox " href="https://help.zenoss.com/zsd/RM/updating-resource-manager/using-zenoss-toolbox" format="html" scope="external">
+      <topicmeta>
+        <linktext>Zenoss Toolbox</linktext>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Upgrading <ph keyref="nm-rm"/></title>
+  <taskbody>
+    <context>Use this procedure to upgrade a high-availability deployment of <ph
+        keyref="nm-rm"/>.</context>
+    <steps>
+      <step>
+        <cmd>Use the virtual hostname or virtual IP address of the high-availability cluster to log
+          in to the <ph keyref="nm-cc"/> master node as a user with <cmdname>serviced</cmdname> CLI privileges.</cmd>
+      </step>
+
+      <step>
+        <cmd>Start the upgrade script.</cmd>
+        <stepxmp>
+          <codeblock>/root/6.5.x/upgrade-resmgr.sh</codeblock>
+        </stepxmp>
+        <stepresult>The upgrade process begins. If you encounter errors, refer to the 
+          Recovery appendix in the <ph keyref="nm-rm"/> Upgrade Guide for release 6.2.1.</stepresult>
+      </step>
+      
+      <step>
+        <cmd>Restart <ph keyref="nm-rm"/>.</cmd>
+        <info>Some <ph keyref="nm-rm"/> services are started during 
+          the upgrade, and they must be restarted.</info>
+        <stepxmp>
+          <codeblock>serviced service restart Zenoss.resmgr</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

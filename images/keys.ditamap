@@ -7,6 +7,10 @@
             href="menubar.png"
             format="png"
     />
+    <keydef keys="png-mariadb-events"
+            href="mariadb-events.png"
+            format="png"
+    />
     <keydef keys="svg-volstats"
             href="volstats.svg"
             format="svg"

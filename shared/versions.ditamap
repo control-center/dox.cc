@@ -39,6 +39,28 @@
         </keywords>
       </topicmeta>
     </keydef>
+	<!-- To support HA stuff -->
+    <keydef keys="lo-platform-image">
+      <topicmeta>
+        <keywords>
+          <keyword>6.5.0_1</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef>
+	<keydef keys="lo-platform-hbase">
+      <topicmeta>
+        <keywords>
+          <keyword>24.0.8</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef>
+	<keydef keys="lo-platform-version">
+      <topicmeta>
+        <keywords>
+          <keyword>6.5.0</keyword>
+        </keywords>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
     

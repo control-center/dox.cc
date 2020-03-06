@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="conid">
+  <title>Scope</title>
+ <refbody>
+   <section>
+     <p>The chapters in this part describe how to upgrade high-availability
+       deployments of <ph keyref="nm-rm"/>. The procedures in this part are valid for 
+       all of the upgrade paths listed in <xref keyref="base-upgrade-ha-current"/>.</p>
+     <p>This part does not include information about updating <ph keyref="nm-cc"/>.
+       For more information, see one of the preceding parts of this document.</p>
+   </section>
+ </refbody>
+</reference>

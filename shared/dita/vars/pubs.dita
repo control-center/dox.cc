@@ -24,8 +24,8 @@
       <p><cite id="cite-upgrade">Control Center Upgrade Guide</cite></p>
       <p><ph id="ph-upgrade">Control Center Upgrade Guide</ph></p>
 
-      <p><cite id="cite-upgrade-ha">Control Center Upgrade Guide for High-Availability Deployments</cite></p>
-      <p><ph id="ph-upgrade-ha">Control Center Upgrade Guide for High-Availability Deployments</ph></p>
+      <p><cite id="cite-upgrade-ha">Upgrade Guide for High-Availability Deployments</cite></p>
+      <p><ph id="ph-upgrade-ha">Upgrade Guide for High-Availability Deployments</ph></p>
 
     </section>
   </body>

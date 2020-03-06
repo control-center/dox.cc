@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Clearing heartbeat events</title>
+  <taskbody>
+    <context>If you are using the <uicontrol>Daemon Process Down</uicontrol> portlet, 
+      <codeph>zencatalogservice</codeph> may be listed as down immediately after
+      upgrading to this release. The status is incorrect and can be corrected
+      by using this procedure to clear heartbeat events.</context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-rm"/> browser interface 
+          as a user with ZenManager or Manager privileges.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Navigate to <menucascade><uicontrol>ADVANCED</uicontrol>
+          <uicontrol>Settings</uicontrol></menucascade>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>In the left panel, select <uicontrol>Events</uicontrol>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>At the bottom of the <uicontrol>Event Configuration</uicontrol> page,
+          click the <uicontrol>Clear</uicontrol> button.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading template and image files</title>
+  <taskbody>
+    
+     <prereq id="prereq">To perform this procedure, you need: <ul>
+        <li>A workstation with internet access</li>
+       <li>Permission to download files from <xref keyref="url-leapfile"/>. Customers
+          can request permission by filing a ticket at <ph conkeyref="names/support-site"/>.</li>
+        <li>A secure network copy program</li>
+      </ul>
+    </prereq>
+    
+    <context id="context">Use this procedure to <ul>
+      <li>download required files to a workstation</li>
+      <li>copy the files to a <ph keyref="nm-cc"/> master host</li>
+      </ul>
+    </context>
+    <steps>
+      
+      <step id="goto-site">
+        <cmd>In a web browser, navigate to the download site, and then log in.</cmd>
+        <info>The download site is <xref keyref="url-leapfile"/>.</info>
+        
+      </step>
+      
+      <step>
+        <cmd>Download the self-installing Docker image files for <ph keyref="nm-rm"/>.</cmd>
+        <stepxmp>
+          <ul>
+            <li><codeph>install-zenoss-hbase-<ph keyref="lo-platform-hbase"/>.run</codeph></li>
+            <li><codeph>install-zenoss-opentsdb-<ph keyref="lo-platform-hbase"/>.run</codeph></li>
+            <li><codeph>install-zenoss-resmgr_6.5-<ph keyref="lo-platform-version"
+              />_1.run</codeph></li>
+            
+          </ul>
+        </stepxmp>
+      </step>
+      
+      <step id="download-these">
+        <cmd>Download the self-installing Docker image files for <ph keyref="nm-rm"/>.</cmd>
+        <stepxmp>
+          <ul>
+            <li><codeph>install-zenoss-hbase-<ph keyref="lo-platform-hbase"/>.run</codeph></li>
+            <li><codeph>install-zenoss-opentsdb-<ph keyref="lo-platform-hbase"/>.run</codeph></li>
+            <li><codeph>install-zenoss-resmgr_6.5-<ph keyref="lo-platform-version"/>_1.run</codeph></li>
+          </ul>
+        </stepxmp>
+      </step>
+      <step>
+        <cmd>Download the <ph keyref="nm-rm"/> service definition, which is distributed as an
+          RPM file.</cmd>
+        <stepxmp>
+          <codeblock>zenoss-resmgr-service-<ph keyref="lo-platform-version"/>-1.noarch.rpm</codeblock>
+          
+        </stepxmp>
+      </step>
+      
+      <step id="copyto-master">
+        <cmd>Use a secure copy program to copy the files to the <ph keyref="nm-cc"/> master
+          host.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="upgrades">
+  <title><ph keyref="nm-rm"/> upgrade paths included in this document</title>
+  <refbody>
+    <section>
+      <table id="u09">
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>From </entry>
+              <entry>To </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.4.1</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.4.0</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.3.2</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.2.1</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+            <row>
+              <entry><ph keyref="nm-rm"/> 6.2.0</entry>
+              <entry><ph keyref="nm-rm"/>
+                <ph keyref="lo-platform-version"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <p>For information about updating earlier releases of <ph keyref="nm-rm"/>,
+        please refer to the <ph keyref="nm-rm"/> Upgrade Guide for release 6.2.1.</p>
+    </section>
+  </refbody>
+</reference>

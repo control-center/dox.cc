@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading <ph keyref="nm-rm"/> image files</title>
+  <taskbody>
+    <prereq conkeyref="base-upgrade-ha-download-install/prereq"/>
+    <context conkeyref="base-upgrade-ha-download-install/context"/>
+    
+    <steps>
+      <step conkeyref="base-upgrade-ha-download-install/goto-site">
+        <cmd/>
+      </step>
+      
+      <step conkeyref="base-upgrade-ha-download-install/download-these">
+        <cmd/>
+      </step>
+      
+      <step>
+        <cmd>Use a secure copy program to copy all of the files to
+          each <ph keyref="nm-cc"/> master host node.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

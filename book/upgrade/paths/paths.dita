@@ -5,7 +5,8 @@
   <refbody>
     <section>
       <p>This chapter includes the dates of <ph keyref="nm-cc"/> releases
-        and the upgrade paths that are documented in this guide.</p>
+        and the <ph keyref="nm-cc"/> and <ph keyref="nm-rm"/> upgrade paths
+        that are documented in this guide.</p>
     </section>
   </refbody>
 </reference>

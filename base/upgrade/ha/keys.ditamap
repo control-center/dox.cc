@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+ <title>Keys in upgrade/ha</title>
+  <topicgroup>
+    <keydef keys="base-upgrade-ha-after"
+            href="after.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-before"
+            href="before.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-clear-heartbeat"
+            href="clear-heartbeat.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-current"
+            href="current.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-download-install"
+            href="download-install.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-download-upgrade-ha"
+            href="download-upgrade-ha.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-mariadb"
+            href="mariadb.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-perform"
+            href="perform.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-snapshot"
+            href="snapshot.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-stop"
+            href="stop.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-update"
+            href="update.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-upgrade-ha"
+            href="upgrade-ha.dita"
+            format="dita"
+    />
+   </topicgroup>
+</map>

@@ -81,6 +81,9 @@
       <mapref href="feature/ntp/keys.ditamap" format="ditamap"/>
       <mapref href="feature/vars/keys.ditamap" format="ditamap"/>
     </topicgroup>
+    <topicgroup>
+      <mapref href="base/upgrade/ha/keys.ditamap" format="ditamap"/>
+    </topicgroup>
     <booklists>
       <toc/>
     </booklists>
@@ -109,6 +112,16 @@
     <chapter href="book/upgrade/ha/151-163/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/151-163/delegate.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/151-163/post.ditamap" format="ditamap"/>
+  </part>
+  
+  <part>
+    <topicmeta >
+      <navtitle>Upgrading <ph keyref="nm-rm"/></navtitle>
+    </topicmeta>
+    <topicref href="base/upgrade/ha.dita"/>
+    <chapter href="base/upgrade/ha/before.ditamap" format="ditamap"/>
+    <chapter href="base/upgrade/ha/update.ditamap" format="ditamap"/>
+    <chapter href="base/upgrade/ha/after.ditamap" format="ditamap"/>
   </part>
   
   <appendices>
