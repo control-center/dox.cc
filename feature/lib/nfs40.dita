@@ -3,9 +3,9 @@
 <task id="taskid">
   <title>Configuring NFS 4.0</title>
   <taskbody>
-    <context>Use this procedure to configure NFS 4.0 on delegate 
-      hosts if the operating system release is 7.4. 
-      There may be a file locking defect in NFS 4.1 with RHEL/CentOS 7.4.</context>
+    <context>Use this procedure to configure NFS 4.0 on delegate hosts if the operating system
+      release is 7.4. There may be a file locking defect in NFS 4.1 with RHEL/CentOS 7.4 and
+      above.</context>
     <steps>
       <step>
         <cmd>Log in to the host <ph conkeyref="strings/login-root"/>.</cmd>
@@ -17,8 +17,8 @@
           <codeblock>cat /etc/redhat-release</codeblock>
         </stepxmp>
         <choices>
-          <choice>If the result includes <codeph>7.4</codeph>, perform the remaining
-            steps of this procedure.</choice>
+          <choice>If the result includes <codeph>7.4</codeph> or higher, perform the remaining steps
+            of this procedure.</choice>
           <choice>If the result includes <codeph>7.2</codeph> or <codeph>7.3</codeph>, 
             continue to the next procedure.</choice>
         </choices>

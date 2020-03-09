@@ -14,13 +14,13 @@
           host as a user with <cmdname>serviced</cmdname> CLI privileges.</cmd>
       </step>
       
-      <step id="list">
+      <step>
         <cmd>Display a list of all <ph keyref="nm-cc"/> snapshots, with their tags.</cmd>
         <stepxmp>
           <codeblock>serviced snapshot list -t</codeblock>
         </stepxmp>
         <stepresult>Example result, truncated to save space: <codeblock>Snapshot                         Description  Tags
-xm5mtezbyo2_20160211-220535.480               preupgrade-resmgr-5.2.0</codeblock>
+xm5mtezbyo2_20160211-220535.480               preupgrade-resmgr-6.5.0</codeblock>
 
           <p>The snapshot identifier is shown in the first column.</p>
         </stepresult>
