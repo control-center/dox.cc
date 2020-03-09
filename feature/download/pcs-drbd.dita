@@ -113,6 +113,13 @@
       </step>
       
       <step>
+        <cmd>Remove the Enterprise Linux packages repository.</cmd>
+        <stepxmp>
+          <codeblock>yum remove elrepo-release &#38;&#38; yum clean all</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
         <cmd>Use a secure copy program to copy the packages archive to 
           the <filepath>/tmp</filepath> directory of each master host node.</cmd>
       </step>

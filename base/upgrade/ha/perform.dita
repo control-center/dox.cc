@@ -16,8 +16,8 @@
         <stepxmp>
           <codeblock>/root/6.5.x/upgrade-resmgr.sh</codeblock>
         </stepxmp>
-        <stepresult>The upgrade process begins. If you encounter errors, refer to the 
-          Recovery appendix in the <ph keyref="nm-rm"/> Upgrade Guide for release 6.2.1.</stepresult>
+        <stepresult>The upgrade process begins. If you encounter errors, 
+          see <xref keyref="base-upgrade-ha-existing-snap"/>.</stepresult>
       </step>
       
       <step>

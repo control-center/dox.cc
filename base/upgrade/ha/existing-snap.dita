@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>A snapshot with the given tag already exists</title>
+  <taskbody>
+    <context>When an upgrade attempt fails, the upgrade script does not remove the 
+      snapshot it creates at the beginning of the upgrade process. Use this procedure
+      to remove the tag of the pre-upgrade snapshot and restart the upgrade. Untagged 
+      snapshots are removed when their time-to-live (TTL) expires. The TTL value is
+      defined by the <varname>SERVICED_SNAPSHOT_TTL</varname> variable in the
+      <ph keyref="nm-cc"/> configuration file. </context>
+    <steps>
+      <step>
+        <cmd>Log in to the <ph keyref="nm-cc"/> master
+          host as a user with <cmdname>serviced</cmdname> CLI privileges.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Create a variable for the identifier of the tenant application.</cmd>
+        <stepxmp>
+          <codeblock>myTenant=$(serviced service list Zenoss.resmgr --format='{{.ID}}')</codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Display a list of all <ph keyref="nm-cc"/> snapshots, with their tags.</cmd>
+        <stepxmp>
+          <codeblock>serviced snapshot list -t</codeblock>
+        </stepxmp>
+        <stepresult>Example result, truncated to save space: <codeblock>Snapshot                         Description  Tags
+          xm5mtezbyo2_20160211-220535.480               preupgrade-resmgr-6.5.0</codeblock>
+          <p>The snapshot identifier is shown in the first column.</p>
+        </stepresult>
+      </step>
+      
+      <step>
+        <cmd>Remove the tag of the pre-upgrade snapshot.</cmd>
+        <stepxmp>Replace <varname>Tag-Name</varname> with the name of the pre-upgrade snapshot that
+          was displayed in the previous step:
+          <codeblock>serviced snapshot untag ${myTenant} <varname>Tag-Name</varname></codeblock>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Restart the upgrade script.</cmd>
+        <stepxmp>
+          <codeblock>/root/6.5.x/upgrade-resmgr.sh</codeblock>
+        </stepxmp>
+      </step>
+    </steps>
+  </taskbody>
+</task>

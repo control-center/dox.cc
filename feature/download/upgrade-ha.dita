@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading <ph keyref="nm-cc"/> files</title>
+  <title>Downloading required files</title>
   <taskbody>
     <prereq conkeyref="cc-feature-download-lib/download-prereq-ha"/>
     <context conkeyref="cc-feature-download-lib/download-context"/>
@@ -26,6 +26,10 @@
         <cmd></cmd>
       </step>
       
+      <step conkeyref="base-upgrade-ha-download-install/download-these">
+        <cmd/>
+      </step>
+      
       <step conkeyref="cc-feature-download-lib/download-zenoss-key">
         <cmd></cmd>
       </step>
@@ -34,7 +38,12 @@
         <cmd>Use a secure copy program to copy the files to <ph keyref="nm-cc"/> hosts.</cmd>
         <info>
           <ul>
-            <li>Copy all files to both master nodes.</li>
+            <li>Copy all files to both master nodes. This guide relies on the following 
+              convention for file locations:<ul>
+              <li>Place <ph keyref="nm-cc"/> files in <codeph>/tmp/cc</codeph>.</li>
+              <li>Place <ph keyref="nm-rm"/> files in <codeph>/tmp/rm</codeph>.</li>
+          </ul>
+            </li>
             <li>Copy the RHEL/CentOS RPM file, the <ph keyref="nm-cc"/> RPM file, and the <ph
               conkeyref="names/company"/> GPG key file to all delegate hosts.</li>
             <li>Copy the Docker image file for ZooKeeper to delegate hosts that are ZooKeeper

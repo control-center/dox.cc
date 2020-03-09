@@ -23,6 +23,10 @@
             href="download-upgrade-ha.dita"
             format="dita"
     />
+    <keydef keys="base-upgrade-ha-existing-snap"
+            href="existing-snap.dita"
+            format="dita"
+    />
     <keydef keys="base-upgrade-ha-mariadb"
             href="mariadb.dita"
             format="dita"

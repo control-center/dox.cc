@@ -3,8 +3,6 @@
 <bookmap>
  <title>Before HA</title>
   <chapter keyref="base-upgrade-ha-before">
-    <topicref keyref="base-upgrade-ha-download-upgrade-ha">
-      <topicref keyref="base-upgrade-ha-upgrade-ha"/>
-    </topicref>
+    <topicref keyref="base-upgrade-ha-upgrade-ha"/>
  </chapter>
 </bookmap>

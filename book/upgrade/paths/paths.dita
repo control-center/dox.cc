@@ -35,8 +35,7 @@
         </tgroup>
       </table>
       <p>For information about updating earlier releases of <ph keyref="nm-cc"/>,
-        please refer to a previous version of the <ph keyref="nm-cc"/> Upgrade
-        Guide for High-Availability Deployments.</p>
+        please refer to the <xref keyref="url-cc-up-151"/>.</p>
     </section>
     <section>
       <table>
@@ -80,7 +79,7 @@
         </tgroup>
       </table>
       <p>For information about updating earlier releases of <ph keyref="nm-rm"/>,
-        please refer to the <ph keyref="nm-rm"/> Upgrade Guide for release 6.2.1.</p>
+        please refer to the <xref keyref="url-rm-up-620"/>.</p>
     </section>
   </refbody>
 </reference>

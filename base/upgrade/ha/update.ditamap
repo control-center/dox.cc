@@ -4,6 +4,8 @@
  <title>Upgrade HA</title>
   <chapter keyref="base-upgrade-ha-update">
     <topicref keyref="base-upgrade-ha-stop"/>
-    <topicref keyref="base-upgrade-ha-perform"/>
+    <topicref keyref="base-upgrade-ha-perform">
+      <topicref keyref="base-upgrade-ha-existing-snap"/>
+    </topicref>
   </chapter>
 </bookmap>

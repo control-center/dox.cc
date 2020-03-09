@@ -4,8 +4,8 @@
   <title>Downloading and staging required files</title>
   <refbody>
     <section>
-      <p>This chapter describes how to download and install or stage <ph keyref="nm-cc"/> software
-        and its operating system dependencies. The procedures in this chapter are required to
+      <p>This chapter describes how to download and install or stage required software
+        and operating system dependencies. The procedures in this chapter are required to
         perform an upgrade.</p>
       
       <p>The following table identifies where to perform each procedure in this chapter.</p>

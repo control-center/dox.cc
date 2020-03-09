@@ -18,20 +18,9 @@
       </step>
       
       <step>
-        <cmd>On both nodes, copy or move the archive files to <filepath>/root</filepath>.</cmd>
-      </step>
-      
-      <step>
-        <cmd>On both nodes, add execute permission to the files.</cmd>
+        <cmd>On both nodes, change directory to <filepath>/root/rm</filepath>.</cmd>
         <stepxmp>
-          <codeblock>chmod +x /root/*.run</codeblock>
-        </stepxmp>
-      </step>
-      
-      <step>
-        <cmd>On both nodes, change directory to <filepath>/root</filepath>.</cmd>
-        <stepxmp>
-          <codeblock>cd /root</codeblock>
+          <codeblock>cd /root/rm</codeblock>
         </stepxmp>
       </step>
       

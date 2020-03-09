@@ -174,6 +174,16 @@
         <linktext>Zenoss Toolbox</linktext>
       </topicmeta>
     </keydef>
+    <keydef keys="url-cc-up-151" href="https://help.zenoss.com/zsd/archive/files/9437264/9437284/1/1545244378000/Control_Center_Upgrade_Guide_for_High-Availability_Deployments_r1.5.1_d1902.18.158.34.pdf" format="html" scope="external">
+      <topicmeta>
+        <linktext>Control Center Upgrade Guide for High-Availability Deployments (Release 1.5.1)</linktext>
+      </topicmeta>
+    </keydef>
+    <keydef keys="url-rm-up-620" href="https://help.zenoss.com/zsd/archive/files/9438192/9438354/1/1546015282000/Zenoss_Resource_Manager_Upgrade_Guide_r6.2.0_d1692.18.163.52.pdf" format="html" scope="external">
+      <topicmeta>
+        <linktext>Zenoss Resource Manager Upgrade Guide (Release 6.2.0)</linktext>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
 

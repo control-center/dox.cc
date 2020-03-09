@@ -4,11 +4,12 @@
   <title>Staging Docker image files</title>
   <taskbody>
     
-    <prereq>Before performing this procedure, verify that approximately 640MB of temporary space is
+    <prereq>Before performing this procedure, verify that approximately 2GB of temporary space is
       available on the file system where <filepath>/root</filepath> is located.</prereq>
     
-    <context>Use this procedure to copy Docker image files to a <ph keyref="nm-cc"/> host.
-      The files are used when Docker is fully configured.</context>
+    <context>Use this procedure to stage Docker image files on a <ph keyref="nm-cc"/> host.
+      The files are used when Docker is fully configured. Perform this procedure on both
+    master hosts.</context>
     
     
     <steps>
@@ -17,13 +18,49 @@
       </step>
       
       <step>
-        <cmd>Copy or move the archive files to <filepath>/root</filepath>.</cmd>
+        <cmd>Move <ph keyref="nm-cc"/> files to <filepath>/root/cc</filepath>.</cmd>
+        <info>This step assumes that the files are located in the place recommended
+        in <xref keyref="cc-feature-download-upgrade-ha"/>.</info>
+        <substeps>
+          <substep>
+            <cmd>Create the target directory.</cmd>
+            <stepxmp>
+              <codeblock>mkdir /root/cc</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Move the files.</cmd>
+            <stepxmp>
+              <codeblock>mv /tmp/cc/*.run /root/cc</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
+      </step>
+      
+      <step>
+        <cmd>Move <ph keyref="nm-rm"/> files to <filepath>/root/rm</filepath>.</cmd>
+        <info>This step assumes that the files are located in the place recommended
+          in <xref keyref="cc-feature-download-upgrade-ha"/>.</info>
+        <substeps>
+          <substep>
+            <cmd>Create the target directory.</cmd>
+            <stepxmp>
+              <codeblock>mkdir /root/rm</codeblock>
+            </stepxmp>
+          </substep>
+          <substep>
+            <cmd>Move the files.</cmd>
+            <stepxmp>
+              <codeblock>mv /tmp/rm/*.run /root/rm</codeblock>
+            </stepxmp>
+          </substep>
+        </substeps>
       </step>
       
       <step>
         <cmd>Add execute permission to the files.</cmd>
         <stepxmp>
-          <codeblock>chmod +x /root/*.run</codeblock>
+          <codeblock>chmod +x /root/cc/*.run ; chmod +x /root/rm/*.run</codeblock>
         </stepxmp>
       </step>
       
