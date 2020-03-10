@@ -19,7 +19,7 @@
     </bookid>
     <bookrights>
       <copyrfirst>
-        <year>2018</year>
+        <year>2020</year>
       </copyrfirst>
       <bookowner>
         <organization>Zenoss, Inc., 11305 Four Points Drive, 
@@ -130,6 +130,7 @@
     <appendix href="feature/state/ha/manage.ditamap" format="ditamap"/>
     <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/maps/pcs.ditamap" format="ditamap"/>
+    <appendix href="base/upgrade/ha/template.ditamap" format="ditamap"/>
   </appendices>
   
 </bookmap>

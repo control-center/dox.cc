@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Installing the application template</title>
+  <taskbody>
+    <context>Use this procedure to install the <ph keyref="nm-rm"/> template
+      on both <ph keyref="nm-cc"/> master hosts.</context>
+
+    <steps>
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Change directory to the directory in which the template package file
+        is located.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Install the template.</cmd>
+        <stepxmp>
+          <codeblock>yum install ./zenoss-resmgr-service-<ph keyref="lo-platform-version"/>-1.noarch.rpm</codeblock>
+        </stepxmp>
+        <stepresult>The template file is stored in <filepath>/opt/serviced/templates</filepath>.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

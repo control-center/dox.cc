@@ -19,12 +19,20 @@
             href="download-install.dita"
             format="dita"
     />
+    <keydef keys="base-upgrade-ha-download-template"
+            href="download-template.dita"
+            format="dita"
+    />
     <keydef keys="base-upgrade-ha-download-upgrade-ha"
             href="download-upgrade-ha.dita"
             format="dita"
     />
     <keydef keys="base-upgrade-ha-existing-snap"
             href="existing-snap.dita"
+            format="dita"
+    />
+	<keydef keys="base-upgrade-ha-install-template"
+            href="install-template.dita"
             format="dita"
     />
     <keydef keys="base-upgrade-ha-mariadb"
@@ -41,6 +49,10 @@
     />
     <keydef keys="base-upgrade-ha-stop"
             href="stop.dita"
+            format="dita"
+    />
+    <keydef keys="base-upgrade-ha-template-about"
+            href="template-about.dita"
             format="dita"
     />
     <keydef keys="base-upgrade-ha-update"

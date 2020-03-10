@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="taskid">
+  <title>Downloading the template package</title>
+  <taskbody>
+    <prereq>To perform this procedure, you need:
+      <ul>
+        <li>A workstation with internet access.</li>
+        <li>Permission to download files from the <xref keyref="url-leapfile"/> site. <ph conkeyref="names/company"/> customers may
+          request permission by filing a ticket at <ph conkeyref="names/support-site"/>. </li>
+        <li>A secure network copy program.</li>
+      </ul></prereq>
+    <context>Use this procedure to download the required files to a workstation and then copy the
+      files to both <ph keyref="nm-cc"/> master hosts. <p>Perform these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>In a web browser, navigate to the <xref keyref="url-leapfile"/> site.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in with the account provided by <ph conkeyref="names/support"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Download the template package file.</cmd>
+        <stepxmp>
+          <codeph>zenoss-resmgr-service-<ph keyref="lo-platform-version"/>-1.noarch.rpm</codeph>
+        </stepxmp>
+      </step>
+      
+      <step>
+        <cmd>Use a secure copy program to copy the package file to both <ph keyref="nm-cc"/> master
+          hosts.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

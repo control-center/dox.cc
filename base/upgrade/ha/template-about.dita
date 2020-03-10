@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="taskid">
+  <title>Installing the <ph keyref="nm-rm"/> application template</title>
+  <refbody>
+    <section>
+      <p>This appendix includes procedures for downloading and installing the most recent <ph
+          keyref="nm-rm"/> application template. The latest template is not needed to perform
+        an upgrade, and is included in appliance upgrades. Use the procedures in this appendix if
+        you plan to delete a deployed application template and then redeploy with a newer version of
+        the template. (For example, in a development or staging environment.)</p>
+    </section>
+  </refbody>
+</reference>
