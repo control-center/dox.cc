@@ -19,8 +19,6 @@
       
       <step>
         <cmd>Move <ph keyref="nm-cc"/> files to <filepath>/root/cc</filepath>.</cmd>
-        <info>This step assumes that the files are located in the place recommended
-        in <xref keyref="cc-feature-download-upgrade-ha"/>.</info>
         <substeps>
           <substep>
             <cmd>Create the target directory.</cmd>
@@ -31,7 +29,7 @@
           <substep>
             <cmd>Move the files.</cmd>
             <stepxmp>
-              <codeblock>mv /tmp/cc/*.run /root/cc</codeblock>
+              <codeblock>mv /tmp/*.run /root/cc</codeblock>
             </stepxmp>
           </substep>
         </substeps>
@@ -39,8 +37,6 @@
       
       <step>
         <cmd>Move <ph keyref="nm-rm"/> files to <filepath>/root/rm</filepath>.</cmd>
-        <info>This step assumes that the files are located in the place recommended
-          in <xref keyref="cc-feature-download-upgrade-ha"/>.</info>
         <substeps>
           <substep>
             <cmd>Create the target directory.</cmd>

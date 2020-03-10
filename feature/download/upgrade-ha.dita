@@ -40,7 +40,7 @@
           <ul>
             <li>Copy all files to both master nodes. This guide relies on the following 
               convention for file locations:<ul>
-              <li>Place <ph keyref="nm-cc"/> files in <codeph>/tmp/cc</codeph>.</li>
+              <li>Place <ph keyref="nm-cc"/> files in <codeph>/tmp</codeph>.</li>
               <li>Place <ph keyref="nm-rm"/> files in <codeph>/tmp/rm</codeph>.</li>
           </ul>
             </li>
