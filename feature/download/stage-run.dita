@@ -33,6 +33,7 @@
             </stepxmp>
           </substep>
         </substeps>
+        <info>NOTE: Subsequent procedures rely on the <codeph>/root/cc</codeph> location.</info>
       </step>
       
       <step>
@@ -51,6 +52,7 @@
             </stepxmp>
           </substep>
         </substeps>
+        <info>NOTE: Subsequent procedures rely on the <codeph>/root/rm</codeph> location.</info>
       </step>
       
       <step>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
 <task id="taskid">
-  <title>Downloading the template package</title>
+  <title>Downloading and installing the template package</title>
   <taskbody>
     <prereq>To perform this procedure, you need:
       <ul>
@@ -10,8 +10,8 @@
           request permission by filing a ticket at <ph conkeyref="names/support-site"/>. </li>
         <li>A secure network copy program.</li>
       </ul></prereq>
-    <context>Use this procedure to download the required files to a workstation and then copy the
-      files to both <ph keyref="nm-cc"/> master hosts. <p>Perform these steps:</p>
+    <context>Use this procedure to download the required files to a workstation and then install the
+      files on both <ph keyref="nm-cc"/> master hosts. <p>Perform these steps:</p>
     </context>
     <steps>
       <step>
@@ -32,6 +32,23 @@
       <step>
         <cmd>Use a secure copy program to copy the package file to both <ph keyref="nm-cc"/> master
           hosts.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Log in to the target host <ph conkeyref="strings/login-root"/>.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Change directory to the directory in which the template package file
+          is located.</cmd>
+      </step>
+      
+      <step>
+        <cmd>Install the template.</cmd>
+        <stepxmp>
+          <codeblock>yum install ./zenoss-resmgr-service-<ph keyref="lo-platform-version"/>-1.noarch.rpm</codeblock>
+        </stepxmp>
+        <stepresult>The template file is stored in <filepath>/opt/serviced/templates</filepath>.</stepresult>
       </step>
     </steps>
   </taskbody>

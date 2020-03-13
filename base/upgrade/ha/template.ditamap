@@ -4,6 +4,5 @@
    <title>Template</title>
    <appendix keyref="base-upgrade-ha-template-about">
       <topicref keyref="base-upgrade-ha-download-template"/>
-      <topicref keyref="base-upgrade-ha-install-template"/>
    </appendix>
 </bookmap>

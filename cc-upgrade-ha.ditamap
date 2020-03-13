@@ -57,6 +57,7 @@
       <mapref href="book/upgrade/ha/13x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/14x/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/151-163/keys.ditamap" format="ditamap"/>
+      <mapref href="book/upgrade/ha/165/keys.ditamap" format="ditamap"/>
       <mapref href="book/install/maps/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/agent/keys.ditamap" format="ditamap"/>
       <mapref href="book/upgrade/ha/front/keys.ditamap" format="ditamap"/>
@@ -100,6 +101,12 @@
     <topicmeta>
       <navtitle>Upgrading 1.6.5 to <ph keyref="lo-version-cc"/></navtitle>
     </topicmeta>
+    <topicref href="book/upgrade/ha/front/165.dita"/>
+    <chapter href="book/upgrade/ha/165/prep.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/165/master.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/165/delegate.ditamap" format="ditamap"/>
+    <chapter href="book/upgrade/ha/165/post.ditamap" format="ditamap"/>
   </part>
   
   <part>
@@ -125,8 +132,6 @@
   </part>
   
   <appendices>
-    <appendix href="book/upgrade/ha/maps/thins.ditamap" format="ditamap"/>
-    <appendix href="book/install/maps/cli.ditamap" format="ditamap"/>
     <appendix href="feature/state/ha/manage.ditamap" format="ditamap"/>
     <appendix href="feature/pkg/pkg.ditamap" format="ditamap"/>
     <appendix href="book/upgrade/ha/maps/pcs.ditamap" format="ditamap"/>
