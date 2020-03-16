@@ -59,6 +59,18 @@
         </info>
       </step>
       
+      <step id="download-cc-images-170">
+        <cmd>Download the self-installing Docker image files.</cmd>
+        <info>
+          <note>These files are not needed to update release 1.6.5 to <ph keyref="lo-version-cc"/>.
+          For more information, refer to <xref keyref="url-image-tags"/>.</note>
+          <sl>
+            <sli><codeph>install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeph></sli>
+            <sli><codeph>install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
       <step id="download-cc-rpm">
         <cmd>Download the <ph keyref="nm-cc"/> RPM file.</cmd>
         <info>

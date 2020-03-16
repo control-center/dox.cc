@@ -64,7 +64,7 @@
         <cmd>Open the new configuration file with a text editor, 
         and then update the file for your environment.</cmd>
         <info>For more information about configuring the master host,
-          see <xref keyref="cc-upgrade-11x-vars"/>.</info>
+          refer to <xref keyref="url-config-file"/>.</info>
       </step>
     </steps>
   </taskbody>

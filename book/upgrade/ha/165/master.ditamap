@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:bookmap" "bookmap.dtd">
 <bookmap >
  <title>Master</title>
-  <chapter keyref="cc-upgrade-ha-15x-micro-master">
-    <topicref keyref="cc-upgrade-ha-12x-cc-master"/>
+  <chapter keyref="cc-upgrade-ha-165-micro-master">
+    <topicref keyref="cc-upgrade-ha-151-163-cc-master"/>
  </chapter>
 </bookmap>

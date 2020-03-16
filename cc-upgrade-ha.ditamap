@@ -106,7 +106,6 @@
     <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/165/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/165/delegate.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/ha/165/post.ditamap" format="ditamap"/>
   </part>
   
   <part>

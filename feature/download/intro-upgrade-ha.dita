@@ -7,6 +7,7 @@
       <p>This chapter describes how to download and install or stage required software
         and operating system dependencies. The procedures in this chapter are required to
         perform an upgrade.</p>
+      <note>The Pacemaker resource agents for <ph keyref="nm-cc"/> are unchanged for this release.</note>
       
       <p>The following table identifies where to perform each procedure in this chapter.</p>
       <table>

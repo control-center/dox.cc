@@ -65,12 +65,11 @@
         <cmd>Open the new configuration file with a text editor, 
           and then update the file for your environment.</cmd>
         <info>For more information about configuring a delegate host,
-          see <xref keyref="cc-upgrade-11x-vars"/>.</info>
+          refer to <xref keyref="url-config-file"/>.</info>
       </step>
       
     </steps>
-    <postreq>When all delegate hosts are updated, start the cluster. 
-      <ph conkeyref="strings/fmi-int"/> 
+    <postreq>When all delegate hosts are updated, start the cluster. <ph conkeyref="strings/fmi-int"/>
       <xref keyref="cc-feature-state-ha-manage"/>.</postreq>
   </taskbody>
 </task>

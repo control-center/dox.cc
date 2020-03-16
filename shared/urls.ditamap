@@ -184,6 +184,16 @@
         <linktext>Zenoss Resource Manager Upgrade Guide (Release 6.2.0)</linktext>
       </topicmeta>
     </keydef>
+    <keydef keys="url-image-tags" href="https://help.zenoss.com/zsd/cc/administering-control-center/control-center-releases-and-images/releases-and-image-tags" format="html" scope="external">
+      <topicmeta>
+        <linktext><ph keyref="nm-cc"/> releases and image tags</linktext>
+      </topicmeta>
+    </keydef>
+    <keydef keys="url-config-file" href="https://help.zenoss.com/zsd/cc/configuration-variables/configuration-file" format="html" scope="external">
+      <topicmeta>
+        <linktext><ph keyref="nm-cc"/> configuration variables</linktext>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
 

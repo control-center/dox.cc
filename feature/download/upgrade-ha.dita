@@ -10,7 +10,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-download-lib/download-cc-images">
+      <step conkeyref="cc-feature-download-lib/download-cc-images-170">
         <cmd></cmd>
       </step>
       

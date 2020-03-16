@@ -12,6 +12,7 @@
         avoid the issue, delegate hosts are configured to use NFS 4.0.</li>
         <li>This release replaces Docker Community Edition (CE) 17.09.0 with Docker CE 18.09.6.</li>
       </ul>
+      <note>The Pacemaker resource agents for <ph keyref="nm-cc"/> are unchanged for this release.</note>
     </section>
   </refbody>
 </reference>
