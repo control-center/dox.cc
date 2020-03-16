@@ -13,8 +13,8 @@
         
         <li>Compare the Docker images that accompany this release with the
         images that accompany the installed release, and determine whether the
-        image files need to be downloaded and installed. <ph conkeyref="strings/fmi-int"/>
-        <xref keyref="cc-upgrade-paths-images"/>.</li>
+        image files need to be downloaded and installed. For more information, refer to
+        <xref keyref="url-image-tags"/>.</li>
         
         <li>The contents of <filepath>/etc/default/serviced</filepath> on the master nodes must be
           identical. Use a utility like <cmdname>sum</cmdname> to compare the files quickly.</li>
