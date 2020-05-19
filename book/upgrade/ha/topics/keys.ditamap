@@ -11,6 +11,10 @@
             href="best-practices.dita"
             format="dita"
     />
+    <keydef keys="cc-upgrade-ha-topics-os"
+            href="os.dita"
+            format="dita"
+    />
     <keydef keys="cc-upgrade-ha-topics-pcs-drbd-update"
             href="pcs-drbd-update.dita"
             format="dita"

@@ -22,7 +22,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-download-lib/download-mirror-rpm-165">
+      <step conkeyref="cc-feature-download-lib/download-mirror-rpm-170">
         <cmd></cmd>
       </step>
       

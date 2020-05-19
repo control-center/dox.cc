@@ -105,8 +105,8 @@
       
       <step id="download-mirror-rpm-165">
         <cmd>Download the RHEL/CentOS repository mirror file for your deployment.</cmd>
-        <info>The download site provides a repository mirror file for each tested release of
-          RHEL/CentOS. Each mirror file contains the release-specific packages that <ph keyref="nm-cc"/> requires.</info>
+        <info>The download site provides repository mirror files containing the packages that
+          <ph keyref="nm-cc"/> requires. For RHEL/CentOS 7.7 and 7.8, use the 7.6 file.</info>
         <info>
           <sl>
             <sli><codeph>yum-mirror-centos7.2-1511-serviced-1.6.5.x86_64.rpm</codeph></sli>
@@ -114,6 +114,21 @@
             <sli><codeph>yum-mirror-centos7.4-1708-serviced-1.6.5.x86_64.rpm</codeph></sli>
             <sli><codeph>yum-mirror-centos7.5-1708-serviced-1.6.5.x86_64.rpm</codeph></sli>
             <sli><codeph>yum-mirror-centos7.6-1708-serviced-1.6.5.x86_64.rpm</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
+      <step id="download-mirror-rpm-170">
+        <cmd>Download the RHEL/CentOS repository mirror file for your deployment.</cmd>
+        <info>The download site provides repository mirror files containing the packages that
+          <ph keyref="nm-cc"/> requires. For RHEL/CentOS 7.7 and 7.8, use the 7.6 file.</info>
+        <info>
+          <sl>
+            <sli><codeph>yum-mirror-centos7.2-1511-serviced-1.7.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.3-1611-serviced-1.7.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.4-1708-serviced-1.7.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.5-1708-serviced-1.7.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.6-1708-serviced-1.7.0.x86_64.rpm</codeph></sli>
           </sl>
         </info>
       </step>

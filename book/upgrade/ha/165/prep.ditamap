@@ -4,6 +4,7 @@
  <title>Before</title>
   <chapter keyref="cc-upgrade-ha-165-prep">
     <topicref keyref="cc-upgrade-ha-165-prep-features"/>
+    <topicref keyref="cc-upgrade-ha-topics-os"/>
     <topicref keyref="cc-upgrade-ha-topics-best-practices"/>
  </chapter>
 </bookmap>
