@@ -131,6 +131,7 @@
             <sli><codeph>yum-mirror-centos7.6-1708-serviced-1.7.0.x86_64.rpm</codeph></sli>
           </sl>
         </info>
+        <info><note>Currently, Red Hat Enterprise Linux (RHEL) 8.x and CentOS 8.x are unsupported.</note></info>
       </step>
       
       <step id="download-ra-rpm">
