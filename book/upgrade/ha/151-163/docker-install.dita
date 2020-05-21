@@ -69,13 +69,14 @@
           </substep>
           <substep>
             <cmd>Update the kernel, and then restart the host.</cmd>
+            <info><note>You may need to install a specific kernel, rather than update to the latest kernel.
+              <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-topics-os"/>.</note></info>
             <info>The following commands require internet access or a local mirror of operating
               system packages.</info>
             <stepxmp>
               <codeblock>yum makecache fast &#38;&#38; yum update kernel &#38;&#38; reboot</codeblock>
             </stepxmp>
-            <info><note>You may need to install a specific kernel, rather than update to the latest kernel.
-              <ph conkeyref="strings/fmi-int"/> <xref keyref="cc-upgrade-ha-topics-os"/>.</note></info>
+            
           </substep>
           <substep>
             <cmd>Log in <ph conkeyref="strings/login-root"/>.</cmd>
