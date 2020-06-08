@@ -179,9 +179,9 @@
         <linktext>Control Center Upgrade Guide for High-Availability Deployments (Release 1.5.1)</linktext>
       </topicmeta>
     </keydef>
-    <keydef keys="url-rm-up-620" href="https://help.zenoss.com/zsd/archive/files/9438192/9438354/1/1546015282000/Zenoss_Resource_Manager_Upgrade_Guide_r6.2.0_d1692.18.163.52.pdf" format="html" scope="external">
+    <keydef keys="url-rm-up-632" href="https://help.zenoss.com/zsd/archive/files/10749071/18350093/1/1562590145000/Zenoss_Resource_Manager_r6.3.2_x19.189.pdf" format="html" scope="external">
       <topicmeta>
-        <linktext>Zenoss Resource Manager Upgrade Guide (Release 6.2.0)</linktext>
+        <linktext>Zenoss Resource Manager (Release 6.3.2)</linktext>
       </topicmeta>
     </keydef>
     <keydef keys="url-image-tags" href="https://help.zenoss.com/zsd/cc/administering-control-center/control-center-releases-and-images/releases-and-image-tags" format="html" scope="external">

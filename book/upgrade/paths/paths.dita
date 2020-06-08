@@ -65,21 +65,11 @@
               <entry><ph keyref="nm-rm"/>
                 <ph keyref="lo-platform-version"/></entry>
             </row>
-            <row>
-              <entry><ph keyref="nm-rm"/> 6.2.1</entry>
-              <entry><ph keyref="nm-rm"/>
-                <ph keyref="lo-platform-version"/></entry>
-            </row>
-            <row>
-              <entry><ph keyref="nm-rm"/> 6.2.0</entry>
-              <entry><ph keyref="nm-rm"/>
-                <ph keyref="lo-platform-version"/></entry>
-            </row>
           </tbody>
         </tgroup>
       </table>
       <p>For information about updating earlier releases of <ph keyref="nm-rm"/>,
-        please refer to the <xref keyref="url-rm-up-620"/>.</p>
+        please refer to the <xref keyref="url-rm-up-632"/>.</p>
     </section>
   </refbody>
 </reference>

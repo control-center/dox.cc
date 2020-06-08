@@ -4,5 +4,6 @@
  <title>Before HA</title>
   <chapter keyref="base-upgrade-ha-before">
     <topicref keyref="base-upgrade-ha-upgrade-ha"/>
+    <topicref keyref="base-upgrade-ha-custom-passwords"/>
  </chapter>
 </bookmap>
