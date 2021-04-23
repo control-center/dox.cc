@@ -11,7 +11,7 @@
     <prodinfo>
       <prodname>Control Center</prodname>
       <vrmlist>
-        <vrm product="cc" version="6" release="5" modification="0"/>        
+        <vrm product="cc" version="6" release="6" modification="0"/>        
       </vrmlist>
     </prodinfo>
     <bookid>
@@ -19,7 +19,7 @@
     </bookid>
     <bookrights>
       <copyrfirst>
-        <year>2020</year>
+        <year>2021</year>
       </copyrfirst>
       <bookowner>
         <organization>Zenoss, Inc., 11305 Four Points Drive, 
@@ -99,7 +99,7 @@
   
   <part>
     <topicmeta>
-      <navtitle>Upgrading 1.6.5 to <ph keyref="lo-version-cc"/></navtitle>
+      <navtitle>Upgrading Control Center 1.7.0 or 1.8.0</navtitle>
     </topicmeta>
     <topicref href="book/upgrade/ha/front/165.dita"/>
     <chapter href="book/upgrade/ha/165/prep.ditamap" format="ditamap"/>
@@ -107,22 +107,10 @@
     <chapter href="book/upgrade/ha/165/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/165/delegate.ditamap" format="ditamap"/>
   </part>
-  
-  <part>
-    <topicmeta>
-      <navtitle>Upgrading 1.5.1 or 1.6.3 to <ph keyref="lo-version-cc"/></navtitle>
-    </topicmeta>
-    <topicref href="book/upgrade/ha/front/151-163.dita"/>
-    <chapter href="book/upgrade/ha/151-163/prep.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/ha/maps/stop.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/ha/151-163/master.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/ha/151-163/delegate.ditamap" format="ditamap"/>
-    <chapter href="book/upgrade/ha/151-163/post.ditamap" format="ditamap"/>
-  </part>
-  
+
   <part>
     <topicmeta >
-      <navtitle>Upgrading <ph keyref="nm-rm"/></navtitle>
+      <navtitle>Upgrading <ph keyref="nm-rm"/> 6.5.0</navtitle>
     </topicmeta>
     <topicref href="base/upgrade/ha.dita"/>
     <chapter href="base/upgrade/ha/before.ditamap" format="ditamap"/>

@@ -7,28 +7,28 @@
     <keydef keys="lo-version-cc">
       <topicmeta>
         <keywords>
-          <keyword>1.7.0</keyword>
+          <keyword>1.9.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-docker">
       <topicmeta>
         <keywords>
-          <keyword>18.09.6</keyword>
+          <keyword>19.03.11</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-isvcs">
       <topicmeta>
         <keywords>
-          <keyword>63</keyword>
+          <keyword>68</keyword>
         </keywords>
       </topicmeta>
     </keydef>
     <keydef keys="lo-version-zk">
       <topicmeta> <!-- ZooKeeper image -->
         <keywords>
-          <keyword>11</keyword>
+          <keyword>14</keyword>
         </keywords>
       </topicmeta>
     </keydef>
@@ -43,7 +43,7 @@
     <keydef keys="lo-platform-image">
       <topicmeta>
         <keywords>
-          <keyword>6.5.0_1</keyword>
+          <keyword>6.6.0_1</keyword>
         </keywords>
       </topicmeta>
     </keydef>
@@ -57,7 +57,7 @@
 	<keydef keys="lo-platform-version">
       <topicmeta>
         <keywords>
-          <keyword>6.5.0</keyword>
+          <keyword>6.6.0</keyword>
         </keywords>
       </topicmeta>
     </keydef>

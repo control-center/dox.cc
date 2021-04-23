@@ -5,7 +5,7 @@
   <refbody>
     <section>
       <p>The chapters in this part provide instructions for performing an upgrade of a
-        high-availability deployment of <ph keyref="nm-cc"/>, from version 1.6.5
+        high-availability deployment of <ph keyref="nm-cc"/> from version 1.7.0 or 1.8.0
         to <ph keyref="lo-version-cc"/>.</p>
     </section>
   </refbody>
