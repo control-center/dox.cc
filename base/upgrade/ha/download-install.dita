@@ -42,7 +42,7 @@
           <ul>
             <li><codeph>install-zenoss-hbase-<ph keyref="lo-platform-hbase"/>.run</codeph></li>
             <li><codeph>install-zenoss-opentsdb-<ph keyref="lo-platform-hbase"/>.run</codeph></li>
-            <li><codeph>install-zenoss-resmgr_6.5:<ph keyref="lo-platform-version"/>_1.run</codeph></li>
+            <li><codeph>install-zenoss-resmgr_6.6:<ph keyref="lo-platform-version"/>_1.run</codeph></li>
             <li><codeph>install-zenoss-mariadb-resmgr:<ph keyref="lo-platform-version"/>.run</codeph></li>
           </ul>
         </stepxmp>

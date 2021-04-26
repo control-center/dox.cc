@@ -3,6 +3,7 @@
 <bookmap >
  <title>Master</title>
   <chapter keyref="cc-upgrade-ha-165-micro-master">
+    <topicref keyref="cc-upgrade-ha-151-163-docker-images"/>
     <topicref keyref="cc-upgrade-ha-151-163-cc-master"/>
  </chapter>
 </bookmap>

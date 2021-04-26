@@ -99,7 +99,7 @@
   
   <part>
     <topicmeta>
-      <navtitle>Upgrading Control Center 1.7.0 or 1.8.0</navtitle>
+      <navtitle>Upgrading <ph keyref="nm-cc"/></navtitle>
     </topicmeta>
     <topicref href="book/upgrade/ha/front/165.dita"/>
     <chapter href="book/upgrade/ha/165/prep.ditamap" format="ditamap"/>
@@ -107,10 +107,10 @@
     <chapter href="book/upgrade/ha/165/master.ditamap" format="ditamap"/>
     <chapter href="book/upgrade/ha/165/delegate.ditamap" format="ditamap"/>
   </part>
-
+  
   <part>
     <topicmeta >
-      <navtitle>Upgrading <ph keyref="nm-rm"/> 6.5.0</navtitle>
+      <navtitle>Upgrading <ph keyref="nm-rm"/></navtitle>
     </topicmeta>
     <topicref href="base/upgrade/ha.dita"/>
     <chapter href="base/upgrade/ha/before.ditamap" format="ditamap"/>

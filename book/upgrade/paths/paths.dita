@@ -17,25 +17,18 @@
           </thead>
           <tbody>
             <row>
-              <entry><ph keyref="nm-cc"/> 1.6.5</entry>
+              <entry><ph keyref="nm-cc"/> 1.8.0</entry>
               <entry><ph keyref="nm-cc"/>
                 <ph keyref="lo-version-cc"/></entry>
             </row>
             <row>
-              <entry><ph keyref="nm-cc"/> 1.6.3</entry>
-              <entry><ph keyref="nm-cc"/>
-                <ph keyref="lo-version-cc"/></entry>
-            </row>
-            <row>
-              <entry><ph keyref="nm-cc"/> 1.5.1</entry>
+              <entry><ph keyref="nm-cc"/> 1.7.0</entry>
               <entry><ph keyref="nm-cc"/>
                 <ph keyref="lo-version-cc"/></entry>
             </row>
           </tbody>
         </tgroup>
       </table>
-      <p>For information about updating earlier releases of <ph keyref="nm-cc"/>,
-        please refer to the <xref keyref="url-cc-up-151"/>.</p>
     </section>
     <section>
       <table>
@@ -51,25 +44,18 @@
           </thead>
           <tbody>
             <row>
-              <entry><ph keyref="nm-rm"/> 6.4.1</entry>
-              <entry><ph keyref="nm-rm"/>
-                <ph keyref="lo-platform-version"/></entry>
-            </row>
-            <row>
-              <entry><ph keyref="nm-rm"/> 6.4.0</entry>
-              <entry><ph keyref="nm-rm"/>
-                <ph keyref="lo-platform-version"/></entry>
-            </row>
-            <row>
-              <entry><ph keyref="nm-rm"/> 6.3.2</entry>
+              <entry><ph keyref="nm-rm"/> 6.5.0</entry>
               <entry><ph keyref="nm-rm"/>
                 <ph keyref="lo-platform-version"/></entry>
             </row>
           </tbody>
         </tgroup>
       </table>
-      <p>For information about updating earlier releases of <ph keyref="nm-rm"/>,
-        please refer to the <xref keyref="url-rm-up-632"/>.</p>
     </section>
+    <section>
+      <p>For information about updating earlier releases of <ph keyref="nm-cc"/> and <ph keyref="nm-rm"/>,
+        please refer to the <xref keyref="url-rm-ha-up"/>.</p>
+    </section>
+    
   </refbody>
 </reference>

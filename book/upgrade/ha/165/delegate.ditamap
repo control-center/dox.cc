@@ -4,5 +4,6 @@
  <title>Delegate</title>
   <chapter keyref="cc-upgrade-ha-165-micro-delegate">
     <topicref keyref="cc-upgrade-ha-151-163-cc-delegate"/>
+    <topicref keyref="cc-upgrade-ha-151-163-zk-image"/>
  </chapter>
 </bookmap>

@@ -10,7 +10,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-download-lib/download-cc-images-170">
+      <step conkeyref="cc-feature-download-lib/download-cc-images-190">
         <cmd></cmd>
       </step>
       
@@ -22,7 +22,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="cc-feature-download-lib/download-mirror-rpm-170">
+      <step conkeyref="cc-feature-download-lib/download-mirror-rpm-190">
         <cmd></cmd>
       </step>
       

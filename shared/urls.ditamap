@@ -194,6 +194,11 @@
         <linktext>Control Center configuration variables</linktext>
       </topicmeta>
     </keydef>
+    <keydef keys="url-rm-ha-up" href="https://help.zenoss.com/zsd/archive/files/27689623/27689832/1/1591634920000/Upgrade_Guide_for_High-Availability_Deployments_r6.5.0_d1950.20.160.53.pdf" format="html" scope="external">
+      <topicmeta>
+        <linktext>previous version of this guide</linktext>
+      </topicmeta>
+    </keydef>
   </topicgroup>
 </map>
 

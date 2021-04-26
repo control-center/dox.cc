@@ -4,9 +4,12 @@
   <title>New features that affect upgrades</title>
   <refbody>
     <section>
-      <p>This release includes no new features or requirements that affect the upgrade process.</p>
-      <note>The Docker image files for <ph keyref="nm-cc"/> are unchanged for this release. You only 
-        need to download and install the new <cmdname>serviced</cmdname> RPM package.</note>
+      <p>In this release, the Elasticsearch, Kibana, and Logstash services are
+        updated to version 7.12.0. In addition, this release supports Java 11.</p>
+      <note>The Docker images for <ph keyref="nm-cc"/> and Zookeeper both need to be 
+        updated, as well as the <cmdname>serviced</cmdname> RPM package. You need
+        to download and install the <cmdname>yum</cmdname> mirror file in order
+        to get all the updated libraries.</note>
     </section>
   </refbody>
 </reference>

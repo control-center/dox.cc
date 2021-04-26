@@ -71,6 +71,16 @@
         </info>
       </step>
       
+      <step id="download-cc-images-190">
+        <cmd>Download the self-installing Docker image files.</cmd>
+        <info>
+          <sl>
+            <sli><codeph>install-zenoss-serviced-isvcs-v<ph keyref="lo-version-isvcs"/>.run</codeph></sli>
+            <sli><codeph>install-zenoss-isvcs-zookeeper-v<ph keyref="lo-version-zk"/>.run</codeph></sli>
+          </sl>
+        </info>
+      </step>
+      
       <step id="download-cc-rpm">
         <cmd>Download the <ph keyref="nm-cc"/> RPM file.</cmd>
         <info>
@@ -132,6 +142,24 @@
           </sl>
         </info>
         <info><note>Currently, Red Hat Enterprise Linux (RHEL) 8.x and CentOS 8.x are unsupported.</note></info>
+      </step>
+      
+      <step id="download-mirror-rpm-190">
+        <cmd>Download the RHEL/CentOS repository mirror file for your deployment.</cmd>
+        <info>The download site provides repository mirror files containing the packages that
+          <ph keyref="nm-cc"/> requires.</info>
+        <info>
+          <sl>
+            <sli><codeph>yum-mirror-centos7.2.1511-serviced-1.9.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.3.1611-serviced-1.9.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.4.1708-serviced-1.9.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.5.1804-serviced-1.9.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.6.1810-serviced-1.9.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.8.2003-serviced-1.9.0.x86_64.rpm</codeph></sli>
+            <sli><codeph>yum-mirror-centos7.9.2009-serviced-1.9.0.x86_64.rpm</codeph></sli>
+          </sl>
+        </info>
+        <info><note>RHEL/CentOS 8.x are not supported in high-availability deployments.</note></info>
       </step>
       
       <step id="download-ra-rpm">
