@@ -14,7 +14,7 @@
       <step>
         <cmd>Start the upgrade script.</cmd>
         <stepxmp>
-          <codeblock>/root/6.5.x/upgrade-resmgr.sh</codeblock>
+          <codeblock>/root/6.6.x/upgrade-resmgr.sh</codeblock>
         </stepxmp>
         <stepresult>The upgrade process begins. If you encounter errors, 
           see <xref keyref="base-upgrade-ha-existing-snap"/>.</stepresult>

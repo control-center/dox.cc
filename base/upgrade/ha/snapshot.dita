@@ -20,8 +20,7 @@
           <codeblock>serviced snapshot list -t</codeblock>
         </stepxmp>
         <stepresult>Example result, truncated to save space: <codeblock>Snapshot                         Description  Tags
-xm5mtezbyo2_20160211-220535.480               preupgrade-resmgr-6.5.0</codeblock>
-
+xm5mtezbyo2_20160211-220535.480               preupgrade-resmgr-6.6.0</codeblock>
           <p>The snapshot identifier is shown in the first column.</p>
         </stepresult>
       </step>

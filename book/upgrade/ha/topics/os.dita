@@ -6,10 +6,9 @@
     <section>
       <p>In RHEL/CentOS, Distributed Replicated Block Device (DRBD) is a kernel module. 
         When <ph keyref="nm-rm"/> 6.6.0 was released, the module available on the
-        Enterprise Linux packages repository (ELRepo) was for Linux kernel 3.10.0-1127.
-        You must ensure that the version of DRBD you install works with the kernel you
-        are using on both <ph keyref="nm-cc"/> master hosts. Also, note that DRBD 8.4 does
-      not support RHEL 8.x.</p>
+        Enterprise Linux packages repository (ELRepo) was for Linux kernel 3.10.0-1127
+        and above. You must ensure that the version of DRBD you install works with the kernel you
+        are using on both <ph keyref="nm-cc"/> master hosts.</p>
     </section>
   </refbody>
 </reference>

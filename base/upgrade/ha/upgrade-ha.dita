@@ -59,10 +59,10 @@ done</codeblock>
       
       <step>
         <cmd>On both nodes, copy the upgrade scripts from the new <ph keyref="nm-rm"/> image to
-            <filepath>/root/6.5.x</filepath>.</cmd>
+            <filepath>/root/6.6.x</filepath>.</cmd>
         <stepxmp>
           <codeblock>docker run -it --rm -v /root:/mnt/root \
-  zenoss/resmgr_6.5:<ph keyref="lo-platform-image"/> rsync -a /root/6.5.x /mnt/root</codeblock>
+  zenoss/resmgr_6.6:<ph keyref="lo-platform-image"/> rsync -a /root/6.6.x /mnt/root</codeblock>
         </stepxmp>
       </step>
       
