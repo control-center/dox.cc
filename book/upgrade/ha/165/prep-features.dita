@@ -4,12 +4,8 @@
   <title>New features that affect upgrades</title>
   <refbody>
     <section>
-      <p>In this release, the Elasticsearch, Kibana, and Logstash services are
-        updated to version 7.12.0. In addition, this release supports Java 11.</p>
-      <note>The Docker images for <ph keyref="nm-cc"/> and Zookeeper both need to be 
-        updated, as well as the <cmdname>serviced</cmdname> RPM package. You need
-        to download and install the <cmdname>yum</cmdname> mirror file in order
-        to get all the updated libraries.</note>
+      <p>In this release, the Control Center internal services (Elasticsearch, Kibana, and Logstash) are
+        updated to version 7.12.0. In addition, this release of Control Center supports Java 11.</p>
     </section>
   </refbody>
 </reference>

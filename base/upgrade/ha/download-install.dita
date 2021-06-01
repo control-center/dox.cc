@@ -47,6 +47,16 @@
           </ul>
         </stepxmp>
       </step>
+      <step id="download-these-rm660">
+        <cmd>Download the self-installing Docker image files for <ph keyref="nm-rm"/>.</cmd>
+        <stepxmp>
+          <ul>
+
+            <li><codeph>install-zenoss-resmgr_6.6:<ph keyref="lo-platform-version"/>_1.run</codeph></li>
+            <li><codeph>install-zenoss-mariadb-resmgr:<ph keyref="lo-platform-version"/>.run</codeph></li>
+          </ul>
+        </stepxmp>
+      </step>
       <step>
         <cmd>Download the <ph keyref="nm-rm"/> service definition, which is distributed as an
           RPM file.</cmd>

@@ -26,7 +26,7 @@
         <cmd></cmd>
       </step>
       
-      <step conkeyref="base-upgrade-ha-download-install/download-these">
+      <step conkeyref="base-upgrade-ha-download-install/download-these-rm660">
         <cmd/>
       </step>
       
